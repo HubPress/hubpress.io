@@ -1,0 +1,44 @@
+= Hubpress.io
+
+HubPress is tool to build static blog with Asciidoc content (thanks to @asciidoctor).
+
+HubPress is actually in preview, if you find some bugs come to see us.
+
+A complete documentation will come here soon.
+
+To test HubPress, fork this repository and update the config.json file :
+
+[source, shell]
+----
+{
+  "meta": {
+    "username": "put your username here",
+    "repositoryName": "put your repository name here",
+    "branch": "master"
+    },
+    "theme": {
+      "name": "Casper"
+    }
+  }
+
+  ----
+
+  If you don't use the domain *<username>.github.io*, you must set branch to *gh-pages*.
+
+
+  For the blog HubPress, same configuration file is :
+
+  [source, shell]
+  ----
+  {
+    "meta": {
+      "username": "hubpress",
+      "repositoryName": "blog.hubpress.io",
+      "branch": "gh-pages"
+      },
+      "theme": {
+        "name": "Casper"
+      }
+    }
+    ----
+    
