@@ -20,16 +20,14 @@ To test HubPress, fork this repository and update the config.json file :
       "name": "Casper"
     }
   }
+----
 
-  ----
+If you don't use the domain *<username>.github.io*, you must set branch to *gh-pages*.
 
-  If you don't use the domain *<username>.github.io*, you must set branch to *gh-pages*.
+For the blog HubPress, same configuration file is :
 
-
-  For the blog HubPress, same configuration file is :
-
-  [source, shell]
-  ----
+[source, shell]
+----
   {
     "meta": {
       "username": "hubpress",
@@ -40,5 +38,5 @@ To test HubPress, fork this repository and update the config.json file :
         "name": "Casper"
       }
     }
-    ----
+----
     
