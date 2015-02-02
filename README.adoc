@@ -1,44 +1,100 @@
-= Hubpress.io
+= HubPress
 
-HubPress is tool to build static blog with Asciidoc content (thanks to @asciidoctor).
+image::http://hubpress.io/img/editor.png[]
 
-HubPress is actually in preview, if you find some bugs come to see us.
+HubPress is a free, open source tool to build your futur awesome blog!
+
+Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q]).
+
+NOTE: HubPress is actually in preview, if you find some bugs come to see us.
 
 A complete documentation will come here soon.
 
-To test HubPress, fork this repository and update the config.json file :
+== Getting started
 
-[source, shell]
-----
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-    },
-    "theme": {
-      "name": "Casper"
-    }
-  }
+=== Installation
+==== Fork the repository
 
-  ----
+If you already know github, you know what to do.
 
-  If you don't use the domain *<username>.github.io*, you must set branch to *gh-pages*.
+For the others, click on the fork icon :image:http://hubpress.io/img/fork-icon.png[Fork,80]
 
+This will create a copy of this repository in yours.
 
-  For the blog HubPress, same configuration file is :
+==== I will use the github.io domain
 
-  [source, shell]
-  ----
-  {
-    "meta": {
-      "username": "hubpress",
-      "repositoryName": "blog.hubpress.io",
-      "branch": "gh-pages"
-      },
-      "theme": {
-        "name": "Casper"
-      }
-    }
-    ----
-    
+Here is the simplest way, few step are required.
+
+You need to set some values in `hubpress/config.json`
+:image:http://hubpress.io/img/edit-config.png[Edit config]
+
+You have two values to set :
+
+* `username`: it's your github username,
+* `repositoryName`: it's the name of your fork, `hubpress.io` if you did not rename it.
+
+Commit and open your website http://<username>.github.io, you'll see :
+
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+Congratulations, installation is done !
+
+==== I will use a custom domain
+
+If you have a custom domain name, we recommand to use *gh-pages*.
+
+In the settings, set the default branch to *gh-pages* :
+
+image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+
+Switch your repository to the branch *gh-pages*
+
+image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
+
+set some values in `hubpress/config.json`
+:image:http://hubpress.io/img/edit-config.png[Edit config]
+
+You have two values to set :
+
+* `username`: it's your github username,
+* `repositoryName`: it's the name of your fork, `hubpress.io` if you did not rename it.
+
+Commit and open your website http://<username>.github.io/<repositoryName>, you'll see :
+
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+Congratulations, installation is done !
+
+=== Usage
+
+The administration of your blog is available at */hubpress*
+
+* http://<username>.github.io/hubpress
+
+or
+
+* http://<username>.github.io/<repositoryName>/hubpress
+
+==== Connexion
+
+image:http://hubpress.io/img/login.png[Install complete,300]
+
+You need your github credentials to log in hubpress. Then a personal token will be generate for the futur call to the Github API.
+
+==== Settings
+
+The first thing to do is going to the Settings page. Here you can specify your CNAME, pagination or your social network accounts
+
+Coming soon
+
+==== List of posts
+
+Coming soon
+
+==== Your first post
+
+Coming soon
+
+==Credits
+
+Coming soon
