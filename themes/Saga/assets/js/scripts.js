@@ -2,13 +2,13 @@
 /* jshint browser: true */
 
 var siteurl = $('#site-url').attr("href"); // Get url for blog (in case site is run under a sub-domain)
-
+siteurl += "/themes/Saga";
 /******************
  * HIGHLIGHT CODE *
  ******************/
 
 if($("code").length !== 0){
-    $.getScript(siteurl+"/assets/js/helper/highlight.min.js", function() { 
+    $.getScript(siteurl+"/assets/js/helper/highlight.min.js", function() {
         hljs.initHighlightingOnLoad();
     });
 }
@@ -17,7 +17,7 @@ if($("code").length !== 0){
  * RESPONSIVE VIDEOS  *
  **********************/
 
-$.getScript(siteurl+"/assets/js/helper/jquery.fitvids.js", function() { 
+$.getScript(siteurl+"/assets/js/helper/jquery.fitvids.js", function() {
     $("#main").fitVids();
 });
 
@@ -58,7 +58,7 @@ function gallery(){
  *********************/
 
 if($("#main").hasClass("content")){
-    $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
+    $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
         function fullImage(){
             $('img[src$="#full"]:only-child').each(function() {
                 $(this).addClass("full-loaded");
@@ -169,7 +169,7 @@ if($("#main").hasClass("archive")){
                 $(this).html('<i class="fa fa-spinner fa-spin"></i>');
 
                 // Grab data from next page
-                $.get(nextLink, function(data){ 
+                $.get(nextLink, function(data){
                     // Append all posts to #content
                     var posts = $(data).find(".post");
                     $.each(posts,function(){
@@ -194,7 +194,7 @@ if($("#main").hasClass("archive")){
                 });
             } else {
                 $('#loadmore').remove();
-            }	
+            }
 
             return false;
         });
