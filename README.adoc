@@ -2,30 +2,30 @@
 
 image::http://hubpress.io/img/editor.png[]
 
-HubPress is a free, open source tool to build your futur awesome blog!
+HubPress is a free, open source tool to build your future awesome blog!
 
 Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q]).
 
 NOTE: HubPress is actually in preview, if you find some bugs come to see us.
 
-A complete documentation will come here soon.
+Complete documentation is coming here soon!
 
 == Getting started
 
 === Installation
 ==== Fork the repository
 
-If you already know github, you know what to do.
+If you already know GitHub, you know what to do.
 
-For the others, click on the fork icon :image:http://hubpress.io/img/fork-icon.png[Fork,80]
+For those not familiar with GitHub, click on the Fork icon :image:http://hubpress.io/img/fork-icon.png[Fork,80]
 
-This will create a copy of this repository in yours.
+This will create a copy of this repository within your GitHub account.
 
-==== I will use the github.io domain
+==== Use the github.io domain
 
-Here is the simplest way, few step are required.
+Here is the simplest way. Only a few steps are required. However, if you have a custom domain name, we recommend you use *gh-pages* (see below).
 
-You need to set some values in `hubpress/config.json`
+Firstly, you need to set some values in `hubpress/config.json`
 :image:http://hubpress.io/img/edit-config.png[Edit config]
 
 You have two values to set :
@@ -37,11 +37,9 @@ Commit and open your website http://<username>.github.io, you'll see :
 
 image:http://hubpress.io/img/home-install.png[Install complete,300]
 
-Congratulations, installation is done !
+Congratulations, installation is done!
 
-==== I will use a custom domain
-
-If you have a custom domain name, we recommand to use *gh-pages*.
+==== Use your own a custom domain
 
 In the settings, set the default branch to *gh-pages* :
 
@@ -51,7 +49,7 @@ Switch your repository to the branch *gh-pages*
 
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
 
-set some values in `hubpress/config.json`
+Set some values in `hubpress/config.json`
 :image:http://hubpress.io/img/edit-config.png[Edit config]
 
 You have two values to set :
@@ -75,11 +73,11 @@ or
 
 * http://<username>.github.io/<repositoryName>/hubpress
 
-==== Connexion
+==== Connecting HubPress to GitHub
 
 image:http://hubpress.io/img/login.png[Install complete,300]
 
-You need your github credentials to log in hubpress. Then a personal token will be generate for the futur call to the Github API.
+You need your GitHub credentials to log in HubPress. Then a personal token will be generated for the future call to the Github API.
 
 ==== Settings
 
