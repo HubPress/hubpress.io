@@ -27,7 +27,7 @@ If you have a custom domain name, skip to the next procedure for instructions.
 
 . Set values in `hubpress/config.json`
 +
-:image:http://hubpress.io/img/edit-config.png[Edit config]
+image:http://hubpress.io/img/edit-config.png[Edit config]
 +
 The following parameters are mandatory :
 +
