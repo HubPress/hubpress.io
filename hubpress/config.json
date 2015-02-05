@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "jaredmorgs",
-    "repositoryName": "blog",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"jaredmorgs","repositoryName":"blog","branch":"gh-pages"},"site":{"url":"http://jaredmorgs.github.io/blog"},"socialnetwork":{},"theme":{"name":"Casper","url":"http://jaredmorgs.github.io/blog/themes/Casper"}}
