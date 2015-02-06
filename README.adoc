@@ -134,9 +134,38 @@ The blog title is always Level 1 in an AsciiDoc post. For example, `= Blog Title
 
 If you want a first-level heading you use `== First Level Heading`, and so on to create other nested headings.
 
+===== Cover Image
+
+If you want to add a cover image to your Blog Post, you must set the `hp-image` attribute.
+
+For example :
+[source, asciidoc]
+----
+= Blog Title
+:hp-image: http://github.com/<username>/<repositoryName>/images/a-cover-image.jpg
+----
+
+===== Publication date
+
+By default, the publication date is the date of the day to which you introduced your Blog Post. You can force the publication date by adding the `published_date`
+
+For example :
+[source, asciidoc]
+----
+= Blog Title
+:published_date: 2015-01-31
+----
+
 ===== Tags and Categories
 
-NOTE: Coming Soon.
+Actually, only tags are supported. You can add some tags by using the `hp-tags` attribute.
+
+For example :
+[source, asciidoc]
+----
+= Blog Title
+:hp-tags: tag1,tag2,tag3
+----
 
 == Credits
 
