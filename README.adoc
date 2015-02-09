@@ -155,7 +155,7 @@ For example :
 [source, asciidoc]
 ----
 = Blog Title
-:published_date: 2015-01-31
+:published_at: 2015-01-31
 ----
 
 ===== Tags and Categories
