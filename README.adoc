@@ -124,7 +124,7 @@ When you first start HubPress, the *Posts* view is empty. As you create blog pos
 
 === Creating a Post
 
-NOTE: If you have never used AsciiDoc before to write content, the http://asciidoctor.org/docs/asciidoc-writers-guide/#lists-lists-lists[AsciiDoctor Writer's Guide] should be your first stop in your journey. The guide provides both basic and advanced mark-up examples for you to copy and use.
+NOTE: If you have never used AsciiDoc before to write content, the http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's Guide] should be your first stop in your journey. The guide provides both basic and advanced mark-up examples for you to copy and use.
 
 HubPress Editor displays the AsciiDoc code on the left, and the live preview on the right.
 
