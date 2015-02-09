@@ -86,6 +86,7 @@
       if ((options.token) || (options.username && options.password)) {
         var authorization = options.token ? 'token ' + options.token : 'Basic ' + Base64.encode(options.username + ':' + options.password);
         xhr.setRequestHeader('Authorization', authorization);
+        xhr.setRequestHeader('X-GitHub-OTP', options.tfapass);
          }
       if (data)
         xhr.send(JSON.stringify(data));
