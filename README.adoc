@@ -149,7 +149,7 @@ For example :
 
 ===== Publication date
 
-By default, the publication date is the date of the day to which you introduced your Blog Post. You can force the publication date by adding the `published_date`
+By default, the publication date is the date of the day to which you introduced your Blog Post. You can force the publication date by adding the `published_at`
 
 For example :
 [source, asciidoc]
