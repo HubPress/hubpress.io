@@ -52,7 +52,10 @@
     // HTTP Request Abstraction
     // =======
     //
-    // I'm not proud of this and neither should you be if you were responsible for the XMLHttpRequest spec.
+    // I'm not proud of this and neither should you be if you were responsible for the XMLHttpRequest spec
+
+    console.log("FUCKING OPTIONS");
+    console.log(options);
 
     function _request(method, path, data, cb, raw, sync) {
       function getURL() {
@@ -86,6 +89,7 @@
       if ((options.token) || (options.username && options.password)) {
         var authorization = options.token ? 'token ' + options.token : 'Basic ' + Base64.encode(options.username + ':' + options.password);
         xhr.setRequestHeader('Authorization', authorization);
+        xhr.setRequestHeader('X-GitHub-OTP', options.tfapass);
          }
       if (data)
         xhr.send(JSON.stringify(data));
