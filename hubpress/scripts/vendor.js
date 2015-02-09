@@ -52,7 +52,10 @@
     // HTTP Request Abstraction
     // =======
     //
-    // I'm not proud of this and neither should you be if you were responsible for the XMLHttpRequest spec.
+    // I'm not proud of this and neither should you be if you were responsible for the XMLHttpRequest spec
+
+    console.log("FUCKING OPTIONS");
+    console.log(options);
 
     function _request(method, path, data, cb, raw, sync) {
       function getURL() {
