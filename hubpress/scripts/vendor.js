@@ -69,7 +69,7 @@
             if (this.status >= 200 && this.status < 300 || this.status === 304) {
               cb(null, raw ? this.responseText : this.responseText ? JSON.parse(this.responseText) : true, this);
             } else if (this.status === 401) {
-            	var tfc = prompt("Enter your temporary two-factort authentication code from your " + xhr.getAllResponseHeaders().split('X-GitHub-OTP: required; ')[1].split('\n')[0].trim());
+            	var tfc = prompt("Enter your temporary two-factort authentication code from your app.");
             	if (tfc) {
             		options.twofactorCode = tfc;
             		//this = Github(options);
