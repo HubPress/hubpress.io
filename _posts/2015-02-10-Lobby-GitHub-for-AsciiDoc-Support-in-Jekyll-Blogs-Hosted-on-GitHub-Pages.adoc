@@ -1,0 +1,53 @@
+= Lobby GitHub for AsciiDoc Support in Jekyll Blogs Hosted on GitHub Pages
+:hp-tags: AsciiDoctor, GitHub Pages, jekyll-asciidoc, Jekyll Blogs
+:published-at: 2015-01-20
+
+== tl: dr
+
+Help get the jekyll-asciidoc Converter whitelisted for GitHub Pages, and get native AsciiDoc support in GitHub Pages hosted Blogs!
+
+. Send a support request to https://github.com/contact[GitHub Support]
+. Quote the repo name: `https://github.com/asciidoctor/jekyll-asciidoc`
+. Tell them why you want AsciiDoc support for your blog.
+
+== Background
+
+I've been following the work that Dan Allen's AsciiDoctor project has been doing recently.
+
+The other day he announced that they were successful in getting the jekyll-asciidoc Converter added to the list of plug-ins on the http://jekyllrb.com/docs/plugins/[Jekyll Plug-ins Page]
+
+== Limitations
+
+The logical next step would be to get this converter whitelisted for GitHub Pages. Folks new to Jekyll could then fork a Jekyll AsciiDoc-aware Git Repo and start blogging directly on mobile devices.
+
+=== Setup Complexity
+
+Folks that want to try out Jekyll blogging on a mobile device only have the choice of MarkDown if they don't have access to a PC. To get Jekyll AsciiDoc support working for a Mobile authoring environment, you need to:
+
+. Use a computer to configure your repo, which for some folks is a deal-breaker.
+. Configure Ruby and Rubygems.
+. Install and configure Jekyll.
+. Configure Travis CI to detect when you commit changes to a branch and build the site.
+
+Only then can you write in .adoc on your mobile device and have the content published to GitHub Pages.
+
+It shouldn't be that difficult! The team over at AsciiDoctor are working on a  https://github.com/asciidoctor/jekyll-asciidoc-quickstart[forkable repo] that should take some of the complexity out of working with AsciiDoc on GitHub Pages. Discussion prompting this repo is tracked on https://github.com/asciidoctor/jekyll-asciidoc/issues/26[Issue 26] of the jekyll-asciidoc repository.
+
+In contrast, Barry Clark's https://github.com/barryclark/jekyll-now[jekyll-now] project--a fantastic Jekyll blog repo that removes the complexity of Jekyll Set-up and Ruby for new adopters--does it like this:
+
+. Fork the repo: your default blog is live!
+. Make a few changes to the _config.yml file.
+. Commit and Push.
+. Your customised blog is live!
+
+=== Complex Blog Post Formatting Issues
+
+The problem I've found with MarkDown is the lack of more extensible mark-up is not quite cutting it for some of the more complex posts like http://jaredmorgs.github.io/using-ffmpeg-to-record-screencasts/. This post took me about three hours to get looking right with MarkDown.
+
+With AsciiDoc, I estimate I could have done it in about 1 hour.
+
+== How You Can Help
+
+If you currently use Jekyll to blog, or have tried it in the past but abandoned it, it would be a great time to drive adoption of this documentation solution.
+
+With the plug-in whitelisted, repos like Barry Clark's could be created that "Just Work" and let folks get on with the job of creating blog posts without the config overhead.
