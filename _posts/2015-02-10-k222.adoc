@@ -8,5 +8,4 @@
 图片展示
 http://senola.github.io/hubpress/images/wolf.jpg[]
 
-.HubPress editor
 image::http://senola.github.io/hubpress/images/wolf.jpg[]
