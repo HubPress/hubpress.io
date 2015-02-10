@@ -46,12 +46,13 @@
 
 
   var API_URL = 'https://api.github.com';
+
   var Github = function(options) {
 
     // HTTP Request Abstraction
     // =======
     //
-    // I'm not proud of this and neither should you be if you were responsible for the XMLHttpRequest spec
+    // I'm not proud of this and neither should you be if you were responsible for the XMLHttpRequest spec.
 
     function _request(method, path, data, cb, raw, sync) {
       function getURL() {
@@ -68,19 +69,12 @@
           if (this.readyState == 4) {
             if (this.status >= 200 && this.status < 300 || this.status === 304) {
               cb(null, raw ? this.responseText : this.responseText ? JSON.parse(this.responseText) : true, this);
-            } else if (this.status === 401) {
-            	var tfc = prompt("Enter the temporary 6-digit two-factor authentication code from your app.");
-            	if (tfc) {
-            		options.twofactorCode = tfc;
-            		//this = Github(options);
-            		_request(method, path, data, cb, raw, sync);
-            	}
             } else {
               cb({path: path, request: this, error: this.status});
             }
           }
         };
-       }
+        }
 
       if (!raw) {
         xhr.setRequestHeader('Accept','application/json');
@@ -92,17 +86,17 @@
       if ((options.token) || (options.username && options.password)) {
         var authorization = options.token ? 'token ' + options.token : 'Basic ' + Base64.encode(options.username + ':' + options.password);
         xhr.setRequestHeader('Authorization', authorization);
-        if (options.twofactorCode) {
-        	xhr.setRequestHeader('X-GitHub-OTP', options.twofactorCode);
+        if (options.twoFactorCode) {
+          xhr.setRequestHeader('X-GitHub-OTP', options.twoFactorCode);
         }
       }
       if (data) {
-      	xhr.send(JSON.stringify(data));
+        xhr.send(JSON.stringify(data));
       } else {
-      	xhr.send();
+        xhr.send();
       }
       if (sync) {
-      	return xhr.response;
+        return xhr.response;
       }
     }
 
