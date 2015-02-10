@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "senola",
-    "repositoryName": "hubpress",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"senola","repositoryName":"hubpress","branch":"gh-pages"},"site":{"cover":"https://raw.githubusercontent.com/senola/pictures/master/background/background5.jpg","url":"http://senola.github.io/hubpress"},"socialnetwork":{},"theme":{"name":"Casper","url":"http://senola.github.io/hubpress/themes/Casper"}}
