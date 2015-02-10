@@ -1,6 +1,9 @@
 = k222
+
 :hp-image: https://raw.githubusercontent.com/senola/pictures/master/background/background8.jpg
 :published_date: 2015-02-10
 :hp-tags: 博客,博客,博客
 
 这是一首简单的小情歌，唱着。。。。。。。啦啦啦啦啦！！
+图片展示
+image::https://raw.githubusercontent.com/senola/pictures/master/background/background18.jpg[]
