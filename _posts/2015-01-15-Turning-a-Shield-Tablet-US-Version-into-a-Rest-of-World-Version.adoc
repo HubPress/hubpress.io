@@ -1,0 +1,73 @@
+= Turning a Shield Tablet US Version into a Rest of World Version
+:hp-tags: NVidia, Shield Tablet, US to Rest of World, wx_na_wf to wx-un-do
+:published_at: 2015-01-15
+:toc:
+
+== Summary
+
+I've been waiting patiently until NVidia released the Android 5.0 Factory Images in late December 2014 before I even attempted this experiment. This blog post describes how to turn the NVidia Shield LTE Tablet I purchased with the US firmware to a "Rest of World" variant, safely and successfully.
+
+== Why Do This?
+
+Normally, changing a device to a completely different device variant OS is a risky undertaking. But because NVidia have made minimal mods to the AOSP cut of their operating system, you can switch any LTE Shield Tablet to use either the "North America" (wx_na_do) or "Rest of World" (wx-un-do) Android Builds. 
+
+*Providing you can get a hold of a Rest-of-World OTA update that contains an updated modem stack*, folks like me in Australia can put a local SIM in my tablet and use 4G data on the go. If I kept the firmware as "US Only" I would not be able to use my local carrier's 4G spectrums, which differ from the USA.
+
+== Procedure
+
+This whole procedure would be made much easier if someone would just create a Modem Flashable Zip that overwrites the Modem files, but this method described below removes any risk of corrupted files as part of the flash.
+
+This method also allows those folks that prefer to keep their device stock from messing around with the OS, which may prevent OTA updates from deploying to your device.
+
+=== Prerequisites
+
+You have already installed the android-tools package (`sudo yum install android-tools`) that provides the fastboot protocol and the Android Debug Bridge (ADB). On Linux, ADB "just works".
+
+If you're using Windows to do this:
+
+- swap out forward-slashes for back-slashes
+- configure ADB on your Windows PC before continuing.
+- Look on XDA for great tutorials on installing and configuring ADB.
+
+=== Download the Recovery Image
+
+NOTE: The commands from this point on are for fedora 21 (but should work fine with most flavours of Linux),
+
+. Download the Update 2.0 factory images from the https://developer.nvidia.com/gameworksdownload#?search=SHIELD%20Tablet%20LTE&tx=$additional,shield[NVidia Developer Page]. You need to become a registered developer to download these files directly, but if you do a search on XDA Forums you should find plenty of download mirrors.
+. If you chose the factory images, extract the file to a working directory and change the .sh script permissions to executable.
+. Run `./extract-nv-recovery-image-shield-tablet-wx_un_do-_[version]_.sh` and wait for about 10 seconds for the licence agreement to display.
+. Scroll down to accept the T&Cs and then type *I ACCEPT* to extract the required files to the working directory.
+
+=== Unlock Bootloader and Flash Recovery
+
+You are ready to flash the recovery image to the device. But make sure you are happy all files have been backed up: this is your last chance before your tablet is completely wiped.
+
+. Connect the Shield Tablet to the PC.
+. Reboot to the bootloader using one of the following methods:
+  * Software Method:
+  ** Run `adb reboot bootloader`.
+  * Hardware Method
+  .. Press "Volume Down" -> "Power" until you see the screen backlight flash,
+  .. Keep holding "Volume Down" and release Power button until the device
+       boots.
+. If you have not already unlocked the bootloader, run `sudo fastboot oem unlock`. This erases all user data, but you're going to be doing that with the factory image flash process, so it is inconsequential.
+. Run `sudo ./flash-all.sh` and walk away. The recovery screen will not show any progress, but the terminal will: all is well if the HDD light is blinking away madly.
+. Once the terminal returns to the command prompt, the tablet is ready to restart:
+  .. Press the Vol Down key to select Reboot.
+  .. Press Power to restart the tablet and begin the first run process.
+
+=== Post-update Boot Time: Relax!
+
+You'll remember that the first time this runs, it takes a very long time. The tablet will sit at the NVidia Logo screen for what seems like an eternity, and you may be concerned that you've bricked the tablet. Don't be: patience is a virtue here. It will boot, and the world won't end.
+
+=== Install an OTA to get the Modem Files
+
+I found out that after installing everything, I still couldn't use my Virgin Mobile SIM to connect to the local network here. A bit of digging on XDA revealed a frustrating fact: the factory images don't ship modem stacks! Why, I ask. WHY?
+
+The way folks recommended working around this issue is to wait for your tablet to detect that it has an older OS installed. This is why you download the 2.0 (Android 5.0.0) factory image, so you could receive the 2.1 (Android 5.0.1) OTA, and let it update to the latest version. The Modem stack included in the OTA should install and then you can begin using 4G data. 
+
+== You Did It!
+
+Great Job!
+
+You've successfully factory reset your Shield Tablet to the Rest of World variant of the firmware. But here's the problem: the stock firmware does not contain any modem updates. You need to install an OTA update to hopefully get the modem stack updated. 
