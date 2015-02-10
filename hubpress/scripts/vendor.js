@@ -86,12 +86,18 @@
       if ((options.token) || (options.username && options.password)) {
         var authorization = options.token ? 'token ' + options.token : 'Basic ' + Base64.encode(options.username + ':' + options.password);
         xhr.setRequestHeader('Authorization', authorization);
-         }
-      if (data)
+        if (options.twoFactorCode) {
+          xhr.setRequestHeader('X-GitHub-OTP', options.twoFactorCode);
+        }
+      }
+      if (data) {
         xhr.send(JSON.stringify(data));
-      else
+      } else {
         xhr.send();
-      if (sync) return xhr.response;
+      }
+      if (sync) {
+        return xhr.response;
+      }
     }
 
     function _requestAllPages(path, cb) {
