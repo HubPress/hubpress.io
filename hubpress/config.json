@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "uknj",
-    "repositoryName": "hubpress.io",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"uknj","repositoryName":"hubpress.io","branch":"gh-pages"},"site":{"title":"Testing this shit out!","description":"Lets see how it goes...","logo":"RandomLogoHere","cover":"RandomCoverHere","url":"http://uknj.github.io/hubpress.io"},"socialnetwork":{"github":"github.com/uknj"},"theme":{"name":"Casper","url":"http://uknj.github.io/hubpress.io/themes/Casper"}}
