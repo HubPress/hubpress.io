@@ -1,0 +1,2 @@
+= Blog Title
+:published_date: 2015-01-31
