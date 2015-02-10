@@ -1,4 +1,5 @@
 = k
+:hp-image: https://raw.githubusercontent.com/senola/pictures/master/background/background7.jpg
 :published_date: 2015-02-10
 :hp-tags: 博客,博客,博客
 
