@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Record Screen Demos on Fedora Using the Command Line (ffmpeg)</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://jaredmorgs.github.io/blog/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://jaredmorgs.github.io/blog/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="http://jaredmorgs.github.io/blog/2014/01/11/Record-Screen-Demos-on-Fedora-Using-the-Command-Line-ffmpeg.html" />
+    
+    <meta property="og:site_name" content="The Musings of Jared Morgan (jaredmorgs) " />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Record Screen Demos on Fedora Using the Command Line (ffmpeg)" />
+    <meta property="og:description" content="Background The ffmpeg command is broken down into the following primary parts: input output (encode) output container (filename). To record your desktop, you require two input sources to be configured: Audio from your laptop mic, USB headset, or 3.5mm..." />
+    <meta property="og:url" content="http://jaredmorgs.github.io/blog/2014/01/11/Record-Screen-Demos-on-Fedora-Using-the-Command-Line-ffmpeg.html" />
+    <meta property="article:published_time" content="2014-01-10T14:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-02-10T07:57:12.679Z" />
+    <meta property="article:tag" content="Screencast" />
+    <meta property="article:tag" content="ffmpeg" />
+    <meta property="article:tag" content="fedora" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Record Screen Demos on Fedora Using the Command Line (ffmpeg)" />
+    <meta name="twitter:description" content="Background The ffmpeg command is broken down into the following primary parts: input output (encode) output container (filename). To record your desktop, you require two input sources to be configured: Audio from your laptop mic, USB headset, or 3.5mm..." />
+    <meta name="twitter:url" content="http://jaredmorgs.github.io/blog/2014/01/11/Record-Screen-Demos-on-Fedora-Using-the-Command-Line-ffmpeg.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "The Musings of Jared Morgan (jaredmorgs) ",
+    "author": {
+        "@type": "Person",
+        "name": "Jared Morgan",
+        "image": "https://avatars.githubusercontent.com/u/952793?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://jaredmorgs.github.io"
+    },
+    "headline": "Record Screen Demos on Fedora Using the Command Line (ffmpeg)",
+    "url": "http://jaredmorgs.github.io/blog/2014/01/11/Record-Screen-Demos-on-Fedora-Using-the-Command-Line-ffmpeg.html",
+    "datePublished": "2014-01-10T14:00:00.000Z",
+    "dateModified": "2015-02-10T07:57:12.679Z",
+    "keywords": "Screencast,  ffmpeg,  fedora",
+    "description": "Background The ffmpeg command is broken down into the following primary parts: input output (encode) output container (filename). To record your desktop, you require two input sources to be configured: Audio from your laptop mic, USB headset, or 3.5mm..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="The Musings of Jared Morgan (jaredmorgs) " href="http://jaredmorgs.github.io/blog/rss" />
+</head>
+<body class="post-template tag-undefined tag-undefined tag-undefined">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://jaredmorgs.github.io/blog">Home</a>
+        <a class="subscribe-button icon-feed" href="http://jaredmorgs.github.io/blog/rss/">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-undefined tag-undefined tag-undefined">
+
+        <header class="post-header">
+            <h1 class="post-title">Record Screen Demos on Fedora Using the Command Line (ffmpeg)</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2014-01-11">11 January 2014</time>  on <a href="http://jaredmorgs.github.io/blog/tag/Screencast">Screencast</a>, <a href="http://jaredmorgs.github.io/blog/tag/ ffmpeg"> ffmpeg</a>, <a href="http://jaredmorgs.github.io/blog/tag/ fedora"> fedora</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="sect1">
+<h2 id="_background">Background</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The ffmpeg command is broken down into the following primary parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>input</p>
+</li>
+<li>
+<p>output (encode)</p>
+</li>
+<li>
+<p>output container (filename).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To record your desktop, you require two input sources to be configured:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Audio from your laptop mic, USB headset, or 3.5mm microphone/headset jack.</p>
+</li>
+<li>
+<p>Video from the desktop of your computer.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage_example">Usage Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rather than doing what we always do, and blindly copy pasta a command and run it, read the Build the Command section to understand the ffmpeg commands you see. You&#8217;ll start to learn that while this tool seems complicated, the commands are there for a reason, and in the order they are on purpose.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f alsa -i plughw:1,0 -acodec libmp3lame -ar 48000 -ab 320k -vcodec libx264 Desktop_Recording.mp4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To stop the recording, press <code>Ctrl+C</code> in the terminal.</p>
+</div>
+<div class="sect2">
+<h3 id="_what_does_all_that_mean">What does all that mean?</h3>
+<div class="paragraph">
+<p>This captures the left screen at 1920x1080 resolution, and uses the USB
+Headset connected to the PC. The framerate is 30 fps. The audio is
+encoded in MP3 format at 48000 khz @ 320kbps. The file saved is
+<code>Desktop_Recording.mp4</code>, and is saved in the same directory you executed
+this command in.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alias_command">Alias Command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add the following alias to your <code>~/.bashrc</code> file, and you have a way of
+easily recording from the command line with pre-set settings. All you
+need to do is specify the target file name as <strong>[filename]</strong>.mp4, after
+typing the command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>alias Record_Desktop="ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f alsa -ac 1 -i plughw:1,0 -acodec libmp3lame -ar 48000 -ab 320k - codec libx264 "</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The space is important at the end of the alias. It lets you specify a file name after the alias.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_procedure">Procedure</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_prerequisites">Prerequisites</h3>
+<div class="paragraph">
+<p>If you just try and run the command above for the first time, I can almost guarantee that you&#8217;ll get errors. There are some things you need to do before you can begin constructing the command to suit your Fedora installation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_default_monitor">Set Default Monitor</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open gnome-display-properties in Gnome 3 (Activities &gt; Displays)</p>
+</li>
+<li>
+<p>Drag the screen you want to capture to the left of the dialog.</p>
+</li>
+<li>
+<p>Click the left monitor in the dialog.</p>
+</li>
+<li>
+<p>Write down the resolution displayed. This is required in the command line procedure.</p>
+</li>
+<li>
+<p>Ensure the black title bar is dragged over to the screen you want to capture.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This sets the record target display as 0.0, or DEFAULT.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_packages">Get Packages</h3>
+<div class="paragraph">
+<p>Install Codecs from RPM Fusion Non-free repo:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The required package names seem to change periodically, particularly between major releases of Fedora. If you notice package name changes, let me know and I&#8217;ll update the package names.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install the rpmfusion-nonfree repo</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sudo yum install ffmpeg lame lame-devel</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Install Codecs from RPM Fusion Free repo\</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sudo yum install h264enc x264 x264-devel</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_build_the_command">Build the Command</h3>
+<div class="paragraph">
+<p>The following sections explain the ffmpeg command. If you have come to this blog post and some of the parameters are out of date, you should at least be able to work out the basic required structure. If you do notice any issues, send me an email or leave a comment and I&#8217;ll incorporate your feedback.</p>
+</div>
+<div class="sect3">
+<h4 id="_input">Input</h4>
+<div class="sect4">
+<h5 id="_audio_input_parameters">Audio Input Parameters</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">-f alsa</dt>
+<dd>
+<p>Specify an input format of ALSA audio.</p>
+</dd>
+<dt class="hdlist1">-i plughw:[card],[device]</dt>
+<dd>
+<p>	Specify the card and device number of the microphone you want to record
+from. If you are using a USB headset or mic, do the following to correctly set this parameter:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Plug in the device and run one of the following commands:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code># cat /proc/asound/cards</code></p>
+</li>
+<li>
+<p><code># arecord -l</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You will get a listing of available sound cards.</p>
+</li>
+<li>
+<p>Change <code>plughw:0,0</code>, to <code>plughw:[n],0</code>, where [n] corresponds to the device ID of the headset or mic you want to use.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_video_input_parameters">Video Input Parameters</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">-f x11grab</dt>
+<dd>
+<p>Specifies an input format of X11 Screen Capture.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The <code>-videosize</code> and <code>-framerate</code> parameters <strong>must</strong> appear first in the command. You are passing the frame rate and screen resolution <strong>to</strong> the display and capture area. Place it after <code>-i</code> and you are specifying these values for the <strong>next</strong> input format.
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">-video_size 1920x1080</dt>
+<dd>
+<p>Specifies the screen’s resolution. Alter this to the current display resolution of your device as reported in the Prerequisites.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+There are <strong>no spaces</strong> in the video_size values.
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">-framerate 30</dt>
+<dd>
+<p>Specify a frame rate of 30 fps. This setting does produce large file sizes, but the visual quality is perfect.</p>
+</dd>
+<dt class="hdlist1">-i :0.0+0,0</dt>
+<dd>
+<p>The setting as written captures the left screen. (0.0 specifies the $DEFAULT (system default) monitor display.
+The second set of numbers after the <code>+</code> specifies the offset value from the left-hand display. For example, if you want to capture the second screen, and the L/H monitor runs 1920x1080, the offset value is <code>-i :0.0+1920,0</code>).</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_output">Output</h4>
+<div class="paragraph">
+<p>ffmpeg output properties are set using codecs and their specific
+settings. You need settings for both Audio and Video. Specify the Output (encode) properties in the order you specified the input types:</p>
+</div>
+<div class="sect4">
+<h5 id="_audio_output_parameters">Audio Output Parameters</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">-acodec libmp3lame</dt>
+<dd>
+<p>Specifies that you will encode using mp3 libraries. These libraries encode fine when pushed to services such as Vimeo.</p>
+</dd>
+<dt class="hdlist1">-ar 48000</dt>
+<dd>
+<p>Specifies the audio frequency is 48000 khz. This frequency is "CD Quality".</p>
+</dd>
+<dt class="hdlist1">-ab 320k</dt>
+<dd>
+<p>Specifies the audio bitrate is 320kbps. This is the highest you can go with MP3 audio.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_video_output_parameters">Video Output Parameters</h5>
+<div class="paragraph">
+<p>The only parameter you need to provide is the following one.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">-vcodec libx264</dt>
+<dd>
+<p>Specifies the h.264 codec, otherwise known as MP4 video.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_output_container">Output Container</h4>
+<div class="paragraph">
+<p>Finally, the output file name, which is added as the last command line argument. Ensure it has the .mp4 container extension in the name.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Because you read the full blog post, you now know what all those parameters mean, and can go tell someone else about how to use ffmpeg. Nice one!</p>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/952793?v=3)"><span class="hidden">Jared Morgan's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="">Jared Morgan</a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Brisbane, Australia.</span>
+                    <span class="author-link icon-link"><a href="http://jaredmorgs.github.io">http://jaredmorgs.github.io</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Record%20Screen%20Demos%20on%20Fedora%20Using%20the%20Command%20Line%20(ffmpeg)&amp;url=http://jaredmorgs.github.io/blog/2014/01/11/Record-Screen-Demos-on-Fedora-Using-the-Command-Line-ffmpeg.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jaredmorgs.github.io/blog/2014/01/11/Record-Screen-Demos-on-Fedora-Using-the-Command-Line-ffmpeg.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jaredmorgs.github.io/blog/2014/01/11/Record-Screen-Demos-on-Fedora-Using-the-Command-Line-ffmpeg.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jaredmorgs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://jaredmorgs.github.io/blog">The Musings of Jared Morgan (jaredmorgs) </a> &copy; 2015</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script>
+
+    <script type="text/javascript" src="http://jaredmorgs.github.io/blog/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="http://jaredmorgs.github.io/blog/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-58317734-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
