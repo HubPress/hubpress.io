@@ -1,0 +1,61 @@
+--- 
+layout: post 
+title: Do Not Pull The Battery From A Running Galaxy S2
+date: '2012-03-07T14:18:00.002+10:00' 
+author: Jared Morgan 
+tags: 
+- Pull Battery 
+- Infinite Loop Force Close 
+- Force Close Message on Boot 
+- SGS2
+- SGSII
+modified_time: '2012-03-07T14:18:57.367+10:00' 
+blogger_id: tag:blogger.com,1999:blog-8686472417853803206.post-4281356298719781585
+blogger_orig_url: 
+http://jaredleonmorgan.blogspot.com/2012/03/dont-pull-battery-from-running-sgs2.html
+--- 
+
+# Background 
+
+For other phone manufacturers, pulling the battery from a running device does nothing except turn the device
+off. Not so with Android, or at least in my case the Samsung Galaxy S2
+International Version. 
+
+# Cause 
+
+I needed to get the Serial Number under the battery compartment, so decided to pull the battery on my Samsung Galaxy S2 handset without shutting down correctly. 
+
+# Consequence 
+
+When I rebooted, I got a stack of Force Close messages cascading on each other. The messages entered into a continuous loop so I couldn't access any phone
+functions. 
+Forums suggested that the only way to correct the issue was
+to factory reset the handset, which is no good if you haven't done a
+back-up recently. 
+
+# Fix 
+
+I found a method that allowed me to get the phone working again, without having to fully factory reset the device and lose personal data as a result.
+
+1. If you can, power off your device correctly using the power button and let it fully shut down. 
+2. Take the battery out and leave it out for 15 seconds to remove any residual charge in the mainboard.
+4. Replace the battery (no need to put the battery cover back on).
+5. Press and hold **Home Key**+**Volume Up**+**Power Button**.
+6. Keep holding these buttons until you see a green Android robot symbol. During this process, the white and black Samsung screen should display, turn off, then display again.
+7. Once the Android robot symbol disappears, the SGS2 Data Recovery Screen displays (which looks a bit like a command prompt on Linux machines). **You can now release all buttons**.
+8. At the top of the screen, are four menu options (in green on my model).
+9.  Highlight *Reboot Phone* using the Volume Rocker.
+10. Press the Home Key to select the option.
+11. Let the phone reboot. 
+12. Give the handset time to attempt to load all data from the external microSD, and the internal storage.
+
+# Result
+
+You should see no Force Close messages, and your phone should boot as it
+did before you pulled the battery. 
+
+If you do see Force Close messages, the Force Close messages should be
+so few that you can note the com.android. classnames that are causing
+the Force Close message. Uninstall the app that is causing the Force
+Close issue (in my case it was the Facebook for Android app), then
+reinstall it. You should be back to normal.

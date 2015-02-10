@@ -1,0 +1,40 @@
+--- 
+layout: post 
+<<<<<<< HEAD
+title: Shipito vs Hop Shop Go Freight Forwarding Service Comparison
+=======
+title: 'From USA to The Colony: Shipito vs Hop Shop Go Freight Forwarding Service Comparison'
+>>>>>>> branch 'master' of https://github.com/jaredmorgs/jaredmorgs.github.io
+date: '2014-08-07T09:12:00.000+10:00' 
+author: Jared Morgan 
+tags:
+- freight forwarding 
+- Amazon.com 
+- USA to Australia 
+- shipito 
+- hop shop go 
+modified_time: '2014-08-07T09:12:29.007+10:00' 
+blogger_id: tag:blogger.com,1999:blog-8686472417853803206.post-1229892467713576098 
+blogger_orig_url: http://jaredleonmorgan.blogspot.com/2014/08/from-usa-to-colony-shipito-vs-hop-shop.html 
+---
+
+I recently decided to take the plunge and purchase some products from Amazon.com that were only available in the US, and would not be shipped to anywhere other than USA addresses.
+
+Because I live on the prisoner island, the great southern land known as Australia, I had little choice but to use a freight forwarder to get the product on-shipped to Aussie.
+
+Because I'm impatient, I went with the first recommendation of [http://shipito.com](http://shipito.com/). If I had my time again, I probably would have opted for [http://hopshopgo.com](http://hopshopgo.com/).
+
+
+Feature|Shipito|Hop Shop Go
+--- | --- | ---
+Tax Free Eligibility (Oregon Address)|Yes, but you need to pay for it: $10/month or $50/year.|Free. The default address.
+Account verification process|1. Scan/photograph documents. 2. Upload through customer portal. 3. Wait for them to be verified (pretty quickly, to their credit).|Nothing to do, providing you are already a verified PayPal customer.
+User Interface|Customer portal is a little dated and clunky, but functional once you work out how to use it.|Customer Portal has a clear and easy to understand workflow. The information you need is all in the breadcrumb navigation, and cascades from the breadcrumb nav when you need it. It’s a BPM workflow, so you can easily relate the question or action back to a common workflow.
+Shipping payments/top up|Handled through PayPal, or through your verified credit card. This can add a short amount of time to being able to use the service if you don’t have PayPal, or you are waiting to verify the small amount debited to your credit card. The small amount value was a bit of a pain for me, but this is the fault of my credit card provider, not Shipito.|Integrated with your PayPal account. Uses your default funding source to pay for shipping.
+Customer Service|Really fast, and efficient. I had an issue with my Credit Card verification process, and after a quick chat to an online customer service rep (during Aussie hours) I had the issue resolved.|Can’t comment yet. Have not had to contact them. The website is very comprehensive, so I doubt I will ever need to contact them with a question.
+Shipping Costs|Many options available. The cheapest is about $22, and if you want insurance for loss *and* damage, you must pay $1 to have the item photographed. All up with fees (random bank fees and a bit of courier mark-up), my first consignment was $32. I like to be able to know exactly what I’m up for clearly, so I can work out whether the vendor’s shipping is cheaper than the forwarder’s shipping. In this case I had no choice because the item wasn’t shipping to Australia.|Flat rate, clearly described on the page (uses a number of providers at the back-end, but flat rate applies to all). Makes it easy to calculate what you might be up for. Additional package consolidation charges are declared up-front which helps you work out whether to hold or ship.|
+Package Consolidation|Free service lets you only store one package in your mailbox, therefore no consolidation option unless you opt for the $10/month option ($50/year if you are a regular user). I wasn’t really aware of this when signing up, so when Amazon shipped my part order, I had no choice but to get it shipped for A$32.|Free service lets you store up to three packages for 30 days. After this time, a holding fee applies. I could have saved about \$32 in shipping if I had used this service. Buyer’s remorse for sure.
+Discounts and Rebates|Offers a coupon shopping service with discounts available for certain retailers. Get the code, enter it into the portal. Get the discount.|Offers a third-party cash-back service that you sign up to. Order through their portal, and you get credit attributed to your PayPal account.
+
+**Update**
+I managed to change the freight forwarding provider from shipito to Hop Shop Go, and I have to say the experience was fantastic! I know that Australia Post has also entered the market with a Portland-based freight forwarding service which from what I read is very much like Hop Shop Go. The freight charges appear to be about the same. It's worth checking out in a market that is finally realising that there is no such thing as Geo Boundaries with purchasing any more.

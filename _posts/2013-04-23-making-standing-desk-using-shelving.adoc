@@ -1,0 +1,107 @@
+--- 
+layout: post 
+title: Making a Standing Desk using a Shelving Rail System 
+date: '2013-04-23T16:13:00.000+10:00' 
+author: Jared Morgan 
+tags: 
+- Cheap and Cheerful 
+- DIY 
+- Tool Co-op 
+- Standing Desk 
+- Shelving 
+- Masters North Lakes 
+modified_time: '2013-04-23T16:18:01.671+10:00'  
+blogger_orig_url: http://jaredleonmorgan.blogspot.com/2013/04/making-standing-desk-using-shelving.html 
+---
+
+# Summary
+
+
+You can make a standing desk out of shelving rails and brackets, and some MDF board. It really doesn't have to be expensive or difficult. I built mine for about \$150, but that cost also included paint, and some tools I didn't have. See Basic Costs and Ancilliary Costs for further details.
+
+
+# Lessons Learned
+
+- Measure twice, corroborate your measurements, drill once.
+- The internet can show you how to correctly mount shelves. 
+- Read procedures, even if you think you know how to erect shelving.
+- Don't be too proud to get all the facts before proceeding.
+- Wall studs are your friend. 
+  - Measure these first. Your studs will determine how wide your shelves can be in some scenarios.
+  - Don't even think about using heavy-duty plasterboard screws for this task. They really aren't strong enough.
+  - This shelving is holding all your precious IT gear, not your collection of Lego models.
+  - Studs or nothing.
+- Don't cheap out on tools: get what you need and don't compromise. Or beg, borrow, (but don't steal - because stealing is bad m'kay).
+- Get your wood cut at your local big hardware shop. They usually do it for free, and unless you have a circular saw and a keen eye, you will get much better results having it done on a cutting station.
+
+# Basic Costs
+
+- Double-slot Upright Shelving Rail White 100cm x 2 = $14.50
+- Double-slot Bracket 320mm White x 6 = $29.40
+  - Brackets of this size should have holes in the bottom to screw through. Ensure yours do.
+- MDF Standard 16mm 900 x 600mm Sheet x 2 = $18.00
+  - One of these boards gets cut in half, so you get two 300mm shelves.
+- Box of 50 10g 50mm Wood Screws (you only need 8) = $9.90
+
+Basic costs total **$79.00** if you have the following Anciliary items: 
+
+- Stud detector
+- Decent spirit level, at least 60cm long
+- Some undercoat and gloss paint
+- Sample pot paint roller.
+- Nuts, bolts, and screws that can go through the shelf brackets to anchor the shelves into place.
+
+Ancillary Costs
+---------------
+
+- 60cm Aluminium Spirit Level - $15.00
+- 300g Hole Filler (hopefully *you* won't need this) - $4.50
+- Zinsser Bullseye 1-2-3 Primer Sealer Undercoat 1 litre (you only need about 500mls) - $21.90
+  - Really, any cheap undercoat will do. This brand was the smallest and cheapest at the time.
+- 1L Pascal Trim W/based Gloss White Enamel (hard-wearing for desks) - $27.95
+  - Any Enamel Gloss paint will be great. 
+  - Gloss is easy to clean, and won't be susceptible to greasy finger marks.
+- Sample Pot Paint Roller with extra roller - $2.00 (seriously worth it).
+- Drill, with a selection of drill bits
+  - I had one of these. 
+
+**Note**
+Borrow any tools in the ancillary list to save a chunk of change on the raw build cost.
+
+Total for all these ancillaries total about **$72.00**
+
+# Vital Statistics
+
+- Shelving rails are spaced 450mm apart. 
+  - For me, this was the distance between studs (the vertical strips of timber that hold a plasterboard wall in place). 
+  - You will need to measure your stud distance before continuing. Don't stuff this up, otherwise that Hole Filler on the Ancillaries list will be in your hardware cart.
+- Shelves are 900mm long. 
+  -   This was the closest pre-cut MDF sheet I could find at Masters North Lakes.
+
+If you want to convert your standing desk back to a seated desk, ensure you put the bottom of the shelving rails at a height that is equal to your current seated desk. You can see that in my picture.
+
+- I used thin nuts and bolts to secure the shelf bracket to the MDF. 
+  - You can use wood screws if you like for the 300mm shelves, drilled from underneath the shelf through the bracket holes.
+  -  I didn't want to risk it for the 600mm shelf:
+    - It can be subjected to some load if you lean on the table.
+    - There is 300mm of overhang resting on the shelf brackets. 
+    - Bolts will ensure it doesn't go anywhere.
+
+# What About The Old Desk?
+
+The original desk can be used for any number of things:
+
+- Put your drinks on there and keep them away from your IT gear.
+- Put admin stuff like filing trays, game figures, your collection of Start Wars Lego.
+- Use the original desk as a break desk when having a phone or video call.
+
+**UPDATE Jan 2015**
+I have transitioned to a standing desk environment so well now that the original desk is now used as a workbench in the garage for times when I need to fix the odd toy or household item.  
+
+# Complimentary Benefits
+
+Because I'm a tight arse, and didn't have enough money to purchase some tools, the cool people where I worked loaned me most tools I needed.
+
+I took this one step further, and made a forum where staff can record what tools they are willing to loan to other staff members. So far, it seems to have had a slow response, but as time goes by I can see it as a great way to have an unofficial tool co-op for everyone to benefit from.
+
+Could your office use a Tool Co-Op?

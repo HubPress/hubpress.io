@@ -1,0 +1,31 @@
+--- 
+layout: post 
+title: Using Open Source to Reinvigorate Pinball 2000 
+date: '2011-10-04T09:20:00.000+10:00' 
+author: Jared Morgan 
+tags: 
+- Pinball 2000 
+- nucore 
+- Open Source 
+- Linux 
+- Big Guys Pinball 
+- Pin2K 
+modified_time: '2011-10-04T09:26:53.338+10:00' 
+blogger_id: tag:blogger.com,1999:blog-8686472417853803206.post-3941781066220959839 
+blogger_orig_url: http://jaredleonmorgan.blogspot.com/2011/10/using-open-source-to-reinvigorate.html 
+--- 
+
+I remember when I was restoring pinball machines that I learned a very important lesson about computer repair. I accidentally caused mainboard damage to a [Pinball 2000](http://en.wikipedia.org/wiki/Pinball_2000) (Pin2K) game: [Star Wars Episode 1](http://www.ipdb.org/search.pl?any=star+wars&search=Search+Database&searchtype=quick#4458).  It is very easy to do, because the two Molex connectors from the ATX power supply were not [keyed](http://en.wikipedia.org/wiki/Electrical_connector#Keying), and you could reverse the ground for power. I did this, and took out the power circuit on the mainboard.
+
+This was a **big** problem, because the Pin2K mainboards were a BAT-style PC mainboard running a Cyrix Media GX CPU which was connected to a Cyrix CX5520 bridge. These motherboards were used mainly in set-top boxes such as cable TV systems. The Pin2K series used a PCI custom card called a PRISM card. This card contained all the game logic, sound effects, and video packages for the games. If the power spike travelled to the PRISM card, you basically had yourself a fantastic $8000 piece of furniture.
+
+At the time, the machine was mothballed.
+
+I discovered that [Big Guys Pinball](http://www.bigguyspinball.com/index.shtml) have reverse engineered the Pin2K core, and created some custom boards which can be used to replace damaged Pin2K logic box systems. The new system is called *nucore.*
+
+The great thing is they are using Linux (Ubuntu), and [COTS](http://en.wikipedia.org/wiki/Commercial_off-the-shelf) motherboards and Video Cards, to make this system a reality. You can purchase the components separately, or as a plug-and-play system ready for production use.
+
+Hooray for Open Source, and Ingenuity!
+
+**Update**
+Unfortunately the Big Guys at Big Guys Pinball ran into a little bit of strife recently during the pinball resurgence. I believe they were kindly asked to discontinue producing these boards because Capital Pinball had the exclusive rights to reproduce all Bally and Williams parts (including, unfortunately, the Pin2K hardware system). To date, I am not aware of any efforts to resume production. This is a real shame, and unless Capital Pinball gets their act together, it may see the end of crippled Pin2K units.

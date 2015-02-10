@@ -1,0 +1,51 @@
+---
+layout: post
+title: Stern Modernises SAM to SPIKE
+author: Jared Morgan
+published: true
+tags:
+- pinball
+- spike
+- stern
+- MPU
+---
+
+I'm very excited to learn that Stern Pinball has modernized their SAM pinball controller with a new system named SPIKE. The new system was announced along-side Stern's latest pinball offering *Wrestlemania*. I'm not going to discuss the theme or licence, because it bores me and reminds me quite a bit of Data East's *WWF Royal Rumble*.
+
+If you've ever looked inside the backbox of a pinball machine, you'll be familiar with the bundes of wire and huge driver boards filling up the space. Not to mention the meters and meters of wire under the playfield surface. Not so with SPIKE.
+
+![Cabinet view of SAM and SPIKE with an inverted playfield.]({{ site.baseurl }}/images/Stern_SAM_SPIKE.jpg)
+
+SPIKE (no one knows what that acronym or initialism stands for yet) uses a distributed micro-controller system, where boards specific to a subset of the overall pinball game are placed close to the components they control. 
+
+![The micro-controller flipper driver board that comprise the SPIKE system.]({{ site.baseurl }}/images/WWE_Flipper_Area.jpg)
+
+This means far less wiring. Which in turn means far less cost, and increased reliability.
+
+![The SPIKE System Mainboard.]({{ site.baseurl }}/images/SPIKE_Mainboard.jpg)
+
+The Mainboard uses Linux to power the primary system, and replacable eMMC flash memory to store the game code on the board rather than the older EPROM technology. There is also a new short-circuit prevention circuit, which will prevent operators from blowing up lamp matrics and switch matrics. The replaceable sub-boards will make any field repairs much simpler if they fail. 
+
+The player features include a headphone jack, proper three channel sound, LEDs in the backbox for variable backbox lighting control (reduced playfield glare in low-light situations), better flipper tech (more on this below) and future possibilities for network play with additional Wi-Fi modules. 
+
+[The PinSide Forum](https://pinside.com/pinball/forum/topic/sterns-new-platform-titled-spike) has some interesting perspectives on the new system: 
+
+**General Feedback from the Pinball Community**
+
+- Apparently the very coldly-received 2012 *[Transformers The Pin](http://www.ipdb.org/machine.cgi?id=5861))* from Stern was basically "SPIKE Beta". I have a new appreciation for it, but only for the fact it was a beta testing platform. ;)
+- This technology was also on location test at Modern Pinball NYC it seems. The AC/CD "Let There Be Rock" LE seemed to contain the SPIKE system in the backbox, a PinSide poster revealed in the thread, backed up with pics.
+- Game code is on a Compact MMC.
+- Dual-wound flippers. With both a Wind and Hold circuit, Stern catches up with Bally/Williams, who used this technology until they closed their pinball division in 2000.
+- The button battery on the main backbox board is mounted at right-angles to the board, which will prevent a common issue with electrolyte damage to board components from leaky batteries. Personally, I don't know why they just didn't go with an adapted Flash RAM board which you can retrofit onto older games.
+- Debate about the protocol: whether it is [Controller Area Network](http://en.wikipedia.org/wiki/CAN_bus) (CAN) or [RS-485](http://en.wikipedia.org/wiki/RS-485)
+- [John_I](https://pinside.com/pinball/forum/topic/sterns-new-platform-titled-spike/page/5#post-2159596) gives a great summary of the technology from an electronic engineer's perspective.
+- John_I confirmed the large driver board use good old "through hole" parts (that is, component with legs that go through holes in the PCB) rather than Surface Mount parts. This means that PinTechs can still fix boards rather than having to replace them. But, honestly, a good electronics engineer could do repairs to surface mount boards anyhow.
+
+**Observations from some PinSiders**
+
+- Networking could be made to email the operator for faults, and enable remote auditing ([mcluvin](https://pinside.com/pinball/forum/topic/sterns-new-platform-titled-spike/page/4#post-2158546)). I personally think this will happen.
+- Some concerns about entering WPA Wi-Fi keys ([Pinchroma](https://pinside.com/pinball/forum/topic/sterns-new-platform-titled-spike/page/5#post-2158662)) but I'd think this would be done with a keyboard through the USB port.
+
+Very interesting times for Pinball, indeed. 
+
+How long has it been since *you* played a game of Pinball? 

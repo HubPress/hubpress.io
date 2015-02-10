@@ -1,0 +1,46 @@
+---
+layout: post
+title: Sony MDR-EX90SL Headphone Bass Port Mod
+date: '2009-12-08T16:25:00.000+10:00'
+author: Jared Morgan
+tags:
+- Headphone Mods
+- Sony
+- MDR-EX90SL
+modified_time: '2009-12-08T16:27:18.327+10:00'
+blogger_id: tag:blogger.com,1999:blog-8686472417853803206.post-7613815997048043033
+blogger_orig_url: http://jaredleonmorgan.blogspot.com/2009/12/sony-mdr-ex90sl-headphone-mod-huge.html
+---
+
+OK. I love my music, and I love headphones that can replicate bass really well. I decided to purchase the Sony MDR-EX90SL (the SL stands for Short Lead).
+
+I've been pretty happy with them up until now, but I have found that when I increase the volume of the phones a bit in the office, there is quite a bit of noise bleed.
+
+The MDR-EX90 is one of the few headphones of this type that feature a 13.5mm driver. Most other canal style headphones around this price point only have a 9mm or 10mm driver because the headphone body is designed to sit in the ear ([Headphone Ergonomics](http://gizmodo.com/164658/sony-mdr+ex90sl-earphones-fit-a-135mm-driver-into-a-9mm-hole))
+
+To accommodate this design, the headphones have a standard headphone driver (think Apple headphones), but there is a plastic cover with sound ports, and a canal plug (that takes the silicone tip). This plastic cover channels the sound through the canal tube into your ear canal. So rather than having the round speaker body wedged into your ear opening, you have a comfortable silicone bud that allows the 12mm driver to float away from your ear. 
+
+For some reason, the headphone designers chose to leave bass ports open on the face of the plastic cover. This is the part of the headphone design which causes the sound bleed and loss of bass reproduction. The fix is so simple, it is ridiculous. You can turn your already great MDR-EX90 set into something out of this world for about 5c worth of material and about 10 minutes worth of time.
+
+You will need:
++ small scissors (capable of cutting very close to edges of objects)
++ some clear packing tape.
+
+This is how you do it: 
+
+1. Remove the silicone rubber tips (to avoid damage).
+2. Cut a square of tape that will fit over the driver face. If you have overhang it doesn't matter; you will be trimming off the excess.
+3. Put the tape square over the underneath of the driver (where the holes are near the *L* and *R* markings).
+4. Using the scissors, cut around the voice tube, so the tape fits neatly around the base of the voice tube. A "U" shape is effective for this area.
+5. Ensure the "bass ports" are completely sealed with tape; the mod will fail if any air can escape. 
+6. If you don't get it right the first time, hang the expense and use another square of tape. :)
+7. Once you are happy with the seal, trim the excess tape from around the outside edge of the driver. 
+  + Cut as close to the side of the driver as possible, so you don't leave any jagged edges of tape. 
+  + Jagged edges of tape will annoy your ears.
+8. You have now modded one channel. Repeat the steps for the other headphone channel.
+
+Now test the performance on music that you know intimately; you'll notice the difference. You'll also have to turn the volume down quite a bit! What you've effectively done is sealed the headphones without having to take them apart and risk damaging the delicate driver. All the sound will be directed where it should be, right down into your ear canal.  You'll also notice the increased sound isolation.
+
+If you have a hole punch, you might find it easier to punch a neat hole in a sticker the same size as the canal tube diameter.&nbsp; Peel the sticker backing off, push the canal tube through the hole, trim the sticker to suit, and you're done.
+
+Enjoy your new sound!

@@ -1,0 +1,51 @@
+---
+layout: post
+title: Poetic Revolution Case for the NVidia Shield Tablet (All Variants)
+author: Jared Morgan
+tags:
+- Poetic
+- Revolution
+- Tablet Cases
+- NVidia Shield
+---
+
+I've been waiting for Poetic to release a good protection solution for the NVidia Shield Tablet, and they have done a pretty good job with the Poetic Revolution case. There are some small issues with the case, but overall it is definitely the most rugged case offering I've seen on the market at the time of writing.
+
+![The Shield Tablet installed into the case]({{ site.baseurl }}/images/Poetic/Install_Complete.jpg "The Poetic Revolution Case For Shield Tablets Portrait Mode")
+
+![The Shield Tablet installed into the case]({{ site.baseurl }}/images/Poetic/Install_Complete_Landscape.jpg "The Poetic Revolution Case For Shield Tablets Landscape Mode")
+
+The case is sturdy in design, and definitely offers advanced protection for drops and mishaps. I really wish Poetic decided to adopt the style of the Slimline case range for the Nexus 7 2013. I'll go into comparison detail in the Cons section.
+
+# Pros
+
+- It has an inner core of plastic that the device is pushed into. The outer layer is dense, semi-rigid plastic.
+- Built-in kick stand in landscape orientation.
+- The hard plastic insert has padding that elevates the tablet away from the case for airflow.
+- Even with bulky cable plugs, there seems to be plenty of room for HDMI cable connections, which was an issue with some other case designs.
+- The screen edges have a nice bevel on them that lets you access the Android Nav buttons easily.
+
+# Cons
+
+- The dust cover flap for the sockets does not return to the stowed position easily after an extended period of being forced open.
+  - Slimline range had much softer rubber which made for much more flexible port covers.
+  - I'm contemplating whether to just cut the flap off as it make it harder to access the ports anyhow. Once you cut, you can't go back though…
+- The kick stand only works in Landscape orientation. In contrast, the Slimline range had the most versatile built-in stand that worked in multiple positions and orientations.
+
+# Photos
+
+Here are some shots of the case, taken while I was installing it.
+
+![The front of the case immediately after unboxing it]({{ site.baseurl }}/images/Poetic/Case_Front.jpg "Front of the case immediately after unboxing.")
+
+![The back of the case, showing the kick stand]({{ site.baseurl }}/images/Poetic/Case-Back.jpg "The back of the case, showing the kick stand.")
+
+![The right portrait side of the case, showing the button zone]({{ site.baseurl }}/images/Poetic/Shell_Internal.jpg "The buttons.")
+
+![The internal plastic shell and the outer soft plastic housing]({{ site.baseurl }}/images/Poetic/Inner_and_Outer.jpg "The internal plastic shell and the outer soft plastic.")
+
+![The cutouts for the USB, HDMI, and Headphone plugs, and the left bass port]({{ site.baseurl }}/images/Poetic/Connecter_Cutout_Insert.jpg "The cutouts for the USB, HDMI, and Headphone plugs, and the left bass port.")
+
+![Connector Port Holes]({{ site.baseurl }}/images/Poetic/Left_Side_Insert.jpg "The plastic insert showing the portholes for the connectors.")
+
+What do you think about cases? Worth it? Or just bulky additions to your device?

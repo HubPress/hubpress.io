@@ -1,0 +1,89 @@
+--- 
+layout: post 
+title: 'Google Play Music: From On-device to In The Cloud'
+author: Jared Morgan 
+tags: 
+- Google Play Music 
+- Use Case 
+blogger_id: tag:blogger.com,1999:blog-8686472417853803206.post-3965550674915951447
+blogger_orig_url: http://jaredleonmorgan.blogspot.com/2013/06/get-off-device-centric-music-storage.html
+--- 
+
+* for the TOC
+{:toc}
+
+# Updated Info
+
+Before Android, I was restricted to purchasing mobile devices with external memory slots or 32GB internal drives so I could manually transfer as much of my extensive music collection onto my primary listening device. 
+
+Back in 2013, I decided to put my faith in Google and I now use Google Music exclusively to manage my music collection, and have my music on any device when I want it. 
+
+Google's Music service has fundamentally changed the way I consume! Over Christmas 2014, I was streaming purchased albums by _Pentatonix_ to my HDTV through a Chromecast dongle from my Shield Tablet. I never dreamt back in 2012 that this would be possible, but here we are.
+
+I'm leaving the original post largely intact for posterity, however there are some updates that make using the service even better now:
+
+- On Chrome, you have a web agent that manages syncing "external music" to Google Music. Before it was an RPM (for fedora) and a .exe for Windows. This change greatly streamlines the process of uploading music.
+- You'll probably find when you go in and attempt to edit an album's details that Google has already noticed an issue with the details and has suggested better artwork and album metadata for you.
+- If you own a Chromecast, check the offers regularly for Google Play Music *All Access* for free trials of the unlimited music service. It's worth checking out.
+- Oh, and *if* you own a Chromecast, you would almost certainly tried using your device as a remote control for your music. This is great for parties where you want your guests to control the playlist. 
+
+# Original Blog
+
+When Google Play Music was made available in Australia, I thought I should at least give the service a go based on the positive reviews I read about the service. 
+
+Uploading 20,000 songs to the service seemed like a good start for my collection, but until doing so I didn't realise my *entire* music collection was only 7000 songs small. I quickly realised that the offering was not 20,000 *MB*, but 20,000 *actual songs* (even if they were 320kbs quality).
+
+I began purchasing albums directly from Google Play and loved the convenience of the albums being added to my library and available for playback instantly. And that's on all devices sharing the same Google Account. 
+
+If I purchased an album outside the Play Store on a service such as BandCamp, I can dump the album into the watched folder on any PC and it is available on all my devices in less than 10 minutes (or less time if my upload speed is fast).
+
+If you are on the fence about the Google Play Music service, or cloud music services in general, these use-cases may encourage you to jump down from the pickets and into the cloud music pasture. These use-cases are a few I could think of based on problems I've directly experienced, or solutions to problems I've heard about from other people.
+
+## Use Case 1 - Wired for sound, wirelessly.
+
+### Scenario
+
+Over the weekend, I had to rebuild the Windows PC. I wanted to use my tablet for entertainment while I hand-held the upgrade process, but also wanted to have access to music while doing this boring task. I didn't want to be wired to the speaker system with my tablet, as the headphone jack wasn't long enough to reach the couch.
+
+### Solution
+
+Plug your mobile phone into the speaker system and launch the Play Music app on that device. Sit back on the couch and enjoy G+, and Pinball Arcade from the comfort of the couch on the tablet.
+
+Or if you own a Chromecast, just stream your music from your tablet directly to the TV, and browse social media at the same time. Welcome to the future!
+
+## Use Case 2 - Where there's a computer, there's your music
+
+### Scenario
+
+I'm sitting in a public space that doesn't have a Wi-Fi access point, or good GSM Data coverage and forgot to *pin music* (download for off-line play) to my device from Google Music. There's a PC that has internet access and a speaker system attached in the public space.
+
+### Solution
+
+Log into the PC using your Google account. Boom! Instant
+access to your entire music library. Start enjoying music over the PC
+speakers instantly. 
+
+## Use Case 3 - Physical media is so 2005
+
+### Scenario
+
+I want a new CD album, but never get a chance to go to a music store and
+search through racks of CDs. And then I get the CD home and immediately
+chuck it in a storage crate after converting it to MP3s. What a waste of
+space.
+
+### Solution
+
+Purchase your music directly from Google Play, and it is available instantly across all your devices. No CD rack required. If you are a little concerned about Google holding your "only copy" of the album, then fear not because you can download an album up to two times from the service (so you can add it to your physical storage at home). 
+
+## Use Case 4 - Keeping up with artist releases, and finding similar artists.
+
+### Scenario
+
+I want to keep up-to-date with my favourite artists but don't have the time to rummage through CD bins at my local music store. 
+
+### Solution
+
+A quick search of your favourite artist reveals all the albums they have for sale on Play Music, including the albums you have purchased or uploaded. You can instantly see gaps in your collection, and fill them instantly with an online album purchase. Legally. And with the preview track feature on the albums, you can always have a listen to the track to see if more recent albums by your favourite artist haven't gone all avant-garde and hipster and no longer interest you.
+
+If you use Google Plus, you can also listen to albums in full when your G+ contacts share an album purchase in their stream. This is an interesting way of exposing yourself to new music.

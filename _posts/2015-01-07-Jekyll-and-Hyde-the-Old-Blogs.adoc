@@ -1,0 +1,17 @@
+---
+layout: post
+title: Jekyll and Hyde (The Old Blogs)
+category: Technology
+tags:
+- jekyll
+- blogger to jekyll
+- HTML to Markdown
+---
+
+The time has come to try new things. I've decided to migrate all my blogger posts from the Google service to GitHub. Markdown and AsciiDoc are already incredibly popular writing formats for folks who want to quickly and easily whack together a quick blog, with some images and perhaps some embedded video. 
+
+I've used the Jekyll Blogger migrator to prepare my old blog entries for Jekyll. After a few challenges getting RubyGems set up correctly, I got HTML pages from the Blogger dump, not Markdown pages. I'm a bit surprised by this, but I'm OK with HTML pages containing all the YAML markup, including all the tags I used.
+
+I've got one particularly horrible blog entry with a HTML table in it. I've discovered a free service called [CloudConvert](http://cloudconvert.com) which will convert your HTML to Markdown quite well. You can set up a free account which gives you 25 file conversions per day. And with a free account, you can specify the language it converts to as well. I chose GitHub Extended Markdown and the service sent a file to Dropbox with the table data formatted OK.
+
+When you migrate from a legacy service, it is a good idea to decide where you *draw the line* with the legacy content. Stuff you blogged about 4 years ago is almost certainly no longer relevant now. For example, my old blogs have some very old posts to do with Nokia phones that are very stale now: these could go. And bugs I discovered with Fedora 17 are no longer relevant: yep, these could definitely go.

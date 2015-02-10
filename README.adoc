@@ -9,7 +9,7 @@ Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (twitte
 
 NOTE: HubPress is actually in preview, if you find some bugs come to see us.
 
-Complete documentation is coming here soon!
+Documentation is rapidly evolving as the project gains momentum. Check back regularly for more tips on how to use HubPress.
 
 == Getting Started
 
@@ -60,33 +60,82 @@ The following parameters are mandatory :
 +
 image:http://hubpress.io/img/home-install.png[Install complete,300]
 
-=== Usage
+== Administration Console
 
 The HubPress Administration Console is available at */hubpress*
 
 * `http://<username>.github.io/hubpress/` for GitHub Hosted blogs, or
 * `http://<username>.github.io/<repositoryName>/hubpress/` for Domain Hosted blogs.
 
-==== Connecting HubPress to GitHub
+=== Log Into the Administration Console
 
 image:http://hubpress.io/img/login.png[Install complete,300]
 
-GitHub credentials are required to log into HubPress. Once you authenticate, a personal token is created for future calls from HubPress to the GitHub API.
+Enter your GitHub credentials to log into HubPress Admin.
 
-==== Settings Page
+Once you authenticate, a personal token is created for future calls from HubPress to the GitHub API.
+
+This is synchronized across all sessions of HubPress, so if you open the Administration Console on your PC and then your Tablet, the token is applicable to all devices.
+
+=== Settings Page
 
 You can configure basic blog settings (such as CNAME and Pagination) and social media accounts you want to connect to your blog.
 
-TIP: Coming soon
+==== Meta
 
-==== List of posts
+This section contains basic information configured in the `/hubpress/config.json` file.
 
-TIP: Coming soon.
+The *Git CNAME* field is configurable, and lets you specify a custom domain name for your blog. See https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/ for instructions about setting up a CNAME for your blog.
 
-==== Your first post
+==== Site
 
-TIP: Coming soon.
+===== Title and Description
 
-==Credits
+The *Title* and *Description* fields allow you to give your blog a name, and tell visitors what they can expect from your blog posts.
 
-TIP: Coming soon.
+The *Logo* and *Cover Image* fields can be used the following ways:
+
+* A HTML link to an image hosting service. For example gravatar.
+* A link to an image committed to the /images directory of your blog repository.
+
+===== Theme
+
+The *Theme* is selectable from the list of themes stored in the `/themes` directory. Specify it according to it is spelled in it's containing folder.
+
+===== Google Analytics
+
+The *Google Analytics* field takes the unique Google Analytics code generated for the site.
+
+===== Disquss Shortname
+
+The *Disquss shortname* field takes your Discuss user name. Only the user name is required, not a link to your profile page.
+
+==== Social Network
+
+All fields in this group require full URLs to your public profile page. The way these values are rendered on your blog depends on the theme selected.
+
+== Managing Posts
+
+When you first start HubPress, the *Posts* view is empty. As you create blog posts, the page populates with the list of posts on the left, and a live preview of the blog post itself on the right.
+
+=== Creating a Post
+
+NOTE: If you have never used AsciiDoc before to write content, the http://asciidoctor.org/docs/asciidoc-writers-guide/#lists-lists-lists[AsciiDoctor Writer's Guide] should be your first stop in your journey. The guide provides both basic and advanced mark-up examples for you to copy and use.
+
+HubPress Editor displays the AsciiDoc code on the left, and the live preview on the right.
+
+==== Basic AsciiDoc Blog Tips
+
+===== Blog Title and Headings
+
+The blog title is always Level 1 in an AsciiDoc post. For example, `= Blog Title` sets the name of the Blog Post to `Blog Title`.
+
+If you want a first-level heading you use `== First Level Heading`, and so on to create other nested headings.
+
+===== Tags and Categories
+
+NOTE: Coming Soon.
+
+== Credits
+
+Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
