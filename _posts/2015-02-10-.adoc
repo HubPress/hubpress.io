@@ -1,5 +1,6 @@
 = 快乐时光
 :published_date: 2015-02-10
 :hp-tags: 博客,博客,博客
+:hp-image: https://raw.githubusercontent.com/senola/pictures/master/background/background24.jpg
 
 这是一首简单的小情歌，唱着。。。。。。。啦啦啦啦啦！！
