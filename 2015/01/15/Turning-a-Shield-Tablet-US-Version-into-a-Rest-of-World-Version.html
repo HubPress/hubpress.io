@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Turning a Shield Tablet US Version into a Rest of World Version</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://jaredmorgs.github.io/blog/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://jaredmorgs.github.io/blog/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="http://jaredmorgs.github.io/blog/2015/01/15/Turning-a-Shield-Tablet-US-Version-into-a-Rest-of-World-Version.html" />
+    
+    <meta property="og:site_name" content="The Musings of Jared Morgan (jaredmorgs) " />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Turning a Shield Tablet US Version into a Rest of World Version" />
+    <meta property="og:description" content="Summary I&amp;#8217;ve been waiting patiently until NVidia released the Android 5.0 Factory Images in late December 2014 before I even attempted this experiment. This blog post describes how to turn the NVidia Shield LTE Tablet I purchased..." />
+    <meta property="og:url" content="http://jaredmorgs.github.io/blog/2015/01/15/Turning-a-Shield-Tablet-US-Version-into-a-Rest-of-World-Version.html" />
+    <meta property="article:published_time" content="2015-01-14T14:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-02-10T07:21:23.129Z" />
+    <meta property="article:tag" content="NVidia" />
+    <meta property="article:tag" content="Shield Tablet" />
+    <meta property="article:tag" content="US to Rest of World" />
+    <meta property="article:tag" content="wx_na_wf to wx-un-do" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Turning a Shield Tablet US Version into a Rest of World Version" />
+    <meta name="twitter:description" content="Summary I&amp;#8217;ve been waiting patiently until NVidia released the Android 5.0 Factory Images in late December 2014 before I even attempted this experiment. This blog post describes how to turn the NVidia Shield LTE Tablet I purchased..." />
+    <meta name="twitter:url" content="http://jaredmorgs.github.io/blog/2015/01/15/Turning-a-Shield-Tablet-US-Version-into-a-Rest-of-World-Version.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "The Musings of Jared Morgan (jaredmorgs) ",
+    "author": {
+        "@type": "Person",
+        "name": "Jared Morgan",
+        "image": "https://avatars.githubusercontent.com/u/952793?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://jaredmorgs.github.io"
+    },
+    "headline": "Turning a Shield Tablet US Version into a Rest of World Version",
+    "url": "http://jaredmorgs.github.io/blog/2015/01/15/Turning-a-Shield-Tablet-US-Version-into-a-Rest-of-World-Version.html",
+    "datePublished": "2015-01-14T14:00:00.000Z",
+    "dateModified": "2015-02-10T07:21:23.129Z",
+    "keywords": "NVidia,  Shield Tablet,  US to Rest of World,  wx_na_wf to wx-un-do",
+    "description": "Summary I&amp;#8217;ve been waiting patiently until NVidia released the Android 5.0 Factory Images in late December 2014 before I even attempted this experiment. This blog post describes how to turn the NVidia Shield LTE Tablet I purchased..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="The Musings of Jared Morgan (jaredmorgs) " href="http://jaredmorgs.github.io/blog/rss" />
+</head>
+<body class="post-template tag-undefined tag-undefined tag-undefined tag-undefined">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://jaredmorgs.github.io/blog">Home</a>
+        <a class="subscribe-button icon-feed" href="http://jaredmorgs.github.io/blog/rss/">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-undefined tag-undefined tag-undefined tag-undefined">
+
+        <header class="post-header">
+            <h1 class="post-title">Turning a Shield Tablet US Version into a Rest of World Version</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-01-15">15 January 2015</time>  on <a href="http://jaredmorgs.github.io/blog/tag/NVidia">NVidia</a>, <a href="http://jaredmorgs.github.io/blog/tag/ Shield Tablet"> Shield Tablet</a>, <a href="http://jaredmorgs.github.io/blog/tag/ US to Rest of World"> US to Rest of World</a>, <a href="http://jaredmorgs.github.io/blog/tag/ wx_na_wf to wx-un-do"> wx_na_wf to wx-un-do</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;ve been waiting patiently until NVidia released the Android 5.0 Factory Images in late December 2014 before I even attempted this experiment. This blog post describes how to turn the NVidia Shield LTE Tablet I purchased with the US firmware to a "Rest of World" variant, safely and successfully.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_do_this">Why Do This?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Normally, changing a device to a completely different device variant OS is a risky undertaking. But because NVidia have made minimal mods to the AOSP cut of their operating system, you can switch any LTE Shield Tablet to use either the "North America" (wx_na_do) or "Rest of World" (wx-un-do) Android Builds.</p>
+</div>
+<div class="paragraph">
+<p><strong>Providing you can get a hold of a Rest-of-World OTA update that contains an updated modem stack</strong>, folks like me in Australia can put a local SIM in my tablet and use 4G data on the go. If I kept the firmware as "US Only" I would not be able to use my local carrier&#8217;s 4G spectrums, which differ from the USA.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_procedure">Procedure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This whole procedure would be made much easier if someone would just create a Modem Flashable Zip that overwrites the Modem files, but this method described below removes any risk of corrupted files as part of the flash.</p>
+</div>
+<div class="paragraph">
+<p>This method also allows those folks that prefer to keep their device stock from messing around with the OS, which may prevent OTA updates from deploying to your device.</p>
+</div>
+<div class="sect2">
+<h3 id="_prerequisites">Prerequisites</h3>
+<div class="paragraph">
+<p>You have already installed the android-tools package (<code>sudo yum install android-tools</code>) that provides the fastboot protocol and the Android Debug Bridge (ADB). On Linux, ADB "just works".</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re using Windows to do this:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>swap out forward-slashes for back-slashes</p>
+</li>
+<li>
+<p>configure ADB on your Windows PC before continuing.</p>
+</li>
+<li>
+<p>Look on XDA for great tutorials on installing and configuring ADB.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_download_the_recovery_image">Download the Recovery Image</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The commands from this point on are for fedora 21 (but should work fine with most flavours of Linux),
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download the Update 2.0 factory images from the <a href="https://developer.nvidia.com/gameworksdownload#?search=SHIELD%20Tablet%20LTE&amp;tx=$additional,shield">NVidia Developer Page</a>. You need to become a registered developer to download these files directly, but if you do a search on XDA Forums you should find plenty of download mirrors.</p>
+</li>
+<li>
+<p>If you chose the factory images, extract the file to a working directory and change the .sh script permissions to executable.</p>
+</li>
+<li>
+<p>Run <code>./extract-nv-recovery-image-shield-tablet-wx_un_do-<em>[version]</em>.sh</code> and wait for about 10 seconds for the licence agreement to display.</p>
+</li>
+<li>
+<p>Scroll down to accept the T&amp;Cs and then type <strong>I ACCEPT</strong> to extract the required files to the working directory.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_unlock_bootloader_and_flash_recovery">Unlock Bootloader and Flash Recovery</h3>
+<div class="paragraph">
+<p>You are ready to flash the recovery image to the device. But make sure you are happy all files have been backed up: this is your last chance before your tablet is completely wiped.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Connect the Shield Tablet to the PC.</p>
+</li>
+<li>
+<p>Reboot to the bootloader using one of the following methods:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Software Method:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Run <code>adb reboot bootloader</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Hardware Method</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Press "Volume Down" &#8594; "Power" until you see the screen backlight flash,</p>
+</li>
+<li>
+<p>Keep holding "Volume Down" and release Power button until the device
+boots.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you have not already unlocked the bootloader, run <code>sudo fastboot oem unlock</code>. This erases all user data, but you&#8217;re going to be doing that with the factory image flash process, so it is inconsequential.</p>
+</li>
+<li>
+<p>Run <code>sudo ./flash-all.sh</code> and walk away. The recovery screen will not show any progress, but the terminal will: all is well if the HDD light is blinking away madly.</p>
+</li>
+<li>
+<p>Once the terminal returns to the command prompt, the tablet is ready to restart:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Press the Vol Down key to select Reboot.</p>
+</li>
+<li>
+<p>Press Power to restart the tablet and begin the first run process.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_post_update_boot_time_relax">Post-update Boot Time: Relax!</h3>
+<div class="paragraph">
+<p>You&#8217;ll remember that the first time this runs, it takes a very long time. The tablet will sit at the NVidia Logo screen for what seems like an eternity, and you may be concerned that you&#8217;ve bricked the tablet. Don&#8217;t be: patience is a virtue here. It will boot, and the world won&#8217;t end.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_install_an_ota_to_get_the_modem_files">Install an OTA to get the Modem Files</h3>
+<div class="paragraph">
+<p>I found out that after installing everything, I still couldn&#8217;t use my Virgin Mobile SIM to connect to the local network here. A bit of digging on XDA revealed a frustrating fact: the factory images don&#8217;t ship modem stacks! Why, I ask. WHY?</p>
+</div>
+<div class="paragraph">
+<p>The way folks recommended working around this issue is to wait for your tablet to detect that it has an older OS installed. This is why you download the 2.0 (Android 5.0.0) factory image, so you could receive the 2.1 (Android 5.0.1) OTA, and let it update to the latest version. The Modem stack included in the OTA should install and then you can begin using 4G data.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_you_did_it">You Did It!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Great Job!</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ve successfully factory reset your Shield Tablet to the Rest of World variant of the firmware. But here&#8217;s the problem: the stock firmware does not contain any modem updates. You need to install an OTA update to hopefully get the modem stack updated.</p>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/952793?v=3)"><span class="hidden">Jared Morgan's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="">Jared Morgan</a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Brisbane, Australia.</span>
+                    <span class="author-link icon-link"><a href="http://jaredmorgs.github.io">http://jaredmorgs.github.io</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Turning%20a%20Shield%20Tablet%20US%20Version%20into%20a%20Rest%20of%20World%20Version&amp;url=http://jaredmorgs.github.io/blog/2015/01/15/Turning-a-Shield-Tablet-US-Version-into-a-Rest-of-World-Version.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jaredmorgs.github.io/blog/2015/01/15/Turning-a-Shield-Tablet-US-Version-into-a-Rest-of-World-Version.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jaredmorgs.github.io/blog/2015/01/15/Turning-a-Shield-Tablet-US-Version-into-a-Rest-of-World-Version.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jaredmorgs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://jaredmorgs.github.io/blog">The Musings of Jared Morgan (jaredmorgs) </a> &copy; 2015</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script>
+
+    <script type="text/javascript" src="http://jaredmorgs.github.io/blog/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="http://jaredmorgs.github.io/blog/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-58317734-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
