@@ -1,0 +1,145 @@
+= Record Screen Demos on Fedora Using the Command Line (ffmpeg) 
+:hp-tags: Screencast, ffmpeg, fedora 
+:published_at: 2014-01-11
+:toc:
+
+== Background
+
+The ffmpeg command is broken down into the following primary parts:
+
+- input
+- output (encode)
+- output container (filename).
+
+To record your desktop, you require two input sources to be configured:
+
+- Audio from your laptop mic, USB headset, or 3.5mm microphone/headset jack.
+- Video from the desktop of your computer.
+
+== Usage Example
+
+Rather than doing what we always do, and blindly copy pasta a command and run it, read the Build the Command section to understand the ffmpeg commands you see. You'll start to learn that while this tool seems complicated, the commands are there for a reason, and in the order they are on purpose.
+
+```
+ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f alsa -i plughw:1,0 -acodec libmp3lame -ar 48000 -ab 320k -vcodec libx264 Desktop_Recording.mp4
+```
+
+To stop the recording, press `Ctrl+C` in the terminal.
+
+=== What does all that mean?
+
+This captures the left screen at 1920x1080 resolution, and uses the USB
+Headset connected to the PC. The framerate is 30 fps. The audio is
+encoded in MP3 format at 48000 khz @ 320kbps. The file saved is
+`Desktop_Recording.mp4`, and is saved in the same directory you executed
+this command in.
+
+== Alias Command
+
+Add the following alias to your `~/.bashrc` file, and you have a way of
+easily recording from the command line with pre-set settings. All you
+need to do is specify the target file name as *[filename]*.mp4, after
+typing the command.
+
+```
+alias Record_Desktop="ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f alsa -ac 1 -i plughw:1,0 -acodec libmp3lame -ar 48000 -ab 320k - codec libx264 "
+```
+
+NOTE: The space is important at the end of the alias. It lets you specify a file name after the alias.
+
+== Procedure
+
+=== Prerequisites
+If you just try and run the command above for the first time, I can almost guarantee that you'll get errors. There are some things you need to do before you can begin constructing the command to suit your Fedora installation.
+
+=== Set Default Monitor
+
+. Open gnome-display-properties in Gnome 3 (Activities > Displays)
+. Drag the screen you want to capture to the left of the dialog.
+. Click the left monitor in the dialog.
+. Write down the resolution displayed. This is required in the command line procedure.
+. Ensure the black title bar is dragged over to the screen you want to capture.
+
+This sets the record target display as 0.0, or DEFAULT.
+
+=== Get Packages
+
+Install Codecs from RPM Fusion Non-free repo:
+
+NOTE: The required package names seem to change periodically, particularly between major releases of Fedora. If you notice package name changes, let me know and I'll update the package names.
+
+. Install the rpmfusion-nonfree repo
+  - `sudo yum install ffmpeg lame lame-devel`
+. Install Codecs from RPM Fusion Free repo\
+  - `sudo yum install h264enc x264 x264-devel`
+
+=== Build the Command
+
+The following sections explain the ffmpeg command. If you have come to this blog post and some of the parameters are out of date, you should at least be able to work out the basic required structure. If you do notice any issues, send me an email or leave a comment and I'll incorporate your feedback.
+
+==== Input
+
+===== Audio Input Parameters
+
+-f alsa::
+	Specify an input format of ALSA audio.
+
+-i plughw:[card],[device]::
+	Specify the card and device number of the microphone you want to record
+from. If you are using a USB headset or mic, do the following to correctly set this parameter:
+
+. Plug in the device and run one of the following commands:
+  - `# cat /proc/asound/cards`
+  - `# arecord -l`
+. You will get a listing of available sound cards.
+. Change `plughw:0,0`, to `plughw:[n],0`, where [n] corresponds to the device ID of the headset or mic you want to use.
+
+===== Video Input Parameters
+
+-f x11grab::
+	Specifies an input format of X11 Screen Capture.
+
+WARNING: The `-videosize` and `-framerate` parameters *must* appear first in the command. You are passing the frame rate and screen resolution *to* the display and capture area. Place it after `-i` and you are specifying these values for the *next* input format.
+
+-video_size 1920x1080::
+	Specifies the screen’s resolution. Alter this to the current display resolution of your device as reported in the Prerequisites.
+    
+IMPORTANT: There are *no spaces* in the video_size values.
+
+-framerate 30::
+	Specify a frame rate of 30 fps. This setting does produce large file sizes, but the visual quality is perfect.
+
+-i :0.0+0,0::
+	The setting as written captures the left screen. (0.0 specifies the $DEFAULT (system default) monitor display. 
+    The second set of numbers after the `+` specifies the offset value from the left-hand display. For example, if you want to capture the second screen, and the L/H monitor runs 1920x1080, the offset value is `-i :0.0+1920,0`).
+
+==== Output
+
+ffmpeg output properties are set using codecs and their specific
+settings. You need settings for both Audio and Video. Specify the Output (encode) properties in the order you specified the input types:
+
+===== Audio Output Parameters
+
+-acodec libmp3lame::
+	Specifies that you will encode using mp3 libraries. These libraries encode fine when pushed to services such as Vimeo.
+
+-ar 48000::
+	Specifies the audio frequency is 48000 khz. This frequency is "CD Quality".
+
+-ab 320k::
+	Specifies the audio bitrate is 320kbps. This is the highest you can go with MP3 audio.
+
+===== Video Output Parameters
+
+The only parameter you need to provide is the following one.
+
+-vcodec libx264::
+	Specifies the h.264 codec, otherwise known as MP4 video.
+
+==== Output Container
+
+Finally, the output file name, which is added as the last command line argument. Ensure it has the .mp4 container extension in the name.
+
+== Summary
+
+Because you read the full blog post, you now know what all those parameters mean, and can go tell someone else about how to use ffmpeg. Nice one!
