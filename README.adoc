@@ -134,6 +134,8 @@ HubPress Editor displays the AsciiDoc code on the left, and the live preview on 
 
 The blog title is always Level 1 in an AsciiDoc post. For example, `= Blog Title` sets the name of the Blog Post to `Blog Title`.
 
+A `= Blog Title` is required for saving it successfully.
+
 If you want a first-level heading you use `== First Level Heading`, and so on to create other nested headings.
 
 ===== Cover Image
