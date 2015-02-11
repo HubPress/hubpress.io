@@ -21,3 +21,6 @@ This my 第二个 article.
 *** item2.2.1
 
 An introduction to http://www.baidu.com[百度].
+
+[source,ruby]
+puts "Hello, World!"
