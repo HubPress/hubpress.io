@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "lishiyu",
-    "repositoryName": "blog.io",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"lishiyu","repositoryName":"blog.io","branch":"gh-pages","cname":"doingsth.com"},"site":{"title":"My first blog.","url":"http://doingsth.com"},"socialnetwork":{"email":"lishiyu1@gmail.com"},"theme":{"name":"Casper","url":"http://lishiyu.github.io/blog.io/themes/Casper"}}
