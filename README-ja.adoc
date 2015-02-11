@@ -1,6 +1,6 @@
-原文: https://github.com/HubPress/hubpress.io/blob/8c2c9059e457f882b8e6a9230a2addbda58015f5/README.adoc[8c2c9059e4]
+Original: https://github.com/HubPress/hubpress.io/blob/8c2c9059e457f882b8e6a9230a2addbda58015f5/README.adoc[8c2c9059e4]
 
-最新版との差: https://github.com/HubPress/hubpress.io/compare/master...8c2c9059e457f882b8e6a9230a2addbda58015f5[master...8c2c9059e4]
+Diff from the latest: https://github.com/HubPress/hubpress.io/compare/master...8c2c9059e457f882b8e6a9230a2addbda58015f5[master...8c2c9059e4]
 
 = HubPress
 
@@ -141,7 +141,7 @@ Social Network グループ内のフィールドには
 == 投稿の管理
 
 はじめて HubPress を利用する際には **Posts** はまだありません。
-ブログに投稿をすると、左側にリスト、右側にプレビューの形で表示されます。
+ブログに投稿をすると、左側に記事のリスト、右側にプレビューの形で表示されます。
 
 === 記事を書く
 
