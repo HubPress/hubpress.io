@@ -1,3 +1,0 @@
-= demo
-
-This is my first article.
