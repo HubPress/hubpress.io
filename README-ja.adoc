@@ -45,6 +45,7 @@ image:http://hubpress.io/img/edit-config.png[Edit config]
 * `repositoryName`: フォーク後のリポジトリの名前。 `<username>.github.io`
 . 変更をコミットし, `http://<username>.github.io/` ドメインで GitHub Page を公開。
 . 以下のような画面が出れば、HubPressは正しくセットアップされています。
++
 image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 ==== 「username.github.io ドメインを他プロジェクトで利用済みである」あるいは「独自ドメインで HubPress を利用したい」場合
