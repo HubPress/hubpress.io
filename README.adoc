@@ -118,7 +118,7 @@ The *Google Analytics* field takes the unique Google Analytics code generated fo
 
 ===== Disquss Shortname
 
-The *Disquss shortname* field takes your Discuss user name. Only the user name is required, not a link to your profile page.
+The *Disquss shortname* field takes your Disqus URL/shortname that is specified when you register a new site for Disqus. Only the shortname is required, not a link to your profile page.
 
 ==== Social Network
 
