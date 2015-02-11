@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"lishiyu","repositoryName":"blog.io","branch":"gh-pages","cname":"doingsth.com"},"site":{"title":"lisihyu's blog","description":"This is my first blog.","url":"http://doingsth.com"},"socialnetwork":{"email":"lishiyu1@gmail.com","twitter":"https://twitter.com/timerli","github":"https://github.com/lishiyu/"},"theme":{"name":"Casper","url":"http://doingsth.com/themes/Casper"}}
