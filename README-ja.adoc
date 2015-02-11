@@ -199,3 +199,5 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 == Credits
 
 Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
+
+日本語訳: https://github.com/takkyuuplayer/[takkyuuplayer]
