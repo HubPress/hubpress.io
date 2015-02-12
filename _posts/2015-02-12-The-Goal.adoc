@@ -25,6 +25,8 @@ Composite is being developed with *saftey* in mind. The OS boasts security featu
 
 Professor Parmer analogizes Compostie to an immune system: "This work is biologically inspired as it breaks the software in a system into multiple “cells” that interact in restricted ways. If one cell becomes infected (i.e. suffers a fault, or is maliciously compromised by an intruder), an immune system kicks in and can remove the cell, replacing it with a pristine version that must re-acclimates to the system via communication with the surrounding system".
 
+	More information in future posts
+
 == Rump Kernels
 
 What is missing in this system is a full set of functional cells – we call them “components” – that perform all of the requisite functions of a typical OS. This motivates my research: I will leverage existing systems that have been proven to be separable into components (called NetBSD Rump Kernels), and enable their execution in Composite. By doing so, Composite will include all the functionality of a full-featured embedded system kernel (e.g. Linux), but will maintain the security and reliability guarantees around which the Composite system is built.
