@@ -1,5 +1,0 @@
-= Hello World
-
-:published-at: 02/12/15
-
-This marks the beggining.
