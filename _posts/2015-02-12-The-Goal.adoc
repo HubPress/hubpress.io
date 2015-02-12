@@ -18,4 +18,6 @@ In todays world, almost all machines require computatial power. Everything has o
 
 http://www.embedded.com/electronics-blogs/significant-bits/4024611/Motoring-with-microprocessors["The current 7-Series BMW and S-class Mercedes boast about 100 processors apiece."]
 
+But what happens when one of these processors crashes? Say an important process that helps with steering or breaking.
+
 == Rump Kernels??
