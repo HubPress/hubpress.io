@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>The Goal - &gt; Systems</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Goal">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Goal">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="http://RobertGiff.github.io/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="http://RobertGiff.github.io/2015/02/12/The-Goal.html" />
+    
+    <meta property="og:site_name" content="&gt; Systems" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The Goal" />
+    <meta property="og:description" content="Over the next serveral months I will be using this blog to record my progress on implementing NetBSD rump kernels into the Composite operating system. Composite? Composite is a component based OS that has been under development since 2008. It..." />
+    <meta property="og:url" content="http://RobertGiff.github.io/2015/02/12/The-Goal.html" />
+    <meta property="article:published_time" content="2015-02-12T05:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-02-12T07:50:46.802Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The Goal" />
+    <meta name="twitter:description" content="Over the next serveral months I will be using this blog to record my progress on implementing NetBSD rump kernels into the Composite operating system. Composite? Composite is a component based OS that has been under development since 2008. It..." />
+    <meta name="twitter:url" content="http://RobertGiff.github.io/2015/02/12/The-Goal.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "&gt; Systems",
+    "author": {
+        "@type": "Person",
+        "name": "Robbie Gifford",
+        "image": "https://avatars.githubusercontent.com/u/5796818?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": ""
+    },
+    "headline": "The Goal",
+    "url": "http://RobertGiff.github.io/2015/02/12/The-Goal.html",
+    "datePublished": "2015-02-12T05:00:00.000Z",
+    "dateModified": "2015-02-12T07:50:46.802Z",
+    "description": "Over the next serveral months I will be using this blog to record my progress on implementing NetBSD rump kernels into the Composite operating system. Composite? Composite is a component based OS that has been under development since 2008. It..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="&gt; Systems" href="http://RobertGiff.github.io/rss" />
+
+</head>
+<body class="post-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " style="background-image: url(http://s16.postimg.org/6uf3jpfc5/cover3.jpg)">
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <a href="http://RobertGiff.github.io" title="link to homepage for &gt; Systems"><img src="http://s2.postimg.org/8devgg20p/cover.jpg" width="80" alt="&gt; Systems logo" class="panel-cover__logo logo" /></a>
+            <h1 class="panel-cover__title panel-title"><a href="http://RobertGiff.github.io" title="link to homepage for &gt; Systems">&gt; Systems</a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description">Composite research from an undergraduate perspective.</p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="/#blog" title="link to &gt; Systems blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+                  <!-- Twitter -->
+                  <li class="navigation__item">
+                    <a href="https://www.facebook.com/robbie.gifford.790" title="Facebook account">
+                      <i class='icon icon-social-facebook'></i>
+                      <span class="label">Facebook</span>
+                    </a>
+                  </li>
+              
+              
+              
+                  <!-- Github -->
+                  <li class="navigation__item">
+                    <a href="https://github.com/RobertGiff/" title="Github account">
+                      <i class='icon icon-social-github'></i>
+                      <span class="label">Github</span>
+                    </a>
+                  </li>
+                  </li>
+              
+              
+              
+              
+              
+                  <!-- Email -->
+                  <li class="navigation__item">
+                    <a href="mailto:robertgif@gmail.com" title="Email robertgif@gmail.com">
+                      <i class='icon icon-mail'></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="12 Feb 2015" class="post-meta__date date">12 Feb 2015</time> &#8226; <span class="post-meta__tags tags"></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/5796818?v=3" alt="profile image for Robbie Gifford" class="avatar post-meta__avatar" /> by Robbie Gifford</span>
+      </div>
+      <h1 class="post-title">The Goal</h1>
+    </header>
+
+    <section class="post">
+      <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Over the next serveral months I will be using this blog to record my progress on implementing NetBSD rump kernels into the Composite operating system.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_composite">Composite?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Composite is a component based OS that has been under development since 2008. It currently serves as a research tool at the George Washington University but will eventually hold real world applicability.</p>
+</div>
+<div class="paragraph">
+<p><strong>Research / Development Goals:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Parallelism</p>
+</li>
+<li>
+<p>Reliability</p>
+</li>
+<li>
+<p>Security</p>
+</li>
+<li>
+<p>All for impeded devices</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In todays world, almost all machines require computatial power. Everything has or is related to a computer:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.embedded.com/electronics-blogs/significant-bits/4024611/Motoring-with-microprocessors">"The current 7-Series BMW and S-class Mercedes boast about 100 processors apiece."</a></p>
+</div>
+<div class="paragraph">
+<p>But what happens when one of these processors crashes? Say an important process that helps with steering or breaking.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rump_kernels">Rump Kernels??</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+    </section>
+
+  </article>
+
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2015. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script>
+
+    <script type="text/javascript" src="http://RobertGiff.github.io/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-59653924-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>
