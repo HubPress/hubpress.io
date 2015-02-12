@@ -25,7 +25,7 @@ Composite is being developed with *saftey* in mind. The OS boasts security featu
 
 Professor Parmer analogizes Compostie to an immune system: "This work is biologically inspired as it breaks the software in a system into multiple “cells” that interact in restricted ways. If one cell becomes infected (i.e. suffers a fault, or is maliciously compromised by an intruder), an immune system kicks in and can remove the cell, replacing it with a pristine version that must re-acclimates to the system via communication with the surrounding system".
 
-	More information in future posts
+_More information in future posts_
 
 == Rump Kernels
 
