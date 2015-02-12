@@ -14,4 +14,8 @@ Composite is a component based OS that has been under development since 2008. It
 * Security
 * All for impeded devices
 
+In todays world, almost all machines require computatial power. Everything has or is related to a computer:
+
+http://www.embedded.com/electronics-blogs/significant-bits/4024611/Motoring-with-microprocessors["The current 7-Series BMW and S-class Mercedes boast about 100 processors apiece."]
+
 == Rump Kernels??
