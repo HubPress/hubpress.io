@@ -16,14 +16,14 @@ Composite is a component based OS that has been under development since 2008 by 
 In todays world, almost all machines and devices require computatial power. Everything is related to a computer:
 http://www.embedded.com/electronics-blogs/significant-bits/4024611/Motoring-with-microprocessors["The current 7 Series BMW and S-class Mercedes boast about 100 processors apiece."]
 
-*But what happens when one of these processors crashes?* +
+*But what happens when one of the device processes crashes?* +
 Say an important process that helps with steering or breaking?
 
-Sure, you will still have manual control of those components, but if it were to happen when you least suspected it to, the car will behave differently than you expect and this can lead to serious injury or death. + How about the embeded devices within an airplane? If the autopilot device crashes during a heavy bout of turbulence, everyone on-board is put in danger.
+In many modern vehicals, the wheel, accelerometer and break are all connected to the computer. + How about the embeded devices within an airplane? If the autopilot device crashes during a heavy bout of turbulence, everyone on-board is put in danger.
 
 Composite is being developed with *saftey* in mind. The OS boasts security features to defend against modern hacking techniques and a componentized micro boot system. If part of a composite-hosing device were to crash, the device will be able to reboot only the process that was faulty, preventing a device wide failure. Furthermore, this reboot happens within a matter of microseconds, regaining all of the data it had been controling when it had crashed.
 
-Professor Parmer analogizes Compostie to an immune system: "This work is biologically inspired as it breaks the software in a system into multiple “cells” that interact in restricted ways. If one cell becomes infected (i.e. suffers a fault, or is maliciously compromised by an intruder), an immune system kicks in and can remove the cell, replacing it with a pristine version that must re-acclimates to the system via communication with the surrounding system".
+Gabe analogizes Compostie to an immune system: "This work is biologically inspired as it breaks the software in a system into multiple “cells” that interact in restricted ways. If one cell becomes infected (i.e. suffers a fault, or is maliciously compromised by an intruder), an immune system kicks in and can remove the cell, replacing it with a pristine version that must re-acclimates to the system via communication with the surrounding system".
 
 _More information in future posts_
 
