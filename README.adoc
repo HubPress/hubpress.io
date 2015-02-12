@@ -116,9 +116,9 @@ The *Theme* is selectable from the list of themes stored in the `/themes` direct
 
 The *Google Analytics* field takes the unique Google Analytics code generated for the site.
 
-===== Disquss Shortname
+===== Disqus Shortname
 
-The *Disquss shortname* field takes your Disqus URL/shortname that is specified when you register a new site for Disqus. Only the shortname is required, not a link to your profile page.
+The *Disqus shortname* field takes your Disqus URL/shortname that is specified when you register a new site for Disqus. Only the shortname is required, not a link to your profile page.
 
 ==== Social Network
 
