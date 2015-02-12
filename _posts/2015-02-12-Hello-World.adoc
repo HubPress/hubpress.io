@@ -2,6 +2,4 @@
 
 :published-at: 02/12/15
 
-:hp-tags: tag1
-
-	This marks the beggining.
+This marks the beggining.
