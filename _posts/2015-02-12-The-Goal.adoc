@@ -19,9 +19,9 @@ http://www.embedded.com/electronics-blogs/significant-bits/4024611/Motoring-with
 *But what happens when one of these processors crashes?* +
 Say an important process that helps with steering or breaking?
 
-Sure, you will still have manual control of those components, but if it were to happen when you least suspected it to, the car will behave differently than you expect and this can lead to serious injury or death. What about the embeded devices within an airplane? If the autopilot device crashes during a heavy bout of turbulence, everyone on-board is put in danger.
+Sure, you will still have manual control of those components, but if it were to happen when you least suspected it to, the car will behave differently than you expect and this can lead to serious injury or death. + How about the embeded devices within an airplane? If the autopilot device crashes during a heavy bout of turbulence, everyone on-board is put in danger.
 
-Composite is being developed with *saftey* in mind. The OS boasts security features to defend against modern hacking techniques and a componentized micro boot system. If part of a composite-hosing device were to crash, the device will be able to reboot only the process that was faulty, preventing a whole device wide failure. Furthermore, this reboot happens within a matter of microseconds, regaining all of the data it had been controling when it had crashed.
+Composite is being developed with *saftey* in mind. The OS boasts security features to defend against modern hacking techniques and a componentized micro boot system. If part of a composite-hosing device were to crash, the device will be able to reboot only the process that was faulty, preventing a device wide failure. Furthermore, this reboot happens within a matter of microseconds, regaining all of the data it had been controling when it had crashed.
 
 Professor Parmer analogizes Compostie to an immune system: "This work is biologically inspired as it breaks the software in a system into multiple “cells” that interact in restricted ways. If one cell becomes infected (i.e. suffers a fault, or is maliciously compromised by an intruder), an immune system kicks in and can remove the cell, replacing it with a pristine version that must re-acclimates to the system via communication with the surrounding system".
 
