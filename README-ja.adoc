@@ -1,7 +1,3 @@
-Original: https://github.com/HubPress/hubpress.io/blob/8c2c9059e457f882b8e6a9230a2addbda58015f5/README.adoc[8c2c9059e4]
-
-Diff from the latest: https://github.com/HubPress/hubpress.io/compare/master...8c2c9059e457f882b8e6a9230a2addbda58015f5[master...8c2c9059e4]
-
 = HubPress
 
 == HubPress とはなにか？
