@@ -12,13 +12,13 @@ Composite is a component based OS that has been under development since 2008. It
 * Parallelism
 * Reliability
 * Security
-* All for impeded devices
 
-In todays world, almost all machines require computatial power. Everything has or is related to a computer:
+In todays world, almost all machines and devices require computatial power. Everything is related to a computer:
 http://www.embedded.com/electronics-blogs/significant-bits/4024611/Motoring-with-microprocessors["The current 7 Series BMW and S-class Mercedes boast about 100 processors apiece."]
 
-*But what happens when one of these processors crashes? Say an important process that helps with steering or breaking?*
+*But what happens when one of these processors crashes?* +
+Say an important process that helps with steering or breaking?
 
 Sure, you will still have manual control of those components, but if it were to happen when you least suspected it to, the car will behave differently than you expect and this can lead to serious injury or death. What about the embeded devices within an airplane? If the autopilot device crashes during a heavy bout of turbulence, everyone on-board is put in danger. 
 
-== Rump Kernels??
+== Rump Kernels?
