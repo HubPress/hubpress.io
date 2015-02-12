@@ -35,3 +35,8 @@ What is missing in this system is a full set of functional cells – we call the
 Specifically, I plan on porting device drivers, file system services, and the networking stack from NetBSD into the Composite Operating system. The OS currently runs in a virtual environment provided by the host computer and thus has only been useful as a means to conduct research. *My role in Composite's development is to take a step towards enabling the OS to run on hardware.* As stated above, I plan on incorporating device drivers provided by NetBSD into Composite so that the OS can communicate with hardware its own. Device drives are very specific code bases that permit an OS to access hardware devices such as memory, networking, and input devices like keyboards and mice. It is important and necessary to purse this research topic as device drivers take an inordinate amount of time to write and only work for individual, specific hardware components. 
 
 *By porting NetBSD's device drivers into composite, development time is drastically reduced as NetBSD already has access to a extensive range of drivers for many different hardware components.*
+
+=== What's to Come...
+
+For the time being, I'm starting to hack around with the rump kernel code for file systems. Dealing with input / output. The next several updates will be concerning this mini-project and will contain mostly notes with some general explinations.
+
