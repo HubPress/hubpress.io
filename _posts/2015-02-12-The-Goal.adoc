@@ -1,11 +1,17 @@
 = The Goal
 
-	Over the next serveral months I will be using this blog to record my progress on implementing NetBSD rump kernels into the Composite operating system.
+
+*Over the next serveral months I will be using this blog to record my progress on implementing NetBSD rump kernels into the Composite operating system.*
 
 == Composite?
 
-Composite is a component based OS that has been under development since 2008. It currently serves as a research tool at the George Washington University but will eventually hold real world appliance.  
+Composite is a component based OS that has been under development since 2008. It currently serves as a research tool at the George Washington University but will eventually hold real world applicability.  
 
-Research / Development Goals:
-*
+*Research / Development Goals:*
+
+* Parallelism
+* Reliability
+* Security
+* All for impeded devices
+
 == Rump Kernels??
