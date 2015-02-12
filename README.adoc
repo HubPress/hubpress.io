@@ -15,7 +15,7 @@ Documentation is rapidly evolving as the project gains momentum. Check back regu
 
 HubPress is compatible with Chrome and Chrome for Android.
 
-Firefox will be compatible soon, actually we encountered some bugs with IndexedDB, for the preview you should prefer use Chrome.
+Chrome Beta and Firefox will be compatible soon, actually we encountered some bugs with IndexedDB, for the preview you should prefer use Chrome.
 
 == Getting Started
 
