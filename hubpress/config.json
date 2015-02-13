@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "motionbug",
-    "repositoryName": "motionbug.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"motionbug","repositoryName":"motionbug.github.io","branch":"master"},"site":{"logo":"","cover":"https://raw.githubusercontent.com/motionbug/motionbug.github.io/master/images/cover.jpg","url":"http://motionbug.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"http://motionbug.github.io/themes/Casper"}}
