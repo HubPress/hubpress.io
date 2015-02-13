@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "SwarnaKishore",
-    "repositoryName": "blog",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"SwarnaKishore","repositoryName":"blog","branch":"gh-pages"},"site":{"title":"Healthy Eating","description":"Easy Tips and recipes for a healthy diet and articles to raise awareness on proper nutrition.","logo":"","url":"http://SwarnaKishore.github.io/blog"},"socialnetwork":{},"theme":{"name":"Casper","url":"http://SwarnaKishore.github.io/blog/themes/Casper"}}
