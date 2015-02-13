@@ -1,0 +1,31 @@
+= Welcome to Hubpress
+
+:published_at: 2015-02-13
+
+:hp-tags: mac,github,new,site
+
+This +*literal*+ will appear as *literal*.
+
+* Edgar Allen Poe
+* Sheri S. Tepper
+* Bill Bryson
+
+.Possible DefOps manual locations
+* West wood maze
+** Maze heart
+*** Reflection pool
+** Secret exit
+* Untracked file in git repository
+
+[cols="2*"]
+|===
+|Firefox
+|Web Browser
+
+|Ruby
+|Programming Language
+
+|TorqueBox
+|Application Server
+|===
+ 
