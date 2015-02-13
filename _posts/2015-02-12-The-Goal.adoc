@@ -1,0 +1,42 @@
+= The Goal
+
+
+*Over the next serveral months I will be using this blog to record my progress on implementing NetBSD rump kernels into the Composite operating system.*
+
+== Composite?
+
+Composite is a component based OS that has been under development since 2008 by Professor Gabriel Parmer and his research team. It currently serves as a research tool at the George Washington University but will eventually hold real world applicability.  
+
+*Research / Development Goals:*
+
+* Parallelism
+* Reliability
+* Security
+
+In todays world, almost all machines and devices require computatial power. Everything is related to a computer:
+http://www.embedded.com/electronics-blogs/significant-bits/4024611/Motoring-with-microprocessors["The current 7 Series BMW and S-class Mercedes boast about 100 processors apiece."]
+
+*But what happens when one of the device processes crashes?* +
+Say an important process that helps with steering or breaking?
+
+In many modern vehicals, the wheel, accelerometer and break are all connected to the computer. + How about the embeded devices within an airplane? If the autopilot device crashes during a heavy bout of turbulence, everyone on-board is put in danger.
+
+Composite is being developed with *saftey* in mind. The OS boasts security features to defend against modern hacking techniques and a componentized micro boot system. If part of a composite-hosing device were to crash, the device will be able to reboot only the process that was faulty, preventing a device wide failure. Furthermore, this reboot happens within a matter of microseconds, regaining all of the data it had been controling when it had crashed.
+
+Gabe analogizes Compostie to an immune system: "This work is biologically inspired as it breaks the software in a system into multiple “cells” that interact in restricted ways. If one cell becomes infected (i.e. suffers a fault, or is maliciously compromised by an intruder), an immune system kicks in and can remove the cell, replacing it with a pristine version that must re-acclimates to the system via communication with the surrounding system".
+
+_More information in future posts_
+
+== Rump Kernels
+
+What is missing in this system is a full set of functional cells – we call them “components” – that perform all of the requisite functions of a typical OS. This motivates my research: I will leverage existing systems that have been proven to be separable into components (called NetBSD Rump Kernels), and enable their execution in Composite. By doing so, Composite will include all the functionality of a full-featured embedded system kernel (e.g. Linux), but will maintain the security and reliability guarantees around which the Composite system is built.
+
+
+Specifically, I plan on porting device drivers, file system services, and the networking stack from NetBSD into the Composite Operating system. The OS currently runs in a virtual environment provided by the host computer and thus has only been useful as a means to conduct research. *My role in Composite's development is to take a step towards enabling the OS to run on hardware.* As stated above, I plan on incorporating device drivers provided by NetBSD into Composite so that the OS can communicate with hardware its own. Device drives are very specific code bases that permit an OS to access hardware devices such as memory, networking, and input devices like keyboards and mice. It is important and necessary to purse this research topic as device drivers take an inordinate amount of time to write and only work for individual, specific hardware components. 
+
+*By porting NetBSD's device drivers into composite, development time is drastically reduced as NetBSD already has access to a extensive range of drivers for many different hardware components.*
+
+=== What's to Come...
+
+For the time being, I'm starting to hack around with the rump kernel code for file systems. Dealing with input / output. The next several updates will be concerning this mini-project and will contain mostly notes with some general explinations.
+
