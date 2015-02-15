@@ -1,4 +1,4 @@
-# Indexing large collection of medical files
+= Indexing large collection of medical files
 
 **Abstract**
 
