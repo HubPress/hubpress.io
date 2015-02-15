@@ -1,4 +1,9 @@
-= Hello World
+= Have a nice day
 
+:published_at: 2015-02-15
 
-Hello World!
+:hp-tags: nice, day
+
+Ladies and gentlemen,
+
+Have a nice day!
