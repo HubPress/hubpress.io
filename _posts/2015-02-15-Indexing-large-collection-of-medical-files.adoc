@@ -1,1 +1,3 @@
 # Indexing large collection of medical files
+
+We have a large collection of medical files and we want to search and find similar symptoms to give a diagnosis.
