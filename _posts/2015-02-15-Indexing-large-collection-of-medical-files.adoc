@@ -1,4 +1,5 @@
 = Indexing large collection of medical files
+:hp-image: https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR4MCX44uPRhcamIuBFE50vzS4zwTZvX6Bm6To2grw1NIkPC-to
 :hp-tags: solr, information retrieve
 
 
