@@ -1,5 +1,5 @@
 = Gregory Porter - Liquid Spirit
-:hp-image: http://github.com/ziyaddin/ziyaddin.github.io/images/gregory-porter-liquid-spirit.jpg
+:hp-image: https://github.com/ziyaddin/ziyaddin.github.io/blob/master/images/gregory-porter-liquid-spirit.jpg
 :hp-tags: gregory porter, liquid spirit, music, video
 
 An awesome music to calm our spirit. Liquid Spirit!
