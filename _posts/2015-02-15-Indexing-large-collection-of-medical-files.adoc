@@ -1,4 +1,6 @@
 = Indexing large collection of medical files
+:hp-tags: solr, information retrieve
+
 
 **Abstract**
 
@@ -6,3 +8,9 @@
 We have a large collection of medical files and we want to search and find similar symptoms to give a diagnosis. The medical files are in
 two languages greek and english, this is our main problem. Another problem we have is the meta information of the document are not well
 document and we have to extract them from the document.
+
+:numbered:
+
+== Test Processing & Data Cleaning
+
+== Sorl
