@@ -177,6 +177,18 @@ For example :
 :hp-tags: tag1,tag2,tag3
 ----
 
+== Troubleshooting
+
+If something is not working as you expect, some of these tips may help.
+
+=== Resetting Blog Database on Android
+
+Sometimes the HubPress local database becomes out-of-sync with your published blog. This can happen because you are editing your blog on your PC, then switch over to your tablet.
+
+HubPress works on a locally-stored database specific to your Browser, so if you switch devices -- and subsequently switch browsers -- you lose the synchronicity between browsers.
+
+To return your instance of HubPress to that of the published blog, clear the browser Cache and Data in Settings > Apps. When you do this, HubPress is forced to rebuild the local database, and will reflect the state of the blog in GitHub.
+
 == Credits
 
 Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
