@@ -14,7 +14,7 @@ document and we have to extract them from the document.
 
 === Solr on Docker
 
-To run:
+This repository triggers the link:https://index.docker.io/u/makuk66/docker-solr/[makuk66/docker-solr] trusted build on the Docker index. To run:
 
 [source,bash]
 ----
