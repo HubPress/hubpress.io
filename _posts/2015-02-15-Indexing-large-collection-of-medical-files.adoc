@@ -13,4 +13,6 @@ document and we have to extract them from the document.
 
 == Test Processing & Data Cleaning
 
-== Sorl
+== Data Indexing
+
+== Evaluation of searching method
