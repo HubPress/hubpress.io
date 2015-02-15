@@ -10,6 +10,8 @@ document and we have to extract them from the document.
 
 == Test Processing & Data Cleaning
 
+== Data Indexing
+
 === Solr on Docker
 
 To run:
@@ -20,6 +22,6 @@ docker pull makuk66/docker-solr
 docker run -it -p 8983:8983 -t makuk66/docker-solr
 ----
 
-== Data Indexing
+Then go to http://localhost:8983/solr (adjust the hostname for your docker server).
 
 == Evaluation of searching method
