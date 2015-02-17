@@ -29,4 +29,10 @@ Then go to http://localhost:8983/solr (adjust the hostname for your docker serve
 
 ==== Greek Language
 
+[source,xml]
+----
+<filter class="solr.GreekLowerCaseFilterFactory"/>
+<filter class="solr.GreekStemFilterFactory"/>
+----
+
 == Evaluation of searching method
