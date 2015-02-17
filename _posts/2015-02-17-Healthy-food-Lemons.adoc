@@ -1,6 +1,6 @@
-= Lemons
+= Healthy food : Lemons
 :published_at: 2015-02-17
-:hp-tags: Healthy tip #1
+:hp-tags: Healthy tips
 :hp-image: http://cdn.morguefile.com/imageData/public/files/p/pippalou/04/l/1366832419rdkv9.jpg
 
 Add a slice of lemon to your green tea. 
