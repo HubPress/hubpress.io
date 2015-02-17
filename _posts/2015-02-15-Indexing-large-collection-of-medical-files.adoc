@@ -25,4 +25,8 @@ docker run -it -p 8983:8983 -t makuk66/docker-solr
 
 Then go to http://localhost:8983/solr (adjust the hostname for your docker server).
 
+=== Configure collection index
+
+==== Greek Language
+
 == Evaluation of searching method
