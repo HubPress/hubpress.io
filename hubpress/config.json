@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"iamwhyte","repositoryName":"iamwhyte.github.io","branch":"master"},"site":{"title":"!Das Weißsche Sammelsurium","description":"Blog zum Weißschen Sammelsurium","postsPerPage":"5","url":"http://iamwhyte.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"http://iamwhyte.github.io/themes/Casper"}}
