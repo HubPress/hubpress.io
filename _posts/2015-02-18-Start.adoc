@@ -1,0 +1,3 @@
+= Start
+
+Blog !DasWeißscheSammelsurium = new Blog();
