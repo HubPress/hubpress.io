@@ -1,0 +1,45 @@
+{{!< default}}
+{{#post ~}}
+<header id="header" class="animated fadeIn"{{#if image}} style="background-image: url({{image}})"{{/if}}>
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
+        <span class="blog-description">{{@blog.description}}</span>
+        {{> links}}
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="{{date format='X'}}" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='DD MMMM YYYY'}}">{{date published_at timeago='true'}}</time></span>
+            {{#if tags}}<span class="tags animated fadeInUp"><i class="fa fa-tags"></i> {{tags prefix="" separator=", "}}</span>{{/if}}
+            {{#author}}<span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="{{url}}">{{name}}</a></span>{{/author}}</span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post {{post_class}}">
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        {{#if @blog.disqus}}
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = '{{@blog.disqus}}'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+        {{/if}}
+    </article>
+
+</main>
+{{~/post}}

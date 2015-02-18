@@ -1,0 +1,165 @@
+// ------------------------------
+// PANEL
+// ------------------------------
+
+.panel {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+  .panel__vertical {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+.panel-title {
+  margin: 0 0 5px 0;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+  color: #FFF;
+}
+
+.panel-subtitle {
+  font-family: $serif-font;
+  font-size: 1.2em;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  color: $gray;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ------------------------------
+// COVER PANEL
+// ------------------------------
+
+.panel-cover {
+  display: block;
+  position: fixed;
+  z-index: 900;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  background: url(../images/background-cover.jpg) top left no-repeat $gray-darker;
+  background-size: cover;
+}
+
+  .panel-cover--collapsed {
+    width: 40%;
+    max-width: 530px;
+  }
+
+  .panel-cover--overlay {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include linear-gradient(140deg, rgba(#444444,.6) 20%, rgba(#000000,.9));
+  }
+
+  .panel-cover__logo {
+    margin-bottom: .2em;
+  }
+
+  .panel-cover__description {
+    margin: 0 30px;
+  }
+
+  .panel-cover__divider {
+    width: 50%;
+    margin: 20px auto;
+    border-top: 1px solid rgba(255,255,255,.14);
+  }
+
+  .panel-cover__divider--secondary {
+    width: 15%;
+  }
+
+  // ------------------------------
+  // MAIN PANEL
+  // ------------------------------
+
+  .panel-main {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
+    .no-js {
+
+      .panel-main {
+        width: 40%;
+        max-width: 530px;
+      }
+
+    }
+
+    .panel-main__inner {
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      z-index: 800;
+      padding: 0 60px;
+    }
+
+    .panel-main__content {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .panel-main__content--fixed {
+      width: 480px;
+      transition: width 1s;
+      -webkit-transition: width 1s; /* Safari */
+    }
+
+  .panel-inverted {
+    font-weight: 100;
+    text-align: center;
+    color: #FFF;
+    text-shadow: 0 1px 1px rgba(000,000,000,.4);
+
+    a {
+      color: #FFF;
+    }
+
+  }
+
+// ------------------------------
+// COVER NAVIGATION
+// ------------------------------
+
+.cover-navigation {
+  margin-top: 10px;
+}
+
+  .cover-navigation--social {
+    margin-left: 30px;
+  }
+
+// ------------------------------
+// ADDITIONAL COVER COLOURS
+// ------------------------------
+
+.cover-green {
+  @include linear-gradient(140deg, rgba($green,.6) 20%, rgba(darken($green, 20%),.8));
+}
+
+.cover-purple {
+  @include linear-gradient(140deg, rgba($purple,.6) 20%, rgba(darken($purple, 20%),.8));
+}
+
+.cover-red {
+  @include linear-gradient(140deg, rgba(darken($red, 30%),.6) 20%, rgba(darken($red, 50%),.8));
+}
+
+.cover-slate {
+  @include linear-gradient(140deg, rgba($slate,.6) 20%, rgba(darken($slate, 20%),.8));
+}
+
+.cover-disabled {
+  background: none;
+}

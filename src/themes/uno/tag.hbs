@@ -1,0 +1,25 @@
+{{!< default}}
+
+  <h1 class="archive-title">Tag: {{tag.name}}</h1>
+
+  <hr class="section-title__divider" />
+
+  <div class="main-post-list">
+
+    <ol class="post-list">
+      {{#foreach posts}}
+      <li>
+        <h2 class="post-list__post-title post-title"><a href="{{url}}" title="link to {{{title}}}">{{{title}}}</a></h2>
+        <p class="excerpt">{{excerpt}}&hellip;</p>
+        <div class="post-list__meta">
+            <time datetime="{{date format="DD MMM YYYY"}}" class="post-list__meta--date date">{{date format="DD MMM YYYY"}}</time> &#8226;
+            <span class="post-list__meta--tags tags">{{#foreach tags}}<a href="{{url}}#blog" title="{{name}}">{{name}}</a>{{#if @last}}{{else}}, {{/if}}{{/foreach}}</span>
+        </div>
+        <hr class="post-list__divider" />
+      </li>
+      {{/foreach}}
+    </ol>
+
+    {{pagination}}
+
+  </div>

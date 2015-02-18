@@ -1,0 +1,208 @@
+= HubPress
+
+:toc:
+
+== What Is HubPress?
+image::http://hubpress.io/img/editor.png[]
+
+HubPress is a free, open source tool to build your future awesome blog!
+
+Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q]).
+
+NOTE: HubPress is actually in preview, if you find some bugs come to see us.
+
+Documentation is rapidly evolving as the project gains momentum. Check back regularly for more tips on how to use HubPress.
+
+== Browser compatibility
+
+HubPress is compatible with Chrome and Chrome for Android.
+
+Chrome Beta and Firefox will be compatible soon, actually we encountered some bugs with IndexedDB, for the preview you should prefer use Chrome.
+
+== Getting Started
+
+=== Installation
+==== Fork the repository
+Click the Fork icon image:http://hubpress.io/img/fork-icon.png[Fork,80] to create a copy of this repository within your GitHub account.
+
+==== Use the github.io domain
+
+If you have never used your GitHub Pages domain before, you can use this procedure to quickly set up HubPress. With this method, only a few steps are required to get HubPress deployed and ready for use.
+
+IMPORTANT: If you are currently using your `username.github.io` GitHub Pages domain for another project, or if you want to use a custom domain name, skip to the next procedure for instructions.
+
+. Rename your repository to `<username>.github.io`
+
+. Set values in `hubpress/config.json`
++
+image:http://hubpress.io/img/edit-config.png[Edit config]
++
+The following parameters are mandatory :
++
+* `username`, which is your GitHub user name,
+* `repositoryName`, which is the new name of the repository fork, `<username>.github.io`.
+. Commit the changes, and open the GitHub Pages domain:  `http://<username>.github.io/`.
+. The following screen indicates you have correctly configured HubPress
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+==== Use a Custom Domain or GitHub Page Domain Already In Use
+
+If you want your blog to be available on a custom domain, or you are already using your GitHub Pages domain to host another project, some extra configuration is required.
+
+. In the repository settings, set the default branch to `gh-pages` :
++
+image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+. Switch your repository to the branch *gh-pages*
++
+image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
++
+. Set the required values in `hubpress/config.json
++
+image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
++
+The following parameters are mandatory :
++
+* `username`, which is your GitHub user name,
+* `repositoryName`, which is the repository fork. For example, `hubpress.io` if you did not rename it.
+. Commit the changes, and open the GitHub Pages domain:  `http://<username>.github.io/<repositoryName>/`.
+. The following screen indicates you have correctly configured HubPress
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+== Administration Console
+
+The HubPress Administration Console is available at */hubpress*
+
+* `http://<username>.github.io/hubpress/` for GitHub Hosted blogs, or
+* `http://<username>.github.io/<repositoryName>/hubpress/` for Domain Hosted blogs.
+
+=== Log Into the Administration Console
+
+image:http://hubpress.io/img/login.png[Install complete,300]
+
+Enter your GitHub credentials to log into HubPress Admin.
+
+Once you authenticate, a personal token is created for future calls from HubPress to the GitHub API.
+
+This is synchronized across all sessions of HubPress, so if you open the Administration Console on your PC and then your Tablet, the token is applicable to all devices.
+
+=== Settings Page
+
+You can configure basic blog settings (such as CNAME and Pagination) and social media accounts you want to connect to your blog.
+
+==== Meta
+
+This section contains basic information configured in the `/hubpress/config.json` file.
+
+The *Git CNAME* field is configurable, and lets you specify a custom domain name for your blog. See https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/ for instructions about setting up a CNAME for your blog.
+
+==== Site
+
+===== Title and Description
+
+The *Title* and *Description* fields allow you to give your blog a name, and tell visitors what they can expect from your blog posts.
+
+The *Logo* and *Cover Image* fields can be used the following ways:
+
+* A HTML link to an image hosting service. For example gravatar.
+* A link to an image committed to the /images directory of your blog repository.
+
+NOTE: See the `/images/README.adoc` file for tips about embedding images into your blog posts.
+
+===== Theme
+
+The *Theme* is selectable from the list of themes stored in the `/themes` directory. Specify it according to it is spelled in it's containing folder.
+
+===== Google Analytics
+
+The *Google Analytics* field takes the unique Google Analytics code generated for the site.
+
+===== Disqus Shortname
+
+The *Disqus shortname* field takes your Disqus URL/shortname that is specified when you register a new site for Disqus. Only the shortname is required, not a link to your profile page.
+
+==== Social Network
+
+All fields in this group require full URLs to your public profile page. The way these values are rendered on your blog depends on the theme selected.
+
+== Managing Posts
+
+When you first start HubPress, the *Posts* view is empty. As you create blog posts, the page populates with the list of posts on the left, and a live preview of the blog post itself on the right.
+
+=== Writing A Blog Post with HubPress
+
+NOTE: If you have never used AsciiDoc before to write content, the http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's Guide] should be your first stop in your journey. The guide provides both basic and advanced mark-up examples for you to copy and use.
+
+HubPress Editor displays the AsciiDoc code on the left, and the live preview on the right.
+
+==== Blog Title, and Headings
+
+The blog title is always Level 1 in an AsciiDoc post. For example, `= Blog Title` sets the name of the Blog Post to `Blog Title`.
+
+A `= Blog Title` is required for saving it successfully.
+
+If you want a first-level heading you use `== First Level Heading`, and so on to create other nested headings.
+
+==== HubPress Parameters
+
+HubPress allows you to alter characteristics of each blog post using attributes.
+
+===== :hp-image: for Blog Post Cover Images
+
+If you want to add a cover image to your Blog Post, set the `hp-image` attribute.
+
+. :hp-image: Example
+[source, asciidoc]
+----
+= Blog Title
+:hp-image: http://<repositoryName>/images/a-cover-image.jpg
+----
+
+TiP: You may want to consider creating a `/covers` folder in your repository to group the covers together.
+Naming the cover images consistenty will make it very easy to apply to every post. If you have a theme to your blog, this allows your readers to get a visual clue as to what the post is about.
+
+Currently the themes that support blog post cover images are:
+
+* Saga
+
+==== :published_at: to alter the Publication Date
+
+By default, the publication date is the date you created the Blog Post. You can force the publication date by adding the `:published_at:` attribute.
+
+. :published_at: Example
+[source, asciidoc]
+----
+= Blog Title
+:published_at: 2015-01-31
+----
+
+==== :hp-tags: for Metadata Tags
+
+NOTE: Categories are not supported.
+
+Add tags by using the `hp-tags` attribute.
+
+. :hp-tags: Example
+[source, asciidoc]
+----
+= Blog Title
+:hp-tags: HubPress, Blog, Open Source,
+----
+
+== Troubleshooting
+
+If something is not working as you expect, some of these tips may help.
+
+=== Resetting Blog Database on Android
+
+Sometimes the HubPress local database becomes out-of-sync with your published blog. This can happen because you are editing your blog on your PC, then switch over to your tablet.
+
+HubPress works on a locally-stored database specific to your Browser, so if you switch devices -- and subsequently switch browsers -- you lose the synchronicity between browsers.
+
+To return your instance of HubPress to that of the published blog, clear the browser Cache and Data in Settings > Apps. When you do this, HubPress is forced to rebuild the local database, and will reflect the state of the blog in GitHub.
+
+== Credits
+
+Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
+Thanks to https://github.com/takkyuuplayer[takkyuuplayer] to have translated the README into Japanese
