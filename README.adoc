@@ -1,5 +1,7 @@
 = HubPress
 
+:toc:
+
 == What Is HubPress?
 image::http://hubpress.io/img/editor.png[]
 
@@ -128,15 +130,13 @@ All fields in this group require full URLs to your public profile page. The way 
 
 When you first start HubPress, the *Posts* view is empty. As you create blog posts, the page populates with the list of posts on the left, and a live preview of the blog post itself on the right.
 
-=== Creating a Post
+=== Writing A Blog Post with HubPress
 
 NOTE: If you have never used AsciiDoc before to write content, the http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's Guide] should be your first stop in your journey. The guide provides both basic and advanced mark-up examples for you to copy and use.
 
 HubPress Editor displays the AsciiDoc code on the left, and the live preview on the right.
 
-==== Basic AsciiDoc Blog Tips
-
-===== Blog Title and Headings
+==== Blog Title, and Headings
 
 The blog title is always Level 1 in an AsciiDoc post. For example, `= Blog Title` sets the name of the Blog Post to `Blog Title`.
 
@@ -144,37 +144,50 @@ A `= Blog Title` is required for saving it successfully.
 
 If you want a first-level heading you use `== First Level Heading`, and so on to create other nested headings.
 
-===== Cover Image
+==== HubPress Parameters
 
-If you want to add a cover image to your Blog Post, you must set the `hp-image` attribute.
+HubPress allows you to alter characteristics of each blog post using attributes.
 
-For example :
+===== :hp-image: for Blog Post Cover Images
+
+If you want to add a cover image to your Blog Post, set the `hp-image` attribute.
+
+. :hp-image: Example
 [source, asciidoc]
 ----
 = Blog Title
-:hp-image: http://github.com/<username>/<repositoryName>/images/a-cover-image.jpg
+:hp-image: http://<repositoryName>/images/a-cover-image.jpg
 ----
 
-===== Publication date
+TiP: You may want to consider creating a `/covers` folder in your repository to group the covers together. 
+Naming the cover images consistenty will make it very easy to apply to every post. If you have a theme to your blog, this allows your readers to get a visual clue as to what the post is about.
 
-By default, the publication date is the date of the day to which you introduced your Blog Post. You can force the publication date by adding the `published_at`
+Currently the themes that support blog post cover images are:
 
-For example :
+* Saga
+
+==== :published_at: to alter the Publication Date
+
+By default, the publication date is the date you created the Blog Post. You can force the publication date by adding the `:published_at:` attribute.
+
+. :published_at: Example
 [source, asciidoc]
 ----
 = Blog Title
 :published_at: 2015-01-31
 ----
 
-===== Tags and Categories
+==== :hp-tags: for Metadata Tags
 
-Actually, only tags are supported. You can add some tags by using the `hp-tags` attribute.
+NOTE: Categories are not supported. 
 
-For example :
+Add tags by using the `hp-tags` attribute.
+
+. :hp-tags: Example
 [source, asciidoc]
 ----
 = Blog Title
-:hp-tags: tag1,tag2,tag3
+:hp-tags: HubPress, Blog, Open Source,
 ----
 
 == Troubleshooting
