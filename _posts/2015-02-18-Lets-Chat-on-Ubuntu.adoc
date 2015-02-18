@@ -1,7 +1,7 @@
 = Let's Chat on Ubuntu
 :hp-tags: docker,chat,hot
 
-https://camo.githubusercontent.com/6c55e0f17d53d100977a8c6d49ce9575681da0fd/687474703a2f2f692e696d6775722e636f6d2f7644626858756c2e706e67
+image::https://camo.githubusercontent.com/6c55e0f17d53d100977a8c6d49ce9575681da0fd/687474703a2f2f692e696d6775722e636f6d2f7644626858756c2e706e67[let's chat]
 
 Self-hosted chat app for small teams http://sdelements.github.io/lets-chat.
 
