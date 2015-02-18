@@ -1,9 +1,9 @@
 = Let's Chat on Ubuntu
 :hp-tags: docker,chat,hot
 
-image::https://camo.githubusercontent.com/6c55e0f17d53d100977a8c6d49ce9575681da0fd/687474703a2f2f692e696d6775722e636f6d2f7644626858756c2e706e67[let's chat]
-
 Self-hosted chat app for small teams http://sdelements.github.io/lets-chat.
+
+image::https://camo.githubusercontent.com/6c55e0f17d53d100977a8c6d49ce9575681da0fd/687474703a2f2f692e696d6775722e636f6d2f7644626858756c2e706e67[let's chat]
 
 :numbered:
 
@@ -58,3 +58,5 @@ Restart the service
 docker run start db
 docker run -p 5000:5000 --link db:db lets-chat
 ----
+
+image::https://camo.githubusercontent.com/f59d2c3525b16e008c018fa3925841d69b8124a3/687474703a2f2f692e696d6775722e636f6d2f4334754d4436372e706e67[let's chat]
