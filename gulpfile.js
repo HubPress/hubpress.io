@@ -130,7 +130,7 @@ gulp.task('hubpress-images', function () {
 
 // README, LICENSE
 gulp.task('readme', function () {
-  return gulp.src(['docs/README*.md', 'docs/LICENSE'])
+  return gulp.src(['docs/README*.adoc', 'docs/LICENSE'])
   .pipe(gulp.dest('dist/'))
   .pipe($.size());
 });
