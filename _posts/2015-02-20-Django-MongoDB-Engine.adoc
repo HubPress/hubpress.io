@@ -4,10 +4,10 @@
 
 Django MongoDB Engine depends on
 
-* Django-nonrel, a fork of Django that adds support for non-relational databases.
-* djangotoolbox, a bunch of utilities for non-relational Django applications and backends.
+* link:http://django-nonrel.org/[Django-nonrel], a fork of Django that adds support for non-relational databases.
+* link:https://github.com/django-nonrel/djangotoolbox[djangotoolbox], a bunch of utilities for non-relational Django applications and backends.
 
-It’s highly recommended (although not required) to use a virtualenv for your project to not mess up other Django setups.
+It’s highly recommended (although not required) to use a link:http://www.virtualenv.org/[virtualenv] for your project to not mess up other Django setups.
 
 === virtualenv
 
@@ -57,7 +57,7 @@ pip install git+https://github.com/django-nonrel/mongodb-engine
 
 == Configuration
 
-Database setup is easy (see also the Django database setup docs):
+Database setup is easy (see also the link:https://docs.djangoproject.com/en/dev/ref/settings/#databases[Django database setup docs]):
 
 [source,python]
 ----
@@ -71,4 +71,4 @@ DATABASES = {
 
 Django MongoDB Engine also takes into account the HOST, PORT, USER, PASSWORD and OPTIONS settings.
 
-Possible values of OPTIONS are described in the settings reference.
+Possible values of OPTIONS are described in the link:https://django-mongodb-engine.readthedocs.org/en/latest/reference/settings.html[settings reference].
