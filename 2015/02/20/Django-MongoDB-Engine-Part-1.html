@@ -35,7 +35,7 @@
     <meta property="og:description" content="1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virtualenv..." />
     <meta property="og:url" content="http://theofilis.github.io/2015/02/20/Django-MongoDB-Engine-Part-1.html" />
     <meta property="article:published_time" content="2015-02-19T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-02-20T14:46:15.988Z" />
+    <meta property="article:modified_time" content="2015-02-20T14:50:30.325Z" />
     <meta property="article:tag" content="python" />
     <meta property="article:tag" content="mongo" />
     <meta property="article:tag" content="django" />
@@ -60,7 +60,7 @@
     "headline": "Django MongoDB Engine [Part 1]",
     "url": "http://theofilis.github.io/2015/02/20/Django-MongoDB-Engine-Part-1.html",
     "datePublished": "2015-02-19T22:00:00.000Z",
-    "dateModified": "2015-02-20T14:46:15.988Z",
+    "dateModified": "2015-02-20T14:50:30.325Z",
     "keywords": "python, mongo, django",
     "description": "1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virtualenv..."
 }
@@ -288,6 +288,21 @@
 )</pre>
 </div>
 </div>
+</li>
+<li>
+<p>It&#8217;s important to put 'permission_backend_nonrel after djangotoolbox, because permission_backend_nonrel.admin replaces djangotoolbox&#8217;s User admin site.</p>
+<div class="paragraph">
+<p>Permission and groups can be assigned and modified via Django&#8217;s admin interface:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://camo.githubusercontent.com/603ca1906c7fe866050b50b90337e9a8925a3301/687474703a2f2f666c6f6f6f6f66696c65732e61707073706f742e636f6d2f73657276652f66696c65732f61646d696e2e6a7065672f">Django-nonrel admin with user_permissions and groups</a></p>
+</div>
+<div class="paragraph">
+<p>Django-gaeauth admin interface with user_permissions and groups</p>
+</div>
+</li>
+<li>
+<p>Now you should be able to use all the standard Django permission methods and decorators, like user.has_perm('foo') and so on.</p>
 </li>
 </ul>
 </div>
