@@ -35,7 +35,7 @@
     <meta property="og:description" content="1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virtualenv..." />
     <meta property="og:url" content="http://theofilis.github.io/2015/02/20/Django-MongoDB-Engine-Part-1.html" />
     <meta property="article:published_time" content="2015-02-19T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-02-20T14:39:35.399Z" />
+    <meta property="article:modified_time" content="2015-02-20T14:44:04.289Z" />
     <meta property="article:tag" content="python" />
     <meta property="article:tag" content="mongo" />
     <meta property="article:tag" content="django" />
@@ -60,7 +60,7 @@
     "headline": "Django MongoDB Engine [Part 1]",
     "url": "http://theofilis.github.io/2015/02/20/Django-MongoDB-Engine-Part-1.html",
     "datePublished": "2015-02-19T22:00:00.000Z",
-    "dateModified": "2015-02-20T14:39:35.399Z",
+    "dateModified": "2015-02-20T14:44:04.289Z",
     "keywords": "python, mongo, django",
     "description": "1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virtualenv..."
 }
@@ -244,15 +244,41 @@
 <pre class="highlight"><code class="language-bash" data-lang="bash">pip install git+https://github.com/django-nonrel/djangotoolbox</code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_django_mongodb_engine">1.4. Django MongoDB Engine</h3>
 <div class="paragraph">
-<p>You should use the latest Git revision.</p>
+<p>The djangotoolbox.admin module provides admin overrides for making django.contrib.auth work correctly in the admin UI. Simply add 'djangotoolbox' to INSTALLED_APPS after django.contrib.admin.</p>
+</div>
+<div class="paragraph">
+<p>This will disable features that require JOINs. If you still need permission handling you should use the nonrel permission backend.</p>
+</div>
+<div class="sect3">
+<h4 id="_django_permission_backend_nonrel">1.3.1. django-permission-backend-nonrel</h4>
+<div class="paragraph">
+<p>A Django authentication backend that supports Django&#8217;s user and group permissions on Django-Nonrel.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Get the code from Github:</p>
+<div class="literalblock">
+<div class="content">
+<pre>git clone https://github.com/django-nonrel/django-permission-backend-nonrel.git</pre>
+</div>
+</div>
+</li>
+<li>
+<p>add permission_backend_nonrel.backends.NonrelPermissionBackend to your AUTHENTICATION_BACKENDS and permission_backend_nonrel to your INSTALLED_APPS
+=== Django MongoDB Engine</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You should use the latest Git
+revision.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">pip install git+https://github.com/django-nonrel/mongodb-engine</code></pre>
+</div>
 </div>
 </div>
 </div>
