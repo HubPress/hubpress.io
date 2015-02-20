@@ -54,9 +54,23 @@ Djangotoolbox provides a common API for running Django on non-relational/NoSQL d
 pip install git+https://github.com/django-nonrel/djangotoolbox
 ----
 
+The djangotoolbox.admin module provides admin overrides for making django.contrib.auth work correctly in the admin UI. Simply add 'djangotoolbox' to INSTALLED_APPS after django.contrib.admin.
+
+This will disable features that require JOINs. If you still need permission handling you should use the nonrel permission backend.
+
+==== django-permission-backend-nonrel
+
+A Django authentication backend that supports Django's user and group permissions on Django-Nonrel.
+
+* Get the code from Github:
+
+  git clone https://github.com/django-nonrel/django-permission-backend-nonrel.git
+
+* add permission_backend_nonrel.backends.NonrelPermissionBackend to your AUTHENTICATION_BACKENDS and permission_backend_nonrel to your INSTALLED_APPS
 === Django MongoDB Engine
 
-You should use the latest Git revision.
+You should use the latest Git
+revision.
 
 [source,bash]
 ----
