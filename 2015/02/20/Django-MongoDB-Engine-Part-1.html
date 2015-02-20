@@ -35,7 +35,7 @@
     <meta property="og:description" content="1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virtualenv..." />
     <meta property="og:url" content="http://theofilis.github.io/2015/02/20/Django-MongoDB-Engine-Part-1.html" />
     <meta property="article:published_time" content="2015-02-19T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-02-20T14:45:28.719Z" />
+    <meta property="article:modified_time" content="2015-02-20T14:46:15.988Z" />
     <meta property="article:tag" content="python" />
     <meta property="article:tag" content="mongo" />
     <meta property="article:tag" content="django" />
@@ -60,7 +60,7 @@
     "headline": "Django MongoDB Engine [Part 1]",
     "url": "http://theofilis.github.io/2015/02/20/Django-MongoDB-Engine-Part-1.html",
     "datePublished": "2015-02-19T22:00:00.000Z",
-    "dateModified": "2015-02-20T14:45:28.719Z",
+    "dateModified": "2015-02-20T14:46:15.988Z",
     "keywords": "python, mongo, django",
     "description": "1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virtualenv..."
 }
@@ -266,11 +266,35 @@
 </div>
 </li>
 <li>
-<p>add <strong>permission_backend_nonrel.backends.NonrelPermissionBackend</strong> to your AUTHENTICATION_BACKENDS and <strong>permission_backend_nonrel</strong> to your INSTALLED_APPS
-=== Django MongoDB Engine</p>
+<p>add <strong>permission_backend_nonrel.backends.NonrelPermissionBackend</strong> to your AUTHENTICATION_BACKENDS and <strong>permission_backend_nonrel</strong> to your INSTALLED_APPS</p>
+<div class="literalblock">
+<div class="content">
+<pre>settings.py:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>AUTHENTICATION_BACKENDS = (
+    ...
+    'permission_backend_nonrel.backends.NonrelPermissionBackend',
+)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>INSTALLED_APPS = (
+    ...
+    'permission_backend_nonrel',
+)</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_django_mongodb_engine">1.4. Django MongoDB Engine</h3>
 <div class="paragraph">
 <p>You should use the latest Git
 revision.</p>
@@ -278,7 +302,6 @@ revision.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">pip install git+https://github.com/django-nonrel/mongodb-engine</code></pre>
-</div>
 </div>
 </div>
 </div>
