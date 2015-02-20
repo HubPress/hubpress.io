@@ -1,0 +1,10 @@
+= Django MongoDB Engine
+
+== Installation
+
+Django MongoDB Engine depends on
+
+* Django-nonrel, a fork of Django that adds support for non-relational databases.
+* djangotoolbox, a bunch of utilities for non-relational Django applications and backends.
+
+It’s highly recommended (although not required) to use a virtualenv for your project to not mess up other Django setups.
