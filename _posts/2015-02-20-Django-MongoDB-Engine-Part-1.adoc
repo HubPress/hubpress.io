@@ -14,6 +14,8 @@ It’s highly recommended (although not required) to use a link:http://www.virtu
 
 === virtualenv
 
+*virtualenv* is a tool to create isolated Python environments.
+
 If not already installed, grab a copy from the Cheeseshop:
 
 [source,bash]
