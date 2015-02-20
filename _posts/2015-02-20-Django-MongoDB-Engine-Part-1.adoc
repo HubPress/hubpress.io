@@ -67,6 +67,22 @@ A Django authentication backend that supports Django's user and group permission
   git clone https://github.com/django-nonrel/django-permission-backend-nonrel.git
 
 * add *permission_backend_nonrel.backends.NonrelPermissionBackend* to your AUTHENTICATION_BACKENDS and *permission_backend_nonrel* to your INSTALLED_APPS
+
+
+    settings.py:
+
+    AUTHENTICATION_BACKENDS = (
+        ...
+        'permission_backend_nonrel.backends.NonrelPermissionBackend',
+    )
+
+    INSTALLED_APPS = (
+        ...
+        'permission_backend_nonrel',
+    )
+
+
+
 === Django MongoDB Engine
 
 You should use the latest Git
