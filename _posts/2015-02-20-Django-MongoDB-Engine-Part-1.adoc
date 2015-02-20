@@ -1,4 +1,4 @@
-= Django MongoDB Engine
+= Django MongoDB Engine [Part 1]
 :hp-tags: python,mongo,django
 
 :numbered:
@@ -78,5 +78,3 @@ DATABASES = {
 Django MongoDB Engine also takes into account the HOST, PORT, USER, PASSWORD and OPTIONS settings.
 
 Possible values of OPTIONS are described in the link:https://django-mongodb-engine.readthedocs.org/en/latest/reference/settings.html[settings reference].
-
-== First tutorial
