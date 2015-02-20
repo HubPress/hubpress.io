@@ -36,13 +36,16 @@ source myproject/bin/activate
 ----
 
 === Django-nonrel
+Django fork with support for NoSQL databases
 
 [source,bash]
 ----
-pip install git+https://github.com/django-nonrel/django@nonrel-1.5
+pip install git+https://github.com/django-nonrel/django@nonrel-1.7
 ----
 
 === djangotoolbox
+
+Djangotoolbox provides a common API for running Django on non-relational/NoSQL databases.
 
 [source,bash]
 ----
