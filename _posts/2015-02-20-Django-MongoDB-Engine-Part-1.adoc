@@ -81,6 +81,15 @@ A Django authentication backend that supports Django's user and group permission
         'permission_backend_nonrel',
     )
 
+* It's important to put 'permission_backend_nonrel after djangotoolbox, because permission_backend_nonrel.admin replaces djangotoolbox's User admin site.
++
+Permission and groups can be assigned and modified via Django's admin interface:
++
+link:https://camo.githubusercontent.com/603ca1906c7fe866050b50b90337e9a8925a3301/687474703a2f2f666c6f6f6f6f66696c65732e61707073706f742e636f6d2f73657276652f66696c65732f61646d696e2e6a7065672f[Django-nonrel admin with user_permissions and groups]
++
+Django-gaeauth admin interface with user_permissions and groups
+
+* Now you should be able to use all the standard Django permission methods and decorators, like user.has_perm('foo') and so on.
 
 
 === Django MongoDB Engine
