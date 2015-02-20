@@ -8,3 +8,67 @@ Django MongoDB Engine depends on
 * djangotoolbox, a bunch of utilities for non-relational Django applications and backends.
 
 It’s highly recommended (although not required) to use a virtualenv for your project to not mess up other Django setups.
+
+=== virtualenv
+
+If not already installed, grab a copy from the Cheeseshop:
+
+[source,bash]
+----
+pip install virtualenv
+----
+
+To set up a virtual environment for your project, use
+
+[source,bash]
+----
+virtualenv myproject
+----
+
+To join the environment, use (in Bash):
+
+[source,bash]
+----
+source myproject/bin/activate
+----
+
+=== Django-nonrel
+
+[source,bash]
+----
+pip install git+https://github.com/django-nonrel/django@nonrel-1.5
+----
+
+=== djangotoolbox
+
+[source,bash]
+----
+pip install git+https://github.com/django-nonrel/djangotoolbox
+----
+
+=== Django MongoDB Engine
+
+You should use the latest Git revision.
+
+[source,bash]
+----
+pip install git+https://github.com/django-nonrel/mongodb-engine
+----
+
+== Configuration
+
+Database setup is easy (see also the Django database setup docs):
+
+[source,python]
+----
+DATABASES = {
+   'default' : {
+      'ENGINE' : 'django_mongodb_engine',
+      'NAME' : 'my_database'
+   }
+}
+----
+
+Django MongoDB Engine also takes into account the HOST, PORT, USER, PASSWORD and OPTIONS settings.
+
+Possible values of OPTIONS are described in the settings reference.
