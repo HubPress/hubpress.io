@@ -75,5 +75,20 @@ image:http://cdn.pcsteps.gr/wp-content/uploads/2014/02/%CE%B4%CE%B5%CE%BD-%CE%B1
 
 image:http://cdn.pcsteps.gr/wp-content/uploads/2014/02/%CE%B4%CE%B5%CE%BD-%CE%B1%CE%BD%CE%BF%CE%AF%CE%B3%CE%B5%CE%B9-%CE%BF-%CF%85%CF%80%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CF%83%CF%84%CE%AE%CF%82-04.png[lol]
 
+Τέλος, αν έχουμε πολύμετρο, ελέγχουμε με αυτό το τροφοδοτικό μας. Προσέχουμε να το πιέσουμε αρκετά ώστε να έρχεται σε επαφή με το γυμνό καλώδιο, αλλά όχι υπερβολικά και προξενήσουμε ζημιά στη motherboard.
+
+image:http://cdn.pcsteps.gr/wp-content/uploads/2014/02/%CE%B4%CE%B5%CE%BD-%CE%B1%CE%BD%CE%BF%CE%AF%CE%B3%CE%B5%CE%B9-%CE%BF-%CF%85%CF%80%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CF%83%CF%84%CE%AE%CF%82-07.png[lol]
+
+Τα πορτοκαλί καλώδια πρέπει να δίνουν 3.3 volt, τα κόκκινα καλώδια πρέπει να δίνουν 5 volt και τα κίτρινα πρέπει να δίνουν 12 volt. Τα μαύρα καλώδια είναι καλώδια γείωσης.
+
+Αν το πολύμετρο αποτύχει, τότε χρειάζεται αλλαγή το τροφοδοτικό μας. Δείτε το άρθρο για την επιλογή του ιδανικού τροφοδοτικού.
+
+=== Βήμα 4ο: Έλεγχος Motherboard
+Αν το LED είναι αναμμένο ή δεν υπάρχει LED αλλά το τροφοδοτικό είναι εντάξει, ελέγχουμε τη Motherboard.
+
+Αποσυνδέουμε όλες τις συσκευές από τη motherboard: σκληρό δίσκο, floppy drive, DVD recorder κλπ
+
+Βεβαιωνόμαστε πως το κουμπί του κουτιού είναι συνδεδεμένο στη Motherboard. Πρόκειται για ένα πολύ μικρό, διπλό καλώδιο, συνήθως μαυρόασπρο, με την ένδειξη Power SW (από το switch). Συμβουλευόμαστε το βιβλίο οδηγιών της Motherboard για το που πρέπει να είναι συνδεδεμένο.
+
 
 Αναδημοσιευση από link:http://www.pcsteps.gr/15405-%CE%B4%CE%B5%CE%BD-%CE%B1%CE%BD%CE%BF%CE%AF%CE%B3%CE%B5%CE%B9-%CE%BF-%CF%85%CF%80%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CF%83%CF%84%CE%AE%CF%82/[PCSTEPS]
