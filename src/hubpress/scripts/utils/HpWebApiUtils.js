@@ -10,7 +10,7 @@ function _getConfig() {
 
   let deferred = Q.defer();
 
-  jquery.get('config.json', function(config) {
+  jquery.get('config.json?dt='+Date.now(), function(config) {
     deferred.resolve(config);
   })
   .fail((err) => {
@@ -24,7 +24,7 @@ function _loadActiveTheme(name, meta) {
   let deferred = Q.defer();
   let promises = [];
   let hubpressUrl = SettingsStore.getHubpressUrl(meta);
-  jquery.get(`${hubpressUrl}/themes/${name}/theme.json`, function(theme) {
+  jquery.get(`${hubpressUrl}/themes/${name}/theme.json?dt=${Date.now()}`, function(theme) {
     let version = theme.version;
     let files = _.pairs(theme.files);
 
@@ -38,7 +38,7 @@ function _loadActiveTheme(name, meta) {
       paginationLoaded = paginationLoaded || file[0] === 'pagination';
       navigationLoaded = navigationLoaded || file[0] === 'nav';
 
-      jquery.get(`${hubpressUrl}/themes/${name}/${file[1]}`, function(content) {
+      jquery.get(`${hubpressUrl}/themes/${name}/${file[1]}?v=${version}`, function(content) {
         deferredFile.resolve({
           name: file[0],
           path: file[1],
