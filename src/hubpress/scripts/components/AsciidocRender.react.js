@@ -36,7 +36,10 @@ let AsciidocRender = React.createClass({
   },
 
   componentDidUpdate: function(prevProps, prevState) {
-    applyScript.bind(this)();
+    // Update component only if necessary
+    if (prevProps.content && prevProps.content != this.props.content) {
+      applyScript.bind(this)();
+    }
   },
 
   render: function() {
