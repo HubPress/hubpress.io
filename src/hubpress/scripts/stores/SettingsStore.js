@@ -14,16 +14,29 @@ function _loadConfig (config) {
   let urlSite;
   _config = config;
 
-  if (_config.meta.cname) {
-    urlSite = 'http://'+_config.meta.cname;
-  } else {
-    urlSite = 'http://'+_config.meta.username + '.github.io/'+_config.meta.repositoryName;
-  }
+  urlSite = _getSiteUrl(_config.meta);
 
   _config.site = assign({}, _config.site, {
     url: urlSite
   });
 
+};
+
+function _getSiteUrl(_meta) {
+  let meta = _meta || _config.meta;
+  let url;
+  // TODO change that
+  if (meta.cname && meta.cname !== '') {
+    url = 'http://'+meta.cname;
+  }
+  else {
+    url = `http://${meta.username}.github.io`
+    if (meta.branch !== 'master') {
+      url = url + '/' + meta.repositoryName;
+    }
+  }
+
+  return url;
 };
 
 function dispatcher(payload) {
@@ -74,20 +87,7 @@ class SettingsStore extends EventEmitter {
   }
 
   getSiteUrl(_meta) {
-    let meta = _meta || _config.meta;
-    let url;
-    // TODO change that
-    if (meta.cname && meta.cname !== '') {
-      url = 'http://'+meta.cname;
-    }
-    else {
-      url = `http://${meta.username}.github.io`
-      if (meta.branch !== 'master') {
-        url = url + '/' + meta.repositoryName;
-      }
-    }
-
-    return url;
+    return _getSiteUrl(_meta);
   }
 
   getHubpressUrl(_meta) {
