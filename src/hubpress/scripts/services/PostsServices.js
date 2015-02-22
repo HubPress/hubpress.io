@@ -212,9 +212,11 @@ function _filterPostsToSync(db, posts) {
 
       postDb = postDb || {id: uuid.v4()};
 
-      if (postDb.sha !== postGithub.sha) {
+      // Test on sha is not enough because a post can be published/unpublished
+      // and the sha on the post does not change
+      //if (postDb.sha !== postGithub.sha) {
         _post = assign({}, postGithub, postDb);
-      }
+      //}
 
       deferred.resolve(_post)
     })
@@ -261,9 +263,17 @@ function _readContentAndConvert(repository, context, posts) {
         deffered.reject(err);
       }
       else {
-        let _post = assign({}, post, asciidoctor.convert(content), {
-          content: content
-        });
+        let _post;
+        // Convert with Asciidoc only if necessary
+        if (post.original && post.original.content === content) {
+          _post = assign({}, post);
+        }
+        else {
+          _post = assign({}, post, asciidoctor.convert(content), {
+            content: content
+          });
+        }
+
         deferred.resolve(_post);
       }
 
@@ -284,6 +294,7 @@ function _majPostsIndexDb(repository, context, posts) {
     original.title = original.attributes.map['doctitle'] ;
     original.image = original.attributes.map['hp-image'] ;
     original.tags = original.attributes.map['hp-tags'] && post.attributes.map['hp-tags'].split(',') ;
+    original.url = url.getPostUrl(original.name);
 
     let _postToSave = assign({}, post, {original: original});
     _postToSave.original.published_at = _postToSave.published_at = original.name.split('-').slice(0,3).join('-');
@@ -539,16 +550,16 @@ class PostsServices {
         deferred.reject(err);
       }
       else {
-        console.log('updateHead');
-        _updateHead(repository, context, commit)
-        .then((commit)=>{
-          console.log('updateHead done');
-          deferred.resolve(commit);
-        })
-        .catch((err)=>{
-          console.log('updateHead', err);
-          deferred.reject(err);
-        })
+        repository.write(context.branch, '.last-sha', commit, 'Update last sha', (err, sha) => {
+          if (err) {
+            console.log('.last-sha', err);
+            deferred.reject(err);
+          }
+          else {
+            console.log('.last-sha done');
+            deferred.resolve(sha);
+          }
+        });
       }
     });
 
