@@ -41,7 +41,7 @@ The following parameters are mandatory :
 +
 * `username`, which is your GitHub user name,
 * `repositoryName`, which is the new name of the repository fork, `<username>.github.io`.
-. Commit the changes, and open the GitHub Pages domain:  `http://<username>.github.io/`.
+. Commit the changes, and open the GitHub Pages domain:  `https://<username>.github.io/`.
 . The following screen indicates you have correctly configured HubPress
 +
 image:http://hubpress.io/img/home-install.png[Install complete,300]
@@ -65,7 +65,7 @@ The following parameters are mandatory :
 +
 * `username`, which is your GitHub user name,
 * `repositoryName`, which is the repository fork. For example, `hubpress.io` if you did not rename it.
-. Commit the changes, and open the GitHub Pages domain:  `http://<username>.github.io/<repositoryName>/`.
+. Commit the changes, and open the GitHub Pages domain:  `https://<username>.github.io/<repositoryName>/`.
 . The following screen indicates you have correctly configured HubPress
 +
 image:http://hubpress.io/img/home-install.png[Install complete,300]
@@ -74,8 +74,8 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 The HubPress Administration Console is available at */hubpress*
 
-* `http://<username>.github.io/hubpress/` for GitHub Hosted blogs, or
-* `http://<username>.github.io/<repositoryName>/hubpress/` for Domain Hosted blogs.
+* `https://<username>.github.io/hubpress/` for GitHub Hosted blogs, or
+* `https://<username>.github.io/<repositoryName>/hubpress/` for Domain Hosted blogs.
 
 === Log Into the Administration Console
 
@@ -156,7 +156,7 @@ If you want to add a cover image to your Blog Post, set the `hp-image` attribute
 [source, asciidoc]
 ----
 = Blog Title
-:hp-image: http://<repositoryName>/images/a-cover-image.jpg
+:hp-image: https://<repositoryName>/images/a-cover-image.jpg
 ----
 
 TiP: You may want to consider creating a `/covers` folder in your repository to group the covers together. 
