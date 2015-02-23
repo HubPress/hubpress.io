@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "adun",
-    "repositoryName": "adun.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"adun","repositoryName":"adun.github.io","branch":"master"},"site":{"googleAnalytics":"UA-60029940-1","url":"http://adun.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"http://adun.github.io/themes/Casper"}}
