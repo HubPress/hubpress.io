@@ -13,6 +13,7 @@ var $ = require('gulp-load-plugins')();
 var browserify = require('browserify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer'),
 
     sourceFile = './src/hubpress/scripts/app.react.js',
 
@@ -63,6 +64,10 @@ gulp.task('scripts', function () {
             // log errors if they happen
             .on('error', $.util.log.bind($.util, 'Browserify Error'))
             .pipe(source(destFileName))
+            .pipe(buffer())
+            .pipe($.sourcemaps.init({loadMaps: true}))
+            .pipe($.uglify())
+            .pipe($.sourcemaps.write('./'))
             .pipe(gulp.dest(destFolder));
     }
 
