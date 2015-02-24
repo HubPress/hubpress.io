@@ -68,11 +68,6 @@ function _createAuthorization(authorization) {
       deferred.reject(err);
     }
     else {
-      Github.renewInstance({
-        auth: "oauth",
-        token: createdToken
-      });
-
       deferred.resolve(createdToken);
     }
   });
@@ -125,6 +120,11 @@ class AuthServices {
 
       })
       .then(function(result) {
+        Github.renewInstance({
+          auth: "oauth",
+          token: result.token
+        });
+
         // Call action
         AuthActionGHCreators.receiveAuthentication({
           message: {

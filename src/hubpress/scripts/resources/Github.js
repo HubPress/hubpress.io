@@ -1,21 +1,28 @@
 const gh = require("github");
 
-let _ghInstance;
-let _context;
+class Github {
 
-const Github = {
-
-  getContext: () => _context,
-
-  setContext: context => _context = context,
-
-  getGithub: () => _ghInstance,
-
-  renewInstance: (options) => {
-    _ghInstance = new gh(options);
-    return _ghInstance;
+  constructor() {
+    this.context=null;
+    this.ghInstance=null;
   }
 
+  getContext() {
+    return this.context;
+  }
+
+  setContext(context) {
+    this.context = context;
+  }
+
+  getGithub() {
+    return this.ghInstance;
+  }
+
+  renewInstance(options) {
+    this.ghInstance = new gh(options);
+    return this.ghInstance;
+  }
 }
 
-export default Github;
+export default new Github();
