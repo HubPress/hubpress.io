@@ -14,4 +14,7 @@ To build the documentation, Pygments is required.
 5. Run `npm install -g gulp`
 
 
-To run the project
+To run the project :
+
+1. Edit the `hubpress/config.json` and set your username and the name of your repository
+2. Run `gulp watch`
