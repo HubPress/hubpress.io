@@ -100,3 +100,7 @@ Term 1::
     Definition 1
 Term 2::
     Definition 2
+
+==== Want More AsciiDoc Syntax Help?
+
+If you want to create really detailed blog posts, the best place to find out more about AsciiDoc syntax is the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoctor Quick Reference Guide]. 
