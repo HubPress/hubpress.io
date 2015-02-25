@@ -1026,6 +1026,9 @@ body>a.btn.nav.prev span {
 body>a.btn.nav.loading {
     color: transparent
 }
+body>.pagination {
+  margin-bottom: 50px;
+}
 body>footer, .post-footer {
     position: relative;
     border-top: 1px solid #ededee;
