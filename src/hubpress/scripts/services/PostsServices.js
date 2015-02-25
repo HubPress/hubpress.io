@@ -176,15 +176,15 @@ function _getGithubPostsSha(repository, context) {
 
 */
 function _getPostsGithub(repository, context, sha) {
-  let deferred;
+  let promise;
 
   if (sha === localStorage.postsSha) {
-    deferred = Q.fcall(function() {
+    promise = Q.fcall(function() {
       return [];
     });
   }
   else {
-    deferred = Q.defer();
+    let deferred = Q.defer();
     repository.read(context.branch, '_posts', (err, posts) => {
       if (err) {
         deferred.reject(err);
@@ -194,9 +194,10 @@ function _getPostsGithub(repository, context, sha) {
       }
     });
 
+    promise = deferred.promise;
   }
 
-  return deferred.promise;
+  return promise;
 }
 
 function _filterPostsToSync(db, posts) {
