@@ -3,7 +3,9 @@
 This is an AsciiDoc Comment. You can't see these in the published output, but they will help you understand the critical parts of a HubPress Blog Post.
 ////
 
-//// All these tags are optional - delete them if you do not need them////
+//// 
+All these tags are optional - delete them if you do not need them
+////
 :hp-tags: First Tag, Second Tag, Third Tag
 :hp-cover: _[link to the cover image for the blog post]_
 :published_at: YYYY-MM-DD
