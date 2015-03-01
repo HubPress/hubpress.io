@@ -1,31 +1,6 @@
-= Welcome to Hubpress
+= Rob Potvin
 
-:published_at: 2015-02-13
+:published_at: 2015-03-01
 
-:hp-tags: mac,github,new,site
-
-This +*literal*+ will appear as *literal*.
-
-* Edgar Allen Poe
-* Sheri S. Tepper
-* Bill Bryson
-
-.Possible DefOps manual locations
-* West wood maze
-** Maze heart
-*** Reflection pool
-** Secret exit
-* Untracked file in git repository
-
-[cols="2*"]
-|===
-|Firefox
-|Web Browser
-
-|Ruby
-|Programming Language
-
-|TorqueBox
-|Application Server
-|===
+My name is Rob Potvin and I am a Apple IT Professonal. I work at JAMF Software EMEIA as the Educational Services Engineer.
  
