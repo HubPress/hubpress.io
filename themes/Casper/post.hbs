@@ -9,7 +9,7 @@
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
         <a class="back-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+        <!-- <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a> -->
     </nav>
 </header>
 
@@ -74,7 +74,7 @@
         </footer>
 
         {{#if @blog.disqus}}
-    
+
         <section class="post-comments">
           <div id="disqus_thread"></div>
           <script type="text/javascript">
@@ -89,7 +89,7 @@
           <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </section>
-    
+
         {{/if}}
 
     </article>
