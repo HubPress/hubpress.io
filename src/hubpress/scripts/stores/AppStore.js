@@ -36,7 +36,7 @@ function dispatcher(payload) {
       this.message = {
         type: 'success',
         title: 'Synchronization',
-        content: 'The synchronization is ended'
+        content: 'Site Changes Synchronized with GitHub Pages'
       };
       localStorage.setItem('hp-synchronization', moment().format());
       this.emitChange();
