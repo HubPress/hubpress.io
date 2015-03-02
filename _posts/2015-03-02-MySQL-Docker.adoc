@@ -9,6 +9,10 @@ MySQL is a popular choice of database for use in web applications, and is a cent
 Oracle Corporation and/or affiliates own the copyright and trademark for MySQL.
 
 == How to use this image
-start a mysql instance
+Start a mysql instance
 
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
+
+Start a mysql instance and bind it on machine port.
+
+docker run -d -p 3306:<host port> <image id>
