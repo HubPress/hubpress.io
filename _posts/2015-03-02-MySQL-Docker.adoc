@@ -20,7 +20,7 @@ Start a mysql instance and bind it on machine port.
 
 [source,bash]
 ----
-docker run -d -p 3306:3306 mysql --env-file env.list -name some-mysql
+docker run --name some-mysql --env-file ./env.list -p 3306:3306 -d mysql 
 ----
 
 The env.list file
