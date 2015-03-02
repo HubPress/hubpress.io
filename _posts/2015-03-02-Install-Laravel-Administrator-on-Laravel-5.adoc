@@ -26,3 +26,6 @@ To install Administrator as a Composer package to be used with Laravel 5, simply
 Then publish Administrator's assets with **php artisan vendor:publish**. 
 
 This will add the file config/administrator.php. This config file is the primary way you interact with Administrator. This command will also publish all of the assets, views, and translation files.
+
+== Settings Configuration
+
