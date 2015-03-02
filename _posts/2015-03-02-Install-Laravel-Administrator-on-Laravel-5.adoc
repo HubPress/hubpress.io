@@ -1,0 +1,2 @@
+= Install Laravel Administrator on Laravel 5
+
