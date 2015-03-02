@@ -1,0 +1,12 @@
+= Adding Images
+
+To add images to your blog posts:
+
+. Commit images to this directory.
+. In your blog post, use the following basic AsciiDoc syntax:
++
+[source,AsciiDoc]
+----
+image::http://github.com/<username>/<repositoryName>/images/<filename>[]
+----
+. See http://asciidoctor.org/docs/asciidoc-writers-guide/ for complex examples of Image syntax.

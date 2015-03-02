@@ -1,0 +1,12 @@
+{
+  "files": {
+    "loop": "partials/loop.hbs",
+    "default": "default.hbs",
+    "index": "index.hbs",
+    "author": "author.hbs",
+    "post": "post.hbs",
+    "page": "page.hbs",
+    "tag": "tag.hbs"
+  },
+  "version":"1.0.0"
+}
