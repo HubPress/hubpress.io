@@ -1170,12 +1170,15 @@ hr {
   border-radius: 3px;
   text-align: center; }
 .post pre {
-  width: 95%; }
+  width: 95%; overflow-x: auto;}
 .post hr {
   display: block;
   width: 30%;
   margin: 2em 0;
   border-top: 1px solid #dddddd; }
+.post .ulist {
+  overflow-x: auto;
+}
 
 .error-code {
   font-size: 6em; }
