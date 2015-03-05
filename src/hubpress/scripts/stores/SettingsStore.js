@@ -22,15 +22,15 @@ function _loadConfig (config) {
 
 };
 
-function _getSiteUrl(_meta) {
+function _getSiteUrl(_meta, addProtocol) {
   let meta = _meta || _config.meta;
   let url;
   // TODO change that
   if (meta.cname && meta.cname !== '') {
-    url = 'http://'+meta.cname;
+    url = (addProtocol === false ? '' : 'http:') + '//'+meta.cname;
   }
   else {
-    url = `https://${meta.username}.github.io`;
+    url = (addProtocol === false ? '' : 'https:') + `//${meta.username}.github.io`;
     if (meta.branch !== 'master') {
       url = url + '/' + meta.repositoryName;
     }
@@ -86,8 +86,8 @@ class SettingsStore extends EventEmitter {
     return 'hubpress-' + config.meta.username+'-'+config.meta.repositoryName;
   }
 
-  getSiteUrl(_meta) {
-    return _getSiteUrl(_meta);
+  getSiteUrl(_meta, addProtocol) {
+    return _getSiteUrl(_meta, addProtocol);
   }
 
   getHubpressUrl(_meta) {
@@ -109,7 +109,7 @@ class SettingsStore extends EventEmitter {
   }
 
   getThemeUrl(name) {
-    let url = this.getSiteUrl();
+    let url = this.getSiteUrl(null, false);
     url += `/themes/${name}`;
     return url;
   }
