@@ -1,8 +1,8 @@
 {
   "meta": {
     "username": "michel-lastilbe",
-    "repositoryName": "lastilbe",
-    "branch": "gh-pages"
+    "repositoryName": "lastilbe.github.io",
+    "branch": "master"
   },
   "theme": {
     "name": "Casper"
