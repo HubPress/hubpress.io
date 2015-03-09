@@ -1,0 +1,76 @@
+// ------------------------------
+// SINGLE POST LAYOUT
+// ------------------------------
+
+.post-comments {
+  border-top: 1px solid $gray-light;
+  padding: 60px 0;
+}
+
+// ------------------------------
+// SINGLE POST METAß
+// ------------------------------
+
+.post-meta {
+  margin: 0 0 .4em 0;
+  color: darken($gray, 2%);
+}
+
+  .post-meta__date {
+    margin-right: .5em;
+  }
+
+  .post-meta__tags {
+    margin-left: .4em;
+  }
+
+  .post-meta__author {
+    margin-left: 1.5em;
+  }
+
+  .post-meta__avatar {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin: 0 .3em -.4em 0;
+    border: none;
+    box-shadow:none;
+  }
+
+// ------------------------------
+// SINGLE POST STYLES
+// ------------------------------
+
+.post {
+
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: $border-radius;
+    text-align: center;
+  }
+
+  pre {
+    width: 95%;
+    overflow-x: auto;
+  }
+
+  .ulist {
+    overflow-x: auto;
+  }
+
+  hr {
+    display: block;
+    width: 30%;
+    margin: 2em 0;
+    border-top: 1px solid $gray-light;
+  }
+
+}
+
+// ------------------------------
+// SINGLE POST STYLES
+// ------------------------------
+.error-code {
+    font-size: 6em;
+}

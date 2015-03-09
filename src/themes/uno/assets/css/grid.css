@@ -1,0 +1,46 @@
+/*
+Syntax error: Invalid US-ASCII character "\xE2"
+        on line 10 of assets/scss/grid.scss
+
+5: // Defaults which you can freely override
+6: $column-width: 60px;
+7: $gutter-width: 20px;
+8: $columns: 12;
+9: 
+10: // Utility function — you should never need to modify this
+11: @function gridsystem-width($columns:$columns) {
+12:   @return ($column-width * $columns) + ($gutter-width * $columns);
+13: }
+14: 
+15: // Set $total-width to 100% for a fluid layout
+
+Backtrace:
+assets/scss/grid.scss:10
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/engine.rb:440:in `block in check_encoding!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/util.rb:782:in `rescue in block in check_encoding'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/util.rb:779:in `block in check_encoding'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/util.rb:778:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/util.rb:778:in `each_with_index'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/util.rb:778:in `check_encoding'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/util.rb:832:in `check_sass_encoding'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/engine.rb:439:in `check_encoding!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/engine.rb:406:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/engine.rb:274:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:484:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:214:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:208:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:208:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:291:in `watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/plugin.rb:108:in `method_missing'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/exec.rb:509:in `watch_or_update'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/exec.rb:346:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/exec.rb:43:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/lib/sass/exec.rb:22:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.3.14/bin/sass:13:in `<top (required)>'
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid US-ASCII character \"\xE2\"\A         on line 10 of assets/scss/grid.scss\A \A 5: // Defaults which you can freely override\A 6: $column-width: 60px;\A 7: $gutter-width: 20px;\A 8: $columns: 12;\A 9: \A 10: // Utility function — you should never need to modify this\A 11: @function gridsystem-width($columns:$columns) {\A 12:   @return ($column-width * $columns) + ($gutter-width * $columns);\A 13: }\A 14: \A 15: // Set $total-width to 100% for a fluid layout"; }

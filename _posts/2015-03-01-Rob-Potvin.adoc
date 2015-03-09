@@ -1,0 +1,7 @@
+= Rob Potvin
+
+:published_at: 2015-03-01
+:hp-tags: HubPress, Blog, Post, New
+
+My name is Rob Potvin and I am a Apple IT Professonal. I work at JAMF Software EMEIA as the Educational Services Engineer.
+ 
