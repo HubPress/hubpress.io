@@ -61,7 +61,8 @@ class SettingsService {
         message: {
           type: 'success',
           title: 'Settings save',
-          content: 'Your settings have been saved with success. Now your posts are going to be regenerated.'
+          content: 'Settings Saved' 
+          content: 'Do not save further configuration changes until HubPress confirms posts were regenerated successfully.'
         }});
     })
     .catch((err) => {
@@ -71,7 +72,7 @@ class SettingsService {
         message: {
           type: 'error',
           title: 'Settings save',
-          content: 'An error has occurred, see your console for more informations.'
+          content: 'Your settings could not be saved. See your browser's developer console for the cause of the error.'
         }});
     })
     ;
