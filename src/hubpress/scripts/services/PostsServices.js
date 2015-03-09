@@ -402,7 +402,7 @@ class PostsServices {
         message: {
           type: 'success',
           title: 'Remote save',
-          content: 'Your post has been saved with success.'
+          content: 'Post Saved.'
         }
       });
 		})
@@ -411,7 +411,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Remote save',
-          content: 'An error has occurred, see your console for more informations.'
+          content: 'Your post was not saved. See your browser's developer console for the cause of the error.'
         }
       });
 		});
@@ -592,7 +592,7 @@ class PostsServices {
         message: {
           type: 'success',
           title: 'Publishing',
-          content: 'Your post has been published with success.'
+          content: 'Post Published'
         }
       });
     })
@@ -602,7 +602,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Publishing',
-          content: 'An error has occurred, see your console for more informations.'
+          content: 'Your post was not published. See your browser's developer console for the cause of the error.'
         }
       });
     });
@@ -626,7 +626,7 @@ class PostsServices {
         message: {
           type: 'success',
           title: 'Publishing',
-          content: 'Your posts have been published with success.'
+          content: 'All Posts Published'
         }
       });
     })
@@ -636,7 +636,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Publishing',
-          content: 'An error has occurred, see your console for more informations.'
+          content: 'Posts were not published. See your browser's developer console for the cause of the error.'
         }
       });
     });
@@ -663,7 +663,7 @@ class PostsServices {
         message: {
           type: 'success',
           title: 'Unpublishing',
-          content: 'Your post has been unpublished with success.'
+          content: 'Blog Post Unpublished.'
         }
       });
       deferred.resolve();
@@ -674,7 +674,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Publishing',
-          content: 'An error has occurred, see your console for more informations.'
+          content: 'The blog entry was not unpublished. See your browser's developer console for the cause of the error.'
         }
       });
       deferred.reject(e);
