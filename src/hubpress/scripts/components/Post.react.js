@@ -8,6 +8,7 @@ const CodeMirror = require('react-code-mirror');
 
 const AsciidocRender = require('./AsciidocRender.react');
 
+import SettingsStore from '../stores/SettingsStore';
 import PostsStore from '../stores/PostsStore';
 import PostsActionCreators from '../actions/PostsActionCreators';
 
@@ -52,9 +53,18 @@ let Post = React.createClass({
   },
 
   handleChange: function(event) {
-    let post = this.state.post;
-    post.content = event.target.value;
-    this.setState({post: post});
+    const config = SettingsStore.config();
+    console.log(config);
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+
+    this.timeout = setTimeout(() => {
+      let post = this.state.post;
+      post.content = event.target.value;
+      this.setState({post: post});
+    }, config.meta.delay ? config.meta.delay : 300);
+
   },
 
   handleAsciidocChange: function(postConverted) {

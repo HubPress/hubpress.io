@@ -16,6 +16,7 @@ function _getState() {
     repositoryName : config.meta.repositoryName,
     branch : config.meta.branch,
     cname : config.meta.cname,
+    delay : config.meta.delay,
 
     // site
     title: config.site && config.site.title,
@@ -80,7 +81,8 @@ class Settings {
         username: this.state.username,
         repositoryName: this.state.repositoryName,
         branch:this.state.branch,
-        cname:this.state.cname
+        cname:this.state.cname,
+        delay:this.state.delay
       },
       site: {
         title: this.state.title,
@@ -138,6 +140,10 @@ class Settings {
         <label htmlFor="cname">Git CNAME</label>
         <input type="text" name="cname" valueLink={this.linkState('cname')}  className="form-control" />
         <p>{this.getSiteUrl()}</p>
+        </li>
+        <li>
+        <label htmlFor="delay">Delay before render Asciidoc (ms)</label>
+        <input type="text" name="delay" valueLink={this.linkState('delay')}  className="form-control" placeholder="Default value 200"/>
         </li>
         </ol>
 
