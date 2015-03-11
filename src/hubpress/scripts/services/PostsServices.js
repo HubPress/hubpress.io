@@ -411,7 +411,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Remote save',
-          content: 'Your post was not saved. See your browser's developer console for the cause of the error.'
+          content: 'Your post was not saved. See your browser\'s developer console for the cause of the error.'
         }
       });
 		});
@@ -570,18 +570,33 @@ class PostsServices {
   publishPost(id) {
     console.info('PostsServices - publishPost');
     console.log('PostsServices - publishPost', id);
-    let commit;
     let postToPublish;
-    this.saveAndMarkAsPublished(id)
+    let tags;
+    const db = IndexedDb.getDb();
+    _getPost(db, id)
+    .then((post) => {
+      let originalTags = post.original ? post.original.tags : [];
+      tags = _.union(post.tags, originalTags);
+      return this.saveAndMarkAsPublished(id);
+    })
     .then((post) => {
       postToPublish = post;
       return this.getPublishedPosts();
     })
     .then((posts) => {
+      let generators = ['post', 'index'];
+      if (tags.length) {
+        generators.push('tags');
+      }
+      else {
+        tags = undefined;
+      }
+
       return Generators.generate({
-        generators: ['post', 'pagination'],
+        generators: generators,
         post: postToPublish,
-        posts: posts
+        posts: posts,
+        tags: tags
       });
     })
     .then((elementsToPublish) => {
@@ -602,7 +617,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Publishing',
-          content: 'Your post was not published. See your browser's developer console for the cause of the error.'
+          content: 'Your post was not published. See your browser\'s developer console for the cause of the error.'
         }
       });
     });
@@ -610,8 +625,6 @@ class PostsServices {
 
   publishPosts() {
     console.info('PostsServices - publishPosts');
-    let commit;
-    let postToPublish;
     this.getPublishedPosts()
     .then((posts) => {
       return Generators.generate({
@@ -636,7 +649,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Publishing',
-          content: 'Posts were not published. See your browser's developer console for the cause of the error.'
+          content: 'Posts were not published. See your browser\'s developer console for the cause of the error.'
         }
       });
     });
@@ -646,13 +659,19 @@ class PostsServices {
     console.info('PostsServices - unpublishPost');
     console.log('PostsServices - unpublishPost', id);
     let deferred = Q.defer();
-
-    this.markAsUnpublishedAndDelete(id)
+    let tags;
+    const db = IndexedDb.getDb();
+    _getPost(db, id)
+    .then((post)=>{
+      tags = post.tags;
+      return this.markAsUnpublishedAndDelete(id);
+    })
     .then(this.getPublishedPosts)
     .then((posts) => {
       return Generators.generate({
-        generators: ['pagination'],
-        posts: posts
+        generators: ['tags', 'index'],
+        posts: posts,
+        tags: tags
       });
     })
     .then((elementsToPublish) => {
@@ -674,7 +693,7 @@ class PostsServices {
         message: {
           type: 'error',
           title: 'Publishing',
-          content: 'The blog entry was not unpublished. See your browser's developer console for the cause of the error.'
+          content: 'The blog entry was not unpublished. See your browser\'s developer console for the cause of the error.'
         }
       });
       deferred.reject(e);

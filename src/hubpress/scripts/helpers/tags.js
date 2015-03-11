@@ -23,17 +23,17 @@ tags = function (options) {
         output = '';
 
     function createTagList(tags) {
-        //var tagNames = _.pluck(tags, 'name');
+        var tagNames = _.pluck(tags, 'name');
 
         if (autolink) {
             return _.map(tags, function (tag) {
                 return utils.linkTemplate({
-                    url: SettingsStore.getSiteUrl() + '/tag/'+tag,
-                    text: _.escape(tag)
+                    url: SettingsStore.getSiteUrl() + '/tag/'+tag.slug,
+                    text: _.escape(tag.name)
                 });
             }).join(separator);
         }
-        return _.escape(tags.join(separator));
+        return _.escape(tagNames.join(separator));
     }
 
     if (this && this.tags && this.tags.length) {
