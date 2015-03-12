@@ -5,6 +5,7 @@ const Router = require('react-router');
 const Loader = require('./Loader.react.js');
 import Authentication from './Authentication';
 import SettingsStore from '../stores/SettingsStore';
+import PostsStore from '../stores/PostsStore';
 import SettingsActionCreators from '../actions/SettingsActionCreators';
 
 function _getState() {
@@ -54,15 +55,20 @@ class Settings {
   }
 
   componentDidMount() {
+    PostsStore.addChangeListener(this._onPostsStoreChange);
     SettingsStore.addChangeListener(this._onSettingsStoreChange);
   }
 
   componentWillUnmount() {
+    PostsStore.removeChangeListener(this._onPostsStoreChange);
     SettingsStore.removeChangeListener(this._onSettingsStoreChange);
   }
 
+  _onPostsStoreChange() {
+    this.setState(assign(this.state, {loading: PostsStore.isLoading()}));
+  }
+
   _onSettingsStoreChange() {
-    this.setState(assign(this.state, {loading: false}));
   }
 
   getSiteUrl() {

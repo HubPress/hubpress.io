@@ -60,7 +60,7 @@ class SettingsService {
         settings: settings,
         message: {
           type: 'success',
-          title: 'Settings save',
+          title: 'Settings save - Step 1/2',
           content: 'Settings Saved, do not save further configuration changes until HubPress confirms posts were regenerated successfully.'
         }});
     })

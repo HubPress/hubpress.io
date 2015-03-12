@@ -46,6 +46,7 @@ function dispatcher(payload) {
 
   switch(action.type) {
     case ActionTypes.RECEIVE_INIT:
+      this.message = null;
       _loadConfig(action.config);
       this.emitChange();
       break;
@@ -54,6 +55,7 @@ function dispatcher(payload) {
       this.emitChange();
       break;
     case ActionTypes.SAVEANDPUBLISH_SETTINGS:
+      this.message = null;
       _config = action.settings;
       this.emitChange();
       break;

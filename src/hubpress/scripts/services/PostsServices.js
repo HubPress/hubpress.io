@@ -639,7 +639,7 @@ class PostsServices {
       PostsActionIDBCreators.receivePublish({
         message: {
           type: 'success',
-          title: 'Publishing',
+          title: 'Publishing - Step 2/2',
           content: 'All Posts Published'
         }
       });

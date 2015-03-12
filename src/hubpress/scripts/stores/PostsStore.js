@@ -29,14 +29,17 @@ function dispatcher(payload) {
       break;
     case ActionTypes.REMOTESAVE_POST:
       this._isLoading = true;
+      this.message = null;
       this.emitChange();
       break;
     case ActionTypes.PUBLISH_POST:
       this._isLoading = true;
+      this.message = null;
       this.emitChange();
       break;
     case ActionTypes.UNPUBLISH_POST:
       this._isLoading = true;
+      this.message = null;
       this.emitChange();
       break;
     case ActionTypes.RECEIVE_REMOTESAVE:
@@ -60,6 +63,7 @@ function dispatcher(payload) {
       break;
     case ActionTypes.START_SYNCHRONIZE:
       this._isSynchronizing = true;
+      this.message = null;
       this.emitChange();
       break;
     case ActionTypes.FINISH_SYNCHRONIZE:
