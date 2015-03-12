@@ -4,6 +4,7 @@
 // Formats a date using moment.js. Formats published_at by default but will also take a date as a parameter
 
 var moment          = require('moment'),
+    handlebars      = require('handlebars'),
     date;
 
 date = function (context, options) {
@@ -26,11 +27,11 @@ date = function (context, options) {
         date;
 
     if (timeago) {
-        date = moment(context).fromNow();
+        date = moment(context).format('YYYY-MM-DD HH:mm:ss') + '<ago class="ago">';
     } else {
         date = moment(context).format(f);
     }
-    return date;
+    return new handlebars.SafeString(date);
 };
 
 module.exports = date;
