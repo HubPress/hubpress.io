@@ -1,20 +1,20 @@
 ## 0.2.0
 
-* fix(README en): add informations about hp-alt-title
+* fix(README en): add information about hp-alt-title
 * fix(casper): fix overflow for .content
-* fix(settings): fix messages and loader after submited form
-* feat(compilation): add syntax highlighting
-* feat(title): add hp-alt-title for an alternative title
+* fix(settings): fix messages and loader after form is submitted
+* feat(compilation): added syntax highlighting
+* feat(title): added hp-alt-title parameter for an alternative blog post title
 * fix(theme): fix XX ago in DateTime-format
-* feat(editing): add delay before rendering HTML content
-* feat(tags): add tag generation
-* fix(notification): Sanitized all Error Messages with consistent info
-* fix(theme): remove protocole from theme url
-* doc(README): add README-es File
+* feat(editing): added configurable rendering delay setting in HubPress settings to reduce UI lag for fast typers
+* feat(tags): added tag generation
+* fix(notification): Sanitized all error messages with consistent info
+* fix(theme): removed protocol from theme url
+* doc(README): added README-es File
 
 ## 0.1.1
 
-* fix(sync): fix promise when no post
+* fix(sync): fixed error when no post
 * fix(https): report #99
 * fix(uno): fix pre overflow
 * fix(build): uglify app.js
