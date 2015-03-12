@@ -190,6 +190,19 @@ Add tags by using the `hp-tags` attribute.
 :hp-tags: HubPress, Blog, Open Source,
 ----
 
+==== :hp-alt-title: to specify an alternative title
+
+Specify an alternative title using the `hp-alt-title` attribute.
+
+The alternative title will be use in name of the HTML file.
+
+. :hp-alt-title: Example
+[source, asciidoc]
+----
+= 大千世界
+:hp-alt-title: My english title
+----
+
 == Troubleshooting
 
 If something is not working as you expect, some of these tips may help.
