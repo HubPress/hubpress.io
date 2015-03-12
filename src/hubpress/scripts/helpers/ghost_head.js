@@ -19,6 +19,7 @@ var handlebars      = require('handlebars'),
     excerpt             = require('./excerpt'),
     tagsHelper          = require('./tags'),
     imageHelper         = require('./image'),
+    utils               = require('./utils'),
     ghost_head;
 
 ghost_head = function (options) {
@@ -155,6 +156,10 @@ ghost_head = function (options) {
     head.push('<meta name="generator" content="Ghost ' + trimmedVersion + '" />');
     head.push('<link rel="alternate" type="application/rss+xml" title="' +
         title  + '" href="' + SettingsStore.getSiteUrl() + '/rss" />');
+    head.push(utils.stylesheetTemplate({
+        source: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css',
+        version: ''
+    }));
 
     var headString = _.reduce(head, function (memo, item) { return memo + '\n    ' + item; }, '');
     return new handlebars.SafeString(headString.trim());
