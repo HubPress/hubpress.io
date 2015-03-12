@@ -27,7 +27,8 @@ function _localSave(post) {
   let title = post.attributes.map['doctitle'] ;
   let image = post.attributes.map['hp-image'] ;
   let tags = post.attributes.map['hp-tags'] && post.attributes.map['hp-tags'].split(',') ;
-  let name = slug(published_at + '-' + title) +'.adoc';
+  let altTitle = post.attributes.map['hp-alt-title'];
+  let name = slug(published_at + '-' + (altTitle || title)) +'.adoc';
   let urlPost = url.getPostUrl(name);
 
   let postToSave = assign({}, post, {
