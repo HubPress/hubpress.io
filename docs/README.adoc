@@ -95,7 +95,12 @@ You can configure basic blog settings (such as CNAME and Pagination) and social 
 
 This section contains basic information configured in the `/hubpress/config.json` file.
 
-The *Git CNAME* field is configurable, and lets you specify a custom domain name for your blog. See https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/[Setting Up A Custom Domain] for instructions about setting up a CNAME for your blog.
+The following fields are configurable:
+
+Git CNAME::
+Lets you specify a custom domain name for your blog. See https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/[Setting Up A Custom Domain] for instructions about setting up a CNAME for your blog.
+Live Preview Render Delay::
+Controls how long the live render takes to refresh, in milliseconds. For fast typists, setting this field to a value over `2000` (two seconds) will result in a smoother editing experience because the live preview will not be regenerated so frequently. Setting this value below `2000` will result in the live preview refreshing faster, but may result in some visible cursor delay when typing.
 
 ==== Site
 
