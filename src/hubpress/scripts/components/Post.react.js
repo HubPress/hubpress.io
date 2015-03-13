@@ -16,7 +16,7 @@ let Post = React.createClass({
   mixins: [Authentication, Router.State],
 
   getInitialState: function() {
-    return {post: {}, loading: true, viewActive: false};
+    return {post: {}, asciidocContent: '', loading: true, viewActive: false};
   },
 
   componentDidMount: function() {
@@ -30,11 +30,12 @@ let Post = React.createClass({
 
   _onPostsStoreChange: function(){
     if (!PostsStore.isLoading()) {
-      this.setState({post: PostsStore.getPost(this.getParams().postId), loading: PostsStore.isLoading()});
+      let post = PostsStore.getPost(this.getParams().postId);
+      this.setState({post: post, asciidocContent: post.content, loading: PostsStore.isLoading()});
 
     }
     else {
-      this.setState({post: this.state.post, loading: PostsStore.isLoading()});
+      this.setState({post: this.state.post, asciidocContent: this.state.asciidocContent, loading: PostsStore.isLoading()});
     }
 
   },
@@ -54,17 +55,19 @@ let Post = React.createClass({
 
   handleChange: function(event) {
     const config = SettingsStore.config();
-    console.log(config);
+    let post = this.state.post;
+
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      window.clearTimeout(this.timeout);
     }
 
-    this.timeout = setTimeout(() => {
-      let post = this.state.post;
-      post.content = event.target.value;
-      this.setState({post: post});
-    }, config.meta.delay ? config.meta.delay : 300);
+    this.timeout = window.setTimeout(() => {
+      let content = this.state.post.content;
+      this.setState({asciidocContent: content });
+    }, config.meta.delay ? config.meta.delay : 200);
 
+    post.content = event.target.value;
+    this.setState({post: post});
   },
 
   handleAsciidocChange: function(postConverted) {
@@ -133,7 +136,7 @@ let Post = React.createClass({
             />
 
             <div className="viewer" >
-              <AsciidocRender content={this.state.post.content} onChange={this.handleAsciidocChange}/>
+              <AsciidocRender content={this.state.asciidocContent} onChange={this.handleAsciidocChange}/>
             </div>
           </div>
             <div className="actions bottom">
