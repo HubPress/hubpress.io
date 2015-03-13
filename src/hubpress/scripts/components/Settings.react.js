@@ -148,7 +148,7 @@ class Settings {
         <p>{this.getSiteUrl()}</p>
         </li>
         <li>
-        <label htmlFor="delay">Delay before render Asciidoc (ms)</label>
+        <label htmlFor="delay">Live Preview Render Delay (ms)</label>
         <input type="text" name="delay" valueLink={this.linkState('delay')}  className="form-control" placeholder="Default value 200"/>
         </li>
         </ol>
