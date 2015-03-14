@@ -1,5 +1,7 @@
 = HubPress
 
+:toc:
+
 == HubPress とはなにか？
 
 image::http://hubpress.io/img/editor.png[]
@@ -139,7 +141,7 @@ Social Network グループ内のフィールドには
 はじめて HubPress を利用する際には **Posts** はまだありません。
 ブログに投稿をすると、左側に記事のリスト、右側にプレビューの形で表示されます。
 
-=== 記事を書く
+=== HubPressで記事を書く
 
 NOTE: もし AsciiDocに馴染みがなければ http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's Guide] で勉強して下さい。
 
@@ -157,6 +159,9 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 もし 1st-level のヘッダーを使いたければ代わりに `== First Level Heading` を使ってください。
 ネストしたヘッダも同様です。
 
+==== HubPress パラメーター
+HubPress allows you to alter characteristics of each blog post using attributes.
+
 ===== カバー画像
 
 記事にカバー画像を追加したい場合 `hp-image` 属性を追加する必要があります。
@@ -167,6 +172,10 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 = Blog Title
 :hp-image: https://github.com/<username>/<repositoryName>/images/a-cover-image.jpg
 ----
+
+現在以下のテーマが投稿のカバー画像をサポートしています:
+
+* Saga
 
 ===== 公開日
 
@@ -182,7 +191,8 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 
 ===== タグとカテゴリ
 
-タグのみサポートしています。
+Note: カテゴリはサポートしていません。
+
 `hp-tags` 属性により、タグを複数追加できます。
 
 例:
@@ -192,7 +202,7 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 :hp-tags: tag1,tag2,tag3
 ----
 
-==== 代替タイトル指定のための :hp-alt-title:
+===== 代替タイトル指定のための :hp-alt-title:
 
 `hp-alt-title` を利用して記事に別名タイトルを指定することが出来ます。
 
