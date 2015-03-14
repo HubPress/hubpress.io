@@ -191,7 +191,7 @@ HubPress allows you to alter characteristics of each blog post using attributes.
 
 ===== タグとカテゴリ
 
-Note: カテゴリはサポートしていません。
+NOTE: カテゴリはサポートしていません。
 
 `hp-tags` 属性により、タグを複数追加できます。
 
