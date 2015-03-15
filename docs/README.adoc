@@ -223,4 +223,4 @@ To return your instance of HubPress to that of the published blog, clear the bro
 == Credits
 
 Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
-Thanks to https://github.com/takkyuuplayer[takkyuuplayer] to have translated the README into Japanese
+Thanks to https://github.com/takkyuuplayer[takkyuuplayer], https://github.com/hinaloe[hinaloe] to have translated the README into Japanese
