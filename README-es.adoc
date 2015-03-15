@@ -23,7 +23,7 @@ Chrome Beta y Firefox serán compatibles pronto, en realidad encontramos algunos
 ==== Hacer fork al repositorio
 Has Click en el icono de Fork image:http://hubpress.io/img/fork-icon.png[Fork,80] para crear una copia de este repositorio con tu cuenta de GitHub.
 
-==== Usa el dominio github.io 
+==== Usa el dominio github.io
 
 Si nunca has usado el dominio de GitHub Pages, puedes usar este procedimiento para rápidamente instalar HubPress. Con este método, se requieren solo algunos pasos para tener Hubpress instalado y listo para usar.
 
@@ -116,11 +116,11 @@ El campo *Theme* es seleccionable de una lista de temas almacenados en el direct
 
 El Campo *Google Analytics* toma el código único de Google Analytics generado para el sitio.
 
-===== Nombre Corto Disqus 
+===== Nombre Corto Disqus
 
 El campo *Disqus shortname* toma tu Disqus URL/nombrecorto que especificas cuando registras un nuevo sitio para Disqus. Solo el nombre corto es requerido, no el enlace a tu perfil personal.
 
-==== Redes Sociales 
+==== Redes Sociales
 
 Todos los campos en este grupo requieren el URLs completo a tu pagina de perfil publico. La manera en que estos valores son renderizados en tu blog depende en el tema seleccionado.
 
@@ -134,7 +134,7 @@ NOTA: Si nunca has usado AsciiDoc para escribir contenido, la http://asciidoctor
 
 El editor de HubPress muestra el código de AsciiDoc a la izquierda, y la vista previa en la derecha.
 
-==== Consejos Básicos para Bloguear con AsciiDoc 
+==== Consejos Básicos para Bloguear con AsciiDoc
 
 ===== Titulo del blog y encabezamiento
 
@@ -166,7 +166,7 @@ Por Ejemplo :
 :published_at: 2015-01-31
 ----
 
-===== Etiquetas y Categorias 
+===== Etiquetas y Categorias
 
 Actualmente, solo son soportadas etiquetas. Puedes agregar las etiquetas usando el atributo `hp-tags`.
 
@@ -180,4 +180,4 @@ Por ejemplo :
 == Créditos
 
 Gracias a https://github.com/jaredmorgs[Jared Morgan] para inicialmente poner en orden el archivo README que se ve aquí, y seguir siendo el "Documentador" para HubPress.
-Gracias a https://github.com/takkyuuplayer[takkyuuplayer] por haber traducido el README en Japones.
+Gracias a https://github.com/takkyuuplayer[takkyuuplayer], https://github.com/hinaloe[hinaloe] por haber traducido el README en Japones.
