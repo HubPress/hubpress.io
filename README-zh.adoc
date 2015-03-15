@@ -96,7 +96,12 @@ image:http://hubpress.io/img/login.png[Install complete,300]
 
 这部分包含一些配置 `/hubpress/config.json` 文件的基本信息.
 
+以下选项可供更改：
+
+Git CNAME::
 你可以更改*Git CNAME*给你的博客设定一个自己的域名，详细参见 https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/[Github官方] 上设定CNAME的步骤。
+Live Preview Render Delay（刷新延迟）::
+控制实时刷新的频率，以milliseconds（毫秒）计。对于打字快的人来说，设定到2000（2秒）就可以得到比较流畅的编辑体验，实时预览也不至于更新太快。虽然设定到2000以下可以更新的更快，但是可能在打字时导致游标的一些延迟。
 
 ==== 网站设置
 
