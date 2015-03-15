@@ -165,7 +165,7 @@ If you want to add a cover image to your Blog Post, set the `hp-image` attribute
 ----
 
 NOTE: Because HubPress defaults the `/images` directory as the root for all images, you only need to declare the filename of the image. Because of this, you may want to consider creating a `/covers` directory in your repository to group the cover images together.
-Naming the cover images consistenty will make it very easy to apply to every post. If you have a theme to your blog, this allows your readers to get a visual clue as to what the post is about.
+Naming the cover images consistently will make it very easy to apply to every post. If you have a theme to your blog, this allows your readers to get a visual clue as to what the post is about.
 
 The themes that currently support blog post cover images are:
 
