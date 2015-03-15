@@ -5,30 +5,30 @@
 == 什么是HubPress?
 image::http://hubpress.io/img/editor.png[]
 
-HubPress是一款建立个人博客的优秀的开源工具。
+HubPress 是一款在Github 上基于 AsciiDoc 建立个人博客的优秀的开源工具。
 
 由 https://github.com/anthonny[Anthonny Quérouil] (twitter https://twitter.com/anthonny_q[@anthonny_q]) 开发和维护.
 
 NOTE: HubPress目前是预览版本，如果您发现了Bug请及时告知我们.
 
-在项目不断开发升级的过程中说明文档也会很快的更新，请定期查询以便得到最新说明。
+在项目不断开发升级的过程中说明文档也会很快的更新，请定期查询以便得到最新说明。如果你发现了一些问题，请作为 bug 提交，我们感谢你在每一个方面的帮助，而且将会*永远*期待您的合作（pull requests）。
 
 == 浏览器兼容性
 
-HubPress目前兼容Chrome和Chrome for Android.
+HubPress 目前兼容 Chrome 桌面版， Firefox 桌面版和 Chrome Android 版.
 
-Chrome Beta版和Firefox将会很快兼容, 实际上是因为使用IndexedDB遇到了一些Bug, 预览版的话我们推荐使用Chrome.
+Chrome Beta 的 Android 版将会很快兼容, 实际上是因为现在使用 IndexedDB 遇到了一些Bug, 预览的话请使用 Chrome 的 Android版。
 
 == 快速上手
 
 === 安装
 ==== Fork the repository
 
-点击Fork图标 image:http://hubpress.io/img/fork-icon.png[Fork,80] 复制这个repository到你的Github账号下.
+点击Fork图标 image:http://hubpress.io/img/fork-icon.png[Fork,80] 复制这个 repository 到你的 Github 账号下.
 
 ==== 使用github.io的域名
 
-如果你从来都没用过Github的个人静态主页，你可以通过以下方法来快速建立HubPress博客。只需要一些简单的步骤就可以实现博客的配置发布。
+如果你从来都没用过 Github 的个人静态主页，你可以通过以下方法来快速建立 HubPress 博客。只需要一些简单的步骤就可以实现博客的配置发布。
 
 IMPORTANT: 如果你现在你的 `username.github.io` 的个人主页用于其他项目，或者你想用其他域名，请跳过以下步骤。
 
