@@ -1,5 +1,6 @@
 const Q = require('q');
 const _ = require('lodash');
+const slug = require('slug');
 import ThemeStore from '../stores/ThemeStore';
 import AuthStore from '../stores/AuthStore';
 import SettingsStore from '../stores/SettingsStore';
@@ -7,26 +8,27 @@ import SettingsStore from '../stores/SettingsStore';
 class PaginationGenerator {
 
   constructor() {
-    this.name = 'pagination';
   }
 
   generate(params) {
     console.info('PaginationGenerator - generate');
     console.log('PaginationGenerator - generate', params);
     const posts = params.posts;
-    let defer = Q.defer();
-    let pageCount = 1;
     const siteConfig = SettingsStore.config().site;
     siteConfig.url = SettingsStore.getSiteUrl();
+    let defer = Q.defer();
+    let pageCount = 1;
     let siteRoot = siteConfig.url;
-    let pagePath = 'index.html';
+    let pagePath = (params.path || '') + 'index.html';
     let postsPageToGenerate = [];
     let postsPageToPublish = [];
     let nbPostPerPage = parseInt(siteConfig.postsPerPage || 10, 10);
+    let theme = SettingsStore.config().theme;
+    let socialnetwork = SettingsStore.config().socialnetwork;
 
 
     if (!posts || !posts.length) {
-      let htmlContent = ThemeStore.template('index',{
+      let htmlContent = ThemeStore.template(params.template ,{
         pagination: {
           prev: 0,
           next: 0,
@@ -36,18 +38,18 @@ class PaginationGenerator {
           limit: nbPostPerPage
         },
         posts: [],
+        tag: params.tag,
         site: siteConfig,
-        theme: SettingsStore.config().theme,
-        socialnetwork: SettingsStore.config().socialnetwork,
+        theme: theme,
+        socialnetwork: socialnetwork,
       });
 
       postsPageToPublish.push( {
         name:`page-${pageCount}`,
-        path: 'index.html',
+        path: pagePath,
         content: htmlContent,
-        message: `Publish page-${pageCount}`,
-        author: AuthStore.getAuthor(),
-        relativeUrl: ''
+        message: `Publish page-${pageCount} ${params.template}`,
+        author: AuthStore.getAuthor()
       })
 
       defer.resolve(postsPageToPublish);
@@ -58,34 +60,27 @@ class PaginationGenerator {
     let totalPage = Math.ceil((posts.length) / nbPostPerPage);
 
     _.each(posts, (post, index) => {
-      let olderPage = '';
-      let youngerPage = '';
       let next = 0;
       let previous = 0;
 
       if (pageCount > 1) {
-        pagePath = `page/${pageCount}/index.html`
+        pagePath =  (params.path || '') + `page/${pageCount}/index.html`;
       }
 
       if (pageCount > 1) {
-        if (pageCount === 2) {
-          youngerPage = '/index.html';
-        }
-        else {
-          youngerPage = `${siteRoot}/page/${pageCount-1}/index.html`;
-        }
         previous = pageCount-1;
       }
       if (pageCount < totalPage) {
-        olderPage = `${siteRoot}/page/${pageCount+1}/index.html`;
         next = pageCount+1;
       }
 
-
-      if (post.attributes.map.tags) {
-        post.tags = post.attributes.map.tags.split(',');
+      if (post.attributes.map['hp-tags']) {
+        post.tags = post.attributes.map['hp-tags'].split(',');
         post.tags = _.map(post.tags, (tag) => {
-          return tag.trim();
+          return  {
+            name: tag,
+            slug: slug(tag)
+          };
         });
       }
 
@@ -105,21 +100,22 @@ class PaginationGenerator {
         //Generate
         //
         //
-        let htmlContent = ThemeStore.template('index',{
+        let htmlContent = ThemeStore.template(params.template,{
             pagination: {
               prev: previous,
               next: next,
               page: pageCount,
               pages: totalPage,
-              total: totalPage,
+              total: posts.length,
               limit: nbPostPerPage
             },
             posts: postsPageToGenerate,
+            tag: params.tag,
             title: siteConfig.title,
             description: siteConfig.description,
             site: siteConfig,
-            theme: SettingsStore.config().theme,
-            socialnetwork: SettingsStore.config().socialnetwork,
+            theme: theme,
+            socialnetwork: socialnetwork,
             relativeUrl: ''
           });
 
@@ -127,15 +123,15 @@ class PaginationGenerator {
           name:`page-${pageCount}`,
           path: pagePath,
           content: htmlContent,
-          message: `Publish page-${pageCount}`,
+          message: `Publish page-${pageCount} ${params.template}`,
           author: AuthStore.getAuthor()
-        })
+        });
 
         postsPageToGenerate = [];
-        pageCount++
+        pageCount++;
       }
 
-    })
+    });
 
     defer.resolve(postsPageToPublish);
 

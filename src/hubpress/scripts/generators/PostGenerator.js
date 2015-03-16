@@ -3,6 +3,7 @@ const _ = require('lodash');
 import ThemeStore from '../stores/ThemeStore';
 import AuthStore from '../stores/AuthStore';
 import SettingsStore from '../stores/SettingsStore';
+const slug = require('slug');
 const url = require('../utils/url');
 
 class PostGenerator {
@@ -25,12 +26,13 @@ class PostGenerator {
 
     let postData = {};
     _.extend(postData, modifiedPost.original);
-    if (postData.attributes.map.tags) {
-      postData.tags = postData.attributes.map.tags.split(',');
-      postData.tags = _.map(postData.tags, (tag) => {
-        return tag.trim();
-      });
-    }
+
+    postData.tags = _.map(postData.tags, (tag) => {
+      return {
+        name: tag,
+        slug: slug(tag)
+      }
+    });
 
     postData.author = AuthStore.getAuthor();
 

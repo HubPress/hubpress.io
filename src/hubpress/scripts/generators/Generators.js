@@ -2,9 +2,10 @@ const Q = require('q');
 const _ = require('lodash');
 
 // Generator
-import PaginationGenerator from './PaginationGenerator';
+import IndexGenerator from './IndexGenerator';
 import PostGenerator from './PostGenerator';
 import PostsGenerator from './PostsGenerator';
+import TagsGenerator from './TagsGenerator';
 
 class Generators {
 
@@ -61,6 +62,7 @@ const generators = new Generators();
 //generators.register(tagsCloudGenerator);
 generators.register(PostGenerator);
 generators.register(PostsGenerator);
-generators.register(PaginationGenerator);
+generators.register(TagsGenerator);
+generators.register(IndexGenerator);
 
 export default generators;

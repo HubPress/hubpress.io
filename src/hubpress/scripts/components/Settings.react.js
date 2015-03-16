@@ -5,6 +5,7 @@ const Router = require('react-router');
 const Loader = require('./Loader.react.js');
 import Authentication from './Authentication';
 import SettingsStore from '../stores/SettingsStore';
+import PostsStore from '../stores/PostsStore';
 import SettingsActionCreators from '../actions/SettingsActionCreators';
 
 function _getState() {
@@ -16,6 +17,7 @@ function _getState() {
     repositoryName : config.meta.repositoryName,
     branch : config.meta.branch,
     cname : config.meta.cname,
+    delay : config.meta.delay,
 
     // site
     title: config.site && config.site.title,
@@ -53,15 +55,20 @@ class Settings {
   }
 
   componentDidMount() {
+    PostsStore.addChangeListener(this._onPostsStoreChange);
     SettingsStore.addChangeListener(this._onSettingsStoreChange);
   }
 
   componentWillUnmount() {
+    PostsStore.removeChangeListener(this._onPostsStoreChange);
     SettingsStore.removeChangeListener(this._onSettingsStoreChange);
   }
 
+  _onPostsStoreChange() {
+    this.setState(assign(this.state, {loading: PostsStore.isLoading()}));
+  }
+
   _onSettingsStoreChange() {
-    this.setState(assign(this.state, {loading: false}));
   }
 
   getSiteUrl() {
@@ -80,7 +87,8 @@ class Settings {
         username: this.state.username,
         repositoryName: this.state.repositoryName,
         branch:this.state.branch,
-        cname:this.state.cname
+        cname:this.state.cname,
+        delay:this.state.delay
       },
       site: {
         title: this.state.title,
@@ -138,6 +146,10 @@ class Settings {
         <label htmlFor="cname">Git CNAME</label>
         <input type="text" name="cname" valueLink={this.linkState('cname')}  className="form-control" />
         <p>{this.getSiteUrl()}</p>
+        </li>
+        <li>
+        <label htmlFor="delay">Live Preview Render Delay (ms)</label>
+        <input type="text" name="delay" valueLink={this.linkState('delay')}  className="form-control" placeholder="Default value 200"/>
         </li>
         </ol>
 
