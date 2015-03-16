@@ -1,21 +1,23 @@
 = HubPress
 
+:toc:
+
 == ¿Qué es HubPress?
 image::http://hubpress.io/img/editor.png[]
 
-HubPress es una herramienta de código abierto, para construir tu extraordinario blog!
+HubPress es una herramienta de código abierto, que puedes usar para construir un enriquecido blog basado en AsciiDoc y utilizando GitHub Pages!
 
 Creado y mantenimo por http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q]).
 
-NOTA: HubPress es actualmente en vista preliminar, si encuentras algunos bug ven a vernos.
+NOTE: Aunque HubPress parezca tener todas las funcionalidades, esta actualmente en vista preliminar. Los errores son inevitables, por eso si encuentras que algo no se esta comportando de la manera que piensas deberia hacerlo, notifica el error y el equipo del proyecto se dirigirá a él tan pronto como sea posible.
 
-La documentación esta evolucionando rápidamente en la medida que el proyecto va creciendo. Visita regularmente para obtener más consejos sobre como usar HubPress.
+La documentación esta evolucionando rápidamente en la medida que el proyecto va creciendo. Visita regularmente para obtener más consejos sobre como usar HubPress. Si encuentras algún error en la documentación, por favor notifica el error. Tu ayuda en la mejora de todos los aspectos de HubPress es muy apreciada, Los Pull Request *siempre* son bienvenidos.
 
 == Compatibilidad con Navegadores
 
-HubPress es compatible con Chrome y Chrome para Android.
+HubPress es compatible con Chrome para escritorio, Firefox para escritorio y Chrome para Android.
 
-Chrome Beta y Firefox serán compatibles pronto, en realidad encontramos algunos errores en IndexedDB, por eso recomendamos durante la vista preliminar preferir el uso de Chrome.
+Chrome Beta para Android será completamente compatible pronto, pero no esta completamente soportada por algunos errores en IndexedDB, por eso durante la vista preliminar usa unicamente Chrome para Android.
 
 == Introducción
 
@@ -27,7 +29,7 @@ Has Click en el icono de Fork image:http://hubpress.io/img/fork-icon.png[Fork,80
 
 Si nunca has usado el dominio de GitHub Pages, puedes usar este procedimiento para rápidamente instalar HubPress. Con este método, se requieren solo algunos pasos para tener Hubpress instalado y listo para usar.
 
-IMPORTANTE: Si actualmente estas usando tu  `usuario.github.io` de GitHub Pages para otro proyecto, o si deseas usar un dominio personalizado, salta a las siguientes instrucciones.
+IMPORTANT: Si actualmente estas usando tu  `usuario.github.io` de GitHub Pages para otro proyecto, o si deseas usar un dominio personalizado, salta a las siguientes instrucciones.
 
 . Cambia el nombre del repositorio a `<usuario>.github.io`
 
@@ -93,7 +95,12 @@ Puedes configurar los ajustes básicos del Blog (tales como CNAME y paginación)
 
 Esta sección contiene información básica configurada en el archivo `/hubpress/config.json`.
 
-El *Git CNAME* es un campo configurable, y permite que especifique un dominio personalizado para tu blog. ve a https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/ para instrucciones acerca de como ajustar un CNAME para tu blog.
+Los siguientes campos son configurables:
+
+Git CNAME::
+Le permite especificar un nombre de dominio personalizado. Ver https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/[Setting Up A Custom Domain] para obtener instrucciones sobre cómo configurar un CNAME para tu blog.
+Live Preview Render Delay::
+Controla cuanto tiempo tarda el renderizador en vivo para refrescar, en milisegundos. Para mecanógrafos  rápidos, establece el campo en un valor superior a `2000` (dos segundos) esto dará lugar a una experiencia de edición más suave porque la vista previa no se regenerará con tanta frecuencia. Establecer este valor por debajo de `2000` dará lugar a la generación de la vista previa más rapido, pero puede dar lugar a cierto retraso del cursor al escribir.
 
 ==== Sitio
 
@@ -106,7 +113,7 @@ Los campos *Logo* y *Cover Image* pueden ser usados de las siguientes maneras:
 * Un enlace HTML a un servicio de hosting de imagenes, pro ejemplo Gravatar.
 * Un enlace a una imagen almacenada en el directorio /images del repositorio de tu blog.
 
-NOTA: Revisa el archivo `/images/README.adoc` para algunas opciones de como incluir imagenes es tus entradas del blog.
+NOTE: Revisa el archivo `/images/README.adoc` para algunas opciones de como incluir imagenes es tus entradas del blog.
 
 ===== Temas
 
@@ -130,11 +137,9 @@ Cuando inicies con HubPress, la vista *Posts* esta vacia. A medida que crees tus
 
 === Creando una Entrada
 
-NOTA: Si nunca has usado AsciiDoc para escribir contenido, la http://asciidoctor.org/docs/asciidoc-writers-guide/[guía para Escritores de AsciiDoctor] debe ser tu primera parada en tu viaje. La guía te provee de ejemplos de marcas básicos y avanzados para copiar y usar.
+NOTE: Si nunca has usado AsciiDoc para escribir contenido, la http://asciidoctor.org/docs/asciidoc-writers-guide/[guía para Escritores de AsciiDoctor] debe ser tu primera parada en tu viaje. La guía te provee de ejemplos de marcas básicos y avanzados para copiar y usar.
 
 El editor de HubPress muestra el código de AsciiDoc a la izquierda, y la vista previa en la derecha.
-
-==== Consejos Básicos para Bloguear con AsciiDoc
 
 ===== Titulo del blog y encabezamiento
 
@@ -144,38 +149,76 @@ Una linea `= Titulo del Blog` es requerida para guardar satisfactoriamente la en
 
 Si quieres colocar un encabezado de primer nivel debes utilizar `== Encabezado de Primer Nivel`, y de esta manera crear los encabezados anidados consecutivamente.
 
-===== Imagen de Portada
+==== Parámetros de HubPress
+
+HubPress le permite modificar las características de cada entrada del blog mediante atributos.
+
+===== :hp-image: para Imagen de Portada de la Entrada del Blog 
 
 Si quieres agregar una imagen de portada a tu entrada del blog, debes agregar el atributo `hp-image`.
 
-Por ejemplo :
+. :hp-image: Por Ejemplo:
 [source, asciidoc]
 ----
 = Blog Title
-:hp-image: http://github.com/<username>/<repositoryName>/images/a-cover-image.jpg
+:hp-image: a-cover-image.jpg
 ----
 
-===== Fecha de Publicación
+NOTA: Debido a los valores predeterminados en HubPress el directorio `/images` funciona como la raíz de todas las imágenes, sólo tiene que declarar el nombre del archivo de la imagen. Debido a esto, es posible que desee considerar la creación de un directorio `/covers` en su repositorio para agrupar las imágenes de las portadas juntas.
+Nombrar las imágenes de la cubierta consistentemente hará que sea muy fácil de aplicar a cada entrada. Si usted tiene un tema para su blog, esto permite a sus lectores obtener una idea visual de lo que trata la entrada.
 
-Por defecto,  la fecha de publicación es la fecha del día que se creo la entrada en el blog. puedes forzar la fecha de publicación agregando el atributo `published_at`
+Los temas que actualmente soportan imagenes de portadas en las entradas del blog son: 
 
-Por Ejemplo :
+* Saga
+
+==== :published_at: Para alterar la Fecha de Publicación
+
+Por defecto,  la fecha de publicación es la fecha de creación de la entrada en el blog. puedes forzar la fecha de publicación añadiendo el atributo `published_at`.
+
+. :published_at: Por Ejemplo :
 [source, asciidoc]
 ----
 = Blog Title
 :published_at: 2015-01-31
 ----
 
-===== Etiquetas y Categorias
+==== :hp-tags: Etiquetas
 
-Actualmente, solo son soportadas etiquetas. Puedes agregar las etiquetas usando el atributo `hp-tags`.
+NOTE: Categorias no son soportadas.
 
-Por ejemplo :
+Añadir etiquetas mediante el atributo `hp-tags`.
+
+. :hp-tags: Por Ejemplo:
 [source, asciidoc]
 ----
 = Blog Title
-:hp-tags: tag1,tag2,tag3
+:hp-tags: HubPress, Blog, Open Source,
 ----
+
+==== :hp-alt-title: Para Especificar un Título Alternativo
+
+Especifique un título alternativo mediante el atributo `hp-alt-title`.
+
+El título alternativa se utiliza en lugar del nombre de archivo HTML generado por HubPress.
+
+. :hp-alt-title: Por Ejemplo :
+[source, asciidoc]
+----
+= 大千世界
+:hp-alt-title: My English Title
+----
+
+== Solución de problemas
+
+Si algo no está funcionando como esperas, algunos de estos consejos podrían ayudarte.
+
+=== Restablecimiento de la Base de datos del Blog en Android
+
+A veces, la base de datos local de HubPress pierde la sincronía con tu blog publicado. Esto puede suceder debido a que estás editando tu blog en tu PC, y luego cambias a la tableta.
+
+HubPress trabaja en una base de datos almacenada localmente específica en tu navegador, por lo que si cambia de dispositivo - y luego cambia navegadores - se pierde la sincronía entre los navegadores.
+
+Para devolver la instancia de HubPress a la de el blog publicado, borrar la caché del navegador y de datos en Ajustes > Aplicaciones. Al hacer esto, HubPress se ve obligado a reconstruir la base de datos local, y reflejará el estado del blog en GitHub.
 
 == Créditos
 
