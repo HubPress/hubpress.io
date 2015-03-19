@@ -74,8 +74,9 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 HubPressの管理画面は */hubpress* からアクセスできます。つまり
 
-* https://<username>.github.io/hubpress/ (github.ioドメインを利用している場合 )
-* https://<username>.github.io/<repositoryName>/hubpress/ (独自ドメインを利用している場合)
+* `https://<username>.github.io/hubpress/` (github.ioドメインを利用している場合 )
+* `https://<username>.github.io/<repositoryName>/hubpress/` (Project Pageを利用している場合)
+* `http://<yourdomain>/hubpress/` (独自ドメインを使用している場合)
 
 です。
 
@@ -104,7 +105,7 @@ CNAMEやページングといった、基本的なブログの設定が可能で
 
 ==== Site
 
-===== Title と　Description
+===== Title と Description
 
 *Title* や *Description* フィールドにより
 ブログタイトルや, その説明を設定することができます。
