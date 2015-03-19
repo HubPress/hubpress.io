@@ -74,8 +74,9 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 HubPressの管理画面は */hubpress* からアクセスできます。つまり
 
-* https://<username>.github.io/hubpress/ (github.ioドメインを利用している場合 )
-* https://<username>.github.io/<repositoryName>/hubpress/ (独自ドメインを利用している場合)
+* `https://<username>.github.io/hubpress/` (github.ioドメインを利用している場合 )
+* `https://<username>.github.io/<repositoryName>/hubpress/` (Project Pageを利用している場合)
+* `http://<yourdomain>/hubpress/` (独自ドメインを使用している場合)
 
 です。
 
@@ -104,7 +105,7 @@ CNAMEやページングといった、基本的なブログの設定が可能で
 
 ==== Site
 
-===== Title と　Description
+===== Title と Description
 
 *Title* や *Description* フィールドにより
 ブログタイトルや, その説明を設定することができます。
@@ -216,6 +217,59 @@ NOTE: *特に日本語のタイトルはそのままではファイル名がお�
 = 日本語のタイトル
 :hp-alt-title: My English Title
 ----
+
+==== 画像の追加
+
+===== GitHubリポジトリにpushする
+
+GitのコマンドラインやGitアプリを使ってブログ投稿に画像を追加できます。
+
+. 画像を`images`にコミットする
+. ブログ投稿内にAsciiDoc文法に従って:
+
+[source,AsciiDoc]
+----
+image::<ファイル名>[]
+----
+. See http://asciidoctor.org/docs/asciidoc-writers-guide/ for complex examples of Image syntax.
+
+もし他所にホストした画像(例えばinstagram, 他のGitHubリポジトリ,あるいはその他の画像ホストサイトなど)を埋め込むには、`<ファイル名>`に画像への完全なURLを指定してください。
+
+.Hosted Image Embed
+----
+image::http://<full path to image>[]
+----
+
+===== 画像のホスト先としてGitHub issueを利用する
+
+You can use a single issue as an image container for a blog post containing many issues by uploading multiple images as comments. Alternatively, you can use multiple issues to store individual images. Whatever works best for you, and your organization style. Watch this five minute video for a demonstration about how to use GitHub Issues and Cloud Hosting services as embed targets, and some bonus tips on using the `image` AsciiDoc syntax  
+https://www.youtube.com/watch?v=KoaGU91qJv8
+
+==== 動画の埋め込み
+
+HubPressでは、ブログ記事内で簡単な記述で動画を埋め込むことが出来ます。動画への完全なURLは必要ありません。必要なのは動画固有のIDだけです。
+
+```
+video::[unique_youtube_video_id][youtube | vimeo]
+```
+
+.YouTube動画の埋め込み
+```
+video::KCylB780zSM[youtube]
+```
+
+.Vimeo動画の埋め込み
+```
+video::67480300[vimeo]
+```
+
+== HubPressのアップデート
+
+HubPressはGitHubにホストされているので、HubPressのmasterリポジトリから最新の変更をpullするだけでアップデートできます。
+
+初めてですか？次の動画で(コマンドライン操作を必要としない)簡単で正しい方法を学びましょう。(もちろんコマンドラインからでも問題ありません。)
+
+https://www.youtube.com/watch?v=KCylB780zSM
 
 
 == Credits
