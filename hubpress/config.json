@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"Djiit","repositoryName":"djiit.github.io","branch":"master"},"site":{"title":"Julien Tanay","disqus":"djiit","url":"http://Djiit.github.io"},"socialnetwork":{"email":"julien.tanay@gmail.com","twitter":"https://twitter.com/Djiit","github":"Djiit"},"theme":{"name":"Casper","url":"http://Djiit.github.io/themes/Casper"}}
