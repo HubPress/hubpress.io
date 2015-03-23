@@ -1,0 +1,65 @@
+= Configurer son accès SVN à un hébergement OVH pro : partie 2
+:hp-tags: OVH,svn,pageant,tortoise,mutualisé pro
+:published_at: 2012-01-06
+
+IMPORTANT: *Mise à jour :* Le chemin pour accéder à SVN via SSH a changé. Une note a été ajouté pour bien mettre en avant cette modification de configuration.
+
+Il y a quelques jours, heu non semaines…, enfin plutôt mois en fait, j’ai écrit link:/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html[un article sur la configuration d’un accès à un dépôt SVN situé sur un hébergement OVH pro]. Ca se passait par là. Je reviens aujourd’hui pour expliquer succinctement comment l’utiliser sur son poste en Windows 7 via http://tortoisesvn.tigris.org/[Tortoise SVN].
+
+== Installation de Tortoise SVN
+
+Pour ma part, je vais utiliser la version anglaise 64 bits de Tortoise. En fait, il suffit de télécharger l’installateur principal puis de l’exécuter. Un assistant d’installation vous permettra de l’installer facilement. Au cas où vous souhaiteriez la version française, je vous mets également un lien direct vers la dernière version courante du pack de langue. Il suffit de le télécharger puis de lancer le programme après avoir installé la version standard.
+
+* http://downloads.sourceforge.net/tortoisesvn/TortoiseSVN-1.7.0.22068-x64-svn-1.7.0.msi?download[Installateur de Tortoise SVN x64]
+* http://downloads.sourceforge.net/tortoisesvn/LanguagePack_1.7.0.22068-x64-fr.msi?download[Pack de la langue française x64]
+
+Si vous souhaitez une autre version vous pouvez récupérer celle qu’il vous faut http://tortoisesvn.net/downloads.html[ici même].
+
+== Utilisation de pageant
+
+Une fois Tortoise SVN installé on va configurer un petit agent SSH. Celui-ci nous permettra d’utiliser l’authentification par clé ssh. Cet agent est pageant. Il permet en fait de mettre « en cache » des clés SSH sur un OS Windows.
+
+Vous pouvez le télécharger en http://the.earth.li/~sgtatham/putty/latest/x86/pageant.exe[cliquant ici]. Une fois téléchargé, notez son chemin d’accès dans un coin.
+
+Si vous lancez l’exécutable vous verrez dans la barre des tâches un http://fr.wikipedia.org/wiki/Daemon_%28informatique%29[daemon]. Via un clic droit dessus vous aurez alors la possibilité de charger une clé SSH. Ceci est pratique mais lors d’une utilisation régulière, on se rend compte que charger manuelle la clé est une tâche récurrente. Nous allons donc directement charger une clé au démarrage de pageant.
+
+image::/images/2012/01/daemon-pageant.png[align="center"]
+
+Pour ajouter automatiquement notre clé lors du lancement de pageant, nous allons créer un raccourci vers l’exécutable sur le bureau (l’emplacement final du raccourci est peu important). Une fois le raccourci créé, nous allons l’éditer. Clic droit sur le raccourci, puis Propriétés. 
+
+Dans l’onglet raccourci, nous allons modifier la valeur du champ texte « Cible : ». Dans mon cas la valeur de départ est la suivante : *"C:\Program Files (x86)\WinSCP\PuTTY\pageant.exe"*. On rajoute à la suite de cette chaîne de caractère une nouvelle chaîne indiquant l’emplacement de la clé à charger par défaut. Dans mon cas ce sera : *"D:\informatique\projets\Jabby Tech’s\ssh-svn-key\key-tuto-svn.ppk"*. La chaîne complète du champ cible devient donc : 
+
+[source]
+----
+"C:\Program Files (x86)\WinSCP\PuTTY\pageant.exe" "D:\informatique\projets\Jabby Tech’s\ssh-svn-key\key-tuto-svn.ppk"
+----
+
+Il est important de mettre les doubles quotes autour du chemin vers la clé privé SSH. En effet, dans le cas où le chemin contiendrait des espaces, Windows n’interprétera pas la fin du chemin et donc vous n’obtiendrez pas le chargement automatique de la clé lors du lancement de pageant. Cliquer sur OK pour valider les modifications. Vous pouvez dès à présent fermer pageant et le relancer via le raccourci. La clé SSH sera automatiquement chargée.
+
+== Utilisation de Tortoise pour accéder à un SVN à travers un tunnel SSH
+
+Pour vérifier si votre connexion fonctionne. Cliquer droit sur un dossier. Comme vous pouvez le constater, le menu contextuel a été enrichie de plusieurs options relatives à tortoiseSVN. Choisissez l’option tortoiseSVN puis Repo-browser (pour la version anglaise)
+
+image::/images/2012/01/tortoise-menu-repobrowser.png[align="center"]
+
+Une nouvelle fenêtre s’ouvre. Elle permet de spécifier où se trouve un dépot auquel vous souhaiter accéder. Il est possible d’utiliser différents protocole pour l’accès. Dans le cas d’un dépôt configuré sous OVH mutualisé, nous utiliserons le protocole svn+ssh.
+
+L’adresse doit être de la forme suivant : *svn+ssh://$USER@$URL/$REPOSITORY/*
+
+
+* *$USER* : votre identifiant de connexion en ssh sur l’hébergement OVH mutualisé
+* *$URL* : url de connexion pour votre compte ssh [line-through]_(correspond également à votre domaine principal)_
+* *$REPOSITORY* : le nom du dépôt auquel vous souhaitez vous connecter. Dans notre cas ce sera celui créé dans le tutoriel précédent (projets)
+
+IMPORTANT: Attention l’url n’est plus celle du nom de domaine. Une mise à jour de la part d’OVH a été effectuée.
+
+Par exemple pour le cas de Jabby Tech’s et le cluster 001 (cf. le lien OVH pour savoir sur quel cluster vous êtes), on pourrait avoir l’url suivante svn+ssh://jabberwock@ssh.cluster001.ovh.net/projets/
+
+
+[line-through]_Par exemple, dans le cas de Jabby Tech’s, on pourrait avoir l’url suivante svn+ssh://jabberwock@jabby-techs.fr/projets/_
+
+Notez l’url et faites « OK ». Deux fenêtre s’ouvre directement (enfin si tout fonctionne bien). La première correspond au navigateur. La second qui se trouve par dessus la première vous demande si vous faites confiance à l’hôte et si vous souhaitez donc ajouter l’empreinte du serveur svn dans les empreintes connues par votre ordinateur. Ce message apparaît car on utilise le protocole svn+ssh. Accepter le serveur (si vous êtes sûr du serveur bien entendu). Si tout se passe normalement, vous devriez obtenir un écran similaire à celui-ci (moins les numéros que j’ai rajoutés)
+
+image::/images/2012/01/depot-distant.png[align="center"]
+
+Voilà, la configuration est officiellement opérationnelel. Bien joué et amusez-vous bien !

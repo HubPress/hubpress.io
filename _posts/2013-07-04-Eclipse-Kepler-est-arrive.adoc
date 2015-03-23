@@ -1,0 +1,60 @@
+= Eclipse Kepler est arrivé
+:hp-tags: eclipse,kepler
+:published_at: 2013-07-04
+
+Comme tous les ans, la fondation Eclipse nous gratifie d’une sortie simultanée de ses projets. Dans le lot on retrouve bien entendu l’IDE du même nom. La version 4.3 est désormais disponible au téléchargement et j’ai commencé à la tester en version JEE developer. Voilà un premier retour sur cette mouture.
+
+image::/images/2013/07/splash-kepler.png[align="center"]
+
+== Remarques générales
+
+Ca ne concerne pas l’IDE en soit, mais la sortie des projets Eclipse est toujours aussi impressionnante. Cette année 71 projets de la fondation sont mis à jour. La liste est trouvable à cette adresse : http://eclipse.org/kepler/projects.php. Pour la blague c’est la première année que la fondation sort moins de projets. L’an dernier il y en avait 72.
+
+Revenons à l’IDE. Premier constat, j’aime bien cette version de l’IDE. Il pèse un peu plus lourd au téléchargement que la précédente version (les deux versions sont le packaging JEE Developer) mais au vu des ajouts, je ne trouve pas à y redire pour le moment. De plus sur ma machine (qui est loin d’être un veau), je ne vois pas de dégradation dans les performances. Ce qui somme toute n’est pas un mal au vu de la sortie catastrophique de la 4.2.0. Je n’ai pas encore assez testé pour jugé d’une réelle amélioration des performances.
+
+Je ne sais pas si c’était le cas sur la version précédente, mais au lancement de Kepler sur un workspace déjà existant, l’IDE propose d’installer les plugins qui étaient déjà installés avant. C’est plutôt pratique et utile. Ça m’a évité de devoir passer par le marketplace pour récupérer un à un les plugins qui m’intéressaient. En gros on peut repartir sur une installation propre et avoir un rappel de ce que l’on avait ajouté précédemment.
+
+Pour les passionnés de la branche 3 d’Eclipse, vous n’aurez plus de mise à jour. En effet, l’an dernier 2 versions existaient du côté d’Eclipse (3.8 et 4.2). Cette année seule la 4.3 est sortie. Donc bon gré, mal gré, un jour vous allez devoir passer à la nouvelle mouture ou changer d’IDE. Notamment si vous souhaitez avoir le support de JEE 7.
+
+== Les points importants (pour moi)
+
+Après des remarques générales, je vais m’attarder un peu plus sur ce qui me plaît dans la dernière version d’Eclipse.
+
+=== Intégration de m2e et m2e-wtp dans le package JEE
+
+Étant développer JEE, je prend systématiquement le package JEE Developper d’Eclipse. Ainsi j’ai déjà une palanqué d’outils pré-installés et c’est donc Eclipse est plus rapidement utilisable sans avoir à passer par l’ajout fastidieux de tous les plugins que l’on veut utiliser notamment pour les Java EE Developer Tools et JavaScript Development Tools. J’avoue ne pas me servir de tout, mais je trouve que c’est un compromis valable. D’ailleurs si vous voulez comparer des packages d’Eclipse, vous pouvez aller ici. Bien que ça soit pratique, il me manquait à minima la prise en charge de maven. Maintenant c’est bon, tout est déjà présent y compris le m2e-wtp qui est sorti en version 1.0.
+
+Au programme, on a donc une nouvelle version de m2e qui passe à la version 1.4.0. Au final plusieurs bugs ont été corrigé ainsi que l’ajout de quelques nouveautés. La plus importante pour moi est le ALT-F5 sur un projet. Ceci permet de faire l’équivalent de « Clic droit > Maven > Update Project… ». C’est pas grand chose, mais ça sera toujours plus rapide de faire comme ça. Il est bien entendu possible de changer le raccourci clavier.
+
+Du côté de m2e-wtp, c’est la première release. En effet, le plugin a terminé sa période de validation (Incubation) pour passer en version 1.0. Ce projet fourni en fait tout un lot de connecteur m2e pour gérer les spécificités de JEE. On retrouve notamment les supports suivants : 
+
+
+* *Projets WAR* : ajoute les facettes « Java » et « Dynamic Web » sur le projet
+* *Projets EJB* : ajoute les facettes « Java » et « EJB » sur le projet
+* *Projets EAR* : ajoute la facette EAR et gère la génération des fichiers application.xml et jboss.xml
+
+Pour les autres fonctionnalités de m2e-wtp, je vous invite à visiter http://www.eclipse.org/m2e-wtp/[cette page].
+
+=== Support de JEE7
+
+C’est peut être passé inaperçu pour certains, voir d’autres faisait l’amalgame entre la sortie de Java 7 et la sortie de JEE7 mais JEE7 est sorti le 12/06/2013. Qui dit nouvelle version dit nouvelles possibilités et spécificités. La liste complète est disponible à http://www.oracle.com/technetwork/java/javaee/overview/index.html?origref=http://www.oracle.com/us/corporate/press/1957557[cette adresse] et vous trouverez les slides de présentation sur http://fr.slideshare.net/lukaszromanowski1981/poland-31-nov12-java-ee-7-in-details[slideshare].
+
+Donc le projet Eclipse WTP est passé en version 3.5 et apporte notamment le support de nouvelles JSR. Pour ma part, ce qui m’intéresse le plus est la prise en compte de JPA 2.1, le support de la version 2.5 d’EclipseLink mais également des spécifications pour JAX-RS 2.0 et Servlet 3.1. Pour le reste, je suis moins intéressé car je n’utilise pas ou peu les EAR et EJB. J’ai fouillé un peu pour vous trouver la liste des mise à jour de WTP c’est http://eclipse.org/webtools/releases/3.5.0/NewAndNoteworthy/[ici que ça se passe]. J’ai trouvé ça un peu trop concis mais l’essentiel y est. Y-a-plus qu’à tester.
+
+=== Utilisation des templates : une ergonomie mise à jour
+
+En fait, après pas mal d’échanges avec mes collègues de boulot ainsi que mes amis informaticiens, je me suis rendu compte que la majorité des développeurs sous Eclipse ne savent pas ce que sont les templates de codes. 
+
+Pour remettre dans le contexte, dans une classe Java c’est ce qui vous permet par exemple en tapant « syso » puis en utilisant l’autocomplétion de générer automatiquement la ligne System.out.println();. Pour les amateurs du debug à l’ancienne c’est quand même pratique. 
+
+Il existe plusieurs templates mais jusqu’à la version 4.2 de l’IDE, ils n’étaient pas mis en avant. En effet pour avoir des templates de proposés par Eclipse, il fallait commencer par taper une lettre puis appeler l’autocompletion. Ce qui nous donnait un truc du genre selon si on met une lettre ou pas avant d’appeler l’autocomplétion.
+
+image::/images/2013/07/template-juno-avec-lettre.png[align="center"]
+
+image::/images/2013/07/template-juno.png[align="center"]
+
+Ceci a changé dans Eclipse Kepler et donc tous les développeurs pourront voir l’existence des templates et donc les utiliser. Ceci c’est fait grâce à la contribution de Lars Vogel. J’ai déjà dû parler de lui sur le blog car j’apprécie généralement ses articles et tutoriaux. Il a proposé un patch pour changer le fonctionnement et ça a été intégré à Kepler. Voilà ce que ça donne maintenant :
+
+image::/images/2013/07/template-kepler.png[align="center"]
+
+Je dois dire que c’est peut être une petite évolution mais moi ça me change la vie. En fait, j’ai même découvert des templates que je ne connaissais pas. Je connaissais le mécanisme mais pas tout ce qui était déjà proposé par l’IDE. D’ailleurs, il faudra que je poste un article à part entière sur les templates car ça change la vie quand on veut coder rapidement.

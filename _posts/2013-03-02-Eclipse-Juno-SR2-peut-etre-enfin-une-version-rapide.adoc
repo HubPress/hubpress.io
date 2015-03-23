@@ -1,0 +1,16 @@
+= Eclipse Juno SR2 : peut être enfin une version rapide
+:hp-tags: eclipse,IDE,juno
+:published_at: 2013-03-02
+
+Même si je ne connais pas encore Eclipse en profondeur, j’adore cet IDE. Enfin ça dépend de la version. Indigo par exemple, est pour moi un bon cru. IDE stable, avec une intégration de maven plus sympa, ainsi que plusieurs évolutions sur les https://jabby.github.io/2013/02/23/Eclipse-Les-raccourcis-claviers-utiles.html[raccourcis clavier]. En fait, une version très bien pour mes besoins.
+
+Et puis il y a eu Juno. Juno le « beau gosse » avec son style bleuté, mais surtout Juno le traine la patte en juillet 2012. J’ai testé et je n’ai pas aimé la style par défaut mais osef. Par contre les problèmes de performances m’ont rapidement incité à reprendre Indigo sur mon pc. Et là j’ai laissé courir jusqu’à la SR1 de Juno. J’ai retesté, c’était un poil mieux mais pas encore ça. Donc je suis resté à Indigo. 
+
+Par contre hier sortait la SR2 de Juno et je pense que là je vais tenter l’aventure Juno sur le plus long terme. En effet, il y a eu pas mal de boulot par les commiteurs et contributeurs d’Eclipse.
+
+Je ne vais pas faire un résumé donc, si vous voulez en savoir plus, je vous invite à lire cette http://wiki.eclipse.org/Platform_UI/Juno_Performance_Investigation[page du wiki] d’Eclipse ainsi que de voir les listes de https://bugs.eclipse.org/bugs/buglist.cgi?keywords=performance&keywords_type=allwords&list_id=3048745&resolution=FIXED&classification=Eclipse&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&product=JDT&product=PDE&product=Platform&target_milestone=3.8.1&target_milestone=4.2.1[bugs résolus en SR1] puis https://bugs.eclipse.org/bugs/buglist.cgi?keywords=performance&keywords_type=allwords&list_id=3048750&resolution=FIXED&classification=Eclipse&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&target_milestone=3.8.2&target_milestone=4.2.2&product=JDT&product=PDE&product=Platform[ceux résolus en SR2].
+
+Pour télécharger la dernière version d’Eclipse, ça se passe par là : http://eclipse.org/downloads/
+
+Pour ceux qui sont déjà sur Juno, vous pouvez passer par la mise à jour directe dans l’IDE. Il suffit d’aller dans *Help > Check for Updates*. Ensuite, vous attendez le listing par l’IDE et vous lancez la mise à jour.
+Il y a des chances que dans le listing vous ne voyez pas la mise à jour du cœur d’Eclipse Juno. C’est normal, elle est remontée en dépendance par le plugin *Eclipse IDE for Java EE Developers en version 1.5.2.20130211-1820*. Donc c’est au moins celui-là que vous devrez prendre.

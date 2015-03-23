@@ -1,0 +1,40 @@
+= Eclipse : améliorer l’aide à la saisie
+:hp-tags: eclipse,auto-complétion
+:published_at: 2013-06-03
+
+Pour rester informer sur Eclipse, j’ai tendance à suivre d’autres blogueurs. Parmi ceux-ci l’un retient souvent mon attention et me permet d’apprendre des choses souvent indispensables par la suite sur mon IDE préféré. Il s’agit de http://www.vogella.com/people/larsvogel.html[Lars Vogel]. Via l’un de ses derniers articles, j’ai découvert que l’on pouvait améliorer le temps de réponse de l’auto-complétion (http://www.vogella.com/blog/2013/05/30/eclipse-papercut-13-reduce-delay-in-code-completion/[l’article en question]). J’ai fouillé un peu et voilà un très bref récapitulatif de ce que j’ai découvert.
+
+== Améliorer la rapidité de l’auto-complétion
+
+Cette astuce vient de Lars Vogel et c’est ce qui m’a fait chercher les autres astuces par la suite. Par exemple si l’on tape le nom d’un objet suivi d’un « . », Eclipse va proposer automatiquement une liste de méthodes disponibles pour l’objet en question. Vous pouvez trouver comme moi que ce n’est pas assez rapide. Lars Vogel indique que ce paramétrage est modifiable dans les paramètres du workspace.
+
+Par défaut, la valeur est d’attente pour le déclenchement de l’auto-complétion est réglé à 200ms. J’ai testé plusieurs paramétrage et j’avoue être assez proche de celui proposé par Lars Vogel. En effet, une valeur de 0ms est un peut trop rapide à mon goût. Par contre 40ms est un bon compromis entre rapidité et non-affichage des propositions lorsque l’on continue à taper du texte.
+
+Pour modifier la valeur prédéfinie il faut aller dans : Window > Preferences > Java > Editor > Content Assist puis modifier la valeur du champ « Auto activation delay (ms) ». Une fois la modification effectuée, appliquer les changements. Vous pourrez voir une nette différence.
+
+image::/images/2013/06/autocomplete-delay.png[Réglage de l’auto-complétion,align="center"]
+
+== Supprimer le menu d’auto-complétion SWT
+
+Lorsque l’on fait des développement web et que l’on n’a pas besoin de SWT, il peut être assez casse-pied d’avoir des propositions pour SWT dans l’auto-complétion. Je m’explique. Si l’on veut l’auto-complétion, on fait ctrl + espace. Si l’on refait ça une seconde fois, on a un menu pour SWT. Enfin si on le fait une troisième fois on a les éventuels templates de code que l’on a défini. L’étape des propositions SWT nous pousse à matraquer sur ce pauvre raccourci clavier ctrl + espace. Il est pourtant possible de le désactiver.
+
+Pour cela il faut aller dans : Window > Preferences > Java > Editor > Content Assist > Advanced puis décocher la case spécifique à SWT. Maintenant plusieurs appuie sur ctrl + espace vous évitera de passer par les propositions SWT (qui sont vides dans le cas d’un développement Web classique).
+
+image::/images/2013/06/swt-proposals.png[Proposition SWT dans Eclipse,align="center"]
+
+== Désactiver les propositions des méthodes obsolètes
+
+Lorsque l’on développe, il arrive que l’on soit parfois noyé par les propositions de l’auto-complétion pour certains objets. Ceci est particulièrement gênant lorsque la méthode en question est surchargée un nombre incalculable de fois et qu’elle possède des définitions obsolètes (@Deprecated). Il existe une méthode simple dans Eclipse pour empêcher l’IDE de nous proposer de telles méthodes.
+
+Toujours en allant dans : Window > Preferences > Java > Editor > Content Assist, il faut cocher la case « Hide deprecated references ». Voici la différence pour les instances de java.util.Date :
+
+image::/images/2013/06/disabled-depracated-proposals-001.png[Auto-complétion avant la modification du paramètre,align="center"]
+
+image::/images/2013/06/disabled-depracated-proposals-002.png[Modification du paramètre permettant de cacher les méthodes obsolètes,align="center"]
+
+image::/images/2013/06/disabled-depracated-proposals-003.png[Auto-complétion une fois le paramètre activé,align="center"]
+
+
+Comme vous pouvez le remarquer, c’est tout de suite moins le bordel. En plus vous serez moins tenté d’utiliser ces méthodes qui parfois peuvent avoir des effets non désirés. Vous pouvez néanmoins les utiliser et le code compile toujours si elles sont utilisés dans une partie de l’application. Vous n’aurez simplement plus d’aide à la saisie de ces méthodes.
+
+Voilà fin du second billet sur mon IDE préféré.

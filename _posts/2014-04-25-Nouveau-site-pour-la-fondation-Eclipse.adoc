@@ -1,0 +1,33 @@
+= Nouveau site pour la fondation Eclipse
+:published_at: 2014-04-25
+:hp-tags: eclipse,divers
+
+Il y a des nouvelles assez simples qui ont tendances à me faire plaisir. Depuis quelques semaines déjà, il est possible de tester le futur site de la fondation Eclipse. Il faut avouer que le site actuel n’est pas super vendeur. J’aurais même tendance à dire qu’il est plutôt austère et vieillot. Voici quelques exemples du travail accomplit à l’heure actuelle.
+
+== Une page d’accueil plus jeune
+
+Le design sur Internet change constamment. Certains sites arrivent à suivre la cadence, d’autres moins. Là on peut dire que la fondation a enfin rattrapé un peu son retard. La page d’accueil est plus agréable et les informations sont plus facilement accessibles. J’ai même découvert des parties du site simplement parce que l’UI est plus agréable. Pour vous faire une idée voici les deux versions des pages d’accueil
+
+image::/images/2014/04/site-eclipse-actuel.png[align="center"]
+
+image::/images/2014/04/site-eclipse-futur.png[align="center"]
+
+Je ne sais pas pour vous mais je trouve vraiment que l’ancienne version est brouillonne. Il y a trop d’informations en même temps. On ne sait presque plus où donner de la tête. Ceci est accentué par le fait que le site ne prend pas toute la largeur de l’écran.
+
+Sur la nouvelle version, cela paraît plus clair. Le site prend toute la place disponible à l’écran. Cela permet d’avoir une meilleure séparation des contenus. On peut également voir que trois aspects de la fondation sont mis en avant. A savoir, l’IDE mais également les groupes de travails et la communauté de projet. 
+
+== Une page de téléchargement plus policée
+
+L’une des pages où je vais le plus sur ce site est celle de téléchargement. Qui a dit que je prenais plus de packages Eclipse que de bières lors des soirées ? Oui j’avoue, je suis un grand consommateur de packages Eclipse. Ici les différences sont un peu moins marquantes mais au moins, le site reste cohérent.
+
+image::/images/2014/04/site-eclipse-download-actuel.png[align="center"]
+
+image::/images/2014/04/site-eclipse-download-futur.png[align="center"]
+
+== Et pour tester c’est par où ?
+
+Je vous sens impatient. Donc pour tester c’est assez simple, il suffit d’aller à cette url : http://staging.eclipse.org/
+
+Toutes les pages n’ont pas encore été migrées vers la nouvelle version mais le travail avance plutôt bien. Et si vous ne voulez pas tester de suite, sachez qu’en juin prochain, la version sera mise officiellement en ligne. Pour les plus motivés vous pouvez donc tester la nouvelle mouture et faire vos retours sur link:https://www.surveymonkey.com/s/eclipsedesign[ce sondage].
+
+Article initial : http://ianskerrett.wordpress.com/2014/03/31/time-for-a-new-eclipse-org-lf/

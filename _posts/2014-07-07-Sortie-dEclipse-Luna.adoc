@@ -1,0 +1,81 @@
+= Sortie d’Eclipse Luna
+:published_at: 2014-07-07
+:hp-tags: eclipse
+
+Comme tous les ans, la fondation Eclipse lance une nouvelle version de plusieurs de ses projets à la même date. Ce lancement simultané, appelée link:https://projects.eclipse.org/releases/luna[release train], voit notamment l’arrivée d’une nouvelle version de l’IDE. Cette année, c’est donc Eclipse Luna qui devient la dernière version de l’IDE. Voici quelques nouveautés de l’IDE.
+
+image::/images/2014/07/splash-luna.png[align="center"]
+
+== Support de Java 8 natif
+
+Suite à l’annonce de la sortie officielle de Java 8, il était possible d’ajouter dans Eclipse Kepler le support de cette nouvelle version. Au choix, on pouvait utiliser le Marketplace ou bien télécharger un nouveau packaging Kepler SR2 Java 8 Support. Dans Luna, la dernière version de Java est nativement gérée. Plus besoin d’ajouter un patch.
+
+Au programme on retrouve bien entendu la reconnaissance des lambdas et leur gestion (extraction en méthode, renommage des paramètres dans une expression lambda, debug, …). De plus, les saves actions se voient enrichir d’une possible transformation automatique des interfaces fonctionnelles vers une expression lambda ou des lambdas vers des classes anonymes.
+
+image::/images/2014/07/save-actions-java-8.png[align="center"]
+
+Les autres nouveautés du langage sont bien entendues prises également en compte. Il reste néanmoins quelques petits ajustements sur JDT pour que Java 8 soit pris en compte à 100%. Pour ma part, j’ai trouvé un petit problème lors de l’inférence de type sur des cas de lambda couplés avec des types génériques (cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=435767).
+
+Voici une liste détaillé des bugs en cours sur le support Java 8 :
+
+* link:https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&list_id=9477975&query_format=advanced&short_desc=%5B1.8%5D&short_desc_type=allwordssubstr[Liste des bugs en cours pour le support de Java 8]
+
+== Nouveau thème pour Eclipse
+
+Au final, c’est peut être l’un des plus gros reproches fait à l’IDE, mais jusqu’à présent, il n’existait pas de thème sombre nativement. Pour en obtenir un, il fallait passer par des plugins externes. Plusieurs développeurs ont décidé de changer cela en contribuant à la plateforme. Pour cela, ils utilisent notamment les possibilités offertes par la gestion du link:https://wiki.eclipse.org/Eclipse4/CSS[CSS au sein même d’Eclipse].
+
+Maintenant, il est possible d’utiliser le thème fourni par Eclipse. Il suffit de changer ça dans Window > Preferences > General > Appearance, en choisissant le thème « Dark ». J’ai fait quelques tests et pour le moment, je ne le trouve pas aussi bien que des thèmes sombres dans d’autres éditeurs. Il a néanmoins le mérite d’exister et d’avoir des contributeurs actifs.
+
+*N’hésitez pas à tester et à remonter les problèmes sur le bug tracker d’Eclipse.*
+
+image::/images/2014/07/dark-theme.png[align="center"]
+
+En parlant de problèmes sur le thème « Dark », j’ai testé les différents packages d’Eclipse sur la page de téléchargement et quatre d’entre eux ont un problème sur la couleur de fond de l’éditeur de fichier. Un bug a été remonté à la communauté Eclipse et une correction devrait être présente dans la prochaine mise à jour.
+
+Les packages ayant le problème sont :
+
+* Eclipse IDE for C/C++ Developers
+* Eclipse IDE for Java EE Developers (à mon grand regret)
+* Eclipse for Parallel Application Developers
+* Eclipse IDE for Java and Report Developers
+
+Il existe un contournement pour palier à ce problème, je ferais prochainement un article dessus.
+
+== Améliorations diverses de l’espace de travail
+
+Plusieurs petites améliorations sont également de la partie sur l’espace de travail. J’apprécie ces modifications même si elles peuvent être considérées comme mineure pour beaucoup de monde.
+
+=== Numéro de ligne dans les éditeurs
+
+Tout d’abord, tous les éditeurs affichent maintenant le numéro de ligne par défaut. C’était demandé depuis longtemps mais le fait que ce paramétrage soit commun à tous les éditeurs et non pas de façon indépendante, n’a pas permis avant cette année de prendre une décision. Le pouvoir du sondage a bien aidé sur ce coup-là.
+
+=== Réduction de l’espace « per* du » dans les IHM
+
+Ensuite de façon générale sur plusieurs thèmes, les écarts entre les vues ont été réduits. Il y a donc plus de place pour l’information utile.
+
+=== Possibilité de masquer le « Quick Access »
+
+Petit clin d’oeil à un collègue, le champ de saisie « Quick Access » dans la barre de menu peu maintenant être masqué. Pour cela il suffit de faire un clic droit dessus et de cocher « Hide ».
+
+=== Split des éditeurs
+
+Enfin dernière petite amélioration des éditeurs, le split horizontal et vertical. Et oui c’est un truc que l’on n’avait pas jusque-là sur Eclipse. Il était possible de cloner l’éditeur et d’avoir deux fois le même fichier visible mais cela obligeait à avoir deux onglets pour le même fichier dans la liste des éditeurs.
+
+Il est maintenant possible soit via « Window > Editor > Split … » ou alors par raccourci clavier de séparer en deux zones le même éditeur. A noter que d’après mes premiers tests, en clavier français, le split vertical ne peut pas être utilisé sans changer le raccourci clavier. Je vous laisse regarder ce point.
+
+== Améliorations EGit
+
+Là c’est un gros morceau. L’équipe travaillant sur EGit a sorti quatre nouvelles versions entre Kepler et Luna. On est donc passé de la 3.0 d’EGit à la 3.4. Au final, je ne listerais pas toutes les améliorations tellement elles sont nombreuses.
+
+Sachez néanmoins que les performances et l’expérience utilisateur ont été fortement retravaillées pour que le plugin soit plus agréable à utiliser. Pour ceux qui ont testé EGit il y a un an, je vous invite à retenter l’aventure.
+
+Pour connaître la liste des différentes améliorations d’EGit, vous pouvez vous référer aux 4 pages wiki suivantes :
+
+* link:https://wiki.eclipse.org/EGit/New_and_Noteworthy/3.1[Amélioration EGit version 3.1]
+* link:https://wiki.eclipse.org/EGit/New_and_Noteworthy/3.2[Amélioration EGit version 3.2]
+* link:https://wiki.eclipse.org/EGit/New_and_Noteworthy/3.3[Amélioration EGit version 3.3]
+* link:https://wiki.eclipse.org/EGit/New_and_Noteworthy/3.4[Amélioration EGit version 3.4]
+
+== Autres informations autour de la release annuelle
+
+Bien entendu, je me suis principalement concentré sur les améliorations de l’IDE Eclipse. Il ne faut pas oublier les autres projets pour autant. Vous trouverez à cette adresse la liste de tous les projets Eclipse ayant participés à la release annuelle sur link:https://projects.eclipse.org/releases/luna[cette page].

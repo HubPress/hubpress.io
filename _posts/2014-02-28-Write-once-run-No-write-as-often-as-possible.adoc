@@ -1,0 +1,22 @@
+= Write once, run… No, write as often as possible
+:published_at: 2014-02-28
+:hp-tags: divers
+
+Après quelques années d’écriture sur ce blog, je me rends compte que je n’écris pas autant que je le souhaiterais. En fait, cela provient surtout du fait que j’ai des idées d’articles qui sont longs à écrire _(fausse excuse du mec qui est pas trop motivé)._
+
+Il faut en effet tester et valider ce que j’écris donc plus il y a de contenu dans un article et plus long est sa rédaction. J’ai d’ailleurs deux brouillons en cours qui à mon avis ne seront jamais terminés. L’intérêt que j’ai pour les terminer est moindre en ce moment et la charge de travail à fournir encore assez conséquente _(qui a dit qu’il n’y avait que les titres ?)_.
+
+== Que faire ?
+
+De ce fait, je me suis dit que j’allais appliquer une méthode similaire à celle de link:http://blog.javabien.net/2014/02/15/trois-fruits-et-legumes-par-jour-et-un-article-de-blog/[David Gageot]. Pour faire un résumé, David s’est décidé à écrire tous les jours ouvrés _(donc pas le week-end bande de geek)_ un article sur son blog.
+
+Avouez que l’idée est séduisante. Je ne sais pas si j’arriverais à être aussi régulier que lui, mais je vais tenter cette aventure. Je pense d’ailleurs que la régularité est la clé du succès _(non commercial, je ne gagne rien à écrire sauf flatter mon ego)_. Dans le cas contraire, cela ressemblera trop à ce qui m’arrive actuellement. Peu ou pas de nouveaux article ce qui donne moins d’un article tous les deux mois.
+
+
+== Qu’est ce que je vais aborder ?
+
+Alors là c’est une grande question. Je pense que dans un premier temps, je vais continuer link:/2013/02/22/Eclipse-cet-IDE-que-je-ne-connais-pas-vraiment.html[ma série sur l’IDE Eclipse]. Au lieu d’essayer d’expliquer quelque chose en détail, je ne mettrais que des petites astuces pour mieux développer et se simplifier la vie.
+
+Pour la suite, je verrais bien ce qui me tente. Peut être AngularJS vu que c’est pas mal du tout et que je commence à bidouiller avec. Ou bien quelques petites choses en pur JEE voir un poil de Ruby. Comme dirait l’autre « Wait & See »
+
+Sur ces mots, je vous dis donc à lundi prochain pour un nouvel article.

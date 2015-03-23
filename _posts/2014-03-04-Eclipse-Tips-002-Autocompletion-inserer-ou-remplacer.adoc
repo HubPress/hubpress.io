@@ -1,0 +1,41 @@
+= Eclipse Tips 002 – Autocomplétion : insérer ou remplacer ?
+:published_at: 2014-03-04
+:hp-tags: eclipse,tips,auto-complétion
+
+
+Aujourd’hui, je vais présenter un petit truc qui a changé ma vie (ou presque) sur l’auto-complétion Java dans Eclipse. Oui je vous sens réellement sceptique, mais lisez la suite, vous allez peut être découvrir un truc génial.
+
+Je ne sais pas pour vous mais moi lorsque j’utilise l’auto-complétion, il m’arrive de me tromper de méthode. Je recommence donc pour choisir la bonne méthode. Le problème récurent est que la première méthode choisie est toujours présente. Par exemple, en utilisant l’API JodaTime, un « raté » pour utiliser la méthode plusMinutes pourrait donner ceci :
+
+[source,java,linenums]
+----
+int minutes = 1;
+DateTime date = DateTime.now();
+date.plusMillis(millis);
+----
+
+Et la tentative de correction, cela :
+
+[source,java,linenums]
+----
+int minutes = 1;
+DateTime date = DateTime.now();
+date.plusMinutes(minutes)llis(millis);
+----
+
+Comme vous pouvez le voir, le second code ne compile pas. Et pour cause, l’auto-complétion a ajouté la méthode au lieu de remplacer celle précédemment écrite. Il est donc nécessaire de nettoyer le code avant de continuer à coder. Heureusement, il est possible de modifier le fonctionnement de l’auto-complétion Java. Pour cela, rien de très compliqué. Il suffit d’aller dans « Window > Preferences » puis de sélectionner « Content Assist » pour l’éditeur Java. Ensuite modifiez simplement la première option pour choisir « Completion overwrites ». Appliquez et tester. 
+
+image::/images/2014/03/completion-overwrites.png[align="center"]
+
+Après cette modification, une tentative de correction (auto-complétion avec « plusMi ») donnera le code suivant. Il ne restera alors plus qu’à changer le nom du paramètre.
+
+[source,java,linenums]
+----
+int minutes = 1;
+DateTime date = DateTime.now();
+date.plusMinutes(millis);
+----
+
+Il est possible sans changer les préférences d’avoir d’avoir le même comportement au coup par coup. Pour cela, au lieu d’appuyer uniquement sur la touche « Enter » pour choisir la méthode, il suffit d’appuyer conjointement sur « Ctrl + Enter ».
+
+Dernier point, il est également possible de faire la même chose pour l’auto-complétion JavaScript. La procédure est similaire, il faut simplement choisir l’éditeur JavaScript à la place de celui pour Java.
