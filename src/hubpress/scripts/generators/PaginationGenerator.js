@@ -109,6 +109,7 @@ class PaginationGenerator {
               total: posts.length,
               limit: nbPostPerPage
             },
+            context: params.template,
             posts: postsPageToGenerate,
             tag: params.tag,
             title: siteConfig.title,

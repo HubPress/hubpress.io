@@ -1,5 +1,4 @@
 import HpConstants from '../constants/HpConstants';
-import '../utils/HandlebarsHelpers';
 import SettingsStore from '../stores/SettingsStore'
 const HpDispatcher = require('../dispatchers/HpDispatcher');
 const EventEmitter = require('events').EventEmitter;

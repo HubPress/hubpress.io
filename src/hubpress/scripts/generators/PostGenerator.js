@@ -41,6 +41,7 @@ class PostGenerator {
     theme.url = SettingsStore.getThemeUrl(theme.name);
 
     let htmlContent = ThemeStore.template('post',{
+        context: 'post',
         site: config.site,
         theme: theme,
         socialnetwork: config.socialnetwork,

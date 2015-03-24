@@ -262,7 +262,7 @@ function _readContentAndConvert(repository, context, posts) {
 
     repository.read(context.branch, post.path, (err, content) => {
       if (err) {
-        deffered.reject(err);
+        deferred.reject(err);
       }
       else {
         let _post;
