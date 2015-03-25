@@ -1,5 +1,7 @@
 import Github from '../resources/Github.js';
 import AuthActionGHCreators from '../actions/AuthActionGHCreators.js';
+const platform = require('platform');
+const slug = require('slug');
 const Q = require('q');
 
 function _getRepositoryInfos(repository) {
@@ -53,13 +55,45 @@ function _getUserInformations(user) {
   }
 }
 
+function _getTokenNote() {
+  return slug(`hubpress-${platform.name}-${platform.os}`);
+}
+
+function _searchAndDeleteAuthorization(authorizations, authorization ) {
+  let deferred = Q.defer();
+  let id = -1;
+
+  authorizations.forEach(function(token) {
+    if (token.note === _getTokenNote()) {
+      id = token.id;
+    }
+  });
+
+  if (id !== -1) {
+    authorization.delete(id, function(err, values) {
+      if (err) {
+        deferred.reject(err);
+      }
+      else {
+        deferred.resolve();
+      }
+    });
+  }
+  else {
+    deferred.resolve();
+  }
+
+
+  return deferred.promise;
+}
+
 function _createAuthorization(authorization) {
   let deferred = Q.defer();
   let definition = {
     scopes: [
     'public_repo'
     ],
-    note: 'hubpress.io'
+    note: _getTokenNote()
   };
 
 
@@ -108,16 +142,10 @@ class AuthServices {
         return _getAuthorizations(authorization);
       })
       .then(function(authorizations) {
-        let _token;
-
-        authorizations.forEach(function(token) {
-          if (token.note === 'hubpress.io') {
-            _token = token;
-          }
-        });
-
-        return _token || _createAuthorization(authorization);
-
+        return _searchAndDeleteAuthorization(authorizations, authorization);
+      })
+      .then(function() {
+        return _createAuthorization(authorization);
       })
       .then(function(result) {
         Github.renewInstance({
