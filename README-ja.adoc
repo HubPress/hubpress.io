@@ -1,12 +1,14 @@
 = HubPress
 
+:toc:
+
 == HubPress とはなにか？
 
 image::http://hubpress.io/img/editor.png[]
 
 HubPress は無料でブログを作るためのオープンソースツールです。
 
-http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q])
+https://github.com/anthonny[Anthonny Quérouil] (twitter https://twitter.com/anthonny_q[@anthonny_q])
 により作成・メンテナンスされています。
 
 NOTE: HubPress はまだ作成途中です。バグを発見した場合は是非教えてください。
@@ -39,7 +41,7 @@ image:http://hubpress.io/img/edit-config.png[Edit config]
 +
 * `username`: GitHub のユーザー名です。
 * `repositoryName`: フォーク後のリポジトリの名前。 `<username>.github.io`
-. 変更をコミットし, `http://<username>.github.io/` ドメインで GitHub Page を公開。
+. 変更をコミットし, `https://<username>.github.io/` ドメインで GitHub Page を公開。
 . 以下のような画面が出れば、HubPressは正しくセットアップされています。
 +
 image:http://hubpress.io/img/home-install.png[Install complete,300]
@@ -63,7 +65,7 @@ image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
 +
 * `username`: GitHub のユーザー名です。
 * `repositoryName`: フォーク後のリポジトリの名前。特に変更していないなら `hubpress.io`
-. 変更をコミットし, `http://<username>.github.io/<repositoryName>/` で GitHub Page を公開。
+. 変更をコミットし, `https://<username>.github.io/<repositoryName>/` で GitHub Page を公開。
 . 以下のような画面が出れば、HubPressは正しくセットアップされています。
 +
 image:http://hubpress.io/img/home-install.png[Install complete,300]
@@ -72,8 +74,9 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 HubPressの管理画面は */hubpress* からアクセスできます。つまり
 
-* http://<username>.github.io/hubpress/ (github.ioドメインを利用している場合 )
-* http://<username>.github.io/<repositoryName>/hubpress/ (独自ドメインを利用している場合)
+* `https://<username>.github.io/hubpress/` (github.ioドメインを利用している場合 )
+* `https://<username>.github.io/<repositoryName>/hubpress/` (Project Pageを利用している場合)
+* `http://<yourdomain>/hubpress/` (独自ドメインを使用している場合)
 
 です。
 
@@ -102,7 +105,7 @@ CNAMEやページングといった、基本的なブログの設定が可能で
 
 ==== Site
 
-===== Title と　Description
+===== Title と Description
 
 *Title* や *Description* フィールドにより
 ブログタイトルや, その説明を設定することができます。
@@ -139,7 +142,7 @@ Social Network グループ内のフィールドには
 はじめて HubPress を利用する際には **Posts** はまだありません。
 ブログに投稿をすると、左側に記事のリスト、右側にプレビューの形で表示されます。
 
-=== 記事を書く
+=== HubPressで記事を書く
 
 NOTE: もし AsciiDocに馴染みがなければ http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's Guide] で勉強して下さい。
 
@@ -157,6 +160,9 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 もし 1st-level のヘッダーを使いたければ代わりに `== First Level Heading` を使ってください。
 ネストしたヘッダも同様です。
 
+==== HubPress パラメーター
+HubPress allows you to alter characteristics of each blog post using attributes.
+
 ===== カバー画像
 
 記事にカバー画像を追加したい場合 `hp-image` 属性を追加する必要があります。
@@ -165,8 +171,12 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 [source, asciidoc]
 ----
 = Blog Title
-:hp-image: http://github.com/<username>/<repositoryName>/images/a-cover-image.jpg
+:hp-image: https://github.com/<username>/<repositoryName>/images/a-cover-image.jpg
 ----
+
+現在以下のテーマが投稿のカバー画像をサポートしています:
+
+* Saga
 
 ===== 公開日
 
@@ -182,7 +192,8 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 
 ===== タグとカテゴリ
 
-タグのみサポートしています。
+NOTE: カテゴリはサポートしていません。
+
 `hp-tags` 属性により、タグを複数追加できます。
 
 例:
@@ -192,8 +203,77 @@ HupPress エディタは左側に AsciiDoc のコード、右側にプレビュ�
 :hp-tags: tag1,tag2,tag3
 ----
 
+===== 代替タイトル指定のための :hp-alt-title:
+
+`hp-alt-title` 属性を利用して記事に別名タイトルを指定することが出来ます。
+
+これはHubPressが生成するHTMLのファイル名になります。
+
+NOTE: *特に日本語のタイトルはそのままではファイル名がおかしくなるので絶対に指定してください。*
+
+例:
+[source, asciidoc]
+----
+= 日本語のタイトル
+:hp-alt-title: My English Title
+----
+
+==== 画像の追加
+
+===== GitHubリポジトリにpushする
+
+GitのコマンドラインやGitアプリを使ってブログ投稿に画像を追加できます。
+
+. 画像を`images`にコミットする
+. ブログ投稿内にAsciiDoc文法に従って:
+
+[source,AsciiDoc]
+----
+image::<ファイル名>[]
+----
+. See http://asciidoctor.org/docs/asciidoc-writers-guide/ for complex examples of Image syntax.
+
+もし他所にホストした画像(例えばinstagram, 他のGitHubリポジトリ,あるいはその他の画像ホストサイトなど)を埋め込むには、`<ファイル名>`に画像への完全なURLを指定してください。
+
+.Hosted Image Embed
+----
+image::http://<full path to image>[]
+----
+
+===== 画像のホスト先としてGitHub issueを利用する
+
+You can use a single issue as an image container for a blog post containing many issues by uploading multiple images as comments. Alternatively, you can use multiple issues to store individual images. Whatever works best for you, and your organization style. Watch this five minute video for a demonstration about how to use GitHub Issues and Cloud Hosting services as embed targets, and some bonus tips on using the `image` AsciiDoc syntax  
+https://www.youtube.com/watch?v=KoaGU91qJv8
+
+==== 動画の埋め込み
+
+HubPressでは、ブログ記事内で簡単な記述で動画を埋め込むことが出来ます。動画への完全なURLは必要ありません。必要なのは動画固有のIDだけです。
+
+```
+video::[unique_youtube_video_id][youtube | vimeo]
+```
+
+.YouTube動画の埋め込み
+```
+video::KCylB780zSM[youtube]
+```
+
+.Vimeo動画の埋め込み
+```
+video::67480300[vimeo]
+```
+
+== HubPressのアップデート
+
+HubPressはGitHubにホストされているので、HubPressのmasterリポジトリから最新の変更をpullするだけでアップデートできます。
+
+初めてですか？次の動画で(コマンドライン操作を必要としない)簡単で正しい方法を学びましょう。(もちろんコマンドラインからでも問題ありません。)
+
+https://www.youtube.com/watch?v=KCylB780zSM
+
+
 == Credits
 
 Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
 
-日本語訳: https://github.com/takkyuuplayer/[takkyuuplayer]
+日本語訳: https://github.com/takkyuuplayer/[takkyuuplayer], https://github.com/hinaloe[hinaloe]
