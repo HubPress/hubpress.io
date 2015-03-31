@@ -9,5 +9,5 @@ When i started using librato with collectd i was not able to divide the metrics 
 This is what i did to create instruments on a per metric/host basis containing all relevant information.
 
 ## 1st Step: Cleaning the `collectd.config`
-## 2nd Step: Filtering unnecsessary metrics
+## 2nd Step: Filtering unnecessary metrics
 ## 3rd Step: Creating a Instrument containing all relevant metrics
