@@ -1,0 +1,8 @@
+= Facebook Messenger - The GroupMe Competitor
+
+==== Too little too late? Or right on time?
+
+Yesterday Facebook launched their own standalone Messenger site - messenger.com. Over the fast months we have seem from their developer's conference and more and push of Messenger to become more comprehensive and have many features. Their dedicated app away from Facebook and now their own web platform has pushed them to fight the GroupMe type applications that are out there. I know from my friends and organizations that when people think of a "group message" that GroupMe is often thought of first. Maybe that is just the feeling here at Tech but it will be interesting to see in the upcoming weeks and months of how much this catches on.
+
+:hp-image: messenger.png
+
