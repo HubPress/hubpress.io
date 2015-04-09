@@ -1,3 +1,3 @@
-= Title
+= Back in Action	
 
-test
+After some troubles with Hubpress and blogging (somehow it works now) but from some feedback on a Portfolio Review Session, I shall be updating with new tech and tools that I am coming across. Hope to keep updated!
