@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "kevinguebert",
-    "repositoryName": "blogging",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"kevinguebert","repositoryName":"blogging","branch":"gh-pages"},"site":{"title":"Blog","cover":"http://kevinguebert.github.io/blogging/images/cover.jpg","url":"https://kevinguebert.github.io/blogging"},"socialnetwork":{},"theme":{"name":"Casper","url":"//kevinguebert.github.io/blogging/themes/Casper"}}
