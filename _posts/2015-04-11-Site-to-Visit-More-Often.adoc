@@ -1,5 +1,6 @@
 = Site to Visit More Often
 :hp-tags: Websites, Inspiration
+:hp-image: surf.jpg
 
 If you've known me for a while or have seen me work at my computer/my Chrome browser, you know that bookmarks rule my internet experience. Last Google counted I had over 900+ pages and websites saved for "later." image:bookmarks.PNG[]
 
