@@ -4,7 +4,7 @@ secara default, csrf token pada django berada dalam kondisi hidup untuk mengaman
 ```
 csrfmiddlewaretoken={{csrf_token}}
 ```
-salah satu contohnya adalah pada [editable](http://vitalets.github.io/x-editable/docs.html#gettingstarted), kita harus menambahkan parameter ```csrfmiddlewaretoken``` 
+salah satu contohnya adalah pada http://vitalets.github.io/x-editable/docs.html#gettingstarted[bootstrap editable], kita harus menambahkan parameter ```csrfmiddlewaretoken``` 
 ```python
 <a href="#" class="editable" 
    data-type="text"
