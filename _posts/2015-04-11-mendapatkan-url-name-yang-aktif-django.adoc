@@ -1,0 +1,6 @@
+= mendapatkan url name yang aktif django
+
+adakalahnya kita ingin mengecek url name yg aktif di django, misalnya untuk menambahkan class "active" pada beberapa elemen. untuk mendapatkannya kita bisa menggunakan
+```python
+request.resolver_match.url_name
+```
