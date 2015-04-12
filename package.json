@@ -1,6 +1,6 @@
 {
   "name": "hubpress",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
     "6to5ify": "^3.1.2",
     "asciidoctor.js": "^1.5.2",
