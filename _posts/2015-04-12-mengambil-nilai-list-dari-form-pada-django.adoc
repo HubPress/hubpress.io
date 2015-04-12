@@ -2,7 +2,7 @@
 
 untuk mengambil data list dari form pada django ternyata mudah, jika kita mengambil data biasa pada form dengan
 ```python
-request.POST.get('name')
+request.POST.get('NAME')
 ```
 maka untuk mengambil data yang berupa list adalah dengan
 ```python
