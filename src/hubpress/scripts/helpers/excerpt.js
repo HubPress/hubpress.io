@@ -12,6 +12,7 @@ var handlebars             = require('handlebars'),
 
 excerpt = function (options) {
     var truncateOptions = (options || {}).hash || {},
+        result,
         excerpt;
 
     truncateOptions = _.pick(truncateOptions, ['words', 'characters']);
@@ -31,6 +32,16 @@ excerpt = function (options) {
 
     if (!truncateOptions.words && !truncateOptions.characters) {
         truncateOptions.words = 50;
+    }
+
+    result = downsize(excerpt, truncateOptions);
+
+    /* Fix CJK language */
+    // TODO It's a fast workaround maybe find a better solution / 7 = average letters by words
+    if (!truncateOptions.characters && result.length > truncateOptions.words*7) {
+      truncateOptions.characters = truncateOptions.words*7;
+      delete truncateOptions.words;
+      result = downsize(excerpt, truncateOptions);
     }
 
     return new handlebars.SafeString(
