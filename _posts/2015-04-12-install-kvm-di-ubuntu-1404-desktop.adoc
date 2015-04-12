@@ -1,0 +1,28 @@
+= install kvm di ubuntu 14.04 desktop
+
+menginstall kvm tidaklah begitu sulit, yg perlu dilakukan untuk menginstall kvm:
+
+### 1. mengecek apakah prosesor komputer mensupport virtualisasi
+
+untuk mengecek prosesor mendukung virtualisasi atau tidak dengan 
+    
+```bash
+egrep -c '(vmx|svm)' /proc/cpuinfo
+```
+    
+jika muncul nilai lebih dari 0 maka prosesormu mendukung virtualisasi
+    
+### 2. menginstall kvm
+	
+untuk menginstall kvm cara yg paling mudah adalah menggunakan aptitude:
+
+```bash
+sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager virt-manager
+```
+    
+setelah selesai menginstall kamu bisa menjalankan vm manager dengan menjalankan aplikasi bernama _Virtual Machine Manager_. jika terjadi error maka kamu perlu menjalankannya dengan sudo
+```bash
+sudo virt-manager
+```
+
+_sumber: http://sharadchhetri.com/2014/10/09/install-kvm-kernel-based-virtual-machine-ubuntu-14-04-lts-desktop/_
