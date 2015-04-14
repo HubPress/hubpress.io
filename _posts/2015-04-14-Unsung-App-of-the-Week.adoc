@@ -1,6 +1,6 @@
 = Unsung App of the Week
 :hp-tags: Apps, Android
-:hp-image: one_main_app.PNG
+:hp-image: one_main_app.JPG
 
 
 An app that I came across by chance has turned out to be one of my new favorites for this past week - welome **One**. Built by the Pomotodo Team, **One** is "One App to read them all." **One** combines the top stories from _Hacker News_, _Reddit_, _Product Hunt_, _Slashdot_, _Designer News_, _Github_, _Medium_, and _Readability Top Reads_ into a single, well designed app. It is available as a Mac menu bar app, iOS, and Android. Be sure to check it out if you want to keep up with all your news!
@@ -8,4 +8,4 @@ An app that I came across by chance has turned out to be one of my new favorites
 
 link:http://one.hackplan.com/[Website]/link:https://play.google.com/store/apps/details?id=com.hackplan.one[Android]/link:https://itunes.apple.com/us/app/one-one-app-to-read-them-all/id944173670?mt=8[iOS]
 
-image::<http://kevinguebert.github.io/blogging/images/one_app.PNG>[]
+image::<http://kevinguebert.github.io/blogging/images/one_app.JPG>[]
