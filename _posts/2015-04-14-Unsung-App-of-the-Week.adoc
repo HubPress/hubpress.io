@@ -8,4 +8,4 @@ An app that I came across by chance has turned out to be one of my new favorites
 
 link:http://one.hackplan.com/[Website]/link:https://play.google.com/store/apps/details?id=com.hackplan.one[Android]/link:https://itunes.apple.com/us/app/one-one-app-to-read-them-all/id944173670?mt=8[iOS]
 
-image::<http://kevinguebert.github.io/blogging/images/one_app.JPG>[]
+image::http://kevinguebert.github.io/blogging/images/one_app.JPG[]
