@@ -2,8 +2,9 @@
 
 [source,bash]
 ----
-W: GPG error: http://packages.elasticsearch.org stable Release: The following signatures 
-couldn't be verified because the public key is not available: NO_PUBKEY D27D666CD88E42B4
+W: GPG error: http://packages.elasticsearch.org stable Release: 
+The following signatures couldn't be verified because the public 
+key is not available: NO_PUBKEY D27D666CD88E42B4
 ----
 
 Execute the following commands in terminal
