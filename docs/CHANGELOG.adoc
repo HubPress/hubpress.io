@@ -1,3 +1,11 @@
+## 0.3.0
+
+* fix(excerpt): add a fix for CJK language
+* feat(authorization): #128 recreate token on login
+* fix(generator): add context
+* fix(PostsServices): fix deferred in _readContentAndConvert
+* doc(README): add a link for the video Updating HubPress
+
 ## 0.2.0
 
 * fix(README en): add information about hp-alt-title
