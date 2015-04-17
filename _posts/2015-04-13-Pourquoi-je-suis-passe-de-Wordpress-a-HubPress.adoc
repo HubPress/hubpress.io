@@ -42,3 +42,5 @@ image::/images/2015/04/hubpress-edit-page.png[align="center"]
 Autant dire que je suis plutôt content de cette solution. Tout n'est pas encore présent. Il manque par exemple la génération des flux RSS. Mais l'outil est quand même bien pratique. Il n'y a qu'à regarder l'engouement autour de l'outil pour comprendre que ce petit side-project a bien plus d'impact que l'on aurait pu le croire au tout début. 
 
 Je vous invite d'ailleurs à regarder le site https://staticsitegenerators.net/. HubPress est à la 15ème position en termes d'étoiles sur Github. Le tout en 3 mois. Autant dire qu'il y a pas mal de supporters.
+
+En espérant que cet article vous incitera à tester ce projet très intéressant. Et s'il vous manque quelque chose, n'hésitez pas à la demander. C'est par ici que ça se passe : https://github.com/HubPress/hubpress.io/issues
