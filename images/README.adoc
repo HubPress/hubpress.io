@@ -7,6 +7,13 @@ To add images to your blog posts:
 +
 [source,AsciiDoc]
 ----
-image::http://github.com/<username>/<repositoryName>/images/<filename>[]
+image::<filename>[]
 ----
 . See http://asciidoctor.org/docs/asciidoc-writers-guide/ for complex examples of Image syntax.
+
+If you are embedding images from a hosted source -- such as instagram, another GitHub repository, or any photo hosting sites -- put the full URL to the image in place of the `<filename>`.
+
+.Hosted Image Embed
+----
+image::http://<full path to image>[]
+----
