@@ -855,6 +855,12 @@
           cb(err, res);
         });
       };
+
+      this.delete = function(id, cb) {
+        _request("DELETE", path + "/" + id, null, function(err, res) {
+          cb(err, res);
+        });
+      };
     };
 
     // Top Level API
