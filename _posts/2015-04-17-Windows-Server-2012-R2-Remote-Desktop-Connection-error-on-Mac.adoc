@@ -1,0 +1,33 @@
+# Windows Server 2012 R2 Remote Desktop Connection error on Mac
+
+:hp-tags: Windows Server, RDC, Mac
+
+I recently faced an issue trying a remote connection to a `Windows Server 2012 R2` using `Microsoft Remote Desktop Connection Client for Mac`. It's the application is bundled with `Microsoft Office for Mac 2011` suite.
+
+The following error shows up:
+____
+Remote Desktop Connection cannot verify the identity of the computer that you want to connect to.
+
+Try reconnecting to the Windows-based computer, or contact our administrator.
+
+image::mac_rdc2011_error_msg.png[mac_rdc2011_error_msg.png]
+____
+
+
+I double-checked the server settings, try connecting using the Windows 8.1 `Remote Desktop Connection` client, everything worked as expected. So the problem was clearly related to my Mac or the RDC client.
+
+I’ve headed to the download page of `Microsoft Remote Desktop Connection Client for Mac` where there are the supported operating systems:
+
+* Windows Vista Business
+* Windows Vista Enterprise
+* Windows Vista Ultimate
+* Windows XP Professional
+* Windows XP Media Center
+* Windows Server 2008 Datacenter
+* Windows Server 2008 Enterprise
+* Windows Server 2008 Standard
+* Windows Server 2003 Datacenter
+* Windows Server 2003 Enterprise
+* Windows Server 2003 Standard
+
+As you can see `Windows Server 2012 R2` is not in the list. To fix this error, you need to download the latest `Microsoft Remote Desktop` app available on the link:https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417[Mac App Store].
