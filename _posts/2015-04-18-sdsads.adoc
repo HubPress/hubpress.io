@@ -2,3 +2,8 @@
 
 
 quindi qui dovrei vedere la preview.
+
+----
+This is an example of a _listing block_.
+The content inside is rendered as <pre> text.
+----
