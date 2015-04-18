@@ -262,7 +262,7 @@ To learn how to do this correctly (there's a trick to it the first time you pull
 
 video::KCylB780zSM[youtube]
 
-https://www.youtube.com/embed/KCylB780zSM[Updating HubPress]
+https://www.youtube.com/watch?v=KCylB780zSM[Updating HubPress]
 
 == Troubleshooting
 
