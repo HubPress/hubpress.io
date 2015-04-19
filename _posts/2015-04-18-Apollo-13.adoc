@@ -1,3 +1,10 @@
 = Apollo 13
+:stem:
 
 I am watching Apollo 13 on itv2
+
+[stem] 
+++++ 
+sqrt(4) = 2
+++++
+
