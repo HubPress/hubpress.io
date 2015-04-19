@@ -43,8 +43,6 @@ This is an admonition
 
 [source,php]
 ----
-<?php
-
 $a = new SplQueue(); # <1>
 $a->enqueue("element"); # <2>
 
@@ -53,3 +51,10 @@ echo $a->dequeue();
 <1> Instantiate the queue
 <2> Enqueue an element
 
+[source,scala]
+----
+sealed trait Tree[T]
+
+case class Node[T](value: T, children: Tree[T]*)
+case class Leaf[T](value: T)
+----
