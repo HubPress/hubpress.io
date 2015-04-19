@@ -1,5 +1,6 @@
 = This is the title
 
+
 == Is his is a subtitle?
 
 This is normal text
@@ -58,3 +59,15 @@ sealed trait Tree[T]
 case class Node[T](value: T, children: Tree[T]*)
 case class Leaf[T](value: T)
 ----
+
+[cols="2*"]
+|===
+|Firefox
+|Web Browser
+
+|Ruby
+|Programming Language
+
+|TorqueBox
+|Application Server
+|===
