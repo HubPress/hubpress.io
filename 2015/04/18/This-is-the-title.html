@@ -23,7 +23,7 @@
     <meta property="og:description" content="Is his is a subtitle? This is normal text This is an example of a _listing block_. The content inside is rendered as &amp;lt;pre&amp;gt; text. Quoting this is a quote of something this is the text that comes..." />
     <meta property="og:url" content="https://nicmart.github.io/2015/04/18/This-is-the-title.html" />
     <meta property="article:published_time" content="2015-04-17T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-04-19T11:17:44.925Z" />
+    <meta property="article:modified_time" content="2015-04-19T11:20:39.411Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="This is the title" />
@@ -45,7 +45,7 @@
     "headline": "This is the title",
     "url": "https://nicmart.github.io/2015/04/18/This-is-the-title.html",
     "datePublished": "2015-04-17T23:00:00.000Z",
-    "dateModified": "2015-04-19T11:17:44.925Z",
+    "dateModified": "2015-04-19T11:20:39.411Z",
     "description": "Is his is a subtitle? This is normal text This is an example of a _listing block_. The content inside is rendered as &amp;lt;pre&amp;gt; text. Quoting this is a quote of something this is the text that comes..."
 }
     </script>
@@ -163,9 +163,7 @@ The content inside is rendered as &lt;pre&gt; text.</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-php" data-lang="php">&lt;?php
-
-$a = new SplQueue(); <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlight"><code class="language-php" data-lang="php">$a = new SplQueue(); <i class="conum" data-value="1"></i><b>(1)</b>
 $a-&gt;enqueue("element"); <i class="conum" data-value="2"></i><b>(2)</b>
 
 echo $a-&gt;dequeue();</code></pre>
@@ -182,6 +180,14 @@ echo $a-&gt;dequeue();</code></pre>
 <td>Enqueue an element</td>
 </tr>
 </table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-scala" data-lang="scala">sealed trait Tree[T]
+
+case class Node[T](value: T, children: Tree[T]*)
+case class Leaf[T](value: T)</code></pre>
+</div>
 </div>
 </div>
 </div>
