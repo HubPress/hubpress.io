@@ -1,9 +1,55 @@
-= sdsads
+= This is the title
 
+== Is his is a subtitle?
 
-quindi qui dovrei vedere la preview.
+This is normal text
 
 ----
 This is an example of a _listing block_.
 The content inside is rendered as <pre> text.
 ----
+
+=== Quoting
+____
+this is a quote of something
+____
+
+
+this is the text that comes after
+
+****
+sidebar?
+****
+
+Example:
+====
+This is a nice example
+====
+
+[CAUTION]
+====
+This is an admonition
+====
+
+[TIP]
+====
+This is an admonition
+====
+
+[IMPORTANT]
+====
+This is an admonition
+====
+
+[source,php]
+----
+<?php
+
+$a = new SplQueue(); # <1>
+$a->enqueue("element"); # <2>
+
+echo $a->dequeue();
+----
+<1> Instantiate the queue
+<2> Enqueue an element
+
