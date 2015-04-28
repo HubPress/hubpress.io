@@ -1,3 +1,20 @@
-# Hello
+# Scala Study
 
-Hello world
+
+## 개요
+scala 프로그래밍 언어 스터디
+
+## 목표
+- OOP의 틀을 깬다.
+- scala 프로그래밍 언어를 익힌다.
+- Multi-paradigm language 의 특성을 익힌다.
+- Functional programming paradigm 을 익힌다.
+
+## 교재
+쉽게 배워서 빨리 써먹는 스칼라 프로그래밍
+
+원제 : Scala for impatient
+
+http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788994774374
+
+image::<scala.jpg>[scala.jpg]
