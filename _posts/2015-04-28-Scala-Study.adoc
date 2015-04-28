@@ -17,4 +17,4 @@ scala 프로그래밍 언어 스터디
 
 http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788994774374
 
-image::<http://bahamoth.github.io/images/scala.jpg>[image/scala.jpg]
+image::<http://bahamoth.github.io/images/scala.jpg>[scala for impatient]
