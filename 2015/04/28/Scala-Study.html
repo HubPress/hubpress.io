@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Scala Study</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//bahamoth.github.io/themes/Roon/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//bahamoth.github.io/themes/Roon/assets/css/screen.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://bahamoth.github.io/2015/04/28/Scala-Study.html" />
+    
+    <meta property="og:site_name" content="경기 서부 개발자 커뮤니티" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Scala Study" />
+    <meta property="og:description" content="개요 scala 프로그래밍 언어 스터디 목표 OOP의 틀을 깬다. scala 프로그래밍 언어를 익힌다. Multi-paradigm language 의 특성을 익힌다. Functional programming paradigm 을 익힌다. 교재 쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 원제 : Scala for impatient http://www.kyobobook.co.kr/product/..." />
+    <meta property="og:url" content="https://bahamoth.github.io/2015/04/28/Scala-Study.html" />
+    <meta property="article:published_time" content="2015-04-27T15:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-28T23:58:57.083Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Scala Study" />
+    <meta name="twitter:description" content="개요 scala 프로그래밍 언어 스터디 목표 OOP의 틀을 깬다. scala 프로그래밍 언어를 익힌다. Multi-paradigm language 의 특성을 익힌다. Functional programming paradigm 을 익힌다. 교재 쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 원제 : Scala for impatient http://www.kyobobook.co.kr/product/..." />
+    <meta name="twitter:url" content="https://bahamoth.github.io/2015/04/28/Scala-Study.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "경기 서부 개발자 커뮤니티",
+    "author": {
+        "@type": "Person",
+        "image": "https://avatars.githubusercontent.com/u/5276888?v=3",
+        "url": "undefined/author/undefined"
+    },
+    "headline": "Scala Study",
+    "url": "https://bahamoth.github.io/2015/04/28/Scala-Study.html",
+    "datePublished": "2015-04-27T15:00:00.000Z",
+    "dateModified": "2015-04-28T23:58:57.083Z",
+    "description": "개요 scala 프로그래밍 언어 스터디 목표 OOP의 틀을 깬다. scala 프로그래밍 언어를 익힌다. Multi-paradigm language 의 특성을 익힌다. Functional programming paradigm 을 익힌다. 교재 쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 원제 : Scala for impatient http://www.kyobobook.co.kr/product/..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="경기 서부 개발자 커뮤니티" href="https://bahamoth.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template  noimage">
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://bahamoth.github.io" id="home_link">«</a>
+            <div class="meta"><time datetime="2015-04-28"><a href="/2015/04/28/Scala-Study.html">April 28, 2015</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Scala Study</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="sect1">
+<h2 id="__">개요</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>scala 프로그래밍 언어 스터디</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">목표</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>OOP의 틀을 깬다.</p>
+</li>
+<li>
+<p>scala 프로그래밍 언어를 익힌다.</p>
+</li>
+<li>
+<p>Multi-paradigm language 의 특성을 익힌다.</p>
+</li>
+<li>
+<p>Functional programming paradigm 을 익힌다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___3">교재</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>쉽게 배워서 빨리 써먹는 스칼라 프로그래밍</p>
+</div>
+<div class="paragraph">
+<p>원제 : Scala for impatient</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788994774374" class="bare">http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788994774374</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/<http://bahamoth.github.io/images/scala.jpg>" alt="scala for impatient">
+</div>
+</div>
+</div>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Scala%20Study&url=https://bahamoth.github.io/2015/04/28/Scala-Study.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <!-- <a href="https://bahamoth.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a> -->
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/5276888?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/5276888?v=3" alt="">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n"></a></h4>
+                    
+                    
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://bahamoth.github.io/2015/04/28/Scala-Study.html&amp;description=Scala%20Study-%EA%B2%BD%EA%B8%B0%20%EC%84%9C%EB%B6%80%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0 " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+
+</body>
+</html>
