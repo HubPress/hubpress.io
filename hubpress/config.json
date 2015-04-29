@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"adamdavies1915","repositoryName":"adamdavies1915.github.io","branch":"master"},"site":{"title":"Adam's Tech Blog","url":"https://adamdavies1915.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"https://adamdavies1915.github.io/themes/Casper"}}
