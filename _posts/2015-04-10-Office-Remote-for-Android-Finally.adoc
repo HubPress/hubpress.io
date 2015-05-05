@@ -1,0 +1,5 @@
+= Office Remote for Android - Finally
+:hp-tags: Android, Apps
+:hp-image: office_remote.PNG
+
+Last week on Product Hunt an app called **Swoosh** made it's way that interested me - a way to control PowerPoint presentations by using a gesture over your Android phone. Really cool. All you needed was a server on your computer (Windows, Mac, and Linux friendly), the app (which cost $1.99), and you're good to go (link:view-source:https://play.google.com/store/apps/details?id=io.onthego.apps.swoosh.android&hl=en[Google Play]). I did not purchase it because I thought "$1.99? Come on." Well it sounds like someone heard my cry at Microsoft as they have released (or updated?) yesterday called **Offive Remote for Android** (link:view-source:https://play.google.com/store/apps/details?id=com.microsoft.office.officeremote[Google Play]). A bluetooth enabled preentation, Microsoft Word, and Excel geture (finger gesture) swipping on an Android phone so you don't have to keep operating at the computer. A helpful little app to make your presentations easier and run smoothly!
