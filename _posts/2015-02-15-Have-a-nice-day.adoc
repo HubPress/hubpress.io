@@ -4,6 +4,4 @@
 
 :hp-tags: nice, day
 
-Ladies and gentlemen,
-
-Have a nice day!
+Hi!
