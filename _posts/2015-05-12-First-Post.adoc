@@ -1,0 +1,9 @@
+# First Post
+
+Testing out the Hubpress blogging platform. 
+
+Here is somce code:
+``` ruby
+require 'time'
+puts 'Hello World'
+```
