@@ -1,0 +1,10 @@
+= mengambil nilai list dari form pada django
+
+untuk mengambil data list dari form pada django ternyata mudah, jika kita mengambil data biasa pada form dengan
+```python
+request.POST.get('NAME')
+```
+maka untuk mengambil data yang berupa list adalah dengan
+```python
+request.POST.getlist('NAME')
+```

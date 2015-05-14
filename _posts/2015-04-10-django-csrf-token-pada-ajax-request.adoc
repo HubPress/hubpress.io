@@ -1,0 +1,17 @@
+= django csrf token pada ajax request
+
+secara default, csrf token pada django berada dalam kondisi hidup untuk mengamankan aplikasi. sehingga, setiap request post ke apliasi kita harus menyertakan csrf token tersebut. untuk request berupa ajax, kita harus menambahkan field berikut:
+```
+csrfmiddlewaretoken={{csrf_token}}
+```
+salah satu contohnya adalah pada http://vitalets.github.io/x-editable/docs.html#gettingstarted[bootstrap editable], kita harus menambahkan parameter ```csrfmiddlewaretoken``` 
+```python
+<a href="#" class="editable" 
+   data-type="text"
+   data-pk="PK"
+   data-url="URL"
+   data-title="TITLE"
+   data-params="{csrfmiddlewaretoken:'{{ csrf_token }}'}">
+   TEXT
+</a>
+```
