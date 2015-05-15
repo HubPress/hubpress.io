@@ -1,8 +1,9 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
+    "username": "pFendi-project",
+    "repositoryName": "blog1.fendi-project.com",
+    "branch": "gh-pages",
+	"cname":"blog1.fendi-project.com"
   },
   "theme": {
     "name": "Casper"
