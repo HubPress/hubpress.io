@@ -258,11 +258,19 @@ video::67480300[vimeo]
 
 Because HubPress is hosted on GitHub, you can update by pulling down the latest changes from the HubPress master repository.
 
-To learn how to do this correctly (there's a trick to it the first time you pull changes from upstream), you can watch the following video to learn the correct process.
+To learn how to do this correctly (there's a trick to it the first time you pull changes from upstream), you can watch the following video or read the directions below to learn the correct process.
 
 video::KCylB780zSM[youtube]
 
 https://www.youtube.com/watch?v=KCylB780zSM[Updating HubPress]
+
+. Open up your HubPress repository on the Github website. If you are not using the `username.github.io` repository, switch to the `gh-pages` branch of the selected repository.
+. Click on the Compare button (near the top right, above the Latest Commit label). This will open up the comparison page.
+. This comparison view has the base fork as `HubPress/hubpress.io` and the head fork as your repository, which is not what we want. Instead, switch the base fork to your repository, select the compare across forks option, and set the head fork as `HubPress/hubpress.io`.
+. If there are any changes upstream, they will be displayed in the compare view.
+. Click on Create to create a pull request for this comparison and assign a name to your pull request (e.g., Update from original).
+. Click on Send pull request.
+. Scroll down and click Merge pull request and finally Confirm merge. If your fork didn’t have any changes, you will be able to merge it automatically.
 
 == Troubleshooting
 
