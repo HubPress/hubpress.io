@@ -10,20 +10,24 @@ Dans ces nouveautés, vous retrouverez des améliorations directement visible po
 
 Si vous utilisez maven sur vos projets, vous avez peut être des modules maven. Généralement le dossier d'un module est directement présent dans le dossier de son parent. On a donc une arborescence sur le disque équivalent à l'exemple suivant :
 
-
- * my-project (dossier)
- ** my-project-api (dossier)
- ** my-project-core (dossier)
- 
+[source]
+----
+ - my-project (dossier)
+ --- my-project-api (dossier)
+ --- my-project-core (dossier)
+----
  
 Sous Eclipse, l'affichage est différent. En effet, les différentes vues, notamment la vue Project Explorer gère uniquement des projets ou des working set dans leur arbre. Il n'y a pas de représentations dans l'arbre de sous-projet. On retrouve donc l'arborescence suivante
 
- * my-project (projet Eclipse)
- ** my-project-api (simple dossier)
- ** my-project-core (simple dossier)
- * my-project-api (projet Eclipse)
- * my-project-core (projet Eclipse)
- 
+[source]
+----
+ - my-project (projet Eclipse)
+ --- my-project-api (simple dossier)
+ --- my-project-core (simple dossier)
+ - my-project-api (projet Eclipse)
+ - my-project-core (projet Eclipse)
+----
+
 Pour un projet plus complexe tel que webtools.jsdt (outils de développement JS d'Eclipse), on arrive à ça : 
 
 image::/images/2015/05/eclipse-flat-presentation-project.png[align="center"]
@@ -36,9 +40,12 @@ link:https://twitter.com/mickaelistria[Mickael Istria] de Red Hat a développé 
 
 On récupère donc la représentation suivante :
 
- * my-project (projet Eclipse)
- ** my-project-api (projet Eclipse)
- ** my-project-core (projet Eclipse)
+[source]
+----
+ - my-project (projet Eclipse)
+ --- my-project-api (projet Eclipse)
+ --- my-project-core (projet Eclipse)
+----
  
 Ou pour le webtools.jsdt, l'organisation suivante : 
  
