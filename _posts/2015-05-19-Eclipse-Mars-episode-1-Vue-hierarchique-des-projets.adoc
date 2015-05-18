@@ -26,7 +26,7 @@ Sous Eclipse, l'affichage est différent. En effet, les différentes vues, notam
  
 Pour un projet plus complexe tel que webtools.jsdt (outils de développement JS d'Eclipse), on arrive à ça : 
 
-images::/images/2015/05/eclipse-flat-presentation-project.png[align="center"]
+image::/images/2015/05/eclipse-flat-presentation-project.png[align="center"]
 
 Il est possible de supprimer de l'affichage les simples dossiers. Ceci permet de ne plus avoir de doublons dans l'arbre. Pour moi, ceci n'était qu'un palliatif mais pas une solution optimale. A priori je n'étais pas le seul à penser cela.
 
@@ -42,7 +42,7 @@ On récupère donc la représentation suivante :
  
 Ou pour le webtools.jsdt, l'organisation suivante : 
  
-images::/images/2015/05/eclipse-hierarchical-presentation-project.png[align="center"]
+image::/images/2015/05/eclipse-hierarchical-presentation-project.png[align="center"]
 
 == Comment activer l'option ?
 
@@ -52,7 +52,7 @@ En fait sur plusieurs vues d'Eclipse, il existe un menu intégré accessible par
 
 Donc dans les options, vous changez "Projects Presentation > Flat" par "Projects Presentation > Hierarchical"
 
-images::/images/2015/05/eclipse-change-presentation-project.png[align="center"]
+image::/images/2015/05/eclipse-change-presentation-project.png[align="center"]
 
 Si vous êtes comme moi, vous allez adorer cette nouvelle présentation.
 
