@@ -1,6 +1,6 @@
 = Hope in the time of malaria
 
-:published_at: 2015-02-16
+:published_at: 2015-01-31
 :hp-tags: malaria
 :hp-image: ../covers/noor_fig2.jpg
 
