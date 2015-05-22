@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        {{! Document settings and metadata }}
+        <title>{{meta_title}}</title>
+        <meta charset="utf-8" />
+        <meta name="designer" content="Hayden Bleasel" />
+        <meta name="rating" content="general" />
+        <meta name="keywords" content="ghost, blog, {{meta_title}}" />
+
+        {{! iOS, Android and Windows stuff }}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileImage" content="{{asset 'images/windows-tile.png'}}" />
+        <meta name="msapplication-TileColor" content="#262A2D" />
+
+        {{! Robots and Viewport }}
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        {{! OpenGraph for Facebook }}
+        <meta property="og:title" content="{{meta_title}}" />
+        <meta property="og:image" content="{{@blog.url}}/assets/images/open-graph.png" />
+        <meta property="og:locale" content="en_US" />
+
+        {{! Twitter Card }}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="{{meta_title}}" />
+        {{#if @blog.cover}}<meta property="twitter:image" content="{{@blog.cover}}" />{{/if}}
+
+        {{! Icons }}
+        <link rel="icon" href="{{asset 'favicon.ico'}}" />
+        <link rel="icon" sizes="196x196" href="{{asset 'images/android-homescreen.png'}}" />
+        <link rel="apple-touch-icon" href="{{asset 'images/apple-touch-icon.png'}}" />
+
+        {{! Prerendering and Prefetching }}
+        {{#if @blog.cover}}
+            <link rel="prerender" href="{{@blog.cover}}" />
+            <link rel="prefetch" href="{{@blog.cover}}" />
+        {{/if}}
+
+        {{! Scripts and Stylesheets }}
+        <link rel="stylesheet" href="{{asset 'css/normalize.css'}}" />
+        <link rel="stylesheet" href="{{asset 'css/basics.css'}}" />
+        <link rel="stylesheet" href="{{asset 'css/gist.css'}}" />
+        <link rel="stylesheet" href="{{asset 'css/cactus.css'}}" />
+        <script src="{{asset 'js/html5shiv-printshiv.js'}}"></script>
+        <script src="{{asset 'js/respond.js'}}"></script>
+
+        {{! Page-Specific Metadata }}
+        {{{block "meta"}}}
+
+        {{ghost_head}}
+
+    </head>
+    <body class="{{body_class}}">
+
+        <section id="wrapper">
+            <header id="header">
+                <a id="title" class="index" href="{{@blog.url}}">{{@blog.title}}</a>
+            </header>
+
+            {{{body}}}
+
+            <footer id="footer">
+                <p class="small">
+                    <a href="https://github.com/haydenbleasel/phantom">Theme: Cactus by Hayden Bleasel</a>
+                </p>
+            </footer>
+
+        </section>
+
+        {{ghost_foot}}
+
+        {{! Deferred scripts }}
+        <script src="{{asset 'js/fastclick.js'}}"></script>
+        <script src="{{asset 'js/cactus.js'}}"></script>
+
+    </body>
+</html>

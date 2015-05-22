@@ -1,0 +1,28 @@
+{{!< default}}
+
+{{#post}}
+
+    {{> post-meta}}
+
+    <article class="post">
+
+    	<header>
+    		<h1>{{title}}</h1>
+    	</header>
+
+    	<section id="post-body">
+            {{content}}
+        </section>
+
+        {{!> comments}}
+
+        <footer id="post-meta" class="clearfix">
+            <div><span>Posted on </span> <time class="dates" datetime="{{date format='YYYY-MM-DD'}}">{{date format='MMM D, YYYY'}}</time></div>
+            <div><span>Written by</span> {{author}}</div>
+            <div><span>Tagged under</span> {{tags}}</div>
+            {{> share}}
+        </footer>
+
+    </article>
+
+{{/post}}

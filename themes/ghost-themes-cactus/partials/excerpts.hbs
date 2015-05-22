@@ -1,0 +1,15 @@
+<ul id="post-list">
+    {{#foreach posts}}
+        <li>
+            <a href='{{url}}'><time class="dates" datetime="{{date format='YYYY-MM-DD'}}">{{date format='MMM D, YYYY'}}</time></a>
+            <a href='{{url}}'>
+                <b>{{title}}</b>
+                <h2>{{excerpt characters="50"}}&hellip;</h2>
+            </a>
+        </li>
+    {{/foreach}}
+</ul>
+
+<footer id="index-meta">
+    {{pagination}}
+</footer>
