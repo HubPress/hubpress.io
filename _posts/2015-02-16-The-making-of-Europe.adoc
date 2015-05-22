@@ -1,6 +1,8 @@
 = The making of Europe
 
-
+:published_at: 2015-02-16
+:hp-tags: aDNA, population genetics
+:hp-image: ../covers/haak_fig3.jpg
 
 _George Busby went to hear Harvard professor David Reich speak about his latest research on European ancestry in Oxford on 9 February 2015_
 
