@@ -9,7 +9,7 @@ Le problème avec cette vue c'est que si l'on a des projets et des sous-projets,
 
 Sur l'exemple suivant, on voit bien deux fois le fichier TestFile.properties.
 
-image:/images/2015/06/open-resource-not-filtered.png[align=center]
+image:/images/2015/05/open-resource-not-filtered.png[align=center]
 
 Le pire dans tout ça, c'est que l'ouverture de certaines références de fichier ne permettent pas d'avoir le contexte dans lequel on veut travailler. 
 
@@ -21,11 +21,11 @@ Heureusement link:https://twitter.com/mickaelistria[Mickael Istria] (oui encore 
 
 Pour activer cette fonctionnalité, il suffit d'accéder aux options de la fenêtre "Open Resources". Une fois ouverte, il suffit d'activer l'option "Filter duplicated Resources".
 
-image:/images/2015/06/open-resource-select-option.png[align=center]
+image:/images/2015/05/open-resource-select-option.png[align=center]
 
 Après l'activation, vous ne devriez plus avoir de doublons dans les fichiers proposés. 
 
-image:/images/2015/06/open-resource-filtered.png[align=center]
+image:/images/2015/05/open-resource-filtered.png[align=center]
 
 Si c'est toujours le cas, c'est peut être que vous utilisez des projets maven sans M2E et sans activer une option permettant de masquer les dossiers fils. Dans ce cas, je vous invite à regarder les commentaires du ticket que j'ai créé sur le bugtracker eclipse. http://eclip.se/468692
 
