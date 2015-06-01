@@ -1,4 +1,4 @@
-= Eclipse Mars - épisode 2 - Filtrer la popup Open Resource
+= Eclipse Mars - épisode 2 - Filtrer la popup Open Resources
 :hp-tags: eclipse, mars
 
 Après un link:/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html[premier article] sur la nouvelle mouture d'Eclipse, je vais vous présenter une autre fonctionnalité intéressante de l'IDE. 
