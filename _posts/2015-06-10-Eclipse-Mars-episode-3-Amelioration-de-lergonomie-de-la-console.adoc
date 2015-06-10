@@ -12,3 +12,11 @@ Un truc assez embêtant lorsque les logs de l'application sont verbeux, c'est qu
 Généralement, l'utilisateur va donc remonter avec dans les logs avec la barre de défilement. Malheureusement cela ne résout pas le problème puisqu'à chaque nouvelle ligne de log, la console réaffiche les lignes nouvellement écrites.
 
 Pour désactiver ce fonctionnement et permettre la lecture des logs, il existe un bouton permettant de bloquer le défilement. Il n'est pas activé par défaut (à mon avis heureusement) mais peut être utile de temps à autres.
+
+Une amélioration appréciable au niveau de la console est d'activer l'option de vérouillage dès lors que l'on utilise la molette de la souris pour remonter dans l'historique des logs. C'est pas grand chose, mais c'est réellement appréciable. Pour réactiver le défilement automatique il faut alors soit cliquer sur le bouton correspondant soit de redescendre via la molette.
+
+== Retour à la ligne pour les longues lignes de log
+
+Un autre point intéressant sur la console est le fait de pouvoir maintenant avoir un retour à la ligne automatique pour son contenu. Cela permet donc de lire le contenu de la console sans devoir se déplacer avec la barre de défilement horizontale. 
+
+L'option n'est pas activée par défaut, 
