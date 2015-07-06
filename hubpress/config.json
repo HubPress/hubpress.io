@@ -1,8 +1,8 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "gscheibel",
+    "repositoryName": "blog",
+    "branch": "gh-pages"
   },
   "theme": {
     "name": "Casper"
