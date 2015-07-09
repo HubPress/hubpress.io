@@ -1,0 +1,63 @@
+// ------------------------------
+// POST LIST
+// ------------------------------
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+
+  li {
+    margin: 0 0 2.2em 0;
+
+    &:last-child {
+
+      hr {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
+
+  .post-list__post-title {
+    margin-top: 0;
+    margin-bottom: .2em;
+    font-size: 1.5em;
+    line-height: 1.3em;
+
+    a {
+      color: $gray-darkest;
+
+      &:hover {
+        color: $hover-color;
+      }
+
+    }
+
+  }
+
+  .post-list__meta {
+    display: block;
+    margin: .7em 0 0 0;
+    font-size: .9em;
+    color: darken($gray, 2%);
+  }
+
+    .post-list__meta--date {
+      margin-right: .5em;
+      color: darken($gray, 2%);
+    }
+
+    .post-list__meta--tags {
+      margin-left: .5em;
+    }
+
+  .post-list__divider {
+    width: 30%;
+    margin: 2.2em 0 2.1em 0;
+    border-top: 1px solid $gray-light;
+  }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="{{asset 'css/style.css'}}" rel="stylesheet" type="text/css">
+    <link href="{{asset 'css/animate.min.css'}}" rel="stylesheet" type="text/css">
+    <link href="{{asset 'favicon.ico'}}" rel="shortcut icon">
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    {{{body}}}
+    <footer class="animated fadeIn" id="footer">
+        {{> footer}}
+    </footer>
+    {{ghost_foot}}
+    <script src="{{asset 'js/scripts.js'}}"></script>
+    
+    {{#if @blog.googleAnalytics}}
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{{@blog.googleAnalytics}}', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+    {{/if}}
+</body>
+</html>

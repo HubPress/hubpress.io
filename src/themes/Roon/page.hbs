@@ -1,0 +1,40 @@
+{{!< default}}
+
+{{#post}}
+
+    {{#if image}}
+        <div id="feature_image">
+            <div class="inner" style="background-image: url('{{image}}')">
+                <img src="{{image}}">
+            </div>
+        </div>
+    {{/if}}
+
+    <article role="main" class="{{#if image}}image{{/if}}">
+
+        <header>
+            <a href="{{@blog.url}}" id="home_link">«</a>
+            <h1>{{title}}</h1>
+        </header>
+
+        <div class="text">
+            {{content}}
+        </div>
+
+        {{!-- TODO: Social sharing. Requires JS & embeds --}}
+        {{!--
+        <menu>
+            <iframe src="/_/like_button?post_id=151560" frameborder="0" scrolling="no" title="Like Questions — Part 2" width="70" height="85"></iframe>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="https://twitter.com/intent/tweet?related=roon_app&amp;text=%40soffes%20Interesting%20post%21%20%E2%80%94%20http%3A%2F%2Fsam.roon.io%2Fquestions-part-2" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+        --}}
+
+    </article>
+
+{{/post}}
