@@ -1,10 +1,10 @@
 = XAMPP Starter for your command line
 
-:published_at: 2015-07-12
+:published_at: 2015-07-13
 
 :hp-image: xampp.png
 
 :hp-tags: xampp, xampp-cli, github, repo, shell, script
 
 
-Shell script for XAMPP server.
+No doubt, Linux is a great environment for development. Its Terminal is as great as itself. We, developers, often (always) use command line in our development process. +
