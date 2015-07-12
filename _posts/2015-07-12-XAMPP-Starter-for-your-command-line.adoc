@@ -1,4 +1,4 @@
-= xampp-cli
+= XAMPP Starter for your command line
 
 :published_at: 2015-07-12
 
