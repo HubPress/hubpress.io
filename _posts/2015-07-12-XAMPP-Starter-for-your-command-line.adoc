@@ -2,6 +2,8 @@
 
 :published_at: 2015-07-12
 
+:hp-image: xampp.png
+
 :hp-tags: xampp, xampp-cli, github, repo, shell, script
 
 
