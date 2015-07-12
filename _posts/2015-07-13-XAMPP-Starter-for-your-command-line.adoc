@@ -8,4 +8,4 @@
 
 
 No doubt, Linux is a great environment for development. Its Terminal is as great as itself. We, developers, often (always) use command line in our development process. +
-When it came to work on PHP projects I installed XAMPP server on my machine.
+When it came to work on PHP projects I installed XAMPP server on my machine. The issue is that in every reboot it requires manual starting from command line and the commands controlling server are enough long.
