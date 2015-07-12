@@ -1,7 +1,8 @@
-= Have a nice day
+= xampp-cli
 
-:published_at: 2015-02-15
+:published_at: 2015-07-12
 
-:hp-tags: nice, day
+:hp-tags: xampp, xampp-cli, github, repo, shell, script
 
-Hi!
+
+Shell script for XAMPP server.
