@@ -1,0 +1,18 @@
+= XAMPP Starter for your command line
+
+:published_at: 2015-07-13
+
+:hp-image: xampp.png
+
+:hp-tags: xampp, xampp-cli, github, repo, shell, script
+
+
+No doubt, Linux is a great environment for development. Its Terminal is as great as itself. We, developers, often (always) use command line in our development process. +
+
+When it came to work on PHP projects I installed XAMPP server on my machine. The issue is that in every reboot it requires manual starting from command line and the commands controlling server are enough long. So, I decided to make a tiny script to easily handle all these commands for my server. The alpha version was ready but still something needed to develop. After few weeks, one guy from Ukraine, Denys Dovhan (https://github.com/denysdovhan[@denysdovhan]) made a Pull Request, in which he added some new features and increased the capability of the script. +
+
+Now the clean v1.0 version is ready. README and technical issues are in GitHub page of the project. +
+ +
+Please visit here: https://github.com/ziyaddin/xampp-cli[github.com/ziyaddin/xampp-cli]. +
+
+Enjoy!
