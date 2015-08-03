@@ -1,5 +1,6 @@
 = Day one : Technical Keynote
 :published_at: 2011-10-04
+:hp-tags: JavaOne
 
 C'est le show à l'americaine ! Magnifique salle, deux écrans géants, une musique pop !
 
