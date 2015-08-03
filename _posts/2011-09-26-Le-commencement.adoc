@@ -1,6 +1,7 @@
 = Le commencement
+:published_at: 2011-09-26
+
 Benoit Prioux
-2011-09-26
 
 Quelqu'un m'a dit : "Si tu n'as pas un blog à 30 ans, tu as raté ta vie". 30 ans approchant à grand pas, j'ai dit pourquoi pas. Après il fallait trouver un sujet qui puisse me lancer dans d'interminables posts lus par quelques personnes, qui en fait se sont trompées de site ...
 
