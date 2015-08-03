@@ -1,8 +1,6 @@
 = Le commencement
 :published_at: 2011-09-26
 
-Benoit Prioux
-
 Quelqu'un m'a dit : "Si tu n'as pas un blog à 30 ans, tu as raté ta vie". 30 ans approchant à grand pas, j'ai dit pourquoi pas. Après il fallait trouver un sujet qui puisse me lancer dans d'interminables posts lus par quelques personnes, qui en fait se sont trompées de site ...
 
 Dans 5 jours, c'est-à-dire samedi prochain, j'ai la chance et l'honneur d'aller à http://www.oracle.com/javaone/index.html[JavaOne] à San Francisco ! L'occasion pour moi d'apprendre tout plein de choses avec tout plein de passionnés sur le plus beau des langages de programmation JAVA (là je viens de perdre la moitié des lecteurs, et aussi les fans de C#).
