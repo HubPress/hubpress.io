@@ -1,0 +1,23 @@
+= Day Two : JSR 107 The new caching standard
+:published_at: 2011-10-08
+
+Intervenants : un gars de Oracle pour Coherence et un gars de Terracota pour EhCache
+
+La JSR 107 est prévue d'être intégrée à JavaEE 7 et sera incluse dans la JSR 342. Elle est déjà utilisable dans JavaEE 6 ou Spring et même dans n'importe quelle application java. Elle nécessite juste la version 6 de java.
+
+L'implémentation est (sera,ndlr) sous license Apache 2. Et on espére que les grands frameworks de cache la suivront : ehcache, coherence, infispan, extremescalr, gemfire... Et là on commence à comprendre que cela ne va pas être simple pour que tout le monde utilise le standard....
+
+En tout cas, l'API javax.cache est disponible dans Maven Central en 0.3.SNAPSHOT.
+
+On nous rappelle que cette JSR ne couvre pas le cache pour le data grid, c'est la JSR 347 qui aura le prérequis de définir la topologie.
+
+Petite description de l'API :
+
+* classloading : comme le cache peut contenir des données partagées par plusieurs threads, on peut spécifier un classloader lors de la création du cache
+* support du ServiceLoader pour le choix de l'implémentation
+* possibilité de définir des propriétés lors de la création du cache : taille, durée, ...
+* ensemble d'annotations : @CachePut, @CacheResult, @CacheRemoveEntity, @CacheRemoveAll
+
+Note personnel : j'ai essayé de trouver l'implémentation de référence pour jouer, j'ai pas trouvé :-(
+
+http://javaonemorething.files.wordpress.com/2011/10/ehcache.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/ehcache.jpg[image,title="ehcache"]]http://javaonemorething.files.wordpress.com/2011/10/coherence.gif[image:http://javaonemorething.files.wordpress.com/2011/10/coherence.gif[image,title="coherence"]]

@@ -1,0 +1,22 @@
+= Day Two : CDI 1.1
+:published_at: 2011-10-08
+
+Intervenant : Peter Muir, RedHat @plmuir
+
+Peter Muir est le spec lead pour CDI 1.1, il prend la suite de Gavin King trop occupé avec son nouveau langage de programmation Ceylan.
+
+La session commence par une démo avec JBoss Forge, permettant de créer une application JavaEE très rapidement en ligne de colmmande : création du projet maven, création d'entité, choix de l'implementation pour JPA, activation de CDI, génération de l'ihm pour le CRUD....
+
+Peter veut aussi nous montrer le déploiement sur le cloud avec OpenShift de JBoss... mais effet démo, il n'arrive pas à accèder à l'application déployée, dommage mais on lui fait confiance ;-)
+
+Ensuite, il passe aux nouveautés de CDI 1.1, dont la majeure le Global Ordering. En effet, dans CDI 1.0, on ne pouvait pas ordonner les interceptors ajoutés sur une classe, et parfois cela peut être gênant (par exemple, le logging est souvent le premier interceptor). Trois solutions dans CDI 1.1 :
+
+* magic number : on ajoute un nombre absolu @Interceptor(37), pas la meilleure solution mais cela sera possible
+* relative ordering : on utilise @OrderingQualifier et @Before(class)
+* imperative ordering : on définit programmatiquement l'ordre des interceptors
+
+Peter explique que la spec de CDI 1.1 n'est qu'en version draft et qu'il reste des sujets pas encore abordés comme le bootstrap du container en environnement JavaSE, des DSL pour le déploiement des beans, la possibilité de définir le cycle de vie des contextes, le contrôle du scanning en xml ou avec @Veto...
+
+Rendez vous en Q3 2012 avec JavaEE7.
+
+http://javaonemorething.files.wordpress.com/2011/10/cdi11.png[image:http://javaonemorething.files.wordpress.com/2011/10/cdi11.png?w=300[image,title="cdi11"]]

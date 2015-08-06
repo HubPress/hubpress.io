@@ -1,0 +1,34 @@
+= Day Four : CDI Today and Tomorrow
+:published_at: 2011-10-10
+
+La session est un débat sur CDI. Le panel est composé de représentants de chacune des implémentations :
+
+* Peter Muir pour Weld de JBoss
+* Dave Blevins pour OpenWebBeans de Apache TomEE
+* Reza Rahman pour CanDI de Resin
+
+Première question : Qu'apporte CDI à la platforme JavaEE ?
+
+En bref, CDI apporte l'injection de dépendances et la gestion des scopes. Les extensions permettent beaucoup de choses : on peut même réécrire complètement des framework comme Struts ou Tapestry. CDI permet de rendre les applications plus facilement testables comme avec Arquillian (encore une fois, c'est vraiment le framework star de JavaOne). CDI est complètement typé.
+
+Deuxième question : Des conseils pour les débutants ?
+
+Le debuging n'est pas forcement facile, mais les logs sont très utiles. Peter Muir affirme que les logs de Weld sont très explicites. Ils conseillent tous d'utiliser au maximum les possibilités de l'IDE (JBossTools pour Eclipse). Reza nous conseille d'aller voir son blog où il publie des articles avec des best practices (http://www.rahmannet.net/downloads/cdi_tour.pdf).
+
+Troisième question : JavaEE, Seam, Spring, Guice, CDI, comment choisir ?
+
+Le panel ne veut pas forcément faire de choix, l'idée c'est qu'en fonction des besoins, chaque framework apporte des solutions : on peut toujours faire marcher Spring avec CDI. Concernant Guice, c'est qu'un sous-ensemble de CDI, qui s'en est largement inspiré. Mais CDI apporte un concept plus fort que juste l'injection de dépendance comme la gestion du cycle de vie des beans, des évènements et les extensions.
+
+Quatrième question : Est-ce que CDI doit être  intégré à JavaSE ?
+
+Pour le moment, toutes les implémentations possèdent un fonctionnement en JavaSE mais la spec ne le définit pas, peut être en CDI 1.1. En tout cas, il semble trop tôt pour pouvoir l'intégrer dans la platform SE et c'est pas sûr que ce soit le bon choix...
+
+Cinquième question : JavaEE 7 theme is cloud, que va apporter CDI ?
+
+CDI 1.1 va sortir avec JavaEE 7, il n'a pas forcément de lien avec le cloud. Pour le moment, 80% de JavaEE est extensible avec CDI : les servlets et jax-rs par exemple ne sont pas concernés. Peut-être que les extensions peuvent répondre à des problématiques du cloud comme le multitenancy...
+
+Conclusion : Très bon débat où on a pu remarqué que les trois implémentations sont d'accord sur les grands principes et sur l'évolution de CDI. CDI 1.0 est déjà très bien rempli et CDI 1.1 apportera quelques retouches mais pas forcément liées au cloud (tant mieux ;-) ).http://javaonemorething.files.wordpress.com/2011/10/weld.png[image:http://javaonemorething.files.wordpress.com/2011/10/weld.png[image,title="weld"]]
+
+http://javaonemorething.files.wordpress.com/2011/10/openwebbeans.png[image:http://javaonemorething.files.wordpress.com/2011/10/openwebbeans.png?w=300[image,title="openwebbeans"]]
+
+http://javaonemorething.files.wordpress.com/2011/10/caucho.png[image:http://javaonemorething.files.wordpress.com/2011/10/caucho.png?w=300[image,title="caucho"]]
