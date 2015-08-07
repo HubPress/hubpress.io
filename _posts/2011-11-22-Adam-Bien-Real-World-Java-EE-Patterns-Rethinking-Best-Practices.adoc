@@ -1,5 +1,6 @@
 = Adam Bien : Real World Java EE Patterns Rethinking Best Practices
 :published_at: 2011-11-22
+:hp-tags: book
 
 Comme annoncé dans un http://javaonemorething.wordpress.com/2011/10/08/day-three-rethinking-best-practices-with-javaee-6/[article précédent], j'ai commencé la lecture d'un des livres de Adam Bien et ... en fait je l'ai dévoré très rapidement.
 
