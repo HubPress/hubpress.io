@@ -10,10 +10,20 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="//binout.github.io/javaonemorething/themes/Roon/favicon.ico">
+    <link rel="shortcut icon" href="//binout.github.io/javaonemorething/themes/ichi/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
-    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/Roon/assets/css/screen.css?v=1.0.0" />
+    <script type="text/javascript" src="//binout.github.io/javaonemorething/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//binout.github.io/javaonemorething/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
 
     <link rel="canonical" href="https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html" />
     
@@ -23,7 +33,7 @@
     <meta property="og:description" content="Après JavaOne 2011, Devoxx France 2012, le grand chelem continue avec Devoxx World à Anvers en Belgique. Cette fois-ci, je remercie le Bordeaux JUG qui a redistribué sa place avec un tirage au sort parmi ses membres : et c&amp;#8217;..." />
     <meta property="og:url" content="https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html" />
     <meta property="article:published_time" content="2012-11-13T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-08-07T12:59:29.465Z" />
+    <meta property="article:modified_time" content="2015-08-07T13:01:08.307Z" />
     <meta property="article:tag" content="DevoxxBe" />
     
     <meta name="twitter:card" content="summary" />
@@ -46,7 +56,7 @@
     "headline": "Devoxx World : Anvers et contre tous !",
     "url": "https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html",
     "datePublished": "2012-11-13T23:00:00.000Z",
-    "dateModified": "2015-08-07T12:59:29.465Z",
+    "dateModified": "2015-08-07T13:01:08.307Z",
     "keywords": "DevoxxBe",
     "description": "Après JavaOne 2011, Devoxx France 2012, le grand chelem continue avec Devoxx World à Anvers en Belgique. Cette fois-ci, je remercie le Bordeaux JUG qui a redistribué sa place avec un tirage au sort parmi ses membres : et c&amp;#8217;..."
 }
@@ -56,20 +66,86 @@
     <link rel="alternate" type="application/rss+xml" title="JavaOneMoreThing" href="https://binout.github.io/javaonemorething/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 </head>
-<body class="post-template tag-DevoxxBe  noimage">
+<body class="post-template tag-DevoxxBe">
 
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="https://binout.github.io/javaonemorething"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="https://binout.github.io/javaonemorething">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area" >
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="https://binout.github.io/javaonemorething"></a></li>
+                <li><a class="fi-torso" href="https://binout.github.io/javaonemorething/about"></a></li>
+                <li><a class="fi-mail" href="https://binout.github.io/javaonemorething/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">JavaOneMoreThing</h1>
+            <hr>
+            <p class="blog-description">Un peu de Java et plus encore</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="binout" class="fi-social-github"></a>
+                  <a href="binout" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
     
 
+<main class="content" role="main">
 
-    <article role="main" class="">
-        <header>
-            <a href="https://binout.github.io/javaonemorething" id="home_link">«</a>
-            <div class="meta"><time datetime="2012-11-14"><a href="/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html">November 14, 2012</a></time> <span class="count" id="js-reading-time"></span></div>
-            <h1>Devoxx World : Anvers et contre tous !</h1>
-        </header>
+    <article class="post tag-DevoxxBe">
 
-        <div class="text" id="js-post-content">
-            <div class="paragraph">
+
+            <h1 class="post-title">Devoxx World : Anvers et contre tous !</h1>
+
+            <span class="post-meta label"><time datetime="2012-11-14">14 Nov 2012</time></span>
+
+            <section class="post-content">
+                <div class="paragraph">
 <p>Après JavaOne 2011, Devoxx France 2012, le grand chelem continue avec Devoxx World à Anvers en Belgique. Cette fois-ci, je remercie le Bordeaux JUG qui a redistribué sa place avec un tirage au sort parmi ses membres : et c&#8217;est moi l&#8217;heureux gagnant !</p>
 </div>
 <div class="paragraph">
@@ -127,133 +203,56 @@
 <div class="paragraph">
 <p><a href="http://javaonemorething.files.wordpress.com/2012/11/20121114-225928.jpg"><span class="image"><img src="http://javaonemorething.files.wordpress.com/2012/11/20121114-225928.jpg" alt="20121114-225928.jpg"></span></a></p>
 </div>
-        </div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="https://binout.github.io/javaonemorething/tag/DevoxxBe">DevoxxBe</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
 
-        <menu>
-            <a href="" id="btn_share" class="btn" title="Share">
-                <span aria-hidden="true" data-icon="S"></span>
-                <strong>Share</strong>
-            </a>
-            <a href="http://twitter.com/share?text=Devoxx%20World%20%3A%20Anvers%20et%20contre%20tous%20!&url=https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
-                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
-            </a>
-        </menu>
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Devoxx%20World%20%3A%20Anvers%20et%20contre%20tous%20!&amp;url=https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
 
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>Benoît Prioux</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1451016?v=3">
+                        <span>Bordeaux</span>
+                        <a href="http://javaonemorething.wordpress.com">http://javaonemorething.wordpress.com</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
 
-        <footer class="post-footer" role="contentinfo">
+        <div class="clearfix"></div>
+                    <hr>
 
-            <div class="vcard">
-                <!-- <a href="https://binout.github.io/javaonemorething/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
-                    <span aria-hidden="true" data-icon=")"></span>
-                    <strong>Feed</strong>
-                </a> -->
+            </footer>
 
-                <a href="" class="photo">
-                    <span style="background-image: url('https://avatars.githubusercontent.com/u/1451016?v=3');">
-                        <img src="https://avatars.githubusercontent.com/u/1451016?v=3" alt="Benoît Prioux">
-                    </span>
-                </a>
-
-                <div class="details">
-                    <h4><a href="" class="url n">Benoît Prioux</a></h4>
-                    Bordeaux<br>
-                    <a href="http://javaonemorething.wordpress.com" class="js-remove-domain-schema">http://javaonemorething.wordpress.com</a>
-                </div>
-            </div>
-
-            <div id="user_bio">
-                <div class="inner">
-                    
-                </div>
-            </div>
-
-        </footer>
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
 
 
 
 
     </article>
 
-    <div id="share_modal">
-        <div class="wrap">
-            <div class="inner">
-                <header>
-                    Share
-                    <a href="" class="close" title="Close">&times;</a>
-                </header>
+</main>
 
-                <div class="roon-share-links">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
 
-                    <div id="fb-elems">
-                        <div id="fb-root"></div>
-                        <script>(function(d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s); js.id = id;
-                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
-                        fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));</script>
-                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
-                    </div>
-
-                    <div id="pinit-btn">
-                        <a href="//pinterest.com/pin/create/button/?url=https://binout.github.io/javaonemorething/2012/11/14/Devoxx-World-Anvers-et-contre-tous.html&amp;description=Devoxx%20World%20%3A%20Anvers%20et%20contre%20tous%20!-JavaOneMoreThing " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
-                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-    <script>
-
-            function get_text(el) {
-                ret = "";
-                var length = el.childNodes.length;
-                for(var i = 0; i < length; i++) {
-                    var node = el.childNodes[i];
-                    if(node.nodeType != 8) {
-                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
-                    }
-                }
-                return ret;
-            }
-            function reading_time () {
-                var post_content = document.getElementById('js-post-content');
-                if (post_content) {
-                    var words = get_text(post_content),
-                        count = words.split(/\s+/).length,
-                        read_time = Math.ceil((count / 150)),
-                        read_time_node = document.createTextNode(read_time + ' min read');
-                    document.getElementById('js-reading-time').appendChild(read_time_node);
-                }
-            }
-
-        function no_schema_links () {
-            var links = document.querySelectorAll('.js-remove-domain-schema');
-            if (links) {
-                for (i = 0; i < links.length; ++i) {
-                    var link = links[i],
-                        text = link.innerHTML,
-                        no_schema = text.replace(/.*?:\/\//g, "");
-                    link.innerHTML = no_schema;
-                }
-            }
-        }
-
-        window.onload = function () {
-            no_schema_links();
-
-            reading_time();
-        }
-    </script>
+</div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -268,32 +267,14 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-        <script>
-            $(function(){
-                var share_modal = $("#share_modal"),
-                    update_social_links = true;
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//binout.github.io/javaonemorething/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//binout.github.io/javaonemorething/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
 
-                $("#btn_share").click(function(){
-                    var that = $(this);
-                    share_modal.fadeIn(200);
-                    return false;
-                });
-
-                share_modal.click(function(e){
-                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
-                        share_modal.fadeOut(200);
-                    }
-                    return false;
-                });
-
-                share_modal.find("div.inner > header > a.close").click(function(){
-                    share_modal.fadeOut(200);
-                    return false;
-                });
-            });
-        </script>
-
-
+    <script>
+      $(document).foundation();
+    </script>
 
 </body>
 </html>
