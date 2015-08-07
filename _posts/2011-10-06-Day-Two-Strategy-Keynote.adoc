@@ -1,5 +1,6 @@
 = Day Two : Strategy Keynote
 :published_at: 2011-10-06
+:hp-tags: JavaOne
 
 Comme lors de technical keynote, on commence par faire plaisir aux sponsors : c'est le tour de Juniper Network. Un discours sur l'importance du réseau dans le développement d'applications, blabla .... et java n'est pas citée dans le discours.
 
