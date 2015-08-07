@@ -1,5 +1,6 @@
 = Day Three : Hacking JavaEE with CDI extensions
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 Intervenant : Dan Allen @mojavelinux de JBoss/Red Hat, java rock star (il a le look) et déjà vu dans la session sur Arquillian
 
