@@ -1,5 +1,6 @@
 = Tuning JBoss 5.1.0 GA et EJB3
 :published_at: 2012-08-21
+:hp-tags: JBoss
 
 Il y a quelques temps, j'avais lancé une bouteille à la mer sur twitter :
 
