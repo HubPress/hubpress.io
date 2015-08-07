@@ -1,18 +1,15 @@
 = Jenkins User Conference @Paris
 :published_at: 2012-04-17
+:hp-tags: Jenkins
 
 Aujourd'hui nous sommes réunis pour parler de notre outil de CI préféré Jenkins !
 
- +
- +
 http://javaonemorething.files.wordpress.com/2012/04/20120417-130711.jpg[image:http://javaonemorething.files.wordpress.com/2012/04/20120417-130711.jpg[20120417-130711.jpg]]
 
 Paris est la 2ème étape après San Francisco en octobre 2011. Koshuke (mr jenkins) et ses potes ont la bonne idée de placer cette conférence juste avant les grandes messes : javaone, devoxx,...
 
 La keynote d'ouverture est assurée par @koshukekawa en personne ! Comme à San Francisco, nous avons le droit à une petite session d'autocongratulation .... entrecoupé d'un petit moment d'émotion pour @NicolasBacot qui reçoit de koshuke les peluches AngryBirds gagnées en parrainant un autre collègue.
 
- +
- +
 http://javaonemorething.files.wordpress.com/2012/04/20120417-130812.jpg[image:http://javaonemorething.files.wordpress.com/2012/04/20120417-130812.jpg[20120417-130812.jpg]]
 
 Une petite démo nous montre les dernières évolutions de Jenkins principalement en terme de UI : boutons save/apply, barre de navigation, popup, .... Très sympa et simplifie la vie quotidienne des administrateurs Jenkins en épargnant quelques clics :-)
