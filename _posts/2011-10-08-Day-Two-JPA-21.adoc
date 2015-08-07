@@ -1,5 +1,6 @@
 = Day Two : JPA 2.1
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 Intervenante : Linda DeMichiel, spec lead de JavaEE 7
 
