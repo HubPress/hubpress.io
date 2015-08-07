@@ -1,5 +1,6 @@
 = Day Three : Modularity in Enterprise
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 Intervenant : Mike Keith de Oracle
 
