@@ -1,5 +1,6 @@
 = Day Four : JBoss AS7, the Death of the Slow
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 Intervenant : Andrew Lee Rubinger, JBoss/Red Hat
 
