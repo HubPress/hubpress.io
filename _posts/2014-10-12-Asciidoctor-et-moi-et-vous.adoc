@@ -1,5 +1,6 @@
 = Asciidoctor et moi, et vous ?
 :published_at: 2014-10-12
+:hp-tags: asciidoctor
 
 Depuis quelques mois, j'ai découvert un super projet **http://asciidoctor.org/[Asciidoctor]**. Et non ce n'est pas le tout dernier framework ... mais un projet qui vous aide à écrire de la documentation technique.
 
