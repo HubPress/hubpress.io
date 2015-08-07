@@ -1,5 +1,6 @@
 = Day One : Continuous Integration with Jenkins
 :published_at: 2011-10-04
+:hp-tags: JavaOne
 
 Intervenant : Kohsuke Kawagachi (http://kohsuke.org/)
 
