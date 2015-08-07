@@ -1,5 +1,6 @@
 = DevoxxFr : Code Story
 :published_at: 2012-05-06
+:hp-tags: DevoxxFr
 
 Le deuxième jour de Devoxx, c'est le vrai départ, ça se voit avec l'affluence par rapport au premier jour des universités. Et ça commence par un grand rassemblement de tous les participants devant une scène et trois écrans géants, ça rappelle vraiment JavaOne à San Francisco (il manque juste la musique à fond). Après des keynotes plutôt intéressantes, c'est le moment de choisir son agenda, le choix n'est pas facile ....
 
