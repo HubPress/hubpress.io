@@ -1,5 +1,6 @@
 = DevoxxFr Tools In Action
 :published_at: 2012-04-26
+:hp-tags: DevoxxFr
 
 Après les universités, plusieurs sessions de "Tools In Action" sont proposées. D'une durée de 30 min, elles permettent de découvrir rapidement un framework ou un outil.
 
