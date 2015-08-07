@@ -1,5 +1,6 @@
 = Mon palmarès de JavaOne 2011
 :published_at: 2011-10-11
+:hp-tags: JavaOne
 
 Meilleurs speakers :
 
