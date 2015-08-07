@@ -1,5 +1,6 @@
 = Day One : JavaDb features in JDK7
 :published_at: 2011-10-05
+:hp-tags: JavaOne
 
 Java DB est la version packagée par Oracle de Apache Derby. Elle est supporte totalement toutes les fonctionnalités SQL (ANSI/ISO SQL). Elle peut être embarquée ou en mode client /serveur.
 
