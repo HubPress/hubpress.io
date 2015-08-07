@@ -1,5 +1,6 @@
 = Day Four : CDI in JavaSE
 :published_at: 2011-10-10
+:hp-tags: JavaOne
 
 Dernière session de JavaOne 2011 (snif) et toujours du CDI (oui je sais, j'aime ça!). Cette fois-ci, deux intervenants suisses nous présentent l'utilisation de CDI dans un environnement SE.
 
