@@ -1,5 +1,6 @@
 = Day Three : Refactoring JavaEE 5 code to take advantage of JavaEE 6 features
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 Intervenants : deux personnes de "The Institue for Quantitative Social Science at Harvard University".
 
