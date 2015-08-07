@@ -1,5 +1,6 @@
 = Day Three : Patterns & Best Practices for CDI
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 Intervenants : Reza Rahman de Caucho/Resin et un autre gars
 
