@@ -1,5 +1,6 @@
 = Day One : Project Jigsaw
 :published_at: 2011-10-05
+:hp-tags: JavaOne
 
 C'est une session de veille technologique sur ce que sera le JDK 8.
 
