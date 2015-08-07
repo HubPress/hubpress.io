@@ -1,5 +1,6 @@
 = Day One : Hudson onward and upward
 :published_at: 2011-10-04
+:hp-tags: JavaOne
 
 Intervenant : des gens d'Oracle qui semblent parachutés sur le projet
 
