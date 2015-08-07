@@ -1,5 +1,6 @@
 = Bref, j'ai vu Gavin King
 :published_at: 2012-02-11
+:hp-tags: ceylon
 
 Il  y a plus d'une semaine maintenant, le 2 février, j'ai vu *Gavin King* à ..... Niort, oui oui Niort dans le Poitou-Charentes.
 
