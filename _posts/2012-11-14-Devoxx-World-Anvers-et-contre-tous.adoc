@@ -1,5 +1,6 @@
 = Devoxx World : Anvers et contre tous !
 :published_at: 2012-11-14
+:hp-tags: DevoxxBe
 
 Après JavaOne 2011, Devoxx France 2012, le grand chelem continue avec Devoxx World à Anvers en Belgique. Cette fois-ci, je remercie le Bordeaux JUG qui a redistribué sa place avec un tirage au sort parmi ses membres : et c'est moi l'heureux gagnant !
 
@@ -22,6 +23,4 @@ Cependant tout n'est pas si rose, car le chemin vers Devoxx fut un vrai chemin d
 
 Bref, pour un premier Devoxx, c'est un bien beau bizutage ! Mais après cette première journée, ça valait le coup d'insister : le lieu est super sympa (complexe de cinéma), l'organisation est excellente, les confs de très bonne qualité : javaee7, jdk8, Arquillian ...
 
- +
- +
 http://javaonemorething.files.wordpress.com/2012/11/20121114-225928.jpg[image:http://javaonemorething.files.wordpress.com/2012/11/20121114-225928.jpg[20121114-225928.jpg]]
