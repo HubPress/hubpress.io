@@ -1,5 +1,6 @@
 = Day Three : The Road to JavaEE 7 : Is it all about the cloud ?
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 La session est un débat sur JavaEE 7 et le cloud. Le "panel" est composé de :
 
