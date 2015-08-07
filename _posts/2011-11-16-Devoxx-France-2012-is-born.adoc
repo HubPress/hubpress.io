@@ -1,5 +1,6 @@
 = Devoxx France 2012 is born !
 :published_at: 2011-11-16
+:hp-tags: DevoxxFr
 
 Voila JavaOne est déjà loin maintenant, mais la passion est toujours là et aujourd'hui j'ai trouvé un sujet pour continuer à blogger : Devoxx arrive en France !
 
