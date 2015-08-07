@@ -1,5 +1,6 @@
 = Day Four : Community Keynote
 :published_at: 2011-10-08
+:hp-tags: JavaOne
 
 La dernière keynote commence par une présentation d'IBM sur sa vision du cloud. Le discours est plutôt intéressant avec une vision pour une fois pas trop abstraite sur le cloud. IBM veut faire passer le message qu'ils sont déjà prêts avec une démo powerpoint d'un déploiement d'une application JavaEE sur le cloud avec un outil dédié qui se charge de tout. Ça ressemble un peu à la démo GlassFish lors de la Strategy Keynote. En tout cas, c'était la meilleure keynote des sponsors.
 
