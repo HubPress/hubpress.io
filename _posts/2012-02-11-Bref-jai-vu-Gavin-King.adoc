@@ -1,6 +1,6 @@
 = Bref, j'ai vu Gavin King
 :published_at: 2012-02-11
-:hp-tags: ceylon
+:hp-tags: DevoxxFr
 
 Il  y a plus d'une semaine maintenant, le 2 février, j'ai vu *Gavin King* à ..... Niort, oui oui Niort dans le Poitou-Charentes.
 
@@ -18,11 +18,12 @@ La présentation est en deux parties :
 
 * pour découvrir le langage, rien de mieux que le HelloWord ici présenté dans Eclipse avec le plug-in associé, ceci permet de voir comment se présente la syntaxe. C'est *David Festal* qui fait la démo et permet de rapidement "entrer" dans l'univers de ce langage
 
-` void hello() {`
-
-print("Hello, World!");
-
+[source, java]
+----
+void hello() {
+	print("Hello, World!");
 }
+----
 
 * puis, Gavin prend la parole pour nous parler des intentions de ce langage, de ses fondements, de sa conception, de son évolution, ...
 
