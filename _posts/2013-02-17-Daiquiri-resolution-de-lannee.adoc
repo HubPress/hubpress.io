@@ -13,15 +13,57 @@ J'ai donc commencé une première implémétation de Daiquiri, en solutionnant u
 
 Exemple :
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-package org.daiquiri.examples;import javax.naming.InitialContext;import javax.naming.NamingException;public class LicenseChecker {    static final String MAX_LICENSE = "MAX_LICENSE";    private int currentNbUsers = 0;    public LicenseChecker(int nbUsers) {       currentNbUsers = nbUsers;    }    public boolean canAddUsers(int nbNewUsers) throws NamingException{        Integer maxLicense = (Integer) new InitialContext().lookup(MAX_LICENSE);        return currentNbUsers + nbNewUsers <= maxLicense;    }}
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[source, java]
+----
+package org.daiquiri.examples;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public class LicenseChecker {    
+	static final String MAX_LICENSE = "MAX_LICENSE";    
+    private int currentNbUsers = 0;    
+    
+    public LicenseChecker(int nbUsers) {       
+    	currentNbUsers = nbUsers;    
+    }    
+    
+    public boolean canAddUsers(int nbNewUsers) throws NamingException {
+    	Integer maxLicense = (Integer) new InitialContext().lookup(MAX_LICENSE);
+        return currentNbUsers + nbNewUsers <= maxLicense;   
+    }
+}
+----
 
 Les frameworks de mock classiques ne savent pas faire simplement, voici la Solution avec Daiquiri :
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-package org.daiquiri.examples;import static org.daiquiri.Daiquiri.Naming.*;import org.testng.Assert;import org.testng.annotations.Test;import javax.naming.InitialContext;public class LicenseCheckerTest {    LicenseChecker checker = new LicenseChecker(10);    @Test    public void can_add_users_return_true() throws Exception{        InitialContext mockContext = mockInitialContext();        mockContext.bind(LicenseChecker.MAX_LICENSE, new Integer(15));        Assert.assertTrue(checker.canAddUsers(4));    }    @Test    public void can_add_users_return_false() throws Exception{        InitialContext mockContext = mockInitialContext();        mockContext.bind(LicenseChecker.MAX_LICENSE, new Integer(15));        Assert.assertFalse(checker.canAddUsers(6));    }}
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[source, java]
+----
+package org.daiquiri.examples;
+
+import static org.daiquiri.Daiquiri.Naming.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import javax.naming.InitialContext;
+
+public class LicenseCheckerTest {    
+	LicenseChecker checker = new LicenseChecker(10);    
+    
+    @Test    
+    public void can_add_users_return_true() throws Exception{        
+    	InitialContext mockContext = mockInitialContext();        
+        mockContext.bind(LicenseChecker.MAX_LICENSE, new Integer(15));        
+        Assert.assertTrue(checker.canAddUsers(4));    
+    }    
+    
+    @Test    
+    public void can_add_users_return_false() throws Exception{        
+    	InitialContext mockContext = mockInitialContext();        
+        mockContext.bind(LicenseChecker.MAX_LICENSE, new Integer(15));        
+        Assert.assertFalse(checker.canAddUsers(6));    
+    }
+}
+----
 
 Vous pouvez trouver les sources sous mon repository github :
 
@@ -46,9 +88,19 @@ J'utilise un repository d'artefacts gratuit avec mon compte Cloudbees :
 
 Et voici les lignes à mettre dans votre pom.xml, pour la version actuelle daiquiri-0.2 :
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<dependency>    <groupId>org.daiquiri</groupId>    <artifactId>daiquiri</artifactId>    <version>0.2</version>    <scope>test</scope></dependency<repository>    <id>binout-cloudbees-release</id>    <name>binout-cloudbees-release</name>    <url>https://repository-binout.forge.cloudbees.com/release/</url></repository>
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[source, xml]
+-----
+	<dependency>    
+    	<groupId>org.daiquiri</groupId>    
+        <artifactId>daiquiri</artifactId>    
+        <version>0.2</version>    
+        <scope>test</scope>
+    </dependency>
+    <repository>    
+    	<id>binout-cloudbees-release</id>    
+        <name>binout-cloudbees-release</name>    
+        <url>https://repository-binout.forge.cloudbees.com/release/</url>		</repository>
+-----
 
 Et bien sûr, tout est open source sous licence Apache.
 
