@@ -1,7 +1,54 @@
 = Java 8 : Stream et Iterator
+:hp-tags: java
 
 == Les Streams pour les Collections
 
+La grande nouveauté de Java 8, c'est bien sûr les lambdas et son application dans l'API Collection avec les `Streams`.
+
+. Exemple de `Stream`
+[source, java]
+----
+
+public List<Person> findPeopleOlderThan(List<Person> people, int age) {
+	return people.stream()
+    	.filter(p -> p.age() > age)
+    	.collect(Collectors.toList());
+
+}
+----
+
+
 == Et pour les Iterators ?
+
+Et maintenant si dans mon code je suis obligé de manipuler un `Iterator`, comment je fais ?
+
+. Pas de `Stream` pour les iterators
+[source, java]
+----
+
+public List<Person> findPeopleOlderThan(Iterator<Person> people, int age) {
+	return people
+    	.stream().filter(p -> p.age() > age) // ne compile pas, pas de méthode stream() sur les iterators...
+        .collect(Collectors.toList()); 
+
+}
+----
+
+La solution c'est d'utiliser les classes `java.util!.stream.StreamSupport` et `java.util.Spliterators` 
+
+. StreamSupport et Spliterators
+[source, java]
+----
+
+public List<Person> findPeopleOlderThan(Iterator<Person> people, int age) {
+	return StreamSupport.stream(
+    	Spliterators.spliteratorUnknownSize(people, Spliterator.DISTINCT | Spliterator.IMMUTABLE | Spliterator.NONNULL), false);
+    	.filter(p -> p.age() > age)
+        .collect(Collectors.toList()); // ne compile pas, pas de méthode stream() sur les iterators...
+
+}
+---- 
+
+Le deuxième argument de la méthode `spliteratorUnknownSize` permet d'indiquer les caractéristiques de l'itération : CONCURRENT, DISTINCT, IMMUTABLE, NONNULL, ORDERED, SIZED, SORTED et SUBSIZED.
 
 == Cas d'utilisation
