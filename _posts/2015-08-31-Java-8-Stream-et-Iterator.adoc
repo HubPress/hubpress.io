@@ -102,7 +102,7 @@ public class NodeListIterator implements Iterator<Node> {
 }
 ----
 
-On peut alors utiliser la méthode décrite précedemment pour obtenir un `Stream`depuis une `NodeList` :
+On peut alors utiliser la méthode décrite précedemment pour obtenir un `Stream` depuis une `NodeList` :
 
 .`NodeList` et `Stream`
 [source, java]
