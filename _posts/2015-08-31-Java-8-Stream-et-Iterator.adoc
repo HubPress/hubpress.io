@@ -34,7 +34,7 @@ public List<Person> findPeopleOlderThan(Iterator<Person> people, int age) {
 }
 ----
 
-La solution c'est d'utiliser les classes `java.util!.stream.StreamSupport` et `java.util.Spliterators` 
+La solution c'est d'utiliser les classes `java.util.stream.StreamSupport` et `java.util.Spliterators` 
 
 .StreamSupport et Spliterators
 [source, java]
@@ -49,11 +49,11 @@ public List<Person> findPeopleOlderThan(Iterator<Person> people, int age) {
 }
 ---- 
 
-Le deuxième argument de la méthode `spliteratorUnknownSize` permet d'indiquer les caractéristiques de l'itération : CONCURRENT, DISTINCT, IMMUTABLE, NONNULL, ORDERED, SIZED, SORTED et SUBSIZED.
+Le deuxième argument de la méthode `spliteratorUnknownSize` permet d'indiquer les caractéristiques de l'itération : CONCURRENT, DISTINCT, IMMUTABLE, NONNULL, ORDERED, SIZED, SORTED et SUBSIZED (plus d'informations dans la https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html[javadoc]).
 
 == Cas d'utilisation
 
-https://twitter.com/cyril_delmas[@cyril_delmas] m'a montré un cas d'utilisation intéressant. Vous connaissez l'api XML DOM inclus dans le JKD (org.w3c.dom). Vous savez l'API qui ne connait pas les génériques, ni les collections : par exemple la classe `org.w3c.dom.NodeList`. 
+https://twitter.com/cyril_delmas[@cyril_delmas] m'a montré un cas d'utilisation intéressant. Vous connaissez l'api XML DOM inclus dans le JDK (`org.w3c.dom`). Vous savez l'API qui ne connait pas les génériques, ni les collections : par exemple la classe `org.w3c.dom.NodeList`. 
 
 Elle permet de représenter une liste de noeuds XML. Quelle galère si on veut la parcourir, la filter ....
 
