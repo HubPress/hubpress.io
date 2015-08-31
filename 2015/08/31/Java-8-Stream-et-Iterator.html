@@ -23,7 +23,7 @@
     <meta property="og:description" content="Les Streams pour les Collections La grande nouveauté de Java 8, c&amp;#8217;est bien sûr les lambdas et son application dans l&amp;#8217;API Collection avec les Streams. Exemple de Stream public List&amp;lt;Person&amp;gt; findPeopleOlderThan(List&amp;lt;..." />
     <meta property="og:url" content="https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html" />
     <meta property="article:published_time" content="2015-08-30T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-08-31T20:54:41.082Z" />
+    <meta property="article:modified_time" content="2015-08-31T20:57:44.352Z" />
     <meta property="article:tag" content="java" />
     
     <meta name="twitter:card" content="summary" />
@@ -46,7 +46,7 @@
     "headline": "Java 8 : Stream et Iterator",
     "url": "https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html",
     "datePublished": "2015-08-30T22:00:00.000Z",
-    "dateModified": "2015-08-31T20:54:41.082Z",
+    "dateModified": "2015-08-31T20:57:44.352Z",
     "keywords": "java",
     "description": "Les Streams pour les Collections La grande nouveauté de Java 8, c&amp;#8217;est bien sûr les lambdas et son application dans l&amp;#8217;API Collection avec les Streams. Exemple de Stream public List&amp;lt;Person&amp;gt; findPeopleOlderThan(List&amp;lt;..."
 }
@@ -99,9 +99,9 @@
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">public List&lt;Person&gt; findPeopleOlderThan(Iterator&lt;Person&gt; people, int age) {
 	return people
-    	.stream().filter(p -&gt; p.age() &gt; age) // ne compile pas, pas de méthode stream() sur les iterators...
+    	.stream().filter(p -&gt; p.age() &gt; age)
         .collect(Collectors.toList());
-
+// ne compile pas, pas de méthode stream() sur les iterators...
 }</code></pre>
 </div>
 </div>
@@ -113,10 +113,12 @@
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">public List&lt;Person&gt; findPeopleOlderThan(Iterator&lt;Person&gt; people, int age) {
 	return StreamSupport.stream(
-    	Spliterators.spliteratorUnknownSize(people, Spliterator.DISTINCT | Spliterator.IMMUTABLE | Spliterator.NONNULL), false);
+    	Spliterators.spliteratorUnknownSize(people,
+        		Spliterator.DISTINCT |
+                Spliterator.IMMUTABLE |
+                Spliterator.NONNULL), false);
     	.filter(p -&gt; p.age() &gt; age)
-        .collect(Collectors.toList()); // ne compile pas, pas de méthode stream() sur les iterators...
-
+        .collect(Collectors.toList());
 }</code></pre>
 </div>
 </div>
@@ -185,7 +187,11 @@
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">	NodeList list = ...
     Stream stream = StreamSupport.stream(
-    	Spliterators.spliteratorUnknownSize(new NodeListIterator(list), Spliterator.DISTINCT | Spliterator.IMMUTABLE | Spliterator.NONNULL), false);</code></pre>
+    	Spliterators.spliteratorUnknownSize(
+        	new NodeListIterator(list),
+            Spliterator.DISTINCT |
+            Spliterator.IMMUTABLE |
+            Spliterator.NONNULL), false);</code></pre>
 </div>
 </div>
 <div class="paragraph">
