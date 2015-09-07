@@ -1,11 +1,15 @@
+:toc: macro
+
 = HubPress
 
-:toc:
+toc::[]
+
+A free, open source tool you can use to build a blog using GitHub pages and AsciiDoc.
+
+https://flattr.com/submit/auto?user_id=anthonny_q&url=https://github.com/HubPress/hubpress.io&title=HubPress&language=&tags=github&category=software[image:http://api.flattr.com/button/flattr-badge-large.png[]]
 
 == What Is HubPress?
 image::http://hubpress.io/img/editor.png[]
-
-HubPress is a free, open source tool you can use to build a rich, AsciiDoc based blog using GitHub Pages!
 
 Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q]).
 
@@ -17,12 +21,12 @@ Documentation is rapidly evolving as the project gains momentum. Check back regu
 
 HubPress is compatible with Chrome Desktop, Firefox Desktop, and Chrome for Android.
 
-Chrome Beta for Android will be fully compatible soon, but is not currently supported because of bugs with IndexedDB. While using HubPress Preview, use Chrome for Android only.
-
 == Getting Started
 
 === Installation
+
 ==== Fork the repository
+
 Click the Fork icon image:http://hubpress.io/img/fork-icon.png[Fork,80] to create a copy of this repository within your GitHub account.
 
 ==== Use the github.io domain
@@ -121,7 +125,7 @@ The *Theme* is selectable from the list of themes stored in the `/themes` direct
 
 ===== Google Analytics
 
-The *Google Analytics* field takes the unique Google Analytics code generated for the site.
+The *Google Analytics* field takes the Google Analytics Tracking ID of your site (e.g. UA-1234567-1).
 
 ===== Disqus Shortname
 
@@ -258,19 +262,11 @@ video::67480300[vimeo]
 
 Because HubPress is hosted on GitHub, you can update by pulling down the latest changes from the HubPress master repository.
 
-To learn how to do this correctly (there's a trick to it the first time you pull changes from upstream), you can watch the following video or read the directions below to learn the correct process.
+To learn how to do this correctly (there's a trick to it the first time you pull changes from upstream), you can watch the following video to learn the correct process.
 
 video::KCylB780zSM[youtube]
 
 https://www.youtube.com/watch?v=KCylB780zSM[Updating HubPress]
-
-. Open up your HubPress repository on the Github website. If you are not using the `username.github.io` repository, switch to the `gh-pages` branch of the selected repository.
-. Click on the Compare button (near the top right, above the Latest Commit label). This will open up the comparison page.
-. This comparison view has the base fork as `HubPress/hubpress.io` and the head fork as your repository, which is not what we want. Instead, switch the base fork to your repository, select the compare across forks option, and set the head fork as `HubPress/hubpress.io`.
-. If there are any changes upstream, they will be displayed in the compare view.
-. Click on Create to create a pull request for this comparison and assign a name to your pull request (e.g., Update from original).
-. Click on Send pull request.
-. Scroll down and click Merge pull request and finally Confirm merge. If your fork didn’t have any changes, you will be able to merge it automatically.
 
 == Troubleshooting
 
@@ -284,7 +280,23 @@ HubPress works on a locally-stored database specific to your Browser, so if you 
 
 To return your instance of HubPress to that of the published blog, clear the browser Cache and Data in Settings > Apps. When you do this, HubPress is forced to rebuild the local database, and will reflect the state of the blog in GitHub.
 
+== Contributing to HubPress
+
+At the moment, Pull Requests (PRs) for HubPress should be pushed to the `/Development` branch of HubPress. 
+
+It is best practice to create an issue in the issue tracker, so that the idea you have is tracked in the community. Just link your bug reference in the PR, and we can take a look at your motivation behind the Pull Request.
+
+Don't worry about a bug for simple stuff like corrections to URLs, minor typos in the READMEs, and other similar issues: these type of issues require no tracker as they do not require any community vote or agreement.
+
+The team is really grateful for any contributions you make, no matter how small.
+
 == Credits
 
 Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
 Thanks to https://github.com/takkyuuplayer[takkyuuplayer], https://github.com/hinaloe[hinaloe] to have translated the README into Japanese
+
+== Donations
+
+https://flattr.com/submit/auto?user_id=anthonny_q&url=https://github.com/HubPress/hubpress.io&title=HubPress&language=&tags=github&category=software[image:http://api.flattr.com/button/flattr-badge-large.png[]]
+
+If you love HubPress, and you want to support the team responsible for developing the app, you can flatter us through flattr. Any donation you give will be put towards 
