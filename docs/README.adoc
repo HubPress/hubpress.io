@@ -1,4 +1,5 @@
 :toc: macro
+:sectnums:
 
 = HubPress
 
@@ -258,16 +259,6 @@ video::KCylB780zSM[youtube]
 video::67480300[vimeo]
 ```
 
-== Updating HubPress
-
-Because HubPress is hosted on GitHub, you can update by pulling down the latest changes from the HubPress master repository.
-
-To learn how to do this correctly (there's a trick to it the first time you pull changes from upstream), you can watch the following video to learn the correct process.
-
-video::KCylB780zSM[youtube]
-
-https://www.youtube.com/watch?v=KCylB780zSM[Updating HubPress]
-
 == Troubleshooting
 
 If something is not working as you expect, some of these tips may help.
@@ -280,7 +271,21 @@ HubPress works on a locally-stored database specific to your Browser, so if you 
 
 To return your instance of HubPress to that of the published blog, clear the browser Cache and Data in Settings > Apps. When you do this, HubPress is forced to rebuild the local database, and will reflect the state of the blog in GitHub.
 
-== Contributing to HubPress
+== Frequently Asked Questions
+
+There are some commonly-asked questions in the issue tracker that are worth calling out here.
+
+=== How Do I Update My HubPress Instance?
+
+Because HubPress is hosted on GitHub, you can update by pulling down the latest changes from the HubPress master repository.
+
+To learn how to do this correctly (there's a trick to it the first time you pull changes from upstream), you can watch the following video to learn the correct process.
+
+video::KCylB780zSM[youtube]
+
+https://www.youtube.com/watch?v=KCylB780zSM[Updating HubPress]
+
+=== How Do I Contribute to HubPress?
 
 At the moment, Pull Requests (PRs) for HubPress should be pushed to the `/Development` branch of HubPress. 
 
@@ -289,6 +294,21 @@ It is best practice to create an issue in the issue tracker, so that the idea yo
 Don't worry about a bug for simple stuff like corrections to URLs, minor typos in the READMEs, and other similar issues: these type of issues require no tracker as they do not require any community vote or agreement.
 
 The team is really grateful for any contributions you make, no matter how small.
+
+=== How Do I Use HubPress with Multiple Users?
+
+You can _technically_ use the same HubPress instance with multiple authors, but it requires some trust from the other users you give access. 
+
+There are some points to consider before opening up your blog instance to other contributiors.
+
+Attribution::
+    There is no way to attribute a blog user to individual posts at this stage, unless you perhaps use a :hp-tags: category for the name of each contributor (a crude work-around at best).
+Global User Name::
+    Blog posts are attributed to the primary GitHub User who configures the Settings page. If someone you invite to co-author your blog saves changes to the Settings page, *all* blog posts will have that author as the person who wrote blog posts in your HubPress instance.
+
+If you have a close, trusted team of bloggers who just want to write posts, then you can use HubPress together.
+
+Understand that HubPress is really only suited to single bloggers, and does not offer and GitHub authentication intelligence for blogging teams.  
 
 == Credits
 
