@@ -23,6 +23,7 @@ When you indent with three equals characters, this tells AsciiDoc that you want 
 ////
 
 First Section Text
+
 === Lists
 ////
 Lists are simple in AsciiDoc. You use full stops to start a numbered list, and asterix characters to start ordered lists
