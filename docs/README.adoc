@@ -310,6 +310,18 @@ If you have a close, trusted team of bloggers who just want to write posts, then
 
 Understand that HubPress is really only suited to single bloggers, and does not offer and GitHub authentication intelligence for blogging teams.  
 
+=== Can I Specify Other Asciidoctor Backend Attributes in HubPress Posts?
+
+HubPress only supports the HTML5 backend. 
+
+Specifying other backend types will result in an error similar to:
+
+    Uncaught RuntimeError: asciidoctor: FAILED: missing converter for backend 'deckjs'. Processing aborted.
+
+If you do want to use a different backend to process your AsciiDoc files, the http://asciidoctor.org/docs/user-manual/#selecting-an-output-format[Asciidoctor User Guide] can help you work out the backend that is right for you, for use with the +asciidoctor+ command-line script. 
+
+If you want a near WYSIWYG interface to edit your AsciiDoc files, applications like http://atom.io[Atom Editor] or http://asciidocfx.com[AsciidocFX Editor] are excellent choices.
+
 == Credits
 
 Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
