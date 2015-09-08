@@ -265,9 +265,11 @@ Whatever works best for you, and your organization style. Watch this five minute
 
 video::KoaGU91qJv8[youtube]
 
-=== Embedding Videos
+=== Embedding Video
 
-HubPress allows you to embed video directly into your blog post by using a quick notation in your blog post. You don't need to put it the full URL: all you need is the unique video ID.
+HubPress allows you to embed video and audio directly into your blog post by using a quick notation in your blog post. 
+
+You don't need to declare the full URL: all you need is the unique video ID.
 
 ```
 video::[unique_youtube_video_id][youtube | vimeo]
@@ -282,6 +284,23 @@ video::KCylB780zSM[youtube]
 ```
 video::67480300[vimeo]
 ```
+
+=== Embedding Audio
+
+While YouTube and Vimeo have pre-defined short notations in Asciidoctor, other services like BandCamp or SoundCloud require a block passthrough to be declared. Block passthroughs are described in detail in the http://asciidoctor.org/docs/user-manual/#pass-bl[Asciidoctor User Manual].
+
+.BandCamp Audio Embed
+```
+++++
+<iframe style="border: 0; width: 350px; height: 470px;" src="//bandcamp.com/EmbeddedPlayer/album=2869458964/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://mocamborecords.bandcamp.com/album/showdown">SHOWDOWN by THE MIGHTY MOCAMBOS</a></iframe>
+++++
+```
+
+TIP: The trick with block passthroughs (no matter the type) is to ensure any `src` value does not contain a mixed protocol. For example if the `src` link contained `http` and your blog uses a `https` protocol, the embed would fail. 
+
+Some <iframe> elements provided by these sites may include the protocol, and you will need to strip the protocol out when declaring passthrough blocks.
+
+The source link is essentially an absolute target to the hosted file on the service. The `//` opens the pointer to the file. See https://github.com/HubPress/hubpress.io/issues/136[this issue] which describes the journey to discovering how to embed content other than Vimeo and YouTube content.
 
 == Troubleshooting
 
