@@ -6,15 +6,20 @@
 
 image::http://hubpress.io/img/editor.png[]
 
-HubPress は無料でブログを作るためのオープンソースツールです。
+HubPress は無料でブログを作るためのオープンソースツールです。AsciiDocで書けるすばらしいブログをGitHub Pagesを使って公開できます。
 
 https://github.com/anthonny[Anthonny Quérouil] (twitter https://twitter.com/anthonny_q[@anthonny_q])
 により作成・メンテナンスされています。
 
-NOTE: HubPress はまだ作成途中です。バグを発見した場合は是非教えてください。
+NOTE: HubPress はまだ作成途中です。バグを発見した場合は是非教えてください。開発チームができる限りはやく対応します。
 
 HubPressの更新が勢いに乗れば、それだけドキュメントも更新されます。
 定期的にHubPressの更新を確認し、新しい機能・使い方を確認して下さい。
+バグ報告はいつでも歓迎です。もちろんプルリクエストは*いつでも*大歓迎です。
+
+== 対応ブラウザについて
+
+HubPressは、デスクトップ版Chrome、デスクトップ版FireFox、そしてAndroid版Chromeで動作することを確認しています。
 
 == Getting Started
 
@@ -82,6 +87,9 @@ HubPressの管理画面は */hubpress* からアクセスできます。つま�
 
 === 管理画面へのログイン
 
+image:http://hubpress.io/img/login.png[Install complete,300]
+
+
 GitHub のログイン情報でログインできます。
 
 一旦ログインすると、HubPress から GiHub API へコールするためのトークンが発行されます。
@@ -102,6 +110,10 @@ CNAMEやページングといった、基本的なブログの設定が可能で
 *Git CNAME* を設定可能して独自ドメインの利用が可能です。
 詳しくは https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/
 を見てください。
+
+Live Preview Render Delayの項目について::
+ミリ秒単位で、ライブプレビューが描画を始める時間を設定できます。
+タイピングが早い人には、2000 (2秒) 以上の数値を入れることをオススメします。そうすると何度も頻繁にライブプレビューの描画をさせずに済むので、ブログの執筆がスムーズになるでしょう。2000(2秒)より少ない値を設定する場合は、ライブプレビューがはじまるのが早くなりますが、タイピングのカーソルに遅れなどが生じる可能性があります。
 
 ==== Site
 
@@ -125,11 +137,11 @@ NOTE: ブログへの画像の投稿については `/images/README.adoc` を参
 
 ===== Google Analytics
 
-*Google Analytics* フィールドの設定により ブログサイトで Google Analytics を利用可能です。
+*Google Analytics* フィールドの設定により ブログサイトで Google Analytics を利用可能です。(例 : UA-1234567-1)
 
 ===== Disqus Shortname
 
-The *Disqus shortname* field takes your Disqus URL/shortname that is specified when you register a new site for Disqus. Only the shortname is required, not a link to your profile page.
+*Disqus shortname*の項目はあたらしく用意したDisqus URL/shortname を入れることができます。shortnameだけでよいです。プロフィールページへのリンクは入れないでください。
 
 ==== Social Network
 
@@ -148,9 +160,7 @@ NOTE: もし AsciiDocに馴染みがなければ http://asciidoctor.org/docs/asc
 
 HupPress エディタは左側に AsciiDoc のコード、右側にプレビューを表示します。
 
-==== AsciiDoc Blog の基本知識
-
-===== Blog のタイトルとヘッダー
+==== Blog のタイトルとヘッダー
 
 記事のタイトルは常に AsciiDoc 投稿における Level 1 となります。
 つまり `= Blog Title` により 記事のタイトルを `Blog Title` に設定できます。
@@ -173,6 +183,9 @@ HubPress allows you to alter characteristics of each blog post using attributes.
 = Blog Title
 :hp-image: https://github.com/<username>/<repositoryName>/images/a-cover-image.jpg
 ----
+
+NOTE: HubPressは`/images`ディレクトリをすべての画像のルートとしているので、あなたがすればよいのは画像のファイル名を記述することだけです。これを踏まえると、あなたは`/covers`というカバー画像を一括で置いておくためのディレクトリをリポジトリに作成するとよいかもしれません。
+一貫性のあるカバー画像の名前付けのおかげで、投稿にカバー画像を掲載するのも簡単にできます。テーマ画像を設定すれば、読者にブログの内容を視覚的に訴えることができます。
 
 現在以下のテーマが投稿のカバー画像をサポートしています:
 
@@ -242,7 +255,8 @@ image::http://<full path to image>[]
 
 ===== 画像のホスト先としてGitHub issueを利用する
 
-You can use a single issue as an image container for a blog post containing many issues by uploading multiple images as comments. Alternatively, you can use multiple issues to store individual images. Whatever works best for you, and your organization style. Watch this five minute video for a demonstration about how to use GitHub Issues and Cloud Hosting services as embed targets, and some bonus tips on using the `image` AsciiDoc syntax  
+ひとつのissueにコメントで残していくような方法でブログ用の画像を用意したり、反対にたくさんのissueを作って画像を個別に管理することもできます。あなたにとって、あるいはあなたの組織にそってベストなやり方が選べます。
+5分間のデモビデオを用意してあります。GitHub Issuesなどのクラウドホスティングサービスで画像を埋め込む方法とAsciiDocで画像を取り扱う方法がわかります。
 https://www.youtube.com/watch?v=KoaGU91qJv8
 
 ==== 動画の埋め込み
@@ -271,6 +285,17 @@ HubPressはGitHubにホストされているので、HubPressのmasterリポジ�
 
 https://www.youtube.com/watch?v=KCylB780zSM
 
+== Troubleshooting
+
+何かうまくいかないことがあったら、以下のTipsをご参照ください。
+
+=== Resetting Blog Database on Android
+
+ときどきHubPressのLocalのデータベースが公開済みのブログのデータと同期されないことがあります。これはPCからブログを書いて、作業をタブレットに引き継ごうとしたときに発生します。
+
+HubPressはブラウザに結びついたデータベース上で動作しています。デバイスを変更すると、ブラウザも変更されるため、同期がされなくなるということです。
+
+この問題を解消するためには、設定->(詳細設定)プライバシー->閲覧履歴データを消去するのボタンからキャッシュを選び削除してください。
 
 == Credits
 
