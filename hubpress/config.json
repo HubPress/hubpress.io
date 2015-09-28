@@ -1,8 +1,8 @@
 {
   "meta": {
     "username": "randhson",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "repositoryName": "Blog-RNUNES",
+    "branch": "gh-pages"
   },
   "theme": {
     "name": "Casper"
