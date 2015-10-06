@@ -1,0 +1,9 @@
+= First post... Let's start!
+
+This is the first post of my new blog. There are a series of tasks I want to accomplish in this month of October 2015:
+
+ - Setup a home NAS.
+ - Migrate all the content of the server where manelvf.com is hosted (Amazon AWS) to the NAS, Github pages or a different server (take care of the VPN info also).
+ - Setup a new server using that hosts different applications using Docker and maybe other tools.
+ 
+Hubpress is really cool as a blog system. The preview is a killer feature. Also, having a static blog with live editing included is clearly "best of both worlds". Let's see how this works with more stuff. 
