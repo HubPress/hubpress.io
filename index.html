@@ -1,104 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <title>The Fallen Apples</title>
-    <meta name="description" content="Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much." />
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="//manelvf.github.io/blog/themes/Roon/favicon.ico">
-
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
-    <link rel="stylesheet" type="text/css" href="//manelvf.github.io/blog/themes/Roon/assets/css/screen.css?v=1.0.0" />
-
+    <title>The Fallen Apples</title>
+    <meta name="description" content="Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much." />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/favicon.ico" rel="shortcut icon">
     <link rel="canonical" href="https://manelvf.github.io/blog" />
     <meta name="generator" content="Ghost ?" />
     <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 </head>
-<body class="home-template user ">
-
-    
-<header role="banner">
-    <div class="wrap">
-        <h1><a href="https://manelvf.github.io/blog">The Fallen Apples</a></h1>
-        <hr>
+<body class="home-template">
+    <header id="header">
+    <div class="header-background">
+    <section class="blog-content animated fadeIn">
+        <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+                <li class="github"><a title="GitHub" href="manelvf"><i class="fa fa-fw fa-github-square"></i></a></li>
+                <li class="twitter"><a title="Twitter" href="galchwyn"><i class="fa fa-fw fa-twitter-square"></i></a></li>
+                <li class="linkedin"><a title="LinkedIn" href="manel.villar"><i class="fa fa-fw fa-linkedin-square"></i></a></li>
+                <li class="email"><a title="Email" href="mailto:manelvf@gmail.com"><i class="fa fa-fw fa-envelope-o"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
     </div>
 </header>
-
-
-<article class="post ">
-
-
-    <div class="meta">
-        <time datetime="2015-10-06"><a href="https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html">October 06, 2015</a></time>
-    </div>
-
-    <header>
-        <h1><a href="https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html">First post... Let&#x27;s start!</a></h1>
-    </header>
-
-    <div class="text">
-        <p>This is the first post of my new blog. There are a series of tasks I want to accomplish in this month of October 2015: Setup a home NAS. Migrate all the content of the server where manelvf.com is hosted (Amazon AWS) to the</p>
-        <a href="https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html" class="readmore">Continue Reading</a>
-    </div>
-</article>
-
-<nav class="pagination" role="navigation">
-    <span class="page-number">Page 1 of 1</span>
-</nav>
-
-<footer role="contentinfo">
-    <div class="inner">
-        <div class="vcard">
-            <!-- <a href="https://manelvf.github.io/blog/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
-                <span aria-hidden="true" data-icon=")"></span>
-                <strong>Feed</strong>
-            </a> -->
-
-
-            <div class="details">
-                <h4><a href="https://manelvf.github.io/blog" class="url n">The Fallen Apples</a></h4>
-                <a href="https://manelvf.github.io/blog" class="js-remove-domain-schema">https://manelvf.github.io/blog</a><br>
-                <span>Published with <a href="http://hubpress.io">HubPress</a></span>
-            </div>
-        </div>
-        <div id="user_bio">
-            <div class="inner">
-                Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-    <script>
-
-
-        function no_schema_links () {
-            var links = document.querySelectorAll('.js-remove-domain-schema');
-            if (links) {
-                for (i = 0; i < links.length; ++i) {
-                    var link = links[i],
-                        text = link.innerHTML,
-                        no_schema = text.replace(/.*?:\/\//g, "");
-                    link.innerHTML = no_schema;
-                }
-            }
-        }
-
-        window.onload = function () {
-            no_schema_links();
-
-        }
-    </script>
-
+<main id="main" class="archive">
+    <section id="feed" class="feed">
+        <article class="post" style="opacity: 0;">
+    
+            <h2 class="post-title"><a href="https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html">First post... Let&#x27;s start!</a></h2>
+            <section class="post-content">
+                This is the first post of my new blog. There are a series of tasks I want to accomplish in this month of October 2015:…
+            </section>
+            <section class="post-meta">
+                <span class="date"><i class="fa fa-clock-o"></i> <a href="https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html"><time class="timesince" data-timesince="1444082400" datetime="2015-10-06T00:00" title="6 October 2015">2015-10-06 00:00:00<ago class="ago"></time></a></span>
+                
+                
+            </section>
+        </article></section>
+    <nav class="pagination" role="navigation">
+        <span class="page-number">Page 1 of 1</span>
+    </nav></main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">The Fallen Apples</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
         jQuery( document ).ready(function() {
@@ -111,9 +78,7 @@
 
         hljs.initHighlightingOnLoad();      
       </script>
-
-
-
-
+    <script src="//manelvf.github.io/blog/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    
 </body>
 </html>
