@@ -1,4 +1,5 @@
 = Jug Summer Camp 2015
+:hp-tags: java,conf
 
 == 6ème édition
 
