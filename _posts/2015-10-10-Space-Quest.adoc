@@ -14,8 +14,8 @@ Some people need a lot of space for their photos. It's not my case right now but
 
 ## Aftermath
 
-I've had a personal portfolio for a few years, since 2010, hosted even in a VPS. It was useful for a while, but right now I don't feel I need it anymore. Right now I feel that my projects and collaborating with people in other projects are far more important that a simple web portfolio.
+I've had a personal portfolio for a few years, since 2010, hosted even in a VPS. It was useful for a while, but right now I don't feel I need it anymore. Right now I think that my projects and collaborating with people in other projects are far more important that a simple web portfolio.
 
-So my final decision is to not renew the domain manelvf.com and use Github Pages (this domain) for hosting both my project webpages and my personal portfolio. manelvf.com will point for a while to manelvf.github.io and it will became my main profile domain for portfolio. In case Github discontinues the service, I will switch to another provider, but that's very unlikely in the next years.
+So my final decision is to not renew the domain manelvf.com and use only Github Pages for hosting both my project webpages and my [personal portfolio](http://manelvf.github.io). manelvf.com will point for a while to manelvf.github.io and it will became my main profile domain for portfolio. In case Github discontinues the service, I will switch to another provider, but that's very unlikely in the next years.
 
 For other projects, they will appear in my main profile page or in this blog, and they will have their own domain name in case they need it.
