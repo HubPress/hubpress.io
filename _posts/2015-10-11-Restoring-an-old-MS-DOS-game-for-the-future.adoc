@@ -1,0 +1,11 @@
+# Restoring an old MS-DOS game for the future
+
+## The Game
+
+In 1997, I was learning programming and of course my interest was how to develop games. Internet was still not fully deployed in my town, but anyway I managed to buy some magazines that provided me the good old http://sourceforge.net/projects/c--/[Sphinx C-- compiler] and also some documentation on how draw pixels in a screen, mostly http://archive.gamedev.net/archive/reference/listed82.html?categoryid=130[Denthor's Asphyxia tutorials].
+
+Unfortunately, I lost the original source code, which is a pity. I would be so funny to see again my beautiful lines, eighteen years later. But I still have the binary.
+
+## The Palette
+
+The first problem I found was that "for some reason" the color palette of the photos was missed.
