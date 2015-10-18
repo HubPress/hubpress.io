@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "booleanbalaji",
-    "repositoryName": "hubpress.io",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"booleanbalaji","repositoryName":"hubpress.io","branch":"gh-pages","cname":"blog.thehindueplusclub.com"},"site":{"title":"The Hindu Education Plus Club","url":"http://blog.thehindueplusclub.com"},"socialnetwork":{"email":"thehindueplusclub@gmail.com","facebook":"https://www.facebook.com/vitthehindueplusclub/"},"theme":{"name":"Casper","url":"//booleanbalaji.github.io/hubpress.io/themes/Casper"}}
