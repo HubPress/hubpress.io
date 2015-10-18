@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Создание игры для Game Boy Advance</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//tumblecloud.github.io/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//tumblecloud.github.io/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://tumblecloud.github.io/2015/10/18/Sozdanie-igry-dlya-Game-Boy-Advance.html" />
+    
+    <meta property="og:site_name" content="Penguin Boy" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Создание игры для Game Boy Advance" />
+    <meta property="og:description" content="Перевод. Оригинал взят отсюда В детстве я проводил много времени, играя на своем Game Boy (в основном, в какие-то ужасные игры). Я не писал программы ни для чего другого, кроме как для «обычных» компьютеров общего назначения, а потому задался вопросом:..." />
+    <meta property="og:url" content="https://tumblecloud.github.io/2015/10/18/Sozdanie-igry-dlya-Game-Boy-Advance.html" />
+    <meta property="article:published_time" content="2015-10-17T21:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-10-18T17:13:20.939Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Создание игры для Game Boy Advance" />
+    <meta name="twitter:description" content="Перевод. Оригинал взят отсюда В детстве я проводил много времени, играя на своем Game Boy (в основном, в какие-то ужасные игры). Я не писал программы ни для чего другого, кроме как для «обычных» компьютеров общего назначения, а потому задался вопросом:..." />
+    <meta name="twitter:url" content="https://tumblecloud.github.io/2015/10/18/Sozdanie-igry-dlya-Game-Boy-Advance.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Penguin Boy",
+    "author": {
+        "@type": "Person",
+        "name": null,
+        "image": "https://avatars.githubusercontent.com/u/14277465?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": null
+    },
+    "headline": "Создание игры для Game Boy Advance",
+    "url": "https://tumblecloud.github.io/2015/10/18/Sozdanie-igry-dlya-Game-Boy-Advance.html",
+    "datePublished": "2015-10-17T21:00:00.000Z",
+    "dateModified": "2015-10-18T17:13:20.939Z",
+    "description": "Перевод. Оригинал взят отсюда В детстве я проводил много времени, играя на своем Game Boy (в основном, в какие-то ужасные игры). Я не писал программы ни для чего другого, кроме как для «обычных» компьютеров общего назначения, а потому задался вопросом:..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Penguin Boy" href="https://tumblecloud.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="https://tumblecloud.github.io">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="https://tumblecloud.github.io/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Создание игры для Game Boy Advance</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-10-18">18 October 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="paragraph">
+<p>Перевод. Оригинал взят отсюда</p>
+</div>
+<div class="paragraph">
+<p>В детстве я проводил много времени, играя на своем Game Boy (в основном, в какие-то ужасные игры). Я не писал программы ни для чего другого, кроме как для «обычных» компьютеров общего назначения, а потому задался вопросом: а насколько легко написать игру для Game Boy (Advance)?</p>
+</div>
+<div class="paragraph">
+<p>Для тех, кто не знаком с данным девайсом:</p>
+</div>
+<div class="paragraph">
+<p>Game Boy Advance (GBA) был популярной портативной игровой консолью, производителем которой являлась компания Nintendo (см. рис). Эта вещица была оснащена 15-битным цветным LCD-дисплеем с разрешением 240x160 (3:2), а также четырьмя кнопками на лицевой панели, двумя триггерами и крестовиной.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Внутри Гейм Боя располагается 32-битный ARM7tdmi RISC процессор (работающий на частоте 16.78 МГц). Кроме обычных 32-битных ARM-инструкций, этот чип может также выполнять так называемые Thumb-инструкции. Thumb – это набор 16-битных инструкций, повторяющих некоторые наиболее распространенные 32-битные, который используется для экономии места.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Девайс имеет на борту 130 Кб оперативной памяти, соединенной с процессором (96 Кб которой используется для VRAM [видеопамяти], 32 Кб общего назначения и 2 Кб запаса, которые используются где угодно по мере надобности) и 256 Кб RAM, независимой от CPU. Также в системе присутствует 16 Кб встроенной памяти, которая используется для хранения BIOS. Есть еще некоторые нюансы, связанные с обратной совместимостью Game Boy Advance с Game Boy Color, но в этой статье мы затрагивать их не будем.</p>
+</div>
+<div class="paragraph">
+<p>Помимо всей этой встроенной лабуды, в процессе своей работы Game Boy использует также различные игровые картриджи. Они обычно содержат в себе несколько ROM-банков (для хранения инструкций и read-only данных) и какое-либо перезаписываемое хранилище данных (например, SRAM, EEPROM или флеш-память). Так как картридж соединяется с устройством посредством 16-битной шины, то имеет смысл в коде игры использовать менее длинные Thumb-инструкции, нежели более громоздкие 32-битные.</p>
+</div>
+<div class="paragraph">
+<p>Итак, все вышеописанные секции памяти, вместе с регистрами ввода/вывода (для управления графикой, звуком и т.д.) имеют примерно такую разметку в адресном пространстве:</p>
+</div>
+<div class="paragraph">
+<p><sub>~</sub>
+0x00000000 - 0x00003FFF - 16 Кб ROM (исполняемая, но не читаемая)
+0x02000000 - 0x02030000 - 256 Кб EWRAM (оперативная память общего назначения, независима от процессора)
+0x03000000 - 0x03007FFF - 32 Кб IWRAM (оперативная память общего назначения, связана с процессором)
+0x04000000 - 0x040003FF – Регистры ввода/вывода (I/O)
+0x05000000 - 0x050003FF - 1 Кб палитр (RAM)
+0x06000000 - 0x06017FFF - 96 Кб VRAM (видеопамять)
+0x07000000 - 0x070003FF - 1 KB OAM RAM (Память атрибутов объекта – об этом позже)
+0x08000000 - 0x???????? - ROM картриджа
+0x0E000000 - 0x???????? - RAM картриджа
+<sub>~</sub></p>
+</div>
+<div class="paragraph">
+<p>Особенность внутренней памяти девайса заключается в том, что у каждой секции памяти разнятся диапазоны чтения/записи (таким образом, вы не сможете записать в видеопамять отдельные байты), а также некоторые секции имеют свои копии в нескольких точках. На самом деле, присутствуют еще некоторые тонкости, но, чтобы написать простейшую игру, нам достаточно этого.</p>
+</div>
+<div class="paragraph">
+<p>Таким образом, наш план по созданию «Hello, world» -а сводится к следующему: написать Thumb-код, который установит I/O регистры в нужное нам состояние, а после записать графические данные в видеопамять, чтобы отобразить их на экране. Давайте же попробуем!</p>
+</div>
+<div class="paragraph">
+<p>Настройка рабочего окружения
+Чтобы начать претворять в жизнь наш план по созданию GBA рома, нам нужно узнать некоторые подробности о формате образов. Не вдаваясь в детали, каждый ром начинается со стандартного заголовка. Этот заголовок представляет собой четырехбайтовую ARM-инструкцию, указывающую адрес начала нашей программы и парочку «магических» байтов, представляющих собой лого Nintendo.</p>
+</div>
+<div class="paragraph">
+<p>Кроме того, заголовок может содержать некоторые данные об игре (название и т.д.) и так называемое 'проверочное' число для этих данных. Мы должны убедиться в том, что заголовок сформирован правильно, дабы наш ром корректно выполнялся (особенно если мы собираемся запускать его на реальном устройстве, а не на эмуляторе).</p>
+</div>
+<div class="paragraph">
+<p>К счастью, хороший тулчейн может справиться со всеми этими мелочами. Я использую devkitARM (часть набора devkitPro, основанного на GCC), который невероятно упрощает процесс. Собственно, достаточно один раз настроить тулчейн и мы можем создать GBA ROM в четыре шага:</p>
+</div>
+<div class="paragraph">
+<p>Кросс-компиляция кода на C  в Thumb-инструкции, создание Thumb-файла с нашим кодом.
+Линкование нашего файла в исполняемый, с применением особого файла ‘спецификаций’, для контроля процесса линкования. Обычно ‘специальные’ файлы содержат в себе скрипт для сборки (для уточнения расположения сегментов памяти, смещений и т.д.) и некоторые другие данные (например, стандартный заголовок ром-файла, коды инициализации и завершения программы и т.д.).
+Очищение нашего файла от ненужной нам информации (заголовок исполняемого файла, символы и т.п.), чтобы получить почти готовый к компиляции ROM.
+Запуск утилиты для исправления заголовка файла (убедитесь, что лого Nintendo корректно, и ‘проверочные’ значения проставлены верно)</p>
+</div>
+<div class="paragraph">
+<p>С моей версией тулчейна, запущенного на машине под управлением OS X, я могу скомпилировать ROM с помощью следующих комманд (предполагая, что директория с утилитой уже находится в переменной PATH):</p>
+</div>
+<div class="paragraph">
+<p><sub>~</sub>
+arm-none-eabi-gcc -c main.c -mthumb-interwork
+-mthumb -O2 -o main.o</p>
+</div>
+<div class="paragraph">
+<p>arm-none-eabi-gcc main.o -mthumb-interwork
+-mthumb -specs=gba.specs -o main.elf</p>
+</div>
+<div class="paragraph">
+<p>arm-none-eabi-objcopy -v -O binary main.elf
+main.gba</p>
+</div>
+<div class="paragraph">
+<p>gbafix main.gba
+<sub>~</sub></p>
+</div>
+<div class="paragraph">
+<p>Есть пара дополнительных опций, которые вы, может быть, хотели бы включить в первый шаг – Я рекомендую -fno-strict-aliasing , например, так как мы имеем дело с «сырой» памятью, и не хотим, чтобы принципы работы с памятью языка C ударили нас больно в коленку. Вы также можете найти полезным написать Makefile или shell-скрипт с данными командами для компиляции рома, но эти детали я предпочту опустить в данной статье.</p>
+</div>
+<div class="paragraph">
+<p>После того, как мы прояснили процесс компиляции, давайте же попробуем что-нибудь сделать. Для тех, кто уже устал от сухой теории, я приведу ниже код простейшей программы, а после мы его обсудим.</p>
+</div>
+<div class="paragraph">
+<p><sub>~</sub>
+ int main(void) {
+ // Write into the I/O registers, setting video display parameters.
+ volatile unsigned char *ioram = (unsigned char *)0x04000000;
+ ioram[0] = 0x03; // Set the 'video mode' to 3 (in which BG2 is a 16 bpp bitmap in VRAM)
+ ioram[1] = 0x04; // Enable BG2 (BG0 = 1, BG1 = 2, BG2 = 4, &#8230;&#8203;)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Write pixel colours into VRAM
+volatile unsigned short *vram = (unsigned short *)0x06000000;
+vram[80*240 + 115] = 0x001F; // X = 115, Y = 80, C = 000000000011111 = R
+vram[80*240 + 120] = 0x03E0; // X = 120, Y = 80, C = 000001111100000 = G
+vram[80*240 + 125] = 0x7C00; // X = 125, Y = 80, C = 111110000000000 = B</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Wait forever
+while(1);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> return 0;
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><sub>~</sub></p>
+</div>
+<div class="paragraph">
+<p>Вышеприведенный код относительно прост, и должен вывести по центру экрана горизонтальный набор из трех символов: красного, зеленого и синего:</p>
+</div>
+<div class="paragraph">
+<p>Пришло время объяснить этот код. Первым делом мы записываем некоторые параметры дисплея в уже размеченные I/O регистры – в общем-то, первые 16 бит этой размеченной памяти и есть регистр контроля дисплея (также часто называемого DISPCNT). Первые три бита этого регистра отвечают за видео-режим, а 11-ый бит показывает, включен ли фон №2 (BG@), или нет – таким образом, мы устанавливаем 3-ий видео-режим и включаем BG2.</p>
+</div>
+<div class="paragraph">
+<p>Почему нам нужно это делать? Что ж, начнем с режима. Дело в том, что 3-ий видео-режим – это такой режим, при котором мы можем записывать битмап прямо в VRAM, и BG2 покажет эту картинку (это и есть причина, по которой мы включили BG2). Вы также можете удивиться, почему я использовал не другие видеорежимы (например, 0 или 2), а именно этот. Причина в том, что остальные режимы более сложны для объяснения (однако, позже мы все-таки используем их).</p>
+</div>
+<div class="paragraph">
+<p>Как я упоминал ранее, LCD-дисплей Гейм Боя может отображать 15-битные цвета. Следовательно, мы можем выразить используемые цвета с помощью числовой последовательности, однако по соображениям удобства GBA использует для этого 16 бит. Собственно, так выглядит формат записи цвета:
+ ?BBBBBGGGGGRRRRR .
+Это неиспользуемый бит, далее пять битов синего, пять зеленого и пять красного.</p>
+</div>
+<div class="paragraph">
+<p>Используя этот формат и знание того, что видео-режим 3 трактует содержание видеопамяти как картинку 240x160, наш «Hello, world» ROM просто записывает значения цвета по смещениям пикселов (предполагая, что длина unsigned short – 16 битов, vram[80*240 + 120] пропустит 80 горизонтальных строк из 240 пикселей и получит доступ к центральному пикселю выбранной строки). Заметьте, кстати, что каждый доступ к памяти в коде происходит через указатель volatile – это предотвращает предположения компилятора о том, что это бесполезное обращение к памяти.</p>
+</div>
+<div class="paragraph">
+<p>Написание игры а-ля "Пинг-понг"</p>
+</div>
+<div class="paragraph">
+<p>Раз уж мы овладели основами, давайте попробуем сделать что-то более интересное, чем отдельные пиксели. Мы все еще хотим сделать все просто, а не выстраивать проект с громоздкой инфраструктурой и вспомогательными функциями. Однако мы воспользуемся некоторыми продвинутыми возможностями рендеринга GBA. В частности, мы рассмотрим другие видеорежимы.</p>
+</div>
+<div class="paragraph">
+<p>Хоть рисовать битмапы в режимах 3,4 и 5 очень легко, для создания многих игр это непрактичный вариант. Кроме того, что наша 240х160 картинка занимает бОльшую часть видеопамяти, так еще и помещение на экран каждого отдельного пикселя обойдется нам дорого в плане вычислительных мощностей (так что мы не можем позволить себе этот вариант, если хотим, чтобы наша игра выдавала приличное количество кадров в секунду). Таким образом, целесообразнее будет использовать режимы 0, 1 и 2.</p>
+</div>
+<div class="paragraph">
+<p>Есть куча нюансов и хитростей работы с этими режимами, но мы пройдемся только по самым главным. Вместо того, чтобы оперировать с отдельными пикселями, первые три видеорежима GBA работают с тайлами. Тайл – это изображение 8х8. Тайлы могут существовать в 4bpp (бит на пиксель) и 8bpp, но здесь мы будем использовать первый вариант. Таким образом, тайлы будут иметь размер 32 бита (8*8*4=256 бит).</p>
+</div>
+<div class="paragraph">
+<p>Если вы не понимаете, как мы собираемся уместить 15-битное значение цвета для каждого пикселя в 4 (или 8) бит, то не пытайтесь, потому что мы так делать не будем. Вместо того, чтобы ссылаться непосредственно на цвета, значение каждого пикселя в тайле обращается к цветам конкретной палитры. Мы можем задать значения палитр путем помещения значений цвета в соответствующую область памяти, которая может хранить 512 наборов по 16 бит (сл-но, 512 цветов). Таким образом, мы можем хранить в этой памяти одну 512-цветовую палитру, 2 256-цветовые или 32 палитры по 16 цветов.</p>
+</div>
+<div class="paragraph">
+<p>В случае наших 4bpp 8x8 битмапов, мы будем использовать 32 палитры, в каждой из которых будет 16 цветов. Таким образом, мы можем использовать наши четыре бита на пиксель для указания индекса цвета (входящего в палитру). При использовании тайловых видеорежимов, тайлы разделены в видеопамяти на тайловые блоки или, как их еще называют, символьные блоки. Каждый блок имеет размер 16 Кб, так что мы можем уместить 512 4bpp тайлов в блок, и 6 блоков в VRAM.
+Теоретически, каждый набор из 6 блоков делится на две группы – первые четыре (0-3) могут быть использованы для заднего фона, а последние два (4 и 5) – для спрайтов. Точно так же 32 палитры разделяются на 16 для фонов и 16 для спрайтов. Поскольку мы не собираемся иметь дело с бэкграундами, то нам нужны только четвертый и пятый блоки (0х6010000 и 0х6014000), а также первая цветовая палитра (0х5000200). Следующим нашим шагом станет создание спрайтов</p>
+</div>
+<div class="paragraph">
+<p>В компьютерной графике, спрайт – это 2D-изображение, которое вписывается в более большую сцену. GBA может рендерить объекты (например, спрайты), причем этот объект сможет двигаться, не оставляя за собой след из модифицированных пикселей. При условии, что создание объектов включено (установлен бит 13 в I/O регистре контроля дисплея), объект может быть создан из отдельных наборов тайлов путем записи атрибутов в память атрибутов объекта (Object Attribute Memory – OAM). В этом случае, раз уж мы собираемся писать игру вроде «пинг-понга», то нам потребуется по меньшей мере два спрайта: шарик и «ракетка». Каждый объект имеет набор из 16-битных атрибутов:</p>
+</div>
+<div class="paragraph">
+<p>Атрибут 0: включает, кроме всего прочего, Y-координату объекта, форму и цветовой режим (4bpp или 8bpp).
+Атрибут 1: включает, кроме всего прочего, X-координату объекта и его размер
+Атрибут 2: включает, кроме всего прочего, базовый тайловый индекс объекта и цветовую палитру, которую тот должен использовать (в 4bpp-режиме)</p>
+</div>
+<div class="paragraph">
+<p>Значения для этих атрибутов можно подсмотреть, например, вот здесь, но в целом, Y-координата – это последние 8 бит атрибута 0, X-координата – последние 9 бит атрибута 1, а цветовой режим по умолчанию 4bpp (т.е 0 = 4bpp).</p>
+</div>
+<div class="paragraph">
+<p>Биты размера и формы объекта определяют его вид и различные комбинации этих четырех битов дадут разные финальные формы объекта. Если размер объекта превышает один тайл, он будет использовать другие различные тайлы для построения своего внешнего вида. Для нас самым оптимальным решением будет использовать 1D-режим разметки, при котором объект в таком случае будет заполнять себя «базовым» тайлом, указанном в базовом тайловом индексе.</p>
+</div>
+<div class="paragraph">
+<p>Итак, мы уже почти готовы. Мы собираемся использовать видеорежим 0, в котором BG0 – BG3 используются в «обычном» режиме (мы не можем внести в них прямые преобразования). Теперь нам нужно лишь скормить данные с крестовины Гейм Боя нашему примитивному физическому движку, поместить это все в своего рода игровой цикл, и готово!</p>
+</div>
+<div class="paragraph">
+<p>Последний кусочек паззла – I/O регистры. Состояние входных данных может быть легко считано из регистра KEYINPUT (0х04000130) и мы можем использовать раскладку, чтобы создать маску, по которой мы легко определим, какая клавиша была нажата. А что насчет игрового цикла… Что ж, здесь нужно еще немного теории.</p>
+</div>
+<div class="paragraph">
+<p>Типичный игровой цикл содержит в себе период прорисовки и период обновления. В нашем случае мы не можем предоставить эти циклы самим себе, иначе неизбежны искажения при движении наших объектов.</p>
+</div>
+<div class="paragraph">
+<p>Game Boy дает нам немного времени на обновление каждый раз, как он отрисует горизонтальную строку, и даже больше (около 5 мс), когда он заканчивает отрисовку всего экрана. В этом случае, мы просто используем предоставленное девайсом время, чтобы провести наши обновления (этот период называется V-Blank).</p>
+</div>
+<div class="paragraph">
+<p>Чтобы проверить, как много строк уже отрисовал девайс на данных момент, мы можем использовать 8-битное значение регистра VCOUNT (0x040000006) , который увеличивается в течение каждого периода V-Blank. Если значение регистра больше или равно 160, то мы попали как раз в период обновления (V-Blank). Таким образом, если мы дождемся окончательной прорисовки экрана перед тем, как начать обновление, то мы получим примитивную форму синхронизации.</p>
+</div>
+<div class="paragraph">
+<p>Что ж, теперь мы имеем достаточно информации, чтобы написать простую игру. Я выбрал однопользовательскую игру типа пинг-понга (с крайне примитивной физикой), код которой с комментариями привожу ниже.</p>
+</div>
+<div class="paragraph">
+<p><sub>~</sub>
+typedef unsigned char uint8;
+typedef unsigned short uint16;
+typedef unsigned int uint32;
+typedef uint16 rgb15;
+typedef struct object_attributes {
+ uint16 attribute_zero;
+ uint16 attribute_one;
+ uint16 attribute_two;
+ uint16 pad;
+} <em>attribute</em>aligned(4) object_attributes;
+typedef uint32 tile4bpp[8];
+typedef tile4bpp tile_block[512];</p>
+</div>
+<div class="paragraph">
+<p>#define SCREEN_WIDTH  240
+#define SCREEN_HEIGHT 160</p>
+</div>
+<div class="paragraph">
+<p>#define MEM_IO   0x04000000
+#define MEM_PAL  0x05000000
+#define MEM_VRAM 0x06000000
+#define MEM_OAM  0x07000000</p>
+</div>
+<div class="paragraph">
+<p>#define REG_DISPLAY        (<strong>volatile uint32 *)(MEM_IO)
+#define REG_DISPLAY_VCOUNT (</strong>volatile uint32 <strong>)(MEM_IO + 0x0006)
+#define REG_KEY_INPUT      (</strong>volatile uint32 *)(MEM_IO + 0x0130)</p>
+</div>
+<div class="paragraph">
+<p>#define KEY_UP     0x0040
+#define KEY_DOWN   0x0080
+#define KEY_ANY    0x03FF</p>
+</div>
+<div class="paragraph">
+<p>#define OBJECT_ATTRIBUTE_ZERO_Y_MASK  0xFF
+#define OBJECT_ATTRIBUTE_ONE_X_MASK  0x1FF</p>
+</div>
+<div class="paragraph">
+<p>#define oam_memory volatile object_attributes *)MEM_OAM) #define tile_memory ((volatile tile_block *)MEM_VRAM) #define object_palette_memory ((volatile rgb15 *)(MEM_PAL + 0x200</p>
+</div>
+<div class="paragraph">
+<p>static inline rgb15 RGB15(int r, int g, int b) { return r | (g &lt;&lt; 5) | (b &lt;&lt; 10); }</p>
+</div>
+<div class="paragraph">
+<p>static inline void set_object_position(volatile object_attributes *object, int x, int y) {
+ object&#8594;attribute_zero = (object&#8594;attribute_zero &amp; ~OBJECT_ATTRIBUTE_ZERO_Y_MASK) | (y &amp; OBJECT_ATTRIBUTE_ZERO_Y_MASK);
+ object&#8594;attribute_one = (object&#8594;attribute_one &amp; ~OBJECT_ATTRIBUTE_ONE_X_MASK) | (x &amp; OBJECT_ATTRIBUTE_ONE_X_MASK);
+}</p>
+</div>
+<div class="paragraph">
+<p>static inline int clamp(int value, int min, int max) { return (value &lt; min ? min : (value &gt; max ? max : value)); }</p>
+</div>
+<div class="paragraph">
+<p>int main(void) {
+ // Write the tiles for our sprites into the 4th tile block in VRAM.
+ // Particularly, four tiles for an 8x32 paddle sprite, and 1 tile for an 8x8 ball sprite.
+ // 0x1111 = 0001000100010001 [4bpp = colour index 1, colour index 1, colour index 1, colour index 1]
+ // 0x2222 = 0002000200020002 [4bpp = colour index 2, colour index 2, colour index 2, colour index 2]
+ // NOTE: We&#8217;re using our own memory writing code here to avoid the byte-granular writes that
+ // something like 'memset' might make (GBA VRAM doesn&#8217;t support byte-granular writes).
+ volatile uint16 *paddle_tile_memory = (uint16 *)tile_memory[4][1];
+ for (int i = 0; i &lt; 4 * (sizeof(tile4bpp) / 2); i) { paddle_tile_memory[i] = 0x1111; }
+ volatile uint16 *ball_tile_memory = (uint16 *)tile_memory[4][5];
+ for (int i = 0; i &lt; (sizeof(tile4bpp) / 2); i) { ball_tile_memory[i] = 0x2222; }</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Write the colour palette for our sprites into the first palette of
+// 16 colours in colour palette memory (this palette has index 0).
+object_palette_memory[1] = RGB15(0x1F, 0x1F, 0x1F); // White
+object_palette_memory[2] = RGB15(0x1F, 0x00, 0x1F); // Magenta</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Create our sprites by writing their object attributes into OAM memory.
+volatile object_attributes *paddle_attributes = &amp;oam_memory[0];
+paddle_attributes-&gt;attribute_zero = 0x8000; // This sprite is made up of 4bpp tiles and has the TALL shape.
+paddle_attributes-&gt;attribute_one = 0x4000; // This sprite has a size of 8x32 when the TALL shape is set.
+paddle_attributes-&gt;attribute_two = 1; // This sprite's base tile is the first tile in tile block 4, and this sprite should use colour palette 0.
+volatile object_attributes *ball_attributes = &amp;oam_memory[1];
+ball_attributes-&gt;attribute_zero = 0; // This sprite is made up of 4bpp tiles and has the SQUARE shape.
+ball_attributes-&gt;attribute_one = 0; // This sprite has a size of 8x8 when the SQUARE shape is set.
+ball_attributes-&gt;attribute_two = 5; // This sprite's base tile is the fifth tile in tile block 4, and this sprite should use colour palette 0.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Initialize our variables to keep track of the state of the paddle and ball,
+// and set their initial positions (by modifying their attributes in OAM).
+const int player_width = 8, player_height = 32, ball_width = 8, ball_height = 8;
+int player_velocity = 2, ball_velocity_x = 2, ball_velocity_y = 1;
+int player_x = 5, player_y = 96;
+int ball_x = 22, ball_y = 96;
+set_object_position(paddle_attributes, player_x, player_y);
+set_object_position(ball_attributes, ball_x, ball_y);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Set the display parameters to enable objects, and use a 1D object-&gt;tile mapping.
+REG_DISPLAY = 0x1000 | 0x0040;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Our main game loop
+uint32 key_states = 0;
+while (1) {
+ // Skip past the rest of any current V-Blank, then skip past the V-Draw
+ while(REG_DISPLAY_VCOUNT &gt;= 160);
+ while(REG_DISPLAY_VCOUNT &lt; 160);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Get current key states (REG_KEY_INPUT stores the states inverted)
+key_states = ~REG_KEY_INPUT &amp; KEY_ANY;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>// Note that our physics update is tied to the framerate rather than a fixed timestep.
+int player_max_clamp_y = SCREEN_HEIGHT - player_height;
+if (key_states &amp; KEY_UP) { player_y = clamp(player_y - player_velocity, 0, player_max_clamp_y); }
+if (key_states &amp; KEY_DOWN) { player_y = clamp(player_y + player_velocity, 0, player_max_clamp_y); }
+if (key_states &amp; KEY_UP || key_states &amp; KEY_DOWN) { set_object_position(paddle_attributes, player_x, player_y); }</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> int ball_max_clamp_x = SCREEN_WIDTH - ball_width, ball_max_clamp_y = SCREEN_HEIGHT - ball_height;
+ if ((ball_x &gt;= player_x &amp;&amp; ball_x &lt;= player_x + player_width) &amp;&amp; (ball_y &gt;= player_y &amp;&amp; ball_y &lt;= player_y + player_height)) {
+  // This is not good physics / collision handling code.
+  ball_x = player_x + player_width;
+  ball_velocity_x = -ball_velocity_x;
+ } else {
+  if (ball_x == 0 || ball_x == ball_max_clamp_x) { ball_velocity_x = -ball_velocity_x; }
+  if (ball_y == 0 || ball_y == ball_max_clamp_y) { ball_velocity_y = -ball_velocity_y; }
+ }
+ ball_x = clamp(ball_x + ball_velocity_x, 0, ball_max_clamp_x);
+ ball_y = clamp(ball_y + ball_velocity_y, 0, ball_max_clamp_y);
+ set_object_position(ball_attributes, ball_x, ball_y);
+}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> return 0;
+}
+~~~</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Итак, мы сделали нашу первую игру для Game Boy Advance! Будет ли она работать на реальном Гейм Бое? Ф-фух, может быть. Если я не сделал нигде ошибок.</p>
+</div>
+<div class="paragraph">
+<p>Заключение
+Этот пост получился длиннее, чем я думал. Есть еще много деталей и нюансов разработки под GBA, описать все их в этой статье не представляется возможным. Как и любая другая платформа, Game Boy Advance имеет свои хитрости и заковырки. Я нашел для вас несколько ссылок, если вы хотите узнать побольше о разработке под эту платформу.</p>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/14277465?v=3)"><span class="hidden">'s Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href=""></a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%D0%B3%D1%80%D1%8B%20%D0%B4%D0%BB%D1%8F%20Game%20Boy%20Advance&amp;url=https://tumblecloud.github.io/2015/10/18/Sozdanie-igry-dlya-Game-Boy-Advance.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://tumblecloud.github.io/2015/10/18/Sozdanie-igry-dlya-Game-Boy-Advance.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://tumblecloud.github.io/2015/10/18/Sozdanie-igry-dlya-Game-Boy-Advance.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://tumblecloud.github.io">Penguin Boy</a> &copy; 2015</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//tumblecloud.github.io/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//tumblecloud.github.io/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+</body>
+</html>
