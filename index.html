@@ -10,67 +10,94 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="//tumblecloud.github.io/themes/Casper/favicon.ico">
+    <link rel="shortcut icon" href="//tumblecloud.github.io/themes/Roon/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//tumblecloud.github.io/themes/Casper/assets/css/screen.css?v=1.0.0" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//tumblecloud.github.io/themes/Roon/assets/css/screen.css?v=1.0.0" />
 
     <link rel="canonical" href="https://tumblecloud.github.io" />
     <meta name="generator" content="Ghost ?" />
     <link rel="alternate" type="application/rss+xml" title="Penguin Boy" href="https://tumblecloud.github.io/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 </head>
-<body class="home-template">
+<body class="home-template user ">
 
     
-<header class="main-header no-cover">
-    <nav class="main-nav overlay clearfix">
-        
-        <!-- <a class="subscribe-button icon-feed" href="https://tumblecloud.github.io/rss/">Subscribe</a> -->
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Penguin Boy</h1>
-            <h2 class="page-description">Блог о всяких железяках и всяком софте :Р</h2>
-        </div>
+<header role="banner">
+    <div class="wrap">
+        <h1><a href="https://tumblecloud.github.io">Penguin Boy</a></h1>
+        <hr>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
-<main id="content" class="content" role="main">
 
-    <div class="extra-pagination inner">
-        <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2015-10-18"><a href="https://tumblecloud.github.io/2015/10/18/HELLO.html">October 18, 2015</a></time>
     </div>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="https://tumblecloud.github.io/2015/10/18/HELLO.html">HELLO</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>Hello, guys! This is my first post! <a class="read-more" href="https://tumblecloud.github.io/2015/10/18/HELLO.html">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            
-            
-            
-            <time class="post-date" datetime="2015-10-18">18 October 2015</time>
-        </footer>
-    </article>
-    
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
 
-</main>
+    <header>
+        <h1><a href="https://tumblecloud.github.io/2015/10/18/HELLO.html">HELLO</a></h1>
+    </header>
+
+    <div class="text">
+        <p>Hello, guys! This is my first post!</p>
+        <a href="https://tumblecloud.github.io/2015/10/18/HELLO.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<nav class="pagination" role="navigation">
+    <span class="page-number">Page 1 of 1</span>
+</nav>
+
+<footer role="contentinfo">
+    <div class="inner">
+        <div class="vcard">
+            <!-- <a href="https://tumblecloud.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                <span aria-hidden="true" data-icon=")"></span>
+                <strong>Feed</strong>
+            </a> -->
 
 
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://tumblecloud.github.io">Penguin Boy</a> &copy; 2015</section>
-        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
-    </footer>
+            <div class="details">
+                <h4><a href="https://tumblecloud.github.io" class="url n">Penguin Boy</a></h4>
+                <a href="https://tumblecloud.github.io" class="js-remove-domain-schema">https://tumblecloud.github.io</a><br>
+                <span>Published with <a href="http://hubpress.io">HubPress</a></span>
+            </div>
+        </div>
+        <div id="user_bio">
+            <div class="inner">
+                Блог о всяких железяках и всяком софте :Р
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+        }
+    </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -85,8 +112,8 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-    <script type="text/javascript" src="//tumblecloud.github.io/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
-    <script type="text/javascript" src="//tumblecloud.github.io/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+
 
 </body>
 </html>
