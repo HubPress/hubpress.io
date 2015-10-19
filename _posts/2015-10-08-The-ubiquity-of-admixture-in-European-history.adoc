@@ -26,7 +26,7 @@ However, although we inherit one chromosome of each pair from each from our pare
 
 _The figure below shows the timeline of admixture across different part of West Eurasia. For each region (row) we show the timing of the influx of DNA from different parts of the world. The larger the curves, the more admixture that we infer to have happened at that particular time._
 
-image::../covers/busby_fig3.png[Figure 3 busby]
+image::../covers/busby_fig3b.png[Figure 3 busby]
 
 When we used this concept of mosaic haplotypes to look at the genes of West Eurasians, we were able to expose the extent to which historical events have shaped the genomes of people alive in today. In particular, we are able to pick up the process of admixture, which is when two or more genetically differentiated groups come together. Mostly, our results identified known historical migrations and movements. For example we found African haplotypes in Spanish people which, because shorter haplotypes will have undergone more recombination and are therefore older, we could date to to the period of 750-1000CE. But this was just one of many results, as we found that admixture was a process that is almost universal across Europe and Western Asia. That is, in genomes across the continent, there is evidence of mixed ancestry. Sometimes these admixture events involved groups from outside of the continent. For example, there is clear evidence of Mongolian-like DNA entering the Caucasus and Turkey, that we were able to date to a small window of history between 1200-1300CE, which aligns almost perfectly with the known expansion of Genghis Khan across Asia. There was also further evidence of small amounts of African admixture across the Mediterranean, in Italy and Greece …
 
