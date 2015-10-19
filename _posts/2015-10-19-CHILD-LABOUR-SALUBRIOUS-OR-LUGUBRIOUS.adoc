@@ -3,7 +3,7 @@
 
 "You can't regulate Child Labour, you can't regulate Slavery. Some things are just wrong."
 
-image::<child2.jpg>[]
+image::child2.jpg[]
 
 A young man commits a heinous crime with remorseless eyes and an unwavering heart. His lack of empathy sends a chill down the spines of onlookers. Now when society is about to cast him away for his vice, they fail to realize that they had already done so, many years ago, when they turned a blind eye to the evil of Child Labour which had so unsparingly convoluted this person’s heart and soul and his perceptions about society at large and communitarianism.
 
@@ -18,7 +18,7 @@ When both sides of the story appear grey, we turn to the integral adjudicator fo
 
 One need not look far to see that NGO’s like Bachpan Bachao Andolan and CARE India have managed to bring about more change with a lesser budget. I look forward to a day when we can have a Big Brothers Big Sisters of India http://www.bbbs.org/ , a non-profit organization whose goal is to help all children reach their potential through professionally supported, one-to-one relationships with volunteering mentors.
 
-image::<child1.jpg>[]
+image::child1.jpg[]
 
 In my opinion, that would be the first and last step we need ever take to end Child Labour.
 
