@@ -1,0 +1,51 @@
+= Making an internet radio with a Banana Pi and cheaper components 
+
+This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information.
+
+Yes, I'm a proud owner of Banana PI, which is the chinese version of the Raspberry Pi. I also own two Raspeberry Pis, models B and 2B, so no discrimination for having a different origin in this case. Bananas are based on Android hardware, with the AllWinner processors at this heart, A20 in the case of the Banana Pi.
+
+Despite the specifications are usually superior to the Raspberries, lack of community and open documentation makes the Bananas to have less use cases. Things are changing a bit as at http://www.lemaker.org[LeMaker] they are doing a lot of effort in changing that matter. It's going to take long until they improve the size and awesomeness of the Raspi community, anyway.
+
+One of these efforts is the creation of a Linux distribution, an equivalent to the original Raspian, called *Bananian*. For these guide I use that distribution, but it's possible to use any other . Notice that Bananian has superuser as default user (sudo), so for all the commands a superuser is assumed.
+
+The main reason I used the Banana instead one of my Raspies is that sound quality is not so bad compared to the latter ones. A way to overcome that is to use some kind of https://www.hifiberry.com/digiplus/[Digital to Analog Converter (DAC)]. But for a discrete radio quality, we can use the default analog output.
+
+After reading a bunch of blog posts, using a USB sound card is discouraged as there are lot of latency issues. But you are free to try :)
+
+== Steps
+
+1. Setup the http://wiki.lemaker.org/BananaPro/Pi:WiFi_configuration[wifi].
+
+2. https://www.mopidy.com/[Mopidy] is a versatile frontend for the MDP (Music Player Daemon). For installing it: https://docs.mopidy.com/en/latest/installation/debian/ The same guide allows to install it in almost any other major linux distro.
+
+3. We need to install a web frontend, as we want to access our radio from remote. I.e. from a mobile phone. The one I use is Mopidy-MusicBox-Webclient, but you can have a look to a lot of them in this http://mopidy.readthedocs.org/en/latest/ext/web/[list].
+
+4. (Optional) As we need to test the sound, installing the alsa tools and execute the alsamixer utility can be interesting. Simply check that there are two sound cards: analog output and HDMI.
+----
+apt-get install alsa-tools
+
+alsamixer
+----
+
+5. As a default, HDMI sound output is enabled, so we have to toggle it for enabling the analog modifying the ALSA sound configuration file, */etc/asound.conf* (http://forum.lemaker.org/thread-213-1-1-.html[source]).
+----
+pcm.!default {
+    type hw
+    card 0
+    device 0
+}
+
+ctl.!default {
+    type hw
+    card 0
+}
+----
+speaker-test -twav -c2
+
+/etc/mopidy/mopidy.conf
+[http]
+hostname = 0.0.0.0
+
+https://docs.mopidy.com/en/develop/debian/#running-as-a-system-service-by-default
+
+Banana PI has a network alias called "bananapi". Unfortunately, IE disables WebSockets when a web is accessed from a local alias network. That disables the frontend. A quickfix is to use the IP address.
