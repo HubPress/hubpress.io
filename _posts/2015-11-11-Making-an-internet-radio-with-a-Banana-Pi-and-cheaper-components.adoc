@@ -14,18 +14,18 @@ After reading a bunch of blog posts, using a USB sound card is discouraged as th
 
 == Steps
 
-1. Setup the http://wiki.lemaker.org/BananaPro/Pi:WiFi_configuration[wifi].
+1. Setup the http://wiki.lemaker.org/BananaPro/Pi:WiFi_configuration[wifi]. You can use also an ethernet connection, but it's less fun. Also notice that most of the time the only way to tell if an usb wifi dongle will work with your Banana is to buy from a trusted shop or simply buy it yourself.
 
 2. https://www.mopidy.com/[Mopidy] is a versatile frontend for the MDP (Music Player Daemon). For installing it: https://docs.mopidy.com/en/latest/installation/debian/ The same guide allows to install it in almost any other major linux distro.
 
 3. We need to install a web frontend, as we want to access our radio from remote. I.e. from a mobile phone. The one I use is Mopidy-MusicBox-Webclient, but you can have a look to a lot of them in this http://mopidy.readthedocs.org/en/latest/ext/web/[list].
 
 4. (Optional) As we need to test the sound, installing the alsa tools and execute the alsamixer utility can be interesting. Simply check that there are two sound cards: analog output and HDMI.
-----
-apt-get install alsa-tools
+
+`apt-get install alsa-tools`
 
 alsamixer
-----
+
 
 5. As a default, HDMI sound output is enabled, so we have to toggle it for enabling the analog modifying the ALSA sound configuration file, */etc/asound.conf* (http://forum.lemaker.org/thread-213-1-1-.html[source]).
 ----
@@ -40,12 +40,26 @@ ctl.!default {
     card 0
 }
 ----
-speaker-test -twav -c2
 
-/etc/mopidy/mopidy.conf
+Then we can test the sound:
+----
+speaker-test -twav -c2
+----
+
+And if the speakers are properly connected, you should hear a nice sound from them. No, it's not Britney Spears.
+
+6. As we need to /etc/mopidy/mopidy.conf
+----
 [http]
 hostname = 0.0.0.0
+----
 
+And then make it run 
+----
 https://docs.mopidy.com/en/develop/debian/#running-as-a-system-service-by-default
+----
 
-Banana PI has a network alias called "bananapi". Unfortunately, IE disables WebSockets when a web is accessed from a local alias network. That disables the frontend. A quickfix is to use the IP address.
+FINAL NOTICE. Banana PI has a network alias called "bananapi". Unfortunately, IE disables WebSockets when a webpage is accessed from a local alias network. That disables the frontend. A quickfix is to use the IP address. You can use a Nokia screen to show the IP addresss (I know, that's for another tutorial) or simply access from another computer and get the IP. If you don't mess too much with your network and don't reboot too often, chances are that you are going to get the same IP a lot of times.
+
+== Conclusion
+There quite a few small things for building a system like this. 
