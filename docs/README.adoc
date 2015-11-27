@@ -13,11 +13,13 @@ https://flattr.com/submit/auto?user_id=anthonny_q&url=https://github.com/HubPres
 == What Is HubPress?
 image::http://hubpress.io/img/editor.png[]
 
-Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q]).
+Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (Twitter  http://twitter.com/anthonny_q[@anthonny_q]).
 
-NOTE: While HubPress may appear feature-complete, it is actually in Tech Preview. Bugs are inevitible, so if you find something is not behaving the way you think it should, please raise a bug and the project team will address it as soon as possible.
+HubPress is a web application which makes it easy for you to maintain a blog. It provides an online editor for writing blog posts. Blog comments can be enabled using Disqus, and Google Analytics can be enabled to provide insight into visitors' activity. Hosting for your blog is provided by GitHub. Blog posts are created in a simple editor, and use AsciiDoc markup, which is similar to Markdown but more powerful.
 
-Documentation is rapidly evolving as the project gains momentum. Check back regularly for more tips on how to use HubPress. If you see something wrong with the documentation, please raise a bug. Your help with improving every aspect of HubPress is greatly appreciated. Pull Requests are *always* welcome.
+NOTE: While HubPress may appear feature-complete, it is in Tech Preview. Bugs are inevitable, so if you find something is not behaving the way you think it should, please raise a GitHub issue and the project team will address it as soon as possible.
+
+Documentation is rapidly evolving as the project gains momentum. Check back regularly for more tips on how to use HubPress. If you see something wrong with the documentation, please raise an issue. Your help with improving every aspect of HubPress is greatly appreciated. Pull Requests are *always* welcome.
 
 == Browser Compatibility
 
