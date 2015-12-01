@@ -3,4 +3,4 @@
 :hp-image: a-cover-image.jpg
 :hp-tags: tags, Blog, Open Source,
 
-image::http://<full path to image>[]
+jjg jgj      jgjgjj
