@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "wdougwatson",
-    "repositoryName": "wdougwatson.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"wdougwatson","repositoryName":"wdougwatson.github.io","branch":"master"},"site":{"title":"Doug Watson","description":"Just a place where I write about stuff.","postsPerPage":"5","googleAnalytics":"UA-63558198-2","disqus":"wdougwatson","url":"https://wdougwatson.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"//wdougwatson.github.io/themes/Casper"}}
