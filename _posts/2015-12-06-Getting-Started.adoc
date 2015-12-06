@@ -1,2 +1,3 @@
 = Getting Started
+
 I just installed HubPress on my github pages site. It was dead simple. It uses asciidoc and I don't Know wtf that is so I have some learning to do.
