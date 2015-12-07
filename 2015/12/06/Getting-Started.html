@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Getting Started</title>
     <meta name="description" content="" />
-    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="//wdougwatson.github.io/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
-    <link href="//wdougwatson.github.io/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
-    <link href="//wdougwatson.github.io/themes/Saga/favicon.ico" rel="shortcut icon">
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//wdougwatson.github.io/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//wdougwatson.github.io/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//wdougwatson.github.io/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//wdougwatson.github.io/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//wdougwatson.github.io/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//wdougwatson.github.io/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//wdougwatson.github.io/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//wdougwatson.github.io/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
     <link rel="canonical" href="https://wdougwatson.github.io/2015/12/06/Getting-Started.html" />
     
     <meta property="og:site_name" content="Doug Watson" />
@@ -22,7 +33,7 @@
     <meta property="og:description" content="I just installed HubPress on my github pages site. It was dead simple. Click fork, edit two lines in a config, and go. Compared to other static site generators I&amp;#8217;ve tried for GitHub, HubPress feels like real blogging..." />
     <meta property="og:url" content="https://wdougwatson.github.io/2015/12/06/Getting-Started.html" />
     <meta property="article:published_time" content="2015-12-06T06:00:00.000Z" />
-    <meta property="article:modified_time" content="2015-12-07T05:10:00.373Z" />
+    <meta property="article:modified_time" content="2015-12-07T05:11:33.948Z" />
     <meta property="article:tag" content="HubPress" />
     <meta property="article:tag" content="Blogging" />
     <meta property="article:tag" content="AsciiDoc" />
@@ -47,7 +58,7 @@
     "headline": "Getting Started",
     "url": "https://wdougwatson.github.io/2015/12/06/Getting-Started.html",
     "datePublished": "2015-12-06T06:00:00.000Z",
-    "dateModified": "2015-12-07T05:10:00.373Z",
+    "dateModified": "2015-12-07T05:11:33.948Z",
     "keywords": "HubPress,  Blogging,  AsciiDoc",
     "description": "I just installed HubPress on my github pages site. It was dead simple. Click fork, edit two lines in a config, and go. Compared to other static site generators I&amp;#8217;ve tried for GitHub, HubPress feels like real blogging..."
 }
@@ -58,30 +69,87 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 </head>
 <body class="post-template tag-HubPress tag-Blogging tag-AsciiDoc">
-    <header id="header" class="animated fadeIn">
-    <div class="header-background">
-    <section class="blog-content">
-        <a id="site-url" class="blog-title" href="https://wdougwatson.github.io">Doug Watson</a>
-        <span class="blog-description">Just a place where I write about stuff.</span>
-        <nav class="links fadeIn animated">
-            <ul>
-                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
-        
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="https://wdougwatson.github.io"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="https://wdougwatson.github.io">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area" >
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="https://wdougwatson.github.io"></a></li>
+                <li><a class="fi-torso" href="https://wdougwatson.github.io/about"></a></li>
+                <li><a class="fi-mail" href="https://wdougwatson.github.io/contact"></a></li>
             </ul>
-        </nav>
-    </section>
-    <section class="header-content">
-        <h1 class="post-title animated fadeInUp">Getting Started</h1>
-        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1449381600" datetime="2015-12-06T00:00" title="06 December 2015">2015-12-06 00:00:00<ago class="ago"></time></span>
-            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://wdougwatson.github.io/tag/HubPress">HubPress</a>, <a href="https://wdougwatson.github.io/tag/Blogging"> Blogging</a>, <a href="https://wdougwatson.github.io/tag/AsciiDoc"> AsciiDoc</a></span>
-            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href=""></a></span></span>
-    </section>
+            
+            <h1 class="blog-title">Doug Watson</h1>
+            <hr>
+            <p class="blog-description">Just a place where I write about stuff.</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="wdougwatson" class="fi-social-google-plus"></a>
+                  <a href="wdougwatson" class="fi-social-github"></a>
+                  <a href="wdougwatson" class="fi-social-twitter"></a>
+                  <a href="william.d.watson.1" class="fi-social-facebook"></a>
+            </div>
+        </div>
     </div>
 </header>
-<main id="main" class="content">
-    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-HubPress tag-Blogging tag-AsciiDoc">
-        <section class="post-content">
-            <div class="paragraph">
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-HubPress tag-Blogging tag-AsciiDoc">
+
+
+            <h1 class="post-title">Getting Started</h1>
+
+            <span class="post-meta label"><time datetime="2015-12-06">06 Dec 2015</time></span>
+
+            <section class="post-content">
+                <div class="paragraph">
 <p>I just installed <a href="http://hubpress.io/">HubPress</a> on my github pages site. It was dead simple. Click fork, edit two lines in a config, and go.</p>
 </div>
 <div class="paragraph">
@@ -96,9 +164,49 @@
 <div class="paragraph">
 <p>I guess now is a good time to end this first post. Thanks for reading it and check back later to see what I manage to do here.</p>
 </div>
-        </section>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="https://wdougwatson.github.io/tag/HubPress">HubPress</a>, <a href="https://wdougwatson.github.io/tag/Blogging"> Blogging</a>, <a href="https://wdougwatson.github.io/tag/AsciiDoc"> AsciiDoc</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
 
-    
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://wdougwatson.github.io/2015/12/06/Getting-Started.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Getting%20Started&amp;url=https://wdougwatson.github.io/2015/12/06/Getting-Started.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=https://wdougwatson.github.io/2015/12/06/Getting-Started.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4></h4>
+                        <img src="https://avatars.githubusercontent.com/u/2940055?v=3">
+                        
+                        
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
         <section class="post-comments">
           <div id="disqus_thread"></div>
           <script type="text/javascript">
@@ -113,21 +221,16 @@
           <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         </section>
-    
+
+
     </article>
 
 </main>
-    <footer class="animated fadeIn" id="footer">
-        <section class="colophon">
-          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Doug Watson</span>. <span rel="license">All Rights Reserved</span>.</section>
-          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
-        </section>
-        <section class="bottom">
-          <section class="attribution">
-            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
-          </section>
-        </section>
-    </footer>
+
+</div>
+
+</div>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
         jQuery( document ).ready(function() {
@@ -140,8 +243,16 @@
 
         hljs.initHighlightingOnLoad();      
       </script>
-    <script src="//wdougwatson.github.io/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
-    
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//wdougwatson.github.io/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//wdougwatson.github.io/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
