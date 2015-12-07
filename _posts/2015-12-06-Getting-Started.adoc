@@ -1,3 +1,5 @@
 = Getting Started
 
-I just installed HubPress on my github pages site. It was dead simple. It uses asciidoc and I don't Know wtf that is so I have some learning to do.
+I just installed http://hubpress.io/[HubPress] on my github pages site. It was dead simple.
+
+It uses http://asciidoc.org/[AsciiDoc] rather than https://daringfireball.net/projects/markdown/[MarkDown] and I'm a little intimidated by that. The syntax for AsciiDoc is much more complicated than Markdown so I have alot to learn. The upside to this is that AsciiDoc is much more powerful.
