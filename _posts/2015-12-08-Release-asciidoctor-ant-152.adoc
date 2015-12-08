@@ -1,0 +1,26 @@
+= Release : asciidoctor-ant 1.5.2
+:hp-tags: java,asciidoctor
+
+== Annonce
+
+J'ai le plaisir de vous annoncer la release de `asciidoctor-ant` en version https://github.com/asciidoctor/asciidoctor-ant/releases[1.5.2]. Pour rappel, le projet vous permet de convertir vos documents `asciidoc` grâce à une tâche Ant (_all in one_).
+
+Plus d'information sur : 
+https://github.com/asciidoctor/asciidoctor-ant
+
+Des exemples d'utilisations sont disponibles dans le projet suivant :
+https://github.com/binout/asciidoctor-ant-examples
+
+== Release note
+
+* Alignement sur `asciidoctorj-1.5.2`
+** la taille du jar passe de 47Mo à 25 Mo !
+** support du backend `pdf` (version alpha)
+* Ajout de l'attribut `safe`
+* Support des extensions `asciidoctor` écrite en java
+* Support des Gems et autres libraries Ruby
+
+
+== Download
+
+Maven Central :: http://repo1.maven.org/maven2/org/asciidoctor/asciidoctor-ant/1.5.2/
