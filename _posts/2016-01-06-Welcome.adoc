@@ -1,5 +1,6 @@
 = Welcome!
 :hp-tags: Welcome, openDivision, Frontend
+:hp-image:http://uncollege.org/wp-content/uploads/2015/04/Coding-008.jpg
 
 image::http://uncollege.org/wp-content/uploads/2015/04/Coding-008.jpg[]
 
