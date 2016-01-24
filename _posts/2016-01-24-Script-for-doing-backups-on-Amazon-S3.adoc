@@ -22,7 +22,7 @@ AWS credentials are stored as a default in a configuration file in the home fold
 
 Amazon gives you a lot of possibilities, but for backups I simply added one rule to the backups bucket in the "Lifecycle" settings: delete after 30 days. As I'm going to do a daily backup, 30 files should be enough. 
 
-I also opted for *Reduced Redundancy Storage* aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance of retrieving it safely ;)
+I also opted for *Reduced Redundancy Storage* aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance, instead of the usual 99,9999999% of retrieving it safely ;)
 
 
 == Troubles in our way
