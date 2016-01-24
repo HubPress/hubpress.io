@@ -27,7 +27,12 @@ I also opted for *Reduced Redundancy Storage* aka RRS, as the data is not extrem
 
 == Troubles in our way
 
-The same script was used in two different servers, and didn't work in one of them. Can be quite frustrating when that happens, so you start thinking "what can be different from one server to the other?". It
+The same script was used in two different servers, and didn't work in one of them. Can be quite frustrating when that happens, so you start thinking "what can be different from one server to the other?". 
 
+In this case, the error code was not very helpful: 104 when doing a set_contents_by_filename. The first "bad smell" was that it is a connection error code, but not in the connection method, but in the upload method, after performing the connection. Some googling around the error showed a collection of issues, mostly fixed and incorporated to the library code at some point. No real solutions. What could it be?
+
+After discarding everything else (server blocking https port, different library versions, wrong credentials or urls...), I opted for printing the bucket location, only for checking it. And I found the surprise: It gently complained that there was a discrepancy between the server time and the AWS time, big enough to block the request. As simply as that, your server needs to have *correct date and time* in order to sync with S3.
 
 == Conclusion
+
+S3 is a safe and easy way of doing online backups. Don't be intimidated as I was when approaching it. Use it wisely and you will have a very cheap backup for all those cat photos that you carefully were collecting all these years.
