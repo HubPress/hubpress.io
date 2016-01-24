@@ -1,0 +1,33 @@
+= Script for doing backups on Amazon S3
+
+== Why?
+
+Everybody needs backups, and if you manage web servers, you *really* need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but S3 is one of the best, and it's extremely cheap, a few cents per gigabyte by month. It also offers many possibilities for customization. And, as everybody is using it, you can find a lot of information on the net, but at the end you need to taylor it to your needs. 
+
+In this post, I'm going to describe the method I use for doing backups of the important information in my servers. It could be a database dump, a configuration file or even some photographies, anything but code. Version control is for code.
+
+Requisites: before reading this you should be a bit familiarized with the way Amazon S3 works.
+
+== How
+
+=== The Script
+
+I chose python because is what I'm most confortable with, but there are ports of the SDK library for many other programming languages, as usual. It seems that even the official Amazon CLI uses also python. You can even use http(s) requests, but they are a bit complex, as there is a lot . So it's good to use a library.
+
+The library http://boto.cloudhackers.com/en/latest/[Boto] is by far the most complete in Python. It's not official, but everybody uses it. There's also a convenient https://github.com/smore-inc/tinys3[TinyS3], but I chose the former one as it offers more possibilities that could be needed in the future.
+
+AWS credentials are stored as a default in a configuration file in the home folder. Current criteria is to use ~/.aws/credentials, but as always when there is a security concern, there are many approaches to keep them safe. But, as the access to your host should be  
+
+=== AWS console configuration
+
+Amazon gives you a lot of possibilities, but for backups I simply added one rule to the backups bucket in the "Lifecycle" settings: delete after 30 days. As I'm going to do a daily backup, 30 files should be enough. 
+
+I also opted for *Reduced Redundancy Storage* aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance of retrieving it safely ;)
+
+
+== Troubles in our way
+
+The same script was used in two different servers, and didn't work in one of them. Can be quite frustrating when that happens, so you start thinking "what can be different from one server to the other?". It
+
+
+== Conclusion
