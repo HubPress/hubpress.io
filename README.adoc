@@ -2,8 +2,6 @@
 
 :toc:
 
-https://flattr.com/submit/auto?user_id=anthonny_q&url=https://github.com/HubPress/hubpress.io&title=HubPress&description=A%20web%20application%20to%20build%20your%20blog%20on%20GitHub&language=en_EN&tags=blog,github,asciidoc&category=software[image:http://api.flattr.com/button/flattr-badge-large.png[]]
-
 == What Is HubPress?
 image::http://hubpress.io/img/editor.png[]
 
