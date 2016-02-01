@@ -1,0 +1,39 @@
+= Contributing
+// settings:
+:idprefix:
+:idseparator: -
+:source-language: javascript
+:language: {source-language}
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+// URIs:
+:uri-repo: https://github.com/hubpress/hubpress.io
+:uri-help-base: https://help.github.com/articles
+:uri-issues: {uri-repo}/issues
+:uri-fork-help: {uri-help-base}/fork-a-repo
+:uri-branch-help: {uri-fork-help}#create-branches
+:uri-pr-help: {uri-help-base}/using-pull-requests
+:uri-gist: https://gist.github.com
+
+== License Agreement
+
+By contributing changes to this repository, you agree to license your contributions under the <<LICENSE#,MIT license>>.
+This ensures your contributions have the same license as the project and that the community is free to use your contributions.
+You also assert that you are the original author of the work that you are contributing unless otherwise stated.
+
+== Submitting an Issue
+
+We use the {uri-issues}[issue tracker on GitHub] associated with this project to track bugs and features.
+Before submitting a bug report or feature request, check to make sure it hasn't already been submitted.
+When submitting a bug report, please include any details that may help reproduce the bug, including the asciidoc content or logs.
+
+== Submitting a Pull Request
+
+TODO
+
+=== Writing and Executing Tests
+
+TODO
+
+=== Running HubPress in Development Mode
+
+TODO
