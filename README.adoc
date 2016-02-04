@@ -8,6 +8,8 @@ toc::[]
 
 A free, open source tool you can use to build a blog using GitHub pages and AsciiDoc.
 
+https://gratipay.com/hubpress/[HubPress] on Gratipay image:https://avatars1.githubusercontent.com/u/1744073?v=3&s=24[].
+
 == What Is HubPress?
 image::http://hubpress.io/img/editor.png[]
 
@@ -372,4 +374,4 @@ Thanks to https://github.com/takkyuuplayer[takkyuuplayer], https://github.com/hi
 
 == Donations
 
-If you love HubPress, and you want to support the team responsible for developing the app, you can use https://www.paypal.com[PayPal] and send donations to this account: **anthonny.querouil[at]gmail[dot]com**. Any donation you give will be put towards development-enabling products like caffeine.
+If you love HubPress, and you want to support the team responsible for developing the app, you can use https://gratipay.com/hubpress/[Gratipay] image:https://avatars1.githubusercontent.com/u/1744073?v=3&s=24[]. Any donation you give will be put towards development-enabling products like caffeine.
