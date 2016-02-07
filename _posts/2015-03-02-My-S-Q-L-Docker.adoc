@@ -1,4 +1,6 @@
 = MySQL Docker
+:hp-tags: docker, mysql
+
 
 == What is MySQL?
 
