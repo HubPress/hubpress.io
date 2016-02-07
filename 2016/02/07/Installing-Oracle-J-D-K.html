@@ -35,7 +35,7 @@
     <meta property="og:description" content="The Oracle JDK is the official JDK; however, it is no longer provided by Oracle as a default installation for Ubuntu. You can still install it using apt-get. To install any version, first execute the following commands: sudo apt-get install..." />
     <meta property="og:url" content="http://blog.george-theofilis.com/2016/02/07/Installing-Oracle-J-D-K.html" />
     <meta property="article:published_time" content="2016-02-06T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-02-07T21:04:00.771Z" />
+    <meta property="article:modified_time" content="2016-02-07T21:07:46.569Z" />
     <meta property="article:tag" content="java" />
     <meta property="article:tag" content="ubuntu" />
     
@@ -59,7 +59,7 @@
     "headline": "Installing Oracle JDK",
     "url": "http://blog.george-theofilis.com/2016/02/07/Installing-Oracle-J-D-K.html",
     "datePublished": "2016-02-06T22:00:00.000Z",
-    "dateModified": "2016-02-07T21:04:00.771Z",
+    "dateModified": "2016-02-07T21:07:46.569Z",
     "keywords": "java,  ubuntu",
     "description": "The Oracle JDK is the official JDK; however, it is no longer provided by Oracle as a default installation for Ubuntu. You can still install it using apt-get. To install any version, first execute the following commands: sudo apt-get install..."
 }
@@ -251,8 +251,10 @@ Setting the "JAVA_HOME" environment variable</p>
 <div class="paragraph">
 <p>To set the JAVA_HOME environment variable, which is needed for some programs, first find out the path of your Java installation:</p>
 </div>
-<div class="paragraph">
-<p>sudo update-alternatives --config java</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sudo update-alternatives --config java</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>It returns something like:</p>
