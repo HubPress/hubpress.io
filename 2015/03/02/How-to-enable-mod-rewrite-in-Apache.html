@@ -10,10 +10,20 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="//blog.george-theofilis.com/themes/Casper/favicon.ico">
+    <link rel="shortcut icon" href="//blog.george-theofilis.com/themes/ichi/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/Casper/assets/css/screen.css?v=1.0.0" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
 
     <link rel="canonical" href="http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html" />
     
@@ -23,7 +33,7 @@
     <meta property="og:description" content="To enable it the rewrite module, run &quot;apache2 enable module rewrite&quot;: sudo a2enmod rewrite You need to restart the webserver to apply the changes: sudo service apache2 restart If you plan on using mod_rewrite in .htaccess files, you also..." />
     <meta property="og:url" content="http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html" />
     <meta property="article:published_time" content="2015-03-01T22:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-02-07T19:16:06.220Z" />
+    <meta property="article:modified_time" content="2016-02-07T19:19:14.320Z" />
     <meta property="article:tag" content="apache2" />
     <meta property="article:tag" content="debian" />
     
@@ -47,7 +57,7 @@
     "headline": "How to enable mod_rewrite in Apache?",
     "url": "http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html",
     "datePublished": "2015-03-01T22:00:00.000Z",
-    "dateModified": "2016-02-07T19:16:06.220Z",
+    "dateModified": "2016-02-07T19:19:14.320Z",
     "keywords": "apache2,  debian",
     "description": "To enable it the rewrite module, run &quot;apache2 enable module rewrite&quot;: sudo a2enmod rewrite You need to restart the webserver to apply the changes: sudo service apache2 restart If you plan on using mod_rewrite in .htaccess files, you also..."
 }
@@ -59,29 +69,86 @@
 </head>
 <body class="post-template tag-apache2 tag-debian">
 
-    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
 
+<nav class="top-bar hide-for-large-up" data-topbar >
+  <ul class="title-area">
+    <li class="name">
 
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
-        <a class="back-button icon-arrow-left" href="http://blog.george-theofilis.com">Home</a>
-        <!-- <a class="subscribe-button icon-feed" href="http://blog.george-theofilis.com/rss/">Subscribe</a> -->
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.george-theofilis.com"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.george-theofilis.com">Home</a></li>
+        </ul>
     </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area" >
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.george-theofilis.com"></a></li>
+                <li><a class="fi-torso" href="http://blog.george-theofilis.com/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.george-theofilis.com/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">George Theofilis</h1>
+            <hr>
+            <p class="blog-description"></p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://plus.google.com/u/0/+%CE%93%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%82%CE%9D%CE%B5%CE%BA%CF%84%CE%AC%CF%81%CE%B9%CE%BF%CF%82%CE%98%CE%B5%CE%BF%CF%86%CE%AF%CE%BB%CE%B7%CF%82" class="fi-social-google-plus"></a>
+                  <a href="https://github.com/theofilis" class="fi-social-github"></a>
+                  <a href="https://twitter.com/g_theofilis" class="fi-social-twitter"></a>
+                  <a href="https://www.facebook.com/theofilis.g" class="fi-social-facebook"></a>
+            </div>
+        </div>
+    </div>
 </header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
 
 <main class="content" role="main">
 
     <article class="post tag-apache2 tag-debian">
 
-        <header class="post-header">
-            <h1 class="post-title">How to enable mod_rewrite in Apache?</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="2015-03-02">02 March 2015</time>  on <a href="http://blog.george-theofilis.com/tag/apache2">apache2</a>, <a href="http://blog.george-theofilis.com/tag/debian"> debian</a>
-            </section>
-        </header>
 
-        <section class="post-content">
-            <div class="paragraph">
+            <h1 class="post-title">How to enable mod_rewrite in Apache?</h1>
+
+            <span class="post-meta label"><time datetime="2015-03-02">02 Mar 2015</time></span>
+
+            <section class="post-content">
+                <div class="paragraph">
 <p>To enable it the rewrite module, run "apache2 enable module rewrite":</p>
 </div>
 <div class="paragraph">
@@ -110,43 +177,47 @@
 <div class="paragraph">
 <p>After such a change, you need to restart Apache again.</p>
 </div>
-        </section>
-
-        <footer class="post-footer">
-
-
-            <figure class="author-image">
-                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/475517?v=3)"><span class="hidden">Theofilis George-Nektarios's Picture</span></a>
-            </figure>
-
-            <section class="author">
-                <h4><a href="">Theofilis George-Nektarios</a></h4>
-
-                    <p>Read <a href="">more posts</a> by this author.</p>
-                <div class="author-meta">
-                    <span class="author-location icon-location">Athens, Greece</span>
-                    <span class="author-link icon-link"><a href="http://theofilis.github.io/">http://theofilis.github.io/</a></span>
-                </div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/apache2">apache2</a>, <a href="http://blog.george-theofilis.com/tag/debian"> debian</a></aside>
             </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=How%20to%20enable%20mod_rewrite%20in%20Apache%3F&amp;url=http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>Theofilis George-Nektarios</h4>
+                        <img src="https://avatars.githubusercontent.com/u/475517?v=3">
+                        <span>Athens, Greece</span>
+                        <a href="http://theofilis.github.io/">http://theofilis.github.io/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
 
 
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=How%20to%20enable%20mod_rewrite%20in%20Apache%3F&amp;url=http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
-
-        </footer>
 
 
         <section class="post-comments">
@@ -169,12 +240,9 @@
 
 </main>
 
+</div>
 
-
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="http://blog.george-theofilis.com">George Theofilis</a> &copy; 2016</section>
-        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
-    </footer>
+</div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -189,8 +257,14 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-    <script type="text/javascript" src="//blog.george-theofilis.com/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
-    <script type="text/javascript" src="//blog.george-theofilis.com/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
