@@ -1,4 +1,6 @@
 = How to enable mod_rewrite in Apache?
+:hp-tags: apache2, debian
+
 
 To enable it the rewrite module, run "apache2 enable module rewrite":
 
