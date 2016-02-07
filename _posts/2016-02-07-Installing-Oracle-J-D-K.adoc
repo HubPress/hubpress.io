@@ -51,7 +51,10 @@ Setting the "JAVA_HOME" environment variable
 
 To set the JAVA_HOME environment variable, which is needed for some programs, first find out the path of your Java installation:
 
+[source,bash]
+----
 sudo update-alternatives --config java
+----
 
 It returns something like:
 
