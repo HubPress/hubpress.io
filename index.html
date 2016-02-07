@@ -10,10 +10,20 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="//blog.george-theofilis.com/themes/Casper/favicon.ico">
+    <link rel="shortcut icon" href="//blog.george-theofilis.com/themes/ichi/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/Casper/assets/css/screen.css?v=1.0.0" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
 
     <link rel="canonical" href="http://blog.george-theofilis.com" />
     <meta name="generator" content="Ghost ?" />
@@ -22,167 +32,237 @@
 </head>
 <body class="home-template">
 
-    
-<header class="main-header no-cover">
-    <nav class="main-nav overlay clearfix">
-        
-        <!-- <a class="subscribe-button icon-feed" href="http://blog.george-theofilis.com/rss/">Subscribe</a> -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.george-theofilis.com"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.george-theofilis.com">Home</a></li>
+        </ul>
     </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area" >
+
+<header class="site-head">
     <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">George Theofilis</h1>
-            <h2 class="page-description"></h2>
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.george-theofilis.com"></a></li>
+                <li><a class="fi-torso" href="http://blog.george-theofilis.com/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.george-theofilis.com/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">George Theofilis</h1>
+            <hr>
+            <p class="blog-description"></p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://plus.google.com/u/0/+%CE%93%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%82%CE%9D%CE%B5%CE%BA%CF%84%CE%AC%CF%81%CE%B9%CE%BF%CF%82%CE%98%CE%B5%CE%BF%CF%86%CE%AF%CE%BB%CE%B7%CF%82" class="fi-social-google-plus"></a>
+                  <a href="https://github.com/theofilis" class="fi-social-github"></a>
+                  <a href="https://twitter.com/g_theofilis" class="fi-social-twitter"></a>
+                  <a href="https://www.facebook.com/theofilis.g" class="fi-social-facebook"></a>
+            </div>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
-<main id="content" class="content" role="main">
+</div>
 
-    <div class="extra-pagination inner">
-        <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
-    </div>
+
+<div class="small-16 medium-16 large-12 columns main-column left">
     
+
+
+
+
+
+<main class="content" role="main">
+
+
     <article class="post tag-gpg tag-debian tag-apt">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-04-14">14 Apr 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/04/14/How-do-I-fix-the-G-P-G-error-N-O-P-U-B-K-E-Y.html">How do I fix the GPG error “NO_PUBKEY”?</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>W: GPG error: http://packages.elasticsearch.org stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D27D666CD88E42B4 Exe <a class="read-more" href="http://blog.george-theofilis.com/2015/04/14/How-do-I-fix-the-G-P-G-error-N-O-P-U-B-K-E-Y.html">&raquo;</a></p>
+            <p>W: GPG error: http://packages.elasticsearch.org stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D27D666CD88E42B4 Execute the following commands in terminal sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D27D666CD88E42B4 and then update sudo apt-get update&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/gpg">gpg</a>, <a href="http://blog.george-theofilis.com/tag/debian"> debian</a>, <a href="http://blog.george-theofilis.com/tag/apt"> apt</a>
-            <time class="post-date" datetime="2015-04-14">14 April 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/04/14/How-do-I-fix-the-G-P-G-error-N-O-P-U-B-K-E-Y.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/gpg">gpg</a>, <a href="http://blog.george-theofilis.com/tag/debian"> debian</a>, <a href="http://blog.george-theofilis.com/tag/apt"> apt</a></aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post tag-docker tag-mysql">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-03-02">02 Mar 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/03/02/My-S-Q-L-Docker.html">MySQL Docker</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>What is MySQL? MySQL is (as of March 2014) the world&#8217;s second most widely used open-source relational database management system (RDBMS). It is named <a class="read-more" href="http://blog.george-theofilis.com/2015/03/02/My-S-Q-L-Docker.html">&raquo;</a></p>
+            <p>What is MySQL? MySQL is (as of March 2014) the world&#8217;s second most widely used open-source relational database management system (RDBMS). It is named after co-founder Michael Widenius&#8217;s daughter, My. The SQL phrase stands for Structured Query Language. MySQL is a popular choice of database for use in web applications, and is a central component of the widely used LAMP open source web&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/docker">docker</a>, <a href="http://blog.george-theofilis.com/tag/mysql"> mysql</a>
-            <time class="post-date" datetime="2015-03-02">02 March 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/03/02/My-S-Q-L-Docker.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/docker">docker</a>, <a href="http://blog.george-theofilis.com/tag/mysql"> mysql</a></aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post tag-php tag-laravel-5 tag-sql-server">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-03-02">02 Mar 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/03/02/Install-Laravel-Administrator-on-Laravel-5.html">Install Laravel Administrator on Laravel 5</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>Administrator is an administrative interface builder for Laravel. With Administrator you can visually manage your Eloquent models and their relations, and also create stand-alone se <a class="read-more" href="http://blog.george-theofilis.com/2015/03/02/Install-Laravel-Administrator-on-Laravel-5.html">&raquo;</a></p>
+            <p>Administrator is an administrative interface builder for Laravel. With Administrator you can visually manage your Eloquent models and their relations, and also create stand-alone settings pages for storing site data and performing site tasks. 1. Installation To install Administrator as a Composer package to be used with Laravel 5, simply add this to your composer.json: "frozennode/administrator":&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/php">php</a>, <a href="http://blog.george-theofilis.com/tag/laravel-5">laravel 5</a>, <a href="http://blog.george-theofilis.com/tag/sql-server">sql server</a>
-            <time class="post-date" datetime="2015-03-02">02 March 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/03/02/Install-Laravel-Administrator-on-Laravel-5.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/php">php</a>, <a href="http://blog.george-theofilis.com/tag/laravel-5">laravel 5</a>, <a href="http://blog.george-theofilis.com/tag/sql-server">sql server</a></aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post tag-apache2 tag-debian">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-03-02">02 Mar 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html">How to enable mod_rewrite in Apache?</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>To enable it the rewrite module, run "apache2 enable module rewrite": sudo a2enmod rewrite You need to restart the webserver to apply the changes: sudo service <a class="read-more" href="http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html">&raquo;</a></p>
+            <p>To enable it the rewrite module, run "apache2 enable module rewrite": sudo a2enmod rewrite You need to restart the webserver to apply the changes: sudo service apache2 restart If you plan on using mod_rewrite in .htaccess files, you also need to enable the use of .htaccess files by changing AllowOverride None to AllowOverride FileInfo. For the default website, edit /etc/apache2/sites-available/de&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/apache2">apache2</a>, <a href="http://blog.george-theofilis.com/tag/debian"> debian</a>
-            <time class="post-date" datetime="2015-03-02">02 March 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/03/02/How-to-enable-mod-rewrite-in-Apache.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/apache2">apache2</a>, <a href="http://blog.george-theofilis.com/tag/debian"> debian</a></aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-02-21">21 Feb 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/02/21/44.html">Δεν ανοίγει ο υπολογιστής? 4+4 Βήματα για Διάγνωση!</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>Πατάτε το κουμπί του υπολογιστή και είτε σας υποδέχεται μια μαύρη οθόνη είτε, ακόμα χειρότερα, δεν ανάβει καν. Πριν σας πιάσει πανικός που δεν ανοίγει ο <a class="read-more" href="http://blog.george-theofilis.com/2015/02/21/44.html">&raquo;</a></p>
+            <p>Πατάτε το κουμπί του υπολογιστή και είτε σας υποδέχεται μια μαύρη οθόνη είτε, ακόμα χειρότερα, δεν ανάβει καν. Πριν σας πιάσει πανικός που δεν ανοίγει ο υπολογιστής και αρχίσετε να ψάχνετε τεχνικό, υπάρχουν μερικά βήματα που μπορείτε να ακολουθήσετε, για να βρείτε τι φταίει και ίσως να το διορθώσετε! Ο οδηγός αυτός εξετάζει δύο περιπτώσεις, με 4 βήματα στην καθεμία (εξ 'ου και τα 4+4 βήματα του τ&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-            
-            <time class="post-date" datetime="2015-02-21">21 February 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/02/21/44.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">No tag</aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post tag-python tag-mongo tag-django">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-02-20">20 Feb 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/02/20/Django-Mongo-D-B-Engine-Part-1.html">Django MongoDB Engine [Part 1]</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relation <a class="read-more" href="http://blog.george-theofilis.com/2015/02/20/Django-Mongo-D-B-Engine-Part-1.html">&raquo;</a></p>
+            <p>1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virtualenv for your project to not mess up other Django setups. 1.1. virtualenv virtualenv is a tool to create isolated Pyth&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/python">python</a>, <a href="http://blog.george-theofilis.com/tag/mongo">mongo</a>, <a href="http://blog.george-theofilis.com/tag/django">django</a>
-            <time class="post-date" datetime="2015-02-20">20 February 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/02/20/Django-Mongo-D-B-Engine-Part-1.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/python">python</a>, <a href="http://blog.george-theofilis.com/tag/mongo">mongo</a>, <a href="http://blog.george-theofilis.com/tag/django">django</a></aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post tag-linux tag-security">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-02-18">18 Feb 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/02/18/Linux-How-To-Encrypt-And-Decrypt-Files-With-A-Password.html">Linux: HowTo Encrypt And Decrypt Files With A Password</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>To encrypt and decrypt files with a password, use gpg command. It is an encryption and signing tool for Linux/UNIX like operating system such as <a class="read-more" href="http://blog.george-theofilis.com/2015/02/18/Linux-How-To-Encrypt-And-Decrypt-Files-With-A-Password.html">&raquo;</a></p>
+            <p>To encrypt and decrypt files with a password, use gpg command. It is an encryption and signing tool for Linux/UNIX like operating system such as FreeBSD/Solaris and others. 1. gnupg GnuPG stands for GNU Privacy Guard and is GNU&#8217;s tool for secure communication and data storage. It can be used to encrypt data and to create digital signatures. It includes an advanced key management facility. 1&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/linux">linux</a>, <a href="http://blog.george-theofilis.com/tag/security"> security</a>
-            <time class="post-date" datetime="2015-02-18">18 February 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/02/18/Linux-How-To-Encrypt-And-Decrypt-Files-With-A-Password.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/linux">linux</a>, <a href="http://blog.george-theofilis.com/tag/security"> security</a></aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post tag-docker tag-chat tag-hot">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-02-18">18 Feb 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/02/18/Lets-Chat-on-Ubuntu.html">Let&#x27;s Chat on Ubuntu</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>Self-hosted chat app for small teams http://sdelements.github.io/lets-chat. 1. Features and Stuff BYOS (bring your own server) Persistent messages Multiple rooms New message <a class="read-more" href="http://blog.george-theofilis.com/2015/02/18/Lets-Chat-on-Ubuntu.html">&raquo;</a></p>
+            <p>Self-hosted chat app for small teams http://sdelements.github.io/lets-chat. 1. Features and Stuff BYOS (bring your own server) Persistent messages Multiple rooms New message alerts / notifications Mentions (hey @you) Image embeds Code pasting File uploads (Local / Amazon S3) Transcripts / chat history XMPP Multi-user chat (MUC) Local / Kerberos / LDAP authentication Hubot Adapter EST-like API MIT&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/docker">docker</a>, <a href="http://blog.george-theofilis.com/tag/chat">chat</a>, <a href="http://blog.george-theofilis.com/tag/hot">hot</a>
-            <time class="post-date" datetime="2015-02-18">18 February 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/02/18/Lets-Chat-on-Ubuntu.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/docker">docker</a>, <a href="http://blog.george-theofilis.com/tag/chat">chat</a>, <a href="http://blog.george-theofilis.com/tag/hot">hot</a></aside>
+        <div class="clearfix"></div>
     </article>
+
+
     <article class="post tag-solr tag-information-retrieve">
         <header class="post-header">
+            <span class="post-meta"><time datetime="2015-02-15">15 Feb 2015</time> </span>
             <h2 class="post-title"><a href="http://blog.george-theofilis.com/2015/02/15/Indexing-large-collection-of-medical-files.html">Indexing large collection of medical files</a></h2>
+
         </header>
         <section class="post-excerpt">
-            <p>We have a large collection of medical files and we want to search and find similar symptoms to give a diagnosis. The medical files are in <a class="read-more" href="http://blog.george-theofilis.com/2015/02/15/Indexing-large-collection-of-medical-files.html">&raquo;</a></p>
+            <p>We have a large collection of medical files and we want to search and find similar symptoms to give a diagnosis. The medical files are in two languages greek and english, this is our main problem. Another problem we have is the meta information of the document are not well document and we have to extract them from the document. 1. Test Processing &amp; Data Cleaning 2. Data Indexing 2.1. Solr on&hellip;</p>
         </section>
-        <footer class="post-meta">
-            
-            
-             on <a href="http://blog.george-theofilis.com/tag/solr">solr</a>, <a href="http://blog.george-theofilis.com/tag/information-retrieve"> information retrieve</a>
-            <time class="post-date" datetime="2015-02-15">15 February 2015</time>
-        </footer>
+        <a class="button read-more right small" href="http://blog.george-theofilis.com/2015/02/15/Indexing-large-collection-of-medical-files.html">Read more</a>
+        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.george-theofilis.com/tag/solr">solr</a>, <a href="http://blog.george-theofilis.com/tag/information-retrieve"> information retrieve</a></aside>
+        <div class="clearfix"></div>
     </article>
-    
+
+
     <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
+    <span class="page-number">Page 1 of 1</span>
+</nav>
+
+    <div class="row">
+        <footer class="small-16 columns site-footer">
+            <!-- <a class="subscribe icon-feed" href="http://blog.george-theofilis.com/rss/"><span class="tooltip">Subscribe!</span></a> -->
+            <div class="inner">
+                <section class="published">Proudly published with <a href="http://hubpress.io" target="_blank">HubPress</a></section>
+                 <section class="copyright">All content copyright <a href="http://blog.george-theofilis.com/">George Theofilis</a> &copy; 2016</section>
+                 <section class="theme-author">Theme (<a href="https://github.com/twogrey/ichi">download here</a>) developed by <a href="https://alexisdegryse.fr">Alexis Degryse</a></section>
+            </div>
+        </footer>
+    </div>
 
 </main>
 
+</div>
 
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="http://blog.george-theofilis.com">George Theofilis</a> &copy; 2016</section>
-        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
-    </footer>
+</div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -197,8 +277,14 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-    <script type="text/javascript" src="//blog.george-theofilis.com/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
-    <script type="text/javascript" src="//blog.george-theofilis.com/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
