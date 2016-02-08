@@ -1,0 +1,6 @@
+# Install skype 4.3.0.37 on CentOS, RHEL & Fedora
+:hp-tags: skype, centos, rhel, fedora
+
+skype is most popular application which is used to make a call over the Internet as FREE of cost. Skype to Skype calls & message completely FREE and Skype to Landlines and mobile phones low calling rate compare with mobile phones. Skype Technologies S.A (Microsoft Corporation) announced the new release of Skype 4.3 for Linux on June 18th 2014. Read about Skype installation on Debain based systems & Install skype on Ubuntu via PPA. Skype initially developed by Skype Technologies S.A. and founder Dave Horstman. Microsoft Corporation acquired Skype Technologies S.A. On May 2011 and doing further development now.
+
+## Features in skpye 4.3
