@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Install skype 4.3.0.37 on CentOS, RHEL &amp; Fedora - George Theofilis</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Install skype 4.3.0.37 on CentOS, RHEL &amp; Fedora">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Install skype 4.3.0.37 on CentOS, RHEL &amp; Fedora">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="http://blog.george-theofilis.com/2016/02/08/Install-skype-43037-on-Cent-O-S-R-H-E-L-Fedora.html" />
+    
+    <meta property="og:site_name" content="George Theofilis" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Install skype 4.3.0.37 on CentOS, RHEL &amp; Fedora" />
+    <meta property="og:description" content="skype is most popular application which is used to make a call over the Internet as FREE of cost. Skype to Skype calls &amp;amp; message completely FREE and Skype to Landlines and mobile phones low calling rate compare with mobile..." />
+    <meta property="og:url" content="http://blog.george-theofilis.com/2016/02/08/Install-skype-43037-on-Cent-O-S-R-H-E-L-Fedora.html" />
+    <meta property="article:published_time" content="2016-02-07T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-02-08T13:13:17.267Z" />
+    <meta property="article:tag" content="skype" />
+    <meta property="article:tag" content="centos" />
+    <meta property="article:tag" content="rhel" />
+    <meta property="article:tag" content="fedora" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Install skype 4.3.0.37 on CentOS, RHEL &amp; Fedora" />
+    <meta name="twitter:description" content="skype is most popular application which is used to make a call over the Internet as FREE of cost. Skype to Skype calls &amp;amp; message completely FREE and Skype to Landlines and mobile phones low calling rate compare with mobile..." />
+    <meta name="twitter:url" content="http://blog.george-theofilis.com/2016/02/08/Install-skype-43037-on-Cent-O-S-R-H-E-L-Fedora.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "George Theofilis",
+    "author": {
+        "@type": "Person",
+        "name": "Theofilis George-Nektarios",
+        "image": "https://avatars.githubusercontent.com/u/475517?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://theofilis.github.io/"
+    },
+    "headline": "Install skype 4.3.0.37 on CentOS, RHEL &amp; Fedora",
+    "url": "http://blog.george-theofilis.com/2016/02/08/Install-skype-43037-on-Cent-O-S-R-H-E-L-Fedora.html",
+    "datePublished": "2016-02-07T22:00:00.000Z",
+    "dateModified": "2016-02-08T13:13:17.267Z",
+    "keywords": "skype,  centos,  rhel,  fedora",
+    "description": "skype is most popular application which is used to make a call over the Internet as FREE of cost. Skype to Skype calls &amp;amp; message completely FREE and Skype to Landlines and mobile phones low calling rate compare with mobile..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="George Theofilis" href="http://blog.george-theofilis.com/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template tag-skype tag-centos tag-rhel tag-fedora no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " style="background-image: url(https://rsk-project.com/wp-content/uploads/2015/10/Athens-City-Break.jpg)">
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="http://blog.george-theofilis.com" title="link to homepage for George Theofilis">George Theofilis</a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description"></p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="http://blog.george-theofilis.com/#blog" title="link to George Theofilis blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+                  <!-- Twitter -->
+                  <li class="navigation__item">
+                    <a href="https://www.facebook.com/theofilis.g" title="Facebook account">
+                      <i class='icon icon-social-facebook'></i>
+                      <span class="label">Facebook</span>
+                    </a>
+                  </li>
+              
+                  <!-- Twitter -->
+                  <li class="navigation__item">
+                    <a href="https://twitter.com/g_theofilis" title="Twitter account">
+                      <i class='icon icon-social-twitter'></i>
+                      <span class="label">Twitter</span>
+                    </a>
+                  </li>
+              
+                  <!-- Google Plus -->
+                  <li class="navigation__item">
+                    <a href="https://plus.google.com/u/0/+%CE%93%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%82%CE%9D%CE%B5%CE%BA%CF%84%CE%AC%CF%81%CE%B9%CE%BF%CF%82%CE%98%CE%B5%CE%BF%CF%86%CE%AF%CE%BB%CE%B7%CF%82" title="Google+ account">
+                      <i class='icon icon-social-google-plus'></i>
+                      <span class="label">Google-plus</span>
+                    </a>
+                  </li>
+              
+                  <!-- Github -->
+                  <li class="navigation__item">
+                    <a href="https://github.com/theofilis" title="Github account">
+                      <i class='icon icon-social-github'></i>
+                      <span class="label">Github</span>
+                    </a>
+                  </li>
+                  </li>
+              
+                  <!-- Github -->
+                  <li class="navigation__item">
+                    <a href="https://www.instagram.com/theofilis.g/" title="Instagram account">
+                      <i class='icon icon-social-instagram'></i>
+                      <span class="label">Instagram</span>
+                    </a>
+                  </li>
+                  </li>
+              
+              
+              
+                  <!-- LinkedIn -->
+                  <li class="navigation__item">
+                    <a href="https://gr.linkedin.com/in/gtheofilis/en" title="LinkedIn account">
+                      <i class='icon icon-social-linkedin'></i>
+                      <span class="label">LinkedIn</span>
+                    </a>
+                  </li>
+              
+                  <!-- Email -->
+                  <li class="navigation__item">
+                    <a href="mailto:theofilis.g@gmail.com" title="Email theofilis.g@gmail.com">
+                      <i class='icon icon-mail'></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="08 Feb 2016" class="post-meta__date date">08 Feb 2016</time> &#8226; <span class="post-meta__tags tags">on <a href="http://blog.george-theofilis.com/tag/skype">skype</a>, <a href="http://blog.george-theofilis.com/tag/centos"> centos</a>, <a href="http://blog.george-theofilis.com/tag/rhel"> rhel</a>, <a href="http://blog.george-theofilis.com/tag/fedora"> fedora</a></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/475517?v=3" alt="profile image for Theofilis George-Nektarios" class="avatar post-meta__avatar" /> by Theofilis George-Nektarios</span>
+      </div>
+      <h1 class="post-title">Install skype 4.3.0.37 on CentOS, RHEL &amp; Fedora</h1>
+    </header>
+
+    <section class="post tag-skype tag-centos tag-rhel tag-fedora">
+      <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>skype is most popular application which is used to make a call over the Internet as FREE of cost. Skype to Skype calls &amp; message completely FREE and Skype to Landlines and mobile phones low calling rate compare with mobile phones. Skype Technologies S.A (Microsoft Corporation) announced the new release of Skype 4.3 for Linux on June 18th 2014. Read about Skype installation on Debain based systems &amp; Install skype on Ubuntu via PPA. Skype initially developed by Skype Technologies S.A. and founder Dave Horstman. Microsoft Corporation acquired Skype Technologies S.A. On May 2011 and doing further development now.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_features_in_skype_4_3">Features in skype 4.3</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Updated UI</p>
+</li>
+<li>
+<p>Improved file transfer support when using multiple devices at once</p>
+</li>
+<li>
+<p>PulseAudio 3.0 and 4.0 support</p>
+</li>
+<li>
+<p>Skype to Skype calls</p>
+</li>
+<li>
+<p>Calls to mobiles and landlines</p>
+</li>
+<li>
+<p>Group calls</p>
+</li>
+<li>
+<p>Forward calls</p>
+</li>
+<li>
+<p>One to one and Group video calls</p>
+</li>
+<li>
+<p>Instant messaging, Voice messages &amp; SMS</p>
+</li>
+<li>
+<p>Send files</p>
+</li>
+<li>
+<p>Screen sharing</p>
+</li>
+<li>
+<p>Group screen sharing</p>
+</li>
+<li>
+<p>Lot of bug fixes with many new features and improvements. For complete change log</p>
+</li>
+<li>
+<p>For More Features</p>
+</li>
+<li>
+<p>skype official home page</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_enable_required_repositories">Install/Enable Required Repositories</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Install/Enable the EPEL &amp; NUX Dextop Repositories for CentOS, RHEL and Scientific Linux. Also install the 32-bit versions of qtwebkit from repositories.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># For CentOS, RHEL, SL &amp; Fedora 21 &amp; older Systems #
+# yum install qtwebkit.i686
+
+# For CentOS, RHEL, SL &amp; Fedora 21 &amp; older Systems #
+# dnf install qtwebkit.i686</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_required_packages_as_per_centos_advice">Install Required Packages as per CentOS advice</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The below list of packages should be installed on your system to run skype smoothly.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Install the necessary 32-bit packages #
+# yum install alsa-lib.i686 libXv.i686 libXScrnSaver.i686 gtk2-engines.i686 PackageKit-gtk-module.i686 libcanberra.i686 libcanberra-gtk2.i686
+
+# Install the necessary 32-bit audio packages #
+# yum install pulseaudio-libs.i686 alsa-plugins-pulseaudio.i686&lt;
+
+# Install the necessary 32-bit video package #
+# yum install libv4l.i686</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_the_skype_archive_file">Download the skype archive file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the below command to download the skype 4.3 archive file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># wget http://download.skype.com/linux/skype-4.3.0.37.tar.bz2
+# tar -jxvf skype-4.3.0.37.tar.bz2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_launcher_for_skype">Create Launcher for skype</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>For accessing the installed software on your system globally, you need to create the launcher file to /usr/bin/skyp and give executable permission then add the below script in that file. Save + Exit.</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># touch /usr/bin/skype
+# chmod 755 /usr/bin/skype
+
+# Add Launcher script #
+# nano /usr/bin/skype
+
+#!/bin/sh
+export SKYPE_HOME="/opt/skype-4.3.0.37"
+$SKYPE_HOME/skype --resources=$SKYPE_HOME $*</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_skype">Configuring skype</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need to create the below list of Symbolic Links to make skype work properly.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># ln -s /opt/skype-4.3.0.37/icons/SkypeBlue_48x48.png /usr/share/icons/skype.png
+# ln -s /opt/skype-4.3.0.37/icons/SkypeBlue_48x48.png /usr/share/pixmaps/skype.png
+# ln -s /opt/skype-4.3.0.37/skype.desktop /usr/share/applications/skype.desktop
+# ln -s /opt/skype-4.3.0.37/sounds/ /usr/share/sounds/
+# ln -s /opt/skype-4.3.0.37/lang/ /usr/share/lang/</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_launch_skype">Launch skype</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the below command to launch the skype from command line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># skype</code></pre>
+</div>
+</div>
+</div>
+</div>
+    </section>
+
+  </article>
+
+  
+  <section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'theofilisgithubio'; // required: replace example with your forum shortname
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2016. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51201203-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>
