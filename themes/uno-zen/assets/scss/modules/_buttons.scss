@@ -1,0 +1,60 @@
+img,
+.btn {
+  &.square {
+    border-radius: 0;
+  }
+
+  &.rounded {
+    border-radius: 50%;
+  }
+}
+
+.btn {
+  border: 1px solid $primary-color;
+  border-radius: 20px;
+  color: $primary-color;
+  font-size: .9em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  text-shadow: none;
+
+  &:hover {
+    border-color: darken($primary-color, 15%);
+    color: darken($primary-color, 15%);
+  }
+
+  &.small {
+    font-size: .7em;
+    padding: 8px 12px;
+  }
+
+  &.large {
+    font-size: 1.1em;
+    padding: 10px 24px;
+  }
+
+  &.secondary {
+    border-color: $secondary-color;
+    color: $secondary-color;
+
+    &:hover {
+      border-color: darken($secondary-color, 15%);
+      color: darken($secondary-color, 15%);
+    }
+  }
+}
+
+#menu-button {
+  display: none;
+
+  > a {
+    > i {
+      color: $gray-lightest;
+      font-size: 36px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
