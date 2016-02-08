@@ -33,3 +33,19 @@ Install/Enable the EPEL & NUX Dextop Repositories for CentOS, RHEL and Scientifi
 # For CentOS, RHEL, SL & Fedora 21 & older Systems #
 # dnf install qtwebkit.i686
 ----
+
+## Install Required Packages as per CentOS advice
+
+The below list of packages should be installed on your system to run skype smoothly.
+
+[source,bash]
+----
+# Install the necessary 32-bit packages #
+# yum install alsa-lib.i686 libXv.i686 libXScrnSaver.i686 gtk2-engines.i686 PackageKit-gtk-module.i686 libcanberra.i686 libcanberra-gtk2.i686
+
+# Install the necessary 32-bit audio packages #
+# yum install pulseaudio-libs.i686 alsa-plugins-pulseaudio.i686<
+
+# Install the necessary 32-bit video package #
+# yum install libv4l.i686
+----
