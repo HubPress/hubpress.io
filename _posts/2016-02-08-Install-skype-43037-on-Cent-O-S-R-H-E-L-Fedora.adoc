@@ -49,3 +49,6 @@ The below list of packages should be installed on your system to run skype smoot
 # Install the necessary 32-bit video package #
 # yum install libv4l.i686
 ----
+
+##  Download the skype archive file
+
