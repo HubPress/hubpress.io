@@ -1,0 +1,111 @@
+{{!< default}}
+
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post {{post_class}}">
+      {{#post}}
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
+                  {{date published_at timeago="true"}}
+                </time>
+              </li>
+              {{#if tags}}
+                <li class="post-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      {{tags prefix="" separator=", "}}</span>
+                  </span>
+                </li>
+              {{/if}}
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="{{id}}">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">{{{title}}}</a></h1>
+            {{! A subtitle not available in Ghosts yet }}
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+              {{#if author.image}}
+                <a href="{{author.website}}" class="post-author-avatar">
+                  <img src="{{author.image}}" alt="{{author.name}}">
+                </a>
+              {{/if}}
+              <div class="post-author-info">
+                <a href="{{author.website}}" class="post-author-name">
+                  {{author.name}}
+                </a>
+                <p class="post-author-bio">{{author.bio}}</p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            {{content}}
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+              {{#if author.image}}
+                <a href="{{author.website}}" class="post-author-avatar">
+                  <img itemprop="image" src="{{author.image}}" alt="{{author.name}}">
+                </a>
+              {{/if}}
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="{{author.website}}" itemprop="url" class="post-author-name">
+                  <span itemprop="name">{{author.name}}</span>
+                </a>
+                <p itemprop="description" class="post-author-bio">{{author.bio}}</p>
+                {{#if author.location}}
+                  <p class="post-author-location">{{author.location}}</p>
+                {{/if}}
+                {{#if author.website}}
+                  <p class="post-author-website">
+                    <a href="{{author.website}}" rel="nofollow">{{author.website}}</a>
+                  </p>
+                {{/if}}
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">{{date format='MMMM DD, YYYY'}}</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      {{/post}}
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    {{> footer this}}
+  </div>
+</section>
+
+{{#if @blog.disqus}}
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = '{{@blog.disqus}}'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+{{/if}}
