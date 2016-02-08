@@ -52,3 +52,44 @@ The below list of packages should be installed on your system to run skype smoot
 
 ##  Download the skype archive file
 
+Use the below command to download the skype 4.3 archive file.
+
+[source,bash]
+----
+# wget http://download.skype.com/linux/skype-4.3.0.37.tar.bz2
+# tar -jxvf skype-4.3.0.37.tar.bz2
+----
+
+## Create Launcher for skype
+
+ For accessing the installed software on your system globally, you need to create the launcher file to /usr/bin/skyp and give executable permission then add the below script in that file. Save + Exit.
+
+[source,bash]
+----
+# touch /usr/bin/skype
+# chmod 755 /usr/bin/skype
+
+# Add Launcher script #
+# nano /usr/bin/skype
+
+#!/bin/sh
+export SKYPE_HOME="/opt/skype-4.3.0.37"
+$SKYPE_HOME/skype --resources=$SKYPE_HOME $*
+----
+
+## Configuring skype
+
+You need to create the below list of Symbolic Links to make skype work properly.
+
+[source,bash]
+----
+# ln -s /opt/skype-4.3.0.37/icons/SkypeBlue_48x48.png /usr/share/icons/skype.png
+# ln -s /opt/skype-4.3.0.37/icons/SkypeBlue_48x48.png /usr/share/pixmaps/skype.png
+# ln -s /opt/skype-4.3.0.37/skype.desktop /usr/share/applications/skype.desktop
+# ln -s /opt/skype-4.3.0.37/sounds/ /usr/share/sounds/
+# ln -s /opt/skype-4.3.0.37/lang/ /usr/share/lang/
+----
+
+## Launch skype
+
+Use the below command to launch the skype from command line.
