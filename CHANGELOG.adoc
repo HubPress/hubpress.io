@@ -4,6 +4,7 @@
 * fix(dependencies): update version of dependencies
 * fix(build): change all the build process
 * doc(README): update README from the branch development
+* feat(theme): add theme uno-zen
 
 ## 0.3.0
 

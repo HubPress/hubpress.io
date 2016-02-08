@@ -1,0 +1,14 @@
+{{!< default}}
+
+<h1 style="text-align: center;">Tag: {{tag.name}}.</h1>
+<ol id="posts-list">
+  {{#foreach posts}}
+  <li>
+    <time datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>
+    <a href="{{url}}" title="link to {{{title}}}">{{title}}</a>
+    <span class="post tags">{{tags separator=" "}}</span>
+  </li>
+  {{/foreach}}
+</ol>
+
+{{pagination}}
