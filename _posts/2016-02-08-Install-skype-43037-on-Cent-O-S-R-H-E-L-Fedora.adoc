@@ -93,3 +93,8 @@ You need to create the below list of Symbolic Links to make skype work properly.
 ## Launch skype
 
 Use the below command to launch the skype from command line.
+
+[source,bash]
+----
+# skype
+----
