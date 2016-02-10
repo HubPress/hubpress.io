@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Script for doing backups on Amazon S3</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html" />
+    
+    <meta property="og:site_name" content="The Fallen Apples" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Script for doing backups on Amazon S3" />
+    <meta property="og:description" content="Why? Everybody needs backups, and if you manage web servers, you really need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but..." />
+    <meta property="og:url" content="https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html" />
+    <meta property="article:published_time" content="2016-01-23T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-02-10T20:43:10.357Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Script for doing backups on Amazon S3" />
+    <meta name="twitter:description" content="Why? Everybody needs backups, and if you manage web servers, you really need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but..." />
+    <meta name="twitter:url" content="https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "The Fallen Apples",
+    "author": {
+        "@type": "Person",
+        "name": "Manel Villar",
+        "image": "https://avatars.githubusercontent.com/u/135327?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "manelvf.com"
+    },
+    "headline": "Script for doing backups on Amazon S3",
+    "url": "https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html",
+    "datePublished": "2016-01-23T23:00:00.000Z",
+    "dateModified": "2016-02-10T20:43:10.357Z",
+    "description": "Why? Everybody needs backups, and if you manage web servers, you really need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Script for doing backups on Amazon S3</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1453590000" datetime="2016-01-24T00:00" title="24 January 2016">2016-01-24 00:00:00<ago class="ago"></time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="">Manel Villar</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div class="sect1">
+<h2 id="_why">Why?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everybody needs backups, and if you manage web servers, you <strong>really</strong> need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but S3 is one of the best, and it&#8217;s extremely cheap, a few cents per gigabyte by month. It also offers many possibilities for customization. And, as everybody is using it, you can find a lot of information on the net, but at the end you need to taylor it to your needs.</p>
+</div>
+<div class="paragraph">
+<p>In this post, I&#8217;m going to describe the method I use for doing backups of the important information in my servers. It could be a database dump, a configuration file or even some photographies, anything but code. Version control is for code.</p>
+</div>
+<div class="paragraph">
+<p>Requisites: before reading this you should be a bit familiarized with the way Amazon S3 works.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how">How</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_the_script">The Script</h3>
+<div class="paragraph">
+<p>At first sight, it seems that a command line call should be enough. But even for a file, I preferred to use something more complete. Also there are always things to tune.</p>
+</div>
+<div class="paragraph">
+<p>I chose python because is what I&#8217;m most confortable with, but there are ports of the SDK library for many other programming languages, as usual. It seems that even the official Amazon CLI uses also python. You can even use http(s) requests, but they are a bit complex, as there is a lot . So it&#8217;s good to use a library.</p>
+</div>
+<div class="paragraph">
+<p>The library <a href="http://boto.cloudhackers.com/en/latest/">Boto</a> is by far the most complete in Python. It&#8217;s not official, but everybody uses it. There&#8217;s also a convenient <a href="https://github.com/smore-inc/tinys3">TinyS3</a>, but I chose the former one as it offers more possibilities that could be needed in the future.</p>
+</div>
+<div class="paragraph">
+<p>AWS credentials are stored as a default in a configuration file in the home folder. Current criteria is to use ~/.aws/credentials, but as always when there is a security concern, there are many approaches to keep them safe. But, as the access to your host should be</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aws_console_configuration">AWS console configuration</h3>
+<div class="paragraph">
+<p>Amazon gives you a lot of possibilities, but for backups I simply added one rule to the backups bucket in the "Lifecycle" settings: delete after 15 days. As I&#8217;m going to do a daily backup, 15 files should be enough.</p>
+</div>
+<div class="paragraph">
+<p>I was tempted to use <strong>Reduced Redundancy Storage</strong> aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance, instead of the usual 99,9999999% of retrieving it safely ;) But for the price difference, it&#8217;s not worth. Use the "standard" option.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubles_in_our_way">Troubles in our way</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The same script was used in two different servers, and didn&#8217;t work in one of them. Can be quite frustrating when that happens, so you start thinking "what can be different from one server to the other?".</p>
+</div>
+<div class="paragraph">
+<p>In this case, the error code was not very helpful: 104 when doing a set_contents_by_filename. The first "bad smell" was that it is a connection error code, but not in the connection method, but in the upload method, after performing the connection. Some googling around the error showed a collection of issues, mostly fixed and incorporated to the library code at some point. No real solutions. What could it be?</p>
+</div>
+<div class="paragraph">
+<p>After discarding everything else (server blocking https port, different library versions, wrong credentials or urls&#8230;&#8203;), I opted for printing the bucket location, only for checking it. And I found the surprise: It gently complained that there was a discrepancy between the server time and the AWS time, big enough to block the request. As simply as that, your server needs to have <strong>correct date and time</strong> in order to sync with S3.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>S3 is a safe and easy way of doing online backups. Don&#8217;t be intimidated as I was when approaching it. Use it wisely and you will have a very cheap backup for all those cat photos that you carefully were collecting all these years.</p>
+</div>
+<div class="paragraph">
+<p>If you want to check the final result, it&#8217;s in <a href="https://github.com/manelvf/s3backup" class="bare">https://github.com/manelvf/s3backup</a> . It&#8217;s a very basic example, but can be easily taylored to something more advanced.</p>
+</div>
+<div class="paragraph">
+<p>Enjoy!</p>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'manelvfgithubio'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">The Fallen Apples</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+    <script src="//manelvf.github.io/blog/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34164255-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
