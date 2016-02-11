@@ -100,15 +100,14 @@ Header unset ETag
 FileETag None
 ----
 
-For these to take effect you'll need to enable mod_headers:
-
-ln -s /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/headers.load
-
 Then restart Apache:
 
+[source,conf]
+----
 service apache2 restart
+----
 
-Install and configure ModSecurity
+=== Install and configure ModSecurity
 
 If you're using Apache, the web application firewall ModSecurity is a great way to harden your web server so that it's much less vulnerable to probes and attacks. Firstly, install the necessary packages:
 
@@ -142,7 +141,7 @@ Restart Apache to active the new security rules:
 
 service apache2 restart
 
-Install and configure mod_evasive
+=== Install and configure mod_evasive
 
 If you're using Apache then it's a good idea to install mod_evasive to help protect against denial of service attacks. Firstly install the package:
 
@@ -166,7 +165,7 @@ Then activate it by restarting Apache:
 
 service apache2 restart
 
-Install and configure rootkit checkers
+== Install and configure rootkit checkers
 
 It's highly desirable to get alerted if any rootkits are found on your server, so let's install a couple of rootkit checkers:
 
@@ -183,7 +182,7 @@ mv /etc/cron.weekly/rkhunter /etc/cron.weekly/rkhunter_update
 mv /etc/cron.daily/rkhunter /etc/cron.weekly/rkhunter_run
 mv /etc/cron.daily/chkrootkit /etc/cron.weekly/
 
-Install Logwatch
+== Install Logwatch
 
 Logwatch is a great tool which provides regular reports nicely summarising what's been going on in the server logs. Install it like this:
 
