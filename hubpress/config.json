@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "kskarthik",
-    "repositoryName": "kskarthik.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"kskarthik","repositoryName":"kskarthik.github.io","branch":"master"},"site":{"title":"Sai Karthik Karra","description":"Welcome to my website","postsPerPage":"20","url":"https://kskarthik.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"//kskarthik.github.io/themes/Casper"}}
