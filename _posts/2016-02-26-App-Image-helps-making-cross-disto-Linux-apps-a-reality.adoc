@@ -1,7 +1,7 @@
 # AppImage helps making cross disto Linux apps a reality 
 
 -------------
-27th November 2017 | 12.30 HRS 
+27th November 2016 | 12.30 HRS 
 -------------
 
 Whenever we see that an app is available for Linux on a website we see it packed for multiple distributions, unlike a single binary for Windows & Mac. This is obvious. Since different distributions have different package managers to install & maintain apps. 
