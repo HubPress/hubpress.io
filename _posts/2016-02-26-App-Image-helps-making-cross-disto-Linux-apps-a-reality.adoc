@@ -16,4 +16,4 @@ There were many attempts made to provide apps which could run on multiple Linux 
 
 In fact, this is not an new project. It's been there since a long time under the name of portablelinuxapps. Even Linus Torvalds was happy with this project. https://plus.google.com/+LinusTorvalds/posts/WyrATKUnmrS
 
-That's not all. If you have some level of technical knowledge, you could also make AppImage of your favourite apps & share it with the world. All project details can be found a https://github.com/probonopd/appimagekit and you could also contribute your work to the project. 
+That's not all. If you have some level of technical knowledge, you could also make AppImage of your favourite apps & share it with the world. All project details can be found at https://github.com/probonopd/appimagekit and you could also contribute your work to the project. 
