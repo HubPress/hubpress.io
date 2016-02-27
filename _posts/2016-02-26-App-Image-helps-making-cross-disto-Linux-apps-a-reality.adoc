@@ -6,7 +6,7 @@
 
 Whenever we see that an app is available for Linux on a website we see it packed for multiple distributions, unlike a single binary for Windows & Mac. This is obvious. Since different distributions have different package managers to install & maintain apps. 
   
- There were many attempts made to provide apps which could run on multiple Linux distros in the past & even now. One of the succesful ways to deliver such apps is the [AppImage](http://AppImage.org) which relies on concet of *1 app = 1  file* 
+There were many attempts made to provide apps which could run on multiple Linux distros in the past & even now. One of the succesful ways to deliver such apps is the AppImage http://AppImage.org which relies on concet of *1 app = 1  file* 
 
 ## Key features of AppImage 
 * Runs on all major Linux distros like Ubuntu, mint, Debian, arch, open suse.
@@ -14,6 +14,6 @@ Whenever we see that an app is available for Linux on a website we see it packed
 * Apps are compressed all the time which saves disk space unlike traditional installation. 
 * Apps can be portable. Can be carried on pendrive, memory cards etc since they run without any installation. 
 
-In fact, this is not an new project. It's been there since a long time under the name of portablelinuxapps. Even Linus Torvalds was [happy with this project.](https://plus.google.com/+LinusTorvalds/posts/WyrATKUnmrS)
+In fact, this is not an new project. It's been there since a long time under the name of portablelinuxapps. Even Linus Torvalds was happy with this project. https://plus.google.com/+LinusTorvalds/posts/WyrATKUnmrS
 
 That's not all. If you have some level of technical knowledge, you could also make AppImage of your favourite apps & share it with the world. All project details can be found a https://github.com/probonopd/appimagekit and you could also contribute your work to the project. 
