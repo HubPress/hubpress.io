@@ -6,7 +6,7 @@
 
 Whenever we see that an app is available for Linux on a website we see it packed for multiple distributions, unlike a single binary for Windows & Mac. This is obvious. Since different distributions have different package managers to install & maintain apps. 
   
-There were many attempts made to provide apps which could run on multiple Linux distros in the past & even now. One of the succesful ways to deliver such apps is the AppImage http://AppImage.org which relies on concet of *1 app = 1  file* 
+There were many attempts made to provide apps which could run on multiple Linux distros in the past & even now. One of the succesful ways to deliver such apps is the AppImage http://AppImage.org which relies on concept of *1 app = 1  file* 
 
 ## Key features of AppImage 
 * Runs on all major Linux distros like Ubuntu, mint, Debian, arch, open suse.
