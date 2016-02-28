@@ -9,6 +9,7 @@ There were many attempts made to provide apps which could run on multiple Linux 
 * No root permissions required to run the apps without compromising system's security. 
 * Apps are compressed all the time which saves disk space unlike traditional installation. 
 * Apps can be portable. Can be carried on pendrive, memory cards etc since they run without any installation. 
+* AppImages implements delta updates in which updates directly come from the software developer without waiting to get added in the the distribution repo's. Delta update also drastically saves bandwidth since a small portion required in the app can be updated without updating the whole app.
 
 In fact, this is not an new project. It's been there since a long time under the name of portablelinuxapps. Even Linus Torvalds was happy with this project. https://plus.google.com/+LinusTorvalds/posts/WyrATKUnmrS
 
