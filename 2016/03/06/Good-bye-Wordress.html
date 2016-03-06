@@ -1,19 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Good bye Wordress</title>
-    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="shortcut icon" href="//hirako2000.github.io/themes/Casper/favicon.ico">
+    <meta name="description" content="">
 
-    <link rel="stylesheet" type="text/css" href="//hirako2000.github.io/themes/Casper/assets/css/screen.css?v=1.0.0" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Good bye Wordress">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Good bye Wordress">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//hirako2000.github.io/themes/ghostium/assets/css/main.min.css?v=1.0.0"/>
+    <link rel="stylesheet" href="//hirako2000.github.io/themes/ghostium/assets/css/custom.css?v=1.0.0"/>
+    <link rel="stylesheet" href="//hirako2000.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1.0.0"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//hirako2000.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1.0.0"></script>
 
     <link rel="canonical" href="https://hirako2000.github.io/2016/03/06/Good-bye-Wordress.html" />
     
@@ -23,7 +80,7 @@
     <meta property="og:description" content="Blogger feels like an old platform for blogging, I don&amp;#8217;t have the patience to maintain Wordpress, and I love Markdown&amp;#8230;&amp;#8203; Oh wait it doesn&amp;#8217;t support it, OK nice to meet you AsciiDoc. Hello HubPress..." />
     <meta property="og:url" content="https://hirako2000.github.io/2016/03/06/Good-bye-Wordress.html" />
     <meta property="article:published_time" content="2016-03-05T17:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-03-06T10:18:54.313Z" />
+    <meta property="article:modified_time" content="2016-03-06T10:20:23.845Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Good bye Wordress" />
@@ -45,7 +102,7 @@
     "headline": "Good bye Wordress",
     "url": "https://hirako2000.github.io/2016/03/06/Good-bye-Wordress.html",
     "datePublished": "2016-03-05T17:00:00.000Z",
-    "dateModified": "2016-03-06T10:18:54.313Z",
+    "dateModified": "2016-03-06T10:20:23.845Z",
     "description": "Blogger feels like an old platform for blogging, I don&amp;#8217;t have the patience to maintain Wordpress, and I love Markdown&amp;#8230;&amp;#8203; Oh wait it doesn&amp;#8217;t support it, OK nice to meet you AsciiDoc. Hello HubPress..."
 }
     </script>
@@ -53,86 +110,132 @@
     <meta name="generator" content="Ghost ?" />
     <link rel="alternate" type="application/rss+xml" title="" href="https://hirako2000.github.io/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
-</head>
-<body class="post-template">
+  </head>
+  <body class="post-template">
 
-    
-
-
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
-        <a class="back-button icon-arrow-left" href="https://hirako2000.github.io">Home</a>
-        <!-- <a class="subscribe-button icon-feed" href="https://hirako2000.github.io/rss/">Subscribe</a> -->
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://hirako2000.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://hirako2000.github.io" title="" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <!--
+          <li class="drawer-list-item">
+            <a href="https://hirako2000.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          -->
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+        </ul>
+      </div>
     </nav>
-</header>
 
-<main class="content" role="main">
-
-    <article class="post">
-
-        <header class="post-header">
-            <h1 class="post-title">Good bye Wordress</h1>
-            <section class="post-meta">
-                <time class="post-date" datetime="2016-03-06">06 March 2016</time> 
-            </section>
-        </header>
-
-        <section class="post-content">
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2016-03-06" itemprop="datePublished">
+                  2016-03-06 00:00:00<ago class="ago">
+                </time>
+              </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="c64db589-598d-4c2f-8a61-eedcedfad53f">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="/2016/03/06/Good-bye-Wordress.html" itemprop="url" data-pjax title="Good bye Wordress">Good bye Wordress</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img src="https://avatars.githubusercontent.com/u/1500712?v=3" alt="Hirako">
+                </a>
+              <div class="post-author-info">
+                <a href="" class="post-author-name">
+                  Hirako
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
             <div class="paragraph">
 <p><a href="https://www.blogger.com">Blogger</a> feels like an old platform for blogging, I don&#8217;t have the patience to maintain Wordpress, and I love <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>&#8230;&#8203; Oh wait it doesn&#8217;t support it, OK nice to meet you <a href="http://asciidoctor.org/">AsciiDoc</a>.</p>
 </div>
 <div class="paragraph">
 <p>Hello <a href="http://hubpress.io/">HubPress</a> let&#8217;s be friends.</p>
 </div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/1500712?v=3" alt="Hirako">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Hirako</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                  <p class="post-author-location">Edinburgh</p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">March 06, 2016</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
         </section>
-
-        <footer class="post-footer">
-
-
-            <figure class="author-image">
-                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/1500712?v=3)"><span class="hidden">Hirako's Picture</span></a>
-            </figure>
-
-            <section class="author">
-                <h4><a href="">Hirako</a></h4>
-
-                    <p>Read <a href="">more posts</a> by this author.</p>
-                <div class="author-meta">
-                    <span class="author-location icon-location">Edinburgh</span>
-                    
-                </div>
-            </section>
-
-
-            <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=Good%20bye%20Wordress&amp;url=https://hirako2000.github.io/2016/03/06/Good-bye-Wordress.html"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://hirako2000.github.io/2016/03/06/Good-bye-Wordress.html"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://hirako2000.github.io/2016/03/06/Good-bye-Wordress.html"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
-            </section>
-
-        </footer>
-
-
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
     </article>
 
-</main>
-
-
-
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://hirako2000.github.io"></a> &copy; 2016</section>
-        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder"></span>. 2016. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
     </footer>
+  </div>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -147,8 +250,8 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-    <script type="text/javascript" src="//hirako2000.github.io/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
-    <script type="text/javascript" src="//hirako2000.github.io/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+    <script src="//hirako2000.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1.0.0"></script>
 
-</body>
+
+  </body>
 </html>
