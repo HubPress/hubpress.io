@@ -4,22 +4,22 @@ HubPress ships with themes, oddly not previewable in the admin section or even o
 
 Here is how they look like
 
-##### Casper
+## Casper
 image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/Casper.png[Casper]
 
 
-##### ghostium
+## ghostium
 image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/ghostium.png[ghostium]
 
-##### ichi
+## ichi
 image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/ichi.png[ichi]
 
-##### Roon
+## Roon
 image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/Roon.png[Roon]
 
 
-##### Saga
+## Saga
 image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/Saga.png[Saga]
 
-##### uno-zen
+## uno-zen
 image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/uno-zen.png[uno-zen]
