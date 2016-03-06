@@ -1,0 +1,25 @@
+# HubPress Themes?
+
+HubPress ships with themes, oddly not previewable in the admin section or even on the official website.
+
+Here is how they look like
+
+##### Casper
+image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/Casper.png[Casper]
+
+
+##### ghostium
+image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/ghostium.png[ghostium]
+
+##### ichi
+image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/ichi.png[ichi]
+
+##### Roon
+image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/Roon.png[Roon]
+
+
+##### Saga
+image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/Saga.png[Saga]
+
+##### uno-zen
+image::https://raw.githubusercontent.com/hirako2000/hirako2000.github.io/master/images/uno-zen.png[uno-zen]
