@@ -3,12 +3,12 @@
 
 ## To Do
 * * *
-Java Concurrency
+* Java Concurrency
 
 ## Doing
 * * * 
-알고리즘 문제해결 전략1(~126)
-hacker rank
+* 알고리즘 문제해결 전략1(~126)
+* hacker rank
 
 ## Done
 * * * 
