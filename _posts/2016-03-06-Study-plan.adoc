@@ -1,0 +1,14 @@
+= Study plan
+
+
+## To Do
+* * *
+hacker rank
+Java Concurrency
+
+## Doing
+* * * 
+알고리즘 문제해결 전략1(~126)
+
+## Done
+* * * 
