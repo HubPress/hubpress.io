@@ -75,7 +75,7 @@ class PaginationGenerator {
       }
 
       if (post.attributes.map['hp-tags']) {
-        post.tags = post.attributes.map['hp-tags'].split(',');
+        post.tags = post.attributes.map['hp-tags'].split(',').filter(function(v){return v.trim() !== ''});
         post.tags = _.map(post.tags, (tag) => {
           return  {
             name: tag,
