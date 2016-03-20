@@ -26,7 +26,7 @@ function _localSave(post) {
   let published_at = post.attributes.map['published_at'] || post.published_at || moment().format('YYYY-MM-DD');
   let title = post.attributes.map['doctitle'] ;
   let image = post.attributes.map['hp-image'] ;
-  let tags = post.attributes.map['hp-tags'] && post.attributes.map['hp-tags'].split(',') ;
+  let tags = post.attributes.map['hp-tags'] && post.attributes.map['hp-tags'].split(',').filter(function(v){return v.trim() !== ''});
   let altTitle = post.attributes.map['hp-alt-title'];
   let name = slug(published_at + '-' + (altTitle || title)) +'.adoc';
   let urlPost = url.getPostUrl(name);
@@ -295,7 +295,7 @@ function _majPostsIndexDb(repository, context, posts) {
 
     original.title = original.attributes.map['doctitle'] ;
     original.image = original.attributes.map['hp-image'] ;
-    original.tags = original.attributes.map['hp-tags'] && post.attributes.map['hp-tags'].split(',') ;
+    original.tags = original.attributes.map['hp-tags'] && post.attributes.map['hp-tags'].split(',').filter(function(v){return v.trim() !== ''});
     original.url = url.getPostUrl(original.name);
 
     let _postToSave = assign({}, post, {original: original});
