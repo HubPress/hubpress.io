@@ -22,7 +22,7 @@
     <meta property="og:description" content="Why? Everybody needs backups, and if you manage web servers, you really need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but..." />
     <meta property="og:url" content="https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html" />
     <meta property="article:published_time" content="2016-01-23T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-02-10T20:43:10.357Z" />
+    <meta property="article:modified_time" content="2016-03-25T11:33:26.004Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Script for doing backups on Amazon S3" />
@@ -44,7 +44,7 @@
     "headline": "Script for doing backups on Amazon S3",
     "url": "https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html",
     "datePublished": "2016-01-23T23:00:00.000Z",
-    "dateModified": "2016-02-10T20:43:10.357Z",
+    "dateModified": "2016-03-25T11:33:26.004Z",
     "description": "Why? Everybody needs backups, and if you manage web servers, you really need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but..."
 }
     </script>
@@ -97,9 +97,6 @@
 <div class="sect2">
 <h3 id="_the_script">The Script</h3>
 <div class="paragraph">
-<p>At first sight, it seems that a command line call should be enough. But even for a file, I preferred to use something more complete. Also there are always things to tune.</p>
-</div>
-<div class="paragraph">
 <p>I chose python because is what I&#8217;m most confortable with, but there are ports of the SDK library for many other programming languages, as usual. It seems that even the official Amazon CLI uses also python. You can even use http(s) requests, but they are a bit complex, as there is a lot . So it&#8217;s good to use a library.</p>
 </div>
 <div class="paragraph">
@@ -112,10 +109,10 @@
 <div class="sect2">
 <h3 id="_aws_console_configuration">AWS console configuration</h3>
 <div class="paragraph">
-<p>Amazon gives you a lot of possibilities, but for backups I simply added one rule to the backups bucket in the "Lifecycle" settings: delete after 15 days. As I&#8217;m going to do a daily backup, 15 files should be enough.</p>
+<p>Amazon gives you a lot of possibilities, but for backups I simply added one rule to the backups bucket in the "Lifecycle" settings: delete after 30 days. As I&#8217;m going to do a daily backup, 30 files should be enough.</p>
 </div>
 <div class="paragraph">
-<p>I was tempted to use <strong>Reduced Redundancy Storage</strong> aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance, instead of the usual 99,9999999% of retrieving it safely ;) But for the price difference, it&#8217;s not worth. Use the "standard" option.</p>
+<p>I also opted for <strong>Reduced Redundancy Storage</strong> aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance, instead of the usual 99,9999999% of retrieving it safely ;)</p>
 </div>
 </div>
 </div>
@@ -127,7 +124,7 @@
 <p>The same script was used in two different servers, and didn&#8217;t work in one of them. Can be quite frustrating when that happens, so you start thinking "what can be different from one server to the other?".</p>
 </div>
 <div class="paragraph">
-<p>In this case, the error code was not very helpful: 104 when doing a set_contents_by_filename. The first "bad smell" was that it is a connection error code, but not in the connection method, but in the upload method, after performing the connection. Some googling around the error showed a collection of issues, mostly fixed and incorporated to the library code at some point. No real solutions. What could it be?</p>
+<p>In this case, the error code was not very helpful: <strong>104</strong> when doing a <strong>set_contents_by_filename</strong> call. The first "bad smell" was that it is a connection error code, but not in the connection method, but in the upload method, after performing the connection. Some googling around the error showed a collection of issues, mostly fixed and incorporated to the library code at some point. No real solutions. What could it be?</p>
 </div>
 <div class="paragraph">
 <p>After discarding everything else (server blocking https port, different library versions, wrong credentials or urls&#8230;&#8203;), I opted for printing the bucket location, only for checking it. And I found the surprise: It gently complained that there was a discrepancy between the server time and the AWS time, big enough to block the request. As simply as that, your server needs to have <strong>correct date and time</strong> in order to sync with S3.</p>
@@ -139,12 +136,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>S3 is a safe and easy way of doing online backups. Don&#8217;t be intimidated as I was when approaching it. Use it wisely and you will have a very cheap backup for all those cat photos that you carefully were collecting all these years.</p>
-</div>
-<div class="paragraph">
-<p>If you want to check the final result, it&#8217;s in <a href="https://github.com/manelvf/s3backup" class="bare">https://github.com/manelvf/s3backup</a> . It&#8217;s a very basic example, but can be easily taylored to something more advanced.</p>
-</div>
-<div class="paragraph">
-<p>Enjoy!</p>
 </div>
 </div>
 </div>
