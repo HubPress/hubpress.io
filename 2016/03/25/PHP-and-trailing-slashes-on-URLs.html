@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PHP and trailing slashes on URLs</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html" />
+    
+    <meta property="og:site_name" content="The Fallen Apples" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="PHP and trailing slashes on URLs" />
+    <meta property="og:description" content="This is one those things that can make you lose a few minutes (hours? ;p) if you are not a bit careful. It happened to me recently in an old Apache installation, but it could happen also in a more..." />
+    <meta property="og:url" content="https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html" />
+    <meta property="article:published_time" content="2016-03-24T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-03-25T11:24:43.088Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="PHP and trailing slashes on URLs" />
+    <meta name="twitter:description" content="This is one those things that can make you lose a few minutes (hours? ;p) if you are not a bit careful. It happened to me recently in an old Apache installation, but it could happen also in a more..." />
+    <meta name="twitter:url" content="https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "The Fallen Apples",
+    "author": {
+        "@type": "Person",
+        "name": "Manel Villar",
+        "image": "https://avatars.githubusercontent.com/u/135327?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "manelvf.com"
+    },
+    "headline": "PHP and trailing slashes on URLs",
+    "url": "https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html",
+    "datePublished": "2016-03-24T23:00:00.000Z",
+    "dateModified": "2016-03-25T11:24:43.088Z",
+    "description": "This is one those things that can make you lose a few minutes (hours? ;p) if you are not a bit careful. It happened to me recently in an old Apache installation, but it could happen also in a more..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">PHP and trailing slashes on URLs</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1458860400" datetime="2016-03-25T00:00" title="25 March 2016">2016-03-25 00:00:00<ago class="ago"></time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="">Manel Villar</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div class="paragraph">
+<p>This is one those things that can make you lose a few minutes (hours? ;p) if you are not a bit careful. It happened to me recently in an old Apache installation, but it could happen also in a more modern installation using NGINX or any other webserver. Let&#8217;s start with the setup.</p>
+</div>
+<div class="paragraph">
+<p>In a common PHP deployment, there are different layers of server code for handling URLs <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Apache configuration file for the host.</p>
+</li>
+<li>
+<p>.htaccess.</p>
+</li>
+<li>
+<p>PHP code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And as we have different layers, there can be conflicts between them, and guess&#8230;&#8203; unexpected side effects.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s put an example:</p>
+</div>
+<div class="paragraph">
+<p>For the url <a href="http://example.com/list?user=manel" class="bare">http://example.com/list?user=manel</a> (don&#8217;t follow it, it&#8217;s an example)</p>
+</div>
+<div class="paragraph">
+<p>The <strong>list</strong> part of the url in this example is masking a <strong>list.php</strong> file (it could be another filename, it&#8217;s indifferent).</p>
+</div>
+<div class="paragraph">
+<p>I was checking the URL parameters using the usual <strong>$_GET</strong> and <strong>$_REQUEST</strong> PHP arrays and the result were <strong>empty arrays</strong>. So, what happened? The <strong>.htaccess rule removed those parameters</strong> when the URL was called without a trailing slash. Unfortunately, the php script was executed anyway when invoked without it.</p>
+</div>
+<div class="paragraph">
+<p>Calling <a href="http://example.com/list/?user=manel" class="bare">http://example.com/list/?user=manel</a> with the trailing slash after the 'list' text fixes the problem. Not a serious inconvenient but it&#8217;s something that can be a bit annoying sometimes.</p>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a> There can be also some url handling on the client side, but I&#8217;m going to skip that for simplicity
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'manelvfgithubio'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">The Fallen Apples</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+    <script src="//manelvf.github.io/blog/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34164255-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
