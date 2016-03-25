@@ -22,7 +22,7 @@
     <meta property="og:description" content="Why? Everybody needs backups, and if you manage web servers, you really need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but..." />
     <meta property="og:url" content="https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html" />
     <meta property="article:published_time" content="2016-01-23T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-03-25T11:33:26.004Z" />
+    <meta property="article:modified_time" content="2016-03-25T11:45:16.846Z" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Script for doing backups on Amazon S3" />
@@ -44,7 +44,7 @@
     "headline": "Script for doing backups on Amazon S3",
     "url": "https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html",
     "datePublished": "2016-01-23T23:00:00.000Z",
-    "dateModified": "2016-03-25T11:33:26.004Z",
+    "dateModified": "2016-03-25T11:45:16.846Z",
     "description": "Why? Everybody needs backups, and if you manage web servers, you really need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but..."
 }
     </script>
@@ -136,6 +136,24 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>S3 is a safe and easy way of doing online backups. Don&#8217;t be intimidated as I was when approaching it. Use it wisely and you will have a very cheap backup for all those cat photos that you carefully were collecting all these years.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_postmortem">PostMortem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A few tips after deploying the script in some production servers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As an alternative to the GUID, it&#8217;s possible to use the day of the month or the year, or even a UNIX timestamp.</p>
+</li>
+<li>
+<p>For very basic tasks it&#8217;s also possible to use the S3 command line uploader, but as soon you want to perform some additional tasks, the script is very handy, at least for a Python developer ;D</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
