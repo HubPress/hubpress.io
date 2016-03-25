@@ -36,3 +36,10 @@ After discarding everything else (server blocking https port, different library 
 == Conclusion
 
 S3 is a safe and easy way of doing online backups. Don't be intimidated as I was when approaching it. Use it wisely and you will have a very cheap backup for all those cat photos that you carefully were collecting all these years.
+
+== PostMortem
+
+A few tips after deploying the script in some production servers:
+
+* As an alternative to the GUID, it's possible to use the day of the month or the year, or even a UNIX timestamp.
+* For very basic tasks it's also possible to use the S3 command line uploader, but as soon you want to perform some additional tasks, the script is very handy, at least for a Python developer ;D
