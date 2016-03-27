@@ -1,0 +1,7 @@
+= JS1K "Attack of the Mutant Elements" demo post-mortem
+
+One year more, there was the https://js1k.com[JS1K], the microcode competition for Javascript code of <= 1024 bytes length. It started as joke and quickly became a classic for the JS "scene", if that exists.
+
+After participating a few years, for me it's one of the most rewarding competitions. I must admit I only use a few hours and the result is far from being something impressive. But it's good exercise and overall, it has a lot of fun.
+
+This year I wanted something different. On past editions, 
