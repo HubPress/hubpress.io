@@ -1,0 +1,9 @@
+:hp-tags: linux, mesos, marathon, openam, forgerock
+# Deploying openAM 12 on mesos
+
+I am not the one who chose openAM but the preject devs decided it is a good solution and should be used for our SSO infra. + 
+OK good enough for me. Seeing that openAM is a war file that i can just run in a jvm with jetty or tomcat I thought it was a good idea to to deploy that on our mesos cluster. +
+Going through the docs, they do provide options to store the config in a seperate backend and anyway users are stored in an LDAP, so that seemed like a good start. +
+
+Credits first. There is a lot of docs for openAM althouogh not always accurate or clear, at least there's a good amount.
+
