@@ -1,0 +1,10 @@
+:hp-tags: sysdig, debug, mesos
+# Debugging [mesos] with sysdig
+
+First of all I just have to say sysdig is awesome. that's it. 
+
+We run mesos on centos 6.7 and now we are in the process of migrating to centos 7.2. +
+We started by just running everything as we did on centos 6 but on 7 and we thought, oh well that should just work. +
+It kinda did untill we noticed that after a few tasks launched, there is a 100+ mounts. *Now that's strange* +
+we use the following flag
+
