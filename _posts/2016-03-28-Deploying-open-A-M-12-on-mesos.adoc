@@ -20,12 +20,7 @@ Then there are 2 blog posts that helped me a lot in understanding why things wer
  * openAM deployed on the Mesos/Marathon cluster with multiple instaces for HA 
  * openDJ in the backend
 
-Now that may not be so easy, openAM is not a stateless app. and here are a few reasons why it is difficult
-
- * if you have read the blog posts above about openAM sessions, you'd notice that sessions are owned/associated with the host (openAM) that created it
- * openAM does not remove dead hosts from its "cluster" and cleanup is not trivial as seen in this blog post http://azlabs.blogspot.fr/2015/11/ssoadm-cli-for-scaling-and-de-scaling.html
- 
-## Details
+## Setup
 
 Here is the marathon app definition `openam.json`
 ```
@@ -69,25 +64,11 @@ Here is the marathon app definition `openam.json`
 }
 
 ```
-Now for some explanations
 
-```
-"ports": [
-    31080
-],
-"requirePorts": true,
+`startup.sh` is a bash script that start openam on jetty, waits for it to be fully started by looking at the log file for *Server:main: Started*, then it will launch the openam-configurator tool to configure openAM.
 
-```
-This part will tell Marathon to always assign PORT 31080 to openAM 
-```
-"constraints":[
-  ["hostname","LIKE","slave0[1,2]"]
-],
-```
-This line will instruct Marathon to only launch on slaves 1 and 2 
-_startup.sh_ is a bash script that start openam on jetty, waits for it to be fully started by looking at the log file for *Server:main: Started*, then it will launch the openam-configurator tool to configure openAM. +
 openam-configurator takes in a config file +
-openam.config
+`openam.config`
 ```
 # Server properties
 SERVER_URL=http://${HOSTNAME}:${PORT0}
@@ -130,5 +111,42 @@ This config will make openam not use its embedded database, but use the openDJ c
 
 After that successfully finishing the health check from the json file will become good.and the app is considered started. +
 
-After that I use the openam-ssoAdminTools to handle the sso part.
+## Obstacles
+Now that may not be so easy, openAM is not a stateless app. and here are a few reasons why it is difficult
 
+  * openAM does not remove dead hosts from its "cluster" and cleanup is not trivial as seen in this blog post http
+ ://azlabs.blogspot.fr/2015/11/ssoadm-cli-for-scaling-and-de-scaling.html
+ * if you have read the blog posts above about openAM sessions, you'd notice that sessions are owned/associated with the host (openAM) that created it
+ 
+
+### Hosts
+
+In order to eliminate the issues with servers in the cluster I fixed 2 slaves, and a single port for openam, this way there is always 2 hosts showing up in the "cluster", eliminating the need for cleanup. 
+```
+"ports": [
+    31080
+],
+"requirePorts": true,
+
+```
+This part will tell Marathon to always assign PORT 31080 to openAM 
+```
+"constraints":[
+  ["hostname","LIKE","slave0[1,2]"]
+],
+```
+This line will instruct Marathon to only launch on slaves 1 and 2 +
+This way the servers in openAM cluster are always slave1:31080 and slave2:31080 and we're done with of the points
+
+### Clustering
+
+Sessions are normally stored in the app server's memory, in my case it jetty. then if a user has a session started on one of the servers in the cluster, then that session is not available for other servers in the cluster + 
+There are 2 mechanisms that openAM uses to share sessions in a cluster, first is the *"Cross Talk"* which is basically where servers can communicate among them to ask about who is the owner of a certain session and delegate managing it to that server. +
+The other is *CTS* "Core Token Service" which provides a persistent and highly available token storage for OpenAM session, OAuth 2.0, SAML v2.0, and UMA tokens. +
+This is basically openAM writing its sessions in openDJ which makes them available for all servers in the cluster.+
+CTS can be configured either form the openAM console or using the openam-ssoadmtools
+
+
+Now openAM is ready.
+
+Next step is to configure your SSO solution
