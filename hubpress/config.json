@@ -1,10 +1,10 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
+    "username": "jbspeakr",
+    "repositoryName": "redrabbit-calligraphy.github.io",
     "branch": "master"
   },
   "theme": {
-    "name": "Casper"
+    "name": "uno-zen"
   }
 }
