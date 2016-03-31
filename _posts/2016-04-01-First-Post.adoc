@@ -1,4 +1,5 @@
 = イノベーションエンジニアブログはじめました
+:published_at: 2016-04-01
 :hp-alt-title: FirstPost
 :hp-tags: FirstPost,YAGASAKI,COBOL,ZUNDOKO
 
