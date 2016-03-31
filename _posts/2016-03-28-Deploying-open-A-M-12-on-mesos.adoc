@@ -89,9 +89,9 @@ This is the most imprtant part of the setup
 This is again well documented in the link:https://backstage.forgerock.com/#!/docs/openam/12.0.0/install-guide#chap-cts[docs], and pay special attention to the preparations on the openDJ side.
 
 #### 2.2. Scaling
-as mentioned before, openAM does not clean its list of hosts in the cluster and as mesos would launch each time a new instance, the need to clean old instances becomes evident. +
-there are 2 solutions for that, either in the script that launches openam we catch TERM signals and remove the exiting host form the cluster (which is not so easy), or take a hacky way to ensure instances lways have the same name.+
-here is how I acheived that.This is the JSON file to launch on marathon.
+As mentioned before, openAM does not clean its list of hosts in the cluster and as mesos would launch each time a new instance, the need to clean old instances becomes evident. +
+There are 2 solutions for that, either in the script that launches openam we catch TERM signals and remove the exiting host form the cluster (which is not so easy), or take a hacky way to ensure instances always have the same name.+
+Here is how I acheived that.This is the JSON file to launch on marathon.
 
 [source,jon]
 ----
