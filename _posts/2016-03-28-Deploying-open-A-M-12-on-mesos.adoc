@@ -21,11 +21,52 @@ The purpose of this doc is to highlight the main pain points and challenges in d
 
 ## Setup
 
-.External config store
-Configure openAM to use openDJ for storing its configuration. +
-This is the first ste
-   
-We start with the marathon JSON to launch openAM on Mesos, then afterwards i will go throug
+### 1. External config store
+Configure openAM to use openDJ for storing its configuation. +
+Use the openam-configurator tool to push that config file.
+
+VBy default openAM uses its own embeded backend for storing its config and dumping all that on disk in the openAM home as seen in the config below `BASE_DIR`+
+The first time to run this tool it will create the BASE_DIR and connect to the backend to write configs. +
+In subsequent runs of the configurator tool it will connect to the backend and check that there is a config and only write the BASE_DIR part without changing any configs. From here on configs will be handled by `sooadm` tool or the webUI (console).
+There are 2 configs in that context
+[source,text]
+----
+# Server properties
+SERVER_URL=http://${HOSTNAME}:${PORT0}
+DEPLOYMENT_URI=/openam
+BASE_DIR=/tmp/openam
+locale=en_US
+PLATFORM_LOCALE=en_US
+AM_ENC_KEY='some_random_string'
+ADMIN_PWD='a_good_pass'
+AMLDAPUSERPASSWD='another_good_pass'
+COOKIE_DOMAIN=.example.com
+ACCEPT_LICENSES=true
+# External configuration data store
+DATA_STORE=dirServer #<1>
+DIRECTORY_SSL=SIMPLE
+DIRECTORY_SERVER=${OPENDJ_SERVER}
+DIRECTORY_PORT=${OPENDJ_PORT}
+DIRECTORY_ADMIN_PORT=${OPENDJ_ADMIN_PORT}
+ROOT_SUFFIX=$OPENAM_SUFFIX
+DS_DIRMGRDN=${OPENDJ_USER}
+DS_DIRMGRPASSWD=${OPENDJ_PASS}
+# External User store
+USERSTORE_TYPE=LDAPv3ForOpenDS
+USERSTORE_SSL=SIMPLE
+USERSTORE_HOST=${OPENDJ_SERVER}
+USERSTORE_PORT=${OPENDJ_PORT}
+USERSTORE_SUFFIX=ou=people,dc=example, dc=com
+USERSTORE_MGRDN=${OPENDJ_USER}
+USERSTORE_PASSWD=${OPENDJ_PASS}
+# Site config
+LB_SITE_NAME=example
+LB_PRIMARY_URL=http://sso.example.com:80/openam
+LB_SESSION_HA_SFO=true #<2>
+----
+<1> Storing config in openDJ
+<2> enable session failover
+
 [source,json]
 {
   "id": "openam",
@@ -72,42 +113,7 @@ We start with the marathon JSON to launch openAM on Mesos, then afterwards i wil
 openam-configurator takes in a config file +
 `openam.config`
 ```
-# Server properties
-SERVER_URL=http://${HOSTNAME}:${PORT0}
-DEPLOYMENT_URI=/openam
-BASE_DIR=/tmp/openam
-locale=en_US
-PLATFORM_LOCALE=en_US
-AM_ENC_KEY='some_random_string'
-ADMIN_PWD='a_good_pass'
-AMLDAPUSERPASSWD='another_good_pass'
-COOKIE_DOMAIN=.eample.com
-ACCEPT_LICENSES=true
 
-# External configuration data store
-DATA_STORE=dirServer
-DIRECTORY_SSL=SIMPLE
-DIRECTORY_SERVER=${OPENDJ_SERVER}
-DIRECTORY_PORT=${OPENDJ_PORT}
-DIRECTORY_ADMIN_PORT=${OPENDJ_ADMIN_PORT}
-ROOT_SUFFIX=$OPENAM_SUFFIX
-DS_DIRMGRDN=${OPENDJ_USER}
-DS_DIRMGRPASSWD=${OPENDJ_PASS}
-
-# External User store
-USERSTORE_TYPE=LDAPv3ForOpenDS
-USERSTORE_SSL=SIMPLE
-USERSTORE_HOST=${OPENDJ_SERVER}
-USERSTORE_PORT=${OPENDJ_PORT}
-USERSTORE_SUFFIX=ou=people,dc=example, dc=com
-USERSTORE_MGRDN=${OPENDJ_USER}
-USERSTORE_PASSWD=${OPENDJ_PASS}
-
-# Site config
-# TODO: make it dynamic
-LB_SITE_NAME=example
-LB_PRIMARY_URL=http://sso.example.com:80/openam
-LB_SESSION_HA_SFO=true
 ```
 This config will make openam not use its embedded database, but use the openDJ cluster this way openam is almost _stateless_. Now everytime Marathon (re)starts openam it will start it and configure it with openDJ as its confid backend. If openAM was configured before it will not attempt to reconfigure it.
 
