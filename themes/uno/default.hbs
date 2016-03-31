@@ -26,12 +26,6 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    {{! Styles and Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/uno.css"}}" />
-
-    {{! Ghost Magic }}
-    {{ghost_head}}
-
 <script type="text/javascript">
 var _trackingid = 'LFT-10003-1';
 
@@ -51,6 +45,13 @@ var _trackingid = 'LFT-10003-1';
   var snode = document.getElementsByTagName('script')[0]; snode.parentNode.insertBefore(lft, snode);
 })();
 </script>
+
+    {{! Styles and Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/uno.css"}}" />
+
+    {{! Ghost Magic }}
+    {{ghost_head}}
+
 
 </head>
 <body class="{{body_class}} no-js">
