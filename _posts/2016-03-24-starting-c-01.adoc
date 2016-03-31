@@ -31,4 +31,4 @@
 
 == 「0から始めるC言語」について
 
-この記事が気にいったなら他の記事もお勧めしています。link:http://tomewelcome.github.io/tag/cl0/[こちら]も是非ご覧ください。
+この記事が気にいったなら他の記事もお勧めしています。link:http://tomewelcome.github.io/blog/tag/cl0/[こちら]も是非ご覧ください。
