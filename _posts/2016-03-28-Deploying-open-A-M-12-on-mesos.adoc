@@ -73,26 +73,26 @@ There is a whole link:https://backstage.forgerock.com/#!/docs/openam/12.0.0/inst
 ### 2. Clustering
 Clustering in openAM is a topic that i did not dive deep into, but a few points to note. +
 
-* Every server registers to the cluster wth its `hostname:port`
+* Every server registers to the cluster with its `hostname:port`
 * When a server is down it does not leave the cluster or get deleted
 * Sessions are stored in memory on the host, so server down = session lost
 
 #### 2.1. CTS (centralized session store)
 CTS is the means for openAM to be able to share its sessions among the hosts of the cluster. +
-It can use openDJ to store its sessions, hence allowing a user authnticated on one host to be able to resume on another server. +
-This is the most imprtant part of the setup
+It can use openDJ to store its sessions, hence allowing a user authenticated on one host to be able to resume on another server. +
+This is the most important part of the setup
 
 .It solves 2 problems
 * session sharing
-* and session persistance across reboots
+* and session persistence across reboots
 
 This is again well documented in the link:https://backstage.forgerock.com/#!/docs/openam/12.0.0/install-guide#chap-cts[docs], and pay special attention to the preparations on the openDJ side.
 
 #### 2.2. Scaling
 As mentioned before, openAM does not clean its list of hosts in the cluster and as mesos would launch each time a new instance, the need to clean old instances becomes evident. +
 There are 2 solutions for that, either in the script that launches openam we catch TERM signals and remove the exiting host form the cluster (which is not so easy), or take a hacky way to ensure instances always have the same name.+
-Here is how I acheived that.This is the JSON file to launch on marathon.
-
+Here is how I achieved that. +
+This is the JSON file to launch on marathon.
 [source,jon]
 ----
 {
@@ -141,7 +141,7 @@ This way we always have 2 servers slave01:33333 and slave02:33333
 
 #### 3. Starting
 Now that opeAM needs to run its config everytime it starts I use the `startup.sh` for that. +
-`startup.sh` is a bash script that start openam on jetty and sends it to background, waits for it to be fully started by looking at the log file for *Server:main: Started*, then it will launch the openam-configurator tool to configure openAM.
+`startup.sh` is a bash script that start openam on jetty and sends it to background, waits for it to be fully started by looking at the log file for `Server:main: Started`, then it will launch the openam-configurator tool to configure openAM.
 
 [source,shell]
 ----
@@ -172,7 +172,7 @@ then at the end let the script simulate a daemon
 while true; do sleep 60; done
 ----
 
-This way the script remains running and mesos keeeps the task, I don't worry about the terminating it correctly when mesos mesos is attempting to kill the task as mesos will send a TERM to all tasks in that that container anyway.
+This way the script remains running and mesos keeps the task, I don't worry about the terminating it correctly when mesos is attempting to kill the task as mesos will send a TERM to all tasks in that that container anyway.
 
 Now openAM is ready.
 
