@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Deploying openAM 12 on mesos</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//informatiq.github.io/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//informatiq.github.io/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://informatiq.github.io/2016/03/28/Deploying-open-A-M-12-on-mesos.html" />
+    
+    <meta property="og:site_name" content="InformatiQ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Deploying openAM 12 on mesos" />
+    <meta property="og:description" content="Background OpenAM provides open source Authentication, Authorization, Entitlement and Federation software. We chose it as part of our internal SSO platform. The documentation of openAM goes into a lot of details about the installation that I don&amp;#8217;t need..." />
+    <meta property="og:url" content="https://informatiq.github.io/2016/03/28/Deploying-open-A-M-12-on-mesos.html" />
+    <meta property="article:published_time" content="2016-03-27T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-03-31T22:39:18.382Z" />
+    <meta property="article:tag" content="linux" />
+    <meta property="article:tag" content="mesos" />
+    <meta property="article:tag" content="marathon" />
+    <meta property="article:tag" content="openam" />
+    <meta property="article:tag" content="forgerock" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Deploying openAM 12 on mesos" />
+    <meta name="twitter:description" content="Background OpenAM provides open source Authentication, Authorization, Entitlement and Federation software. We chose it as part of our internal SSO platform. The documentation of openAM goes into a lot of details about the installation that I don&amp;#8217;t need..." />
+    <meta name="twitter:url" content="https://informatiq.github.io/2016/03/28/Deploying-open-A-M-12-on-mesos.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "InformatiQ",
+    "author": {
+        "@type": "Person",
+        "name": "Ramez Hanna",
+        "image": "https://avatars.githubusercontent.com/u/366467?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": null
+    },
+    "headline": "Deploying openAM 12 on mesos",
+    "url": "https://informatiq.github.io/2016/03/28/Deploying-open-A-M-12-on-mesos.html",
+    "datePublished": "2016-03-27T22:00:00.000Z",
+    "dateModified": "2016-03-31T22:39:18.382Z",
+    "keywords": "linux,  mesos,  marathon,  openam,  forgerock",
+    "description": "Background OpenAM provides open source Authentication, Authorization, Entitlement and Federation software. We chose it as part of our internal SSO platform. The documentation of openAM goes into a lot of details about the installation that I don&amp;#8217;t need..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="InformatiQ" href="https://informatiq.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-linux tag-mesos tag-marathon tag-openam tag-forgerock">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="https://informatiq.github.io">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="https://informatiq.github.io/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-linux tag-mesos tag-marathon tag-openam tag-forgerock">
+
+        <header class="post-header">
+            <h1 class="post-title">Deploying openAM 12 on mesos</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-03-28">28 March 2016</time>  on <a href="https://informatiq.github.io/tag/linux">linux</a>, <a href="https://informatiq.github.io/tag/mesos"> mesos</a>, <a href="https://informatiq.github.io/tag/marathon"> marathon</a>, <a href="https://informatiq.github.io/tag/openam"> openam</a>, <a href="https://informatiq.github.io/tag/forgerock"> forgerock</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="sect1">
+<h2 id="_background">Background</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenAM provides open source Authentication, Authorization, Entitlement and Federation software. We chose it as part of our internal SSO platform.
+The documentation of openAM goes into a lot of details about the installation that I don&#8217;t need to go through here again.<br>
+openAM 12 was not deigned as a stateless app, and is not meant to be runnig on an elastic env like mesos.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this doc is to highlight the main pain points and challenges in deploying openAM on a mesos cluster</p>
+</div>
+<div class="ulist">
+<div class="title"><strong>References</strong></div>
+<ul>
+<li>
+<p><a href="https://backstage.forgerock.com/#!/docs/openam/12.0.0/" class="bare">https://backstage.forgerock.com/#!/docs/openam/12.0.0/</a></p>
+</li>
+<li>
+<p><a href="http://azlabs.blogspot.fr/2015/08/openam-12-sessions.html" class="bare">http://azlabs.blogspot.fr/2015/08/openam-12-sessions.html</a></p>
+</li>
+<li>
+<p><a href="http://blogs.forgerock.org/petermajor/2015/08/sessions/" class="bare">http://blogs.forgerock.org/petermajor/2015/08/sessions/</a></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title"><strong>Constraints</strong></div>
+<ul>
+<li>
+<p>Mesos cluster only runs stateless non-persistent apps</p>
+</li>
+<li>
+<p>Marathon framework to manage long running apps on Mesos</p>
+</li>
+<li>
+<p>Need to run multiple instances for HA</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup">Setup</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_external_config_store">1. External config store</h3>
+<div class="paragraph">
+<p>Configure openAM to use openDJ for storing its configuation.<br>
+Use the openam-configurator tool to push that config file.</p>
+</div>
+<div class="paragraph">
+<p>By default openAM uses its own embeded backend for storing its config and dumping all that on disk in the openAM home as seen in the config below <code>BASE_DIR</code>+
+The first time to run this tool it will create the BASE_DIR and connect to the backend to write configs.<br>
+In subsequent runs of the configurator tool it will connect to the backend and check that there is a config and only write the BASE_DIR part without changing any configs. From here on configs will be handled by <code>sooadm</code> tool or the webUI (console).
+There are 2 configs in that context</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text"># Server properties
+SERVER_URL=http://${HOSTNAME}:${PORT0}
+DEPLOYMENT_URI=/openam
+BASE_DIR=/tmp/openam
+locale=en_US
+PLATFORM_LOCALE=en_US
+AM_ENC_KEY='some_random_string'
+ADMIN_PWD='a_good_pass'
+AMLDAPUSERPASSWD='another_good_pass'
+COOKIE_DOMAIN=.example.com
+ACCEPT_LICENSES=true
+# External configuration data store
+DATA_STORE=dirServer <i class="conum" data-value="1"></i><b>(1)</b>
+DIRECTORY_SSL=SIMPLE
+DIRECTORY_SERVER=${OPENDJ_SERVER}
+DIRECTORY_PORT=${OPENDJ_PORT}
+DIRECTORY_ADMIN_PORT=${OPENDJ_ADMIN_PORT}
+ROOT_SUFFIX=$OPENAM_SUFFIX
+DS_DIRMGRDN=${OPENDJ_USER}
+DS_DIRMGRPASSWD=${OPENDJ_PASS}
+# External User store
+USERSTORE_TYPE=LDAPv3ForOpenDS
+USERSTORE_SSL=SIMPLE
+USERSTORE_HOST=${OPENDJ_SERVER}
+USERSTORE_PORT=${OPENDJ_PORT}
+USERSTORE_SUFFIX=ou=people,dc=example, dc=com
+USERSTORE_MGRDN=${OPENDJ_USER}
+USERSTORE_PASSWD=${OPENDJ_PASS}
+# Site config
+LB_SITE_NAME=example
+LB_PRIMARY_URL=http://sso.example.com:80/openam
+LB_SESSION_HA_SFO=true <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Storing config in openDJ</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>enable session failover</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+There is a whole <a href="https://backstage.forgerock.com/#!/docs/openam/12.0.0/install-guide#prepare-configuration-store">section</a> in the docs on how to prepare the external backend for openAM to use it, make sure to follow it correctly
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_clustering">2. Clustering</h3>
+<div class="paragraph">
+<p>Clustering in openAM is a topic that i did not dive deep into, but a few points to note.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Every server registers to the cluster with its <code>hostname:port</code></p>
+</li>
+<li>
+<p>When a server is down it does not leave the cluster or get deleted</p>
+</li>
+<li>
+<p>Sessions are stored in memory on the host, so server down = session lost</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_2_1_cts_centralized_session_store">2.1. CTS (centralized session store)</h4>
+<div class="paragraph">
+<p>CTS is the means for openAM to be able to share its sessions among the hosts of the cluster.<br>
+It can use openDJ to store its sessions, hence allowing a user authenticated on one host to be able to resume on another server.<br>
+This is the most important part of the setup</p>
+</div>
+<div class="ulist">
+<div class="title">It solves 2 problems</div>
+<ul>
+<li>
+<p>session sharing</p>
+</li>
+<li>
+<p>and session persistence across reboots</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is again well documented in the <a href="https://backstage.forgerock.com/#!/docs/openam/12.0.0/install-guide#chap-cts">docs</a>, and pay special attention to the preparations on the openDJ side.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_2_scaling">2.2. Scaling</h4>
+<div class="paragraph">
+<p>As mentioned before, openAM does not clean its list of hosts in the cluster and as mesos would launch each time a new instance, the need to clean old instances becomes evident.<br>
+There are 2 solutions for that, either in the script that launches openam we catch TERM signals and remove the exiting host form the cluster (which is not so easy), or take a hacky way to ensure instances always have the same name.+
+Here is how I achieved that.<br>
+This is the JSON file to launch on marathon.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jon" data-lang="jon">{
+  "id": "openam",
+  "cmd":"mkdir jetty &amp;&amp; tar xzf jetty-9.3.3.v20150827.tar.gz -C jetty --strip-components=1 &amp;&amp; mv openam-server-12.0.0-criteo-15.war /tmp/openam.war &amp;&amp; mkdir openam-configurator &amp;&amp; unzip openam-configurator-12.0.0.zip -d openam-configurator &amp;&amp; bash -x startup.sh",
+  "cpus": 2,
+  "mem": 1024,
+  "env": {
+    "OPENDJ_SERVER":"opendj.example.com",
+    "OPENDJ_USER":"cn=admin",
+    "OPENDJ_PASS":"password",
+    "OPENAM_SUFFIX":"dc=openam,dc=example,dc=com",
+    "JAVA_HOME": "/usr/lib/jvm/jre-1.8.0/bin"
+  },
+  "instances": 2,
+  "ports": [
+    33333 <i class="conum" data-value="1"></i><b>(1)</b>
+  ]
+  "requirePorts": true, <i class="conum" data-value="2"></i><b>(2)</b>
+  "constraints":[
+    ["hostname","LIKE","slave0[1,2]"] <i class="conum" data-value="3"></i><b>(3)</b>
+  ],
+  "healthChecks": [{
+    "path": "/auth/isAlive.jsp",
+    "protocol": "HTTP",
+    "portIndex": 0,
+    "gracePeriodSeconds": 300,
+    "intervalSeconds": 60,
+    "timeoutSeconds": 20,
+    "maxConsecutiveFailures": 3,
+    "ignoreHttp1xx": false
+  }],
+  "uris": [
+    "http://fileserver.example.com/openam-configurator-12.0.0.zip",
+    "http://fileserver.example.com/jetty.tar.gz",
+    "http://fileserver.example.com/openam.war",
+    "http://fileserver.example.com/startup.sh"
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Specify the port number</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Enforces the port number defined in <strong>1</strong></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Limits the pool to 2 slaves</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This way we always have 2 servers slave01:33333 and slave02:33333</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_starting">3. Starting</h4>
+<div class="paragraph">
+<p>Now that opeAM needs to run its config everytime it starts I use the <code>startup.sh</code> for that.<br>
+<code>startup.sh</code> is a bash script that start openam on jetty and sends it to background, waits for it to be fully started by looking at the log file for <code>Server:main: Started</code>, then it will launch the openam-configurator tool to configure openAM.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell"># Start jetty
+cd $JETTY_HOME
+${JAVA_HOME}/java  -server -jar start.jar -Djetty.http.port=${PORT0} ${JAVA_OPTS}&gt; /tmp/openam.log 2&gt;&amp;1 &amp;
+until [ "$(grep -q 'Server:main: Started @' /tmp/openam.log &amp;&amp; echo $?)" == "0" ]
+ do
+  sleep 5
+done
+cd ../</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then after that it writes the config file above and runs the configurator</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">${JAVA_HOME}/java -jar openam-configurator/openam-configurator-tool-12.0.0.jar -f /tmp/openam.conf
+#run again to work around a bug solved in 12.0.1 but we have 12.0.0
+if [ "$?" != "0" ]; then
+  ${JAVA_HOME}/java -jar openam-configurator/openam-configurator-tool-12.0.0.jar -f /tmp/openam.conf
+  [ "$?" != "0" ] &amp;&amp; exit 1
+fi</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>then at the end let the script simulate a daemon</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">while true; do sleep 60; done</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This way the script remains running and mesos keeps the task, I don&#8217;t worry about the terminating it correctly when mesos is attempting to kill the task as mesos will send a TERM to all tasks in that that container anyway.</p>
+</div>
+<div class="paragraph">
+<p>Now openAM is ready.</p>
+</div>
+<div class="paragraph">
+<p>Next step is to configure your SSO solution</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/366467?v=3)"><span class="hidden">Ramez Hanna's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="">Ramez Hanna</a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Paris</span>
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Deploying%20openAM%2012%20on%20mesos&amp;url=https://informatiq.github.io/2016/03/28/Deploying-open-A-M-12-on-mesos.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://informatiq.github.io/2016/03/28/Deploying-open-A-M-12-on-mesos.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://informatiq.github.io/2016/03/28/Deploying-open-A-M-12-on-mesos.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="https://informatiq.github.io">InformatiQ</a> &copy; 2016</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//informatiq.github.io/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//informatiq.github.io/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+</body>
+</html>
