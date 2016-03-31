@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "innovation-jp",
-    "repositoryName": "innovation-jp.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "uno"
-  }
-}
+{"meta":{"username":"innovation-jp","repositoryName":"innovation-jp.github.io","branch":"master","cname":"tech.innovation.co.jp"},"site":{"url":"http://tech.innovation.co.jp"},"socialnetwork":{},"theme":{"name":"uno","url":"//innovation-jp.github.io/themes/uno"}}
