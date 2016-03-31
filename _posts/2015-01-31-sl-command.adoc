@@ -1,0 +1,21 @@
+= SLコマンドってなんとなく良くない？
+:hp-alt-title: sl-command
+:hp-tags: blog,linux
+:published_at: 2015-01-31
+
+image::https://cloud.githubusercontent.com/assets/12780727/14008710/b99a06a0-f1c7-11e5-8dfe-ef5acc5532c0.png[]
+
+最近はMOCPというCUIで動作するLinux用ミュージックプレイヤーを勉強用に使っているのですが上のような画面を勉強中にずっと表示しておく気になれなかったのでスクリーンセーバもどきを作ってみることにしました。
+
+そうすると自分の中で続座にslコマンドという言葉が出てきました。まあslコマンドというのは名前の通りSLが走るコマンドです。lsのタイプミスを狙ったジョークコマンドのようで、lsコマンドと同じオプションが用意されています。(誰も同じ動きをするとは言っていない)
+
+とりあえずシェルスクリプトで様々なSLを表示するスクリプト作ってみました。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14008711/baf6443c-f1c7-11e5-98fd-c5248b7e6ccc.png[]
+とりあえず4種類のSLが走るようにしました。何となくいい感じです。
+
+とりあえずソースコードも出しておきますね。
+
+link:https://gist.github.com/ToMeWelcome/96100b5707025b0ec464[GitHub Gist]
+
+まあぜひ使ってみてください。

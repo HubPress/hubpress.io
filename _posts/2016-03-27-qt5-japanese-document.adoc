@@ -1,0 +1,10 @@
+= Qt5ドキュメントを翻訳中です
+:hp-alt-title: qt5-japanese-document
+:hp-tags: blog,qt,translate
+:published_at: 2016-03-27
+
+image::https://cloud.githubusercontent.com/assets/12780727/14062745/c9924e8c-f3ed-11e5-88e7-6e2f855a22f2.png[]
+
+link:https://github.com/ToMeWelcome/Qt5-Japanese-Document/blob/master/qt5-doc-ja/index.adoc[GitHub]
+
+翻訳って案外大変ですね

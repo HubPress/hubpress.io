@@ -1,0 +1,18 @@
+= Profile
+:hp-alt-title: about
+:published_at: 2222-12-31
+
+== About Me
+Name:: ToMeWelcome(あっとTMW)
+Locale:: Tochigi, Japan
+Biography:: Qt Programmer
+Like:: Vim, ArchLinux
+Favorite:: MANGA TIME KR COMICS, THE IDOLM@STER
+
+== Work
+Vimrc:: link:https://github.com/ToMeWelcome/vimrc[GitHub]
+Qcode:: link:https://github.com/ToMeWelcome/QCode[GitHub]
+Qt5 Japanese Document:: link:https://github.com/ToMeWelcome/Qt5-Japanese-Document/blob/master/qt5-doc-ja/index.adoc[GitHub(index.adoc)]
+
+== Link
+Blog Images:: link:https://github.com/ToMeWelcome/tomewelcome.github.io/issues/1[GitHub Issues]

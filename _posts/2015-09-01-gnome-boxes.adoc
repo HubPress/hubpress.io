@@ -1,0 +1,62 @@
+= GNOME製のVirtualBox！？「Boxes」を試してきたよ
+:hp-alt-title: gnome-boxes
+:hp-tags: blog,software,linux
+:published_at: 2015-09-01
+
+今日で夏休み終わりですね。私はGNOMEに標準でついている仮想化ソフト「Boxes」を自分の環境で試しました。まあタイトルから分かるとおり、OSが一度に複数個起動できるソフトですね。
+
+== インストール方法
+
+私はFedora22を使っていて@gnome-desktopを入れたときに一緒に入りましたが単品で入れるときには
+
+> $ sudo dnf install gnome-boxes</blockquote>
+
+で入るらしいです。
+
+(追記)
+
+ArchLinuxなら
+
+> $ sudo pacman -S gnome-boxes
+
+で入ります。
+
+== 実際に使ってみた
+
+今回は本体サイズが10MBのLinux「TinyCore」で試しました。
+
+(筆者が待っていられないのとPCのスペックが低いため。)
+
+↑スペックが低いといっても仮想空間でも余裕でGNOME3動きました(^_^)
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011915/8f8b9090-f1e5-11e5-9950-5e9479f44a1f.png[]
+
+起動するとこんな感じになります。GNOME3らしいシンプルな外装です。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011912/8f8adb14-f1e5-11e5-856e-e9f42d8717f1.png[]
+
+左上の「新規」から新しいマシンを作ることができます。とりあえずファイル選択画面が出るので使いたいisoファイルを選んでください。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011913/8f8b035a-f1e5-11e5-9b07-4139154f4b2a.png[]
+
+選んだら設定項目っと・・・・・・！？
+
+設定項目はメモリ容量とディスク容量しかありません。シンプルと言うのか自由度が低いというのか・・・・・・。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011916/8f8bf3aa-f1e5-11e5-86e5-d34728ee4501.png[]
+
+「作成」ボタンを押すとすぐに起動しました。何となく画面構成がさっぱりしていてわかりやすいという印象を覚えました。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011914/8f8b74f2-f1e5-11e5-8cdd-a74b3edd23bd.png[]
+
+そしてEnterキーを押したらすぐに起動しました。GNOME開発チームすげー。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011917/8f8e26de-f1e5-11e5-9f68-8377bc1b48e4.png[]
+
+nanoも起動できます。
+
+== まとめ
+
+てっきりGNOME開発チーム自体はデスクトップ開発しかしていないものだと思っていたのでかなり驚きました。というか普段使っているソフトの大半がGNOME製なのでがんばればGNOME開発チームがOSを作れるんじゃないかと思います。
+
+あ、今回はTinyCoreの記事を書きましたがgnome.orgで公開しているGNOMEのisoファイルからGNOME3も起動できました。が、ネット閲覧向けのLinux「xPUD」は起動しませんでした。

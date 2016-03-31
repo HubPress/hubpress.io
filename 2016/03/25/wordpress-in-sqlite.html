@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>暇人プロデューサーの備忘録</title>
+    <title>SQLiteにWordPressを入れてみた</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
@@ -33,12 +33,50 @@
     <meta name="msapplication-config" content="//ToMeWelcome.github.io/themes/uno-zen/assets/img/browserconfig.xml?v=wAAv6Wqe6l?v=1.0.0">
     <meta name="theme-color" content="#e74c3c">
     <link rel="stylesheet" type="text/css" href="//ToMeWelcome.github.io/themes/uno-zen/assets/css/uno-zen.css?v=1.0.0" />
-    <link rel="canonical" href="https://ToMeWelcome.github.io" />
+    <link rel="canonical" href="https://ToMeWelcome.github.io/2016/03/25/wordpress-in-sqlite.html" />
+    
+    <meta property="og:site_name" content="暇人プロデューサーの備忘録" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="SQLiteにWordPressを入れてみた" />
+    <meta property="og:description" content="何故？ なんとなく 入れかたメモっておく 注意 /WorePress-Folder/はWordPressをインストールしたフォルダとして考えてください。 では始めましょう!!! WordPressとSQLite Integrationをダウンロードし、適当なフォルダに展開 WordPress本体をサーバーにうp /WordPress-Folder/wp-content/plugins/sqlite-integration/db.phpを/WordPress-Folder/wp-content/に移動する /WordPress-Folder/wp-con..." />
+    <meta property="og:url" content="https://ToMeWelcome.github.io/2016/03/25/wordpress-in-sqlite.html" />
+    <meta property="article:published_time" content="2016-03-24T15:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-03-27T06:56:20.125Z" />
+    <meta property="article:tag" content="blog" />
+    <meta property="article:tag" content="web" />
+    <meta property="article:tag" content="wordpress" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SQLiteにWordPressを入れてみた" />
+    <meta name="twitter:description" content="何故？ なんとなく 入れかたメモっておく 注意 /WorePress-Folder/はWordPressをインストールしたフォルダとして考えてください。 では始めましょう!!! WordPressとSQLite Integrationをダウンロードし、適当なフォルダに展開 WordPress本体をサーバーにうp /WordPress-Folder/wp-content/plugins/sqlite-integration/db.phpを/WordPress-Folder/wp-content/に移動する /WordPress-Folder/wp-con..." />
+    <meta name="twitter:url" content="https://ToMeWelcome.github.io/2016/03/25/wordpress-in-sqlite.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "暇人プロデューサーの備忘録",
+    "author": {
+        "@type": "Person",
+        "name": "ToMeWelcome",
+        "image": "https://avatars.githubusercontent.com/u/12780727?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://tomewelcome.github.io"
+    },
+    "headline": "SQLiteにWordPressを入れてみた",
+    "url": "https://ToMeWelcome.github.io/2016/03/25/wordpress-in-sqlite.html",
+    "datePublished": "2016-03-24T15:00:00.000Z",
+    "dateModified": "2016-03-27T06:56:20.125Z",
+    "keywords": "blog, web, wordpress",
+    "description": "何故？ なんとなく 入れかたメモっておく 注意 /WorePress-Folder/はWordPressをインストールしたフォルダとして考えてください。 では始めましょう!!! WordPressとSQLite Integrationをダウンロードし、適当なフォルダに展開 WordPress本体をサーバーにうp /WordPress-Folder/wp-content/plugins/sqlite-integration/db.phpを/WordPress-Folder/wp-content/に移動する /WordPress-Folder/wp-con..."
+}
+    </script>
+
     <meta name="generator" content="Ghost ?" />
     <link rel="alternate" type="application/rss+xml" title="暇人プロデューサーの備忘録" href="https://ToMeWelcome.github.io/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
   </head>
-  <body class="home-template">
+  <body class="post-template tag-blog tag-web tag-wordpress">
     <header id="menu-button" class="expanded">
       <a><i class="icon icon-list"></i></a>
     </header>
@@ -124,78 +162,143 @@
       <section id="search-results"></section>
       <section class="content">
         
-<h1 style="text-align: center;" id="posts-headline">Writings.</h1>
-<ol id="posts-list">
-  <li>
-    <a href="https://ToMeWelcome.github.io/2222/12/31/about.html" title="link to Profile">Profile</a>
-    <time datetime="31 Dec 2222">31 Dec 2222</time>
-    <span class="post tags"></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2016/03/29/new-vim.html" title="link to Vimrcの再構築をしたよ">Vimrcの再構築をしたよ</a>
-    <time datetime="29 Mar 2016">29 Mar 2016</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/vim">vim</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2016/03/27/qt5-japanese-document.html" title="link to Qt5ドキュメントを翻訳中です">Qt5ドキュメントを翻訳中です</a>
-    <time datetime="27 Mar 2016">27 Mar 2016</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/qt">qt</a> <a href="https://ToMeWelcome.github.io/tag/translate">translate</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2016/03/26/new-god-xfce.html" title="link to Xfceで神DEを構築してみた">Xfceで神DEを構築してみた</a>
-    <time datetime="26 Mar 2016">26 Mar 2016</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/linux">linux</a> <a href="https://ToMeWelcome.github.io/tag/software">software</a> <a href="https://ToMeWelcome.github.io/tag/desktop">desktop</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2016/03/25/wordpress-in-sqlite.html" title="link to SQLiteにWordPressを入れてみた">SQLiteにWordPressを入れてみた</a>
-    <time datetime="25 Mar 2016">25 Mar 2016</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/web">web</a> <a href="https://ToMeWelcome.github.io/tag/wordpress">wordpress</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2016/03/24/starting-c-01.html" title="link to 0から始めるC言語 第一回 ~なぜ「プログラミングは難しい」と考えてしまうのか~">0から始めるC言語 第一回 ~なぜ「プログラミングは難しい」と考えてしまうのか~</a>
-    <time datetime="24 Mar 2016">24 Mar 2016</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/magazine">magazine</a> <a href="https://ToMeWelcome.github.io/tag/cl0">cl0</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2015/09/01/gnome-boxes.html" title="link to GNOME製のVirtualBox！？「Boxes」を試してきたよ">GNOME製のVirtualBox！？「Boxes」を試してきたよ</a>
-    <time datetime="01 Sep 2015">01 Sep 2015</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/software">software</a> <a href="https://ToMeWelcome.github.io/tag/linux">linux</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2015/08/31/misskey-touka-png.html" title="link to Misskey.xyzでまどマギの透過pngを投稿したら・・・・・・">Misskey.xyzでまどマギの透過pngを投稿したら・・・・・・</a>
-    <time datetime="31 Aug 2015">31 Aug 2015</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/web">web</a> <a href="https://ToMeWelcome.github.io/tag/misskey">misskey</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2015/08/25/old-firefox.html" title="link to 夏だしFirefoxのご先祖様に会いに行ってみたよ">夏だしFirefoxのご先祖様に会いに行ってみたよ</a>
-    <time datetime="25 Aug 2015">25 Aug 2015</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/web">web</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2015/08/03/hidamari.html" title="link to 「ひだまりスケッチ」を買ってみた">「ひだまりスケッチ」を買ってみた</a>
-    <time datetime="03 Aug 2015">03 Aug 2015</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/kr-comics">kr-comics</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2015/08/02/gtk.html" title="link to GTK#が使いたくても使えないorz">GTK#が使いたくても使えないorz</a>
-    <time datetime="02 Aug 2015">02 Aug 2015</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/gtk">gtk</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2015/08/01/web-develop.html" title="link to Web開発って結局どうなの？">Web開発って結局どうなの？</a>
-    <time datetime="01 Aug 2015">01 Aug 2015</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/web">web</a></span>
-  </li>
-  <li>
-    <a href="https://ToMeWelcome.github.io/2015/01/31/sl-command.html" title="link to SLコマンドってなんとなく良くない？">SLコマンドってなんとなく良くない？</a>
-    <time datetime="31 Jan 2015">31 Jan 2015</time>
-    <span class="post tags"><a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/linux">linux</a></span>
-  </li>
-</ol>
 
-<nav class="pagination" role="navigation">
-  <span class="posts index">Page 1 of NaN</span>
-</nav>
+  <article class="post tag-blog tag-web tag-wordpress">
+    <header>
+      <div class="post meta">
+        <time datetime="25 Mar 2016">25 Mar 2016</time>
+        <span class="post tags">in <a href="https://ToMeWelcome.github.io/tag/blog">blog</a> <a href="https://ToMeWelcome.github.io/tag/web">web</a> <a href="https://ToMeWelcome.github.io/tag/wordpress">wordpress</a></span>
+
+
+        <span class="post reading-time"> ~ <span></span> read.</span>
+      </div>
+      <a alt="Tweet 'SQLiteにWordPressを入れてみた'" href="https://twitter.com/intent/tweet?text=SQLite%E3%81%ABWordPress%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%BF%E3%81%9F%20%C2%BB&amp;hashtags=blog,web,wordpress&amp;url=https://ToMeWelcome.github.io/2016/03/25/wordpress-in-sqlite.html">
+        
+        <h1 class="icon-reverse icon-social-twitter-post" id="post-title">SQLiteにWordPressを入れてみた</h1>
+      </a>
+    </header>
+
+    <div id="post-content" class="post tag-blog tag-web tag-wordpress">
+      <div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="https://cloud.githubusercontent.com/assets/12780727/14040505/444a7b66-f2ab-11e5-8217-d2246371815b.png" alt="444a7b66 f2ab 11e5 8217 d2246371815b.png">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">何故？</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>なんとなく</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">入れかたメモっておく</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">注意</dt>
+<dd>
+<p><strong>/WorePress-Folder/</strong>はWordPressをインストールしたフォルダとして考えてください。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>では始めましょう!!!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://ja.wordpress.org/">WordPress</a>と<a href="https://wordpress.org/plugins/sqlite-integration/">SQLite Integration</a>をダウンロードし、適当なフォルダに展開</p>
+</li>
+<li>
+<p>WordPress本体をサーバーにうp</p>
+</li>
+<li>
+<p><strong>/WordPress-Folder/wp-content/plugins/sqlite-integration/db.php</strong>を<strong>/WordPress-Folder/wp-content/</strong>に移動する</p>
+</li>
+<li>
+<p><strong>/WordPress-Folder/wp-config-sample.php</strong>の以下の部分を<a href="https://api.wordpress.org/secret-key/1.1/salt/">こ↑こ↓</a>の内容に変更する</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-rust" data-lang="rust">define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>/WordPress-Folder/wp-config-sample.php</strong>を<strong>/WordPress-Folder/wp-config.php</strong>にリネーム</p>
+</li>
+<li>
+<p><strong>/WordPress-Folder/wp-content</strong>のパーミッションを777にする</p>
+</li>
+<li>
+<p><strong>Your-Domain/WordPress-Folder</strong>にアクセス</p>
+</li>
+<li>
+<p>指示に従う</p>
+</li>
+<li>
+<p><strong>/WordPress-Folder/wp-content</strong>のパーミッションを755にする</p>
+</li>
+<li>
+<p>おわり</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___3">参考にしたサイト</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://wp-webzine.com/wp-plugin/390.html/3">WordPressをMySQLデータベース不要でインストールできるプラグイン「SQLite Integration」</a></p>
+</li>
+<li>
+<p><a href="http://www.tsugihagi.net/entry/2014/10/06/115103">Wordpressを共有サーバでSQLiteを使って動かそうとして断念</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+    </div>
+
+    <div class="post related">
+
+    </div>
+
+    <footer class="post comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        var disqus_shortname = 'tomewelcome-blog'; // required: replace example with your forum shortname
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+
+  </article>
 
 
         <footer>
