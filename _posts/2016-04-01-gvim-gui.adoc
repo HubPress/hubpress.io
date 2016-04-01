@@ -1,0 +1,36 @@
+= 「Vim」を「GVim」化してみた
+:hp-alt-title: gvim-gui
+:hp-tags: blog,vim
+:published_at: 2016-04-01
+
+いきなりですが、**私はGvimが嫌いです。**
+
+image::https://cloud.githubusercontent.com/assets/12780727/14198885/edd74c04-f819-11e5-91a9-afb4ba0d1b60.png[]
+
+画像を見ると分かる通りGVimでタブを使うと、Vimに調和しないクッソダサいGTK特有のタブが出てきます。しかし個人的にはこの浮いたデザインを受け入れることが出来ません。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14198883/edd08996-f819-11e5-9b42-cfc6e1b36e08.png[]
+
+しかもコンソール版(Mormal)のVimはタブのデザインも調和していて、素敵です(CV:香風智乃)。
+
+正直に言って、GVim特有の機能といったら。。。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14198884/edd724e0-f819-11e5-879a-b4798483891a.png[]
+
+このPhotoShop風(？)のインターフェイスしか知りません。
+
+という訳で、今回はVimをGVimの様に使いやすくしたいと思います。
+
+(どうでも良いけど「vimtutor」や「gvimtutor」で起動するとVimrcやGVimrcの類を全て無視してくれるから撮影には便利ということが三枚目のスクショ撮影時に分かった。)
+
+## 前提条件
+
+今回は以下の条件で実行します。
+
+* ArchLinux[推奨]
+* Xfce4-Terminal[必須]
+* Numix-Circle[推奨]
+
+## Let's try!
+
+まずはXfce関係の設定を変更します。
