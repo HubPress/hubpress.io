@@ -63,6 +63,10 @@ image::https://cloud.githubusercontent.com/assets/12780727/14202460/0abf6c48-f83
 
 今度使ってみたいと思います。
 
+また、gvimrcを変更することによってCUIベースのタブが使えるそうです。ですが、特にGVimを使う意味は無いのでこれまで通りこの方法を使っていきたいと思います。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14225200/064d474e-f8f5-11e5-8858-9ef12553c682.png[]
+
 == P.S.
 
 今日はエイプリルフールですが影響を避けるためにわざわざ午後になってからこの記事を書いたんですよ。
