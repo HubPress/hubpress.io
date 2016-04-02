@@ -59,8 +59,10 @@ image::https://cloud.githubusercontent.com/assets/12780727/14202460/0abf6c48-f83
 
 (追記)
 
+書いた後、Tyruさんからlink:https://twitter.com/_tyru_/statuses/715872802864111617[TabLine]というものを教えていただきました。
 
+今度使ってみたいと思います。
 
-== P.S
+== P.S.
 
 今日はエイプリルフールですが影響を避けるためにわざわざ午後になってからこの記事を書いたんですよ。
