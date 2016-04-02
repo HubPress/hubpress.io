@@ -11,7 +11,7 @@ image::https://cloud.githubusercontent.com/assets/12780727/14198885/edd74c04-f81
 
 image::https://cloud.githubusercontent.com/assets/12780727/14198883/edd08996-f819-11e5-9b42-cfc6e1b36e08.png[]
 
-しかもコンソール版(Mormal)のVimはタブのデザインも調和していて、素敵です(CV:香風智乃)。
+しかもコンソール版(Mormal)のVimはタブのデザインも調和していて、素敵です(CV:香風智乃)
 
 正直に言って、GVim特有の機能といったら。。。
 
@@ -19,13 +19,11 @@ image::https://cloud.githubusercontent.com/assets/12780727/14198884/edd724e0-f81
 
 このPhotoShop風(？)のインターフェイスしか知りません。
 
-のーまるVimでもマウス使えますし。
-
-という訳で、今回はVimをGVimの様に起動しやすくしたいと思います。
+という訳で、今回はVimをGVimの様に使いやすくしたいと思います。
 
 (どうでも良いけど「vimtutor」や「gvimtutor」で起動するとVimrcやGVimrcの類を全て無視してくれるから撮影には便利ということが三枚目のスクショ撮影時に分かった。)
 
-== 前提条件
+## 前提条件
 
 今回は以下の条件で実行します。
 
@@ -33,32 +31,6 @@ image::https://cloud.githubusercontent.com/assets/12780727/14198884/edd724e0-f81
 * Xfce4-Terminal[必須]
 * Numix-Circle[推奨]
 
-== 下準備
+## Let's try!
 
-まずはXfce関係の設定を変更します。
-
-image::https://cloud.githubusercontent.com/assets/12780727/14202459/0abf25d0-f833-11e5-80d8-fda707497458.png[]
-
-Xfce4 Terminalで右クリックして、「設定」を選んでください。
-
-image::https://cloud.githubusercontent.com/assets/12780727/14202460/0abf6c48-f833-11e5-8b1a-429cffbaeede.png[]
-
-次に「外観」タブを開いて画像のように設定してください。
-
-== ショートカットの作成
-
-適当なシェルスクリプトを作って、以下の様に記入して実行属性をつけてください。
-
-[source]
-#!/bin/sh
-xfce4-terminal --command=vim --title=Vim --icon=vim &
-
-他のターミナルエミュレータでは確認していませんが、Xfce4 Terminalならこれでおｋです。
-
-== まとめ
-
-いかがだったでしょうか。これでGTK特有の調和しないUIとはおさらばですね。是非使ってみてください。
-
-== P.S
-
-今日はエイプリルフールですが影響を避けるためにわざわざ午後になってからこの記事を書いたんですよ。
+まずは
