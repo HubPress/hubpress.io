@@ -1,0 +1,17 @@
+{{!< default}}
+<header id="header" class="animated fadeIn"{{#if author.cover}} style="background-image: url({{author.cover}})"{{/if}}>
+    <div class="header-background">
+    <section class="blog-content">
+        <a class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
+        <span class="blog-description">{{@blog.description}}</span>
+        {{> links}}
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">{{author.name}}</h1>
+        <span class="post-data animated fadeInUp">{{author.bio}}</span>
+    </section>
+    </div>
+</header>
+<main id="main" class="archive">
+    {{> loop}}
+</main>

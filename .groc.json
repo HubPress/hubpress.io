@@ -1,0 +1,7 @@
+{
+  "glob": ["docs/documentation-index.md", "src/hubpress/scripts/**/*.js"],
+  "github": false,
+  "index": "docs/documentation-index.md",
+  "index-page-title": "Developer documentation",
+  "out": "docs/jsdoc/"
+}

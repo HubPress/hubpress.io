@@ -1,0 +1,381 @@
+:toc: macro
+:toclevels: 4
+:sectnums:
+
+= HubPress
+
+toc::[]
+
+A free, open source tool you can use to build a blog using GitHub pages and AsciiDoc.
+
+https://flattr.com/submit/auto?user_id=anthonny_q&url=https://github.com/HubPress/hubpress.io&title=HubPress&language=&tags=github&category=software[image:http://api.flattr.com/button/flattr-badge-large.png[]]
+
+== What Is HubPress?
+image::http://hubpress.io/img/editor.png[]
+
+Created and maintained by http://github.com/anthonny[Anthonny Quérouil] (Twitter  http://twitter.com/anthonny_q[@anthonny_q]).
+
+HubPress is a web application which makes it easy for you to maintain a blog. It provides an online editor for writing blog posts. Blog comments can be enabled using Disqus, and Google Analytics can be enabled to provide insight into visitors' activity. Hosting for your blog is provided by GitHub. Blog posts are created in a simple editor, and use AsciiDoc markup, which is similar to Markdown but more powerful.
+
+NOTE: While HubPress may appear feature-complete, it is in Tech Preview. Bugs are inevitable, so if you find something is not behaving the way you think it should, please raise a GitHub issue and the project team will address it as soon as possible.
+
+Documentation is rapidly evolving as the project gains momentum. Check back regularly for more tips on how to use HubPress. If you see something wrong with the documentation, please raise an issue. Your help with improving every aspect of HubPress is greatly appreciated. Pull Requests are *always* welcome.
+
+== Browser Compatibility
+
+HubPress is compatible with Chrome Desktop, Firefox Desktop, and Chrome for Android.
+
+== Getting Started
+
+=== Installation
+
+==== Fork the Repository
+
+Click the Fork icon image:http://hubpress.io/img/fork-icon.png[Fork,80] to create a copy of this repository within your GitHub account.
+
+==== Use the github.io Domain
+
+If you have never used your GitHub Pages domain before, you can use this procedure to quickly set up HubPress. With this method, only a few steps are required to get HubPress deployed and ready for use.
+
+IMPORTANT: If you are currently using your `username.github.io` GitHub Pages domain for another project, or if you want to use a custom domain name, skip to the next procedure for instructions.
+
+. Rename your repository to `<username>.github.io`
+
+. Set values in `hubpress/config.json`
++
+image:http://hubpress.io/img/edit-config.png[Edit config]
++
+The following parameters are mandatory:
++
+* `username`, which is your GitHub user name,
+* `repositoryName`, which is the new name of the repository fork, `<username>.github.io`.
+. Commit the changes, and open the GitHub Pages domain:  `https://<username>.github.io/`.
+. The following screen indicates you have correctly configured HubPress
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+==== Use a Custom Domain or GitHub Page Domain Already In Use
+
+If you want your blog to be available on a custom domain, or you are already using your GitHub Pages domain to host another project, some extra configuration is required.
+
+. In the repository settings, set the default branch to `gh-pages`:
++
+image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+. Switch your repository to the branch *gh-pages*
++
+image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
++
+. Set the required values in `hubpress/config.json
++
+image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
++
+The following parameters are mandatory:
++
+* `username`, which is your GitHub user name,
+* `repositoryName`, which is the repository fork. For example, `hubpress.io` if you did not rename it.
+. Commit the changes, and open the GitHub Pages domain:  `https://<username>.github.io/<repositoryName>/`.
+. The following screen indicates you have correctly configured HubPress
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+== Administration Console
+
+The HubPress Administration Console is available at */hubpress*
+
+* `https://<username>.github.io/hubpress/` for GitHub Hosted blogs, or
+* `https://<username>.github.io/<repositoryName>/hubpress/` for Domain Hosted blogs.
+
+=== Log Into the Administration Console
+
+image:http://hubpress.io/img/login.png[Install complete,300]
+
+Enter your GitHub credentials to log into HubPress Admin.
+
+Once you authenticate, a personal token is created for future calls from HubPress to the GitHub API.
+
+This is synchronized across all sessions of HubPress, so if you open the Administration Console on your PC and then your Tablet, the token is applicable to all devices.
+
+=== Settings Page
+
+You can configure basic blog settings (such as CNAME and Pagination) and social media accounts you want to connect to your blog.
+
+==== Meta
+
+This section contains basic information configured in the `/hubpress/config.json` file.
+
+The following fields are configurable:
+
+Git CNAME::
+    Lets you specify a custom domain name for your blog. See https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/[Setting Up A Custom Domain] for instructions about setting up a CNAME for your blog.
+Live Preview Render Delay::
+    Controls how long the live render takes to refresh, in milliseconds. For fast typists, setting this field to a value over `2000` (two seconds) will result in a smoother editing experience because the live preview will not be regenerated so frequently. Setting this value below `2000` will result in the live preview refreshing faster, but may result in some visible cursor delay when typing.
+
+==== Site
+
+===== Title and Description
+
+The *Title* and *Description* fields allow you to give your blog a name, and tell visitors what they can expect from your blog posts.
+
+The *Logo* and *Cover Image* fields can be used the following ways:
+
+* An HTML link to an image hosting service. For example gravatar.
+* A link to an image committed to the /images directory of your blog repository.
+
+NOTE: See the `/images/README.adoc` file for tips about embedding images into your blog posts.
+
+===== Theme
+
+The *Theme* is selectable from the list of themes stored in the `/themes` directory. Specify it according to it is spelled in it's containing folder.
+
+===== Google Analytics
+
+The *Google Analytics* field takes the Google Analytics Tracking ID of your site (e.g. UA-1234567-1).
+
+===== Disqus Shortname
+
+The *Disqus shortname* field takes your Disqus URL/shortname that is specified when you register a new site for Disqus. Only the shortname is required, not a link to your profile page.
+
+==== Social Network
+
+All fields in this group require full URLs to your public profile page. The way these values are rendered on your blog depends on the theme selected.
+
+== Managing Posts
+
+When you first start HubPress, the *Posts* view is empty. As you create blog posts, the page populates with the list of posts on the left, and a live preview of the blog post itself on the right.
+
+== Writing A Blog Post with HubPress
+
+NOTE: If you have never used AsciiDoc before to write content, the http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoctor Writer's Guide] should be your first stop in your journey. The guide provides both basic and advanced mark-up examples for you to copy and use.
+
+HubPress Editor displays the AsciiDoc code on the left, and the live preview on the right.
+
+=== Blog Title and Headings
+
+The blog title is always Level 1 in an AsciiDoc post. For example, `= Blog Title` sets the name of the Blog Post to `Blog Title`.
+
+A `= Blog Title` is required for saving it successfully.
+
+If you want a first-level heading you use `== First Level Heading`, and so on to create other nested headings.
+
+=== HubPress Parameters
+
+HubPress allows you to alter characteristics of each blog post using attributes.
+
+==== :hp-image: for Blog Post Cover Images
+
+If you want to add a cover image to your Blog Post, set the `hp-image` attribute.
+
+.:hp-image: Example
+[source, asciidoc]
+----
+= Blog Title
+:hp-image: a-cover-image.jpg
+----
+
+NOTE: Because HubPress defaults the `/images` directory as the root for all images, you only need to declare the filename of the image. Because of this, you may want to consider creating a `/covers` directory in your repository to group the cover images together.
+Naming the cover images consistently will make it very easy to apply to every post. If you have a theme to your blog, this allows your readers to get a visual clue as to what the post is about.
+
+The themes that currently support blog post cover images are:
+
+* Saga
+
+==== :published_at: to Alter the Publication Date
+
+By default, the publication date is the date you created the Blog Post. You can force the publication date by adding the `:published_at:` attribute.
+
+.:published_at: Example
+[source, asciidoc]
+----
+= Blog Title
+:published_at: 2015-01-31
+----
+
+==== :hp-tags: for Metadata Tags
+
+NOTE: Categories are not supported.
+
+Add tags by using the `hp-tags` attribute.
+
+.:hp-tags: Example
+[source, asciidoc]
+----
+= Blog Title
+:hp-tags: HubPress, Blog, Open Source,
+----
+
+==== :hp-alt-title: to Specify an Alternative Title
+
+Specify an alternative title using the `hp-alt-title` attribute.
+
+The alternative title is used instead of the HTML file name generated by HubPress.
+
+.:hp-alt-title: Example
+[source, asciidoc]
+----
+= 大千世界
+:hp-alt-title: My English Title
+----
+
+==== :compat-mode: to Control Legacy AsciiDoc Markup Patterns
+
+Specify how code samples containing AsciiDoc markup patterns are processed. Some code samples may contain delimited asterix symbols that are interpreted like processing instructions by Asciidoctor. 
+
+If you find that your code samples are not displaying correctly, specify `:compat-mode: true` to disable processing in code blocks. 
+
+.:compat-mode: Example
+[source, asciidoc]
+----
+= Blog Title
+:compat mode: true
+
+    `egrep '\(\ *\)\ *\{' /var/log/nginx/*`
+----
+
+If `:compat-mode:` was not specified here, the code sample would render like this:
+
+    egrep '\(\ \)\ *\{' /var/log/nginx/
+
+For more information about `:compat-mode:`, see the http://asciidoctor.org/docs/migration/#compat-mode[AsciiDoctor Migration Guide].
+
+=== Adding Images
+
+==== Push Images to the GitHub Repository
+
+You can use Git command line or a Git app to add images to your blog posts:
+
+. Commit images to the `/images` directory.
+. In your blog post, use the following basic AsciiDoc syntax:
++
+[source,AsciiDoc]
+----
+image::<filename>[]
+----
+. See http://asciidoctor.org/docs/asciidoc-writers-guide/ for complex examples of Image syntax.
+
+If you are embedding images from a hosted source -- such as instagram, another GitHub repository, or any photo hosting sites -- put the full URL to the image in place of the `<filename>`.
+
+.Hosted Image Embed
+----
+image::http://<full path to image>[]
+----
+
+==== Using GitHub Issues as an Image Hosting Container
+
+You can use a single issue as an image container for a blog post containing many issues by uploading multiple images as comments. Alternatively, you can use multiple issues to store individual images. 
+
+Whatever works best for you, and your organization style. Watch this five minute video for a demonstration about how to use GitHub Issues and Cloud Hosting services as embed targets, and some bonus tips on using the `image` AsciiDoc syntax.
+
+video::KoaGU91qJv8[youtube]
+
+=== Embedding Video
+
+HubPress allows you to embed video and audio directly into your blog post by using a quick notation in your blog post. 
+
+You don't need to declare the full URL: all you need is the unique video ID.
+
+```
+video::[unique_youtube_video_id][youtube | vimeo]
+```
+
+.YouTube Video Embed
+```
+video::KCylB780zSM[youtube]
+```
+
+.Vimeo Video Embed
+```
+video::67480300[vimeo]
+```
+
+=== Embedding Audio
+
+While YouTube and Vimeo have pre-defined short notations in Asciidoctor, other services like BandCamp or SoundCloud require a block passthrough to be declared. Block passthroughs are described in detail in the http://asciidoctor.org/docs/user-manual/#pass-bl[Asciidoctor User Manual].
+
+.BandCamp Audio Embed
+```
+++++
+<iframe style="border: 0; width: 350px; height: 470px;" src="//bandcamp.com/EmbeddedPlayer/album=2869458964/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://mocamborecords.bandcamp.com/album/showdown">SHOWDOWN by THE MIGHTY MOCAMBOS</a></iframe>
+++++
+```
+
+TIP: The trick with block passthroughs (no matter the type) is to ensure any `src` value does not contain a mixed protocol. For example if the `src` link contained `http` and your blog uses a `https` protocol, the embed would fail. 
+
+Some <iframe> elements provided by these sites may include the protocol, and you will need to strip the protocol out when declaring passthrough blocks.
+
+The source link is essentially an absolute target to the hosted file on the service. The `//` opens the pointer to the file. See https://github.com/HubPress/hubpress.io/issues/136[this issue] which describes the journey to discovering how to embed content other than Vimeo and YouTube content.
+
+== Troubleshooting
+
+If something is not working as you expect, some of these tips may help.
+
+=== Resetting Blog Database on Android
+
+Sometimes the HubPress local database becomes out-of-sync with your published blog. This can happen because you are editing your blog on your PC, then switch over to your tablet.
+
+HubPress works on a locally-stored database specific to your Browser, so if you switch devices -- and subsequently switch browsers -- you lose the synchronicity between browsers.
+
+To return your instance of HubPress to that of the published blog, clear the browser Cache and Data in Settings > Apps. When you do this, HubPress is forced to rebuild the local database, and will reflect the state of the blog in GitHub.
+
+== Frequently Asked Questions
+
+There are some commonly-asked questions in the issue tracker that are worth calling out here.
+
+=== How Do I Update My HubPress Instance?
+
+Because HubPress is hosted on GitHub, you can update by pulling down the latest changes from the HubPress master repository.
+
+To learn how to do this correctly (there's a trick to it the first time you pull changes from upstream), you can watch the following video to learn the correct process.
+
+video::KCylB780zSM[youtube]
+
+https://www.youtube.com/watch?v=KCylB780zSM[Updating HubPress]
+
+=== How Do I Contribute to HubPress?
+
+At the moment, Pull Requests (PRs) for HubPress should be pushed to the `/Development` branch of HubPress. 
+
+It is best practice to create an issue in the issue tracker, so that the idea you have is tracked in the community. Just link your bug reference in the PR, and we can take a look at your motivation behind the Pull Request.
+
+Don't worry about a bug for simple stuff like corrections to URLs, minor typos in the READMEs, and other similar issues: these type of issues require no tracker as they do not require any community vote or agreement.
+
+The team is really grateful for any contributions you make, no matter how small.
+
+=== How Do I Use HubPress with Multiple Users?
+
+You can _technically_ use the same HubPress instance with multiple authors, but it requires some trust from the other users you give access. 
+
+There are some points to consider before opening up your blog instance to other contributiors.
+
+Attribution::
+    There is no way to attribute a blog user to individual posts at this stage, unless you perhaps use a :hp-tags: category for the name of each contributor (a crude work-around at best).
+Global User Name::
+    Blog posts are attributed to the primary GitHub User who configures the Settings page. If someone you invite to co-author your blog saves changes to the Settings page, *all* blog posts will have that author as the person who wrote blog posts in your HubPress instance.
+
+If you have a close, trusted team of bloggers who just want to write posts, then you can use HubPress together.
+
+Understand that HubPress is really only suited to single bloggers, and does not offer and GitHub authentication intelligence for blogging teams.  
+
+=== Can I Specify Other Asciidoctor Backend Attributes in HubPress Posts?
+
+HubPress only supports the HTML5 backend. 
+
+Specifying other backend types will result in an error similar to:
+
+    Uncaught RuntimeError: asciidoctor: FAILED: missing converter for backend 'deckjs'. Processing aborted.
+
+If you do want to use a different backend to process your AsciiDoc files, the http://asciidoctor.org/docs/user-manual/#selecting-an-output-format[Asciidoctor User Guide] can help you work out the backend that is right for you, for use with the +asciidoctor+ command-line script. 
+
+If you want a near WYSIWYG interface to edit your AsciiDoc files, applications like http://atom.io[Atom Editor] or http://asciidocfx.com[AsciidocFX Editor] are excellent choices.
+
+== Credits
+
+Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
+Thanks to https://github.com/takkyuuplayer[takkyuuplayer], https://github.com/hinaloe[hinaloe] to have translated the README into Japanese
+
+== Donations
+
+https://flattr.com/submit/auto?user_id=anthonny_q&url=https://github.com/HubPress/hubpress.io&title=HubPress&language=&tags=github&category=software[image:http://api.flattr.com/button/flattr-badge-large.png[]]
+
+If you love HubPress, and you want to support the team responsible for developing the app, you can flatter us by giving us a donation through flattr. Any donation you give will be put towards development-enabling products like caffeine. 
+
+The flattr button is available at the top of this README, or in the HubPress app's <<Settings_Page>>.

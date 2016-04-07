@@ -1,0 +1,37 @@
+:sectnums:
+:toc: macro
+
+= Developer Documentation
+
+Read this document to learn how to fork and run HubPress in a development environment.
+
+toc::[]
+
+== Technology Requirements
+
+HubPress requires the following technologies:
+
+* https://nodejs.org/en/download/[Node.js], which will give access to all of the sub-technologies:
+** https://docs.npmjs.com/getting-started/installing-node[Node Package Manager (`npm`)]
+** http://bower.io/#install-bower[bower]
+** https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md[gulp].
+
+If you want to also build the documentation, you will require http://pygments.org/download/[Pygments].
+
+== Configuring Your Development Environment
+
+To configure HubPress for development, run through the following steps. 
+
+.How To Configure Your Environment for HubPress Development
+. Fork https://github.com/HubPress/hubpress.io in GitHub
+. Clone your repository `git clone` to your PC.
+. Checkout the branch `development`
+. Run `npm install` and `bower install`
+. Run `npm install -g gulp`
+
+== Building the Project
+
+. Edit the `hubpress/config.json`
+* Set your username 
+* Set the name of your repository
+. Run `gulp watch`

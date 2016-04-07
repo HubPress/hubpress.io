@@ -1,0 +1,111 @@
+= Blog Post Title
+////
+This is an AsciiDoc Comment. You can't see these in the published output, but they will help you understand the critical parts of a HubPress Blog Post.
+////
+////
+All these tags are optional - delete them if you do not need them
+////
+
+:hp-tags: First Tag, Second Tag, Third Tag
+:hp-cover: _[link to the cover image for the blog post]_
+:published_at: YYYY-MM-DD
+
+Each heading -- no matter the level -- must have one line of whitespace separating the title.
+
+== First Heading
+////
+Click on the *Show/Hide Live Preview* (the eye icon)  to see this post in rendered view. Notice how this heading is auto-numbered `1.`. That's because two equals characters tell AsciiDoc to make a Chapter (or Level 1 Heading).
+////
+
+=== First Section
+////
+When you indent with three equals characters, this tells AsciiDoc that you want to begin a Section (or Level 2 Heading)
+////
+
+First Section Text
+
+=== Lists
+////
+Lists are simple in AsciiDoc. You use full stops to start a numbered list, and asterix characters to start ordered lists
+////
+
+A list must have one line of white space separating the lead-in sentence and the start of the list:
+
+. Number One
+. Number Two
+.. Sub-numbered list one
+.. Sub-numbered list two
+. Number Three
+* Bullet One
+* Bullet Two
+** Sub-bullet One
+** Sub-bullet Two
+
+=== Images
+////
+The README.adoc covers this but in summary you can insert images by referencing them from a URL, or from your GitHub `/images` directory.
+////
+
+.Image Hosted in GitHub HubPress Fork
+[source.asciidoc]
+----
+image::hubpress_logo.gif[]
+----
+
+.Image Hosted on the Internet
+----
+.HubPress Editor
+image::http://hubpress.io/img/editor.png[]
+----
+.HubPress Editor
+image::http://hubpress.io/img/editor.png[]
+
+=== Tables
+////
+Tables can be complex to configure, but once you get it right, they look great in AsciiDoc. Separate each row with a pipe (|) symbol. You don't need to equally space out the colums either: the pipe takes care of columns for you.
+////
+
+.Table Example
+[source,asciidoc]
+----
+.An example table
+[options="header,footer"]
+|====
+|Col 1|Col 2
+|1    |Item 1
+|2    |Item 2
+|3    |Item 3
+|4    |Three items
+|====
+----
+.Two-column Table Example
+[options="header,footer"]
+|====
+|Col 1|Col 2
+|1    |Item 1
+|2    |Item 2
+|3    |Item 3
+|6    |Three items
+|====
+
+==== Table Alternatives
+////
+You can use the `Labeled` mark up to make two column tables in list form. If you are familiar with XML, these are basically <variablelist> constructs.
+////
+
+.Using Labeled Lists as Table Alternatives
+[source.asciidoc]
+----
+Term 1::
+    Definition 1
+Term 2::
+    Definition 2
+----
+Term 1::
+    Definition 1
+Term 2::
+    Definition 2
+
+==== Want More AsciiDoc Syntax Help?
+
+If you want to create really detailed blog posts, the best place to find out more about AsciiDoc syntax is the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoctor Quick Reference Guide]. 

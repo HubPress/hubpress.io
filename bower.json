@@ -1,0 +1,11 @@
+{
+  "name": "hubpress",
+  "version": "0.0.1",
+  "dependencies": {
+    "modernizr": "^2.8.3",
+    "github": "anthonny/github#master",
+    "jquery": "~2.1.3",
+    "dexie": "~1.0.2",
+    "underscore": "~1.7.0"
+  }
+}
