@@ -1,0 +1,17 @@
+{{!< default}}
+<header id="header" class="animated fadeIn"{{#if tag.image}} style="background-image: url({{tag.image}})"{{/if}}>
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
+        <span class="blog-description">{{@blog.description}}</span>
+        {{> links}}
+    </section>
+    <section class="header-content">
+        <h1 class="tag-title animated fadeInUp">{{tag.name}}</h1>
+        <span class="tag-data"><span class="tag-description animated fadeInUp">{{tag.description}}</span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="archive">
+    {{> loop}}
+</main>

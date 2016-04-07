@@ -1,0 +1,11 @@
+<hr class="post-list__divider " />
+
+<nav class="pagination" role="navigation">
+    {{#if prev}}
+        <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="{{page_url prev}}#blog">&larr; Newer Posts</a>
+    {{/if}}
+    <span class="pagination__page-number">Page {{page}} of {{pages}}</span>
+    {{#if next}}
+        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="{{page_url next}}#blog">Older Posts &rarr;</a>
+    {{/if}}
+</nav>

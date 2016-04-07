@@ -1,0 +1,25 @@
+<section id="feed" class="feed">
+    {{#foreach posts}}
+    <article class="{{post_class}}" style="opacity: 0;">
+        {{#if image}}
+        <a href="{{url}}" class="post-image">
+            <img src="{{image}}" alt="">
+            <h2 class="post-title">{{{title}}}</h2>
+        </a>{{else}}
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        {{/if}}
+        <section class="post-content">
+            {{excerpt words=25}}…
+        </section>
+        <section class="post-meta">
+            <span class="date"><i class="fa fa-clock-o"></i> <a href="{{url}}"><time class="timesince" data-timesince="{{date format='X'}}" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMMM YYYY'}}">{{date published_at timeago='true'}}</time></a></span>
+            {{#author}}<span class="author"><i class="fa fa-user"></i> <a href="{{url}}">{{name}}</a></span>{{/author}}
+            {{#if tags}}<span class="tags"><i class="fa fa-tags"></i>
+                <span>
+                {{tags prefix="" separator=", "}}</span>
+            </span>{{/if}}
+        </section>
+    </article>
+    {{~/foreach}}
+</section>
+{{pagination}}
