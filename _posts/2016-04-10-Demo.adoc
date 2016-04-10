@@ -1,3 +1,5 @@
 = Demo !
 
 Welcome, you are in *HubPress*
+
+This is a new blog.
