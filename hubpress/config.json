@@ -7,13 +7,13 @@
   "site":{
     "title":"Birdyou.Yao",
     "description":"一个追逐蓝牙物联网的少年.",
-    "url":"http://birdyou.cn/"
+    "url":"https://panziyq.github.io"
   },
   "socialnetwork":{
     "github":"https://github.com/birdyou",
   },
   "theme":{
-    "name":"uno",
-    "url":"//panziyq.github.io/themes/uno-zen"
+    "name":"Saga",
+    "url":"//panziyq.github.io/themes/Saga"
   }
 }
