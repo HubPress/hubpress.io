@@ -4,7 +4,16 @@
     "repositoryName": "panziyq.github.io",
     "branch": "master"
   },
-  "theme": {
-    "name": "Casper"
+  "site":{
+    "title":"Birdyou.Yao",
+    "description":"一个追逐蓝牙物联网的少年.",
+    "url":"http://birdyou.cn/"
+  },
+  "socialnetwork":{
+    "github":"https://github.com/birdyou",
+  },
+  "theme":{
+    "name":"uno",
+    "url":"//panziyq.github.io/themes/uno-zen"
   }
 }
