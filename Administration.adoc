@@ -1,0 +1,159 @@
+:toc: macro
+:toclevels: 4
+:sectnums:
+
+= Administration Guide
+
+This guide will help you get the most out of your HubPress blog. It will teach you how to configure the various feature of your blog so you can make it your own.
+
+NOTE: You do not need any special systems administrtion knowledge to use HubPress. We've split out the Administration information so the README remains small in size.
+
+toc::[]
+
+== About the Administration Console
+
+The HubPress Administration Console is available at */hubpress*:
+
+* `https://<username>.github.io/hubpress/` for GitHub Hosted blogs, or
+* `https://<username>.github.io/<repositoryName>/hubpress/` for Domain Hosted blogs.
+* `https://[cname_domain]/hubpress` for custom website blogs.
+
+NOTE: If you are using a CNAME, you might need to access your Administration console using the `https://<username>.github.io` address pattern initially, so your CNAME redirect will work. 
+
+== Log Into the Administration Console
+
+image:http://hubpress.io/img/login.png[Install complete,300]
+
+Enter your GitHub credentials to log into HubPress Admin.
+
+Once you authenticate, a personal token is created for future calls from HubPress to the GitHub API.
+
+This is synchronized across all sessions of HubPress. 
+If you open the Administration Console on your PC and then your Tablet, the token is applicable to all devices.
+
+== Settings Page
+
+You can configure basic blog settings (such as CNAME and Pagination) and social media accounts you want to connect to your blog.
+
+Each settings group is separated into tabs, to logically group the settings.
+
+=== Meta
+
+This tab contains basic information configured in the `/hubpress/config.json` file.
+
+The following fields are configurable:
+
+Git CNAME::
+    Lets you specify a custom domain name for your blog.
+    See https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/[Setting Up A Custom Domain] for instructions about setting up a CNAME for your blog.
+Live Preview Render Delay::
+    Controls how long the live render takes to refresh, in milliseconds. 
+    For fast typists, setting this field to a value over `2000` (two seconds) will result in a smoother editing experience because the live preview will not be regenerated so frequently. 
+    Setting this value below `2000` will result in the live preview refreshing faster, but may result in some visible cursor delay when typing.
+
+=== Site
+
+==== Title and Description
+
+The *Title* and *Description* fields allow you to give your blog a name, and tell visitors what they can expect from your blog posts.
+
+The *Logo* and *Cover Image* fields can be used the following ways:
+
+* An HTML link to an image hosting service. For example gravatar.
+* A link to an image committed to the /images directory of your blog repository.
+
+NOTE: See the `/images/README.adoc` file for tips about embedding images into your blog posts.
+
+=== Theme
+
+The *Theme* is selectable from the list of themes stored in the `/themes` directory. 
+
+This field is a free-text field, but you need to specify the theme according to the folder name. 
+The current folder names are:
+
+* Casper
+* ichi
+* Roon
+* Saga
+* uno
+* uno-zen
+
+NOTE: Capitalisation is important in the folder names. Specify them as they are written.
+
+=== Google Analytics
+
+The *Google Analytics* field takes the Google Analytics Tracking ID of your site. For example `UA-1234567-1`.
+
+=== Disqus Shortname
+
+The *Disqus shortname* field takes your Disqus URL/shortname that is specified when you register a new site for Disqus. 
+
+Only the shortname is required, not a link to your profile page.
+
+=== Social Network
+
+All fields in this group require full URLs to your public profile page. 
+The way these values are rendered on your blog depends on the theme selected.
+
+== Managing Posts
+
+When you first start HubPress, the *Posts* view is empty. 
+As you create blog posts, the page populates with the list of posts on the left, and a live preview of the blog post itself on the right.
+
+See the Writers Guide for tips about creating posts successfully with HubPress.
+
+== Update HubPress
+
+Because HubPress is hosted on GitHub, you can update by pulling down the latest changes from the HubPress master repository.
+
+If you're new to GitHub, the repository you forked the project from is referred to as `Upstream`.
+
+You update HubPress by creating a Pull Request (PR) against the hubpress.io upstream repository.
+
+Use the following URL pattern to directly create a PR from the Base URL (your blog fork) to the Head URL (hubpress.io)
+
+.Pull Request URL Syntax
+[source,http]
+----
+https://github.com/[username]/[blog_repository_name]/compare/master...HubPress:master
+----
+
+username:: Your GitHub username.
+blog_repository_name:: Your GitHub Pages URI, where you access your public blog from.
+
+The following link is an actual PR URL, which is provided to demonstrate the syntax
+
+[source,http]
+----
+https://github.com/jaredmorgs/jaredmorgs.github.io/compare/master...HubPress:master
+----
+
+To see a video of the process, see the following YouTube video.
+
+video::KCylB780zSM[youtube]
+
+https://www.youtube.com/watch?v=KCylB780zSM[Updating HubPress]
+
+== Use HubPress with Multiple Users
+
+You can _technically_ use the same HubPress instance with multiple authors, but it requires some trust from the other users granted access to your blog. 
+
+There are some points to consider before opening up your blog instance to other contributiors.
+
+Attribution::
+    There is no way to attribute a blog user to individual posts at this stage, unless you perhaps use a :hp-tags: category for the name of each contributor (a crude work-around at best).
+Global User Name::
+    Blog posts are attributed to the primary GitHub User who configures the Settings page. 
+    If someone you invite to co-author your blog saves changes to the Settings page, *all* blog posts will have that author as the person who wrote blog posts in your HubPress instance.
+
+If you have a close, trusted team of bloggers who just want to write posts, then you can use HubPress together.
+
+Understand that HubPress is really only suited to single bloggers, and does not offer and GitHub authentication intelligence for blogging teams.
+
+Thanks to https://github.com/jaredmorgs[Jared Morgan] for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.
+Thanks to https://github.com/takkyuuplayer[takkyuuplayer], https://github.com/hinaloe[hinaloe] to have translated the README into Japanese
+
+== Donations
+
+If you love HubPress, and you want to support the team responsible for developing the app, you can use https://gratipay.com/hubpress/[Gratipay] image:https://avatars1.githubusercontent.com/u/1744073?v=3&s=24[]. 
+Any donation you give will be put towards development-enabling products like caffeine and pizza.

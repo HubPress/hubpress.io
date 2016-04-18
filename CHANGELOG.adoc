@@ -1,3 +1,13 @@
+## 0.4.0
+
+* feat(gui): switch to material design with material-ui
+* fix(dependencies): update version of dependencies
+* fix(build): change all the build process
+* doc(README): update README from the branch development
+* doc(README): split README
+* feat(theme): add theme uno-zen
+* feat(theme): add theme ghostium
+
 ## 0.3.0
 
 * fix(excerpt): add a fix for CJK language

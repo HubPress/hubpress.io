@@ -2,7 +2,7 @@
 
 The default theme for [Ghost](http://github.com/tryghost/ghost/).
 
-To download, visit the [releases](https://github.com/TryGhost/Casper/releases) page.
+To download, visit the [releases](https://github.com/TryGhost/Casper/releases) page. See the [demo](https://demo.ghost.io).
 
 ## Copyright & License
 
