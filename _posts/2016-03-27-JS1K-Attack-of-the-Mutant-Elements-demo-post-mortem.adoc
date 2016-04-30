@@ -4,4 +4,122 @@ One year more, there was the https://js1k.com[JS1K], the microcode competition f
 
 After participating a few years, for me it's one of the most rewarding competitions. I must admit I only use a few hours and the result is far from being something impressive. But it's good exercise and overall, it has a lot of fun.
 
-This year I wanted something different. On past editions, 
+This year I wanted something different. On past editions, I focused on creating a single graphic effect, but this time I wanted to do something more user-oriented. And I wanted to use simple DOM elements instead of the traditional <canvas> rendering. After all, traditional DOM objects should have the same rights as new HTML5 ones... anyway, it's simply another resource.
+
+And before starting... yes, I cheated the rules: arrow notation is part of ES6, which was not allowed in the contest. But also the rules stated that the entry should run in two major browsers, and both Chrome and Firefox support that notation since long time ago (thanks to @manolopm for noticing about this).
+
+So, let's start.
+
+First a few minor initializations, nothing special.
+
+  var w = innerWidth;
+  var h = innerHeight;
+  var u = w/12;
+  var diff;
+  b.style.background = "#000";
+  b.style.overflow = "hidden";
+  
+Then the "factory" of elements. The idea was to have a single method that could instanciate all the Too many 'el' elements, and sure that 
+
+  var createElement = (ship, x, y, color, v, move) => {
+    var el= d.createElement('div');
+    el.innerHTML=ship;
+    el.style.position="absolute";
+    el.style.left = parseInt(x)+"px";
+    el.style.bottom = parseInt(y)+"px";
+    el.style.color = color;
+    el.v = v;
+    el.rv = 0;
+    el.x = x;
+    el.y = y;
+    el.move = move;
+    el.spin = 1;
+    b.appendChild(el);
+    return el;
+  };
+
+  var move = (el) => {
+    el.move(el);
+    el.style.left = parseInt(el.x)+"px";
+    el.style.bottom = parseInt(el.y)+"px";
+  };
+
+  var Elements = [
+    createElement("M", w/2, h/2, "#FFF", 0, () => {}),
+    createElement("0", w-u, h-u, "#FF0", 0, () => {})
+  ];
+
+  var ra = Math.random;
+  var co = Math.cos;
+  var si = Math.sin;
+  for (var i=0; i < 9; i++) {
+    Elements.push(createElement(
+      String.fromCharCode(65+ra()*25), ra() * w, ra() * h, "#F5"+i, 0,
+       (el) => {
+         var x = el.x - (w/2);
+         var y = el.y - (h/2);
+         var f = u * (diff/1000) * .01 * el.spin;
+         var px = (x * co(f)) - (y * si(f));
+         var py = (y * co(f)) + (x * si(f));
+         el.x = px + (w/2);
+         el.y = py + (h/2);
+       })
+    );
+  }
+
+  var shoot = () => {
+    if (Elements[Elements.length-1].innerHTML == "|") {
+      return;
+    }
+    Elements.push(createElement(
+      "|", w/2, h/2, "#05F", 2, (el) => {
+        el.y += el.v * u * (diff/1000);
+        var e, x2, y2;
+        for (var i = Elements.length-2; i; i--) {
+          e = Elements[i];
+          sq = ((e.x - el.x) * (e.x - el.x)) + ((e.y - el.y) * (e.y - el.y));
+          if (sq < 300) {
+            Elements[i].innerHTML="";
+            Elements.splice(i, 1);
+            el.y=h+1;
+
+            Elements[1].innerHTML = parseInt(Elements[1].innerHTML) +100;
+
+            break;
+          }
+        }
+        if (el.y > h) {
+           Elements.splice(Elements.length - 1, 1);
+        }
+      }
+    ));
+  };
+
+  document.addEventListener('keydown', function(event) {
+      switch(event.keyCode) {
+        case 32:
+          shoot();
+          break;
+      }
+  });
+
+  var loop = () => {
+    time = performance.now();
+    diff = time - old_time;
+    old_time = time;
+    Elements.forEach((v) => {
+      move(v);
+    });
+
+    requestAnimationFrame(loop);
+  };
+
+  setInterval(() => {
+    Elements.forEach((v) => {
+        v.spin = Math.round(Math.random())? 1: -1;
+    });
+  }, 3000);
+
+  var old_time=performance.now();
+  requestAnimationFrame(loop);
+
