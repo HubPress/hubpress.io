@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Migrating a dynamic webpage to static</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html" />
+    
+    <meta property="og:site_name" content="The Fallen Apples" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Migrating a dynamic webpage to static" />
+    <meta property="og:description" content="Motivation OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It&amp;#8217;s working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty..." />
+    <meta property="og:url" content="https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html" />
+    <meta property="article:published_time" content="2016-05-04T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-05-05T17:48:46.088Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Migrating a dynamic webpage to static" />
+    <meta name="twitter:description" content="Motivation OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It&amp;#8217;s working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty..." />
+    <meta name="twitter:url" content="https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "The Fallen Apples",
+    "author": {
+        "@type": "Person",
+        "name": "Manel Villar",
+        "image": "https://avatars.githubusercontent.com/u/135327?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "manelvf.com"
+    },
+    "headline": "Migrating a dynamic webpage to static",
+    "url": "https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html",
+    "datePublished": "2016-05-04T22:00:00.000Z",
+    "dateModified": "2016-05-05T17:48:46.088Z",
+    "description": "Motivation OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It&amp;#8217;s working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Migrating a dynamic webpage to static</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1462399200" datetime="2016-05-05T00:00" title="05 May 2016">2016-05-05 00:00:00<ago class="ago"></time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="">Manel Villar</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div class="sect1">
+<h2 id="_motivation">Motivation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It&#8217;s working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty of reasons for doing that, but for me the main one is simple: maintenance. Dynamic websites require always maintenance, even minimal one. But with static ones, you can keep the contents online with almost zero manteinance and also a very minimal hosting cost. Once you convert it to static, you can replace it for a newer version of the software or let it only for archive purposes.</p>
+</div>
+<div class="paragraph">
+<p>But it&#8217;s very probable that if you have reached this post, you already have your reasons for moving into static, so let&#8217;s go on with the process.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tools">Tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One good tool, that I used for <a href="http://chuza.org">website</a>, is <strong>httrack</strong>. Seems to be the de-facto standard for this work, but be aware that there are many other ways of doing this, as using wget, i.e. The advantage of httrack is that takes care of converting all the links to relative urls. Also there are some caveats, as it needs some tuning:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It&#8217;s quicker to use it from a server or even better from the same server the machine is hosted than using it from local. Servers have in most cases better connections than other home connections ;D.</p>
+</li>
+<li>
+<p>Different versions have different behaviors, so check the results with different ones if you can. Some versions have also problems for dealing with https connections.</p>
+</li>
+<li>
+<p>It you want to use a different version than the one your linux distribution uses, you might need to compile the one you need. Not as difficult as it seems.</p>
+</li>
+<li>
+<p>There can be a lot of recursion in a dynamic web application links. Also there can be a lot of useless stuff. The only way of dealing with it was to do a fair amount of trial and error and add exclusion clausules (--exclude) for all those useless links. Sometimes, they are easy to spot, if they include something like "backend" in the url name, but sometimes can be a bit tricky. There can be plenty of them so feel free to propose a better process for removing them.</p>
+</li>
+<li>
+<p>It needs a generous amount of space for the temporary folder. You can get rid of it after the task is complete, anyway.</p>
+</li>
+<li>
+<p>The task can be slow, althought is very dependent of your website. So, open a tmux session in the server and let it work for a few hours, maybe days.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hosting_services">Hosting services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I haven&#8217;t found anything better than Amazon S3 or Google Storage for big sizes. For tiny ones, both Dropbox or Google Drive can be convenient, but I&#8217;m not sure about their reliability. For a few cents a month, it might be useful to use the safer approach of first ones. As a bonus, they let you setup replications and many other goodness. Let me know also if you find also, better reliable alternatives.</p>
+</div>
+<div class="paragraph">
+<p>A little drawback of these kind of hostings is that they cannot use the naked domain, so you have to use something like 'www' for them to be reachable and a service like wwwizer (there are many of them for free) for redirecting from the naked domain to your stored one. Also, be aware that your bucket name both in Amazon an Google Storage has to be the full name of the redirected domain, ie: www.mydomain.com.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seems a lot of work but is not. Also IMO these tasks are always interesting, because they are the basically what we developers do: transforming data from one source to other. And the final result can be grateful, as you keep your data and remove the burden of the maintenance.</p>
+</div>
+<div class="paragraph">
+<p>Have fun!!</p>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'manelvfgithubio'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">The Fallen Apples</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+    <script src="//manelvf.github.io/blog/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34164255-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
