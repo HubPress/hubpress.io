@@ -1,0 +1,13 @@
+= Migrating a dynamic webpage to static
+
+== Motivation
+OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It's working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty of reasons for doing that, but for me the main one is simple: maintenance. Dynamic websites require always maintenance, even minimal one. But with static ones, you can keep the contents online with almost zero manteinance and also a very minimal hosting cost.
+
+But it's very probable that if you have reached this post, you already have your reasons for moving into static, so let's go on with the process.
+
+== Tools and services
+
+One good tool, that I used for http://chuza.org[website], is *httrack*. Seems to be the de-facto standard for this work, but be aware that there are many other ways of doing this, as using wget, i.e. The advantage of httrack is that takes care of converting all the links Also there are some caveats, as it needs some tuning:
+
+
+== Conclusion
