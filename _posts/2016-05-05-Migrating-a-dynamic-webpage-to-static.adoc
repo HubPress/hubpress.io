@@ -1,13 +1,31 @@
 = Migrating a dynamic webpage to static
 
 == Motivation
-OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It's working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty of reasons for doing that, but for me the main one is simple: maintenance. Dynamic websites require always maintenance, even minimal one. But with static ones, you can keep the contents online with almost zero manteinance and also a very minimal hosting cost.
+
+OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It's working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty of reasons for doing that, but for me the main one is simple: maintenance. Dynamic websites require always maintenance, even minimal one. But with static ones, you can keep the contents online with almost zero manteinance and also a very minimal hosting cost. Once you convert it to static, you can replace it for a newer version of the software or let it only for archive purposes.
 
 But it's very probable that if you have reached this post, you already have your reasons for moving into static, so let's go on with the process.
 
-== Tools and services
+== Tools
 
-One good tool, that I used for http://chuza.org[website], is *httrack*. Seems to be the de-facto standard for this work, but be aware that there are many other ways of doing this, as using wget, i.e. The advantage of httrack is that takes care of converting all the links Also there are some caveats, as it needs some tuning:
+One good tool, that I used for http://chuza.org[website], is *httrack*. Seems to be the de-facto standard for this work, but be aware that there are many other ways of doing this, as using wget, i.e. The advantage of httrack is that takes care of converting all the links to relative urls. Also there are some caveats, as it needs some tuning:
 
+- It's quicker to use it from a server or even better from the same server the machine is hosted than using it from local. Servers have in most cases better connections than other home connections ;D.
+- Different versions have different behaviors, so check the results with different ones if you can. Some versions have also problems for dealing with https connections.
+- It you want to use a different version than the one your linux distribution uses, you might need to compile the one you need. Not as difficult as it seems.
+- There can be a lot of recursion in a dynamic web application links. Also there can be a lot of useless stuff. The only way of dealing with it was to do a fair amount of trial and error and add exclusion clausules (--exclude) for all those useless links. Sometimes, they are easy to spot, if they include something like "backend" in the url name, but sometimes can be a bit tricky. There can be plenty of them so feel free to propose a better process for removing them.
+- It needs a generous amount of space for the temporary folder. You can get rid of it after the task is complete, anyway.
+- The task can be slow, althought is very dependent of your website. So, open a tmux session in the server and let it work for a few hours, maybe days.
+
+
+== Hosting services
+
+I haven't found anything better than Amazon S3 or Google Storage for big sizes. For tiny ones, both Dropbox or Google Drive can be convenient, but I'm not sure about their reliability. For a few cents a month, it might be useful to use the safer approach of first ones. As a bonus, they let you setup replications and many other goodness. Let me know also if you find also, better reliable alternatives.
+
+A little drawback of these kind of hostings is that they cannot use the naked domain, so you have to use something like 'www' for them to be reachable and a service like wwwizer (there are many of them for free) for redirecting from the naked domain to your stored one. Also, be aware that your bucket name both in Amazon an Google Storage has to be the full name of the redirected domain, ie: www.mydomain.com.
 
 == Conclusion
+
+Seems a lot of work but is not. Also IMO these tasks are always interesting, because they are the basically what we developers do: transforming data from one source to other. And the final result can be grateful, as you keep your data and remove the burden of the maintenance.
+
+Have fun!!
