@@ -1,4 +1,6 @@
 = B2G OS: Rebirth of firefox os for smartphones. 
 :hp-tags: firefoxos, b2gos
 
-As we all know firefox os is discontinued by Mozilla as it is focusing on IoT & connected devices.But Mozilla didn't kill the os. Instead, it handed over the job to the community to maintain it. Now, a group of people gathered together & working on it. You can also be a part of the project by  
+As we all know firefox os for smart phones is discontinued by Mozilla as it is focusing on IoT & connected devices.But Mozilla didn't kill the os. Instead, it handed over the job to the community to maintain it. Now, a group of people gathered together & working on it. 
+
+You can also be a part of the project. See this page for more info https://developer.mozilla.org/en-US/docs/Mozilla/B2G_OS
