@@ -1,0 +1,20 @@
+= Budapest JS 2016
+
+I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there:
+
+== Workshops
+
+I planned to go to a hardware related workshop, but I had to attend the one related to the http://haxe.org/[Haxe Language] in a company that really uses it for production. It was very interesting as it seems the true inheritor of Flash, and is somehow used in the adult content industry. Yes, you have read the last sentence correctly. They were also recruiting, btw.
+
+The Haxe language is very interesting for several reasons: it has survived for more than ten years in the industry (wow!), is able to target several platforms and it has evolved slowly but steadily in its lifetime. I would say it's really a transpiler, before CoffeeScript started the trend in the JS world. It also makes you think a lot about languages being only gateways to their underlying platforms, something that we usually forget when we developers decide the tools we are going to use for a new project or problem.
+
+The guys doing the workshop/conference were really patient doing the explanations, as the attendance were mostly esceptical.  
+
+The organizers should improve the workshops assignation, as people should be able to choose them. Anyway, they were included in the conference price, so it was a good deal. 
+
+== Conference
+
+== The city
+
+On a side related note, the city is really interesting, with lots of history and nigthlife. And many dark sides. Worths a visit without any doubt.
+
