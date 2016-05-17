@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Budapest JS 2016 - Part I: the workshop about Haxe</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html" />
+    
+    <meta property="og:site_name" content="The Fallen Apples" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Budapest JS 2016 - Part I: the workshop about Haxe" />
+    <meta property="og:description" content="I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se. The..." />
+    <meta property="og:url" content="https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html" />
+    <meta property="article:published_time" content="2016-05-16T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-05-17T20:33:34.924Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Budapest JS 2016 - Part I: the workshop about Haxe" />
+    <meta name="twitter:description" content="I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se. The..." />
+    <meta name="twitter:url" content="https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "The Fallen Apples",
+    "author": {
+        "@type": "Person",
+        "name": "Manel Villar",
+        "image": "https://avatars.githubusercontent.com/u/135327?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "manelvf.com"
+    },
+    "headline": "Budapest JS 2016 - Part I: the workshop about Haxe",
+    "url": "https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html",
+    "datePublished": "2016-05-16T22:00:00.000Z",
+    "dateModified": "2016-05-17T20:33:34.924Z",
+    "description": "I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se. The..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Budapest JS 2016 - Part I: the workshop about Haxe</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1463436000" datetime="2016-05-17T00:00" title="17 May 2016">2016-05-17 00:00:00<ago class="ago"></time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="">Manel Villar</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se.</p>
+</div>
+<div class="paragraph">
+<p>The title of the workshop I did was:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_developing_applications_using_the_haxe_language">Developing applications using the Haxe language</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I planned to go to a hardware related workshop, but I had to attend the one related to the <a href="http://haxe.org/">Haxe Language</a> in a company that really uses it for production. It was very interesting as it seems the true inheritor of <strong>Flash</strong>, and is somehow used in the adult content industry. Yes, you have read the last sentence correctly. They were also recruiting, btw.</p>
+</div>
+<div class="paragraph">
+<p>The Haxe language is very interesting for several reasons: it has survived for more than ten years in the industry (wow!), is able to target several platforms and it has evolved slowly but steadily in its lifetime. For people who doesn&#8217;t know the language, it is a strongly typed language with C syntax, much on the Java/Go way. It uses a classical object oriented scheme and has its own standard library, that is very complete. I would say it&#8217;s really a transpiler, before CoffeeScript started the trend in the JS world. It doesn&#8217;t have its own VM, so it&#8217;s not tied to any platform. It targets several platforms, from PHP to Javascript and Python, in different OS, and does it in a clean way. This approach makes you think a lot about languages being only gateways to their underlying platforms, something that we usually forget when we developers decide the tools we are going to use for a new project or problem.</p>
+</div>
+<div class="paragraph">
+<p>I knew the language from a few games that where ported to Android and web a few years ago, and back then I remember I was very surprised with the solidity of the products, in contrast with all the glitches and problems of first HTML5 games of those years. The small job market disregarded the language for many people that looked for a better chance of finding a job in the industry, but it seems that many freelancers took serious advantage of it.</p>
+</div>
+<div class="paragraph">
+<p>The guys doing the workshop/conference were really patient doing the explanations, as the attendance were mostly eskeptical. They had a lot of experience and they were interested in looking for a tool that solved the problem of long-time application maintenance. As they were not satisfied with Javascript, they tried the very promising Typescript language. And it seems the Microsoft language still has a lot of drawbacks when dealing with transpiling to real JS. They needed something better, so they tried Haxe and  fell in love inmediately with it as things were really smooth from the very first moment.</p>
+</div>
+<div class="paragraph">
+<p>A counterpoint to this approach is that Javascript itself has it&#8217;s own standard, ECMAScript, that is in very good health even after years of discussions and fights over corporate interests. So in these days, makes sense to use Javascript for everything and disregard other options. In any case, the Haxe compilation to Javascript is not very arcane, so it would be possible to reuse the compiled code is someone that uses the old platform decides to disregard it.</p>
+</div>
+<div class="paragraph">
+<p>Haxe has been there since 2004, and since them there have been a lot of trends. From the absolute kingdom of Flash for web games and presentations, to the rise of Javascript with Ajax, the fall of Java in web and the declining of PHP. As Haxe is an independent language, driven by its own independent foundation and not a big corporation, like Python, that makes people more confident on its future, as is less probable that their maintainers simply drop it. In this industry, even successful languages like Java, have to struggle with their corporate owners. It&#8217;s worth to mention that contributions are welcome.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_organization">Organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The organizers should improve the workshops assignation, as people should be able to choose them. A lot of people were interested in the hardware related stuff, it seems the hot stuff right now. The angular2 was also very popular, as a lot of people will need to migrate their apps to the new version. As the version 2 uses Typescript, the controversy has already arisen.</p>
+</div>
+<div class="paragraph">
+<p>Anyway, the workshops were included in the conference price, so it was a good deal. Kudos for the organizers, as not all the confs have this kind of bonus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_city">The city</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On a side related note, the city is really interesting, with lots of history and nigthlife. And many dark sides. Worths a visit without any doubt.</p>
+</div>
+<div class="paragraph">
+<p>See you for the second part, about the talks themselves.</p>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'manelvfgithubio'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">The Fallen Apples</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+    <script src="//manelvf.github.io/blog/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34164255-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
