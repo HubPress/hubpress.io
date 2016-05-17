@@ -1,0 +1,26 @@
+= Budapest JS 2016 - Part I: the workshop about Haxe
+
+I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se.
+
+The title of the workshop I did was:
+
+== Developing applications using the Haxe language
+
+I planned to go to a hardware related workshop, but I had to attend the one related to the http://haxe.org/[Haxe Language] in a company that really uses it for production. It was very interesting as it seems the true inheritor of *Flash*, and is somehow used in the adult content industry. Yes, you have read the last sentence correctly. They were also recruiting, btw.
+
+The Haxe language is very interesting for several reasons: it has survived for more than ten years in the industry (wow!), is able to target several platforms and it has evolved slowly but steadily in its lifetime. For people who doesn't know the language, it is a strongly typed language with C syntax, much on the Java/Go way. I would say it's really a transpiler, before CoffeeScript started the trend in the JS world. It doesn't have its own VM, so it's not tied to any platform. It targets several platforms, from PHP to Javascript and Python, in different OS, and does it in a clean way. This approach makes you think a lot about languages being only gateways to their underlying platforms, something that we usually forget when we developers decide the tools we are going to use for a new project or problem.
+
+I knew the language from a few games that where ported to Andro
+
+The guys doing the workshop/conference were really patient doing the explanations, as the attendance were mostly eskeptical. They had a lot of experience and they were interested in looking for a tool that solved the problem of long-time application maintenance. As they were not satisfied with Javascript, they tried the very promising Typescript language. And it seems the Microsoft language still has a lot of drawbacks when dealing with transpiling to real JS. They needed something better, they tried Haxe and  fell in love inmediately with it as things were really smooth from the very first moment.
+
+Haxe has been there since 2004, and since them there have been a lot of trends. From the absolute kingdom of Flash for web games and presentations, to the rise of Javascript with Ajax, the fall of Java and the declining of PHP. As Haxe is an independent language, driven by an independent foundation and not a big corporation, like Python, that makes people more confident on its future, as is less probable that their maintainers simply drop it.
+
+The organizers should improve the workshops assignation, as people should be able to choose them. Anyway, they were included in the conference price, so it was a good deal. 
+
+== The city
+
+On a side related note, the city is really interesting, with lots of history and nigthlife. And many dark sides. Worths a visit without any doubt.
+
+See you for the second part.
+
