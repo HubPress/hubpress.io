@@ -1,20 +1,33 @@
-= Budapest JS 2016
+= Budapest JS 2016 - Part II - The Talks
 
-I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there:
+== Overview
 
-== Workshops
+Overall it the technical deepness of the talks was very light, compared to other JS conferences I attended. The format of strict 30 minutes for every presentation can be a bit rigid, especially when some topics are very dense. But anyway the quality that we enjoyed was really high, with a good proportion of women speakers (unfortunately, not in the attendance).  
 
-I planned to go to a hardware related workshop, but I had to attend the one related to the http://haxe.org/[Haxe Language] in a company that really uses it for production. It was very interesting as it seems the true inheritor of Flash, and is somehow used in the adult content industry. Yes, you have read the last sentence correctly. They were also recruiting, btw.
+== The talks
 
-The Haxe language is very interesting for several reasons: it has survived for more than ten years in the industry (wow!), is able to target several platforms and it has evolved slowly but steadily in its lifetime. I would say it's really a transpiler, before CoffeeScript started the trend in the JS world. It also makes you think a lot about languages being only gateways to their underlying platforms, something that we usually forget when we developers decide the tools we are going to use for a new project or problem.
+This were the ones that were the most interesting ones for me:
 
-The guys doing the workshop/conference were really patient doing the explanations, as the attendance were mostly esceptical.  
+- Laurie Voss, from NPM, explained about the new possibilities of their ubiquous product. It's still easy to make a mess with the dependencies with Node, but at least some people are trying to do something for fixing those problems.
+- Denys Mishunov talked about perception of speed. That's a really interesting topic, IMO. It's not how fast you app is, it's how the users perceive it.
+- Stefan Baumgartner talked about HTTP/2, that it's going to replace the current version of the protocol. After a lot of time packing everything, it seems that now we are going to need to unbundle all our website assets. Be careful: there are some edge cases where unbundling is not the best solution. As usual, there's not a single universal solution for all the problems.
+- Anand Vemuri talked about security. Especially about internal websites security. That they are internal doesn't mean they have to be vulnerable and unfortunately this is something overlooked too often.
+- Safia Abdalla talked about memory leaks in JS and the tools that we can use for debugging them. Check her slides in her http://safia.rocks[website]. It rocks :D
 
-The organizers should improve the workshops assignation, as people should be able to choose them. Anyway, they were included in the conference price, so it was a good deal. 
+There were also other interesting topics like bots, music and hardware controlled by JS. Take a look to the http://jsconfbp.com/[conference website] for the slides and other data about the topics.
 
-== Conference
+Two non-technical talks were especially impressive for me. I think both were important: one was about empathy in Open Source projects and other was about diversity in IT communities and companies. 
 
-== The city
+== The organization
 
-On a side related note, the city is really interesting, with lots of history and nigthlife. And many dark sides. Worths a visit without any doubt.
+Apart from the classical wifi problems, that seem to be permanent condition of almost every tech confererence, and some troubles with the display adapters of the speakers, I think that the organization was good. The conference place was in the center of city, easily reachable and the food was excellent, in highly contrast with other conference caterings.
+
+Information was easily available and there were members of the staff easily reachable, too. No bad surprises in this part.
+
+== Conclusion
+
+The conference offered a good value for the price. The experience was really nice and surely I'll repeat next years. Also, the city has a lot offer and to discover, so in case you get bored with the technical stuff, there are alternatives. 
+
+P.S: Next year it will switch dates from May to September, as the JSConf.eu will also switch to spring season. See you there!
+
 
