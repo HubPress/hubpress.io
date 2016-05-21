@@ -16,7 +16,7 @@ This were the ones that were the most interesting ones for me:
 
 There were also other interesting topics like bots, music and hardware controlled by JS. Take a look to the http://jsconfbp.com/[conference website] for the slides and other data about the topics.
 
-Two non-technical talks were especially impressive for me. I think both were important: one was about empathy in Open Source projects and other was about diversity in IT communities and companies. 
+Two non-technical talks were especially impressive for me. I think both were important: one was about empathy in Open Source projects and other was about diversity in IT communities and companies. Both topics are really wide and they would need dedicated posts to address. People problems are usually harder to solve that technical problems.
 
 == The organization
 
