@@ -10,67 +10,94 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="//raghakot.github.io/themes/Casper/favicon.ico">
+    <link rel="shortcut icon" href="//raghakot.github.io/themes/Roon/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//raghakot.github.io/themes/Casper/assets/css/screen.css?v=1.0.0" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//raghakot.github.io/themes/Roon/assets/css/screen.css?v=1.0.0" />
 
     <link rel="canonical" href="https://raghakot.github.io" />
     <meta name="generator" content="Ghost ?" />
     <link rel="alternate" type="application/rss+xml" title="Ragha&#x27;s Blog" href="https://raghakot.github.io/rss" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
 </head>
-<body class="home-template">
+<body class="home-template user ">
 
     
-<header class="main-header " style="background-image: url(images/cover.jpg)">
-    <nav class="main-nav overlay clearfix">
-        
-        <!-- <a class="subscribe-button icon-feed" href="https://raghakot.github.io/rss/">Subscribe</a> -->
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Ragha&#x27;s Blog</h1>
-            <h2 class="page-description">Tech, Machine Learning, Life...</h2>
-        </div>
+<header role="banner">
+    <div class="wrap">
+        <h1><a href="https://raghakot.github.io">Ragha&#x27;s Blog</a></h1>
+        <hr>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
-<main id="content" class="content" role="main">
 
-    <div class="extra-pagination inner">
-        <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
+<article class="post ">
+
+
+    <div class="meta">
+        <time datetime="2016-05-21"><a href="https://raghakot.github.io/2016/05/21/Test-Math-Jax.html">May 21, 2016</a></time>
     </div>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="https://raghakot.github.io/2016/05/21/Test-Math-Jax.html">Test MathJax</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are \(x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\) <a class="read-more" href="https://raghakot.github.io/2016/05/21/Test-Math-Jax.html">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            
-            
-            
-            <time class="post-date" datetime="2016-05-21">21 May 2016</time>
-        </footer>
-    </article>
-    
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
 
-</main>
+    <header>
+        <h1><a href="https://raghakot.github.io/2016/05/21/Test-Math-Jax.html">Test MathJax</a></h1>
+    </header>
+
+    <div class="text">
+        <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are \(x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\)</p>
+        <a href="https://raghakot.github.io/2016/05/21/Test-Math-Jax.html" class="readmore">Continue Reading</a>
+    </div>
+</article>
+
+<nav class="pagination" role="navigation">
+    <span class="page-number">Page 1 of 1</span>
+</nav>
+
+<footer role="contentinfo">
+    <div class="inner">
+        <div class="vcard">
+            <!-- <a href="https://raghakot.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                <span aria-hidden="true" data-icon=")"></span>
+                <strong>Feed</strong>
+            </a> -->
 
 
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="https://raghakot.github.io">Ragha&#x27;s Blog</a> &copy; 2016</section>
-        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
-    </footer>
+            <div class="details">
+                <h4><a href="https://raghakot.github.io" class="url n">Ragha&#x27;s Blog</a></h4>
+                <a href="https://raghakot.github.io" class="js-remove-domain-schema">https://raghakot.github.io</a><br>
+                <span>Published with <a href="http://hubpress.io">HubPress</a></span>
+            </div>
+        </div>
+        <div id="user_bio">
+            <div class="inner">
+                Tech, Machine Learning, Life...
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+        }
+    </script>
 
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script> <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -85,8 +112,8 @@
         hljs.initHighlightingOnLoad();      
       </script>
 
-    <script type="text/javascript" src="//raghakot.github.io/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
-    <script type="text/javascript" src="//raghakot.github.io/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+
 
 </body>
 </html>
