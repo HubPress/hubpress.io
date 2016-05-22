@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "raghakot",
-    "repositoryName": "raghakot.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"raghakot","repositoryName":"raghakot.github.io","branch":"master","delay":"500"},"site":{"url":"https://raghakot.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"//raghakot.github.io/themes/Casper"}}
