@@ -1,11 +1,11 @@
 = Facebook hacker cup: Power Overwhelming
 :hp-tags: competitions, migrated
 
-You are to inflict maximum damage to the zerg army. There are two types of units - Warrior and Sheild. Warriors do damage every second, while a sheild protects your entire army for one second. Your army is instantly overrun after the sheild generators expire. Given \(G\) cost to build a sheild, \(W\) cost to build a warrior and total money \(M\), how many sheilds would you build?"
+You are to inflict maximum damage to the zerg army. There are two types of units - Warrior and Shield. Warriors do damage every second, while a shield protects your entire army for one second. Your army is instantly overrun after the shield generators expire. Given \(G\) cost to build a shield, \(W\) cost to build a warrior and total money \(M\), how many shields would you build?
 
 === Solution
 
-Let \(X\) and \(Y\) be the optimal number of generators and number of warriors to be built, respectively. Let's start with a simple concrete example. Suppose sheilds and warriors both cost 1 unit and you have total money of 5 units. Also assume 1 unit of damage per warrior. What is the optimum value of \(X\) and \(Y\)? It would be optimum if you can inflict maximum damage. With 5 units of money, you can buy sheilds/warriors in the following combinations.
+Let \(X\) and \(Y\) be the optimal number of generators and number of warriors to be built, respectively. Let's start with a simple concrete example. Suppose shields and warriors both cost 1 unit and you have total money of 5 units. Also assume 1 unit of damage per warrior. What is the optimum value of \(X\) and \(Y\)? It would be optimum if you can inflict maximum damage. With 5 units of money, you can buy shields/warriors in the following combinations.
 
 .Combinations of \(X, Y\)
 |===
@@ -42,7 +42,7 @@ We need to find integer values of \(X, Y\) that maximize this area.
 
 How do we go about doing that?
 We know that the line will intersect X and Y axis at \(M/G, M/W\). 
-We also know that the optimal rectangle touches the line. If it doesnt, the area can be trivially increased by increasing either/both \(X, Y\) values until it touches the line.
+We also know that the optimal rectangle touches the line. If it doesn't, the area can be trivially increased by increasing either/both \(X, Y\) values until it touches the line.
 
 The boring calculus way for figuring this out is as follows:
 \(
@@ -59,9 +59,9 @@ This gives corresponding \(X = M/2G\)
 A more interesting way to arrive at the same conclusion would be to think as follows:
 - The shaded triangle increases its area as long as X and Y increase.
 - Start with \((0, 0)\) and increase both \(X, Y\) by 1. This gives us a small rectangle with bottom left \((0, 0)\) and top right \((1, 1)\).
-- If the straight line was X + Y = 1, it would be a right angled isoceles triangle. The \(X, Y\) value would always increase in the direction of line \(Y = X\), which would cut the line in middle at \((X/2, Y/2)\)
-- Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to mid point of the line \(X \times G + Y \times W = M\). The mid point of this line is, unsurprisingly, \(M/2G, M/2W)\)
+- If the straight line was X + Y = 1, it would be a right angled isosceles triangle. The \(X, Y\) value would always increase in the direction of line \(Y = X\), which would cut the line in middle at \((X/2, Y/2)\)
+- Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(X \times G + Y \times W = M\). The mid point of this line is, unsurprisingly, \(M/2G, M/2W)\)
 
-There are other ways to arrive at this. Perhaps I should write a post that exclusively deals with tihs problem.
+There are other ways to arrive at this. Perhaps I should write a post that exclusively deals with this problem.
 
 Coming back to our original question, the optimal number of shields must be \(M/2G\). If, \(M/2G\) is not an integer, we go towards the origin on the line that joins \((0, 0)\) and \(M/2G, M/2W)\). However,I was able to get away by taking \(\lfoor M/2G \rfloor\).
