@@ -80,7 +80,7 @@
     <meta property="og:description" content="You are to inflict maximum damage to the zerg army. There are two types of units - Warrior and Shield. Warriors do damage every second, while a shield protects your entire army for one second. Your army is instantly overrun..." />
     <meta property="og:url" content="https://raghakot.github.io/2016/05/22/Facebook-hacker-cup-Power-Overwhelming.html" />
     <meta property="article:published_time" content="2016-05-22T07:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-05-23T06:14:14.427Z" />
+    <meta property="article:modified_time" content="2016-05-23T06:16:07.654Z" />
     <meta property="article:tag" content="competitions" />
     <meta property="article:tag" content="migrated" />
     
@@ -104,7 +104,7 @@
     "headline": "Facebook hacker cup: Power Overwhelming",
     "url": "https://raghakot.github.io/2016/05/22/Facebook-hacker-cup-Power-Overwhelming.html",
     "datePublished": "2016-05-22T07:00:00.000Z",
-    "dateModified": "2016-05-23T06:14:14.427Z",
+    "dateModified": "2016-05-23T06:16:07.654Z",
     "keywords": "competitions,  migrated",
     "description": "You are to inflict maximum damage to the zerg army. There are two types of units - Warrior and Shield. Warriors do damage every second, while a shield protects your entire army for one second. Your army is instantly overrun..."
 }
@@ -292,23 +292,23 @@ A = \frac{M - YW}{G}Y \\
 \\
 \frac{\partial A}{\partial Y} = \frac{Y(M - WY)}{G} \\
 \arg\max{A} \rightarrow \frac{Y(M - WY)}{G} = 0 \\
-Y = M/2W \)</p>
+Y = \frac{M}{2W} \)</p>
 </div>
 <div class="paragraph">
-<p>This gives corresponding \(X = M/2G\)</p>
+<p>This gives corresponding \(X = \frac{M}{2G}\)</p>
 </div>
 <div class="paragraph">
 <p>A more interesting way to arrive at the same conclusion would be to think as follows:
 - The shaded triangle increases its area as long as X and Y increase.
 - Start with \((0, 0)\) and increase both \(X, Y\) by 1. This gives us a small rectangle with bottom left \((0, 0)\) and top right \((1, 1)\).
 - If the straight line was X + Y = 1, it would be a right angled isosceles triangle. The \(X, Y\) value would always increase in the direction of line \(Y = X\), which would cut the line in middle at \((X/2, Y/2)\)
-- Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(XG + YW = M\). The mid point of this line is, unsurprisingly, \(M/2G, M/2W)\)</p>
+- Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(XG + YW = M\). The mid point of this line is, unsurprisingly, \(\frac{M}{2G}, \frac{M}{2W})\)</p>
 </div>
 <div class="paragraph">
 <p>There are other ways to arrive at this. Perhaps I should write a post that exclusively deals with this problem.</p>
 </div>
 <div class="paragraph">
-<p>Coming back to our original question, the optimal number of shields must be \(M/2G\). If, \(M/2G\) is not an integer, we go towards the origin on the line that joins \((0, 0)\) and \(M/2G, M/2W)\). However,I was able to get away by taking \(\lfoor M/2G \rfloor\).</p>
+<p>Coming back to our original question, the optimal number of shields must be \(\frac{M}{2G}\). If, \(\frac{M}{2G}\) is not an integer, we go towards the origin on the line that joins \((0, 0)\) and \(\frac{M}{2G}, \frac{M}{2W})\). However, I was able to get away by taking \(\lfoor\frac{M}{2G} \rfloor\).</p>
 </div>
 </div>
           </div>
