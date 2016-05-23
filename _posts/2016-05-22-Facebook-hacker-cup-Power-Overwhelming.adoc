@@ -28,12 +28,12 @@ Let \(X\) and \(Y\) be the optimal number of generators and number of warriors t
 |4
 |===
 
-In this case, the optimal choice of \(X, Y\) seem to be \((2, 3)\) and \((3, 4)\) respectively, both of which maximize the product \(X \times Y\). In the general case, the cost to buy \(X\) generators is \(X \times G\), cost to buy \(Y\) warriors is \(Y \times W\). Since we are limited by \(M\) amount of money, \(X, Y\) must satisfy \(X \times G + Y \times W \le M\). This can be represented as a line and the inequality encapsulates a region for candidate \(X, Y) values.
+In this case, the optimal choice of \(X, Y\) seem to be \((2, 3)\) and \((3, 4)\) respectively, both of which maximize the product \(XY\). In the general case, the cost to buy \(X\) generators is \(XG\), cost to buy \(Y\) warriors is \(YW\). Since we are limited by \(M\) amount of money, \(X, Y\) must satisfy \(X \times G + Y \times W \le M\). This can be represented as a line and the inequality encapsulates a region for candidate \(X, Y) values.
 
 .Candidate solution region
 image::post2/fig1.png[]
 
-We want \(X, Y \mid \arg\max_X \times Y\). Geometrically, \(X \times Y\) represents the area of the rectangle shaded in blue.
+We want \(X, Y \mid \arg\max_X{XY} \). Geometrically, \(XY\) represents the area of the rectangle shaded in blue.
 
 .The area to be maximized
 image::post2/fig2.png[]
@@ -46,8 +46,8 @@ We also know that the optimal rectangle touches the line. If it doesn't, the are
 
 The boring calculus way for figuring this out is as follows:
 \(
-A = X \times Y
-A = \frac{M - Y \times W}{G} \times Y
+A = XY
+A = \frac{M - YW}{G}Y
 
 \frac{\partial A}{\partial Y} = \frac{Y(M - WY)}{G}
 \arg \max_A \mid \frac{Y(M - WY)}{G} = 0
@@ -60,7 +60,7 @@ A more interesting way to arrive at the same conclusion would be to think as fol
 - The shaded triangle increases its area as long as X and Y increase.
 - Start with \((0, 0)\) and increase both \(X, Y\) by 1. This gives us a small rectangle with bottom left \((0, 0)\) and top right \((1, 1)\).
 - If the straight line was X + Y = 1, it would be a right angled isosceles triangle. The \(X, Y\) value would always increase in the direction of line \(Y = X\), which would cut the line in middle at \((X/2, Y/2)\)
-- Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(X \times G + Y \times W = M\). The mid point of this line is, unsurprisingly, \(M/2G, M/2W)\)
+- Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(XG + YW = M\). The mid point of this line is, unsurprisingly, \(M/2G, M/2W)\)
 
 There are other ways to arrive at this. Perhaps I should write a post that exclusively deals with this problem.
 
