@@ -7,7 +7,7 @@ Given an integer \(N\), we need to find the number of integral pairs \((x, y) \m
 
 Geometrically, we know that \(x^2 + y^2 = r\) represents a circle centered at \((0,0)\) with a radius \(r\).  So, the problem can be interpreted visually as finding all possible solutions where \(x, y\) are positive, i.e., lie in the first quadrant.
 
-Testing all possible integral pairs of \((x, y)\) upto \(N\) is equivalent to searching within the greyed geometric square as illustrated.
+Testing all possible integral pairs of \((x, y)\) upto \(N\) is equivalent to searching within the grayed geometric square as illustrated.
 
 .Geometric view of double squares problem
 image::post1/fig1.png[]
@@ -47,7 +47,7 @@ This makes intuitive sense since \(x, y\) cannot exceed \(\sqrt{n}\). This reduc
 
 Can we do any better? Why explore the entire blue square? It is sufficient if we examine all points on the arc of the circle in the first quadrant. i.e, increment \(x\) from \([0, \sqrt{n}]\), compute corresponding \(y = \sqrt{n - x^2}\) and check if it is an integer. \(y\) is an integer if \(\lfloor y \rfloor == y\).
 
-This looks pretty good. Is there anything else that can be improved upon? Well, if you notice the figure carefully, we dont have to iterate \(x\) from \([0, \sqrt{n}]\). All points on one side of line \(y = x\) are mirror images of points on the other side. i.e., if we find a point, day \((3, 4)\) then we will find a mirror \((4, 3)\) on the other side. Since the problem doesn't differentiate between these two solutions, it is sufficient if we iterate \(x\) from \([0, x']\), where \(x'\) is given by \(\sqrt{n} \cos{45} = \sqrt{n/2}\).
+This looks pretty good. Is there anything else that can be improved upon? Well, if you notice the figure carefully, we don't have to iterate \(x\) from \([0, \sqrt{n}]\). All points on one side of line \(y = x\) are mirror images of points on the other side. i.e., if we find a point, day \((3, 4)\) then we will find a mirror \((4, 3)\) on the other side. Since the problem doesn't differentiate between these two solutions, it is sufficient if we iterate \(x\) from \([0, x']\), where \(x'\) is given by \(\sqrt{n} \cos{45} = \sqrt{n/2}\).
 
 .Line \(y = x\) acts as a mirror
 image::post1/fig3.png[]
