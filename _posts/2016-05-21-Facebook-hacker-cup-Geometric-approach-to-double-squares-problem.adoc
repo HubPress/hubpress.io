@@ -41,7 +41,7 @@ Algorithmically, this approach takes \(O(n^2)\) time. Consider the sample input 
 On my machine, brute force approach takes approx 14 minutes (!!!) to solve this input. Clearly, we are exploring a lot of unwanted points. One obvious way to improve this is to explore points bounded by the circle as as indicated by the shaded blue square.
 
 .Improving on naive search
-image::post1/fig2.png
+image::post1/fig2.png[]
 
 This makes intuitive sense since \(x, y\) cannot exceed \(\sqrt{n}\). This reduces the complexity from \(O(n^2)\) to \(O(n)\) reducing execution time from an earlier 14 minutes to 80.5 secs.
 
@@ -50,7 +50,7 @@ Can we do any better? Why explore the entire blue square? It is sufficient if we
 This looks pretty good. Is there anything else that can be improved upon? Well, if you notice the figure carefully, we dont have to iterate \(x\) from \([0, \sqrt{n}]\). All points on one side of line \(y = x\) are mirror images of points on the other side. i.e., if we find a point, day \((3, 4)\) then we will find a mirror \((4, 3)\) on the other side. Since the problem doesn't differentiate between these two solutions, it is sufficient if we iterate \(x\) from \([0, x']\), where \(x'\) is given by \(\sqrt{n} \cos{45} = \sqrt{n/2}\).
 
 .Line \(y = x\) acts as a mirror
-image::post1/fig3.png
+image::post1/fig3.png[]
 
 With this, we can complete the algorithm in java as follows:
 
