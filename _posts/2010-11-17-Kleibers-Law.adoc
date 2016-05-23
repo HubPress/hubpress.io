@@ -1,5 +1,6 @@
 = Kleiber's Law
 :hp-tags: light bulb, migrated
+:published_at: 2010-11-17
 
 Last week, I happened to read about Kleiber's law while browsing through literature on natural evolution. The implications are really fascinating. It establishes a relationship between mass and metabolism as:
 
