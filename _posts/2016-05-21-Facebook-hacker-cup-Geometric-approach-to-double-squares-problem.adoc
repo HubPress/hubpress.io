@@ -58,14 +58,14 @@ With this, we can complete the algorithm in java as follows:
 ----
 int getNumSumSquares(final int n) 
 {
-	if(n==0) {
+	if(n == 0) {
 		return 1;
     }
 
 	final int iterations = (int) Math.ceil(Math.sqrt((n * 1.0)/2)) + 1;
 	double y;
 	int count = 0;
-	for(int x=0; x <= iterations; x++)
+	for(int x = 0; x <= iterations; x++)
 	{
 		y = Math.sqrt(n - (x*x));
 		// check if y is an integer
