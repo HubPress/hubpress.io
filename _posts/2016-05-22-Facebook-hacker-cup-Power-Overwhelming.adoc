@@ -31,12 +31,12 @@ Let \(X\) and \(Y\) be the optimal number of generators and number of warriors t
 In this case, the optimal choice of \(X, Y\) seem to be \((2, 3)\) and \((3, 4)\) respectively, both of which maximize the product \(X \times Y\). In the general case, the cost to buy \(X\) generators is \(X \times G\), cost to buy \(Y\) warriors is \(Y \times W\). Since we are limited by \(M\) amount of money, \(X, Y\) must satisfy \(X \times G + Y \times W \le M\). This can be represented as a line and the inequality encapsulates a region for candidate \(X, Y) values.
 
 .Candidate solution region
-image::post2/fig1[]
+image::post2/fig1.png[]
 
 We want \(X, Y \mid \arg\max_X \times Y\). Geometrically, \(X \times Y\) represents the area of the rectangle shaded in blue.
 
 .The area to be maximized
-image::post2/fig2[]
+image::post2/fig2.png[]
 
 We need to find integer values of \(X, Y\) that maximize this area. 
 
