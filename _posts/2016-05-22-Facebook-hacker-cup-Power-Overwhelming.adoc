@@ -50,7 +50,7 @@ The boring calculus way for figuring this out is as follows:
 A = \frac{M - YW}{G}Y \\
 \\
 \frac{\partial A}{\partial Y} = \frac{Y(M - WY)}{G} \\
-\arg\max{A} \implies \frac{Y(M - WY)}{G} = 0 \\
+\arg\max{A} \rightarrow \frac{Y(M - WY)}{G} = 0 \\
 Y = M / 2W \)
 
 This gives corresponding \(X = M/2G\)
