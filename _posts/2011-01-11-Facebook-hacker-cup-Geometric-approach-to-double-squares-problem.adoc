@@ -1,5 +1,6 @@
 = Facebook hacker cup: Geometric approach to double squares problem
 :hp-tags: competitions, migrated
+:published_at: 2011-01-11
 
 Given an integer \(N\), we need to find the number of integral pairs \((x, y) \mid x^2 + y^2 = N\), \(N \in [0, 2147483647]\), with a maximum of 100 such numbers in a file.
 
