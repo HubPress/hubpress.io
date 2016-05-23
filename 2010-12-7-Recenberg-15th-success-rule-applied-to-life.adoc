@@ -80,7 +80,7 @@
     <meta property="og:description" content="For those who are not familiar, Rechenberg&amp;#8217;s 1/5 rule refers to adaptive mutation in evolutionary strategies. It suggests that the ratio of successful mutations to all mutation should be 1/5. It is a rough heuristic for..." />
     <meta property="og:url" content="https://raghakot.github.io2010-12-7-Recenberg-15th-success-rule-applied-to-life.adoc" />
     <meta property="article:published_time" content="2010-12-07T08:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-05-23T17:06:56.125Z" />
+    <meta property="article:modified_time" content="2016-05-23T17:11:45.281Z" />
     <meta property="article:tag" content="light bulb" />
     <meta property="article:tag" content="migrated" />
     
@@ -104,7 +104,7 @@
     "headline": "Recenberg 1/5th success rule applied to life",
     "url": "https://raghakot.github.io2010-12-7-Recenberg-15th-success-rule-applied-to-life.adoc",
     "datePublished": "2010-12-07T08:00:00.000Z",
-    "dateModified": "2016-05-23T17:06:56.125Z",
+    "dateModified": "2016-05-23T17:11:45.281Z",
     "keywords": "light bulb,  migrated",
     "description": "For those who are not familiar, Rechenberg&amp;#8217;s 1/5 rule refers to adaptive mutation in evolutionary strategies. It suggests that the ratio of successful mutations to all mutation should be 1/5. It is a rough heuristic for..."
 }
@@ -292,6 +292,16 @@
 
     <script src="//raghakot.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1.0.0"></script>
 
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-78195880-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
 
   </body>
 </html>
