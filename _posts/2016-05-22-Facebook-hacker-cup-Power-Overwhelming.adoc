@@ -28,7 +28,7 @@ Let \(X\) and \(Y\) be the optimal number of generators and number of warriors t
 |4
 |===
 
-In this case, the optimal choice of \(X, Y\) seem to be \((2, 3)\) and \((3, 4)\) respectively, both of which maximize the product \(XY\). In the general case, the cost to buy \(X\) generators is \(XG\), cost to buy \(Y\) warriors is \(YW\). Since we are limited by \(M\) amount of money, \(X, Y\) must satisfy \(X \times G + Y \times W \le M\). This can be represented as a line and the inequality encapsulates a region for candidate \(X, Y) values.
+In this case, the optimal choice of \(X, Y\) seem to be \((2, 3)\) and \((3, 4)\) respectively, both of which maximize the product \(XY\). In the general case, the cost to buy \(X\) generators is \(XG\), cost to buy \(Y\) warriors is \(YW\). Since we are limited by \(M\) amount of money, \(X, Y\) must satisfy \(XG + YW \le M\). This can be represented as a line and the inequality encapsulates a region for candidate \(X, Y) values.
 
 .Candidate solution region
 image::post2/fig1.png[]
