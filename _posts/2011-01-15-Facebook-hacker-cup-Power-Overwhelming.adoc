@@ -1,5 +1,6 @@
 = Facebook hacker cup: Power Overwhelming
 :hp-tags: competitions, migrated
+:published_at: 2011-01-15
 
 You are to inflict maximum damage to the zerg army. There are two types of units - Warrior and Shield. Warriors do damage every second, while a shield protects your entire army for one second. Your army is instantly overrun after the shield generators expire. Given \(G\) cost to build a shield, \(W\) cost to build a warrior and total money \(M\), how many shields would you build?
 
