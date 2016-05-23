@@ -64,4 +64,4 @@ A more interesting way to arrive at the same conclusion would be to think as fol
 
 There are other ways to arrive at this. Perhaps I should write a post that exclusively deals with this problem.
 
-Coming back to our original question, the optimal number of shields must be \(\frac{M}{2G}\). If, \(\frac{M}{2G}\) is not an integer, we go towards the origin on the line that joins \((0, 0)\) and \(\frac{M}{2G}, \frac{M}{2W})\). However, I was able to get away by taking \(\lfloor\frac{M}{2G} \rfloor\).
+Coming back to our original question, the optimal number of shields must be \(\frac{M}{2G}\). If, \(\frac{M}{2G}\) is not an integer, we go towards the origin on the line that joins \((0, 0)\) and \((\frac{M}{2G}, \frac{M}{2W})\). However, I was able to get away by taking \(\lfloor\frac{M}{2G} \rfloor\).
