@@ -1,5 +1,5 @@
 = Recenberg 1/5th success rule applied to life
-:hp-tags: machine learning, life
+:hp-tags: light bulb
 
 For those who are not familiar, Rechenberg's 1/5 rule refers to adaptive mutation in evolutionary strategies. It suggests that the ratio of successful mutations to all mutation should be 1/5. It is a rough heuristic for balancing exploration vs. exploitation that worked out pretty well in experiments.
 
