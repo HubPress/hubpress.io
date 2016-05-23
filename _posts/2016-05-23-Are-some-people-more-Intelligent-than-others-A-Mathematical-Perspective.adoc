@@ -5,7 +5,11 @@ Most of us believe that there is someone smarter than ourself. If you are an ave
 Is this really true? At birth everyone is (more or less) at the same base level. Then why do some people seem more intelligent later on?
 
 In my opinion, one way to define Intelligence is as follows:
+
+[quote]
+_______________________________________________________________________
 Intelligence is the ability to make a rational choice, given a state, large set of choices, and apriori information you already possess.
+___________________________________________________________________________________________________________________________________________
 
 all about making rational decisions given the information/knowledge you possess. People are different because the definition of being rational is different for each of us. For some of us, the act of crossing the road carefully might be rational. For others, most rational thing is to cross the road as quickly as possible. These beliefs are based on prior experiences. Someone who has witnessed a road cross accident might prefer to cross it carefully. Those who got fired because of being late might consider a hush hush approach towards crossing.
 
