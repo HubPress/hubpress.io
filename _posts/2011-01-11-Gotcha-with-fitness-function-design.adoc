@@ -1,5 +1,6 @@
 = Gotcha with fitness function design
 :hp-tags: machine learning, migrated
+:published_at: 2011-01-11
 
 Typically, a genetic algorithm works by the notion of maximizing the fitness. Consider a function \(y = x\), which is to be minimized in the interval \([-5, 5]\). One approach is use \(\frac{1}{x}\) as the fitness function. Intuitively, by maximizing \(\frac{1}{x}\), we are minimizing \(y = x\). However, a plot of \(\frac{1}{x}\) reveals some serious flaws.
 
