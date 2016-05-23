@@ -80,7 +80,7 @@
     <meta property="og:description" content="For those who are not familiar, Rechenberg&amp;#8217;s 1/5 rule refers to adaptive mutation in evolutionary strategies. It suggests that the ratio of successful mutations to all mutation should be 1/5. It is a rough heuristic for..." />
     <meta property="og:url" content="https://raghakot.github.io2010-12-7-Recenberg-15th-success-rule-applied-to-life.adoc" />
     <meta property="article:published_time" content="2010-12-07T08:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-05-23T17:00:34.553Z" />
+    <meta property="article:modified_time" content="2016-05-23T17:06:56.125Z" />
     <meta property="article:tag" content="light bulb" />
     <meta property="article:tag" content="migrated" />
     
@@ -104,7 +104,7 @@
     "headline": "Recenberg 1/5th success rule applied to life",
     "url": "https://raghakot.github.io2010-12-7-Recenberg-15th-success-rule-applied-to-life.adoc",
     "datePublished": "2010-12-07T08:00:00.000Z",
-    "dateModified": "2016-05-23T17:00:34.553Z",
+    "dateModified": "2016-05-23T17:06:56.125Z",
     "keywords": "light bulb,  migrated",
     "description": "For those who are not familiar, Rechenberg&amp;#8217;s 1/5 rule refers to adaptive mutation in evolutionary strategies. It suggests that the ratio of successful mutations to all mutation should be 1/5. It is a rough heuristic for..."
 }
