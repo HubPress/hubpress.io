@@ -33,7 +33,7 @@ In this case, the optimal choice of \(X, Y\) seem to be \((2, 3)\) and \((3, 4)\
 .Candidate solution region
 image::post2/fig1.png[]
 
-We want \(X, Y \mid \arg\max_X{XY} \). Geometrically, \(XY\) represents the area of the rectangle shaded in blue.
+We want \(X, Y \mid \arg\max{XY} \). Geometrically, \(XY\) represents the area of the rectangle shaded in blue.
 
 .The area to be maximized
 image::post2/fig2.png[]
@@ -50,7 +50,7 @@ A = XY
 A = \frac{M - YW}{G}Y
 
 \frac{\partial A}{\partial Y} = \frac{Y(M - WY)}{G}
-\arg \max_A \mid \frac{Y(M - WY)}{G} = 0
+\arg\max{A} \implies \frac{Y(M - WY)}{G} = 0
 Y = M / 2W
 \)
 
