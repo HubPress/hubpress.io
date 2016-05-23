@@ -3,7 +3,7 @@
 Given an integer \(N\), we need to find the number of integral pairs \((x, y) \mid x^2 + y^2 = N\)
 \(N \in [0, 2147483647]\), with a maximum of 100 such numbers in a file.
 
-== Solution
+=== Solution
 
 Geometrically, we know that \(x^2 + y^2 = r\) represents a circle centered at \((0,0)\) with a radius \(r\).  So, the problem can be interpreted visually as finding all possible solutions where \(x, y\) are positive, i.e., lie in the first quadrant.
 
