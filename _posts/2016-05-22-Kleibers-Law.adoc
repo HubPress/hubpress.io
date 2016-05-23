@@ -1,0 +1,10 @@
+= Kleiber's Law
+:hp-tags: light bulb, migrated
+
+Last week, I happened to read about Kleiber's law while browsing through literature on natural evolution. The implications are really fascinating. It establishes a relationship between mass and metabolism as:
+
+\(Metabolism = Mass^{\frac{3}{4}}\)
+
+Metabolism is ultimately linked to the number of heartbeats since the heart regulates the supply of oxygen. Therefore, \(\midheartbeats\mid \propto mass\). Curiously, the number of heartbeats per lifetime tends to be constant. This means that bigger/heavier animals tend to have slower metabolism with lower heart rate compared to, say, flies, with faster metabolism.
+
+Ironically, if we have fixed number of heartbeats, wouldn't running/exercising make us die faster? I suppose, the long term benefits outweigh shot term loss.
