@@ -61,7 +61,7 @@ A more interesting way to arrive at the same conclusion would be to think as fol
 * The shaded triangle increases its area as long as X and Y increase.
 * Start with \((0, 0)\) and increase both \(X, Y\) by 1. This gives us a small rectangle with bottom left \((0, 0)\) and top right \((1, 1)\).
 * If the straight line was X + Y = 1, it would be a right angled isosceles triangle. The \(X, Y\) value would always increase in the direction of line \(Y = X\), which would cut the line in middle at \((\frac{X}{2}, \frac{Y}{2})\)
-* Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(XG + YW = M\). The mid point of this line is, unsurprisingly, \(\frac{M}{2G}, \frac{M}{2W})\)
+* Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(XG + YW = M\). The mid point of this line is, unsurprisingly, \((\frac{M}{2G}, \frac{M}{2W})\)
 
 There are other ways to arrive at this. Perhaps I should write a post that exclusively deals with this problem.
 
