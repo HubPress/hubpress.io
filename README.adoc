@@ -24,8 +24,9 @@ HubPress is a web application that makes it easy for you to maintain a blog. It 
 
 Hosting for your blog is provided by GitHub Pages.
 
+If you see something wrong with the documentation, please raise an issue. Your help with improving every aspect of HubPress is greatly appreciated. Pull Requests are *always* welcome. 
 
-If you see something wrong with the documentation, please raise an issue. Your help with improving every aspect of HubPress is greatly appreciated. Pull Requests are *always* welcome. See the Contributing guide for more information.
+See the link:CONTRIBUTING.adoc[Contributors Guide] for more information about being a successful HubPress contributor.
 
 == Browser Compatibility
 
@@ -65,11 +66,11 @@ If you want your blog to be available on a custom domain, or you are already usi
 . In the repository settings, set the default branch to `gh-pages`:
 +
 image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
-. Switch your repository to the branch *gh-pages*
+. Switch your repository to the `gh-pages` branch.
 +
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
 +
-. Set the required values in `hubpress/config.json
+. Set the required values in `hubpress/config.json`
 +
 image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
 +
@@ -84,7 +85,9 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 Now you have successfully configured HubPress, you can customise it by adding social network information, experiment with different themes, and make your HubPress blog your own. 
 
-See the Administration Guide for more information.
+See the link:Administration.adoc[Administration Guide] for the next steps you need to take in setting up your HubPress blog.
+
+Once you've completed the configuration aspects, you can write your first blog post. Follow the guidelines in the link:Writers_Guide.adoc[Writer's Guide] to write a sucessful first blog post.
 
 == HubPress Team
 
@@ -99,5 +102,11 @@ Translations (Japanese) by:
 
 == Donations
 
-If you love HubPress, and you want to support the team responsible for developing the app, you can use https://gratipay.com/hubpress/[Gratipay] image:https://avatars1.githubusercontent.com/u/1744073?v=3&s=24[]. 
-Any donation you give will be put towards development-enabling products like caffeine.
+HubPress is now on https://gratipay.com/hubpress/[Gratipay]! 
+
+image::https://cloud.githubusercontent.com/assets/2006548/12901016/7b09da22-ceb9-11e5-93f7-16ab135b2e2e.png[]
+
+It's not the only way you can help us, but it is certainly a welcome one. 
+Donations are a great way to show your appreciation for the platform: it inspires us to dedicate extra time away from our families and day jobs to make HubPress an awesome blogging platform for you.
+
+image::https://cloud.githubusercontent.com/assets/2006548/12901085/cc5ee908-ceb9-11e5-9d8b-c526f081f1e9.png[]
