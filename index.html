@@ -34,7 +34,7 @@
               <div class="menubox collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav menu">
                   <li><a href="#">Home</a></li>
-                  <li><a href="#event">Upcoming Events</a></li>
+                  <li><a href="#event">Special Offers</a></li>
                   <li><a href="#home">Menu</a></li>
                   <li><a href="#book">Book Table</a></li>
                   <li><a href="#contact">Contact</a></li>
@@ -64,26 +64,66 @@
           <p><br />
           </p>
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-12 welcome-image">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:400px; height:300px;
+                 margin-bottom: 2%; margin-left:60%; margin-right: 10%; auto" >
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" class="img-responsive" role="listbox" >
+            <div class="item active">
+              <img class="img-responsive"src="images/1.jpg" alt="paradise biryani pointe" width="400px" height="300px">
+            </div>
+
+            <div class="item">
+              <img class="img-responsive"src="images/6.jpg" alt="paradise biryani pointe" width="400px" height="300px">
+            </div>
+
+            <div class="item">
+              <img class="img-responsive" src="images/7.jpg" alt="paradise biryani pointe" width="400px" height="300px">
+            </div>
+
+            <div class="item">
+              <img class="img-responsive" src="images/bg.jpg" alt="paradise biryani pointe" width="400px" height="300px">
+            </div>
+          </div>
+        </div>
+
+          <!-- Left and right controls
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a> -->
+        </div>
+        <!-- <div class="col-md-5 col-sm-5 col-xs-12 welcome-image">
           <div class="col-md-6 col-sm-12 col-xs-6 pull-left"> <img src="images/welcome1.png" />
           </div>
           <div class="col-md-6 pull-left col-xs-6 welcome2"> <img src="images/welcome2.png" />
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="container-fluid upevent section-container">
       <div class="upevent-effect">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-xs-12 uphead">
-            <h3 id="event">Upcoming Event</h3>
-            <span class="header-text">Majestic</span> </div>
+            <h3 id="event">Special Offers</h3>
+            <!-- <span class="header-text">Majestic</span> --> </div>
           <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 upbox">
-            <div class="col-md-12 col-sm-12 col-xs-12 upimg"> <img src="images/upcoming.jpg" />
+            <div class="col-md-12 col-sm-12 col-xs-12 upimg "> <img class="img-responsive" src="images/5.png" />
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12 special-note">
+            <!-- <div class="col-md-12 col-sm-12 col-xs-12 special-note">
               <p>This Sunday at 3:00 PM, We are organizing special event!</p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -212,7 +252,7 @@
             </div>
             <div class="col-md-12 col-sm-12">
               <div class="form-group"> <textarea class="form-control" id="message"
-placeholder="Message" rows="8">	
+placeholder="Message" rows="8">
 
  </textarea> </div>
               <div class="text-center"> <button type="submit" class="btn">Book</button>
@@ -224,22 +264,11 @@ placeholder="Message" rows="8">
     </div>
     <div class="container-fluid footer section-container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-          <h3 id="contact">Contact</h3>
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <img src="images/address.jpg" alt="address" style="width: 684px; height: 406px;" />
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <p> </p>
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" >
+          <h3 id="contact" style="font-size:50px;" > Contact Us </h3>
+          <br/>
+          <img class="img-responsive img-rounded" src="images/address.jpg" alt="address" style="width: 684px; height: 406px;" />
+          <br/>
           <span class="header-text" style="font-family: Liberation Serif;"></span>
           <div class="col-md-6 col-sm-6 social">
             <ul>
