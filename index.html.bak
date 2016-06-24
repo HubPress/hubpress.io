@@ -2,48 +2,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Majestic - Free Bootstrap Restaurant Website Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700" rel="stylesheet"
-      type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,900,700,700italic,900italic"
-      rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Niconne" rel="stylesheet"
-      type="text/css" />
+    <title>Paradise Biryani pointe, Orange, USA | Traditional Hyderabad Nawabi
+      Food </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Paradise Biryani, Orange, CT and Milford, CT, is a perfect and
+      pleasant place for Delicious and Traditional Hyderabad Nawabi Food." name="description" />
+    <meta content="paradise orange biryani, usa, restaurant in orange, hyderabad dum biryani in usa, "
+      name="keywords" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link type="text/css" href="css/font-awesome.min.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700" />
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,900,700,700italic,900italic" />
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Niconne" />
   </head>
   <body>
     <header class="headbar">
       <div class="fullbg">
         <div class="row">
           <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
-            <nav class="navi navbar navbar-default" role="navigation">
+            <nav role="navigation" class="navi navbar navbar-default">
               <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed navb"
-                  data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                  aria-expanded="false"> <span class="sr-only">Toggle
-                    navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                  <span class="icon-bar"></span> </button> </div>
+              <div class="navbar-header"> <button aria-expanded="false" data-target="#bs-example-navbar-collapse-1"
+                  data-toggle="collapse" class="navbar-toggle collapsed navb" type="button">
+                  <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                  <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button> </div>
               <!-- Collect the nav links, forms, and other content for toggling --><br />
               <br />
               <div style="text-align: left;"><br />
               </div>
               <br />
-              <div class="menubox collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div id="bs-example-navbar-collapse-1" class="menubox collapse navbar-collapse">
                 <ul class="nav navbar-nav menu">
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">Upcoming Events</a></li>
-                  <li><a href="#">Menu</a></li>
-                  <li><a href="#">Book Table</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#event">Special Offers</a></li>
+                  <li><a href="#home">Menu</a></li>
+                  <li><a href="#book">Book Table</a></li>
+                  <li><a href="#contact">Contact</a></li>
                 </ul>
               </div>
             </nav>
           </div>
-          <div class="col-md-8 col-md-offset-2 col-xs-12 text-center text-banner">Welcome
-            to
+          <div class="col-md-8 col-md-offset-2 col-xs-12 text-center text-banner"><br />
             <h2>Paradise Biryani Pointe </h2>
           </div>
         </div>
@@ -65,209 +66,233 @@
           <p><br />
           </p>
         </div>
-        <div class="col-md-5 col-sm-5 col-xs-12 welcome-image">
-          <div class="col-md-6 col-sm-12 col-xs-6 pull-left"> <img src="images/welcome1.png" />
+        <div style="width:400px; height:300px;
+                 margin-bottom: 2%; margin-left:60%; margin-right: 10%; auto" data-ride="carousel"
+          class="carousel slide" id="myCarousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel"><br />
+            </li>
+            <li data-slide-to="1" data-target="#myCarousel"><br />
+            </li>
+            <li data-slide-to="2" data-target="#myCarousel"><br />
+            </li>
+            <li data-slide-to="3" data-target="#myCarousel"><br />
+            </li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div role="listbox" class="carousel-inner">
+            <div class="item active"> <img width="400px" height="300px" alt="paradise biryani pointe"
+                src="images/1.jpg" class="img-responsive" /> </div>
+            <div class="item"> <img width="400px" height="300px" alt="paradise biryani pointe"
+                src="images/6.jpg" class="img-responsive" /> </div>
+            <div class="item"> <img width="400px" height="300px" alt="paradise biryani pointe"
+                src="images/7.jpg" class="img-responsive" /> </div>
+            <div class="item"> <img width="400px" height="300px" alt="paradise biryani pointe"
+                src="images/bg.jpg" class="img-responsive" /> </div>
           </div>
-          <div class="col-md-6 pull-left col-xs-6 welcome2"> <img src="images/welcome2.png" />
+        </div>
+        <!-- Left and right controls
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>          </a> --> </div>
+      <!-- <div class="col-md-5 col-sm-5 col-xs-12 welcome-image">
+          <div class="col-md-6 col-sm-12 col-xs-6 pull-left"> <img src="images/welcome1.png" />          </div>
+          <div class="col-md-6 pull-left col-xs-6 welcome2"> <img src="images/welcome2.png" />          </div>
+        </div>      </div>
+    </div>-->
+      <div class="container-fluid upevent section-container">
+        <div class="upevent-effect">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-xs-12 uphead">
+              <h3 id="event">Special Offers</h3>
+              <!-- <span class="header-text">Majestic</span> --> </div>
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 upbox">
+              <div class="col-md-12 col-sm-12 col-xs-12 upimg "> <img src="images/5.png"
+                  class="img-responsive" /> </div>
+              <!-- <div class="col-md-12 col-sm-12 col-xs-12 special-note">
+              <p>This Sunday at 3:00 PM, We are organizing special event!</p>            </div> -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid upevent section-container">
-      <div class="upevent-effect">
+      <div class="container-fluid menu-section section-container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-xs-12 uphead">
-            <h3>Upcoming Event</h3>
-            <span class="header-text">Majestic</span> </div>
-          <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 upbox">
-            <div class="col-md-12 col-sm-12 col-xs-12 upimg"> <img src="images/upcoming.jpg" />
+          <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+            <div class="col-md-6 menu-list col-sm-8 col-xs-12">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">Food</a></li>
+                <li><a href="#menu1" data-toggle="tab">Drink</a></li>
+                <li><a href="#menu2" data-toggle="tab">Chef</a></li>
+                <li><a href="#menu3" data-toggle="tab">Cocktail</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                  <ul>
+                    <li>
+                      <p class="menuname">Quail</p>
+                      <p class="price">$9.1</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Crispy</p>
+                      <p class="price">$11.5</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Cookie</p>
+                      <p class="price">$18</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Sea Trout</p>
+                      <p class="price">$28.9</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Seasonal Soup</p>
+                      <p class="price">$7</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="menu1">
+                  <ul>
+                    <li>
+                      <p class="menuname">Quail</p>
+                      <p class="price">$9.1</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Crispy</p>
+                      <p class="price">$11.5</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="menu2">
+                  <ul>
+                    <li>
+                      <p class="menuname">Quail</p>
+                      <p class="price">$9.1</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Crispy</p>
+                      <p class="price">$11.5</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Cookie</p>
+                      <p class="price">$18</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="menu3">
+                  <ul>
+                    <li>
+                      <p class="menuname">Quail</p>
+                      <p class="price">$9.1</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Crispy</p>
+                      <p class="price">$11.5</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Cookie</p>
+                      <p class="price">$18</p>
+                    </li>
+                    <li>
+                      <p class="menuname">Sea Trout</p>
+                      <p class="price">$28.9</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12 special-note">
-              <p>This Sunday at 3:00 PM, We are organizing special event!</p>
-            </div>
+            <div class="col-md-6 col-sm-4 menuhead col-xs-12">
+              <h3>Delicious Menu</h3>
+              <span class="header-text"><img src="file:///home/kskarthik/Desktop/Majestic/images/upcoming.jpg" />Majestic</span>
+              <img src="images/menu.jpg" /> </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid menu-section section-container">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
-          <div class="col-md-6 menu-list col-sm-8 col-xs-12">
-            <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#home">Food</a></li>
-              <li><a data-toggle="tab" href="#menu1">Drink</a></li>
-              <li><a data-toggle="tab" href="#menu2">Chef</a></li>
-              <li><a data-toggle="tab" href="#menu3">Cocktail</a></li>
-            </ul>
-            <div class="tab-content">
-              <div id="home" class="tab-pane fade in active">
-                <ul>
-                  <li>
-                    <p class="menuname">Quail</p>
-                    <p class="price">$9.1</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Crispy</p>
-                    <p class="price">$11.5</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Cookie</p>
-                    <p class="price">$18</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Sea Trout</p>
-                    <p class="price">$28.9</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Seasonal Soup</p>
-                    <p class="price">$7</p>
-                  </li>
-                </ul>
-              </div>
-              <div id="menu1" class="tab-pane fade">
-                <ul>
-                  <li>
-                    <p class="menuname">Quail</p>
-                    <p class="price">$9.1</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Crispy</p>
-                    <p class="price">$11.5</p>
-                  </li>
-                </ul>
-              </div>
-              <div id="menu2" class="tab-pane fade">
-                <ul>
-                  <li>
-                    <p class="menuname">Quail</p>
-                    <p class="price">$9.1</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Crispy</p>
-                    <p class="price">$11.5</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Cookie</p>
-                    <p class="price">$18</p>
-                  </li>
-                </ul>
-              </div>
-              <div id="menu3" class="tab-pane fade">
-                <ul>
-                  <li>
-                    <p class="menuname">Quail</p>
-                    <p class="price">$9.1</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Crispy</p>
-                    <p class="price">$11.5</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Cookie</p>
-                    <p class="price">$18</p>
-                  </li>
-                  <li>
-                    <p class="menuname">Sea Trout</p>
-                    <p class="price">$28.9</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <div class="container-fluid book section-container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 bookhead">
+            <h3 id="book">Book Your Table</h3>
+            <br />
           </div>
-          <div class="col-md-6 col-sm-4 menuhead col-xs-12">
-            <h3>Delicious Menu</h3>
-            <span class="header-text"><img src="file:///home/kskarthik/Desktop/Majestic/images/upcoming.jpg" />Majestic</span>
-            <img src="images/menu.jpg" /> </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid book section-container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 bookhead">
-          <h3>Book Your Table</h3>
-          <br />
-        </div>
-        <div class="col-md-8 col-md-offset-2 opening">
-          <h4>Opening Hours</h4>
-          <p>Sunday to Tuesday 09.00 - 24:00 &amp; Friday and Sunday 08:00 -
-            03.00</p>
-          <p class="call">+0141-123-456-78</p>
-        </div>
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 forming">
-          <form role="form">
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group"> <input type="text" class="form-control"
-                  id="name" placeholder="Name" /> </div>
-              <div class="form-group"> <input type="email" class="form-control"
-                  id="email" placeholder="Email" /> </div>
-              <div class="form-group"> <input type="text" class="form-control"
-                  id="phone" placeholder="Phone" /> </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group"> <input type="date" class="form-control"
-                  id="date" placeholder="Date" /> </div>
-              <div class="form-group"> <input type="time" class="form-control"
-                  id="time" placeholder="Time" /> </div>
-              <div class="form-group"> <input type="text" class="form-control"
-                  id="party" placeholder="Party" /> </div>
-            </div>
-            <div class="col-md-12 col-sm-12">
-              <div class="form-group"> <textarea class="form-control" id="message"
-placeholder="Message" rows="8">	
-
+          <div class="col-md-8 col-md-offset-2 opening">
+            <h4>Business Hours</h4>
+            <br />
+            <strong class="title_text">Lunch </strong><br />
+            <span class="content">Mon-Thurs. 12.00pm to 3:00pm<br />
+              Fri &amp; Sat. &amp; Sun. - 12:00pm to 3:00pm<br />
+              <br />
+            </span>
+            <p><strong class="title_text">Dinner</strong><br />
+              <span class="content">Mon. -Thurs. SUN 5:30pm to 10:00pm<br />
+                Fri.- SAT. 5:30pm to 10:30pm</span> </p>
+            <p class="call">+1 (203) 553-9977</p>
+          </div>
+          <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 forming">
+            <form role="form">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group"> <input type="text" placeholder="Name"
+                    id="name" class="form-control" /> </div>
+                <div class="form-group"> <input type="email" placeholder="Email"
+                    id="email" class="form-control" /> </div>
+                <div class="form-group"> <input type="text" placeholder="Phone"
+                    id="phone" class="form-control" /> </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group"> <input type="date" placeholder="Date"
+                    id="date" class="form-control" /> </div>
+                <div class="form-group"> <input type="time" placeholder="Time"
+                    id="time" class="form-control" /> </div>
+                <div class="form-group"> <input type="text" placeholder="Party"
+                    id="party" class="form-control" /> </div>
+              </div>
+              <div class="col-md-12 col-sm-12">
+                <div class="form-group"> <textarea rows="8" placeholder="Message"
+id="message" class="form-control">
  </textarea> </div>
-              <div class="text-center"> <button type="submit" class="btn">Book</button>
+                <div class="text-center"> <button class="btn" type="submit">Book</button>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid footer section-container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-          <h3>Contact</h3>
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <img src="images/address.jpg" alt="address" style="width: 684px; height: 406px;" />
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <p><br />
-          </p>
-          <p> </p>
-          <span class="header-text" style="font-family: Liberation Serif;"></span>
-          <div class="col-md-6 col-sm-6 social">
-            <ul>
-              <li style="text-align: center;"><a href="#"><i class="fa fa-twitter-square"></i>
-                </a><br />
-              </li>
-              <li style="text-align: center;"><a href="#"><i class="fa fa-facebook-square"></i></a><br />
-              </li>
-              <li style="text-align: center;"><a href="#"><i class="fa fa-google-plus-square"></i></a><br />
-              </li>
-              <li style="text-align: center;"><a href="#"><i class="fa fa-linkedin-square"></i></a><br />
-              </li>
-            </ul>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-    <footer class="footerinfo container-fluid">
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <p>© 2016 | Designed By <a href="https://twitter.com/kskarthik91">kskarthik</a><a
-              href="http://vectortoons.com/"><br />
-            </a></p>
+      <div class="container-fluid footer section-container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <h3 style="font-size:50px;" id="contact"> Contact Us </h3>
+            <br />
+            <br />
+            <img style="width: 684px; height: 406px;" alt="address" src="images/address.jpg"
+              class="img-responsive img-rounded" /><br />
+            <br />
+            <span style="font-family: Liberation Serif;" class="header-text"></span>
+            <div class="col-md-6 col-sm-6 social">
+              <ul>
+                <li style="text-align: center;"><a href="https://twitter.com/paradise_indian"><i
+                      class="fa fa-twitter-square"></i> </a><br />
+                </li>
+                <li style="text-align: center;"><a href="https://facebook.com/OrangeBiryani"><i
+                      class="fa fa-facebook-square"></i></a><br />
+                </li>
+                <li style="text-align: center;"><a href="https://plus.google.com/104845298528237273795"><i
+                      class="fa fa-google-plus-square"></i></a><br />
+                </li>
+                <!-- <li style="text-align: center;"><a href="#"><i class="fa fa-linkedin-square"></i></a><br />
+              </li> -->
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+      <footer class="footerinfo container-fluid">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <p>© 2016 Paradise Biryani Pointe | Design By <a href="https://twitter.com/kskarthik91">kskarthik</a></p>
+          </div>
+        </div>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script> </div>
   </body>
 </html>
