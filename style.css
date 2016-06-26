@@ -22,13 +22,13 @@ header {
 
 	color: #FFF;
 
-	padding: 10px;
+	/* padding: 10px; */
 
-	border: 2px solid #FFF;
+	/*border: 2px solid #FFF;*/
 
 	display: block;
 
-	margin: 60px 0px;
+	/* margin: 60px 0px; */
 
 	font-family: "Oxygen", sans-serif;
 
@@ -945,4 +945,3 @@ padding: 30px 0px;
 }
 
 }
-
