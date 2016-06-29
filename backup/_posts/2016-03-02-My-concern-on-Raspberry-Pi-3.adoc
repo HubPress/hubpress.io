@@ -1,6 +1,0 @@
-= My concern on Raspberry Pi 3
-:hp-tags: Raspberry Pi 3, IoT
-
-{Nbsp} Recently, https://raspberrypi.org[Raspberry Pi 3] was launched as a successor of Pi 2 released last year featuring a new 64bit quad core processor & additionally wifi & bluetooth. 
-
-{nbsp} My real concern here is what's the point of giving a 64 processor since we need at least 2gb RAM to run an 64bit operating system while Pi 3 only has half of it. So we have to end up using 32bit OS. Is it just an marketing tactice ? May be. 
