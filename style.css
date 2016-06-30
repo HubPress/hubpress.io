@@ -7,6 +7,7 @@
 header {
 
 	background:url(images/bg.jpg) no-repeat 0% 0% / 100% auto;
+	opacity: 1.0;
 
 }
 
@@ -18,7 +19,7 @@ header {
 
 .logo {
 
-	text-align: center;
+	text-align: left;
 
 	color: #FFF;
 
