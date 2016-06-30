@@ -6,11 +6,14 @@
 
 header {
 
-	background:url(images/bg.jpg) no-repeat 0% 0% / 100% auto;
-
+	background:url(images/bg.jpg) no-repeat 0% 0% / 100%;
+	opacity: 1;
 
 }
 
+.headbar {
+	opacity: 1;
+}
 .fullbg {
 
 	background-color:rgba(31, 20, 20, 0.8);
@@ -52,6 +55,7 @@ header {
 	border-radius: 0px;
 
 	margin-bottom: 0px;
+
 
 }
 
