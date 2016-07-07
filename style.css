@@ -641,6 +641,40 @@ line-height: 1.5;
 
 }
 
+.social2 {
+
+	padding: 20px 0px;
+
+}
+
+.social2 ul {
+
+	list-style: none;
+
+}
+
+.social2 ul li {
+
+	display: inline-block;
+
+	margin: 0px 10px 0px 0px;
+
+}
+
+.social2 ul li a {
+
+	font-size: 40px;
+
+	color: #f8bd08;
+
+}
+
+/* .social2 ul li a:hover {
+
+	color: #fff;
+
+} */
+
 .footerinfo {
 
 	background-color: #181818;
