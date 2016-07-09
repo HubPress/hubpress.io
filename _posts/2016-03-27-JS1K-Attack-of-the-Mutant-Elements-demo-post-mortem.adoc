@@ -8,6 +8,8 @@ This year I wanted something different. On past editions, I focused on creating 
 
 And before starting... yes, I cheated the rules: arrow notation is part of ES6, which was not allowed in the contest. But also the rules stated that the entry should run in two major browsers, and both Chrome and Firefox support that notation since long time ago (thanks to @manolopm for noticing about this).
 
+The original idea was to do a shooter, something like Galaga and many other classics. But as imitating something already well established is usually boring I opted for adding some circular paths to the "enemies". A nice way of practising rotations.
+
 So, let's start.
 
 First a few minor initializations, nothing special.
@@ -19,7 +21,7 @@ First a few minor initializations, nothing special.
   b.style.background = "#000";
   b.style.overflow = "hidden";
   
-Then the "factory" of elements. The idea was to have a single method that could instanciate all the Too many 'el' elements, and sure that 
+Then the "factory" of elements. The idea was to have a single method that could create all the DOM elements, both the main character and the enemies. 
 
   var createElement = (ship, x, y, color, v, move) => {
     var el= d.createElement('div');
