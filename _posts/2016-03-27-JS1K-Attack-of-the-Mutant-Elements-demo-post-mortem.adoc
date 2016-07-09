@@ -135,4 +135,4 @@ And this is everything I could add in 1024 bytes. I'm pretty sure that more stuf
 
 == Conclusion
 
-JS1K can be "super-pro", but can be also a lot of fun if you don't take it too seriously.
+JS1K can be "super-pro", but can be also a lot of fun if you don't take it too seriously. I highly recommend to spend a few hours coding something for this compo if you are a developer and want to experiment or try new stuff without the constraints of your daily job. Also, TBH, I prefer to do this kind of open challenges in my free time than the more strict problem challenges like http://play.elevatorsaga.com/[Elevator Saga]
