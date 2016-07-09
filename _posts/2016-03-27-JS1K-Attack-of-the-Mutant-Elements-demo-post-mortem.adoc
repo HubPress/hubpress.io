@@ -55,7 +55,7 @@ Now, we initalize the first two elements. First is the main character, the one w
     createElement("0", w-u, h-u, "#FF0", 0, () => {})
   ];
 
-Now the rest of elements, having care of adding a method for rotating each one of them (last parameter in the *createElement* call).:
+Now the rest of elements, having care of adding a method for rotating each one of them (last parameter in the *createElement* call). Notice the minified math methods and the https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/2drota.htm[2D rotation equation]:
 
   var ra = Math.random;
   var co = Math.cos;
@@ -135,4 +135,8 @@ And this is everything I could add in 1024 bytes. I'm pretty sure that more stuf
 
 == Conclusion
 
-JS1K can be "super-pro", but can be also a lot of fun if you don't take it too seriously. I highly recommend to spend a few hours coding something for this compo if you are a developer and want to experiment or try new stuff without the constraints of your daily job. Also, TBH, I prefer to do this kind of open challenges in my free time than the more strict problem challenges like http://play.elevatorsaga.com/[Elevator Saga]
+The best part of the compo IMO, is being able to do something impressive in very little time. The bad part is that you have to forget about a lot of good practices, even some really basic like adding the "var" keyword to any new variable. That can also be refreshing, but it can lead to lose control of your code quickly, which is prone to confussion and ultimately frustration. No worries, it's only a game.  
+
+JS1K can be "super-pro", but can be also a lot of fun if you don't take it too seriously. I highly recommend to spend a few hours coding something for this compo if you are a developer and want to experiment or try new stuff without the constraints of your daily job. Also, TBH, I prefer to do this kind of open challenges in my free time than the more strict problem challenges like http://play.elevatorsaga.com/[Elevator Saga]. But, anyway, it's a matter of taste.
+
+Have (minified) fun!
