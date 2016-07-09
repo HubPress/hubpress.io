@@ -39,6 +39,8 @@ Then the "factory" of elements. The idea was to have a single method that could 
     b.appendChild(el);
     return el;
   };
+  
+Next method applies movement to a DOM element.
 
   var move = (el) => {
     el.move(el);
@@ -46,10 +48,14 @@ Then the "factory" of elements. The idea was to have a single method that could 
     el.style.bottom = parseInt(el.y)+"px";
   };
 
+Now, we initalize the first two elements. First is the main character, the one we will be controlling, and second one is the score. They are in the first positions of the elements list, that will make easier to keep track of them without providing them with a specific name.
+
   var Elements = [
     createElement("M", w/2, h/2, "#FFF", 0, () => {}),
     createElement("0", w-u, h-u, "#FF0", 0, () => {})
   ];
+
+Now the rest of elements, having care of adding a method for rotating each one of them (last parameter in the *createElement* call).:
 
   var ra = Math.random;
   var co = Math.cos;
@@ -125,3 +131,8 @@ Then the "factory" of elements. The idea was to have a single method that could 
   var old_time=performance.now();
   requestAnimationFrame(loop);
 
+And this is everything I could add in 1024 bytes. I'm pretty sure that more stuff could be added and a lot of stuff could have been reduced, so suggestions are welcome. 
+
+== Conclusion
+
+JS1K can be "super-pro", but can be also a lot of fun if you don't take it too seriously.
