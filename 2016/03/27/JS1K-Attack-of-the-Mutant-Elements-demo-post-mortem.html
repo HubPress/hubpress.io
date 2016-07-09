@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/Saga/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html" />
+    
+    <meta property="og:site_name" content="The Fallen Apples" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem" />
+    <meta property="og:description" content="One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for..." />
+    <meta property="og:url" content="https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html" />
+    <meta property="article:published_time" content="2016-03-26T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-07-09T12:22:45.417Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem" />
+    <meta name="twitter:description" content="One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for..." />
+    <meta name="twitter:url" content="https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "The Fallen Apples",
+    "author": {
+        "@type": "Person",
+        "name": "Manel Villar",
+        "image": "https://avatars.githubusercontent.com/u/135327?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "manelvf.github.io"
+    },
+    "headline": "JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem",
+    "url": "https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html",
+    "datePublished": "2016-03-26T23:00:00.000Z",
+    "dateModified": "2016-07-09T12:22:45.417Z",
+    "description": "One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1459033200" datetime="2016-03-27T00:00" title="27 March 2016">2016-03-27 00:00:00<ago class="ago"></time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="">Manel Villar</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One year more, there was the <a href="https://js1k.com">JS1K</a>, the microcode competition for Javascript code of &#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS "scene", if that exists.</p>
+</div>
+<div class="paragraph">
+<p>After participating a few years, for me it&#8217;s one of the most rewarding competitions. I must admit I only use a few hours and the result is far from being something impressive. But it&#8217;s good exercise and overall, it has a lot of fun.</p>
+</div>
+<div class="paragraph">
+<p>This year I wanted something different. On past editions, I focused on creating a single graphic effect, but this time I wanted to do something more user-oriented. And I wanted to use simple DOM elements instead of the traditional &lt;canvas&gt; rendering. After all, traditional DOM objects should have the same rights as new HTML5 ones&#8230;&#8203; anyway, it&#8217;s simply another resource.</p>
+</div>
+<div class="paragraph">
+<p>And before starting&#8230;&#8203; yes, I cheated the rules: arrow notation is part of ES6, which was not allowed in the contest. But also the rules stated that the entry should run in two major browsers, and both Chrome and Firefox support that notation since long time ago (thanks to @manolopm for noticing about this).</p>
+</div>
+<div class="paragraph">
+<p>The original idea was to do a shooter, something like Galaga and many other classics. But as imitating something already well established is usually boring I opted for adding some circular paths to the "enemies". A nice way of practising rotations.</p>
+</div>
+<div class="paragraph">
+<p>So, let&#8217;s start.</p>
+</div>
+<div class="paragraph">
+<p>First a few minor initializations, nothing special.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var w = innerWidth;
+var h = innerHeight;
+var u = w/12;
+var diff;
+b.style.background = "#000";
+b.style.overflow = "hidden";</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then the "factory" of elements. The idea was to have a single method that could create all the DOM elements, both the main character and the enemies.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var createElement = (ship, x, y, color, v, move) =&gt; {
+  var el= d.createElement('div');
+  el.innerHTML=ship;
+  el.style.position="absolute";
+  el.style.left = parseInt(x)+"px";
+  el.style.bottom = parseInt(y)+"px";
+  el.style.color = color;
+  el.v = v;
+  el.rv = 0;
+  el.x = x;
+  el.y = y;
+  el.move = move;
+  el.spin = 1;
+  b.appendChild(el);
+  return el;
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next method applies movement to a DOM element.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var move = (el) =&gt; {
+  el.move(el);
+  el.style.left = parseInt(el.x)+"px";
+  el.style.bottom = parseInt(el.y)+"px";
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, we initalize the first two elements. First is the main character, the one we will be controlling, and second one is the score. They are in the first positions of the elements list, that will make easier to keep track of them without providing them with a specific name.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var Elements = [
+  createElement("M", w/2, h/2, "#FFF", 0, () =&gt; {}),
+  createElement("0", w-u, h-u, "#FF0", 0, () =&gt; {})
+];</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the rest of elements, having care of adding a method for rotating each one of them (last parameter in the <strong>createElement</strong> call). Notice the minified math methods and the <a href="https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/2drota.htm">2D rotation equation</a>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var ra = Math.random;
+var co = Math.cos;
+var si = Math.sin;
+for (var i=0; i &lt; 9; i++) {
+  Elements.push(createElement(
+    String.fromCharCode(65+ra()*25), ra() * w, ra() * h, "#F5"+i, 0,
+     (el) =&gt; {
+       var x = el.x - (w/2);
+       var y = el.y - (h/2);
+       var f = u * (diff/1000) * .01 * el.spin;
+       var px = (x * co(f)) - (y * si(f));
+       var py = (y * co(f)) + (x * si(f));
+       el.x = px + (w/2);
+       el.y = py + (h/2);
+     })
+  );
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is a bit tricky: for the "bullet" I chose the last element of the Elements list. A <em>collision detection</em> method is added to each bullet. Bullets dissapear when they are at a precalculated distance from their origin, the main character (first element). The score is also updated in this method (second element).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var shoot = () =&gt; {
+  if (Elements[Elements.length-1].innerHTML == "|") {
+    return;
+  }
+  Elements.push(createElement(
+    "|", w/2, h/2, "#05F", 2, (el) =&gt; {
+      el.y += el.v * u * (diff/1000);
+      var e, x2, y2;
+      for (var i = Elements.length-2; i; i--) {
+        e = Elements[i];
+        sq = ((e.x - el.x) * (e.x - el.x)) + ((e.y - el.y) * (e.y - el.y));
+        if (sq &lt; 300) {
+          Elements[i].innerHTML="";
+          Elements.splice(i, 1);
+          el.y=h+1;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Elements[1].innerHTML = parseInt(Elements[1].innerHTML) +100;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>          break;
+        }
+      }
+      if (el.y &gt; h) {
+         Elements.splice(Elements.length - 1, 1);
+      }
+    }
+  ));
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Classical listener for the user keypresses. Pretty sure these lines of code can be reduced, but they&#8217;re so classy. Only one action given: Shoot!</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>document.addEventListener('keydown', function(event) {
+    switch(event.keyCode) {
+      case 32:
+        shoot();
+        break;
+    }
+});</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For every loop iteration, the time difference with the previous frame is calculated in microseconds using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp">High Resolution Timer</a> provided by the latest browser APIs. It&#8217;s recommend to use this timer if we want to use the best precision we can get in the browser, instead of the traditional Date methods. It&#8217;s included from IE9 onwards, so no worries. We&#8217;ll use that value for calculating the movements in previous <strong>move</strong> methods, so the movement will be more accurate and the "animation" smoother.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var loop = () =&gt; {
+  time = performance.now();
+  diff = time - old_time;
+  old_time = time;
+  Elements.forEach((v) =&gt; {
+    move(v);
+  });</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  requestAnimationFrame(loop);
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to make things a bit more <em>spicy</em>, a timer changes the spin (rotation direction) randomly every 3 seconds. Artificial Intelligence.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>setInterval(() =&gt; {
+  Elements.forEach((v) =&gt; {
+      v.spin = Math.round(Math.random())? 1: -1;
+  });
+}, 3000);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The last lines of code take care of executing the game loop.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var old_time=performance.now();
+requestAnimationFrame(loop);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And this is everything I could add in 1024 bytes. I&#8217;m pretty sure that more stuff could be added and a lot of stuff could have been reduced, so suggestions are welcome.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The best part of the compo IMO, is being able to do something impressive in very little time. The bad part is that you have to forget about a lot of good practices, even some really basic like adding the "var" keyword to any new variable. That can also be refreshing, but it can lead to lose control of your code quickly, which is prone to confussion and ultimately frustration. No worries, it&#8217;s only a game. Just remember to use tools like Google Closure compiler and <a href="http://www.iteral.com/jscrush/">JSCrush</a> for keeping it short and you&#8217;ll be fine.</p>
+</div>
+<div class="paragraph">
+<p>JS1K can be "super-pro", but can be also a lot of fun if you don&#8217;t take it too seriously. I highly recommend to spend a few hours coding something for this compo if you are a developer and want to experiment or try new stuff without the constraints of your daily job. Also, TBH, I prefer to do this kind of open challenges in my free time than the more strict problem challenges like <a href="http://play.elevatorsaga.com/">Elevator Saga</a>. But, anyway, it&#8217;s a matter of taste.</p>
+</div>
+<div class="paragraph">
+<p>Have (minified) fun!</p>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'manelvfgithubio'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">The Fallen Apples</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+    <script src="//manelvf.github.io/blog/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34164255-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
