@@ -75,6 +75,8 @@ Now the rest of elements, having care of adding a method for rotating each one o
     );
   }
 
+This is a bit tricky: for the "bullet" I chose the last element of the Elements list. A _collision detection_ method is added to each bullet. Bullets dissapear when they are at a precalculated distance from their origin, the main character (first element).
+
   var shoot = () => {
     if (Elements[Elements.length-1].innerHTML == "|") {
       return;
@@ -103,6 +105,8 @@ Now the rest of elements, having care of adding a method for rotating each one o
     ));
   };
 
+Classical listener for the user keypresses. Pretty sure these lines of code can be reduced, but they're so classy. Only one action given: Shoot! 
+
   document.addEventListener('keydown', function(event) {
       switch(event.keyCode) {
         case 32:
@@ -110,6 +114,8 @@ Now the rest of elements, having care of adding a method for rotating each one o
           break;
       }
   });
+
+The last lines of code take care of executing the game loop. For every loop iteration, the time difference with the previous frame is calculated using the https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp[High Resolution Timer] provided by the latest 
 
   var loop = () => {
     time = performance.now();
