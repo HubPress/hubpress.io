@@ -1,3 +1,5 @@
 = Mi primer blog
 :hp-tags: HubPress, Blog, Open Source,
 video::KCylB780zSM[youtube]
+
+Esto es un comienzo de algo.
