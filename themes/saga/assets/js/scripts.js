@@ -2,7 +2,7 @@
 /* jshint browser: true */
 
 var siteurl = $('#site-url').attr("href"); // Get url for blog (in case site is run under a sub-domain)
-siteurl += "/themes/Saga";
+siteurl += "/themes/saga";
 /******************
  * HIGHLIGHT CODE *
  ******************/
