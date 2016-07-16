@@ -34,7 +34,8 @@ http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
 image::https://tlgur.com/s/kitten.jpg[]
 
 ---
+archivo svg:
 
-image::https://es.m.wikipedia.org/wiki/Archivo:Svg.svg[]
+image::https://upload.wikimedia.org/wikipedia/commons/1/15/Svg.svg[]
 
 ---
