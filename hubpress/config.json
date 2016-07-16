@@ -4,7 +4,9 @@
     "repositoryName": "txemis.github.io",
     "branch": "master"
   },
-  "site": {},
+  "site": {
+    "cover": "https://tlgur.com/d/Zgm6Od4P"
+  },
   "socialnetwork": {},
   "theme": {
     "name": "ghostium"
