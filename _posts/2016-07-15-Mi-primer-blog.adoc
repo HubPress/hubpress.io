@@ -25,8 +25,16 @@ http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
 
 ---
 
+
+
 == Imágenes
+
+---
 
 image::https://tlgur.com/s/kitten.jpg[]
 
+---
 
+image::https://es.m.wikipedia.org/wiki/Archivo:Svg.svg[]
+
+---
