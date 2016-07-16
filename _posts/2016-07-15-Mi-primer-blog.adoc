@@ -75,4 +75,21 @@ Ordered list:
 
 ---
 
+Mas:
+
+
+*bold*
+
+Bold (unconstrained)	**b**old
+
+Italic (constrained)	_italic_
+
+Italic (unconstrained)	__i__talic
+
+Monospace (constrained)	`monospace`
+
+Monospace (unconstrained) ``m``onospace
+
+
+
 
