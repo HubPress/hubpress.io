@@ -13,11 +13,12 @@ Esto es un comienzo de algo.
 ---
 Enlaces de interés:
 
-http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
 
 https://github.com/txemis/txemis.github.io/blob/master/Administration.adoc[Aministration Guide]
 
 https://github.com/txemis/txemis.github.io/blob/master/Writers_Guide.adoc[Writer’s Guide]
+
+http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
 
 ---
 
