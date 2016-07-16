@@ -91,6 +91,35 @@ Passthrough block works fine - I use it for include Javascript tracker code:
 
 ---
 
+<script>
+   /* Chatbro Widget Embed Code Start */
+   function ChatbroLoader(chats, async) {
+       async = async || true;
+       var params = {
+          embedChatsParameters: chats instanceof Array ? chats : [chats],
+          needLoadCode: typeof Chatbro === 'undefined'
+       };
+       var xhr = new XMLHttpRequest();
+       xhr.onload = function () {
+          eval(xhr.responseText);
+       };
+       xhr.onerror = function () {
+          console.error('Chatbro loading error');
+       };
+       xhr.open('POST', '//www.chatbro.com/embed_chats/', async);
+       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+       xhr.send('parameters=' + encodeURIComponent(JSON.stringify(params)));
+   }
+       /* Chatbro Widget Embed Code End */
+       ChatbroLoader({
+          chatPath: 'tg/208397015/Ask your own question',
+          containerDivId: ''
+       });
+ </script>
+
+
+---
+
 ++++ 
 <!-- Piwik --> 
 <script type="text/javascript">
