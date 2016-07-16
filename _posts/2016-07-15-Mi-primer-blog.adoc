@@ -1,8 +1,19 @@
 = Mi primer blog
+
+== Primera parte
+
 :hp-tags: HubPress, Blog, Open Source,
 
 video::KCylB780zSM[youtube]
 
+== Segunda parte
+
 Esto es un comienzo de algo.
 
+---
+Enlaces de interés:
+
+http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
+
+---
 
