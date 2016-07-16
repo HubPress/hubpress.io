@@ -1,0 +1,4 @@
+= Mi segundo blog
+:hp-tags: HubPress, Blog, Open Source,
+
+Esto es el seguimiento de algo.
