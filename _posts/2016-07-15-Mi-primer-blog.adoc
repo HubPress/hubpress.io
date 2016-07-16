@@ -1,15 +1,18 @@
 = Mi primer blog
 
-== Primera parte
+== Video
 
 :hp-tags: HubPress, Blog, Open Source,
 
 video::KCylB780zSM[youtube]
 
-== Segunda parte
+== Texto
 ----
 Esto es un comienzo de algo.
 ----
+
+== Enlaces
+
 ---
 Enlaces de interés:
 
@@ -21,4 +24,9 @@ https://github.com/txemis/txemis.github.io/blob/master/Writers_Guide.adoc[Writer
 http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
 
 ---
+
+== Imágenes
+
+image::https://tlgur.com/s/kitten.jpg[]
+
 
