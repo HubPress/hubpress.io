@@ -5,7 +5,8 @@
     "branch": "master"
   },
   "site": {
-    "cover": "https://tlgur.com/d/Zgm6Od4P"
+    "cover": "https://tlgur.com/d/Zgm6Od4P",
+    "disqus": "txemis"
   },
   "socialnetwork": {},
   "theme": {
