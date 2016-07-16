@@ -91,7 +91,9 @@ Passthrough block works fine - I use it for include Javascript tracker code:
 
 ---
 
-<script>
+++++
+<!-- Chatbro -->
+<script type="text/javascript">
    /* Chatbro Widget Embed Code Start */
    function ChatbroLoader(chats, async) {
        async = async || true;
@@ -116,7 +118,8 @@ Passthrough block works fine - I use it for include Javascript tracker code:
           containerDivId: ''
        });
  </script>
-
+<!-- End Chatbro Code -->
+++++
 
 ---
 
