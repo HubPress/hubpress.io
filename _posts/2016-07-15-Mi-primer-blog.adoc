@@ -6,7 +6,3 @@ video::KCylB780zSM[youtube]
 Esto es un comienzo de algo.
 
 
-= Mi segundo blog
-:hp-tags: HubPress, Blog, Open Source,
-
-Esto es el seguimiento de algo.
