@@ -1,12 +1,7 @@
 = Mi primer blog
 
-== Video
 
-:hp-tags: HubPress, Blog, Open Source,
 
-video::KCylB780zSM[youtube]
-
-video::67480300[vimeo]
 
 == Texto
 ----
@@ -89,6 +84,18 @@ Italic (unconstrained)	__i__talic
 Monospace (constrained)	`monospace`
 
 Monospace (unconstrained) ``m``onospace
+
+
+---
+
+== Video
+:hp-tags: HubPress, Blog, Open Source,
+
+video::KCylB780zSM[youtube]
+
+video::67480300[vimeo]
+
+---
 
 
 
