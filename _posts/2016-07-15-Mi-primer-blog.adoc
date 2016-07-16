@@ -25,8 +25,11 @@ http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
 
 
 
-
 == Otros
+
+---
+
+http://www.chatbro.com/en/tg/j_m_l/invitado/[ChatTelegram]
 
 ---
 descargar ficheros:
@@ -67,6 +70,44 @@ Italic (unconstrained)	__i__talic
 Monospace (constrained)	`monospace`
 
 Monospace (unconstrained) ``m``onospace
+
+---
+
+javascript:
+
+https://github.com/wols/time/[]
+https://wols.github.io/time/[]
+
+Passthrough block works fine - I use it for include Javascript tracker code:
+
+++++
+<!-- Piwik -->
+<script type="text/javascript">
+   // code here
+</script>
+<noscript><p><!-- a image --></p></noscript>
+<!-- End Piwik Code -->
+++++
+
+---
+
+++++ 
+<!-- Piwik --> 
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.wols.github.io/time"]]);    _paq.push(['trackPageView']);  _paq.push(['enableLinkTracking']);
+(function() {
+   var u="//wolsorg.pro-ssl.de/analytics/";
+   _paq.push(['setTrackerUrl', u+'piwik.php']); 
+   _paq.push(['setSiteId', 2]);
+   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+   g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+   })();
+</script>
+<noscript><p><img src="//wolsorg.pro-ssl.de/analytics/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --> 
+++++
+
 
 
 ---
