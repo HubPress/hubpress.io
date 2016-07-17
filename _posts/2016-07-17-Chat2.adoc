@@ -1,6 +1,6 @@
 = Chat2
 
-Para chatear lanza el chat buscándo en la página la imagen flotante similar a esta:
+Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
 
 
 image::https://livechatbot.net/images/pic01.png[]
@@ -11,6 +11,8 @@ image::https://livechatbot.net/images/pic01.png[]
 <script id="TelegramLiveChatLoader" data-bot="F7EDD3EE-4BF6-11E6-972D-C7C0FDD63063" src="//livechatbot.net/assets/chat/js/loader.js">
 </script>
 ++++
+
+.
 
 .
 
