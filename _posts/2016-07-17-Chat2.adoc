@@ -1,6 +1,6 @@
 = Chat2
 
-Para chatear lanza el chat busc'ando enla página la imagen flotante similar a esta:
+Para chatear lanza el chat buscándo en la página la imagen flotante similar a esta:
 
 
 image::https://livechatbot.net/images/pic01.png[]
@@ -13,19 +13,19 @@ image::https://livechatbot.net/images/pic01.png[]
 ++++
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 fin
 
 
