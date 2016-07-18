@@ -1,4 +1,4 @@
-= Chat2
+= Sala de Chat
 
 Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
 
