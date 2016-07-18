@@ -1,5 +1,7 @@
 = chatbro
 
+:hp-tags: Chat,
+
 
 ++++
 <!-- Chatbro -->
@@ -24,7 +26,7 @@ function ChatbroLoader(chats, async) {
  }
     /* Chatbro Widget Embed Code End */
  ChatbroLoader({
-   chatPath: 'tg/208397015/Ask your own question',
+   chatPath: 'tg/j_m_l/invitado',
    containerDivId: ''
  }); 
 </script>
