@@ -3,6 +3,8 @@
 :hp-tags: Chat,
 
 
+Para chatear lanza la pesta;a flotante de la página:
+
 ++++
 <!-- Chatbro -->
 <script type="text/javascript">
