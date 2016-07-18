@@ -89,6 +89,57 @@ Monospace (constrained)	`monospace`
 Monospace (unconstrained) ``m``onospace
 
 ---
+....
+
+
+comment
+////
+Private notes that are not displayed in the output
+none
+
+example
+====
+Designates example content or defines an admonition block
+normal
+
+literal
+....
+....
+Output text to be displayed exactly as entered
+verbatim
+
+listing, source
+----
+Source code or keyboard input to be displayed as entered
+verbatim
+
+open
+--
+Anonymous block that can act as any other block (except pass or table)
+varies
+
+pass
+++++
+Raw text to be passed through unprocessed
+none
+
+quote, verse
+____
+A quotation or verse with optional attribution
+normal
+
+sidebar
+****
+Aside text rendered outside the flow of the document
+normal
+
+table
+|===
+Used to display tabular content or advanced layouts
+varies
+
+....
+---
 
 javascript:
 
