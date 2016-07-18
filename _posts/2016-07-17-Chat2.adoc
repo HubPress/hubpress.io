@@ -3,8 +3,9 @@
 Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
 
 
-image::https://livechatbot.net/images/pic01.png[]
+//image::https://livechatbot.net/images/pic01.png[]
 
+image::http://github.com/txemis/txemis.github.io/images/pic01.png[]
 
 
 ++++
