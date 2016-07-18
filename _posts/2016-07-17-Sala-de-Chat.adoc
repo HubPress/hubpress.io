@@ -1,5 +1,11 @@
 = Sala de Chat
 
+:hp-tags: Chat,
+
+
+== Entra en esta sala si quieres chatear
+
+
 Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
 
 
