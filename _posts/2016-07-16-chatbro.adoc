@@ -27,7 +27,8 @@ function ChatbroLoader(chats, async) {
     /* Chatbro Widget Embed Code End */
  ChatbroLoader({
    chatPath: 'tg/j_m_l/invitado',
-   containerDivId: ''
+   containerDivId: '',
+   chatLanguage: 'en'
  }); 
 </script>
 <!-- End Chatbro Code -->
