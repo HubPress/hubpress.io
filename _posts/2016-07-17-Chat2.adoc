@@ -10,6 +10,7 @@ Para chatear lanza el chat buscando en la página la imagen flotante similar a e
 //image::http://github.com/txemis/txemis.github.io/images/livechat.jpg[]
 
 //image::https://github.com/txemis/txemis.github.io/blob/master/images/livechat.png[]
+..
 
 image::livechat.jpg[]
 
