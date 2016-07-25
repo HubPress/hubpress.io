@@ -1,0 +1,33 @@
+= Get a fake REST API with zero coding
+
+When you are working on the frontend, sometimes you need to manipulate dynamic data.
+A few months ago, I discover this great tool on Github https://github.com/typicode/json-server that allows simulating a fake REST API in your App in a few seconds.
+
+After of download the dependencies through npm in your project folder, you need to create a `db.json` file with the content to use.
+
+Example:
+```bash
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
+```
+
+The last step is run this command in your console:
+```bash
+$ json-server --watch db.json
+```
+
+Now if you go to http://localhost:3000/posts/1, you'll get:
+```bash
+{ "id": 1, "title": "json-server", "author": "typicode" }
+```
+
+I hope that this should be a help for you in future projects!
+
+Happy coding!
