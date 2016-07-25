@@ -4,7 +4,14 @@
     "repositoryName": "jbrizio.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Jonathan Brizio",
+    "description": "Front-End Software Developer",
+    "postsPerPage": "3",
+    "googleAnalytics": "UA-81302818-1"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
