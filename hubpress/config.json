@@ -7,6 +7,7 @@
   "site": {
     "title": "Jonathan Brizio",
     "description": "Front-End Software Developer",
+    "cover": "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64",
     "postsPerPage": "3",
     "googleAnalytics": "UA-81302818-1"
   },
