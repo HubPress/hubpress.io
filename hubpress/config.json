@@ -10,7 +10,12 @@
     "postsPerPage": "3",
     "googleAnalytics": "UA-81302818-1"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "jonathanbrizio@gmail.com",
+    "twitter": "https://twitter.com/jonathanbrizio",
+    "linkedin": "https://ar.linkedin.com/in/jonathanbrizio",
+    "github": "https://github.com/jbrizio"
+  },
   "theme": {
     "name": "casper"
   }
