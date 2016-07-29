@@ -4,7 +4,7 @@
 :hp-tags: Chat,
 
 
-Para chatear lanza la pesta;a flotante de la página:
+Para chatear lanza la pestaña flotante de la página:
 
 ++++
 <!-- Chatbro -->
