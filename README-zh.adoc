@@ -199,7 +199,8 @@ Add tags by using the `hp-tags` attribute.
 
 ===== :hp-alt-title: 设定第二名称
 
-通过 `hp-alt-title` 给博文指定一个第二名称。
+通过 `hp-alt-title` 给博文指定一个可选标题。
+**注意**：用中文写博客标题时，一定要用英文写一个可选标题`hp-alt-title: Your English Title`
 
 Hubpress就可以用该名称来作为文件名创建博文，从而避免因为其他语言导致的问题。
 
