@@ -1,0 +1,8 @@
+= Why are all programming languages in English?
+I have a few years working on this, but all the projects were I participate, all the code are written in English.
+
+Out of 8500+ programming languages recorded, around 2400 of them were developed in the United States, 600 in the United Kingdom, 160 in Canada, and 75 in Australia. In other words, over a third of all programming languages were developed in a country that primarily speaks English. It's the main cause that the English language is used in great part of the programming.
+
+Another thing, it's English are the global language that we use to communicate to other people's.
+
+Stats took from Wikipedia: https://en.wikipedia.org/wiki/Non-English-based_programming_languages
