@@ -1,1 +1,6 @@
-# Mirth Connect - Cheet Sheet
+# Mirth Connect - Cheat Sheet
+
+:hp-alt-title: Mirth Connect - Cheat Sheet
+
+:hp-tags: Mirth Connect, Cheat Sheet
+
