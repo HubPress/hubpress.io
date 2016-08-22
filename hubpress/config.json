@@ -7,7 +7,9 @@
   "site": {
     "title": "Emre 's MINI BLOG"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "linkedin": "https://www.linkedin.com/in/emre-ermisoglu-a3556534"
+  },
   "theme": {
     "name": "casper"
   }
