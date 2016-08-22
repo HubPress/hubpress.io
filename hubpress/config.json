@@ -4,7 +4,11 @@
     "repositoryName": "ermisogluemre.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "BLOG : Emre ERMISOGLU"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
