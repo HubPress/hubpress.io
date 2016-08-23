@@ -29,3 +29,14 @@ public class JarTest {
 var obj = new Packages.com.example.JarTest();
 logger.info(obj.returnSomething());
 ```
+
+##### Reading Segments in HL7
+
+```
+	for each (seg in msg.children()){
+    	if(seg.name() == "OBX")
+        {
+        	var result_date = seg['OBX.14']['OBX.14.1'].toString();
+        }
+    }
+```
