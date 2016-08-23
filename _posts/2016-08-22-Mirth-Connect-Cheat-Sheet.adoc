@@ -34,10 +34,10 @@ logger.info(obj.returnSomething());
 
 ```
 for each (seg in msg.children())
+{
+  	if(seg.name() == "OBX")
     {
-    	if(seg.name() == "OBX")
-        {
-        	var result_date = seg['OBX.14']['OBX.14.1'].toString();
-        }
+       	var result_date = seg['OBX.14']['OBX.14.1'].toString();
     }
+}
 ```
