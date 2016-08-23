@@ -2,7 +2,7 @@
 
 :hp-alt-title: Mirth Connect - Cheat Sheet
 
-:hp-tags: Mirth Connect, Cheat Sheet, version < 3.0.0
+:hp-tags: Mirth Connect, Cheat Sheet, version before 3.0.0
 
 ##### Defining a java object :
 
