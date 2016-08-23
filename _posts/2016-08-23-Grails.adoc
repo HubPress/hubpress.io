@@ -3,3 +3,60 @@
 :hp-tags: Grails
 
 # Grails
+
+##### Environments:
+
+You can define environment variables in DataSoure.groovy
+
+```
+environments {
+	development{
+    	dataSource {
+        	dbCreate = "update" // one of 'create', 'create-drop','update'
+            url = "jdbc:postgresql://url:port/database_name?user=username&password=password"
+        }
+    }
+    
+    test{
+    	dataSource {
+        	dbCreate = "update" // one of 'create', 'create-drop','update'
+            url = "jdbc:postgresql://url:port/database_name?user=username&password=password"
+        }
+    }
+    
+    production{
+    	dataSource {
+        	dbCreate = "update" // one of 'create', 'create-drop','update'
+            url = "jdbc:postgresql://url:port/database_name?user=username&password=password"
+        }
+    }
+    //custom environment
+    staging {
+    	dataSource {
+        	dbCreate = "update" // one of 'create', 'create-drop','update'
+            url = "jdbc:postgresql://url:port/database_name?user=username&password=password"
+        }
+    }
+}
+```
+
+- Run Application in development environment :
+
+grails run-app
+
+- Clean Build :
+
+grails dev clean //Environment  : development
+
+grails test clean //Environment  : test
+
+grails prod clean //Environment  : production
+
+grails -Dgrails.env=staging clean //Environment  : custom staging environment
+
+- Create War File :
+
+grails dev war
+grails test war
+grails prod war
+grails -Dgrails.env=staging war
