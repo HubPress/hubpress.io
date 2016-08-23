@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Emre 's MINI BLOG]]></title><description><![CDATA[Emre 's MINI BLOG]]></description><link>https://ermisogluemre.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 Aug 2016 14:25:28 GMT</lastBuildDate><atom:link href="https://ermisogluemre.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Mirth Connect - Cheat Sheet]]></title><description><![CDATA[<div class="sect4">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Emre 's MINI BLOG]]></title><description><![CDATA[Emre 's MINI BLOG]]></description><link>https://ermisogluemre.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 Aug 2016 14:27:22 GMT</lastBuildDate><atom:link href="https://ermisogluemre.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Mirth Connect - Cheat Sheet]]></title><description><![CDATA[<div class="sect4">
 <h5 id="_defining_a_java_object">Defining a java object :</h5>
 <div class="ulist">
 <ul>
@@ -43,7 +43,8 @@ logger.info(obj.returnSomething());</code></pre>
 <h5 id="_reading_segments_in_hl7">Reading Segments in HL7</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>	for each (seg in msg.children()){
+<pre class="highlight"><code>	for each (seg in msg.children())
+    {
     	if(seg.name() == "OBX")
         {
         	var result_date = seg['OBX.14']['OBX.14.1'].toString();
