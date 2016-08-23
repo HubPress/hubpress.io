@@ -33,7 +33,7 @@ logger.info(obj.returnSomething());
 ##### Reading Segments in HL7
 
 ```
-	for each (seg in msg.children())
+for each (seg in msg.children())
     {
     	if(seg.name() == "OBX")
         {
