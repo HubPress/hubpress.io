@@ -4,3 +4,28 @@
 
 :hp-tags: Mirth Connect, Cheat Sheet
 
+##### Defining a java object :
+
+- Create a java class
+
+Example java code from MIRTH's web site
+
+```
+package com.example;
+ 
+public class JarTest {
+ 
+    public String returnSomething() {
+        return "Hello, World!";
+    }
+}
+```
+
+- Create a jar file.
+
+- Call java code from MIRTH
+
+```
+var obj = new Packages.com.example.JarTest();
+logger.info(obj.returnSomething());
+```
