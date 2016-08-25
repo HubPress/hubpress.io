@@ -1,4 +1,4 @@
-= Sala de Chat1
+= Sala de Chat
 //chatbro
 
 :hp-tags: Chat,
