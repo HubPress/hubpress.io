@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"florianb","repositoryName":"florianb.github.io","branch":"master"},"site":{"title":"noteable","url":"https://florianb.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"https://florianb.github.io/themes/Casper"}}

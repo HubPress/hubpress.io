@@ -1,0 +1,13 @@
+# Configuring collectd to use with librato.com
+
+This post is mainly a note to myself about how to make use of the neartime-monitoring-service librator.com by collecting the metrics with collectd.
+
+## Metrics should be available on a per host basis
+
+When i started using librato with collectd i was not able to divide the metrics between the single servers. Librato always summed up the graphs of my different hosts. Therefore it was not possible to generate any instruments containing wether all interesting metrics for one host or one metric for all hosts.
+
+This is what i did to create instruments on a per metric/host basis containing all relevant information.
+
+## 1st Step: Cleaning the `collectd.config`
+## 2nd Step: Filtering unnecessary metrics
+## 3rd Step: Creating a Instrument containing all relevant metrics
