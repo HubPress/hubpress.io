@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"opendivision","repositoryName":"opendivision.github.io","branch":"master"},"site":{"title":"openDivision","description":"openDivision is a frontend blog, build with hubpress, on top of Github.\n","logo":"","cover":"","postsPerPage":"5","url":"https://opendivision.github.io"},"socialnetwork":{"email":"open.division.designs@gmail.com","facebook":"","github":"https://github.com/opendivision"},"theme":{"name":"Roon","url":"//opendivision.github.io/themes/Roon"}}

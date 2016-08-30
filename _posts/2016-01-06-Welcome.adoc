@@ -1,0 +1,11 @@
+= Welcome!
+:hp-tags: Welcome, openDivision, Frontend
+
+image::http://uncollege.org/wp-content/uploads/2015/04/Coding-008.jpg[500,1000]
+
+to openDivision, especially the blog for the github site.
+Stay tuned for some stories about Sublime Text, link:https://facebook.github.io/react/[ReactJS], link:http://expressjs.com/[ExpressJS] and some other frontend things. 
+
+Let's see, what we'll can do here :)
+
+Chris
