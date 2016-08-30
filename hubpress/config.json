@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"innovation-jp","repositoryName":"innovation-jp.github.io","branch":"master","cname":"tech.innovation.co.jp"},"site":{"title":"イノベーション　エンジニアブログ","description":"株式会社イノベーションのエンジニアたちの技術系ブログです","url":"http://tech.innovation.co.jp"},"socialnetwork":{},"theme":{"name":"uno","url":"//tech.innovation.co.jp/themes/uno"}}
