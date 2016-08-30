@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>HubPress 搭建个人Blog中文教程 - Birdyou</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="HubPress 搭建个人Blog中文教程">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HubPress 搭建个人Blog中文教程">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//birdyou.cn/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="http://birdyou.cn/2016/04/12/Hub-Press-Blog.html" />
+    
+    <meta property="og:site_name" content="Birdyou" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="HubPress 搭建个人Blog中文教程" />
+    <meta property="og:description" content="什么是HubPress? HubPress 是一款在Github 上基于 AsciiDoc 建立个人博客的优秀的开源工具。 由 Anthonny Quérouil (twitter @anthonny_q) 开发和维护. HubPress目前是预览版本，如果您发现了Bug请及时告知我们. 在项目不断开发升级的过程中说明文档也会很快的更新，请定期查询以便得到最新说明。如果你发现了一些问题，请作为 bug 提交，我们感谢你在每一个方面的帮助，而且将会永远期待您的合作（pull requests）。 浏览器兼容性 HubPress 目前兼容 Chrome 桌..." />
+    <meta property="og:url" content="http://birdyou.cn/2016/04/12/Hub-Press-Blog.html" />
+    <meta property="article:published_time" content="2016-04-11T16:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-04-12T11:26:12.723Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="HubPress 搭建个人Blog中文教程" />
+    <meta name="twitter:description" content="什么是HubPress? HubPress 是一款在Github 上基于 AsciiDoc 建立个人博客的优秀的开源工具。 由 Anthonny Quérouil (twitter @anthonny_q) 开发和维护. HubPress目前是预览版本，如果您发现了Bug请及时告知我们. 在项目不断开发升级的过程中说明文档也会很快的更新，请定期查询以便得到最新说明。如果你发现了一些问题，请作为 bug 提交，我们感谢你在每一个方面的帮助，而且将会永远期待您的合作（pull requests）。 浏览器兼容性 HubPress 目前兼容 Chrome 桌..." />
+    <meta name="twitter:url" content="http://birdyou.cn/2016/04/12/Hub-Press-Blog.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Birdyou",
+    "author": {
+        "@type": "Person",
+        "name": null,
+        "image": "https://avatars.githubusercontent.com/u/18154467?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": null
+    },
+    "headline": "HubPress 搭建个人Blog中文教程",
+    "url": "http://birdyou.cn/2016/04/12/Hub-Press-Blog.html",
+    "datePublished": "2016-04-11T16:00:00.000Z",
+    "dateModified": "2016-04-12T11:26:12.723Z",
+    "description": "什么是HubPress? HubPress 是一款在Github 上基于 AsciiDoc 建立个人博客的优秀的开源工具。 由 Anthonny Quérouil (twitter @anthonny_q) 开发和维护. HubPress目前是预览版本，如果您发现了Bug请及时告知我们. 在项目不断开发升级的过程中说明文档也会很快的更新，请定期查询以便得到最新说明。如果你发现了一些问题，请作为 bug 提交，我们感谢你在每一个方面的帮助，而且将会永远期待您的合作（pull requests）。 浏览器兼容性 HubPress 目前兼容 Chrome 桌..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Birdyou" href="http://birdyou.cn/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " >
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <a href="http://birdyou.cn" title="link to homepage for Birdyou"><img src="https://github.com/Panziyq/panziyq.github.io/blob/master/images/logo.png?raw=true" width="80" alt="Birdyou logo" class="panel-cover__logo logo" /></a>
+            <h1 class="panel-cover__title panel-title"><a href="http://birdyou.cn" title="link to homepage for Birdyou">Birdyou</a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description">“You don’t bird me,I don’t bird you.”</p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="http://birdyou.cn/#blog" title="link to Birdyou blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+              
+                  <!-- Twitter -->
+                  <li class="navigation__item">
+                    <a href="https://twitter.com/Yao_Nigel" title="Twitter account">
+                      <i class='icon icon-social-twitter'></i>
+                      <span class="label">Twitter</span>
+                    </a>
+                  </li>
+              
+              
+                  <!-- Github -->
+                  <li class="navigation__item">
+                    <a href="https://github.com/birdyou" title="Github account">
+                      <i class='icon icon-social-github'></i>
+                      <span class="label">Github</span>
+                    </a>
+                  </li>
+                  </li>
+              
+              
+              
+              
+              
+                  <!-- Email -->
+                  <li class="navigation__item">
+                    <a href="mailto:nigelyq@163.com" title="Email nigelyq@163.com">
+                      <i class='icon icon-mail'></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="12 Apr 2016" class="post-meta__date date">12 Apr 2016</time> &#8226; <span class="post-meta__tags tags"></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/18154467?v=3" alt="profile image for " class="avatar post-meta__avatar" /> by </span>
+      </div>
+      <h1 class="post-title">HubPress 搭建个人Blog中文教程</h1>
+    </header>
+
+    <section class="post">
+      <div class="sect1">
+<h2 id="__hubpress">什么是HubPress?</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="http://hubpress.io/img/editor.png" alt="editor.png">
+</div>
+</div>
+<div class="paragraph">
+<p>HubPress 是一款在Github 上基于 AsciiDoc 建立个人博客的优秀的开源工具。</p>
+</div>
+<div class="paragraph">
+<p>由 <a href="https://github.com/anthonny">Anthonny Quérouil</a> (twitter <a href="https://twitter.com/anthonny_q">@anthonny_q</a>) 开发和维护.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+HubPress目前是预览版本，如果您发现了Bug请及时告知我们.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>在项目不断开发升级的过程中说明文档也会很快的更新，请定期查询以便得到最新说明。如果你发现了一些问题，请作为 bug 提交，我们感谢你在每一个方面的帮助，而且将会<strong>永远</strong>期待您的合作（pull requests）。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">浏览器兼容性</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HubPress 目前兼容 Chrome 桌面版， Firefox 桌面版和 Chrome Android 版.</p>
+</div>
+<div class="paragraph">
+<p>Chrome Beta 的 Android 版将会很快兼容, 实际上是因为现在使用 IndexedDB 遇到了一些Bug, 预览的话请使用 Chrome 的 Android版。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">快速上手</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="___3">安装</h3>
+<div class="sect3">
+<h4 id="_fork_the_repository">Fork the repository</h4>
+<div class="paragraph">
+<p>点击Fork图标 <span class="image"><img src="http://hubpress.io/img/fork-icon.png" alt="Fork" width="80"></span> 复制这个 repository 到你的 Github 账号下.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__github_io">使用github.io的域名</h4>
+<div class="paragraph">
+<p>如果你从来都没用过 Github 的个人静态主页，你可以通过以下方法来快速建立 HubPress 博客。只需要一些简单的步骤就可以实现博客的配置发布。</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+如果你现在你的 <code>username.github.io</code> 的个人主页用于其他项目，或者你想用其他域名，请跳过以下步骤。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>把repository重命名为 <code>&lt;username&gt;.github.io</code></p>
+</li>
+<li>
+<p>更改配置文件 <code>hubpress/config.json</code></p>
+<div class="paragraph">
+<p><span class="image"><img src="http://hubpress.io/img/edit-config.png" alt="Edit config"></span></p>
+</div>
+<div class="paragraph">
+<p>以下的参数是必须的 :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>username</code>, 是你的GitHub用户名（username）。</p>
+</li>
+<li>
+<p><code>repositoryName</code>, 是你的folk的repository的名字， 如： <code>&lt;username&gt;.github.io</code>。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Commit所有更改, 然后打开你的GitHub主页:  <code><a href="https://&lt;username&gt;.github.io/" class="bare">https://&lt;username&gt;.github.io/</a></code>.</p>
+</li>
+<li>
+<p>如果出现了这样的画面就说明你配置成功了。</p>
+<div class="paragraph">
+<p><span class="image"><img src="http://hubpress.io/img/home-install.png" alt="Install complete" width="300"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__github">使用其他域名或者当GitHub主页已被占用</h4>
+<div class="paragraph">
+<p>如果你想让你的博客在自定义域名上使用，或者你已经用Github主页配置其他项目了，你需要做一些额外的配置。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>在repository的settings选项中, 把默认branch设为 <code>gh-pages</code> :</p>
+<div class="paragraph">
+<p><span class="image"><img src="http://hubpress.io/img/settings-gh-pages.png" alt="Settings gh-pages" width="400"></span></p>
+</div>
+</li>
+<li>
+<p>现在设定当前repository的branch为 <strong>gh-pages</strong></p>
+<div class="paragraph">
+<p><span class="image"><img src="http://hubpress.io/img/switch-gh-pages.png" alt="Install complete" width="300"></span></p>
+</div>
+</li>
+<li>
+<p>更新配置文件 <code>hubpress/config.json</code></p>
+<div class="paragraph">
+<p><span class="image"><img src="http://hubpress.io/img/edit-config-gh-pages.png" alt="Edit config"></span></p>
+</div>
+<div class="paragraph">
+<p>以下的参数是必须的：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>username</code>, 是你的GitHub用户名（username）。</p>
+</li>
+<li>
+<p><code>repositoryName</code>, 是你的folk的repository的名字， 如： <code>&lt;username&gt;.github.io</code>。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Commit所有更改, 然后打开你的GitHub主页:  <code><a href="https://&lt;username&gt;.github.io/&lt;repositoryName&gt" class="bare">https://&lt;username&gt;.github.io/&lt;repositoryName&gt</a>;</code>.</p>
+</li>
+<li>
+<p>如果出现了这样的画面就说明你配置成功了。</p>
+<div class="paragraph">
+<p><span class="image"><img src="http://hubpress.io/img/home-install.png" alt="Install complete" width="300"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___4">管理后台</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>你可以通过 <strong>/hubpress</strong> 进入管理后台</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="https://&lt;username&gt;.github.io/hubpress/" class="bare">https://&lt;username&gt;.github.io/hubpress/</a></code> 用于GitHub主页的博客, 或者</p>
+</li>
+<li>
+<p><code><a href="https://&lt;username&gt;.github.io/&lt;repositoryName&gt;/hubpress/" class="bare">https://&lt;username&gt;.github.io/&lt;repositoryName&gt;/hubpress/</a></code> 用于其他域名搭建的博客.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="___5">登陆管理后台</h3>
+<div class="paragraph">
+<p><span class="image"><img src="http://hubpress.io/img/login.png" alt="Install complete" width="300"></span></p>
+</div>
+<div class="paragraph">
+<p>输入你的GitHub账号密码来登陆HubPress的后台.</p>
+</div>
+<div class="paragraph">
+<p>你登陆之后，一个个人的token（标记）会建立，在之后Hubpress调用Github API时将会用到。</p>
+</div>
+<div class="paragraph">
+<p>这将同步用于Hubpress的所有session（会话）如你先在电脑上登录管理后台，然后在平板上登陆，所有的设备上都会使用这一个相同的token。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___6">设置</h3>
+<div class="paragraph">
+<p>你可以调整一下基础的设置(如CNAME和分页)和一些你希望链接到博客的社交账号。</p>
+</div>
+<div class="sect3">
+<h4 id="___7">基本设置</h4>
+<div class="paragraph">
+<p>这部分包含一些配置 <code>/hubpress/config.json</code> 文件的基本信息.</p>
+</div>
+<div class="paragraph">
+<p>以下选项可供更改：</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Git CNAME</dt>
+<dd>
+<p>你可以更改<strong>Git CNAME</strong>给你的博客设定一个自己的域名，详细参见 <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">Github官方</a> 上设定CNAME的步骤。</p>
+</dd>
+<dt class="hdlist1">Live Preview Render Delay（刷新延迟）</dt>
+<dd>
+<p>控制实时刷新的频率，以milliseconds（毫秒）计。对于打字快的人来说，设定到2000（2秒）就可以得到比较流畅的编辑体验，实时预览也不至于更新太快。虽然设定到2000以下可以更新的更快，但是可能在打字时导致游标的一些延迟。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="___8">网站设置</h4>
+<div class="sect4">
+<h5 id="___9">站名和介绍</h5>
+<div class="paragraph">
+<p><strong>Title</strong>（站名）和<strong>Description</strong>（介绍）项允许你设定自己的博客名，并且给出一个关于博客内容大致的介绍。</p>
+</div>
+<div class="paragraph">
+<p><strong>Logo</strong> and <strong>Cover Image</strong>（封面图片）的配置方法如下:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>可以用HTML链接到一个图片托管服务，比如 <a href="http://www.gravatar.com">gravatar</a>。</p>
+</li>
+<li>
+<p>一个路径，指向你repository下的 /image 文件夹内的图片.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+请参照<code>/images/README.adoc</code> 里的提示来在你的博客中插入图片。
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="___10">主题风格</h5>
+<div class="paragraph">
+<p><strong>Theme</strong>（主题）可以从 <code>/themes</code> 文件夹下的主题中进行选择。你可以通过文件夹的名称进行选择。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_google_analytics">Google Analytics</h5>
+<div class="paragraph">
+<p><strong>Google Analytics</strong> （谷歌分析） 这里你填入Google Analytics生成的代码。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_disqus_shortname">Disqus Shortname</h5>
+<div class="paragraph">
+<p><strong>Disqus shortname</strong> 这里你可以填入Disqus的URL或者shortnamere关联到你在Disqus上注册的站点。你需要填入shortname而不是到你Disqus个人主页的链接。</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="___11">社交账号</h4>
+<div class="paragraph">
+<p>这个组内的所有项都需要填入完整的URL账号以连接你的社交账号主页，这些参数的显示方式根据主题的选择而有所不同。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___12">管理博文</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>当你初次进入Hubpress的时候，<strong>Posts</strong>（博文）一栏是空的。 当你创建博客的时候，左边一栏是博文列表，右边可以实时预览当前编辑的博文。</p>
+</div>
+<div class="sect2">
+<h3 id="__hubpress_2">在HubPress写第一篇博客</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+如果你从来没有用过AsciiDoc，推荐你首先去 <a href="http://asciidoctor.org/docs/asciidoc-writers-guide/">AsciiDoctor Writer&#8217;s Guide</a> 上提前感受一下。那里有各种基础和进阶的使用例子供你使用。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>HubPress编辑器的左边是AsciiDoc代码,右边是实时预览。</p>
+</div>
+<div class="sect3">
+<h4 id="___13">博文名和标题</h4>
+<div class="paragraph">
+<p>博文名（blog title）在AsciiDoc里是1级标题。比如说： <code>= Blog Title</code> 就是设定博文名为 <code>Blog Title</code>.</p>
+</div>
+<div class="paragraph">
+<p>要想保存编辑的内容，博文名是必须的。</p>
+</div>
+<div class="paragraph">
+<p>如果你想使用1级大标题，你可以使用如 <code>== First Level Heading</code> 来创建各级不同的标题（由“＝”的数量决定）。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hubpress">HubPress参数</h4>
+<div class="paragraph">
+<p>HubPress 允许你通过参数改变每篇博文的设置。</p>
+</div>
+<div class="sect4">
+<h5 id="__hp_image">:hp-image: 博文的封面图片</h5>
+<div class="paragraph">
+<p>如果你想改变某篇博文的封面图片，请设置 <code>hp-image</code> 参数。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>:hp-image: 例子</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>= Blog Title
+:hp-image: https://&lt;repositoryName&gt;/images/a-cover-image.jpg</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Hubpress默认的图片根文件夹为 <code>/images</code> ,所以只需要指定图片的名字就可以。你可以在repository下建立一个 <code>/covers</code> 文件夹来归档所有的封面图片。保持封面图片命名方法的一致可以让你的管理更方便。此外，在向读者提供关于博文的直观信息上，封面图片是一个很好的选择。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>现在支持在博文中插入封面图片的主题有:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Saga</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="__published_at">:published_at: 改变发布日期</h5>
+<div class="paragraph">
+<p>发布日期默认是你创建博文的日期，你可以通过设定添加 <code>:published_at:</code> 参数来强制改变它。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>:published_at: 例子</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>= Blog Title
+:published_at: 2015-01-31</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="__hp_tags">:hp-tags: 元数据标签</h5>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+这里不支持 Categories（类别）标签
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Add tags by using the <code>hp-tags</code> attribute.
+通过使用 <code>hp-tags</code> 参数来增加标签</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>:hp-tags: 例子</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>= Blog Title
+:hp-tags: HubPress, Blog, Open Source,</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="__hp_alt_title">:hp-alt-title: 设定第二名称</h5>
+<div class="paragraph">
+<p>通过 <code>hp-alt-title</code> 给博文指定一个第二名称。</p>
+</div>
+<div class="paragraph">
+<p>Hubpress就可以用该名称来作为文件名创建博文，从而避免因为其他语言导致的问题。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>:hp-alt-title: 例子</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>= 大千世界
+:hp-alt-title: My English Title</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___14">故障解决</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>如果出现了问题，下面的一些建议可能会有用：</p>
+</div>
+<div class="sect2">
+<h3 id="__android">在Android上重新建立博客数据库</h3>
+<div class="paragraph">
+<p>有时Hubpress可能不能及时更新你发布的博文，这可能是因为你在PC上写了博文，然后又在平板上更改造成的。</p>
+</div>
+<div class="paragraph">
+<p>HubPress使用的浏览器原生的数据库，所以如果你频繁的转换使用设备，浏览器之间的同步可能就会出现问题。</p>
+</div>
+<div class="paragraph">
+<p>如果暂时不能查看HubPress刚发布的博客，你可以在 Settings &gt; Apps 里清空浏览器的缓存和数据，让浏览器就会重置数据库，以显示最新博文。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___15">鸣谢</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks to <a href="https://github.com/jaredmorgs">Jared Morgan</a> for initially tidying up the README you see here, and continuing to be the "docs guy" for HubPress.</p>
+</div>
+<div class="paragraph">
+<p>中文： <a href="https://github.com/hanwencheng">Hanwen Cheng</a></p>
+</div>
+</div>
+</div>
+    </section>
+
+  </article>
+
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2016. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//birdyou.cn/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+
+</body>
+</html>
