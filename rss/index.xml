@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Sep 2016 19:04:56 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[The Article Title]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the optional preamble (an untitled section body). Useful for
+writing simple sectionless documents consisting only of a preamble.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The abstract, preface, appendix, bibliography, glossary and
+index section titles are significant (<em>specialsections</em>).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_abstract">Example Abstract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The optional abstract (one or more paragraphs) goes here.</p>
+</div>
+<div class="paragraph">
+<p>This document is an AsciiDoc article skeleton containing briefly
+annotated element placeholders plus a couple of example index entries
+and footnotes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_first_section">1. The First Section</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Article sections start at level 1 and can be nested up to four levels
+deep.
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>
+</p>
+</div>
+<div class="paragraph">
+<p>And now for something completely different: monkeys, lions and
+tigers (Bengal and Siberian) using the alternative syntax index
+entries.
+
+
+
+Note that multi-entry terms generate separate index entries.</p>
+</div>
+<div class="paragraph">
+<p>Here are a couple of image examples: an <span class="image"><img src="https://andreas-breitbach.github.io/images/images/smallnew.png" alt="smallnew.png"></span>
+example inline image followed by an example block image:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://andreas-breitbach.github.io/images/images/tiger.png" alt="Tiger image">
+</div>
+<div class="title">Figure 1. Tiger block image</div>
+</div>
+<div class="paragraph">
+<p>Followed by an example table:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 60%;">
+<caption class="title">Table 1. An example table</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-a <em>USER GROUP</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add <em>USER</em> to <em>GROUP</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-R <em>GROUP</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disables access to <em>GROUP</em>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="exampleblock">
+<div class="title">Example 1. An example example</div>
+<div class="content">
+<div class="paragraph">
+<p>Lorum ipum&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="X1">1.1. Sub-section with Anchor</h3>
+<div class="paragraph">
+<p>Sub-section at level 2.</p>
+</div>
+<div class="sect3">
+<h4 id="_a_nested_sub_section">1.1.1. A Nested Sub-section</h4>
+<div class="paragraph">
+<p>Sub-section at level 3.</p>
+</div>
+<div class="sect4">
+<h5 id="_yet_another_nested_sub_section">Yet another nested Sub-section</h5>
+<div class="paragraph">
+<p>Sub-section at level 4.</p>
+</div>
+<div class="paragraph">
+<p>This is the maximum sub-section depth supported by the distributed
+AsciiDoc configuration.
+<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_second_section">2. The Second Section</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Article sections are at level 1 and can contain sub-sections nested up
+to four deep.</p>
+</div>
+<div class="paragraph">
+<p>An example link to anchor at start of the <a href="#X1">first sub-section</a>.
+</p>
+</div>
+<div class="paragraph">
+<p>An example link to a bibliography entry <a href="#taoup">[taoup]</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_appendix">Appendix A: Example Appendix</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AsciiDoc article appendices are just just article sections with
+<em>specialsection</em> titles.</p>
+</div>
+<div class="sect2">
+<h3 id="_appendix_sub_section">Appendix Sub-section</h3>
+<div class="paragraph">
+<p>Appendix sub-section at level 2.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_bibliography">Example Bibliography</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The bibliography list is a style of AsciiDoc bulleted list.</p>
+</div>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="taoup"></a>[taoup] Eric Steven Raymond. <em>The Art of Unix
+Programming</em>. Addison-Wesley. ISBN 0-13-142901-9.</p>
+</li>
+<li>
+<p><a id="walsh-muellner"></a>[walsh-muellner] Norman Walsh &amp; Leonard Muellner.
+<em>DocBook - The Definitive Guide</em>. O&#8217;Reilly &amp; Associates. 1999.
+ISBN 1-56592-580-7.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_glossary">Example Glossary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Glossaries are optional. Glossaries entries are an example of a style
+of AsciiDoc labeled lists.</p>
+</div>
+<div class="dlist glossary">
+<dl>
+<dt>A glossary term</dt>
+<dd>
+<p>The corresponding (indented) definition.</p>
+</dd>
+<dt>A second glossary term</dt>
+<dd>
+<p>The corresponding (indented) definition.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. An example footnote.
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. A second example footnote.
+</div>
+</div>]]></description><link>https://andreas-breitbach.github.io/2012/02/29/The-Article-Title.html</link><guid isPermaLink="true">https://andreas-breitbach.github.io/2012/02/29/The-Article-Title.html</guid><category><![CDATA[Humor]]></category><category><![CDATA[ Katzenbilder]]></category><category><![CDATA[ Flausch]]></category><pubDate>Wed, 29 Feb 2012 00:00:00 GMT</pubDate></item></channel></rss>
