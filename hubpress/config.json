@@ -6,7 +6,8 @@
   },
   "site": {
     "title": "Test.",
-    "description": "Beschreibung"
+    "description": "Beschreibung",
+    "disqus": "andreasbreitbach"
   },
   "socialnetwork": {
     "twitter": "a_breitbach"
