@@ -5,7 +5,8 @@
     "branch": "master"
   },
   "site": {
-    "title": "Test."
+    "title": "Test.",
+    "description": "Beschreibung"
   },
   "socialnetwork": {},
   "theme": {
