@@ -1,2 +1,2 @@
 = Sample Blog {Hello world}
-== Subtitle
+Cuando quiero ir a 
