@@ -4,7 +4,11 @@
     "repositoryName": "gdfuentes.github.io",
     "branch": "master"
   },
+  "site": {},
+  "socialnetwork": {
+    "email": "gdfuentes@gmail.com"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
