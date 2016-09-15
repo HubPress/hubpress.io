@@ -4,7 +4,11 @@
     "repositoryName": "andreas-breitbach.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Test."
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
