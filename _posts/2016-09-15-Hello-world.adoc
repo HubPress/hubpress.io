@@ -1,3 +1,3 @@
-= Sample Blog {Hello world}
+= {Hello world}
 
-Cuando quiero ir a 
+Experimentando...
