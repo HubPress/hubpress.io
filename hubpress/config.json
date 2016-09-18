@@ -5,12 +5,13 @@
     "branch": "master"
   },
   "site": {
-    "title": "Test.",
+    "title": "",
     "description": "Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc",
     "logo": "andreas-breitbach.github.io/images/klein.JPG",
     "disqus": "andreas-breitbach"
   },
   "socialnetwork": {
+    "email": "andreas.breitbach@gmail.com",
     "twitter": "https://twitter.com/a_breitbach"
   },
   "theme": {
