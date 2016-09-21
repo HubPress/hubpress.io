@@ -1,0 +1,15 @@
+= Defining media queries between two widths
+
+If you are development a responsive website, it's probably that you need to define some media queries to show correctly your elements.
+When you like to define a media query in a range, you can use the following code:
+
+```
+/* No greater than 768px, no less than 400px */
+@media (max-width:768px) and (min-width:400px) {
+    .class {
+        font-size: 15px;
+    }
+}
+```
+
+I hope that this be useful.
