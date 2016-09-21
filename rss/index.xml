@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Brizio]]></title><description><![CDATA[Front-End Software Developer]]></description><link>https://jbrizio.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 16 Aug 2016 20:21:19 GMT</lastBuildDate><atom:link href="https://jbrizio.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Simple jQuery character countdown in textarea]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Brizio]]></title><description><![CDATA[Front-End Software Developer]]></description><link>https://jbrizio.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 21 Sep 2016 14:07:37 GMT</lastBuildDate><atom:link href="https://jbrizio.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Defining media queries between two widths]]></title><description><![CDATA[<div class="paragraph">
+<p>If you are development a responsive website, it&#8217;s probably that you need to define some media queries to show correctly your elements.
+When you like to define a media query in a range, you can use the following code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>/* No greater than 768px, no less than 400px */
+@media (max-width:768px) and (min-width:400px) {
+    .class {
+        font-size: 15px;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I hope that this be useful.</p>
+</div>]]></description><link>https://jbrizio.github.io/2016/09/21/Defining-media-queries-between-two-widths.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/09/21/Defining-media-queries-between-two-widths.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Wed, 21 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Simple jQuery character countdown in textarea]]></title><description><![CDATA[<div class="paragraph">
 <p>Looking to build a Twitter-like textarea character countdown to show your users how much space they have remaining? Good. See the below implementation using jQuery:</p>
 </div>
 <div class="listingblock">
