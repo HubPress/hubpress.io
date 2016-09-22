@@ -4,7 +4,13 @@
     "repositoryName": "celilileri.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "GitHub Blogu",
+    "description": "GitHub'da Blog Olur mu? Oluyormuş...",
+    "postsPerPage": "10"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
