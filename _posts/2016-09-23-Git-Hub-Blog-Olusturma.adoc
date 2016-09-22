@@ -1,0 +1,5 @@
+= GitHub Blog Oluşturma
+
+:hp-tags: github, blog, github blog, ücretsiz
+
+Siz de bunun gibi kolay yönetilen GitHub blogları oluşturmak istiyorsanız http://serhatcileri.com/github-blog-yayini-yapmak/ adresindeki anlatımdan öğrenebilirsiniz.
