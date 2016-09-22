@@ -6,3 +6,5 @@
 GitHub'da da blog mu olur? 
 
 Olur mu olur...
+
+Siz de bunun gibi kolay yönetilen GitHub blogları oluşturmak istiyorsanız http://serhatcileri.com/github-blog-yayini-yapmak/ adresindeki anlatımdan öğrenebilirsiniz.
