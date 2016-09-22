@@ -1,0 +1,6 @@
+= Harbi Harbi Oluyormuş!
+:hp-tags: github, blog
+
+Evet arkadaşlar.
+
+Gördüğünüz üzere *GitHub*'da Blog barındırılabiliyor ve "yarı dinamik" bir yapıda bloglama işlemi gerçekleştirilebiliyor.
