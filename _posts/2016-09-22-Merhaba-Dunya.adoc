@@ -1,0 +1,8 @@
+= Merhaba Dünya
+:hp-tags: Github, Blog
+
+İlk blog yazısı...
+
+GitHub'da da blog mu olur? 
+
+Olur mu olur...
