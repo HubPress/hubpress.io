@@ -4,3 +4,5 @@
 Evet arkadaşlar.
 
 Gördüğünüz üzere *GitHub*'da Blog barındırılabiliyor ve "yarı dinamik" bir yapıda bloglama işlemi gerçekleştirilebiliyor.
+
+Siz de bunun gibi kolay yönetilen GitHub blogları oluşturmak istiyorsanız http://serhatcileri.com/github-blog-yayini-yapmak/ adresindeki anlatımdan öğrenebilirsiniz.
