@@ -1,0 +1,15 @@
+= Pure CSS Image Loader
+
+Hi, everyone! On this opportunity, I'm sharing with you a little trick with only CSS to show your images with a progressive blur until the image has been loaded entirely. You can view this effect implemented on Medium or Instagram.
+
+I recommend taking at look at the official documentation where you can find how the keyframes work: https://developer.mozilla.org/es/docs/Web/CSS/@keyframes
+
+After of apply the rules on our CSS Stylesheets, the result is the following:
+
+image::http://gifyu.com/images/demo86c07.gif[Demo Running]
+
+To understand better this, I create a repository on Github.
+Feel free to fork and improve: https://github.com/jbrizio/pure-css-image-loader
+
+Ask in the comments if you have any questions.
+
