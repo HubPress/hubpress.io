@@ -1,4 +1,0 @@
-# Testing chef changes the dirty way
-when i am debugging an issue and need to test the chnages directly on the servers because i cannot reproduce in a kitchen box.  
-I login to the server and modify the checf code in the cache then run 
-``` chef-client --once --local-mode -o $cookbook ```
