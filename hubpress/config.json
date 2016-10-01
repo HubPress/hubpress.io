@@ -6,7 +6,7 @@
     "cname": "www.meditations.pro",
     "delay": "300"
   },
-    "site": {
+  "site": {
     "title": "Meditation",
     "description": "CROTEL's Meditation",
     "logo": "",
@@ -15,7 +15,15 @@
     "googleAnalytics": "",
     "disqus": ""
   },
+  "socialnetwork": {
+    "email": "contact@cro.tel",
+    "twitter": "crotel",
+    "linkedin": "crotel",
+    "facebook": "crotel",
+    "flickr": "crotel",
+    "github": "crotel"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
