@@ -2,7 +2,18 @@
   "meta": {
     "username": "crotel",
     "repositoryName": "meditation",
-    "branch": "gh-pages"
+    "branch": "gh-pages",
+    "cname": "www.meditations.pro",
+    "delay": "300"
+  },
+    "site": {
+    "title": "Meditation",
+    "description": "CROTEL's Meditation",
+    "logo": "",
+    "cover": "",
+    "postsPerPage": "10",
+    "googleAnalytics": "",
+    "disqus": ""
   },
   "theme": {
     "name": "Casper"
