@@ -1,18 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Oct 2016 13:56:25 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div id="toc" class="toc">
-<div id="toctitle">Inhalt</div>
-<ul class="sectlevel2">
-<li><a href="#_wodrum_gehts">Wodrum gehts?</a></li>
-<li><a href="#_probleme_nicht_virtualisierter_server">Probleme nicht-virtualisierter Server</a></li>
-<li><a href="#_vorteile_durch_virtualisierung">Vorteile durch Virtualisierung</a></li>
-<li><a href="#_virtualisierungs_verfahren_hypervisoren_und_virtuelle_maschinen">Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen</a></li>
-</ul>
-</div>
-<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Oct 2016 14:22:21 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_wodrum_gehts">Wodrum gehts?</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Wissen aufbauen und darlegen zur Vorbereitung einer Projektarbeit rund um das Thema Virtualisierung</p>
+<p>Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung</p>
 </li>
 <li>
 <p>Quellen für nachfolgende Ausführungen sind die Website <a href="https://www.storitback.de/" class="bare">https://www.storitback.de/</a>, das Buch <em>Virtualization Essential</em> von Matthew Portnoy, sowie das <em>IT-Handbuch für Fachinformatiker</em> von Sascha Kersken.</p>
@@ -56,16 +47,11 @@
 <div class="paragraph">
 <p>Der <em>Hypervisor</em> (HV) bildet die Schnittstelle zwischen der Hardware und den virtuellen Maschinen. Er regelt, welche der Maschinen auf welche Hardware-Ressourcen zugreifen können. Dabei müssen diese Anforderungen entsprechend ausbalanciert werden und entsprechend schnell erfolgen. Manche Hypervisoren bieten hierfür "Vorfahrtsregeln" an, mit denen bestimmte Maschinen schneller antworten können. Darüber hinaus stellt ein Hypervisor auch Management-Funktionen für die virtuellen Maschinen zur Verfügung. <em>Virtuelle Maschinen</em> enthalten alle Komponenten wie ein "normaler" Computer, bloss verpackt in Dateien. Der Hypervisor vermittelt diese virtuellen Ressourcen auf ihre physikalisch vorhandenen Gegenstücke.</p>
 </div>
-<div id="virt-komponenten" class="literalblock">
-<div class="title">Beziehung der einzenlnen Virtualisierungskompnenten</div>
+<div id="virt-komponenten" class="imageblock">
 <div class="content">
-<pre>[Physikalische Hardware]
-[VM]
-[Hypervisor]
-
-[Physikalische Hardware] --&gt; [Hypervisor]
-[Hypervisor] --&gt; [VM]</pre>
+<img src="https://andreas-breitbach.github.io/images/hypervisor+vm.png" alt="Beziehung der einzenlnen Virtualisierungskomponenten">
 </div>
+<div class="title">Abbildung 1. Beziehung der einzenlnen Virtualisierungskomponenten</div>
 </div>
 <div class="paragraph">
 <p>Es gibt zwei Möglichkeiten, einen Hypervisor zu realisieren:</p>
