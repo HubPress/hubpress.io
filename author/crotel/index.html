@@ -1,19 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>CROTEL - Meditation</title>
-    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="shortcut icon" href="http://www.meditations.pro/favicon.ico">
+    <meta name="description" content="">
 
-    <link rel="stylesheet" type="text/css" href="//www.meditations.pro/themes/casper/assets/css/screen.css?v=1475367477361" />
-    <link rel="stylesheet" type="text/css" href="//fonts.css.network/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CROTEL - Meditation">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CROTEL - Meditation">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//www.meditations.pro/themes/ghostium/assets/css/main.min.css?v=1475368061128"/>
+    <link rel="stylesheet" href="//www.meditations.pro/themes/ghostium/assets/css/custom.css?v=1475368061128"/>
+    <link rel="stylesheet" href="//www.meditations.pro/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1475368061128"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//www.meditations.pro/themes/ghostium/assets/js/head-scripts.min.js?v=1475368061128"></script>
 
     <link rel="canonical" href="http://www.meditations.pro/http://www.meditations.pro/author/crotel/" />
     <meta name="referrer" content="origin" />
@@ -32,14 +89,76 @@ null
 
     <meta name="generator" content="HubPress" />
     <link rel="alternate" type="application/rss+xml" title="Meditation" href="http://www.meditations.pro/rss/" />
-</head>
-<body class="author-template author-crotel nav-closed">
+  </head>
+  <body class="author-template author-crotel">
 
-    
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="http://www.meditations.pro" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="http://www.meditations.pro" title="Meditation" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="http://www.meditations.pro/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="crotel" title="Twitter" target="_blank">
+              <i class="fa fa-twitter"></i>Twitter
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="crotel" title="Github" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="crotel" title="Facebook" target="_blank">
+              <i class="fa fa-facebook"></i>Facebook
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="crotel" title="Flickr" target="_blank">
+              <i class="fa fa-flickr"></i>Flickr
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="crotel" title="LinkedIn" target="_blank">
+              <i class="fa fa-linkedin"></i>LinkedIn
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="mailto:contact@cro.tel" title="Email" target="_blank">
+              <i class="fa fa-envelope-o"></i>Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <div class="site-wrapper">
-
-        
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
 
     <header class="main-header author-head no-cover">
         <nav class="main-nav overlay clearfix">
@@ -58,44 +177,39 @@ null
 
 <main class="content" role="main">
 
-    <div class="extra-pagination inner">
-        <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
-    
-    </div>
-    
-    <article class="post tag-hello-world">
-        <header class="post-header">
-            <h2 class="post-title"><a href="http://www.meditations.pro/2016/10/02/The-1th-content.html">The 1th content</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>Hello World~! <a class="read-more" href="http://www.meditations.pro/2016/10/02/The-1th-content.html">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="https://avatars.githubusercontent.com/u/4725265?v&#x3D;3" alt="CROTEL" nopin="nopin" />
-            <a href="http://www.meditations.pro/author/crotel/">CROTEL</a>
-             on <a href="http://www.meditations.pro/tag/hello-world/">hello world</a>
-            <time class="post-date" datetime="2016-10-02">02 October 2016</time>
-        </footer>
+    <article itemscope itemtype="http://schema.org/BlogPosting"
+      role="article" class="post-item post">
+      <header class="post-item-header">
+        <h2 itemprop="name" class="post-item-title">
+          <a href="/" itemprop="url" data-pjax title="Meditation">
+            Meditation
+          </a>
+        </h2>
+      </header>
+      <section itemprop="description" class="post-item-excerpt">
+        <p>undefined&hellip;</p>
+      </section>
+      <footer class="post-item-footer">
+        <ul class="post-item-meta-list">
+          <li class="post-item-meta-item">
+            <time datetime="2016-10-02" itemprop="datePublished">
+              a few seconds ago
+            </time>
+          </li>
+          <li class="post-item-meta-item">
+            <a href="/#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
+          </li>
+        </ul>
+      </footer>
     </article>
-    
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 1</span>
-    </nav>
-    
 
 </main>
 
+          </div>
+        </div>
+      </div>
+    </main>
 
-        <footer class="site-footer clearfix">
-            <section class="copyright">Copyright  &copy;  2016 <a href="http://www.meditations.pro">CROTEL</a> &copy; . All rights reserved.</section>
-            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
-        </footer>
-
-    </div>
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
         jQuery( document ).ready(function() {
@@ -109,8 +223,8 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//www.meditations.pro/themes/casper/assets/js/jquery.fitvids.js?v=1475367477361"></script>
-    <script type="text/javascript" src="//www.meditations.pro/themes/casper/assets/js/index.js?v=1475367477361"></script>
+    <script src="//www.meditations.pro/themes/ghostium/assets/js/foot-scripts.min.js?v=1475368061128"></script>
 
-</body>
+
+  </body>
 </html>
