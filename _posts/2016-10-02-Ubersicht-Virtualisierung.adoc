@@ -1,11 +1,10 @@
-
-
 = Übersicht Virtualisierung
 Andreas Breitbach <andreas.breitbach@gmail.com>
-:published at: 01-10-2016
 :hp-tags: Virtualisierung, Grundlagen
+:published-at: 01-10-2016
+
 :toc:
-:imagesdir: img/:
+:imagesdir: images/:
 :lang: de
 ifeval::["{lang}" == "de"]
 :appendix-caption: Anhang
@@ -27,7 +26,7 @@ ifeval::["{lang}" == "de"]
 endif::[]
 
 === Wodrum gehts?
-* Wissen aufbauen und darlegen zur Vorbereitung einer Projektarbeit rund um das Thema Virtualisierung
+* Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung
 * Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de/, das Buch _Virtualization Essential_ von Matthew Portnoy, sowie das _IT-Handbuch für Fachinformatiker_ von Sascha Kersken.
 
 === Probleme nicht-virtualisierter Server
@@ -43,17 +42,18 @@ endif::[]
 ==== Hypervisoren
 Der _Hypervisor_ (HV) bildet die Schnittstelle zwischen der Hardware und den virtuellen Maschinen. Er regelt, welche der Maschinen auf welche Hardware-Ressourcen zugreifen können. Dabei müssen diese Anforderungen entsprechend ausbalanciert werden und entsprechend schnell erfolgen. Manche Hypervisoren bieten hierfür "Vorfahrtsregeln" an, mit denen bestimmte Maschinen schneller antworten können. Darüber hinaus stellt ein Hypervisor auch Management-Funktionen für die virtuellen Maschinen zur Verfügung. _Virtuelle Maschinen_ enthalten alle Komponenten wie ein "normaler" Computer, bloss verpackt in Dateien. Der Hypervisor vermittelt diese virtuellen Ressourcen auf ihre physikalisch vorhandenen Gegenstücke.
 
-.Beziehung der einzenlnen Virtualisierungskompnenten
+.Beziehung der einzenlnen Virtualisierungskomponenten
 [[virt-komponenten]]
-[plantuml, hypervisor+VM, png]
-....
-[Physikalische Hardware]
-[VM]
-[Hypervisor]
+image::hypervisor+vm.png[Beziehung der einzenlnen Virtualisierungskomponenten]
+//[plantuml, hypervisor+VM, png]
+//....
+//[Physikalische Hardware]
+//[VM]
+//[Hypervisor]
 
-[Physikalische Hardware] --> [Hypervisor]
-[Hypervisor] --> [VM]
-....
+//[Physikalische Hardware] --> [Hypervisor]
+//[Hypervisor] --> [VM]
+//....
 
 Es gibt zwei Möglichkeiten, einen Hypervisor zu realisieren:
 
