@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/main.min.css?v=1475416585118"/>
-    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/custom.css?v=1475416585118"/>
-    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1475416585118"/>
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/main.min.css?v=1475418141427"/>
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/custom.css?v=1475418141427"/>
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1475418141427"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1475416585118"></script>
+    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1475418141427"></script>
 
     <link rel="canonical" href="https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html" />
     <meta name="referrer" content="origin" />
@@ -78,14 +78,14 @@
     <meta property="og:site_name" content="" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Übersicht Virtualisierung" />
-    <meta property="og:description" content="Inhalt Wodrum gehts? Probleme nicht-virtualisierter Server Vorteile durch Virtualisierung Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen Wodrum gehts? Wissen aufbauen und darlegen zur Vorbereitung einer Projektarbeit rund um das Thema Virtualisierung Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de" />
+    <meta property="og:description" content="Wodrum gehts? Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de/, das Buch Virtualization Essential von Matthew Portnoy, sowie das IT-Handbuch für Fachinformatiker von Sascha Kersken. Probleme nicht-virtualisierter Server Mantra: E" />
     <meta property="og:url" content="https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html" />
     <meta property="article:tag" content="Virtualisierung" />
     <meta property="article:tag" content=" Grundlagen" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Übersicht Virtualisierung" />
-    <meta name="twitter:description" content="Inhalt Wodrum gehts? Probleme nicht-virtualisierter Server Vorteile durch Virtualisierung Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen Wodrum gehts? Wissen aufbauen und darlegen zur Vorbereitung einer Projektarbeit rund um das Thema Virtualisierung Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de" />
+    <meta name="twitter:description" content="Wodrum gehts? Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de/, das Buch Virtualization Essential von Matthew Portnoy, sowie das IT-Handbuch für Fachinformatiker von Sascha Kersken. Probleme nicht-virtualisierter Server Mantra: E" />
     <meta name="twitter:url" content="https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html" />
     
     <script type="application/ld+json">
@@ -192,21 +192,12 @@ null
             </div>
           </aside>
           <div itemprop="articleBody" class="post-body">
-            <div id="toc" class="toc">
-<div id="toctitle">Inhalt</div>
-<ul class="sectlevel2">
-<li><a href="#_wodrum_gehts">Wodrum gehts?</a></li>
-<li><a href="#_probleme_nicht_virtualisierter_server">Probleme nicht-virtualisierter Server</a></li>
-<li><a href="#_vorteile_durch_virtualisierung">Vorteile durch Virtualisierung</a></li>
-<li><a href="#_virtualisierungs_verfahren_hypervisoren_und_virtuelle_maschinen">Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen</a></li>
-</ul>
-</div>
-<div class="sect2">
+            <div class="sect2">
 <h3 id="_wodrum_gehts">Wodrum gehts?</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Wissen aufbauen und darlegen zur Vorbereitung einer Projektarbeit rund um das Thema Virtualisierung</p>
+<p>Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung</p>
 </li>
 <li>
 <p>Quellen für nachfolgende Ausführungen sind die Website <a href="https://www.storitback.de/" class="bare">https://www.storitback.de/</a>, das Buch <em>Virtualization Essential</em> von Matthew Portnoy, sowie das <em>IT-Handbuch für Fachinformatiker</em> von Sascha Kersken.</p>
@@ -250,16 +241,11 @@ null
 <div class="paragraph">
 <p>Der <em>Hypervisor</em> (HV) bildet die Schnittstelle zwischen der Hardware und den virtuellen Maschinen. Er regelt, welche der Maschinen auf welche Hardware-Ressourcen zugreifen können. Dabei müssen diese Anforderungen entsprechend ausbalanciert werden und entsprechend schnell erfolgen. Manche Hypervisoren bieten hierfür "Vorfahrtsregeln" an, mit denen bestimmte Maschinen schneller antworten können. Darüber hinaus stellt ein Hypervisor auch Management-Funktionen für die virtuellen Maschinen zur Verfügung. <em>Virtuelle Maschinen</em> enthalten alle Komponenten wie ein "normaler" Computer, bloss verpackt in Dateien. Der Hypervisor vermittelt diese virtuellen Ressourcen auf ihre physikalisch vorhandenen Gegenstücke.</p>
 </div>
-<div id="virt-komponenten" class="literalblock">
-<div class="title">Beziehung der einzenlnen Virtualisierungskompnenten</div>
+<div id="virt-komponenten" class="imageblock">
 <div class="content">
-<pre>[Physikalische Hardware]
-[VM]
-[Hypervisor]
-
-[Physikalische Hardware] --&gt; [Hypervisor]
-[Hypervisor] --&gt; [VM]</pre>
+<img src="https://andreas-breitbach.github.io/images/hypervisor+vm.png" alt="Beziehung der einzenlnen Virtualisierungskomponenten">
 </div>
+<div class="title">Abbildung 1. Beziehung der einzenlnen Virtualisierungskomponenten</div>
 </div>
 <div class="paragraph">
 <p>Es gibt zwei Möglichkeiten, einen Hypervisor zu realisieren:</p>
@@ -390,7 +376,7 @@ zur Verfügung stehen</p>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1475416585118"></script>
+    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1475418141427"></script>
 
 
   </body>
