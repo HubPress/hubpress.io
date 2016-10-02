@@ -44,7 +44,7 @@ Der _Hypervisor_ (HV) bildet die Schnittstelle zwischen der Hardware und den vir
 
 .Beziehung der einzenlnen Virtualisierungskomponenten
 [[virt-komponenten]]
-image::<hypervisor+vm.png>[Beziehung der einzenlnen Virtualisierungskomponenten]
+image::hypervisor+vm.png[Beziehung der einzenlnen Virtualisierungskomponenten]
 //[plantuml, hypervisor+VM, png]
 //....
 //[Physikalische Hardware]
