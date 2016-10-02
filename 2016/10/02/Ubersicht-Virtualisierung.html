@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Übersicht Virtualisierung</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Übersicht Virtualisierung">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Übersicht Virtualisierung">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/main.min.css?v=1475416119377"/>
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/custom.css?v=1475416119377"/>
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1475416119377"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1475416119377"></script>
+
+    <link rel="canonical" href="https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Übersicht Virtualisierung" />
+    <meta property="og:description" content="Inhalt Wodrum gehts? Probleme nicht-virtualisierter Server Vorteile durch Virtualisierung Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen Wodrum gehts? Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de/, das Buch V" />
+    <meta property="og:url" content="https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Übersicht Virtualisierung" />
+    <meta name="twitter:description" content="Inhalt Wodrum gehts? Probleme nicht-virtualisierter Server Vorteile durch Virtualisierung Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen Wodrum gehts? Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de/, das Buch V" />
+    <meta name="twitter:url" content="https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://andreas-breitbach.github.io/rss/" />
+  </head>
+  <body class="post-template">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://andreas-breitbach.github.io" data-pjax>
+              <i class="fa fa-home"></i>Start
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="#" title="My awesome menu">
+              My menu
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://andreas-breitbach.github.io" title="" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://andreas-breitbach.github.io/rss/">
+              <i class="fa fa-rss"></i>RSS-Feeed abonnieren
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Ich woanders
+          </li>
+          <li class="drawer-list-item">
+            <a href="https://www.xing.com/profile/Andreas_Breitbach5" title="Xing">
+              <i class="fa fa-xing"></i>Xing
+            </a>
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://twitter.com/a_breitbach" title="Twitter" target="_blank">
+              <i class="fa fa-twitter"></i>Twitter
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="mailto:andreas.breitbach@gmail.com" title="Email" target="_blank">
+              <i class="fa fa-envelope-o"></i>Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2016-10-02" itemprop="datePublished">
+                  16 hours ago
+                </time>
+              </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html" itemprop="url" data-pjax title="Übersicht Virtualisierung">Übersicht Virtualisierung</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img src="https://avatars.githubusercontent.com/u/20995447?v&#x3D;3" alt="andreas-breitbach">
+                </a>
+              <div class="post-author-info">
+                <a href="" class="post-author-name">
+                  andreas-breitbach
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel2">
+<li><a href="#_wodrum_gehts">Wodrum gehts?</a></li>
+<li><a href="#_probleme_nicht_virtualisierter_server">Probleme nicht-virtualisierter Server</a></li>
+<li><a href="#_vorteile_durch_virtualisierung">Vorteile durch Virtualisierung</a></li>
+<li><a href="#_virtualisierungs_verfahren_hypervisoren_und_virtuelle_maschinen">Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen</a></li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_wodrum_gehts">Wodrum gehts?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung</p>
+</li>
+<li>
+<p>Quellen für nachfolgende Ausführungen sind die Website <a href="https://www.storitback.de/" class="bare">https://www.storitback.de/</a>, das Buch <em>Virtualization Essential</em> von Matthew Portnoy, sowie das <em>IT-Handbuch für Fachinformatiker</em> von Sascha Kersken.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_probleme_nicht_virtualisierter_server">Probleme nicht-virtualisierter Server</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Mantra: <strong>Eine Anwendung, ein physikalischer Server</strong> – sonst kommt sich das ins Gehege.</p>
+</li>
+<li>
+<p>Server wurden aber mit Spielraum für künftiges Wachstum angeschafft; je nachdem lagen bis zu 90 % der Ressourcen (Speicherplatz, Rechenleistung) brach und wurden von den Anforderungen nicht ausgefüllt. Im Gegensatz wurden aber einige wenige Systeme übermäßig gefordert.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vorteile_durch_virtualisierung">Vorteile durch Virtualisierung</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Alte Server wurden virtualisiert und auf wenig ausgelastete Systeme gepackt.</p>
+</li>
+<li>
+<p>Flexiblere Handhabung von Server-Leistung</p>
+</li>
+<li>
+<p>Ermöglicht einfaches "Ausprobieren" neuer Anwendungen, ohne dass physikalische Server angeschafft werden müssen – und verringert so die Schwelle, welche neue Anwendungen letztlich überschreiten müssen</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_virtualisierungs_verfahren_hypervisoren_und_virtuelle_maschinen">Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen</h3>
+<div class="sect3">
+<h4 id="_hypervisoren">Hypervisoren</h4>
+<div class="paragraph">
+<p>Der <em>Hypervisor</em> (HV) bildet die Schnittstelle zwischen der Hardware und den virtuellen Maschinen. Er regelt, welche der Maschinen auf welche Hardware-Ressourcen zugreifen können. Dabei müssen diese Anforderungen entsprechend ausbalanciert werden und entsprechend schnell erfolgen. Manche Hypervisoren bieten hierfür "Vorfahrtsregeln" an, mit denen bestimmte Maschinen schneller antworten können. Darüber hinaus stellt ein Hypervisor auch Management-Funktionen für die virtuellen Maschinen zur Verfügung. <em>Virtuelle Maschinen</em> enthalten alle Komponenten wie ein "normaler" Computer, bloss verpackt in Dateien. Der Hypervisor vermittelt diese virtuellen Ressourcen auf ihre physikalisch vorhandenen Gegenstücke.</p>
+</div>
+<div id="virt-komponenten" class="literalblock">
+<div class="title">Beziehung der einzenlnen Virtualisierungskompnenten</div>
+<div class="content">
+<pre>[Physikalische Hardware]
+[VM]
+[Hypervisor]
+
+[Physikalische Hardware] --&gt; [Hypervisor]
+[Hypervisor] --&gt; [VM]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Es gibt zwei Möglichkeiten, einen Hypervisor zu realisieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Der Hypervisor wird direkt auf der Hardware, ohne dazwischen geschaltetes Betriebssystem, installiert. Dies sind die sogenannten <em>Typ 1- Hypervisor</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sicherer als Typ 2; Gäste können keinen Eiunfluss auf den Hypervisor nehmen</p>
+</li>
+<li>
+<p>Bessere Performance als Typ 2, weil weniger Rechenleistung benötigt wird.</p>
+</li>
+<li>
+<p>Oft vorkommende Typ 1-Hypervisoren: VMware ESX, Microsoft Hyper-V sowie Xen (unter Linux)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Zunächst wird ein normales Betriebssystem installiert, auf dem dann wiederum der Hypervisor als eigenständige Anwendung (wie z.B. Office-Software) installiert wird. Das sind <em>Typ 2-Hypervisoren</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Einfacher zu installieren, weil Speicher, Netzwerk etc. bereits durch das Wirtssystem
+zur Verfügung stehen</p>
+</li>
+<li>
+<p>Wegen des normalen Betriebssystems müssen aber auch alle Aktionen der virtuellen Maschine einen  Umweg in Kauf nehmen. Dadurch ist das Gesamtsystem langsamer.</p>
+</li>
+<li>
+<p>Wenn das Wirtssystem nach Updates neu gestartet werden muss, müssen auch die virtuellen Maschinen kurzzeitig anhalten.</p>
+</li>
+<li>
+<p>Oft vorkommende Typ 2-Hypervisoren: VMware Player/Workstation, Oracle Virtualbox</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_virtuelle_maschinen">Virtuelle Maschinen</h4>
+<div class="paragraph">
+<p>Auf den Hypervisoren laufen die Virtuellen Maschinen, üblicherweise als "VM" abgekürzt. Wie erwähnt, sind sie bloss verpackt in Dateien: Die Konfigurationsdatei, welceh u.a. angibt, wieviele Ressourcen der virtuellen Maschine zur Verfügung stehen, sowie eine Image-Datei für die Festplatte der virtuellen Maschine. Dadurch lässt sich eine virtuelle Maschine einfach auf ein anderes System verschieben, duplizieren oder sichern.</p>
+</div>
+<div class="paragraph">
+<p>"In" der virtuellen Maschine ist die "Ansicht" für das Gastsystem dieselbe, als ob dieses auf physikalischer Hardware installiert wäre.</p>
+</div>
+</div>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/20995447?v&#x3D;3" alt="andreas-breitbach">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="" itemprop="url" class="post-author-name">
+                  <span itemprop="name">andreas-breitbach</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">October 02, 2016</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder"></span>. 2016. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = 'andreas-breitbach'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1475416119377"></script>
+
+
+  </body>
+</html>
