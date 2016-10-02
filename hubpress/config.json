@@ -17,11 +17,11 @@
   },
   "socialnetwork": {
     "email": "contact@cro.tel",
-    "twitter": "crotel",
-    "linkedin": "crotel",
-    "facebook": "crotel",
-    "flickr": "crotel",
-    "github": "crotel"
+    "twitter": "https://twitter.com/crotel",
+    "linkedin": "https://www.linkedin.com/in/crotel",
+    "facebook": "https://facebook.com/crotel",
+    "flickr": "https://flickr.com/photo/crotel",
+    "github": ""
   },
   "theme": {
     "name": "ghostium"
