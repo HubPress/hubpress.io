@@ -2,6 +2,8 @@
 
 = Übersicht Virtualisierung
 Andreas Breitbach <andreas.breitbach@gmail.com>
+:published at: 01-10-2016
+:hp-tags: Virtualisierung, Grundlagen
 :toc:
 :imagesdir: img/:
 :lang: de
@@ -25,7 +27,7 @@ ifeval::["{lang}" == "de"]
 endif::[]
 
 === Wodrum gehts?
-* Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung
+* Wissen aufbauen und darlegen zur Vorbereitung einer Projektarbeit rund um das Thema Virtualisierung
 * Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de/, das Buch _Virtualization Essential_ von Matthew Portnoy, sowie das _IT-Handbuch für Fachinformatiker_ von Sascha Kersken.
 
 === Probleme nicht-virtualisierter Server
