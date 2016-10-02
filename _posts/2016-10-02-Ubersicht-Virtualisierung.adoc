@@ -1,0 +1,73 @@
+
+
+= Übersicht Virtualisierung
+Andreas Breitbach <andreas.breitbach@gmail.com>
+:toc:
+:imagesdir: img/:
+:lang: de
+ifeval::["{lang}" == "de"]
+:appendix-caption: Anhang
+:caution-caption: Achtung
+:example-caption: Beispiel
+:figure-caption: Abbildung
+:important-caption: Wichtig
+:last-update-label: Zuletzt aktualisiert
+//:listing-caption: Listing
+:manname-title: BEZEICHNUNG
+:note-caption: Anmerkung
+//:preface-title: Vorwort
+:table-caption: Tabelle
+:tip-caption: Hinweis
+:toc-title: Inhalt
+:untitled-label: Ohne Titel
+:version-label: Version
+:warning-caption: Warnung
+endif::[]
+
+=== Wodrum gehts?
+* Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung
+* Quellen für nachfolgende Ausführungen sind die Website https://www.storitback.de/, das Buch _Virtualization Essential_ von Matthew Portnoy, sowie das _IT-Handbuch für Fachinformatiker_ von Sascha Kersken.
+
+=== Probleme nicht-virtualisierter Server
+* Mantra: *Eine Anwendung, ein physikalischer Server* – sonst kommt sich das ins Gehege.
+* Server wurden aber mit Spielraum für künftiges Wachstum angeschafft; je nachdem lagen bis zu 90 % der Ressourcen (Speicherplatz, Rechenleistung) brach und wurden von den Anforderungen nicht ausgefüllt. Im Gegensatz wurden aber einige wenige Systeme übermäßig gefordert.
+
+=== Vorteile durch Virtualisierung
+* Alte Server wurden virtualisiert und auf wenig ausgelastete Systeme gepackt.
+* Flexiblere Handhabung von Server-Leistung
+* Ermöglicht einfaches "Ausprobieren" neuer Anwendungen, ohne dass physikalische Server angeschafft werden müssen – und verringert so die Schwelle, welche neue Anwendungen letztlich überschreiten müssen
+
+=== Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen
+==== Hypervisoren
+Der _Hypervisor_ (HV) bildet die Schnittstelle zwischen der Hardware und den virtuellen Maschinen. Er regelt, welche der Maschinen auf welche Hardware-Ressourcen zugreifen können. Dabei müssen diese Anforderungen entsprechend ausbalanciert werden und entsprechend schnell erfolgen. Manche Hypervisoren bieten hierfür "Vorfahrtsregeln" an, mit denen bestimmte Maschinen schneller antworten können. Darüber hinaus stellt ein Hypervisor auch Management-Funktionen für die virtuellen Maschinen zur Verfügung. _Virtuelle Maschinen_ enthalten alle Komponenten wie ein "normaler" Computer, bloss verpackt in Dateien. Der Hypervisor vermittelt diese virtuellen Ressourcen auf ihre physikalisch vorhandenen Gegenstücke.
+
+.Beziehung der einzenlnen Virtualisierungskompnenten
+[[virt-komponenten]]
+[plantuml, hypervisor+VM, png]
+....
+[Physikalische Hardware]
+[VM]
+[Hypervisor]
+
+[Physikalische Hardware] --> [Hypervisor]
+[Hypervisor] --> [VM]
+....
+
+Es gibt zwei Möglichkeiten, einen Hypervisor zu realisieren:
+
+1. Der Hypervisor wird direkt auf der Hardware, ohne dazwischen geschaltetes Betriebssystem, installiert. Dies sind die sogenannten _Typ 1- Hypervisor_.
+* Sicherer als Typ 2; Gäste können keinen Eiunfluss auf den Hypervisor nehmen
+* Bessere Performance als Typ 2, weil weniger Rechenleistung benötigt wird.
+* Oft vorkommende Typ 1-Hypervisoren: VMware ESX, Microsoft Hyper-V sowie Xen (unter Linux)
+
+2. Zunächst wird ein normales Betriebssystem installiert, auf dem dann wiederum der Hypervisor als eigenständige Anwendung (wie z.B. Office-Software) installiert wird. Das sind _Typ 2-Hypervisoren_.
+* Einfacher zu installieren, weil Speicher, Netzwerk etc. bereits durch das Wirtssystem
+zur Verfügung stehen
+* Wegen des normalen Betriebssystems müssen aber auch alle Aktionen der virtuellen Maschine einen  Umweg in Kauf nehmen. Dadurch ist das Gesamtsystem langsamer.
+* Wenn das Wirtssystem nach Updates neu gestartet werden muss, müssen auch die virtuellen Maschinen kurzzeitig anhalten.
+* Oft vorkommende Typ 2-Hypervisoren: VMware Player/Workstation, Oracle Virtualbox
+
+==== Virtuelle Maschinen
+Auf den Hypervisoren laufen die Virtuellen Maschinen, üblicherweise als "VM" abgekürzt. Wie erwähnt, sind sie bloss verpackt in Dateien: Die Konfigurationsdatei, welceh u.a. angibt, wieviele Ressourcen der virtuellen Maschine zur Verfügung stehen, sowie eine Image-Datei für die Festplatte der virtuellen Maschine. Dadurch lässt sich eine virtuelle Maschine einfach auf ein anderes System verschieben, duplizieren oder sichern.
+
+"In" der virtuellen Maschine ist die "Ansicht" für das Gastsystem dieselbe, als ob dieses auf physikalischer Hardware installiert wäre.
