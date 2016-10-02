@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Oct 2016 14:24:59 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Oct 2016 14:26:48 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_wodrum_gehts">Wodrum gehts?</h3>
 <div class="ulist">
 <ul>
@@ -49,7 +49,7 @@
 </div>
 <div id="virt-komponenten" class="imageblock">
 <div class="content">
-<img src="https://andreas-breitbach.github.io/images/hypervisor+vm.png" alt="Beziehung der einzenlnen Virtualisierungskomponenten">
+<img src="https://andreas-breitbach.github.io/images/hypervisor+VM.png" alt="Beziehung der einzenlnen Virtualisierungskomponenten">
 </div>
 <div class="title">Abbildung 1. Beziehung der einzenlnen Virtualisierungskomponenten</div>
 </div>
