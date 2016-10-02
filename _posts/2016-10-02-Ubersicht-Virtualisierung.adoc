@@ -4,7 +4,7 @@ Andreas Breitbach <andreas.breitbach@gmail.com>
 :published-at: 01-10-2016
 
 :toc:
-:imagesdir: images/:
+//:imagesdir: images/:
 :lang: de
 ifeval::["{lang}" == "de"]
 :appendix-caption: Anhang
