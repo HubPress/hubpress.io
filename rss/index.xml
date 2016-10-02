@@ -1,4 +1,126 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 18 Sep 2016 14:38:16 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[The Article Title]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Oct 2016 13:48:39 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel2">
+<li><a href="#_wodrum_gehts">Wodrum gehts?</a></li>
+<li><a href="#_probleme_nicht_virtualisierter_server">Probleme nicht-virtualisierter Server</a></li>
+<li><a href="#_vorteile_durch_virtualisierung">Vorteile durch Virtualisierung</a></li>
+<li><a href="#_virtualisierungs_verfahren_hypervisoren_und_virtuelle_maschinen">Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen</a></li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_wodrum_gehts">Wodrum gehts?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wissen aufbauen und darlegen zur Prüfungsvorbereitung rund umdas Thema Virtualisierung</p>
+</li>
+<li>
+<p>Quellen für nachfolgende Ausführungen sind die Website <a href="https://www.storitback.de/" class="bare">https://www.storitback.de/</a>, das Buch <em>Virtualization Essential</em> von Matthew Portnoy, sowie das <em>IT-Handbuch für Fachinformatiker</em> von Sascha Kersken.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_probleme_nicht_virtualisierter_server">Probleme nicht-virtualisierter Server</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Mantra: <strong>Eine Anwendung, ein physikalischer Server</strong> – sonst kommt sich das ins Gehege.</p>
+</li>
+<li>
+<p>Server wurden aber mit Spielraum für künftiges Wachstum angeschafft; je nachdem lagen bis zu 90 % der Ressourcen (Speicherplatz, Rechenleistung) brach und wurden von den Anforderungen nicht ausgefüllt. Im Gegensatz wurden aber einige wenige Systeme übermäßig gefordert.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vorteile_durch_virtualisierung">Vorteile durch Virtualisierung</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Alte Server wurden virtualisiert und auf wenig ausgelastete Systeme gepackt.</p>
+</li>
+<li>
+<p>Flexiblere Handhabung von Server-Leistung</p>
+</li>
+<li>
+<p>Ermöglicht einfaches "Ausprobieren" neuer Anwendungen, ohne dass physikalische Server angeschafft werden müssen – und verringert so die Schwelle, welche neue Anwendungen letztlich überschreiten müssen</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_virtualisierungs_verfahren_hypervisoren_und_virtuelle_maschinen">Virtualisierungs-Verfahren: Hypervisoren und virtuelle Maschinen</h3>
+<div class="sect3">
+<h4 id="_hypervisoren">Hypervisoren</h4>
+<div class="paragraph">
+<p>Der <em>Hypervisor</em> (HV) bildet die Schnittstelle zwischen der Hardware und den virtuellen Maschinen. Er regelt, welche der Maschinen auf welche Hardware-Ressourcen zugreifen können. Dabei müssen diese Anforderungen entsprechend ausbalanciert werden und entsprechend schnell erfolgen. Manche Hypervisoren bieten hierfür "Vorfahrtsregeln" an, mit denen bestimmte Maschinen schneller antworten können. Darüber hinaus stellt ein Hypervisor auch Management-Funktionen für die virtuellen Maschinen zur Verfügung. <em>Virtuelle Maschinen</em> enthalten alle Komponenten wie ein "normaler" Computer, bloss verpackt in Dateien. Der Hypervisor vermittelt diese virtuellen Ressourcen auf ihre physikalisch vorhandenen Gegenstücke.</p>
+</div>
+<div id="virt-komponenten" class="literalblock">
+<div class="title">Beziehung der einzenlnen Virtualisierungskompnenten</div>
+<div class="content">
+<pre>[Physikalische Hardware]
+[VM]
+[Hypervisor]
+
+[Physikalische Hardware] --&gt; [Hypervisor]
+[Hypervisor] --&gt; [VM]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Es gibt zwei Möglichkeiten, einen Hypervisor zu realisieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Der Hypervisor wird direkt auf der Hardware, ohne dazwischen geschaltetes Betriebssystem, installiert. Dies sind die sogenannten <em>Typ 1- Hypervisor</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sicherer als Typ 2; Gäste können keinen Eiunfluss auf den Hypervisor nehmen</p>
+</li>
+<li>
+<p>Bessere Performance als Typ 2, weil weniger Rechenleistung benötigt wird.</p>
+</li>
+<li>
+<p>Oft vorkommende Typ 1-Hypervisoren: VMware ESX, Microsoft Hyper-V sowie Xen (unter Linux)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Zunächst wird ein normales Betriebssystem installiert, auf dem dann wiederum der Hypervisor als eigenständige Anwendung (wie z.B. Office-Software) installiert wird. Das sind <em>Typ 2-Hypervisoren</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Einfacher zu installieren, weil Speicher, Netzwerk etc. bereits durch das Wirtssystem
+zur Verfügung stehen</p>
+</li>
+<li>
+<p>Wegen des normalen Betriebssystems müssen aber auch alle Aktionen der virtuellen Maschine einen  Umweg in Kauf nehmen. Dadurch ist das Gesamtsystem langsamer.</p>
+</li>
+<li>
+<p>Wenn das Wirtssystem nach Updates neu gestartet werden muss, müssen auch die virtuellen Maschinen kurzzeitig anhalten.</p>
+</li>
+<li>
+<p>Oft vorkommende Typ 2-Hypervisoren: VMware Player/Workstation, Oracle Virtualbox</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_virtuelle_maschinen">Virtuelle Maschinen</h4>
+<div class="paragraph">
+<p>Auf den Hypervisoren laufen die Virtuellen Maschinen, üblicherweise als "VM" abgekürzt. Wie erwähnt, sind sie bloss verpackt in Dateien: Die Konfigurationsdatei, welceh u.a. angibt, wieviele Ressourcen der virtuellen Maschine zur Verfügung stehen, sowie eine Image-Datei für die Festplatte der virtuellen Maschine. Dadurch lässt sich eine virtuelle Maschine einfach auf ein anderes System verschieben, duplizieren oder sichern.</p>
+</div>
+<div class="paragraph">
+<p>"In" der virtuellen Maschine ist die "Ansicht" für das Gastsystem dieselbe, als ob dieses auf physikalischer Hardware installiert wäre.</p>
+</div>
+</div>
+</div>]]></description><link>https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html</link><guid isPermaLink="true">https://andreas-breitbach.github.io/2016/10/02/Ubersicht-Virtualisierung.html</guid><pubDate>Sun, 02 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[The Article Title]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the optional preamble (an untitled section body). Useful for
