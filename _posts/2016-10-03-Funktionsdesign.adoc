@@ -1,0 +1,76 @@
+= Funktionsdesign
+Andreas Breitbach <andreas.breitbach@gmail.com>
+:hp-tag: funktionsdesign,
+
+:toc:
+:imagesdir: images/:
+:lang: de
+ifeval::["{lang}" == "de"]
+:appendix-caption: Anhang
+:caution-caption: Achtung
+:example-caption: Beispiel
+:figure-caption: Abbildung
+:important-caption: Wichtig
+:last-update-label: Zuletzt aktualisiert
+//:listing-caption: Listing
+:manname-title: BEZEICHNUNG
+:note-caption: Anmerkung
+//:preface-title: Vorwort
+:table-caption: Tabelle
+:untitled-label: Ohne Titel
+:version-label: Version
+:warning-caption: Warnung
+endif::[]
+
+== Übersicht
+Funktionsdesign ist eine Methode zur standardisierten Textproduktion – dies kann Dokumentarten aus der Technischen Dokumentation betreffen, aber auch Firmenkommunikation mit Kunden/Lieferanten, Lexikonartikel usw. Begrifflich muss hier zuwischen der _Methode_ "Funktionsdesign" und den durch diese Methode für den Einsatz entwickelten _Standards_, dem implementiertem Funktionsdesign, getrennt werden.
+In der Technischen Dokumentation profitieren Autoren, Firmen und Nutzer aus diversen Gründen vom Funktionsdesign:
+
+* Es erleichtert und beschleunigt das Schreiben, weil viele Entscheidungen einmal gefällt werden und dann nur noch ausgeführt werden müssen. Der Technische Redakteur muss sich nicht mehr damit befassen, ob und wie er bestimmte Navigationselemente auszeichnet, die Entscheidung wurde durch das Funktionsdesign schon übernommen.
+* Bei standardisierten Texten weiß der Leser, was ihn wo erwartet. Er kann den Text einfacher nutzen, und liest so hoffentlich öfter in der Anleitung nach (RTFM!).
+* Standardisierte Texte machen das Übersetzen einfacher.
+* Alle diese Punkte führen dazu, dass die Produktion der Anleitung Geld spart.
+
+Nun folgt eine Übersicht zur Umsetzung eines Funktionsdesigns sowie eine Übersicht zu den verwendeten Ebenen.
+
+== Umsetzung eines Funktionsdesigns
+Die Theorie des Funktionsdesigns basiert auf der Sprechakt-Theorie der Linguistik. Demnach handelt es sich bei sprachlichen Äußerungen um Handlungen, mit denen der Adressat angewiesen/informiert/gewarnt usw. wird. In "normalen" Texten geht es dabei quer durch: Anweisungen, Informationen, Warnungen sind bunt gemischt, wie in der nebenstehenden Abbildung.
+
+.Das Pumpen-Beispiel, Teil 1
+image::funktionsdesign-1.png[Das Pumpen-Beispiel, Teil 1]
+Dieses Chaos lässt sich in folgenden Schritten entflechten:
+
+1. Analyse und ggf. Neudefinition, wie bislang mit Informationen umgegangen wurde (Generierung, Verteilung, Archivierung). Hiermit soll sichergestellt werden, dass keine alten und überflüssigen Informationsprodukte neu verpackt werden.
+2. Bewertung vorhandener Dokumentarten und Analyse zukünftiger Anforderungen. Hierbei soll auch nach ersten Ansätzen zur Standardisierung gesucht werden.
+3. Klassifizierung der relevanten Dokumentarten. In diesem Schritt wird vom Nutzer her gefragt: Welche Dokumente benötigt er?
+4. Defintion der Funktionalen Elemente. In diesem Schritt wird festgelegt, wie die zukünftigen Dokumente aussehen sollen. Wie werden Warnhinweise, Inhaltsverzeichnisse, Abbildungen usw. gestaltet, ausgezeichnet usw.?
+Hierbei muss beachtet werden:
+* Welche Inhalte sollen mit dem Dokument dargestellt werden?
+* Wie sieht die Zielgruppe aus?
+* Was soll kommuniziert werden? Handelt es sich um eine Wartungs- oder Bedienungsanleitung?
+* Wie lässt sich das Wissen am besten darstellen?
+5. Dokumentation der in 4. entstandenen Funktionalen Elemente. In einem Redaktionsleitfaden werden die festgelegten Funktionalen Elemente dokumentiert, um eine konsistente Anwendung über die ganze Redaktion sicherzustellen.
+6. Zusammenführen der Funktionalen Elemente im verwendeten Tool. Hier werden die angebotenen Möglichkeiten abgeglichen: Wie können die Festlegungen am sinnvollsten implementiert werden?
+7. Implementierung, Schulung, Erstellen von Musterdokumenten
+
+.Das Pumpen-Beispiel, Teil 2: Die Funktionen der einzelnen Sätze wurde zugeordnet
+image::funktionsdesign-2.png[Das Pumpen-Beispiel, Teil 2]
+
+.Das Pumpen-Beispiel, Teil 3: Die Anleitung ist in einer sinnvollen Reihenfolge angeordnet: Warnung vor der Anweisung, wie die Punmpe in Betrieb zu nehmen ist.
+image::funktionsdesign-3.png[Das Pumpen-Beispiel, Teil 3]
+
+== Die verschiedenen Ebenen eines Dokuments 
+Im Funktionsdesign hat ein Dokument verschiedene Ebenen:
+
+1. Dokument/Informationsprodukt: Dies meint das gesamte Dokument: die Bedienungsanleitung, eine evtl. vorhandene Schnelleinsteiger-Anleitung, eine Aufstell-Anleitung usw. Für diese Ebene muss eine Makrostruktur angelegt werden, in der alle anfallenden Inhalte platziert und vom Nutzer gefunden werden können.
+
+2. Sequenzmuster: Dies sind die Elemente, aus denen eine Anleitung oder ein Dokument besteht: Einführung, Handlungsanweisungen, Angaben zu Zubehör und Technischen Daten, etc. Idealtypisch sind diese in jedem Dokument identisch aufgebaut. Innerhalb dieser Sequenzmuster bewegen sich die Funktionalen Einheiten.
+
+3. Funktionale Einheiten: Dies sind u.a. Titel, Ziel/Ergebnisangaben, Warnungen, Hinweise, etc. Formulierungsmuster sollten hier möglichst präzise festgelegt werden; für jede Funktionale Einheit sollte klar benannt sein, wann sie zu verwenden ist und wann nicht.
+
+4. Auszeichnungselement: Meldungen, die ein Gerät oder eine Software ausgibt, müssen entsprechend gekennzeichnet werden. `Teilnehmer nicht erreichbar` ist ein Beispiel für eine Meldung, die ein Telefon ausgeben könnte.
+
+== Quellen
+Funktionsdesign® – methodische Entwicklung von Standards, Jürgen Muthig/Robert Schäflein-Armbruster; in: Standardisierungsmethoden für die Technische Dokumentation, Jürgen Muthig (Hrsg.)
+
+Strukturiert und standardisiert schreiben mit Funktionalen Einheiten, Anonymous; in: Das ABZ, 5-7/1997, online: http://www.tanner.de/abz/1535/05071999/ 
