@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Funktionsdesign</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Funktionsdesign">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Funktionsdesign">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/main.min.css?v=1475513147289"/>
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/custom.css?v=1475513147289"/>
+    <link rel="stylesheet" href="//andreas-breitbach.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1475513147289"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1475513147289"></script>
+
+    <link rel="canonical" href="https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Funktionsdesign" />
+    <meta property="og:description" content="Übersicht Funktionsdesign ist eine Methode zur standardisierten Textproduktion – dies kann Dokumentarten aus der Technischen Dokumentation betreffen, aber auch Firmenkommunikation mit Kunden/Lieferanten, Lexikonartikel usw. Begrifflich muss hier zuwischen der Methode &quot;Funktionsdesign&quot; und den durch diese Methode für den Einsatz entwickelten Standa" />
+    <meta property="og:url" content="https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html" />
+    <meta property="article:tag" content="funktionsdesign" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Funktionsdesign" />
+    <meta name="twitter:description" content="Übersicht Funktionsdesign ist eine Methode zur standardisierten Textproduktion – dies kann Dokumentarten aus der Technischen Dokumentation betreffen, aber auch Firmenkommunikation mit Kunden/Lieferanten, Lexikonartikel usw. Begrifflich muss hier zuwischen der Methode &quot;Funktionsdesign&quot; und den durch diese Methode für den Einsatz entwickelten Standa" />
+    <meta name="twitter:url" content="https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://andreas-breitbach.github.io/rss/" />
+  </head>
+  <body class="post-template tag-funktionsdesign">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://andreas-breitbach.github.io" data-pjax>
+              <i class="fa fa-home"></i>Start
+            </a>
+          </li>
+          
+          <!-- <li class="drawer-list-item">
+            <a href="https://andreas-breitbach.github.io" title="" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://andreas-breitbach.github.io/rss/">
+              <i class="fa fa-rss"></i>RSS-Feeed abonnieren
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Ich woanders
+          </li>
+          <li class="drawer-list-item">
+            <a href="https://www.xing.com/profile/Andreas_Breitbach5" title="Xing">
+              <i class="fa fa-xing"></i>Xing
+            </a>
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://twitter.com/a_breitbach" title="Twitter" target="_blank">
+              <i class="fa fa-twitter"></i>Twitter
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="mailto:andreas.breitbach@gmail.com" title="Email" target="_blank">
+              <i class="fa fa-envelope-o"></i>Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-funktionsdesign">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2016-10-03" itemprop="datePublished">
+                  19 hours ago
+                </time>
+              </li>
+                <li class="post-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://andreas-breitbach.github.io/tag/funktionsdesign/">funktionsdesign</a></span>
+                  </span>
+                </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html" itemprop="url" data-pjax title="Funktionsdesign">Funktionsdesign</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img src="https://avatars.githubusercontent.com/u/20995447?v&#x3D;3" alt="andreas-breitbach">
+                </a>
+              <div class="post-author-info">
+                <a href="" class="post-author-name">
+                  andreas-breitbach
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div class="sect1">
+<h2 id="__bersicht">Übersicht</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Funktionsdesign ist eine Methode zur standardisierten Textproduktion – dies kann Dokumentarten aus der Technischen Dokumentation betreffen, aber auch Firmenkommunikation mit Kunden/Lieferanten, Lexikonartikel usw. Begrifflich muss hier zuwischen der <em>Methode</em> "Funktionsdesign" und den durch diese Methode für den Einsatz entwickelten <em>Standards</em>, dem implementiertem Funktionsdesign, getrennt werden.
+In der Technischen Dokumentation profitieren Autoren, Firmen und Nutzer aus diversen Gründen vom Funktionsdesign:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Es erleichtert und beschleunigt das Schreiben, weil viele Entscheidungen einmal gefällt werden und dann nur noch ausgeführt werden müssen. Der Technische Redakteur muss sich nicht mehr damit befassen, ob und wie er bestimmte Navigationselemente auszeichnet, die Entscheidung wurde durch das Funktionsdesign schon übernommen.</p>
+</li>
+<li>
+<p>Bei standardisierten Texten weiß der Leser, was ihn wo erwartet. Er kann den Text einfacher nutzen, und liest so hoffentlich öfter in der Anleitung nach (RTFM!).</p>
+</li>
+<li>
+<p>Standardisierte Texte machen das Übersetzen einfacher.</p>
+</li>
+<li>
+<p>Alle diese Punkte führen dazu, dass die Produktion der Anleitung Geld spart.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nun folgt eine Übersicht zur Umsetzung eines Funktionsdesigns sowie eine Übersicht zu den verwendeten Ebenen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_umsetzung_eines_funktionsdesigns">Umsetzung eines Funktionsdesigns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Theorie des Funktionsdesigns basiert auf der Sprechakt-Theorie der Linguistik. Demnach handelt es sich bei sprachlichen Äußerungen um Handlungen, mit denen der Adressat angewiesen/informiert/gewarnt usw. wird. In "normalen" Texten geht es dabei quer durch: Anweisungen, Informationen, Warnungen sind bunt gemischt, wie in der nebenstehenden Abbildung.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://andreas-breitbach.github.io/images/funktionsdesign-1.png" alt="Das Pumpen-Beispiel" width="Teil 1">
+</div>
+<div class="title">Abbildung 1. Das Pumpen-Beispiel, Teil 1</div>
+</div>
+<div class="paragraph">
+<p>Dieses Chaos lässt sich in folgenden Schritten entflechten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Analyse und ggf. Neudefinition, wie bislang mit Informationen umgegangen wurde (Generierung, Verteilung, Archivierung). Hiermit soll sichergestellt werden, dass keine alten und überflüssigen Informationsprodukte neu verpackt werden.</p>
+</li>
+<li>
+<p>Bewertung vorhandener Dokumentarten und Analyse zukünftiger Anforderungen. Hierbei soll auch nach ersten Ansätzen zur Standardisierung gesucht werden.</p>
+</li>
+<li>
+<p>Klassifizierung der relevanten Dokumentarten. In diesem Schritt wird vom Nutzer her gefragt: Welche Dokumente benötigt er?</p>
+</li>
+<li>
+<p>Defintion der Funktionalen Elemente. In diesem Schritt wird festgelegt, wie die zukünftigen Dokumente aussehen sollen. Wie werden Warnhinweise, Inhaltsverzeichnisse, Abbildungen usw. gestaltet, ausgezeichnet usw.?
+Hierbei muss beachtet werden:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Welche Inhalte sollen mit dem Dokument dargestellt werden?</p>
+</li>
+<li>
+<p>Wie sieht die Zielgruppe aus?</p>
+</li>
+<li>
+<p>Was soll kommuniziert werden? Handelt es sich um eine Wartungs- oder Bedienungsanleitung?</p>
+</li>
+<li>
+<p>Wie lässt sich das Wissen am besten darstellen?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dokumentation der in 4. entstandenen Funktionalen Elemente. In einem Redaktionsleitfaden werden die festgelegten Funktionalen Elemente dokumentiert, um eine konsistente Anwendung über die ganze Redaktion sicherzustellen.</p>
+</li>
+<li>
+<p>Zusammenführen der Funktionalen Elemente im verwendeten Tool. Hier werden die angebotenen Möglichkeiten abgeglichen: Wie können die Festlegungen am sinnvollsten implementiert werden?</p>
+</li>
+<li>
+<p>Implementierung, Schulung, Erstellen von Musterdokumenten</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://andreas-breitbach.github.io/images/funktionsdesign-2.png" alt="Das Pumpen-Beispiel" width="Teil 2">
+</div>
+<div class="title">Abbildung 2. Das Pumpen-Beispiel, Teil 2: Die Funktionen der einzelnen Sätze wurden zugeordnet</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://andreas-breitbach.github.io/images/funktionsdesign-3.png" alt="Das Pumpen-Beispiel" width="Teil 3">
+</div>
+<div class="title">Abbildung 3. Das Pumpen-Beispiel, Teil 3: Die Anleitung ist in einer sinnvollen Reihenfolge angeordnet: Warnung vor der Anweisung, wie die Punmpe in Betrieb zu nehmen ist.</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_die_verschiedenen_ebenen_eines_dokuments">Die verschiedenen Ebenen eines Dokuments</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Funktionsdesign hat ein Dokument verschiedene Ebenen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dokument/Informationsprodukt: Dies meint das gesamte Dokument: die Bedienungsanleitung, eine evtl. vorhandene Schnelleinsteiger-Anleitung, eine Aufstell-Anleitung usw. Für diese Ebene muss eine Makrostruktur angelegt werden, in der alle anfallenden Inhalte platziert und vom Nutzer gefunden werden können.</p>
+</li>
+<li>
+<p>Sequenzmuster: Dies sind die Elemente, aus denen eine Anleitung oder ein Dokument besteht: Einführung, Handlungsanweisungen, Angaben zu Zubehör und Technischen Daten, etc. Idealtypisch sind diese in jedem Dokument identisch aufgebaut. Innerhalb dieser Sequenzmuster bewegen sich die Funktionalen Einheiten.</p>
+</li>
+<li>
+<p>Funktionale Einheiten: Dies sind u.a. Titel, Ziel/Ergebnisangaben, Warnungen, Hinweise, etc. Formulierungsmuster sollten hier möglichst präzise festgelegt werden; für jede Funktionale Einheit sollte klar benannt sein, wann sie zu verwenden ist und wann nicht.</p>
+</li>
+<li>
+<p>Auszeichnungselement: Meldungen, die ein Gerät oder eine Software ausgibt, müssen entsprechend gekennzeichnet werden. <code>Teilnehmer nicht erreichbar</code> ist ein Beispiel für eine Meldung, die ein Telefon ausgeben könnte.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quellen">Quellen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Funktionsdesign® – methodische Entwicklung von Standards, Jürgen Muthig/Robert Schäflein-Armbruster; in: Standardisierungsmethoden für die Technische Dokumentation, Jürgen Muthig (Hrsg.)</p>
+</div>
+<div class="paragraph">
+<p>Strukturiert und standardisiert schreiben mit Funktionalen Einheiten, Anonymous; in: Das ABZ, 5-7/1997, online: <a href="http://www.tanner.de/abz/1535/05071999/" class="bare">http://www.tanner.de/abz/1535/05071999/</a></p>
+</div>
+</div>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/20995447?v&#x3D;3" alt="andreas-breitbach">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="" itemprop="url" class="post-author-name">
+                  <span itemprop="name">andreas-breitbach</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">October 03, 2016</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder"></span>. 2016. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = 'andreas-breitbach'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//andreas-breitbach.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1475513147289"></script>
+
+
+  </body>
+</html>
