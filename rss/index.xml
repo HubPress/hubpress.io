@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Oct 2016 16:45:47 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Funktionsdesign]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Oct 2016 16:46:19 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Funktionsdesign]]></title><description><![CDATA[<div class="sect1">
 <h2 id="__bersicht">Übersicht</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -131,7 +131,7 @@ Hierbei muss beachtet werden:</p>
 <p>Strukturiert und standardisiert schreiben mit Funktionalen Einheiten, Anonymous; in: Das ABZ, 5-7/1997, online: <a href="http://www.tanner.de/abz/1535/05071999/" class="bare">http://www.tanner.de/abz/1535/05071999/</a></p>
 </div>
 </div>
-</div>]]></description><link>https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html</link><guid isPermaLink="true">https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html</guid><category><![CDATA[funktionsdesign]]></category><pubDate>Mon, 03 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div class="sect2">
+</div>]]></description><link>https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html</link><guid isPermaLink="true">https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html</guid><category><![CDATA[funktionsdesign]]></category><category><![CDATA[ grundlagen]]></category><pubDate>Mon, 03 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_wodrum_gehts">Wodrum gehts?</h3>
 <div class="ulist">
 <ul>
