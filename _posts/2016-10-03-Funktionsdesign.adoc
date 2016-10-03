@@ -54,7 +54,7 @@ Hierbei muss beachtet werden:
 6. Zusammenführen der Funktionalen Elemente im verwendeten Tool. Hier werden die angebotenen Möglichkeiten abgeglichen: Wie können die Festlegungen am sinnvollsten implementiert werden?
 7. Implementierung, Schulung, Erstellen von Musterdokumenten
 
-.Das Pumpen-Beispiel, Teil 2: Die Funktionen der einzelnen Sätze wurde zugeordnet
+.Das Pumpen-Beispiel, Teil 2: Die Funktionen der einzelnen Sätze wurden zugeordnet
 image::funktionsdesign-2.png[Das Pumpen-Beispiel, Teil 2]
 
 .Das Pumpen-Beispiel, Teil 3: Die Anleitung ist in einer sinnvollen Reihenfolge angeordnet: Warnung vor der Anweisung, wie die Punmpe in Betrieb zu nehmen ist.
