@@ -1,6 +1,7 @@
 = Funktionsdesign
 Andreas Breitbach <andreas.breitbach@gmail.com>
-:hp-tag: funktionsdesign,
+:published-at: 03-10-2016
+:hp-tags: funktionsdesign,
 
 :toc:
 :imagesdir: images/:
