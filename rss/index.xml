@@ -1,4 +1,137 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 02 Oct 2016 14:26:48 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Oct 2016 16:45:47 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Funktionsdesign]]></title><description><![CDATA[<div class="sect1">
+<h2 id="__bersicht">Übersicht</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Funktionsdesign ist eine Methode zur standardisierten Textproduktion – dies kann Dokumentarten aus der Technischen Dokumentation betreffen, aber auch Firmenkommunikation mit Kunden/Lieferanten, Lexikonartikel usw. Begrifflich muss hier zuwischen der <em>Methode</em> "Funktionsdesign" und den durch diese Methode für den Einsatz entwickelten <em>Standards</em>, dem implementiertem Funktionsdesign, getrennt werden.
+In der Technischen Dokumentation profitieren Autoren, Firmen und Nutzer aus diversen Gründen vom Funktionsdesign:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Es erleichtert und beschleunigt das Schreiben, weil viele Entscheidungen einmal gefällt werden und dann nur noch ausgeführt werden müssen. Der Technische Redakteur muss sich nicht mehr damit befassen, ob und wie er bestimmte Navigationselemente auszeichnet, die Entscheidung wurde durch das Funktionsdesign schon übernommen.</p>
+</li>
+<li>
+<p>Bei standardisierten Texten weiß der Leser, was ihn wo erwartet. Er kann den Text einfacher nutzen, und liest so hoffentlich öfter in der Anleitung nach (RTFM!).</p>
+</li>
+<li>
+<p>Standardisierte Texte machen das Übersetzen einfacher.</p>
+</li>
+<li>
+<p>Alle diese Punkte führen dazu, dass die Produktion der Anleitung Geld spart.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nun folgt eine Übersicht zur Umsetzung eines Funktionsdesigns sowie eine Übersicht zu den verwendeten Ebenen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_umsetzung_eines_funktionsdesigns">Umsetzung eines Funktionsdesigns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Theorie des Funktionsdesigns basiert auf der Sprechakt-Theorie der Linguistik. Demnach handelt es sich bei sprachlichen Äußerungen um Handlungen, mit denen der Adressat angewiesen/informiert/gewarnt usw. wird. In "normalen" Texten geht es dabei quer durch: Anweisungen, Informationen, Warnungen sind bunt gemischt, wie in der nebenstehenden Abbildung.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://andreas-breitbach.github.io/images/funktionsdesign-1.png" alt="Das Pumpen-Beispiel" width="Teil 1">
+</div>
+<div class="title">Abbildung 1. Das Pumpen-Beispiel, Teil 1</div>
+</div>
+<div class="paragraph">
+<p>Dieses Chaos lässt sich in folgenden Schritten entflechten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Analyse und ggf. Neudefinition, wie bislang mit Informationen umgegangen wurde (Generierung, Verteilung, Archivierung). Hiermit soll sichergestellt werden, dass keine alten und überflüssigen Informationsprodukte neu verpackt werden.</p>
+</li>
+<li>
+<p>Bewertung vorhandener Dokumentarten und Analyse zukünftiger Anforderungen. Hierbei soll auch nach ersten Ansätzen zur Standardisierung gesucht werden.</p>
+</li>
+<li>
+<p>Klassifizierung der relevanten Dokumentarten. In diesem Schritt wird vom Nutzer her gefragt: Welche Dokumente benötigt er?</p>
+</li>
+<li>
+<p>Defintion der Funktionalen Elemente. In diesem Schritt wird festgelegt, wie die zukünftigen Dokumente aussehen sollen. Wie werden Warnhinweise, Inhaltsverzeichnisse, Abbildungen usw. gestaltet, ausgezeichnet usw.?
+Hierbei muss beachtet werden:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Welche Inhalte sollen mit dem Dokument dargestellt werden?</p>
+</li>
+<li>
+<p>Wie sieht die Zielgruppe aus?</p>
+</li>
+<li>
+<p>Was soll kommuniziert werden? Handelt es sich um eine Wartungs- oder Bedienungsanleitung?</p>
+</li>
+<li>
+<p>Wie lässt sich das Wissen am besten darstellen?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dokumentation der in 4. entstandenen Funktionalen Elemente. In einem Redaktionsleitfaden werden die festgelegten Funktionalen Elemente dokumentiert, um eine konsistente Anwendung über die ganze Redaktion sicherzustellen.</p>
+</li>
+<li>
+<p>Zusammenführen der Funktionalen Elemente im verwendeten Tool. Hier werden die angebotenen Möglichkeiten abgeglichen: Wie können die Festlegungen am sinnvollsten implementiert werden?</p>
+</li>
+<li>
+<p>Implementierung, Schulung, Erstellen von Musterdokumenten</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://andreas-breitbach.github.io/images/funktionsdesign-2.png" alt="Das Pumpen-Beispiel" width="Teil 2">
+</div>
+<div class="title">Abbildung 2. Das Pumpen-Beispiel, Teil 2: Die Funktionen der einzelnen Sätze wurden zugeordnet</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://andreas-breitbach.github.io/images/funktionsdesign-3.png" alt="Das Pumpen-Beispiel" width="Teil 3">
+</div>
+<div class="title">Abbildung 3. Das Pumpen-Beispiel, Teil 3: Die Anleitung ist in einer sinnvollen Reihenfolge angeordnet: Warnung vor der Anweisung, wie die Punmpe in Betrieb zu nehmen ist.</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_die_verschiedenen_ebenen_eines_dokuments">Die verschiedenen Ebenen eines Dokuments</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Funktionsdesign hat ein Dokument verschiedene Ebenen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dokument/Informationsprodukt: Dies meint das gesamte Dokument: die Bedienungsanleitung, eine evtl. vorhandene Schnelleinsteiger-Anleitung, eine Aufstell-Anleitung usw. Für diese Ebene muss eine Makrostruktur angelegt werden, in der alle anfallenden Inhalte platziert und vom Nutzer gefunden werden können.</p>
+</li>
+<li>
+<p>Sequenzmuster: Dies sind die Elemente, aus denen eine Anleitung oder ein Dokument besteht: Einführung, Handlungsanweisungen, Angaben zu Zubehör und Technischen Daten, etc. Idealtypisch sind diese in jedem Dokument identisch aufgebaut. Innerhalb dieser Sequenzmuster bewegen sich die Funktionalen Einheiten.</p>
+</li>
+<li>
+<p>Funktionale Einheiten: Dies sind u.a. Titel, Ziel/Ergebnisangaben, Warnungen, Hinweise, etc. Formulierungsmuster sollten hier möglichst präzise festgelegt werden; für jede Funktionale Einheit sollte klar benannt sein, wann sie zu verwenden ist und wann nicht.</p>
+</li>
+<li>
+<p>Auszeichnungselement: Meldungen, die ein Gerät oder eine Software ausgibt, müssen entsprechend gekennzeichnet werden. <code>Teilnehmer nicht erreichbar</code> ist ein Beispiel für eine Meldung, die ein Telefon ausgeben könnte.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quellen">Quellen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Funktionsdesign® – methodische Entwicklung von Standards, Jürgen Muthig/Robert Schäflein-Armbruster; in: Standardisierungsmethoden für die Technische Dokumentation, Jürgen Muthig (Hrsg.)</p>
+</div>
+<div class="paragraph">
+<p>Strukturiert und standardisiert schreiben mit Funktionalen Einheiten, Anonymous; in: Das ABZ, 5-7/1997, online: <a href="http://www.tanner.de/abz/1535/05071999/" class="bare">http://www.tanner.de/abz/1535/05071999/</a></p>
+</div>
+</div>
+</div>]]></description><link>https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html</link><guid isPermaLink="true">https://andreas-breitbach.github.io/2016/10/03/Funktionsdesign.html</guid><category><![CDATA[funktionsdesign]]></category><pubDate>Mon, 03 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Übersicht Virtualisierung]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_wodrum_gehts">Wodrum gehts?</h3>
 <div class="ulist">
 <ul>
