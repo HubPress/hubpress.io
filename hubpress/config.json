@@ -4,7 +4,11 @@
     "repositoryName": "remi-hernandez.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Pipou"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "casper"
+    "name": "ghoster"
   }
 }
