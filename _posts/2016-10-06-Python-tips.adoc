@@ -1,7 +1,7 @@
-= Hello world
+= Python tips
 
-pipou le pipou 
+==== List tricks
 
-== Level1
-=== top
-== tutou
+l = ["a", "b", "c"] +
+print (l[-1]) +
+"c"
