@@ -2,6 +2,11 @@
 
 ==== List tricks
 
-l = ["a", "b", "c"] +
-print (l[-1]) +
+[source,python]
+----
+l = ["a", "b", "c"] #<1>
+print (l[-1]) #<2>
 "c"
+----
+<1> Set list
+<2> Get the last element of the list
