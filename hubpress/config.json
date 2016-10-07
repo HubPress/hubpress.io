@@ -4,7 +4,9 @@
     "repositoryName": "remi-hernandez.github.io",
     "branch": "master"
   },
-  "site": {},
+  "site": {
+    "logo": "viral-marketing.png"
+  },
   "socialnetwork": {
     "email": ""
   },
