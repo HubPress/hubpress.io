@@ -2,10 +2,14 @@
 
 ==== List tricks
 
+How to get the last element of a list and why not go back in the list
+
 [source,python]
 ----
 l = ["a", "b", "c"] #<1>
 print (l[-1]) #<2>
+print (l[-2]) #<3>
 ----
 <1> Set list
 <2> Get the last element of the list which will print "c"
+<3> Will print "b" 
