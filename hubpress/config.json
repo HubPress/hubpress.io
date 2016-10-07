@@ -5,7 +5,8 @@
     "branch": "master"
   },
   "site": {
-    "logo": "viral-marketing.png"
+    "logo": "viral-marketing.png",
+    "cover": "banner.jpg"
   },
   "socialnetwork": {
     "email": "",
