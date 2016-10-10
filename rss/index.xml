@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 10 Oct 2016 11:26:19 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python tips]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 10 Oct 2016 12:12:45 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python tips]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_what_s_here">What&#8217;s here ?</h4>
 <div class="paragraph">
 <p>Here you will find some tips n tricks around python.</p>
 </div>
-<div class="sect5">
-<h6 id="_list_tricks">List tricks</h6>
-<div class="paragraph">
-<p>How to get the last element of a list and why not go back in the list</p>
 </div>
+<div class="sect3">
+<h4 id="_list_tricks">List tricks</h4>
+<div class="sect5">
+<h6 id="_get_the_last_elem_or_go_back_in_a_list">Get the last elem or go back in a list</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">l = ["a", "b", "c"] <i class="conum" data-value="1"></i><b>(1)</b>
@@ -33,7 +33,25 @@ print (l[-2]) <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_ternary_in_python">Ternary in python</h6>
+<h6 id="_remove_duplicates_in_a_list">Remove duplicates in a list</h6>
+<div class="paragraph">
+<p>Using the builtin set() {Sets are unordered collections of distinct objects} we can remove all the duplicates and to go back in a list we can use the list() function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l1 = [1, 2, 3, 1, 2, 3]
+&gt;&gt;&gt; l1 = set(l1)
+&gt;&gt;&gt; l1
+set([1, 2, 3])
+&gt;&gt;&gt; l1 = list(l1)
+&gt;&gt;&gt; l1
+[1, 2, 3]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ternary_in_python">Ternary in python</h4>
 <div class="paragraph">
 <p>Added in 2.5 version of python :</p>
 </div>
@@ -48,7 +66,6 @@ print (result) # will print 2 for b
 
 result = a if a &lt; b else b
 print (result) # will print 1 for a</code></pre>
-</div>
 </div>
 </div>
 </div>]]></description><link>https://remi-hernandez.github.io/2016/10/06/Python-tips.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/06/Python-tips.html</guid><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Thu, 06 Oct 2016 00:00:00 GMT</pubDate></item></channel></rss>
