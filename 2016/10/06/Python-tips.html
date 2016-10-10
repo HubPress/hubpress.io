@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://remi-hernandez.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//remi-hernandez.github.io/themes/casper/assets/css/screen.css?v=1476098779857" />
+    <link rel="stylesheet" type="text/css" href="//remi-hernandez.github.io/themes/casper/assets/css/screen.css?v=1476101565408" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://remi-hernandez.github.io/2016/10/06/Python-tips.html" />
@@ -20,11 +20,11 @@
     
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Python tips" />
-    <meta property="og:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around python. List tricks How to get the last element of a list and why not go back in the list l &#x3D; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] (1) print (l[-1]) (2) print (l[-2]) (3) 1 Set list 2" />
+    <meta property="og:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around python. List tricks Get the last elem or go back in a list l &#x3D; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] (1) print (l[-1]) (2) print (l[-2]) (3) 1 Set list 2 Get the last element of the list" />
     <meta property="og:url" content="https://remi-hernandez.github.io/2016/10/06/Python-tips.html" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Python tips" />
-    <meta name="twitter:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around python. List tricks How to get the last element of a list and why not go back in the list l &#x3D; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] (1) print (l[-1]) (2) print (l[-2]) (3) 1 Set list 2" />
+    <meta name="twitter:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around python. List tricks Get the last elem or go back in a list l &#x3D; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] (1) print (l[-1]) (2) print (l[-2]) (3) 1 Set list 2 Get the last element of the list" />
     <meta name="twitter:url" content="https://remi-hernandez.github.io/2016/10/06/Python-tips.html" />
     
     <script type="application/ld+json">
@@ -65,11 +65,11 @@ null
 <div class="paragraph">
 <p>Here you will find some tips n tricks around python.</p>
 </div>
-<div class="sect5">
-<h6 id="_list_tricks">List tricks</h6>
-<div class="paragraph">
-<p>How to get the last element of a list and why not go back in the list</p>
 </div>
+<div class="sect3">
+<h4 id="_list_tricks">List tricks</h4>
+<div class="sect5">
+<h6 id="_get_the_last_elem_or_go_back_in_a_list">Get the last elem or go back in a list</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">l = ["a", "b", "c"] <i class="conum" data-value="1"></i><b>(1)</b>
@@ -95,7 +95,25 @@ print (l[-2]) <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_ternary_in_python">Ternary in python</h6>
+<h6 id="_remove_duplicates_in_a_list">Remove duplicates in a list</h6>
+<div class="paragraph">
+<p>Using the builtin set() {Sets are unordered collections of distinct objects} we can remove all the duplicates and to go back in a list we can use the list() function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l1 = [1, 2, 3, 1, 2, 3]
+&gt;&gt;&gt; l1 = set(l1)
+&gt;&gt;&gt; l1
+set([1, 2, 3])
+&gt;&gt;&gt; l1 = list(l1)
+&gt;&gt;&gt; l1
+[1, 2, 3]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ternary_in_python">Ternary in python</h4>
 <div class="paragraph">
 <p>Added in 2.5 version of python :</p>
 </div>
@@ -110,7 +128,6 @@ print (result) # will print 2 for b
 
 result = a if a &lt; b else b
 print (result) # will print 1 for a</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -183,8 +200,8 @@ print (result) # will print 1 for a</code></pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1476098779857"></script>
-    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/index.js?v=1476098779857"></script>
+    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1476101565408"></script>
+    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/index.js?v=1476101565408"></script>
 
 </body>
 </html>
