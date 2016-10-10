@@ -5,11 +5,9 @@
 
 Here you will find some tips n tricks around python.
 
-====== List tricks
+==== List tricks
 
-
-How to get the last element of a list and why not go back in the list
-
+====== Get the last elem or go back in a list
 [source,python]
 ----
 l = ["a", "b", "c"] #<1>
@@ -20,7 +18,22 @@ print (l[-2]) #<3>
 <2> Get the last element of the list which will print "c"
 <3> Will print "b" 
 
-====== Ternary in python
+====== Remove duplicates in a list
+
+Using the builtin set() {Sets are unordered collections of distinct objects} we can remove all the duplicates and to go back in a list we can use the list() function.
+
+[source,python]
+----
+>>> l1 = [1, 2, 3, 1, 2, 3]
+>>> l1 = set(l1)
+>>> l1
+set([1, 2, 3])
+>>> l1 = list(l1)
+>>> l1
+[1, 2, 3]
+----
+
+==== Ternary in python
 Added in 2.5 version of python :
 
 [source,python]
