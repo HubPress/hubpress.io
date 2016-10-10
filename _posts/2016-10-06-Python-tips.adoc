@@ -1,6 +1,12 @@
 = Python tips
 
-==== List tricks
+
+==== What's here ?
+
+Here you will find some tips n tricks around python.
+
+====== List tricks
+
 
 How to get the last element of a list and why not go back in the list
 
@@ -13,3 +19,20 @@ print (l[-2]) #<3>
 <1> Set list
 <2> Get the last element of the list which will print "c"
 <3> Will print "b" 
+
+====== Ternary in python
+Added in 2.5 version of python :
+
+[source,python]
+----
+a = 1
+b = 2
+result = 0
+
+result = a if a > b else b
+print (result) # will print 2 for b
+
+result = a if a < b else b
+print (result) # will print 1 for a
+
+----
