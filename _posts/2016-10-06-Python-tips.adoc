@@ -49,3 +49,18 @@ result = a if a < b else b
 print (result) # will print 1 for a
 
 ----
+
+==== Syntax * 
+
+The single star * unpacks the sequence/collection into positional arguments.
+
+
+[source,python]
+----
+def sum(a, b):
+    return a + b
+
+values = (1, 2)
+
+s = sum(*values) # will return the sum of 1 and 2
+----
