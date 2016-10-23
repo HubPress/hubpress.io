@@ -6,7 +6,7 @@
   },
   "site": {
     "logo": "",
-    "cover": "image::http://github.com/remi-hernandez/hubpress/images/banner.jpg[]"
+    "cover": "image::banner.jpg[banner]"
   },
   "socialnetwork": {
     "email": "",
