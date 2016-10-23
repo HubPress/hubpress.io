@@ -5,7 +5,7 @@
     "branch": "master"
   },
   "site": {
-    "logo": "image::research.png[research, 50, 50, float=\"center\", align=\"center\"]",
+    "logo": "image::research.png[]",
     "cover": "image::banner.jpg[banner]"
   },
   "socialnetwork": {
