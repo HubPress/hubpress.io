@@ -5,6 +5,7 @@
     "branch": "master"
   },
   "site": {
+    "title": "Pipou's world",
     "logo": "image::http://remi-hernandez.github.io/hubpress/images/research.png[]",
     "cover": "image::banner.jpg[banner]"
   },
