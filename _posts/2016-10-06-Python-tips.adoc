@@ -1,5 +1,5 @@
 = Python tips
-
+:hp-tags: python, tips
 
 ==== What's here ?
 
