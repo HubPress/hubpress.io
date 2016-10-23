@@ -9,7 +9,8 @@
     "description": "__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.",
     "logo": "http://image.flaticon.com/icons/svg/155/155213.svg",
     "cover": "",
-    "postsPerPage": "5"
+    "postsPerPage": "5",
+    "googleAnalytics": "UA-86173845-1"
   },
   "socialnetwork": {
     "email": "",
