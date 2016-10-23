@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://remi-hernandez.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//remi-hernandez.github.io/themes/casper/assets/css/screen.css?v=1477227767209" />
+    <link rel="stylesheet" type="text/css" href="//remi-hernandez.github.io/themes/casper/assets/css/screen.css?v=1477228338586" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html" />
@@ -21,7 +21,7 @@
     <meta property="og:site_name" content="Pipou&#x27;s world" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Google maps zoom theory and example with {C++/qt ; QWT}" />
-    <meta property="og:description" content="Theory Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates. qwt plot example : Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but" />
+    <meta property="og:description" content="Theory Recently I had to set up a zoom on a qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates. qwt plot example : Open maps and test, put your cursor on a city and zoom, all the map will be zoomed" />
     <meta property="og:url" content="https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html" />
     <meta property="article:tag" content="c++" />
     <meta property="article:tag" content=" qwt" />
@@ -29,7 +29,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Google maps zoom theory and example with {C++/qt ; QWT}" />
-    <meta name="twitter:description" content="Theory Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates. qwt plot example : Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but" />
+    <meta name="twitter:description" content="Theory Recently I had to set up a zoom on a qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates. qwt plot example : Open maps and test, put your cursor on a city and zoom, all the map will be zoomed" />
     <meta name="twitter:url" content="https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html" />
     
     <script type="application/ld+json">
@@ -68,7 +68,7 @@ null
             <div class="sect4">
 <h5 id="_theory">Theory</h5>
 <div class="paragraph">
-<p>Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates.</p>
+<p>Recently I had to set up a zoom on a qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates.</p>
 </div>
 <div class="paragraph">
 <p>qwt plot example :</p>
@@ -80,11 +80,11 @@ null
 <p>Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but the city will always be under your cursor.</p>
 </div>
 <div class="paragraph">
-<p>The solution is easy the main idea is to reset your scales with a factor (ex : 0.9 or 1.1) and to apply a part of the factor by using the position of the cursor in order to get the zoom or unzoom.</p>
+<p>The solution is easy, the main idea is to reset your scales with a factor (ex : 0.9 or 1.1) and to apply a part of the factor by using the position of the cursor in order to get the zoom or unzoom.</p>
 </div>
 <div class="paragraph">
 <p>We will assume that the x axis is the horizontal and y the vertical.
-So if we want to zoom on the point which is at (1, 2.5)  [(x, y)] we will</p>
+So if we want to zoom on the point which is at (1, 2.5)  [(x, y)] we will :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -92,7 +92,7 @@ So if we want to zoom on the point which is at (1, 2.5)  [(x, y)] we will</p>
 <p>get the position of our cursor on the widget (x_cursor, y_cursor)</p>
 </li>
 <li>
-<p>define the percentage (x_max, y_max) which are the percentage of the x_cursor position and the x_cursor_max position (size max of the widget) and the same for y_percent with y_cursor and y_cursor_max.</p>
+<p>define the percentage (x_percent, y_percent) which are the percentage of the x_cursor position and the x_cursor_max position (size max of the widget) and the same for y_percent with y_cursor and y_cursor_max.</p>
 </li>
 <li>
 <p>we will compute the new x scale with x_percent of the factor on a side and 100 - x_percent of the factor for the other side and do the same for the y scale with y_percent / the factor.</p>
@@ -249,8 +249,8 @@ void Gr_PlotMagnifier::widgetWheelEvent(QWheelEvent *WheelEvent)
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1477227767209"></script>
-    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/index.js?v=1477227767209"></script>
+    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1477228338586"></script>
+    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/index.js?v=1477228338586"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
