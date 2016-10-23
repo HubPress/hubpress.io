@@ -5,7 +5,7 @@
     "branch": "master"
   },
   "site": {
-    "logo": "image::http://github.com/remi-hernandez/hubpress/images/research.png[]",
+    "logo": "image::http://remi-hernandez.github.io/hubpress/images/research.png[]",
     "cover": "image::banner.jpg[banner]"
   },
   "socialnetwork": {
