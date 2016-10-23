@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Google maps zoom theory and example with {C++/qt ; QWT}</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://remi-hernandez.github.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//remi-hernandez.github.io/themes/casper/assets/css/screen.css?v=1477226312029" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Google maps zoom theory and example with {C++/qt ; QWT}" />
+    <meta property="og:description" content="Theory Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates. qwt plot example : Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but" />
+    <meta property="og:url" content="https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Google maps zoom theory and example with {C++/qt ; QWT}" />
+    <meta name="twitter:description" content="Theory Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates. qwt plot example : Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but" />
+    <meta name="twitter:url" content="https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://remi-hernandez.github.io/rss/" />
+</head>
+<body class="post-template nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Google maps zoom theory and example with {C++/qt ; QWT}</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-10-23">23 October 2016</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="sect4">
+<h5 id="_theory">Theory</h5>
+<div class="paragraph">
+<p>Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates.</p>
+</div>
+<div class="paragraph">
+<p>qwt plot example :</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://remi-hernandez.github.io/images/qwt_plot.png" alt="qwt plot" width="500" height="500"></span></p>
+</div>
+<div class="paragraph">
+<p>Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but the city will always be under your cursor.</p>
+</div>
+<div class="paragraph">
+<p>The solution is easy the main idea is to reset your scales with a factor (ex : 0.9 or 1.1) and to apply a part of the factor by using the position of the cursor in order to get the zoom or unzoom.</p>
+</div>
+<div class="paragraph">
+<p>We will assume that the x axis is the horizontal and y the vertical.
+So if we want to zoom on the point which is at (1, 2.5)  [(x, y)] we will</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>get the position of our cursor on the widget (x_cursor, y_cursor)</p>
+</li>
+<li>
+<p>define the percentage (x_max, y_max) which are the percentage of the x_cursor position and the x_cursor_max position (size max of the widget) and the same for y_percent with y_cursor and y_cursor_max.</p>
+</li>
+<li>
+<p>we will compute the new x scale with x_percent of the factor on a side and 100 - x_percent of the factor for the other side and do the same for the y scale with y_percent / the factor.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After processing all of this we will have the x axis scale [0.2, 4] and the y axis scale [0.4, 8.5].</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_with_c_qt_and_qwt_library">Code with c++/qt and qwt library :</h4>
+<div class="paragraph">
+<p>This code is based on the <strong>PlotMagnifier::rescale(double factor);</strong> function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">void My_PlotMagnifier::rescale_on_cursor(double factor,      // the rescale factor (0.9 or 1.1)
+                                         int x_cursor,       // the x, y position of the cursor
+                                         int y_cursor,
+                                         QSize parent_size)  // the max size of the widget
+{
+    QwtPlot* plt = plot();
+
+    // max size of the widget
+    float x_cursor_max = parent_size.width();
+    float y_cursor_max = parent_size.height();
+
+    // percentage position of the cursor in the widget
+    float x_percent = (x_cursor * 100) / x_cursor_max;
+    float y_percent = (y_cursor * 100) / y_cursor_max;
+
+    // will be the new lowerBound and upperBound of the scales
+    float delta_1 = 0;
+    float delta_2 = 0;
+
+    _plotScaleEngine-&gt;zoomed(true);
+    bool doReplot = false;
+    const bool autoReplot = plt-&gt;autoReplot();
+    plt-&gt;setAutoReplot( false );
+
+    for ( int axisId = 0; axisId &lt; QwtPlot::axisCnt; axisId++ )
+    {
+        const QwtScaleDiv &amp;scaleDiv = plt-&gt;axisScaleDiv( axisId );
+        if ( isAxisEnabled( axisId ) )
+        {
+            double center = scaleDiv.lowerBound() + scaleDiv.range() / 2;	// Here we set the center of the scale
+            const double width_2 = scaleDiv.range() / 2 * factor;			// the width wanted between lowerBound (or upper) and the center
+            float interval = (scaleDiv.range() / 2) - width_2;				// the interval between the old width and the wanted width
+
+            if (axisId == 0) 		// y - left
+            {
+                delta_1 = (center - width_2) + (((100 - y_percent) * interval) / 100) - interval;
+                delta_2 = (center + width_2) - ((y_percent * interval) / 100) + interval;
+            }
+            else if (axisId == 2) 	// x - bottom
+            {
+                delta_1 = (center - width_2) + (((x_percent * interval) / 100)) - interval;
+                delta_2 = (center + width_2) - (((100 - x_percent) * interval) / 100) + interval;
+            }
+            else
+            {
+                delta_1 = 0;
+                delta_2 = 0;
+            }
+            plt-&gt;setAxisScale(axisId, delta_1, delta_2);
+            doReplot = true;
+        }
+    }
+    plt-&gt;setAutoReplot( autoReplot );
+    if ( doReplot )
+        plt-&gt;replot();
+}
+
+void Gr_PlotMagnifier::widgetWheelEvent(QWheelEvent *WheelEvent)
+{
+    _plotScaleEngine-&gt;getPlot()-&gt;select();
+    QSize parent_size = this-&gt;parentWidget()-&gt;size();
+
+    if (WheelEvent-&gt;delta() &gt; 0) 	// unzoom
+        rescale_on_cursor(0.9, WheelEvent-&gt;x(), WheelEvent-&gt;y(), parent_size);
+    else 							// zoom
+        rescale_on_cursor(1.1, WheelEvent-&gt;x(), WheelEvent-&gt;y(), parent_size);
+}</code></pre>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://remi-hernandez.github.io/author/remi-hernandez/" style="background-image: url(https://avatars.githubusercontent.com/u/1169550?v&#x3D;3)"><span class="hidden">Remi Hernandez's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://remi-hernandez.github.io/author/remi-hernandez/">Remi Hernandez</a></h4>
+
+                    <p>Read <a href="https://remi-hernandez.github.io/author/remi-hernandez/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Toulouse</span>
+                    <span class="author-link icon-link"><a href="http://remi-hernandez.github.io">http://remi-hernandez.github.io</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Google%20maps%20zoom%20theory%20and%20example%20with%20%7BC%2B%2B%2Fqt%20%3B%20QWT%7D&amp;url=https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://remi-hernandez.github.io"></a> &copy; 2016</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1477226312029"></script>
+    <script type="text/javascript" src="//remi-hernandez.github.io/themes/casper/assets/js/index.js?v=1477226312029"></script>
+
+</body>
+</html>
