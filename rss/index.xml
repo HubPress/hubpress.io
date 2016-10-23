@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 14 Oct 2016 11:17:03 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python tips]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 23 Oct 2016 12:38:32 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Google maps zoom theory and example with {C++/qt ; QWT}]]></title><description><![CDATA[<div class="sect4">
+<h5 id="_theory">Theory</h5>
+<div class="paragraph">
+<p>Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates.</p>
+</div>
+<div class="paragraph">
+<p>qwt plot example :</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://remi-hernandez.github.io/images/qwt_plot.png" alt="qwt plot" width="500" height="500"></span></p>
+</div>
+<div class="paragraph">
+<p>Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but the city will always be under your cursor.</p>
+</div>
+<div class="paragraph">
+<p>The solution is easy the main idea is to reset your scales with a factor (ex : 0.9 or 1.1) and to apply a part of the factor by using the position of the cursor in order to get the zoom or unzoom.</p>
+</div>
+<div class="paragraph">
+<p>We will assume that the x axis is the horizontal and y the vertical.
+So if we want to zoom on the point which is at (1, 2.5)  [(x, y)] we will</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>get the position of our cursor on the widget (x_cursor, y_cursor)</p>
+</li>
+<li>
+<p>define the percentage (x_max, y_max) which are the percentage of the x_cursor position and the x_cursor_max position (size max of the widget) and the same for y_percent with y_cursor and y_cursor_max.</p>
+</li>
+<li>
+<p>we will compute the new x scale with x_percent of the factor on a side and 100 - x_percent of the factor for the other side and do the same for the y scale with y_percent / the factor.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After processing all of this we will have the x axis scale [0.2, 4] and the y axis scale [0.4, 8.5].</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_with_c_qt_and_qwt_library">Code with c++/qt and qwt library :</h4>
+<div class="paragraph">
+<p>This code is based on the <strong>PlotMagnifier::rescale(double factor);</strong> function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">void My_PlotMagnifier::rescale_on_cursor(double factor,      // the rescale factor (0.9 or 1.1)
+                                         int x_cursor,       // the x, y position of the cursor
+                                         int y_cursor,
+                                         QSize parent_size)  // the max size of the widget
+{
+    QwtPlot* plt = plot();
+
+    // max size of the widget
+    float x_cursor_max = parent_size.width();
+    float y_cursor_max = parent_size.height();
+
+    // percentage position of the cursor in the widget
+    float x_percent = (x_cursor * 100) / x_cursor_max;
+    float y_percent = (y_cursor * 100) / y_cursor_max;
+
+    // will be the new lowerBound and upperBound of the scales
+    float delta_1 = 0;
+    float delta_2 = 0;
+
+    _plotScaleEngine-&gt;zoomed(true);
+    bool doReplot = false;
+    const bool autoReplot = plt-&gt;autoReplot();
+    plt-&gt;setAutoReplot( false );
+
+    for ( int axisId = 0; axisId &lt; QwtPlot::axisCnt; axisId++ )
+    {
+        const QwtScaleDiv &amp;scaleDiv = plt-&gt;axisScaleDiv( axisId );
+        if ( isAxisEnabled( axisId ) )
+        {
+            double center = scaleDiv.lowerBound() + scaleDiv.range() / 2;	// Here we set the center of the scale
+            const double width_2 = scaleDiv.range() / 2 * factor;			// the width wanted between lowerBound (or upper) and the center
+            float interval = (scaleDiv.range() / 2) - width_2;				// the interval between the old width and the wanted width
+
+            if (axisId == 0) 		// y - left
+            {
+                delta_1 = (center - width_2) + (((100 - y_percent) * interval) / 100) - interval;
+                delta_2 = (center + width_2) - ((y_percent * interval) / 100) + interval;
+            }
+            else if (axisId == 2) 	// x - bottom
+            {
+                delta_1 = (center - width_2) + (((x_percent * interval) / 100)) - interval;
+                delta_2 = (center + width_2) - (((100 - x_percent) * interval) / 100) + interval;
+            }
+            else
+            {
+                delta_1 = 0;
+                delta_2 = 0;
+            }
+            plt-&gt;setAxisScale(axisId, delta_1, delta_2);
+            doReplot = true;
+        }
+    }
+    plt-&gt;setAutoReplot( autoReplot );
+    if ( doReplot )
+        plt-&gt;replot();
+}
+
+void Gr_PlotMagnifier::widgetWheelEvent(QWheelEvent *WheelEvent)
+{
+    _plotScaleEngine-&gt;getPlot()-&gt;select();
+    QSize parent_size = this-&gt;parentWidget()-&gt;size();
+
+    if (WheelEvent-&gt;delta() &gt; 0) 	// unzoom
+        rescale_on_cursor(0.9, WheelEvent-&gt;x(), WheelEvent-&gt;y(), parent_size);
+    else 							// zoom
+        rescale_on_cursor(1.1, WheelEvent-&gt;x(), WheelEvent-&gt;y(), parent_size);
+}</code></pre>
+</div>
+</div>
+</div>]]></description><link>https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html</guid><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Sun, 23 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Python tips]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_what_s_here">What&#8217;s here ?</h4>
 <div class="paragraph">
 <p>Here you will find some tips n tricks around python.</p>
