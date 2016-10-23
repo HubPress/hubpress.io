@@ -1,1 +1,30 @@
 = Google maps zoom theory and example with QWT library
+
+
+===== Theory
+
+Recently I had to set up a zoom on qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates. 
+
+qwt plot example :
+
+image:qwt_plot.png[qwt plot, 500, 500, align="center"]
+
+Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but the city will always be under your cursor. 
+
+The solution is easy the main idea is to reset your scales with a factor (ex : 0.9 or 1.1) and to apply a part of the factor by using the position of the cursor in order to get the zoom or unzoom. 
+
+We will assume that the x axis is the horizontal and y the vertical.
+So if we want to zoom on the point which is at (1, 2.5)  [(x, y)] we will
+
+- get the position of our cursor on the widget (x_cursor, y_cursor)
+- define the percentage (x_max, y_max) which are the percentage of the x_cursor position and the x_cursor_max position (size max of the widget) and the same for y_percent with y_cursor and y_cursor_max.
+- we will compute the new x scale with x_percent of the factor on a side and 100 - x_percent of the factor for the other side and do the same for the y scale with y_percent / the factor.
+
+After processing all of this we will have the x axis scale [0.2, 4] and the y axis scale [0.4, 8.5].
+
+
+
+==== Code with c++/qt and qwt: 
+
+
+
