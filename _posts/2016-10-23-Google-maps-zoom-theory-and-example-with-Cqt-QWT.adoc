@@ -1,4 +1,4 @@
-= Google maps zoom theory and example with QWT library
+= Google maps zoom theory and example with {C++/qt ; QWT}
 
 
 ===== Theory
@@ -24,7 +24,9 @@ After processing all of this we will have the x axis scale [0.2, 4] and the y ax
 
 
 
-==== Code with c++/qt and qwt: 
+==== Code with c++/qt and qwt library : 
+
+
 
 
 
