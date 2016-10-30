@@ -1,0 +1,17 @@
+= C++ tips
+:hp-tags: c++, tips
+
+==== What's here ?
+
+Here you will find some tips n tricks around C++.
+
+
+==== Ternary in cpp
+
+[source,cpp]
+----
+bool test = true;
+
+(test) ? std::cout << "yes" : std::cout << "no"; // will print yes
+
+----
