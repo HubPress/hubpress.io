@@ -48,6 +48,21 @@ print (result) # will print 2 for b
 result = a if a < b else b
 print (result) # will print 1 for a
 
+####
+
+def yes():
+	print "yes"
+	
+def no():
+	print "no"
+	
+yes() if True else no() 
+yes() if False else no()
+
+#result : 
+#>
+#yes
+#no
 ----
 
 ==== Syntax * 
