@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 04 Nov 2016 11:11:13 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Google maps zoom theory and example with {C++/qt ; QWT}]]></title><description><![CDATA[<div class="sect4">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 04 Nov 2016 11:13:38 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Google maps zoom theory and example with {C++/qt ; QWT}]]></title><description><![CDATA[<div class="sect4">
 <h5 id="_theory">Theory</h5>
 <div class="paragraph">
 <p>Recently I had to set up a zoom on a qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates.</p>
@@ -181,6 +181,8 @@ print (result) # will print 2 for b
 result = a if a &lt; b else b
 print (result) # will print 1 for a
 
+<i class="conum" data-value="1"></i><b>(1)</b>
+
 ####
 
 def yes():
@@ -192,11 +194,26 @@ def no():
 yes() if True else no()
 yes() if False else no()
 
-#result :
-#&gt;
-#yes
-#no</code></pre>
+<i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Will output :
+&gt;
+2
+1</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Will output :
+&gt;
+yes
+no</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
