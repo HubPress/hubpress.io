@@ -48,6 +48,8 @@ print (result) # will print 2 for b
 result = a if a < b else b
 print (result) # will print 1 for a
 
+#<1>
+
 ####
 
 def yes():
@@ -59,11 +61,18 @@ def no():
 yes() if True else no() 
 yes() if False else no()
 
-#result : 
-#>
-#yes
-#no
+#<2>
+
 ----
+<1> Will output : 
+>  
+2
+1
+
+<2> Will output :
+>
+yes
+no
 
 ==== Syntax * 
 
