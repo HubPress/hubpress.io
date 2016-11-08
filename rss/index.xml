@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Brizio]]></title><description><![CDATA[Front-End Software Developer]]></description><link>https://jbrizio.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 24 Sep 2016 19:15:54 GMT</lastBuildDate><atom:link href="https://jbrizio.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pure CSS Image Loader]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Brizio]]></title><description><![CDATA[Front-End Software Developer]]></description><link>https://jbrizio.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 08 Nov 2016 19:01:19 GMT</lastBuildDate><atom:link href="https://jbrizio.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Automate task with Gulp]]></title><description><![CDATA[<div class="paragraph">
+<p>On the next lines, I will bring 3 advantages of use Gulp in your project:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Easy to use: After of run some commands, you can have all the environment running.</p>
+</li>
+<li>
+<p>Powerful: You count with more of 2180 plugins available to use totally free.</p>
+</li>
+<li>
+<p>Easy to Learn: After of read the initial getting started guide, you are ready to run your firsts tasks.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>An example of these advantages, is the following shortcode that allows you to run a local server on your computer to test your project:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>var gulp = require('gulp'),
+    connect = require('gulp-connect');
+
+gulp.task('webserver', function() {
+  connect.server({
+    livereload: true,
+    port: 8000,
+  });
+});
+
+gulp.task('default', ['webserver']);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re more interesting in learning about this, I recommend taking at look at the official documentation here: <a href="https://github.com/gulpjs/gulp" class="bare">https://github.com/gulpjs/gulp</a></p>
+</div>]]></description><link>https://jbrizio.github.io/2016/11/08/Automate-task-with-Gulp.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/11/08/Automate-task-with-Gulp.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Tue, 08 Nov 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Pure CSS Image Loader]]></title><description><![CDATA[<div class="paragraph">
 <p>Hi, everyone! On this opportunity, I&#8217;m sharing with you a little trick with only CSS to show your images with a progressive blur until the image has been loaded entirely. You can view this effect implemented on Medium or Instagram.</p>
 </div>
 <div class="paragraph">
