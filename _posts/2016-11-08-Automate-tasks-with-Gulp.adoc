@@ -1,4 +1,5 @@
-= Automate task with Gulp
+= Automate tasks with Gulp
+
 When you start to work or initialize a new project, a good choice is to use Gulp to automatize some common tasks.
 Using a task runner like gulp allows you to take repetitive tasks and automate them.
 On the next lines, I will bring 3 advantages of use Gulp in your project:
