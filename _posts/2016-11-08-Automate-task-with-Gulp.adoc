@@ -1,0 +1,26 @@
+= Automate task with Gulp
+When you start to work or initialize a new project, a good choice is to use Gulp to automatize some common tasks.
+Using a task runner like gulp allows you to take repetitive tasks and automate them.
+On the next lines, I will bring 3 advantages of use Gulp in your project:
+
+1. Easy to use: After of run some commands, you can have all the environment running.
+2. Powerful: You count with more of 2180 plugins available to use totally free.
+3. Easy to Learn: After of read the initial getting started guide, you are ready to run your firsts tasks.
+
+An example of these advantages, is the following shortcode that allows you to run a local server on your computer to test your project:
+
+```
+var gulp = require('gulp'),
+    connect = require('gulp-connect');
+ 
+gulp.task('webserver', function() {
+  connect.server({
+    livereload: true,
+    port: 8000,
+  });
+});
+
+gulp.task('default', ['webserver']);
+```
+
+If you're more interesting in learning about this, I recommend taking at look at the official documentation here: https://github.com/gulpjs/gulp
