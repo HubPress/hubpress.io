@@ -1,6 +1,7 @@
 = have fun?
 :published_at: 2016/11/10 13:28
 :hp-tags: hubpress, CMS, opensource
+:hardbreaks:
 
 
 随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。
