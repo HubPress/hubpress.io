@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://angilent.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//angilent.github.io/themes/casper/assets/css/screen.css?v=1478753726587" />
+    <link rel="stylesheet" type="text/css" href="//angilent.github.io/themes/casper/assets/css/screen.css?v=1478753865491" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://angilent.github.io/20161110-1232-showoff-zone-owo.adoc" />
@@ -156,8 +156,8 @@ A = Blog Title is required for the blog post to save. This is one of the most co
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1478753726587"></script>
-    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/index.js?v=1478753726587"></script>
+    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1478753865491"></script>
+    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/index.js?v=1478753865491"></script>
 
 </body>
 </html>
