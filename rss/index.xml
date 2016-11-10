@@ -1,12 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://angilent.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 10 Nov 2016 05:49:31 GMT</lastBuildDate><atom:link href="https://angilent.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[中文标题测试]]></title><description><![CDATA[<div class="paragraph">
-<p>中午标题和标签测试。</p>
-</div>
-<div class="paragraph">
-<p>1，中文标题 + 中文标签 fail</p>
-</div>
-<div class="paragraph">
-<p>good luck</p>
-</div>]]></description><link>https://angilent.github.io20161110-1347.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1347.adoc</guid><category><![CDATA[test]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Thu, 10 Nov 2016 05:47:00 GMT</pubDate></item><item><title><![CDATA[have fun?]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://angilent.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 10 Nov 2016 08:40:19 GMT</lastBuildDate><atom:link href="https://angilent.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[test post]]></title><description><![CDATA[<div class="paragraph">
+<p>this a demo blog</p>
+</div>]]></description><link>https://angilent.github.io20161110-test-post.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-test-post.adoc</guid><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Wed, 09 Nov 2016 16:00:00 GMT</pubDate></item><item><title><![CDATA[have fun?]]></title><description><![CDATA[<div class="paragraph">
 <p>随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。<br>
 这样的应用才应该是云计算时代应该有的应用构建和使用方式。 <strong>简单</strong> <strong>便捷</strong> <strong>实用</strong> 当然如果是<strong>免费</strong>就更佳了。<br>
 正好要开始捡起来写字的活。<br>
@@ -28,7 +22,7 @@
 <p>P.S.<br>
 A = Blog Title is required for the blog post to save. This is one of the most common support cases raised on the issue tracker.<br>
 :) 标题后面的等号要加空格哦。 然后奇迹才会发生。</p>
-</div>]]></description><link>https://angilent.github.io20161110-1328-have-fun.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1328-have-fun.adoc</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ CMS]]></category><category><![CDATA[ opensource]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Thu, 10 Nov 2016 05:28:00 GMT</pubDate></item><item><title><![CDATA[又一个可以显摆的新阵地]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://angilent.github.io20161110-1328-have-fun.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1328-have-fun.adoc</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ CMS]]></category><category><![CDATA[ opensource]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Invalid Date</pubDate></item><item><title><![CDATA[又一个可以显摆的新阵地]]></title><description><![CDATA[<div class="paragraph">
 <p>随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。<br>
 这样的应用才应该是云计算时代应该有的应用构建和使用方式。 <strong>简单</strong> <strong>便捷</strong> <strong>实用</strong> 当然如果是<strong>免费</strong>就更佳了。<br>
 正好要开始捡起来写字的活。<br>
@@ -50,7 +44,7 @@ A = Blog Title is required for the blog post to save. This is one of the most co
 <p>P.S.<br>
 A = Blog Title is required for the blog post to save. This is one of the most common support cases raised on the issue tracker.<br>
 :) 标题后面的等号要加空格哦。 然后奇迹才会发生。</p>
-</div>]]></description><link>https://angilent.github.io20161110-1232.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1232.adoc</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ CMS]]></category><category><![CDATA[ opensource]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Thu, 10 Nov 2016 04:32:00 GMT</pubDate></item><item><title><![CDATA[又一个可以显摆的新阵地]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://angilent.github.io20161110-1232.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1232.adoc</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ CMS]]></category><category><![CDATA[ opensource]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Invalid Date</pubDate></item><item><title><![CDATA[又一个可以显摆的新阵地]]></title><description><![CDATA[<div class="paragraph">
 <p>随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。<br>
 这样的应用才应该是云计算时代应该有的应用构建和使用方式。 <strong>简单</strong> <strong>便捷</strong> <strong>实用</strong> 当然如果是<strong>免费</strong>就更佳了。<br>
 正好要开始捡起来写字的活。<br>
@@ -72,7 +66,7 @@ A = Blog Title is required for the blog post to save. This is one of the most co
 <p>P.S.<br>
 A = Blog Title is required for the blog post to save. This is one of the most common support cases raised on the issue tracker.<br>
 :) 标题后面的等号要加空格哦。 然后奇迹才会发生。</p>
-</div>]]></description><link>https://angilent.github.io20161110-1232-showoff-zone.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1232-showoff-zone.adoc</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ CMS]]></category><category><![CDATA[ opensource]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Thu, 10 Nov 2016 04:32:00 GMT</pubDate></item><item><title><![CDATA[Title issue]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://angilent.github.io20161110-1232-showoff-zone.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1232-showoff-zone.adoc</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ CMS]]></category><category><![CDATA[ opensource]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Invalid Date</pubDate></item><item><title><![CDATA[Title issue]]></title><description><![CDATA[<div class="paragraph">
 <p>第一脚就踩坑里了
 发了第一篇blog，结果blog的链接有问题。
 错误 <a href="https://angilent.github.io20161110-1232-showoff-zone-owo.adoc/" class="bare">https://angilent.github.io20161110-1232-showoff-zone-owo.adoc/</a>
