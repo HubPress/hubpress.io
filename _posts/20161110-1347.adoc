@@ -1,7 +1,9 @@
 = 中文标题测试
 :published_at: 2016/11/10 13:47
-:hp-tags: test, 中文标签
+:hp-tags: test
 
 中午标题和标签测试。
+
+1，中文标题 + 中文标签 fail
 
 good luck
