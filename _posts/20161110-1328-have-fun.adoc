@@ -1,0 +1,26 @@
+= have fun?
+:published_at: 2016/11/10 13:28
+:hp-tags: hubpress, CMS, opensource
+:hardbreaks:
+
+随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。
+这样的应用才应该是云计算时代应该有的应用构建和使用方式。 *简单* *便捷* *实用* 当然如果是*免费*就更佳了。
+正好要开始捡起来写字的活。 
+这个工具很符合我的要求，轻而易举的实现一个网站。优势很明显::
+.不用租服务器。
+.不用审批备案域名。
+.不用部署环境应用。（简单配置就可以，需要会些github的相关操作）
+.真正的10分钟，开锅即熟，且卖相好。
+.编辑界面支持AsciiDoc。（好吧，这个词也是刚学会的）
+.发布流程应该也不麻烦。（猜的，刚开始用第一个写post功能）
+
+之前想的是在 link:www.jianshu.com[简书]，开始我的著名作家生涯的。
+没想到误打误撞的用了这个，希望不会被墙。
+第一篇就这样了，以免写太好，影响自己的提升空间。
+*World Peace, Gold Bless China*
+
+P.S. 
+pass:q[A = Blog Title is required for the blog post to save. This is one of the most common support cases raised on the issue tracker.]
+:) 标题后面的等号要加空格哦。 然后奇迹才会发生。
+
+
