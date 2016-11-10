@@ -1,5 +1,4 @@
 = 又一个可以显摆的新阵地
-:hp-alt-title: showoff zone
 :published_at: 2016/11/10 12:32
 :hp-tags: hubpress, CMS, opensource
 :hardbreaks:
