@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://angilent.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//angilent.github.io/themes/casper/assets/css/screen.css?v=1478755755498" />
+    <link rel="stylesheet" type="text/css" href="//angilent.github.io/themes/casper/assets/css/screen.css?v=1478755882089" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://angilent.github.io/20161110-1328-have-fun.adoc" />
@@ -65,26 +65,26 @@ null
 
         <section class="post-content">
             <div class="paragraph">
-<p>随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。<br>
-这样的应用才应该是云计算时代应该有的应用构建和使用方式。 <strong>简单</strong> <strong>便捷</strong> <strong>实用</strong> 当然如果是<strong>免费</strong>就更佳了。<br>
-正好要开始捡起来写字的活。<br>
-这个工具很符合我的要求，轻而易举的实现一个网站。优势很明显::<br>
-.不用租服务器。<br>
-.不用审批备案域名。<br>
-.不用部署环境应用。（简单配置就可以，需要会些github的相关操作）<br>
-.真正的10分钟，开锅即熟，且卖相好。<br>
-.编辑界面支持AsciiDoc。（好吧，这个词也是刚学会的）<br>
+<p>随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。
+这样的应用才应该是云计算时代应该有的应用构建和使用方式。 <strong>简单</strong> <strong>便捷</strong> <strong>实用</strong> 当然如果是<strong>免费</strong>就更佳了。
+正好要开始捡起来写字的活。
+这个工具很符合我的要求，轻而易举的实现一个网站。优势很明显::
+.不用租服务器。
+.不用审批备案域名。
+.不用部署环境应用。（简单配置就可以，需要会些github的相关操作）
+.真正的10分钟，开锅即熟，且卖相好。
+.编辑界面支持AsciiDoc。（好吧，这个词也是刚学会的）
 .发布流程应该也不麻烦。（猜的，刚开始用第一个写post功能）</p>
 </div>
 <div class="paragraph">
-<p>之前想的是在 <a href="www.jianshu.com">简书</a>，开始我的著名作家生涯的。<br>
-没想到误打误撞的用了这个，希望不会被墙。<br>
-第一篇就这样了，以免写太好，影响自己的提升空间。<br>
+<p>之前想的是在 <a href="www.jianshu.com">简书</a>，开始我的著名作家生涯的。
+没想到误打误撞的用了这个，希望不会被墙。
+第一篇就这样了，以免写太好，影响自己的提升空间。
 <strong>World Peace, Gold Bless China</strong></p>
 </div>
 <div class="paragraph">
-<p>P.S.<br>
-A = Blog Title is required for the blog post to save. This is one of the most common support cases raised on the issue tracker.<br>
+<p>P.S.
+A = Blog Title is required for the blog post to save. This is one of the most common support cases raised on the issue tracker.
 :) 标题后面的等号要加空格哦。 然后奇迹才会发生。</p>
 </div>
         </section>
@@ -156,8 +156,8 @@ A = Blog Title is required for the blog post to save. This is one of the most co
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1478755755498"></script>
-    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/index.js?v=1478755755498"></script>
+    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1478755882089"></script>
+    <script type="text/javascript" src="//angilent.github.io/themes/casper/assets/js/index.js?v=1478755882089"></script>
 
 </body>
 </html>
