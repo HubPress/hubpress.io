@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://angilent.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 10 Nov 2016 05:21:44 GMT</lastBuildDate><atom:link href="https://angilent.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[又一个可以显摆的新阵地]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://angilent.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 10 Nov 2016 05:24:25 GMT</lastBuildDate><atom:link href="https://angilent.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[又一个可以显摆的新阵地]]></title><description><![CDATA[<div class="paragraph">
 <p>随便逛逛看到这个git project，然后动手操作了一下，就成了这样一个个人blog。<br>
 这样的应用才应该是云计算时代应该有的应用构建和使用方式。 <strong>简单</strong> <strong>便捷</strong> <strong>实用</strong> 当然如果是<strong>免费</strong>就更佳了。<br>
 正好要开始捡起来写字的活。<br>
@@ -21,10 +21,6 @@
 A = Blog Title is required for the blog post to save. This is one of the most common support cases raised on the issue tracker.<br>
 :) 标题后面的等号要加空格哦。 然后奇迹才会发生。</p>
 </div>]]></description><link>https://angilent.github.io20161110-1232-showoff-zone-owo.adoc</link><guid isPermaLink="true">https://angilent.github.io20161110-1232-showoff-zone-owo.adoc</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ CMS]]></category><category><![CDATA[ opensource]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Invalid Date</pubDate></item><item><title><![CDATA[Title issue]]></title><description><![CDATA[<div class="paragraph">
-<p>:published_at:2016/11/10 13:17
-:hp-tags: hubpress, 坑</p>
-</div>
-<div class="paragraph">
 <p>第一脚就踩坑里了
 发了第一篇blog，结果blog的链接有问题。
 错误 <a href="https://angilent.github.io20161110-1232-showoff-zone-owo.adoc/" class="bare">https://angilent.github.io20161110-1232-showoff-zone-owo.adoc/</a>
@@ -32,4 +28,4 @@ A = Blog Title is required for the blog post to save. This is one of the most co
 </div>
 <div class="paragraph">
 <p>还在找解决方式，应该是某个配置没改对？还是bug？</p>
-</div>]]></description><link>https://angilent.github.io/2016/11/10/Title-issue.html</link><guid isPermaLink="true">https://angilent.github.io/2016/11/10/Title-issue.html</guid><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Thu, 10 Nov 2016 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://angilent.github.io/2016/11/10/Title-issue.html</link><guid isPermaLink="true">https://angilent.github.io/2016/11/10/Title-issue.html</guid><category><![CDATA[hubpress]]></category><category><![CDATA[ 坑]]></category><dc:creator><![CDATA[Sean Shao]]></dc:creator><pubDate>Thu, 10 Nov 2016 00:00:00 GMT</pubDate></item></channel></rss>
