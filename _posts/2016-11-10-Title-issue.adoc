@@ -1,6 +1,7 @@
 = Title issue
 :published_at:2016/11/10 13:17
 :hp-tags: hubpress,
+:hardbreaks:
 
 第一脚就踩坑里了
 发了第一篇blog，结果blog的链接有问题。
@@ -8,3 +9,7 @@
 正确 https://angilent.github.io/20161110-1232-showoff-zone-owo.adoc/
 
 还在找解决方式，应该是某个配置没改对？还是bug？
+
+又测出的问题包括 
+标题不能用中文？
+还有标签不能用中文？
