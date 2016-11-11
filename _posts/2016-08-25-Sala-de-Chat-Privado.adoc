@@ -3,6 +3,8 @@
 
 == Entra en esta sala si quieres chatear en privado. 
 
+---
+
 Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
 
 //image::https://livechatbot.net/images/pic01.png[]
