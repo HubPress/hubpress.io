@@ -1,7 +1,7 @@
-= Sala de Chat2
+= Sala de Chat Privado
 :hp-tags: Chat,
 
-== Entra en esta sala si quieres chatear
+== Entra en esta sala si quieres chatear en privado
 
 Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
 
