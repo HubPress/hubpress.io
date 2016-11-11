@@ -3,7 +3,9 @@
 
 :hp-tags: Chat,
 
+== En esta sala los chats son públicos. 
 
+---
 Para chatear lanza la pestaña flotante de la página:
 
 ++++
