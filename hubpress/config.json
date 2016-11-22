@@ -4,8 +4,12 @@
     "repositoryName": "imran31.github.io",
     "branch": "master"
   },
-  "site": {},
-  "socialnetwork": {},
+  "site": {
+    "title": "Imran Manzoor"
+  },
+  "socialnetwork": {
+    "email": "imran.manzoor31@gmail.com"
+  },
   "theme": {
     "name": "uno"
   }
