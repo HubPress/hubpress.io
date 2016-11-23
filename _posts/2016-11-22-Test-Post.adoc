@@ -1,4 +1,0 @@
-= Test Post
-:hp-tags: Test
-
-pass:[<h2>Darwin</h2>]
