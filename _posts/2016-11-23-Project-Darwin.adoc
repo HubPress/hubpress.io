@@ -4,6 +4,25 @@ _My first hackathon_
 
 == Begin
 
+Automatticians, the people who build WordPress.com, participate in events and projects around the world every day. Periodically, they report back on the exciting things they do in the community. This week, I share my experience at the Codex Hackathon.
+
+We’re big fans of publishing here at WordPress.com. From fantastic content created by our blogging community and news from our WordPress.com VIP partners, to longform articles on Longreads, we love helping publish the best content on the internet.
+
+In that spirit, Automattic sponsored the Codex Hackathon last month. The event brought together over 160 people who are passionate about reading to the MIT Media Lab in Cambridge, MA. Librarians, writers, editors, programmers, and designers came from all across the globe to collaborate on small weekend-long projects to visualize the future of reading. Mel Choyce, Kelly Dwan, Kat Hagan, and I attended from Automattic, and we were eager to meet and collaborate with the like-minded crowd. It’s not often that such a diverse group has the opportunity to drop everything and come together around something they love.
+
+The event culminated in a set of short presentations from each team. It was thrilling to see the different ideas people worked on. Due to the incredibly short weekend timeline, many projects were still in the conceptual phase, but we were treated to quite a few application demos as well. You can check out the full list of projects at the Codex Hackathon 2016 projects page. Some of my personal favorites:
+
+Stanza: A tool to deliver a playlist of poems tied to a person’s mood and emotion.
+LitCity: Literary context, delivered into the real world through location-based phone notifications.
+Cover Design History: The beginnings of a website dedicated to book cover design.
+HippoReader: A tool for programmatically simplifying the language in a given text, to make it readable even by those with a elementary English language skills.
+ReadMember: A web-browser extension to help you keep track of the things you read online.
+We all had a blast at the event, and thoroughly enjoyed working with everyone. The Codex Hackathon left us inspired to keep building ways for you to publish your own great content here at WordPress.com and beyond.
+
+Check out the Codex Hackathon website to keep up to date on more Codex events, and read through our getting started guide if you’d like to start building something cool with the WordPress.com API.
+
+If building publishing tools for a more democratic web sounds like your idea of fun, we’re hiring!
+
 
 
 
