@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://imran31.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//imran31.github.io/themes/casper/assets/css/screen.css?v=1480171302006" />
+    <link rel="stylesheet" type="text/css" href="//imran31.github.io/themes/casper/assets/css/screen.css?v=1480180622412" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://imran31.github.io/2016/11/23/Project-Darwin.html" />
@@ -92,7 +92,79 @@ null
 <div class="sect1">
 <h2 id="_design">Design</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>After we finished our mid-term tests we started discussing about what we need and went shopping for parts. Three days before the hackathon we started working on how our prototype would look. The arm elbow had <em>xyz</em> freedom, the wrist had only <em>x</em> and the claw could open and close depending on the angle between the thumb and index finger. To make the arm cooler, we added some wheels to increase mobility and to control it using the keyboard over Wifi. We redisigned, fried components and got nowhere. But this was an important moment for us, we realised that anything could go wrong and we prepared for the worst.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hackathon">Hackathon</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Our first priority was to build the arm and then move on to coding.</p>
+</div>
+<div class="ulist">
+<div class="title"><strong>The Arm</strong></div>
+<ul>
+<li>
+<p>Arduino: Controlled the Servos and 2 DC Motors</p>
+</li>
+<li>
+<p>Raspberry Pi: The Arduino is directly connected to this and the Raspberry Pi relays the data from the Laptop over Wifi.</p>
+</li>
+<li>
+<p>Motor Shield: A microcontroller to control the 2 DC motors.</p>
+</li>
+<li>
+<p>Powerbanks: Power supply for all components including the Raspberry Pi.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title"><strong>Programming</strong></div>
+<ul>
+<li>
+<p>Arduino: Set up functions for servo to sweep whose angle would be recieved through Serial input fromt the Raspberry Pi.</p>
+</li>
+<li>
+<p>Networking: Used python socket programming to send our data to the Raspberry Pi which would then pass the data through a Serial Port to the Arduino.</p>
+</li>
+<li>
+<p>Leap Motion: The python LeapSDK was easy to use and very well documented. We used vectors and geometry to get the angles for the Servos.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With just 2 hours remaining we got a brilliant idea. The angles we calculated were just strings passed on to the Arm. This could be written into a file and then we could write a small script to pass the recorded values. This was our jewel in the crown, an arm that could mimic hand gestures in realtime and then <strong>replay them exactly</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pitch">Pitch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The pitch is critical, a bad pitch would make a brilliant project lackluster. This hackathon had a <strong>manufacturing theme</strong> and we needed to exploit it. In our pitch we gave applications in the manufacturing industry, saying the our arm is multi-purpose and didn&#8217;t require a programmer to code the arm for every new task. The user just needed to do the task once over a Leap Motion and then the arm could replay the task 'n' number of times.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_demonstration">Demonstration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We burnt the midnight oil and were not our 100 per cent to say the least. We decided that a judge could place a paper cup anywhere on a table and we would pick the cup and place it inside another. Our first first attempt was a failure, we asked for another try. One of the other judges watched over us when we doing a test run and recorded a successful demonstration on her mobile. She shared it with the others and when we were up again to demonstrate we had a small crowd gape at our every move. It was nerve wrecking, but I felt reassured about the successful attempt recorded by one of the judges. In our final try, we were successful and we were on top of the moon.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_we_won_sort_of">We won!(Sort of)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It took about an hour for the judges to declare the results. The first place was to be awarded 3 lakh Rupees($4.3k), second place 2 lakh($2.9k) and third place 1 lakh($1.4k). The first place winners were also going to showcase their project in the Bosch Smart Manufacturing(BSM) Conclave in Mumbai. Before they announced the Grand Prize winners, they called out our names saying we were going to Mumbai! But we didn&#8217;t win any money that day. In BSM, the hackathon winners were supposed to showcase their project so that&#8217;s what they called us, "Winners of the Bosch Hackathon".</p>
+</div>
+<div class="paragraph">
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+</div>
 </div>
 </div>
         </section>
@@ -164,8 +236,8 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//imran31.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1480171302006"></script>
-    <script type="text/javascript" src="//imran31.github.io/themes/casper/assets/js/index.js?v=1480171302006"></script>
+    <script type="text/javascript" src="//imran31.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1480180622412"></script>
+    <script type="text/javascript" src="//imran31.github.io/themes/casper/assets/js/index.js?v=1480180622412"></script>
 
 </body>
 </html>
