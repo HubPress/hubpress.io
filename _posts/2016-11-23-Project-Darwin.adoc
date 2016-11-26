@@ -9,7 +9,7 @@ image::team.jpg[Sunset]
 It all started on a boring Wednesday when we stumbled upon a hackathon by Bosch on Hackerearth. It's funny how boredom and ambition led to an amazing life experience.
 
 == Idea
-The first round was the _Idea Stage_, only the *top 30 ideas* will be shortlisted to work on their project for 36 hours. This was our first hackathon and we didn't sign up for the heck of it, we wanted to *win*. I had _Leap Motion_ which I never got around to use and from there we started brainstorming. We decided to create a Virtual Reality experience with the _Leap_ and _Google Cardboard_. But this was a hardware hackathon and we would definately not even be shortlisted. In our previous semester we built a robotic arm using an _Arduino_ and a couple of Servos. Our idea was a robotic arm that could mimic hand gestures in realtime. *Over 900 teams* applied and we got through, now we had a month to learn and design our prototype.
+The first round was the _Idea Stage_, only the *top 30 ideas* would be shortlisted to work on their project for 36 hours. This was our first hackathon and we didn't sign up for the heck of it, we wanted to *win*. I had _Leap Motion_ which I never got around to use and from there we started brainstorming. We decided to create a Virtual Reality experience with the _Leap_ and _Google Cardboard_. But this was a hardware hackathon and we would definately not even be shortlisted. In our previous semester we built a robotic arm using an _Arduino_ and a couple of Servos. Our idea was a robotic arm that could mimic hand gestures in realtime. *Over 900 teams* applied and we got through, now we had a month to learn and design our prototype.
 
 == Design
 
