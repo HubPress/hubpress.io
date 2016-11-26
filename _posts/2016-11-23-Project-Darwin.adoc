@@ -51,6 +51,8 @@ We upgraded our arm and set off for Mumbai. Bosch paid for the flight, hotel, ev
 pass:[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
 
+video::pKrh6pd3IKg[youtube, height = 280, width = 500] 
+
 == Epilogue
 
 
