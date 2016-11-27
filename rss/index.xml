@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Imran Manzoor]]></title><description><![CDATA[3rd Year CS Undergrad]]></description><link>https://imran31.github.io</link><image><url>./images/NYC_dark.jpg</url><title>Imran Manzoor</title><link>https://imran31.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 27 Nov 2016 04:12:10 GMT</lastBuildDate><atom:link href="https://imran31.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Project Darwin]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Imran Manzoor]]></title><description><![CDATA[3rd Year CS Undergrad]]></description><link>https://imran31.github.io</link><image><url>./images/NYC_dark.jpg</url><title>Imran Manzoor</title><link>https://imran31.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 27 Nov 2016 06:55:37 GMT</lastBuildDate><atom:link href="https://imran31.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Project Darwin]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p><em>My first hackathon</em></p>
@@ -6,6 +6,15 @@
 <div class="imageblock">
 <div class="content">
 <img src="https://imran31.github.io/images/team.jpg" alt="Sunset">
+</div>
+</div>
+<div class="paragraph">
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="500" height="280" src="https://www.youtube.com/embed/pKrh6pd3IKg?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
 </div>
@@ -105,15 +114,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>We upgraded our arm and set off for Mumbai. Bosch paid for the flight, hotel, everything. In our time in the hotel we finally came up with a name for our arm, <strong>Darwin</strong> <em>the arm that adapts</em>. We had to demonstrate on stage and this time we had no margin for error. A day prior our robotic arm caught fire due to a bad wire and our Leap Motion stopped working. After overcoming the series of unfortunate events we had the most amazing experience.</p>
-</div>
-<div class="paragraph">
-<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-</div>
-<div class="videoblock">
-<div class="content">
-<iframe width="500" height="280" src="https://www.youtube.com/embed/pKrh6pd3IKg?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
 </div>
 </div>
 </div>
