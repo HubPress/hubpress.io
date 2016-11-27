@@ -4,6 +4,11 @@ _My first hackathon_
 
 image::team.jpg[Sunset]
 
+pass:[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
+
+video::pKrh6pd3IKg[youtube, height = 280, width = 500] 
+
 == Begin
 
 It all started on a boring Wednesday when we stumbled upon a hackathon by Bosch on Hackerearth. It's funny how boredom and ambition led to an amazing life experience.
@@ -47,11 +52,6 @@ It took about an hour for the judges to declare the results. The first place was
 == Bosch Smart Manufacturing Conclave
 
 We upgraded our arm and set off for Mumbai. Bosch paid for the flight, hotel, everything. In our time in the hotel we finally came up with a name for our arm, *Darwin* _the arm that adapts_. We had to demonstrate on stage and this time we had no margin for error. A day prior our robotic arm caught fire due to a bad wire and our Leap Motion stopped working. After overcoming the series of unfortunate events we had the most amazing experience.
-
-pass:[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
-
-video::pKrh6pd3IKg[youtube, height = 280, width = 500] 
 
 == Epilogue
 
