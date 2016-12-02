@@ -88,3 +88,15 @@ values = (1, 2)
 
 s = sum(*values) # will return the sum of 1 and 2
 ----
+
+==== Multilines import
+
+A nice way to import
+
+[source, python]
+----
+from Package.class import(
+        method1,
+        method2,
+    )
+----
