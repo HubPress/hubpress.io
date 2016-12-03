@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Hello World!</title>
+    <title>HelloWorld!</title>
     <meta name="description" content="" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -12,18 +12,21 @@
 
     <link rel="shortcut icon" href="https://SakuragiZHX.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//SakuragiZHX.github.io/themes/casper/assets/css/screen.css?v=1480770532825" />
+    <link rel="stylesheet" type="text/css" href="//SakuragiZHX.github.io/themes/casper/assets/css/screen.css?v=1480770842625" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://SakuragiZHX.github.io/2016-12-3-Hello-World.adoc" />
     <meta name="referrer" content="origin" />
     
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Hello World!" />
+    <meta property="og:title" content="HelloWorld!" />
     <meta property="og:description" content="This is a article to test the syntax of AsciiDoc. Part One simon tommy susan Part Two I&#x27;m a block area.I hava height and width.Thanks for click me to get more information. Tel:1223213213" />
     <meta property="og:url" content="https://SakuragiZHX.github.io/2016-12-3-Hello-World.adoc" />
+    <meta property="article:tag" content="Test" />
+    <meta property="article:tag" content=" HelloWorld" />
+    
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Hello World!" />
+    <meta name="twitter:title" content="HelloWorld!" />
     <meta name="twitter:description" content="This is a article to test the syntax of AsciiDoc. Part One simon tommy susan Part Two I&#x27;m a block area.I hava height and width.Thanks for click me to get more information. Tel:1223213213" />
     <meta name="twitter:url" content="https://SakuragiZHX.github.io/2016-12-3-Hello-World.adoc" />
     
@@ -34,7 +37,7 @@ null
     <meta name="generator" content="HubPress" />
     <link rel="alternate" type="application/rss+xml" title="" href="https://SakuragiZHX.github.io/rss/" />
 </head>
-<body class="post-template nav-closed">
+<body class="post-template tag-Test tag-Hello-World nav-closed">
 
     
 
@@ -50,12 +53,12 @@ null
 </header>
 
 <main class="content" role="main">
-    <article class="post">
+    <article class="post tag-Test tag-Hello-World">
 
         <header class="post-header">
-            <h1 class="post-title">Hello World!</h1>
+            <h1 class="post-title">HelloWorld!</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-12-03">03 December 2016</time> 
+                <time class="post-date" datetime="2016-12-01">01 December 2016</time>  on <a href="https://SakuragiZHX.github.io/tag/Test/">Test</a>, <a href="https://SakuragiZHX.github.io/tag/Hello-World/"> HelloWorld</a>
             </section>
         </header>
 
@@ -119,7 +122,7 @@ Tel:1223213213</pre>
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Hello%20World!&amp;url=https://SakuragiZHX.github.io/2016-12-3-Hello-World.adoc"
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=HelloWorld!&amp;url=https://SakuragiZHX.github.io/2016-12-3-Hello-World.adoc"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
@@ -166,8 +169,8 @@ Tel:1223213213</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//SakuragiZHX.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1480770532825"></script>
-    <script type="text/javascript" src="//SakuragiZHX.github.io/themes/casper/assets/js/index.js?v=1480770532825"></script>
+    <script type="text/javascript" src="//SakuragiZHX.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1480770842625"></script>
+    <script type="text/javascript" src="//SakuragiZHX.github.io/themes/casper/assets/js/index.js?v=1480770842625"></script>
 
 </body>
 </html>
