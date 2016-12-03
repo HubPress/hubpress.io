@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://SakuragiZHX.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Dec 2016 13:08:52 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Hello World!]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://SakuragiZHX.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Dec 2016 13:14:02 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[HelloWorld!]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a article to test the syntax of <a href="http://asciidoctor.org/" target="_blank"><strong>AsciiDoc</strong></a>.</p>
@@ -34,4 +34,4 @@ Tel:1223213213</pre>
 </div>
 </div>
 </div>
-</div>]]></description><link>https://SakuragiZHX.github.io2016-12-3-Hello-World.adoc</link><guid isPermaLink="true">https://SakuragiZHX.github.io2016-12-3-Hello-World.adoc</guid><dc:creator><![CDATA[Simon]]></dc:creator></item></channel></rss>
+</div>]]></description><link>https://SakuragiZHX.github.io2016-12-3-Hello-World.adoc</link><guid isPermaLink="true">https://SakuragiZHX.github.io2016-12-3-Hello-World.adoc</guid><category><![CDATA[Test]]></category><category><![CDATA[ HelloWorld]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Fri, 02 Dec 2016 16:00:00 GMT</pubDate></item></channel></rss>
