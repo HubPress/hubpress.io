@@ -1,0 +1,20 @@
+= Hello World!
+Simon <dai@hust.edu.cn>
+:published_at: 2016-12-3
+:hp-tags: Test, HelloWorld
+
+:linkattrs:
+This is a article to test the syntax of http://asciidoctor.org/[*AsciiDoc*^].
+
+== Part One
+* simon
+* tommy
+* susan
+
+== Part Two
+
+----
+I'm a block area.I hava height and width.Thanks for click me to get more 
+information.
+Tel:1223213213
+----
