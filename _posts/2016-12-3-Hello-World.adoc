@@ -1,6 +1,5 @@
-= Hello World!
+= HelloWorld!
 Simon <dai@hust.edu.cn>
-:published_at: 2016-12-3
 :hp-tags: Test, HelloWorld
 
 :linkattrs:
