@@ -1,3 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Simon's blog]]></title><description><![CDATA[Do one thing at a time, and do well.]]></description><link>https://SakuragiZHX.github.io</link><image><url>/images/cover-star.jpg</url><title>Simon&apos;s blog</title><link>https://SakuragiZHX.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Dec 2016 13:36:32 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Test]]></title><description><![CDATA[<div class="paragraph">
-<p>This is a test!</p>
-</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/03/Test.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/03/Test.html</guid><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Sat, 03 Dec 2016 00:00:00 GMT</pubDate></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Simon's blog]]></title><description><![CDATA[Do one thing at a time, and do well.]]></description><link>https://SakuragiZHX.github.io</link><image><url>/images/cover-star.jpg</url><title>Simon&apos;s blog</title><link>https://SakuragiZHX.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Dec 2016 16:00:30 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[简单易用的github博客搭建工具---HubPress]]></title><description><![CDATA[<div class="sect1">
+<h2 id="__hubpress">一、HubPress是什么?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HubPress是一款免费、开源的基于GitHub Page用来搭建博客的web app。</p>
+</div>
+<div class="paragraph">
+<p>HubPress支持 <a href="http://asciidoctor.org/" target="_blank">AsciiDoc</a>语言(类似MarkDown)，集成了Disqus(第三方网站评论工具，已经被墙o(╯□╰)o )以及Google Analytics(Google 提供的站点数据分析服务，国内也用不了&#8230;&#8203;&#8230;&#8203;)，并提供了多种主题供用户选择。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__hubpress_vs_jekyll">二、HubPress VS Jekyll</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>一提到基于GitHub Page搭建博客，大多数人首先想到的是Jekyll，那么相对Jekyll，HubPress有哪些特点呢？</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>HubPress操作简单，你只需要一个github账号就能搞定一切。</p>
+</li>
+<li>
+<p>HubPress功能相对Jekyll较弱。</p>
+</li>
+<li>
+<p>HubPress支持AsciiDoc语法，而Jekyll支持MarkDown。这一点显然是Jekyll占优，毕竟MarkDown的流行度不是前者能比的。</p>
+</li>
+<li>
+<p>HubPress只能运行在GitHub Page上，而Jekyll不受此限制。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>既然Jekyll各个方面都比HubPress好，我们为什么还要用HubPress呢？其实就是HubPress实在是太简单易用了，即使是一个从来没写过程序的人也能不花太多功夫搭好自己的博客，虽然这也是它的缺点，但不可否认也是HubPress最吸引人的地方。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__hubpress_2">三、HubPress建站流程</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>首先你需要有个github账号，登录到github首页搜索HubPress.io，然后fork;</p>
+</li>
+<li>
+<p>进入fork到自己github上的HubPress.io这个repository，选择settings，将repository name改为&lt;username&gt;.github.io；</p>
+</li>
+<li>
+<p>找到hubress/config.json文件，按文件中提示内容修改文件。</p>
+</li>
+<li>
+<p>登录到https://username.github.io/hubpress/ ,在setting中可以修改站点相关信息，使用集成的编辑器编写asciidoc文档，然后posts即可。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>详细信息还是参见HubPress项目主页的ReadMe，英文不好的同学可能要吃力一些，但总体上较为简单。本人菜鸟一枚，如有错误及遗漏之处，欢迎指出。</strong></p>
+</div>
+</div>
+</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html</guid><category><![CDATA[Tool]]></category><category><![CDATA[ Blog]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Sat, 03 Dec 2016 00:00:00 GMT</pubDate></item></channel></rss>
