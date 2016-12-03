@@ -1,0 +1,38 @@
+= 简单易用的github博客搭建工具---HubPress
+:hp-tags: Tool, Blog
+
+== 一、HubPress是什么?
+HubPress是一款免费、开源的基于GitHub Page用来搭建博客的web app。
+
+HubPress支持 http://asciidoctor.org/[AsciiDoc^]语言(类似MarkDown)，集成了Disqus(第三方网站评论工具，已经被墙o(╯□╰)o )以及Google Analytics(Google 提供的站点数据分析服务，国内也用不了......)，并提供了多种主题供用户选择。
+
+== 二、HubPress VS Jekyll
+一提到基于GitHub Page搭建博客，大多数人首先想到的是Jekyll，那么相对Jekyll，HubPress有哪些特点呢？
+
+* HubPress操作简单，你只需要一个github账号就能搞定一切。
+
+* HubPress功能相对Jekyll较弱。
+
+* HubPress支持AsciiDoc语法，而Jekyll支持MarkDown。这一点显然是Jekyll占优，毕竟MarkDown的流行度不是前者能比的。
+
+* HubPress只能运行在GitHub Page上，而Jekyll不受此限制。
+
+既然Jekyll各个方面都比HubPress好，我们为什么还要用HubPress呢？其实就是HubPress实在是太简单易用了，即使是一个从来没写过程序的人也能不花太多功夫搭好自己的博客，虽然这也是它的缺点，但不可否认也是HubPress最吸引人的地方。
+
+== 三、HubPress建站流程
+1. 首先你需要有个github账号，登录到github首页搜索HubPress.io，然后fork;
+
+2. 进入fork到自己github上的HubPress.io这个repository，选择settings，将repository name改为<username>.github.io；
+
+3. 找到hubress/config.json文件，按文件中提示内容修改文件。
+
+4. 登录到https://username.github.io/hubpress/ ,在setting中可以修改站点相关信息，使用集成的编辑器编写asciidoc文档，然后posts即可。
+
+
+*详细信息还是参见HubPress项目主页的ReadMe，英文不好的同学可能要吃力一些，但总体上较为简单。本人菜鸟一枚，如有错误及遗漏之处，欢迎指出。*
+
+
+
+
+
+
