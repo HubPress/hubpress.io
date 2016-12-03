@@ -1,19 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Blog - Simon&#x27;s blog</title>
-    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="shortcut icon" href="https://SakuragiZHX.github.io/favicon.ico">
+    <meta name="description" content="">
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
-    <link rel="stylesheet" type="text/css" href="//SakuragiZHX.github.io/themes/roon/assets/css/screen.css?v=1480783184976" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blog - Simon&#x27;s blog">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Blog - Simon&#x27;s blog">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/main.min.css?v=1480783299564"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/custom.css?v=1480783299564"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1480783299564"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1480783299564"></script>
 
     <link rel="canonical" href="https://SakuragiZHX.github.io/https://SakuragiZHX.github.io/tag/Blog/" />
     <meta name="referrer" content="origin" />
@@ -32,86 +89,121 @@ null
 
     <meta name="generator" content="HubPress" />
     <link rel="alternate" type="application/rss+xml" title="Simon&#x27;s blog" href="https://SakuragiZHX.github.io/rss/" />
-</head>
-<body class="tag-template tag-Blog user ">
+  </head>
+  <body class="tag-template tag-Blog">
 
-    
-<header role="banner">
-    <div class="wrap">
-        <h1><a href="https://SakuragiZHX.github.io">Tag: Blog</a></h1>
-        <hr>
-    </div>
-</header>
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io" title="Simon&#x27;s blog" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://github.com/SakuragiZHX" title="Github" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="mailto:dai@hust.edu.cn" title="Email" target="_blank">
+              <i class="fa fa-envelope-o"></i>Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<aside role="banner" class="cover">
+  <div data-load-image="/images/cover-star.jpg" class="cover-image"></div>
+  <div class="cover-container">
+    <h1 class="cover-title"><a href="https://SakuragiZHX.github.io" title="Simon&#x27;s blog">Simon&#x27;s blog</a></h1>
+    <p class="cover-description">Do one thing at a time, and do well.</p>
+  </div>
+</aside>
 
-<article class="post tag-Tool tag-Blog ">
-
-
-    <div class="meta">
-        <time datetime="2016-12-03"><a href="https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html">December 03, 2016</a></time>
-    </div>
-
+<section class="wrapper" tabindex="0">
+  <div class="wrapper-container">
     <header>
-        <h1><a href="https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html">简单易用的github博客搭建工具---HubPress</a></h1>
+      <p><h2>Posts tagged with <i>Blog</i></h2></p>
+      <hr>
     </header>
 
-    <div class="text">
-        <p>一、HubPress是什么? HubPress是一款免费、开源的基于GitHub Page用来搭建博客的web app。 HubPress支持 AsciiDoc语言(类似MarkDown)，集成了Disqus(第三方网站评论工具，已经被墙o(╯□╰)o )以及Google Analytics(Google 提供的站点数据分析服务，国内也用不了&#8230;&#8203;&#8230;&#8203;)，并提供了多种主题供用户选择。 二、HubPress VS Jekyll 一提到基于GitHub Page搭建博客，大多数人首先想到的是Jekyll，那么相对Jekyll，HubPress有哪些特点呢？ HubPress操作简</p>
-        <a href="https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html" class="readmore">Continue Reading</a>
-    </div>
-</article>
+    <section class="post-list">
+        <article itemscope itemtype="http://schema.org/BlogPosting"
+          role="article" class="post-item post tag-Tool tag-Blog">
+          <header class="post-item-header">
+            <h2 itemprop="name" class="post-item-title">
+              <a href="https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html" itemprop="url" data-pjax title="简单易用的github博客搭建工具---HubPress">
+                简单易用的github博客搭建工具---HubPress
+              </a>
+            </h2>
+          </header>
+          <section itemprop="description" class="post-item-excerpt">
+            <p>一、HubPress是什么? HubPress是一款免费、开源的基于GitHub Page用来搭建博客的web app。 HubPress支持 AsciiDoc语言(类似MarkDown)，集成了Disqus(第三方网站评论工具，已经被墙o(╯□╰)o )以及Google Analytics(Google 提供的站点数据分析服务，国内也用不了&#8230;&#8203;&#8230;&#8203;)，并提供了多种主题供用户选择。 二、HubPress VS Jekyll 一提到基于G&hellip;</p>
+          </section>
+          <footer class="post-item-footer">
+            <ul class="post-item-meta-list">
+              <li class="post-item-meta-item">
+                <time datetime="2016-12-03" itemprop="datePublished">
+                  a day ago
+                </time>
+              </li>
+                <li class="post-item-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://SakuragiZHX.github.io/tag/Tool/">Tool</a>, <a href="https://SakuragiZHX.github.io/tag/Blog/"> Blog</a></span>
+                  </span>
+                </li>
+              <li class="post-item-meta-item">
+                <a href="https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+          </footer>
+        </article>
+    </section>
 
-<nav class="pagination" role="navigation">
-    <span class="page-number">Page 1 of 1</span>
+      <nav role="pagination" class="post-list-pagination">
+  <span class="post-list-pagination-item post-list-pagination-item-current">Page 1 of 1</span>
 </nav>
 
 
-<footer role="contentinfo">
-    <div class="inner">
-        <div class="vcard">
-            <a href="https://SakuragiZHX.github.io/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
-                <span aria-hidden="true" data-icon=")"></span>
-                <strong>Feed</strong>
-            </a>
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Simon&#x27;s blog</span>. 2016. All Rights Reserved.</small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
 
-
-            <div class="details">
-                <h4><a href="https://SakuragiZHX.github.io" class="url n">Simon&#x27;s blog</a></h4>
-                <a href="https://SakuragiZHX.github.io" class="js-remove-domain-schema">https://SakuragiZHX.github.io</a><br>
-                <span>Published with <a href="http://hubpress.io">HubPress</a></span>
-            </div>
+          </div>
         </div>
-        <div id="user_bio">
-            <div class="inner">
-                Do one thing at a time, and do well.
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-    <script>
-
-
-        function no_schema_links () {
-            var links = document.querySelectorAll('.js-remove-domain-schema');
-            if (links) {
-                for (i = 0; i < links.length; ++i) {
-                    var link = links[i],
-                        text = link.innerHTML,
-                        no_schema = text.replace(/.*?:\/\//g, "");
-                    link.innerHTML = no_schema;
-                }
-            }
-        }
-
-        window.onload = function () {
-            no_schema_links();
-
-        }
-    </script>
+      </div>
+    </main>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -126,8 +218,8 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1480783299564"></script>
 
 
-
-</body>
+  </body>
 </html>
