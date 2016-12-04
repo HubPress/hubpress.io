@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>浅谈JavaScript中的闭包</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="浅谈JavaScript中的闭包">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="浅谈JavaScript中的闭包">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/main.min.css?v=1480840629842"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/custom.css?v=1480840629842"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1480840629842"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1480840629842"></script>
+
+    <link rel="canonical" href="https://SakuragiZHX.github.io/2016/12/04/Java-Script.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Simon&#x27;s blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="浅谈JavaScript中的闭包" />
+    <meta property="og:description" content="一、闭包是什么？ 《JavaScript高级程序设计》上写道：“闭包是指有权访问另一个函数作用域中的变量的函数”，如果用下定义的观点看，这句话就是说“闭包是函数”，带着怀疑的心态又去网上找了找，发现什么说法都有，还是不能明白，暂且不管，还是看代码来得直接。 function outter(){ 	var sky&#x3D;&quot;blue&quot;;     function inner(){     	console.log(sky);     }     return inner; } var result&#x3D;outter(); result();	//&quot;blue&quot; 这段代码就包含一个简单的闭包：outter函数的返回值是一个函数，即inner。inner在outter内部，理所当然能访问到局部变量sky，但当" />
+    <meta property="og:url" content="https://SakuragiZHX.github.io/2016/12/04/Java-Script.html" />
+    <meta property="article:tag" content="JavaScript" />
+    <meta property="article:tag" content=" 闭包" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="浅谈JavaScript中的闭包" />
+    <meta name="twitter:description" content="一、闭包是什么？ 《JavaScript高级程序设计》上写道：“闭包是指有权访问另一个函数作用域中的变量的函数”，如果用下定义的观点看，这句话就是说“闭包是函数”，带着怀疑的心态又去网上找了找，发现什么说法都有，还是不能明白，暂且不管，还是看代码来得直接。 function outter(){ 	var sky&#x3D;&quot;blue&quot;;     function inner(){     	console.log(sky);     }     return inner; } var result&#x3D;outter(); result();	//&quot;blue&quot; 这段代码就包含一个简单的闭包：outter函数的返回值是一个函数，即inner。inner在outter内部，理所当然能访问到局部变量sky，但当" />
+    <meta name="twitter:url" content="https://SakuragiZHX.github.io/2016/12/04/Java-Script.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Simon&#x27;s blog" href="https://SakuragiZHX.github.io/rss/" />
+  </head>
+  <body class="post-template tag-Java-Script tag-">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io" title="Simon&#x27;s blog" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://github.com/SakuragiZHX" title="Github" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="mailto:dai@hust.edu.cn" title="Email" target="_blank">
+              <i class="fa fa-envelope-o"></i>Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-Java-Script tag-">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2016-12-04" itemprop="datePublished">
+                  17 hours ago
+                </time>
+              </li>
+                <li class="post-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://SakuragiZHX.github.io/tag/Java-Script/">JavaScript</a>, <a href="https://SakuragiZHX.github.io/tag/"> 闭包</a></span>
+                  </span>
+                </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://SakuragiZHX.github.io/2016/12/04/Java-Script.html" itemprop="url" data-pjax title="浅谈JavaScript中的闭包">浅谈JavaScript中的闭包</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img src="https://avatars.githubusercontent.com/u/18418201?v&#x3D;3" alt="Simon">
+                </a>
+              <div class="post-author-info">
+                <a href="" class="post-author-name">
+                  Simon
+                </a>
+                <p class="post-author-bio">Front-End Coder</p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div class="sect2">
+<h3 id="__">一、闭包是什么？</h3>
+<div class="paragraph">
+<p>《JavaScript高级程序设计》上写道：“闭包是指有权访问另一个函数作用域中的变量的函数”，如果用下定义的观点看，这句话就是说“闭包是函数”，带着怀疑的心态又去网上找了找，发现什么说法都有，还是不能明白，暂且不管，还是看代码来得直接。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>function outter(){
+	var sky="blue";
+    function inner(){
+    	console.log(sky);
+    }
+
+    return inner;
+}
+var result=outter();
+result();	//"blue"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这段代码就包含一个简单的闭包：outter函数的返回值是一个函数，即inner。inner在outter内部，理所当然能访问到局部变量sky，但当inner作为outter的返回值赋给outter外的全局变量时，神奇的事情发生了：在全局作用域中访问到了sky，这就是闭包。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___2">二、闭包的原理</h3>
+<div class="paragraph">
+<p>每个函数都有自己的执行环境，当一个函数被执行时，它的执行环境就会被推入环境栈，一旦执行完，栈将其环境弹出，活动对象(存储环境中定义的变量及函数)被销毁。</p>
+</div>
+<div class="paragraph">
+<p>对于上面的例子来说，outter执行完之后将值赋给了result，outter的执行环境从环境栈弹出，控制权交给全局环境，outter的活动对象理应被销毁。但此时inner已经存储在全局活动对象中了，同时inner需要访问sky，即outter的活动对象没有被销毁，直到result执行完毕，inner的活动对象被销毁后，outter的活动对象才会被销毁。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___3">三、闭包的作用</h3>
+<div class="paragraph">
+<p>说了这么多，闭包到底有什么用呢？我个人认为闭包最大的用处即防止对全局作用域的污染。
+试想如果我们把一些仅仅只用到一两次的变量都声明在全局作用域中，最后肯定是容易出错且不可维护的。而闭包最神奇的地方就是能在一个函数外访问函数中的局部变量，把这些变量用闭包的形式放在函数中便能避免污染。</p>
+</div>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/18418201?v&#x3D;3" alt="Simon">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Simon</span>
+                </a>
+                <p itemprop="description" class="post-author-bio">Front-End Coder</p>
+                  <p class="post-author-location">Wuhan Hubei China</p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">December 04, 2016</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Simon&#x27;s blog</span>. 2016. All Rights Reserved.</small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1480840629842"></script>
+
+
+  </body>
+</html>
