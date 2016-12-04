@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Simon's blog]]></title><description><![CDATA[Do one thing at a time, and do well.]]></description><link>https://SakuragiZHX.github.io</link><image><url>/images/cover-star.jpg</url><title>Simon&apos;s blog</title><link>https://SakuragiZHX.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Dec 2016 08:37:36 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[浅谈JavaScript中的闭包]]></title><description><![CDATA[<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Simon's blog]]></title><description><![CDATA[Do one thing at a time, and do well.]]></description><link>https://SakuragiZHX.github.io</link><image><url>/images/cover-star.jpg</url><title>Simon&apos;s blog</title><link>https://SakuragiZHX.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Dec 2016 08:45:08 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[浅谈JavaScript中的闭包]]></title><description><![CDATA[<div class="sect2">
 <h3 id="__">一、闭包是什么？</h3>
 <div class="paragraph">
 <p>《JavaScript高级程序设计》上写道：“闭包是指有权访问另一个函数作用域中的变量的函数”，如果用下定义的观点看，这句话就是说“闭包是函数”，带着怀疑的心态又去网上找了找，发现什么说法都有，还是不能明白，暂且不管，还是看代码来得直接。</p>
@@ -35,6 +35,22 @@ result();	//"blue"</pre>
 <div class="paragraph">
 <p>说了这么多，闭包到底有什么用呢？我个人认为闭包最大的用处即防止对全局作用域的污染。
 试想如果我们把一些仅仅只用到一两次的变量都声明在全局作用域中，最后肯定是容易出错且不可维护的。而闭包最神奇的地方就是能在一个函数外访问函数中的局部变量，把这些变量用闭包的形式放在函数中便能避免污染。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___4">四、需要注意的</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>闭包将函数的活动对象维持在内存中，过度使用闭包会导致内存占用过多；</p>
+</li>
+<li>
+<p>闭包只能取得外部函数中任何变量的最后一个值，在使用循环且返回的函数中带有循环变量时会得到错误结果；</p>
+</li>
+<li>
+<p>当返回的函数为匿名函数时，注意匿名函数中的this指的是window对象。</p>
+</li>
+</ul>
 </div>
 </div>]]></description><link>https://SakuragiZHX.github.io/2016/12/04/Java-Script.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/04/Java-Script.html</guid><category><![CDATA[JavaScript]]></category><category><![CDATA[ 闭包]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Sun, 04 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[简单易用的github博客搭建工具---HubPress]]></title><description><![CDATA[<div class="sect1">
 <h2 id="__hubpress">一、HubPress是什么?</h2>
