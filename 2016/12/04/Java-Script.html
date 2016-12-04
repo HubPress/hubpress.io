@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/main.min.css?v=1480840656813"/>
-    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/custom.css?v=1480840656813"/>
-    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1480840656813"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/main.min.css?v=1480841108587"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/custom.css?v=1480841108587"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1480841108587"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1480840656813"></script>
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1480841108587"></script>
 
     <link rel="canonical" href="https://SakuragiZHX.github.io/2016/12/04/Java-Script.html" />
     <meta name="referrer" content="origin" />
@@ -221,6 +221,22 @@ result();	//"blue"</pre>
 试想如果我们把一些仅仅只用到一两次的变量都声明在全局作用域中，最后肯定是容易出错且不可维护的。而闭包最神奇的地方就是能在一个函数外访问函数中的局部变量，把这些变量用闭包的形式放在函数中便能避免污染。</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="___4">四、需要注意的</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>闭包将函数的活动对象维持在内存中，过度使用闭包会导致内存占用过多；</p>
+</li>
+<li>
+<p>闭包只能取得外部函数中任何变量的最后一个值，在使用循环且返回的函数中带有循环变量时会得到错误结果；</p>
+</li>
+<li>
+<p>当返回的函数为匿名函数时，注意匿名函数中的this指的是window对象。</p>
+</li>
+</ul>
+</div>
+</div>
           </div>
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
@@ -279,7 +295,7 @@ result();	//"blue"</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1480840656813"></script>
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1480841108587"></script>
 
 
   </body>
