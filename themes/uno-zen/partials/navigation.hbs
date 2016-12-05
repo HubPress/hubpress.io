@@ -1,0 +1,9 @@
+<nav class="navigation left">
+  <ul class="links">
+    {{#foreach navigation}}
+      <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} {{#is "home"}}nav-current{{/is}}">
+        <a href="{{url absolute="true"}}">{{label}}</a>
+      </li>
+    {{/foreach}}
+  </ul>
+</nav>

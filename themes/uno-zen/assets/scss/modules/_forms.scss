@@ -1,0 +1,33 @@
+*:focus {
+  outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  background: $gray-lightest;
+  border: 1px solid $gray-light;
+  border-radius: $border-radius;
+  color: $gray-darker;
+  font-size: .9em;
+  padding: 1em;
+  width: 240px;
+
+  @include placeholder {
+    color: $gray;
+  }
+
+  &:focus {
+    border-color: $secondary-color;
+  }
+}
