@@ -4,9 +4,6 @@ _My first hackathon_
 
 image::team.jpg[Sunset]
 
-pass:[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
-
 video::pKrh6pd3IKg[youtube, height = 280, width = 500] 
 
 == Begin
@@ -47,15 +44,20 @@ We burnt the midnight oil and were not our 100 per cent to say the least. We dec
 
 == We won!(Sort of)
 
-It took about an hour for the judges to declare the results. The first place was to be awarded ₹3 lakh($4.3k), second place ₹2 lakh($2.9k) and third place ₹1 lakh($1.4k). The first place winners were also going to showcase their project in the Bosch Smart Manufacturing(BSM) Conclave in Mumbai. Before they announced the Grand Prize winners, they called out our names saying we were going to Mumbai! But we didn't win any money that day.
+It took about an hour for the judges to declare the results. The first place was to be awarded ₹3 lakh($4.3k), second place ₹2 lakh($2.9k) and third place ₹1 lakh($1.4k). The first place winners also win an all expense trip to showcase their project in the Bosch Smart Manufacturing(BSM) Conclave in Mumbai. Before they announced the Grand Prize winners, they called out our names to showcase our project in Mumbai! But we didn't win any money that day.
 
 == Bosch Smart Manufacturing Conclave
 
-We upgraded our arm and set off for Mumbai. Bosch paid for the flight, hotel, everything. In our time in the hotel we finally came up with a name for our arm, *Darwin* _the arm that adapts_. We had to demonstrate on stage and this time we had no margin for error. A day prior our robotic arm caught fire due to a bad wire and our Leap Motion stopped working. After overcoming the series of unfortunate events we had the most amazing experience.
+We upgraded our arm and set off for Mumbai. Bosch paid for the flight, hotel, everything. In our time in the hotel we finally came up with a name for our arm, *Darwin* _the arm that adapts_. We had to demonstrate on stage and this time we had no margin for error. A day prior our robotic arm caught fire due to a bad wire and our Leap Motion stopped working. After overcoming the _series of unfortunate events_ we had the most amazing feeling, *relief* that there was no catastrophe. 
+
+In this tweet it's official that we are the Winners of the hackathon. 
+
+pass:[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
 
 == Epilogue
 
-We are now Student Ambassadors of Bosch and got the oppurtunity to meet(TO WRITE...)
+We are now Student Ambassadors of Bosch and got the oppurtunity to meet the Team representing South Africa in the Robotics Olympiad. It was a fruitful experience interacting with these highschool robotic prodigies.  
 
 Hackathon Repository: https://github.com/Imran31/BoschHackathon
 
