@@ -40,3 +40,6 @@ module.exports={
 entry即告诉webpack工程的入口，output即输出文件配置，__dirname是node中的一个全局变量，指向当前指向的脚本所在目录。
 
 devServer即本地服务器的配置。
+
+_本文章主要为了方便本人记忆,关于webpack的入门可以参考zhangwang的文章:_
+http://www.jianshu.com/p/42e11515c10f
