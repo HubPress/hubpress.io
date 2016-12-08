@@ -1,0 +1,42 @@
+= 时下最流行的前端工具——webpack入门
+:hp-tags: webpack, tools
+
+webpack是一款模块打包工具，它的功能有：通过对应的loader将es6、sass、css、json、图片等文件解析为js文件；将多个js文件打包成一个js文件;提供sourceMap、devServer等工具便于调试；可以添加个各种plugin来扩展功能。
+
+webpack的核心即它的配置文件webpack.config.js。下面是一个简单的例子：
+
+----
+var webpack = require("webpack");
+
+module.exports={
+	entry:__dirname+"/app/main.js",
+	output:{
+		path:__dirname + "/dist",
+		filename:"bundle.js"
+	},
+	module:{
+		loaders:[
+			{
+				test:/\.js/,
+				exclude:/node_modules/,
+				loader:"babel"
+			},
+			{
+				test:/\.json/,
+				loader:"json"
+			}
+		]
+	},
+	devServer:{
+		inline:true,
+		contentBase:"./dist"
+	},
+	plugins: [
+    	new webpack.BannerPlugin("Copyright Flying Unicorns inc.")
+  ]
+
+}
+----
+entry即告诉webpack工程的入口，output即输出文件配置，__dirname是node中的一个全局变量，指向当前指向的脚本所在目录。
+
+devServer即本地服务器的配置。
