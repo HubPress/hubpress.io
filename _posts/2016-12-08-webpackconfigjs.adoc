@@ -1,4 +1,4 @@
-= 时下最流行的前端工具——webpack入门
+= webpack.config.js配置
 :hp-tags: webpack, tools
 
 webpack是一款模块打包工具，它的功能有：通过对应的loader将es6、sass、css、json、图片等文件解析为js文件；将多个js文件打包成一个js文件;提供sourceMap、devServer等工具便于调试；可以添加个各种plugin来扩展功能。
