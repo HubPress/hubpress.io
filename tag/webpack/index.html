@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>webpack - Simon&#x27;s blog</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="webpack - Simon&#x27;s blog">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="webpack - Simon&#x27;s blog">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/main.min.css?v=1481183406119"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/custom.css?v=1481183406119"/>
+    <link rel="stylesheet" href="//SakuragiZHX.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1481183406119"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1481183406119"></script>
+
+    <link rel="canonical" href="https://SakuragiZHX.github.io/https://SakuragiZHX.github.io/tag/webpack/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Simon&#x27;s blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="webpack - Simon&#x27;s blog" />
+    <meta property="og:url" content="https://SakuragiZHX.github.io/https://SakuragiZHX.github.io/tag/webpack/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="webpack - Simon&#x27;s blog" />
+    <meta name="twitter:url" content="https://SakuragiZHX.github.io/https://SakuragiZHX.github.io/tag/webpack/" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Simon&#x27;s blog" href="https://SakuragiZHX.github.io/rss/" />
+  </head>
+  <body class="tag-template tag-webpack">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io" title="Simon&#x27;s blog" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://SakuragiZHX.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://github.com/SakuragiZHX" title="Github" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="mailto:dai@hust.edu.cn" title="Email" target="_blank">
+              <i class="fa fa-envelope-o"></i>Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<aside role="banner" class="cover">
+  <div data-load-image="/images/cover-star.jpg" class="cover-image"></div>
+  <div class="cover-container">
+    <h1 class="cover-title"><a href="https://SakuragiZHX.github.io" title="Simon&#x27;s blog">Simon&#x27;s blog</a></h1>
+    <p class="cover-description">Do one thing at a time, and do well.</p>
+  </div>
+</aside>
+
+<section class="wrapper" tabindex="0">
+  <div class="wrapper-container">
+    <header>
+      <p><h2>Posts tagged with <i>webpack</i></h2></p>
+      <hr>
+    </header>
+
+    <section class="post-list">
+        <article itemscope itemtype="http://schema.org/BlogPosting"
+          role="article" class="post-item post tag-webpack tag-tools">
+          <header class="post-item-header">
+            <h2 itemprop="name" class="post-item-title">
+              <a href="https://SakuragiZHX.github.io/2016/12/08/webpack.html" itemprop="url" data-pjax title="时下最流行的前端工具——webpack入门">
+                时下最流行的前端工具——webpack入门
+              </a>
+            </h2>
+          </header>
+          <section itemprop="description" class="post-item-excerpt">
+            <p>webpack是一款模块打包工具，它的功能有：通过对应的loader将es6、sass、css、json、图片等文件解析为js文件；将多个js文件打包成一个js文件;提供sourceMap、devServer等工具便于调试；可以添加个各种plugin来扩展功能。 webpack的核心即它的配置文件webpack.config.js。下面是一个简单的例子： var webpack = require("webpack"); module.exports={ 	entry:__dirna&hellip;</p>
+          </section>
+          <footer class="post-item-footer">
+            <ul class="post-item-meta-list">
+              <li class="post-item-meta-item">
+                <time datetime="2016-12-08" itemprop="datePublished">
+                  16 hours ago
+                </time>
+              </li>
+                <li class="post-item-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://SakuragiZHX.github.io/tag/webpack/">webpack</a>, <a href="https://SakuragiZHX.github.io/tag/tools/"> tools</a></span>
+                  </span>
+                </li>
+              <li class="post-item-meta-item">
+                <a href="https://SakuragiZHX.github.io/2016/12/08/webpack.html#disqus_thread" data-pjax data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+          </footer>
+        </article>
+    </section>
+
+      <nav role="pagination" class="post-list-pagination">
+  <span class="post-list-pagination-item post-list-pagination-item-current">Page 1 of 1</span>
+</nav>
+
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Simon&#x27;s blog</span>. 2016. All Rights Reserved.</small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//SakuragiZHX.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1481183406119"></script>
+
+
+  </body>
+</html>
