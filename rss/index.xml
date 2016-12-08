@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Simon's blog]]></title><description><![CDATA[Do one thing at a time, and do well.]]></description><link>https://SakuragiZHX.github.io</link><image><url>/images/cover-star.jpg</url><title>Simon&apos;s blog</title><link>https://SakuragiZHX.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Dec 2016 08:45:08 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[浅谈JavaScript中的闭包]]></title><description><![CDATA[<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Simon's blog]]></title><description><![CDATA[Do one thing at a time, and do well.]]></description><link>https://SakuragiZHX.github.io</link><image><url>/images/cover-star.jpg</url><title>Simon&apos;s blog</title><link>https://SakuragiZHX.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 08 Dec 2016 07:50:06 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[时下最流行的前端工具——webpack入门]]></title><description><![CDATA[<div class="paragraph">
+<p>webpack是一款模块打包工具，它的功能有：通过对应的loader将es6、sass、css、json、图片等文件解析为js文件；将多个js文件打包成一个js文件;提供sourceMap、devServer等工具便于调试；可以添加个各种plugin来扩展功能。</p>
+</div>
+<div class="paragraph">
+<p>webpack的核心即它的配置文件webpack.config.js。下面是一个简单的例子：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var webpack = require("webpack");
+
+module.exports={
+	entry:__dirname+"/app/main.js",
+	output:{
+		path:__dirname + "/dist",
+		filename:"bundle.js"
+	},
+	module:{
+		loaders:[
+			{
+				test:/\.js/,
+				exclude:/node_modules/,
+				loader:"babel"
+			},
+			{
+				test:/\.json/,
+				loader:"json"
+			}
+		]
+	},
+	devServer:{
+		inline:true,
+		contentBase:"./dist"
+	},
+	plugins: [
+    	new webpack.BannerPlugin("Copyright Flying Unicorns inc.")
+  ]
+
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>entry即告诉webpack工程的入口，output即输出文件配置，__dirname是node中的一个全局变量，指向当前指向的脚本所在目录。</p>
+</div>
+<div class="paragraph">
+<p>devServer即本地服务器的配置。</p>
+</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/08/webpack.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/08/webpack.html</guid><category><![CDATA[webpack]]></category><category><![CDATA[ tools]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Thu, 08 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[浅谈JavaScript中的闭包]]></title><description><![CDATA[<div class="sect2">
 <h3 id="__">一、闭包是什么？</h3>
 <div class="paragraph">
 <p>《JavaScript高级程序设计》上写道：“闭包是指有权访问另一个函数作用域中的变量的函数”，如果用下定义的观点看，这句话就是说“闭包是函数”，带着怀疑的心态又去网上找了找，发现什么说法都有，还是不能明白，暂且不管，还是看代码来得直接。</p>
