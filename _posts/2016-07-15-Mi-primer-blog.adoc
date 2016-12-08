@@ -22,8 +22,18 @@ http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
 
 ---
 
+== telegram rss/atom mi-chrome
+
+http://channel2rss.bitmachine.org/rss/mi-chrome
+---
+http://channel2rss.bitmachine.org/atom/mi-chrome
 
 
+
+
+
+
+---
 
 == Otros
 
