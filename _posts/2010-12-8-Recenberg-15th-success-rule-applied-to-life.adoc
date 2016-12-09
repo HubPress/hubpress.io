@@ -1,4 +1,4 @@
-= Recenberg 1/5th success rule applied to life
+= Recenberg 1/5th success rule applied to life =
 :hp-tags: light bulb, migrated
 :published_at: 2010-12-8
 
