@@ -1,3 +1,30 @@
+## 0.6.0
+
+* feat(rss): add the generation of the RSS feed
+* feat(rss): uncomment RSS links in themes
+* feat(admin): add a link to check if an upgrade is available
+* fix(template): fix a bug with the pagination on gh-pages
+* fix(theme): fix the typo of the theme saga
+* fix(admin): add the version of the application and donation items
+
+## 0.5.1
+
+* feat(author): now the author of a post is the author of the first commit of the post, in the next version we will add an attribute to specify the author explicitely,
+* feat(author): authors have now an author page with a list of all their posts,
+* feat(posts): you can now delete your delete a post with the Delete button in the three dots menu,
+* feat(posts): in the posts list, we have now a button to synchronize all the posts,
+* feat(editor): the default theme of the editor is Solarized, you can also switch between light and dark version with the light button in the toolbar,
+* feat(editor): hide save and publish button if the post do not have a title,
+* feat(asciidoc): include are now supported,
+* feat(asciidoc): add a gist macro to import code source from a gist file,
+* fix(themes): theme names are now in lowercase,
+* fix(post): fix https://github.com/HubPress/hubpress.io/issues/369, acronym title are now fixed
+* doc(guides): lot of rework in the Administration guide and Writer's guide, first step in the gitbook world,
+* feat(tech): explode all the application in plugins,
+* feat(tech): use redux instead of a handcrafted implementation of Flux,
+* feat(tech): use PouchDB instead of Dexie.js,
+* feat(tech): use Asciidoctor 1.5.2
+
 ## 0.4.0
 
 * feat(gui): switch to material design with material-ui
