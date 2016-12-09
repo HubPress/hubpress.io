@@ -1,0 +1,127 @@
+{{!< default}}
+
+{{#post}}
+
+    {{#if image}}
+        <div id="feature_image">
+            <div class="inner" style="background-image: url('{{image}}')">
+                <img src="{{image}}">
+            </div>
+        </div>
+    {{/if}}
+
+    <article role="main" class="{{#if image}}image{{/if}}">
+        <header>
+            <a href="{{@blog.url}}" id="home_link">«</a>
+            <div class="meta"><time datetime="{{date format='YYYY-MM-DD'}}"><a href="{{url}}">{{date format="MMMM DD, YYYY"}}</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>{{title}}</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            {{content}}
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+    {{#author}}
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <a href="{{@blog.url}}/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a>
+
+                {{#if image}}
+                <a href="{{url}}" class="photo">
+                    <span style="background-image: url('{{image}}');">
+                        <img src="{{image}}" alt="{{name}}">
+                    </span>
+                </a>
+                {{/if}}
+
+                <div class="details">
+                    <h4><a href="{{url}}" class="url n">{{name}}</a></h4>
+                    {{#if location}}{{location}}<br>{{/if}}
+                    {{#if website}}<a href="{{website}}" class="js-remove-domain-schema">{{website}}</a>{{/if}}
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    {{!-- TODO: Parse HTML for links --}}
+                    {{bio}}
+                </div>
+            </div>
+
+        </footer>
+    {{/author}}
+
+
+
+    {{#if @blog.disqus}}
+
+    <section class="post-comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      var disqus_shortname = '{{@blog.disqus}}'; // required: replace example with your forum shortname
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </section>
+
+    {{/if}}
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;description={{encode title}}-{{encode @blog.title}} " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{/post}}
+
+{{!-- TODO: Add next/prev posts --}}
