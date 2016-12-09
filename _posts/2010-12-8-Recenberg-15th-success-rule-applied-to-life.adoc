@@ -1,7 +1,0 @@
-= Recenberg 1/5th success rule applied to life =
-:hp-tags: light bulb, migrated
-:published_at: 2010-12-8
-
-For those who are not familiar, Rechenberg's 1/5 rule refers to adaptive mutation in evolutionary strategies. It suggests that the ratio of successful mutations to all mutation should be 1/5. It is a rough heuristic for balancing exploration vs. exploitation that worked out pretty well in experiments.
-
-Perhaps we should apply this principle in life. If you are always successful (more than 1 out of 5 contiguous tries) then you are converging too fast to a local optima (aka safe options), resulting in stagnation later on. Ideally, atleast according to Rechenberg, one should try four risky avenues for every safe choice to optimally balance stagnation vs. growth.
