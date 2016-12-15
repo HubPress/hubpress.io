@@ -33,6 +33,20 @@ set([1, 2, 3])
 [1, 2, 3]
 ----
 
+====== Remove empty string in a list
+
+[source,python]
+----
+>>> l = ["a", "", "b"]
+>>> l
+['a', '', 'b']
+>>> l = [x for x in l if x]
+>>> l
+['a', 'b']
+----
+
+
+
 ==== Ternary in python
 Added in 2.5 version of python :
 
