@@ -67,7 +67,7 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/cre
 Hacks are displayed as card in the hack list.
 Users can search through the displayed items.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true>[Hacks view]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true>[Hacks view, width=640]
 
 === Hacks Details
 
@@ -85,5 +85,8 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/Hac
 - Export hack list to CSV.
 - Online code beautifier.
 - i18n (English - French).
+
+
+
 
 
