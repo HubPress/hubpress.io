@@ -2,22 +2,20 @@
 
 Full open source web app to manage Hackathon events.
 
-
 :toc:
 
 
 == Features
 
 
-
 === Sign up Local
 
-Users are able to sign up with email and password.
+Users are able to sign up either with email and password.
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true[signup local]
 
 
-Or using social platforms with OAuth.
+Or using social platforms with OAuth/2
 
 #### Sign up Social
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true[signup social]
@@ -28,17 +26,17 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hac
 
 Admins set up hackathons using simple forms.
 
-*Summary information* with a title, start & end date along with a short description.
+*Summary information* with title, start & end date along with short description.
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonMainForm.png?raw=true[main form]
 
 
-*Details form*, some more information such as full description, rules and prizes for this event. Editing supports markdown.
+*Details form* with some more information such as full description, rules and prizes for this event. Supports markdown with preview.
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsForm.png?raw=true[details form]
 
 
-*Image upload* to display for the event.
+*Image upload* to display on the event.
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonImageForm.png?raw=true[image upload social]
 
@@ -51,27 +49,27 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hac
 
 === Hackathon details view
 
-Users can see the full information about the event.
+Users can click on details to see full information of the event.
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsView.png?raw=true[hackathon details view]
 
 
 === Hacks
 
-Users can create hacks through the *Hack Form*
+Users can create hacks, here is the  *Hack Form*
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/createHackView.png?raw=true[create hack view]
 
 === Hacks view
 
-Hacks are displayed as card in the hack list.
+Hacks are displayed as cards on the hack list.
 Users can search through the displayed items.
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true[alt=Hacksview, width=216, height=269]
 
 === Hacks Details
 
-Users can drill down to show the full hack information, join and add comments.
+Users can drill down to show full hack information, join and add comments.
 
 image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/HackDetailsView.png?raw=true[Hacks view]
 
@@ -79,13 +77,13 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/Hac
 
 === Other features
 
-- User profile edit, with avatar upload.
-- Participan listing.
+- User profile editing, with avatar upload.
+- Participans listing.
 - Ability to nominate hacks.
 - Export hack list to CSV.
 - i18n (English - French).
 - Encryption of passwords.
-- Online code beautifier
+- Online code beautifier for:
   * JavaScript/JSON
   * HTML/CSS
   * XML
