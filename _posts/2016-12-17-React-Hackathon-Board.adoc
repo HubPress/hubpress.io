@@ -4,6 +4,55 @@
 
 #### Sign up Local
 
-
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true>[signup local]
 
 #### Sign up Social
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true>[signup social]
+
+
+
+#### Hackathon Setup
+
+Main information form
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonMainForm.png?raw=true>[main form]
+
+
+
+
+Details form
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsForm.png?raw=true>[details form]
+
+
+
+Image upload
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonImageForm.png?raw=true>[image upload social]
+
+#### Hackathon view
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonView.png?raw=true>[hackathon card view]
+
+
+#### Hackathon details view
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsView.png?raw=true>[hackathon details view]
+
+
+#### Create Hack form
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/createHackView.png?raw=true>[create hack view]
+
+#### Hacks view
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true>[Hacks view]
+
+#### Hacks Details
+
+View of the hack details, user can join and add comments.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackDetailsView.png?raw=true>[Hacks view]
+
+
+
