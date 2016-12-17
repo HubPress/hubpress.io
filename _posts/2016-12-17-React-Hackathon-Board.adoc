@@ -14,13 +14,13 @@ toc::[]
 
 Users are able to sign up with email and password.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true>[signup local]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true[signup local]
 
 
 Or using social platforms with OAuth.
 
 #### Sign up Social
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true>[signup social]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true[signup social]
 
 
 
@@ -30,50 +30,50 @@ Admins set up hackathons using simple forms.
 
 *Summary information* with a title, start & end date along with a short description.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonMainForm.png?raw=true>[main form]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonMainForm.png?raw=true[main form]
 
 
 *Details form*, some more information such as full description, rules and prizes for this event. Editing supports markdown.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsForm.png?raw=true>[details form]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsForm.png?raw=true[details form]
 
 
 *Image upload* to display for the event.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonImageForm.png?raw=true>[image upload social]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonImageForm.png?raw=true[image upload social]
 
 === Hackathon view
 
 The Event will then display as a card in the hackaton list.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonView.png?raw=true>[hackathon card view]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonView.png?raw=true[hackathon card view]
 
 
 === Hackathon details view
 
 Users can see the full information about the event.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsView.png?raw=true>[hackathon details view]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsView.png?raw=true[hackathon details view]
 
 
 === Hacks
 
 Users can create hacks through the *Hack Form*
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/createHackView.png?raw=true>[create hack view]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/createHackView.png?raw=true[create hack view]
 
 === Hacks view
 
 Hacks are displayed as card in the hack list.
 Users can search through the displayed items.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true>[alt=Hacksview, width=660, height=822]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true[alt=Hacksview, width=660, height=822]
 
 === Hacks Details
 
 Users can drill down to show the full hack information, join and add comments.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/HackDetailsView.png?raw=true>[Hacks view]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/HackDetailsView.png?raw=true[Hacks view]
 
 
 
