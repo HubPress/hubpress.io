@@ -52,7 +52,7 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hac
 
 View of the hack details, user can join and add comments.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackDetailsView.png?raw=true>[Hacks view]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/HackDetailsView.png?raw=true>[Hacks view]
 
 
 
