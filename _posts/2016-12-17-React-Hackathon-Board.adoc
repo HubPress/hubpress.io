@@ -67,7 +67,7 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/cre
 Hacks are displayed as card in the hack list.
 Users can search through the displayed items.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true[alt=Hacksview, width=660, height=822]
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true[alt=Hacksview, width=216, height=269]
 
 === Hacks Details
 
