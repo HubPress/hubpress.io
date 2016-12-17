@@ -56,3 +56,13 @@ image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/Hac
 
 
 
+#### Other features
+
+- User profile edit, with avatar upload.
+- Participan listing.
+- Ability to nominate hacks.
+- Export hack list to CSV.
+- Online code beautifier.
+- i18n (English - French).
+
+
