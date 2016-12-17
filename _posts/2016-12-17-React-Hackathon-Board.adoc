@@ -3,7 +3,7 @@
 Full open source web app to manage Hackathon events.
 
 
-toc::[]
+:toc:
 
 
 == Features
