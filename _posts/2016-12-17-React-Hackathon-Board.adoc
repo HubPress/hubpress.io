@@ -1,9 +1,9 @@
 = React Hackathon Board
-:toc:
-
 
 Full open source web app to manage Hackathon events.
 
+
+toc::[]
 
 
 == Features
