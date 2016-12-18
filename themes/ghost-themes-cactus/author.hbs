@@ -1,0 +1,21 @@
+{{!< default}}
+
+<article class="post clearfix">
+
+    {{#author}}
+
+        <img id="photo" src="{{image}}" alt={{name}} />
+        <div id="details">
+            <header>
+                <h1>{{name}}</h1>
+            </header>
+            <section id="post-body">
+                <h2 class="headline">{{bio}}</h2>
+            </section>
+        </div>
+
+    {{/author}}
+
+</article>
+
+{{> excerpts}}

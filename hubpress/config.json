@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"georgebusby","repositoryName":"georgebusby.github.io","branch":"master"},"site":{"title":"the history in our genes","description":"","cover":"https://georgebusby.github.io/covers/ALL2.svg","postsPerPage":"10","googleAnalytics":"UA-63203307-1","url":"https://georgebusby.github.io"},"socialnetwork":{"email":"george.busby@gmail.com","twitter":"https://twitter.com/busbygeorge","github":"https://github.com/georgebusby/"},"theme":{"name":"Casper","url":"//georgebusby.github.io/themes/Casper"}}
