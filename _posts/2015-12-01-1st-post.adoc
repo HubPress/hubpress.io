@@ -1,0 +1,6 @@
+= 1st post
+
+:hp-image: a-cover-image.jpg
+:hp-tags: tags, Blog, Open Source,
+
+jjg jgj      jgjgjj

@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"techexpertize","repositoryName":"techexpertize.github.io","branch":"master"},"site":{"title":"technology expert","description":"expert of technology","postsPerPage":"8","url":"https://techexpertize.github.io"},"socialnetwork":{},"theme":{"name":"Casper","url":"//techexpertize.github.io/themes/Casper"}}
