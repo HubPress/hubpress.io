@@ -14,7 +14,7 @@ Users are able to sign up either with email and password.
 
 
 image:https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true[
-"Login Local",width=64,
+"Login Local",width=256,
 link="https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true"]
 
 
