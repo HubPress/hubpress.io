@@ -12,13 +12,19 @@ Full open source web app to manage Hackathon events.
 
 Users are able to sign up either with email and password.
 
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true[signup local]
+
+image:https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true[
+"Login Local",width=128,
+link="https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true"]
 
 
 Or using social platforms with OAuth/2
 
 #### Sign up Social
-image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true[signup social]
+
+image:https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true[
+"Login Local",width=128,
+link="https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true"]
 
 
 
