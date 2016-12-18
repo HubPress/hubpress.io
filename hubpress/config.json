@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"raerpo","repositoryName":"raerpo.github.io","branch":"gh-pages"},"site":{"url":"https://raerpo.github.io/raerpo.github.io"},"socialnetwork":{"email":"raerpo@gmail.com"},"theme":{"name":"Casper","url":"//raerpo.github.io/raerpo.github.io/themes/Casper"}}
