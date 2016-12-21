@@ -7,6 +7,18 @@ Here you will find some tips n tricks around python.
 
 ==== List tricks
 
+====== Print a list in one line
+[source,python]
+----
+>>> l = ["a", "b", "c"]
+>>> ";".join(l)
+'a;b;c'
+
+>>> l = [1, 2, 3]
+>>> "".join(str(l))
+'[1, 2, 3]'
+----
+
 ====== Get the last elem or go back in a list
 [source,python]
 ----
