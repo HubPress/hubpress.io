@@ -22,13 +22,10 @@ Here you will find some tips n tricks around python.
 ====== Get the last elem or go back in a list
 [source,python]
 ----
-l = ["a", "b", "c"] #<1>
-print (l[-1]) #<2>
-print (l[-2]) #<3>
+l = ["a", "b", "c"] 
+print (l[-1]) # Get the last element of the list which will print "c"
+print (l[-2]) # Will print "b"
 ----
-<1> Set list
-<2> Get the last element of the list which will print "c"
-<3> Will print "b" 
 
 ====== Remove duplicates in a list
 
