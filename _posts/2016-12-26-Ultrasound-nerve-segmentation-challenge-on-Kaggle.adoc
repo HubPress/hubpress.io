@@ -1,0 +1,6 @@
+= Ultrasound nerve segmentation challenge on Kaggle
+
+A while ago, kaggle hosted the link:https://www.kaggle.com/c/ultrasound-nerve-segmentation[ultrasound nerve segmentation challenge], which requires partipants to predict the nerve area (brachial plexus) in a given Ultrasound image. The task is to predict the segmentation mask for the the brachial plexus.
+
+
+
