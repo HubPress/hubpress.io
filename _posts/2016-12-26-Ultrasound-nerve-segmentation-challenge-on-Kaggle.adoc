@@ -2,5 +2,11 @@
 
 A while ago, kaggle hosted the link:https://www.kaggle.com/c/ultrasound-nerve-segmentation[ultrasound nerve segmentation challenge], which requires partipants to predict the nerve area (brachial plexus) in a given Ultrasound image. The task is to predict the segmentation mask for the the brachial plexus.
 
+.Sample ultrasound and segmentation mask
+image::ultrasound/example.jpg[sample]
+
+What makes this challenge particularly interesting is that ~60% of images do not contain the brachial plexus, i.e., segmentations mask is empty. Since the competetion uses link:https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient[dice coefficient] as the evaluation metric, even a single pixel in the segmentation mask kills the score. This means that you can acheive a score of ~0.6 just by predicting zero masks.
+
+
 
 
