@@ -1,6 +1,6 @@
 = Ultrasound nerve segmentation challenge on Kaggle
 
-A while ago, kaggle hosted the link:https://www.kaggle.com/c/ultrasound-nerve-segmentation[ultrasound nerve segmentation challenge], which requires partipants to predict the nerve area (brachial plexus) in a given Ultrasound image. The task is to predict the segmentation mask for the the brachial plexus. Even my own neural network (brain) finds it difficult to spot patterns in these images, can a conv net do any better? (TLDR: Yes)
+A while ago, kaggle hosted the link:https://www.kaggle.com/c/ultrasound-nerve-segmentation[ultrasound nerve segmentation challenge], which requires partipants to predict the nerve area (brachial plexus) in a given Ultrasound image. The task is to predict the segmentation mask for the the brachial plexus. Even my own neural network (brain) finds it difficult to spot patterns in these images. Can you spot the pattern?
 
 [.text-center]
 .Sample ultrasound and segmentation mask
@@ -12,11 +12,15 @@ image::ultrasound/example.jpg[sample]
 image::ultrasound/contour.gif[contour]
 {empty} +
 
-What makes this challenge particularly interesting is that ~60% of images do not contain the brachial plexus, i.e., segmentations mask is empty. Since the competetion uses the mean of link:https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient[dice coefficient] across all samples as the evaluation metric, even a single pixel in segmentation mask for non-nerve images mask kills the score. Ironically, you can achieve a score of ~0.6 just by predicting zero masks; it drops to ~[0.35, 0.45] when you try to learn it using a standard encoder-decoder link:https://arxiv.org/pdf/1411.4038.pdf[FCN]. This intrigued me enough to participate in the challenge. 
+What makes this challenge particularly interesting is that ~60% of images do not contain the brachial plexus, i.e., segmentations mask is empty. Since the competetion uses the mean of link:https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient[dice coefficient] across all samples as the evaluation metric, even a single pixel in segmentation mask for non-nerve images mask kills the score. Ironically, you can achieve a score of ~0.6 just by predicting zero masks; it drops to ~[0.35, 0.45] when you try to learn it using a standard encoder-decoder link:https://arxiv.org/pdf/1411.4038.pdf[FCN]. This, combined with the fact that ultrasound images are noisy, intrigued me enough to participate in the challenge.
 
 > Unlike most kaggle posts, this article is more about the thought-process involved in coming up with a solution. I find it distasteful when folks just hand out a giant blob of code on github or just post their final complex solution that somehow gives good results.
 
-=== Dealing with empty segmentation masks
+== Step1: Data exploration
+
+Before you dive into building some random conv-net, it is always a good idea to a better understanding of your dataset at hand. The idea is to leverage insights from the dataset to improve/build the conv-net architecture and perhaps use dataset specific idiosynchronicities to provide better training signal.
+
+
 
 
 
