@@ -16,9 +16,62 @@ What makes this challenge particularly interesting is that ~60% of images do not
 
 > Unlike most kaggle posts, this article is more about the thought-process involved in coming up with a solution. I find it distasteful when folks just hand out a giant blob of code on github or just post their final complex solution that somehow gives good results.
 
-== Step1: Data exploration
+== Step1: Quick and dirty baseline
 
-Before you dive into building some random conv-net, it is always a good idea to a better understanding of your dataset at hand. The idea is to leverage insights from the dataset to improve/build the conv-net architecture and perhaps use dataset specific idiosynchronicities to provide better training signal.
+My methodology is always to first start with a quick and simple baseline model and setup and end-end working code. In case of this challenge, this means:
+
+* Data related I/O - Loading, train/test splits, optional preprocessing blocks
+* Baseline model: I used FCN encoder-decoder as they learn end-end, simple and showed good results on other segmenatation problems.
+* Clean code: Try to organize code into classes. Having function blocks everywhere makes the code messy and error prone.
+* Submission code: Code to generate submission file.
+
+As mentioned in the overview, this tends to give mean dice score of ~[0.35, 0.45].
+
+== Step2: Data exploration
+
+Now that an end-end working code is setup. We can work on optimizing individual blocks. The most obvious strategy is to get a better understanding of dataset at hand. The idea is to leverage insights from the dataset to improve/build the conv-net architecture and perhaps use dataset specific idiosynchronicities to provide better training signal.
+
+Initial manual exploration revealed contradictory examples. i.e., two very similar images have different labels, one with a valid segmentation mask while the other doesn't.
+
+[.text-center]
+.Contradictory samples
+image::ultrasound/contradictory_samples.gif[contour]
+{empty} +
+
+Lets try to find all such near duplicates. High level idea is as follows:
+
+* Divide image into blocks, say (20, 20).
+* Compute histogram over various blocks. The concatenated set of histograms represents the image _hash_.
+* Compute pairwise cosine similarity between image hashes and find ones within some reasonable threshold.
+
+[source, python]
+----
+import skimage.util
+import scipy.spatial.distance as spdist
+
+def compute_img_hist(img):
+    # Divide the image in blocks and compute per-block histogram
+    blocks = skimage.util.view_as_blocks(img, block_shape=(20, 20))
+    img_hists = [np.histogram(block, bi
+
+# Compute hashes over all images
+hashes = np.array(map(compute_img_hist, imgs))
+
+# pairwise distance matrix
+dist = spdist.squareform(spdist.pdist(hashes, metric='cosine'))
+
+# find duplicates. +np.eye because we want to exclude image matching with itself.
+# 0.008 is determined after some trial and errors.
+close_pairs = dists + np.eye(dists.shape[0]) < 0.008
+----
+
+The number of samples with inconsistent labeling is a whooping 21% of the training set! Such a large number of inconsitent samples is bound to put an upper limit on how how accurate your model can get. I think part of the problem lies with how the dataset was setup. Typically, doctors use ultrasound video frames to localize the nerve. Finding the nerve with a single frame is extremely challenging, even for human experts. I think it would be more interesting if they included videos instead.
+
+
+
+
+
+
 
 
 
