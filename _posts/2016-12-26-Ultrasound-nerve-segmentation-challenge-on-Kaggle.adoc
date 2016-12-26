@@ -4,13 +4,19 @@ A while ago, kaggle hosted the link:https://www.kaggle.com/c/ultrasound-nerve-se
 
 .Sample ultrasound and segmentation mask
 image::ultrasound/example.jpg[sample]
+{nbsp} +
 
 .Various ultrasound images overlayed with segmentation contours.
 image::ultrasound/contour.gif[contour]
+{nbsp} +
 
 What makes this challenge particularly interesting is that ~60% of images do not contain the brachial plexus, i.e., segmentations mask is empty. Since the competetion uses link:https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient[dice coefficient] as the evaluation metric, even a single pixel in segmentation mask for non-nerve images mask kills the score. Ironically, you can achieve a score of ~0.6 just by predicting zero masks; it drops to ~[0.35, 0.45] when you try to learn it using a standard encoder-decoder link:https://arxiv.org/pdf/1411.4038.pdf[FCN]. This intrigued me enough to participate in the challenge. 
 
 > Unlike most kaggle posts, this article is more about the thought-process involved in coming up with a solution. I find it distasteful when folks just hand out a giant blob of code on github or just post their final complex solution that somehow gives good results.
+
+
+
+
 
 
 
