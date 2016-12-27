@@ -66,9 +66,10 @@ dist = spdist.squareform(spdist.pdist(hashes, metric='cosine'))
 close_pairs = dists + np.eye(dists.shape[0]) < 0.008
 ----
 
-The number of samples with inconsistent labeling is a whooping 21% of the training set! Such a large number of inconsitent samples is bound to put an upper limit on how how accurate your model can get. I think part of the problem lies with how the dataset was setup. Typically, doctors use ultrasound video frames to localize the nerve. Finding the nerve with a single frame is extremely challenging, even for human experts. I think it would be more interesting if they included videos instead.
+The number of samples with inconsistent labeling is a whooping ~40% of the training set!!! Such a large number of inconsitent samples is bound to put an upper limit on the accuracy of the model. I think part of the problem lies with how the dataset was setup. Typically, doctors use ultrasound video frames to localize the nerve. Finding the nerve with a single frame is extremely challenging, even for human experts. I think it would be more interesting if they included videos instead.
 
-The training set is small as is, just 5635 samples. After discards, we are left with . This certainly doesn't look good for training a deep model, which is very data hungry. On top of that, we cannot use transfer learning either, as there are no nets trained on this sort of data set.
+The training set is small as is, just 5635 samples. After discards, we are only left with 3398 samples. This certainly doesn't look good for training a deep model as they require lots of training data. On top of that, we cannot use transfer learning either as there are no pretrained-nets on this sort of data.
+
 
 
 
