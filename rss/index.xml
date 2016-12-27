@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ragha's Blog]]></title><description><![CDATA[Math, Tech, Machine Learning, Life...]]></description><link>https://raghakot.github.io</link><image><url>images/cover.jpg</url><title>Ragha&apos;s Blog</title><link>https://raghakot.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 09 Dec 2016 05:55:02 GMT</lastBuildDate><atom:link href="https://raghakot.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Facebook hacker cup: Power Overwhelming]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You are to inflict maximum damage to the zerg army. There are two types of units - Warrior and Shield. Warriors do damage every second, while a shield protects your entire army for one second. Your army is instantly overrun after the shield generators expire. Given \(G\) cost to build a shield, \(W\) cost to build a warrior and total money \(M\), how many shields would you build?</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solution">Solution</h3>
+<div class="paragraph">
+<p>Let \(X\) and \(Y\) be the optimal number of generators and number of warriors to be built, respectively. Let&#8217;s start with a simple concrete example. Suppose shields and warriors both cost 1 unit and you have total money of 5 units. Also assume 1 unit of damage per warrior. What is the optimum value of \(X\) and \(Y\)? It would be optimum if you can inflict maximum damage. With 5 units of money, you can buy shields/warriors in the following combinations.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Combinations of \(X, Y\)</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">X</th>
+<th class="tableblock halign-left valign-top">Y</th>
+<th class="tableblock halign-left valign-top">Damage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In this case, the optimal choice of \(X, Y\) seem to be \((2, 3)\) and \((3, 4)\) respectively, both of which maximize the product \(XY\). In the general case, the cost to buy \(X\) generators is \(XG\), cost to buy \(Y\) warriors is \(YW\). Since we are limited by \(M\) amount of money, \(X, Y\) must satisfy \(XG + YW \le M\). This can be represented as a line and the inequality encapsulates a region for candidate \((X, Y)\) values.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raghakot.github.io/images/post2/fig1.png" alt="fig1.png">
+</div>
+<div class="title">Figure 1. Candidate solution region</div>
+</div>
+<div class="paragraph">
+<p>We want \(X, Y \mid \arg\max{XY} \). Geometrically, \(XY\) represents the area of the rectangle shaded in blue.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raghakot.github.io/images/post2/fig2.png" alt="fig2.png">
+</div>
+<div class="title">Figure 2. The area to be maximized</div>
+</div>
+<div class="paragraph">
+<p>We need to find integer values of \(X, Y\) that maximize this area.</p>
+</div>
+<div class="paragraph">
+<p>How do we go about doing that?
+We know that the line will intersect X and Y axis at \(\frac{M}{G}, \frac{M}{W}\).
+We also know that the optimal rectangle touches the line. If it doesn&#8217;t, the area can be trivially increased by increasing either/both \(X, Y\) values until it touches the line.</p>
+</div>
+<div class="paragraph">
+<p>The boring calculus way for figuring this out is as follows:</p>
+</div>
+<div class="paragraph">
+<p>\(Area(A) = XY \\
+A = \frac{M - YW}{G}Y \\
+\\
+\frac{\partial A}{\partial Y} = \frac{Y(M - WY)}{G} \\
+\arg\max{A} \scriptstyle \implies \frac{Y(M - WY)}{G} = 0 \\
+Y = \frac{M}{2W} \)</p>
+</div>
+<div class="paragraph">
+<p>This gives corresponding \(X = \frac{M}{2G}\)</p>
+</div>
+<div class="paragraph">
+<p>A more interesting way to arrive at the same conclusion would be to think as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The shaded triangle increases its area as long as X and Y increase.</p>
+</li>
+<li>
+<p>Start with \((0, 0)\) and increase both \(X, Y\) by 1. This gives us a small rectangle with bottom left \((0, 0)\) and top right \((1, 1)\).</p>
+</li>
+<li>
+<p>If the straight line was X + Y = 1, it would be a right angled isosceles triangle. The \(X, Y\) value would always increase in the direction of line \(Y = X\), which would cut the line in middle at \((\frac{X}{2}, \frac{Y}{2})\)</p>
+</li>
+<li>
+<p>Generalizing this, the value of \(X. Y\) will increase as long as we go on the direction of line that joins \((0, 0)\) to midpoint of the line \(XG + YW = M\). The mid point of this line is, unsurprisingly, \((\frac{M}{2G}, \frac{M}{2W})\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are other ways to arrive at this. Perhaps I should write a post that exclusively deals with this problem.</p>
+</div>
+<div class="paragraph">
+<p>Coming back to our original question, the optimal number of shields must be \(\frac{M}{2G}\). If, \(\frac{M}{2G}\) is not an integer, we go towards the origin on the line that joins \((0, 0)\) and \((\frac{M}{2G}, \frac{M}{2W})\). However, I was able to get away by taking \(\lfloor\frac{M}{2G} \rfloor\).</p>
+</div>
+</div>]]></description><link>https://raghakot.github.io/2011/01/15/Facebook-hacker-cup-Power-Overwhelming.html</link><guid isPermaLink="true">https://raghakot.github.io/2011/01/15/Facebook-hacker-cup-Power-Overwhelming.html</guid><category><![CDATA[competitions]]></category><category><![CDATA[ migrated]]></category><dc:creator><![CDATA[Raghavendra Kotikalapudi]]></dc:creator><pubDate>Sat, 15 Jan 2011 00:00:00 GMT</pubDate></item><item><title><![CDATA[Gotcha with fitness function design]]></title><description><![CDATA[<div class="paragraph">
+<p>Typically, a genetic algorithm works by the notion of maximizing the fitness. Consider a function \(y = x\), which is to be minimized in the interval \([-5, 5]\). One approach is use \(\frac{1}{x}\) as the fitness function. Intuitively, by maximizing \(\frac{1}{x}\), we are minimizing \(y = x\). However, a plot of \(\frac{1}{x}\) reveals some serious flaws.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raghakot.github.io/images/post3/fig1.png" alt="fig1.png">
+</div>
+<div class="title">Figure 1. Plot of \(y = \frac{1}{x}\)</div>
+</div>
+<div class="paragraph">
+<p>If we move from the right, the maximum occurs at \(x = 0\) instead of \(x = -5\). Why? because \(\frac{1}{x}\) is not differentiable at \(x = 0\). Always make sure that the fitness/loss function is differentiable!
+In this case, it is better to use \(y = -x\) as the fitness function.</p>
+</div>
+<div class="paragraph">
+<p>In general, if we are seeking to minimize \(y = f(x)\), where \(f(x)\) is differentiable, then it is safer to use \(y = -f(x)\) as the fitness function. Probably very obvious, but I got burned by this.</p>
+</div>]]></description><link>https://raghakot.github.io/2011/01/11/Gotcha-with-fitness-function-design.html</link><guid isPermaLink="true">https://raghakot.github.io/2011/01/11/Gotcha-with-fitness-function-design.html</guid><category><![CDATA[machine learning]]></category><category><![CDATA[ migrated]]></category><dc:creator><![CDATA[Raghavendra Kotikalapudi]]></dc:creator><pubDate>Tue, 11 Jan 2011 00:00:00 GMT</pubDate></item><item><title><![CDATA[Facebook hacker cup: Geometric approach to double squares problem]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given an integer \(N\), we need to find the number of integral pairs \((x, y) \mid x^2 + y^2 = N\), \(N \in [0, 2147483647]\), with a maximum of 100 such numbers in a file.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solution">Solution</h3>
+<div class="paragraph">
+<p>Geometrically, we know that \(x^2 + y^2 = r\) represents a circle centered at \((0,0)\) with a radius \(r\).  So, the problem can be interpreted visually as finding all possible solutions where \(x, y\) are positive, i.e., lie in the first quadrant.</p>
+</div>
+<div class="paragraph">
+<p>Testing all possible integral pairs of \((x, y)\) upto \(N\) is equivalent to searching within the grayed geometric square as illustrated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raghakot.github.io/images/post1/fig1.png" alt="fig1.png">
+</div>
+<div class="title">Figure 1. Geometric view of double squares problem</div>
+</div>
+<div class="paragraph">
+<p>Algorithmically, this approach takes \(O(n^2)\) time. Consider the sample input as shown below (this was the file I received)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>20
+1105
+65
+2147483646
+1257431873
+25
+1000582589
+1148284322
+5525
+0
+1475149141
+858320077
+1022907856
+1041493518
+3
+1215306625
+372654318
+160225
+5928325
+2147483643
+1538292481</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On my machine, brute force approach takes approx 14 minutes (!!!) to solve this input. Clearly, we are exploring a lot of unwanted points. One obvious way to improve this is to explore points bounded by the circle as as indicated by the shaded blue square.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raghakot.github.io/images/post1/fig2.png" alt="fig2.png">
+</div>
+<div class="title">Figure 2. Improving on naive search</div>
+</div>
+<div class="paragraph">
+<p>This makes intuitive sense since \(x, y\) cannot exceed \(\sqrt{n}\). This reduces the complexity from \(O(n^2)\) to \(O(n)\) reducing execution time from an earlier 14 minutes to 80.5 secs.</p>
+</div>
+<div class="paragraph">
+<p>Can we do any better? Why explore the entire blue square? It is sufficient if we examine all points on the arc of the circle in the first quadrant. i.e, increment \(x\) from \([0, \sqrt{n}]\), compute corresponding \(y = \sqrt{n - x^2}\) and check if it is an integer. \(y\) is an integer if \(\lfloor y \rfloor == y\).</p>
+</div>
+<div class="paragraph">
+<p>This looks pretty good. Is there anything else that can be improved upon? Well, if you notice the figure carefully, we don&#8217;t have to iterate \(x\) from \([0, \sqrt{n}]\). All points on one side of line \(y = x\) are mirror images of points on the other side. i.e., if we find a point, day \((3, 4)\) then we will find a mirror \((4, 3)\) on the other side. Since the problem doesn&#8217;t differentiate between these two solutions, it is sufficient if we iterate \(x\) from \([0, x']\), where \(x'\) is given by \(\sqrt{n} \cos{45} = \sqrt{n/2}\).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raghakot.github.io/images/post1/fig3.png" alt="fig3.png">
+</div>
+<div class="title">Figure 3. Line \(y = x\) acts as a mirror</div>
+</div>
+<div class="paragraph">
+<p>With this, we can complete the algorithm in java as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">int getNumSumSquares(final int n)
+{
+	if(n == 0) {
+		return 1;
+    }
+
+	final int iterations = (int) Math.ceil(Math.sqrt((n * 1.0)/2)) + 1;
+	double y;
+	int count = 0;
+	for(int x = 0; x &lt;= iterations; x++)
+	{
+		y = Math.sqrt(n - (x*x));
+		// check if y is an integer
+		if (Math.floor(y) == y) {
+			count++;
+        }
+	}
+	return count;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This algorithm works in \(O(\sqrt{n/2}) \sim O(\sqrt{n})\). This only takes 0.047 secs to execute!</p>
+</div>
+</div>]]></description><link>https://raghakot.github.io/2011/01/11/Facebook-hacker-cup-Geometric-approach-to-double-squares-problem.html</link><guid isPermaLink="true">https://raghakot.github.io/2011/01/11/Facebook-hacker-cup-Geometric-approach-to-double-squares-problem.html</guid><category><![CDATA[competitions]]></category><category><![CDATA[ migrated]]></category><dc:creator><![CDATA[Raghavendra Kotikalapudi]]></dc:creator><pubDate>Tue, 11 Jan 2011 00:00:00 GMT</pubDate></item><item><title><![CDATA[Recenberg 1/5th success rule applied to life]]></title><description><![CDATA[<div class="paragraph">
+<p>For those who are not familiar, Rechenberg&#8217;s 1/5 rule refers to adaptive mutation in evolutionary strategies. It suggests that the ratio of successful mutations to all mutation should be 1/5. It is a rough heuristic for balancing exploration vs. exploitation that worked out pretty well in experiments.</p>
+</div>
+<div class="paragraph">
+<p>Perhaps we should apply this principle in life. If you are always successful (more than 1 out of 5 contiguous tries) then you are converging too fast to a local optima (aka safe options), resulting in stagnation later on. Ideally, atleast according to Rechenberg, one should try four risky avenues for every safe choice to optimally balance stagnation vs. growth.</p>
+</div>]]></description><link>https://raghakot.github.io2010-12-8-Recenberg-15th-success-rule-applied-to-life.adoc</link><guid isPermaLink="true">https://raghakot.github.io2010-12-8-Recenberg-15th-success-rule-applied-to-life.adoc</guid><category><![CDATA[light bulb]]></category><category><![CDATA[ migrated]]></category><dc:creator><![CDATA[Raghavendra Kotikalapudi]]></dc:creator><pubDate>Wed, 08 Dec 2010 08:00:00 GMT</pubDate></item><item><title><![CDATA[Kleiber's Law]]></title><description><![CDATA[<div class="paragraph">
+<p>Last week, I happened to read about Kleiber&#8217;s law while browsing through literature on natural evolution. The implications are really fascinating. It establishes a relationship between mass and metabolism as:</p>
+</div>
+<div class="paragraph">
+<p>\(metabolism = mass^{\frac{3}{4}}\)</p>
+</div>
+<div class="paragraph">
+<p>Metabolism is ultimately linked to the number of heartbeats since the heart regulates the supply of oxygen. Therefore, \(\mid heartbeat \mid \propto mass\). Curiously, the number of heartbeats per lifetime tends to be constant. This means that bigger/heavier animals tend to have slower metabolism with lower heart rate compared to, say, flies, with faster metabolism.</p>
+</div>
+<div class="paragraph">
+<p>Ironically, if we have fixed number of heartbeats, wouldn&#8217;t running/exercising make us die faster? I suppose, the long term benefits outweigh shot term loss.</p>
+</div>]]></description><link>https://raghakot.github.io/2010/11/17/Kleibers-Law.html</link><guid isPermaLink="true">https://raghakot.github.io/2010/11/17/Kleibers-Law.html</guid><category><![CDATA[light bulb]]></category><category><![CDATA[ migrated]]></category><dc:creator><![CDATA[Raghavendra Kotikalapudi]]></dc:creator><pubDate>Wed, 17 Nov 2010 00:00:00 GMT</pubDate></item><item><title><![CDATA[Predicting hand position on the keyboard by observing random text]]></title><description><![CDATA[<div class="paragraph">
+<p>Today, I happened to type some random text and noticed interesting. This is a random sample of what i typed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gh
+jgh
+jg
+hjg
+hjg
+hjg
+hjg
+hjg
+hkg
+hjg
+hg
+jg
+hjg
+hjg
+hg
+hjg
+hg
+hjg
+h
+gh
+gh
+ghj
+ghj
+ghj
+g
+hjg
+khg
+hg
+hg
+hg
+hjg
+hjg
+hjg
+hjg
+h
+ghj</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice how 'h' repeats a lot. It so happens that my middle finger was on 'h'. Perhaps, frequency is somehow linked to the length of finger? See table below. I used the keys G, H, J, K. My index finger was on G, middle on H, ring finger on J and little finger on K.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Frequency statictics</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Character ordered by frequency</th>
+<th class="tableblock halign-left valign-top">Actual finger on character</th>
+<th class="tableblock halign-left valign-top">Finger ordered by length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Middle</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">J</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ring</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Little</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Little</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can try this on your own. Place your fingers on the keyboard (horizontally, any other orientation complicates the situation as relative length changes). Probability theory suggests that the chance of occurrence of G, H, J or K is 1/4. But I think that in this case, probability is somehow weighted, proportional to the length of the finger.</p>
+</div>
+<div class="paragraph">
+<p>This should allow us to predict hand position on a keyboard based on a bunch of randomly pressed keystrokes.</p>
+</div>]]></description><link>https://raghakot.github.io/2010/09/24/Predicting-hand-position-on-the-keyboard-by-observing-random-text.html</link><guid isPermaLink="true">https://raghakot.github.io/2010/09/24/Predicting-hand-position-on-the-keyboard-by-observing-random-text.html</guid><category><![CDATA[light bulb]]></category><category><![CDATA[ migrated]]></category><dc:creator><![CDATA[Raghavendra Kotikalapudi]]></dc:creator><pubDate>Fri, 24 Sep 2010 00:00:00 GMT</pubDate></item></channel></rss>

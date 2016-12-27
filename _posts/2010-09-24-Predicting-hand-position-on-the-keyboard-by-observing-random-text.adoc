@@ -1,0 +1,71 @@
+= Predicting hand position on the keyboard by observing random text
+:hp-tags: light bulb, migrated
+:published_at: 2010-09-24
+
+Today, I happened to type some random text and noticed interesting. This is a random sample of what i typed:
+----
+gh
+jgh
+jg
+hjg
+hjg
+hjg
+hjg
+hjg
+hkg
+hjg
+hg
+jg
+hjg
+hjg
+hg
+hjg
+hg
+hjg
+h
+gh
+gh
+ghj
+ghj
+ghj
+g
+hjg
+khg
+hg
+hg
+hg
+hjg
+hjg
+hjg
+hjg
+h
+ghj
+----
+
+Notice how 'h' repeats a lot. It so happens that my middle finger was on 'h'. Perhaps, frequency is somehow linked to the length of finger? See table below. I used the keys G, H, J, K. My index finger was on G, middle on H, ring finger on J and little finger on K.
+
+.Frequency statictics
+|===
+|Character ordered by frequency |Actual finger on character |Finger ordered by length
+
+|H
+|Middle
+|Middle
+
+|J
+|Ring
+|Ring
+
+|G
+|Index
+|Index
+
+
+|K
+|Little
+|Little
+|===
+
+You can try this on your own. Place your fingers on the keyboard (horizontally, any other orientation complicates the situation as relative length changes). Probability theory suggests that the chance of occurrence of G, H, J or K is 1/4. But I think that in this case, probability is somehow weighted, proportional to the length of the finger.
+
+This should allow us to predict hand position on a keyboard based on a bunch of randomly pressed keystrokes.
