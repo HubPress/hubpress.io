@@ -74,9 +74,9 @@ Despite all this, the cleaned raining data manages to improve baseline model sco
 
 == Step3: Real work begins...
 
+Since the beginnning, it was clear that i had to do something about the weird score evaluation. Even a single pixel predicted on the segmentation output for non-nerve images was going to hurt the score. A pretty straight forward strategy was to add a `Dense` layer towards the end of encoder an predict whether the image contains the mask or not. Lets call this value `has_mask`
 
-
-
+During test/submission time, I could simply zero out all the segmentation mask values if `has_mask = False`.
 
 
 
