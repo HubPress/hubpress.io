@@ -70,7 +70,7 @@ The number of samples with inconsistent labeling is a whooping ~40% of the train
 
 The training set is small as is, just 5635 samples. After discards, we are only left with 3398 samples. This certainly doesn't look good for training a deep model as they require lots of training data. On top of that, we cannot use transfer learning either as there are no pretrained-nets on this sort of data.
 
-
+Despite all this, the cleaned raining data manages to improve baseline model score to ~0.55.
 
 
 
