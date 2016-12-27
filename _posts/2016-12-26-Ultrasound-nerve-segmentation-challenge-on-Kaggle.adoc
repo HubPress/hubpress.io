@@ -21,11 +21,11 @@ What makes this challenge particularly interesting is that ~60% of images do not
 My methodology is always to first start with a quick and simple baseline model and setup and end-end working code. In case of this challenge, this means:
 
 * Data related I/O - Loading, train/test splits, optional preprocessing blocks
-* Baseline model: I used FCN encoder-decoder as they learn end-end, simple and showed good results on other segmenatation problems. I also retrofitted it with batch normalization, ELU activation, and all that jazz.
+* Baseline model: I stated with a U-Net as it seemed like the state of the art model for these kinds of data. I also retrofitted it with batch normalization, ELU activation, and dropout.
 * Clean code: Try to organize code into classes. Having function blocks everywhere makes the code messy and error prone.
 * Submission code: Code to generate submission file.
 
-As mentioned in the overview, this tends to give mean dice score of ~[0.35, 0.45].
+As mentioned in the overview, this tends to give mean dice score of ~[0.35, 0.45], which is pretty abysmal.
 
 == Step2: Data exploration
 
