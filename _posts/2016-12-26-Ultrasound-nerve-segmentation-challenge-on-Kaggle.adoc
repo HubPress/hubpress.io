@@ -12,7 +12,7 @@ image::ultrasound/example.jpg[sample]
 image::ultrasound/contour.gif[contour]
 {empty} +
 
-What makes this challenge particularly interesting is that ~60% of images do not contain the brachial plexus, i.e., segmentations mask is empty. Since the competetion uses the mean of link:https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient[dice coefficient] across all samples as the evaluation metric, even a single pixel in segmentation mask for non-nerve images mask kills the score. Ironically, you can achieve a score of ~0.6 just by predicting zero masks; it drops to ~[0.35, 0.45] when you try to learn it using a standard encoder-decoder link:https://arxiv.org/pdf/1411.4038.pdf[FCN]. This, combined with the fact that ultrasound images are noisy, intrigued me enough to participate in the challenge.
+What makes this challenge particularly interesting is that ~60% of images do not contain the brachial plexus, i.e., segmentations mask is empty. Since the competetion uses the mean of link:https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient[dice coefficient] across all samples as the evaluation metric, even a single pixel in segmentation mask for non-nerve images mask kills the score. Ironically, you can achieve a score of ~0.6 just by predicting zero masks; it drops to ~[0.35, 0.45] when you try to learn it using a standard link:https://arxiv.org/pdf/1505.04597.pdf[U-Net]. This, combined with nosiy ultrasound images and a lack of obvious nerve patterns, intrigued me enough to participate in the challenge.
 
 > Unlike most kaggle posts, this article is more about the thought-process involved in coming up with a solution. I find it distasteful when folks just hand out a giant blob of code on github or just post their final complex solution that somehow gives good results.
 
@@ -21,7 +21,7 @@ What makes this challenge particularly interesting is that ~60% of images do not
 My methodology is always to first start with a quick and simple baseline model and setup and end-end working code. In case of this challenge, this means:
 
 * Data related I/O - Loading, train/test splits, optional preprocessing blocks
-* Baseline model: I used FCN encoder-decoder as they learn end-end, simple and showed good results on other segmenatation problems.
+* Baseline model: I used FCN encoder-decoder as they learn end-end, simple and showed good results on other segmenatation problems. I also retrofitted it with batch normalization, ELU activation, and all that jazz.
 * Clean code: Try to organize code into classes. Having function blocks everywhere makes the code messy and error prone.
 * Submission code: Code to generate submission file.
 
@@ -71,6 +71,9 @@ The number of samples with inconsistent labeling is a whooping ~40% of the train
 The training set is small as is, just 5635 samples. After discards, we are only left with 3398 samples. This certainly doesn't look good for training a deep model as they require lots of training data. On top of that, we cannot use transfer learning either as there are no pretrained-nets on this sort of data.
 
 Despite all this, the cleaned raining data manages to improve baseline model score to ~0.55.
+
+== Step3: Real work begins...
+
 
 
 
