@@ -41,6 +41,14 @@ set([1, 2, 3])
 >>> l1
 [1, 2, 3]
 ----
+====== string list to int list in one line
+[source,python]
+----
+>>> l = ["1", "2", "3"]
+>>> l = [int(x) for x in l]
+>>> l
+[1, 2, 3]
+----
 
 ====== Remove empty string in a list
 
