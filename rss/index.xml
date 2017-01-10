@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 03 Jan 2017 17:40:35 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Google maps zoom theory and example with {C++/qt ; QWT}]]></title><description><![CDATA[<div class="sect4">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Jan 2017 13:37:00 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Google maps zoom theory and example with {C++/qt ; QWT}]]></title><description><![CDATA[<div class="sect4">
 <h5 id="_theory">Theory</h5>
 <div class="paragraph">
 <p>Recently I had to set up a zoom on a qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates.</p>
@@ -265,6 +265,19 @@ s = sum(*values) # will return the sum of 1 and 2</code></pre>
         method1,
         method2,
     )</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_check_if_a_file_with_extension_xx_is_in_a_folder">How to check if a file with extension .xx is in a folder</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">from os import listdir
+from os.path import isfile, join
+
+lFilesList = [f for f in listdir(self.__fileName) if isfile(join(self.__fileName, f)) and (join(self.__fileName, f)).endswith(".sda")]
+if len(lFilesList) &gt; 0:
+   print "There are files"</code></pre>
 </div>
 </div>
 </div>]]></description><link>https://remi-hernandez.github.io/2016/10/06/Python-tips.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/06/Python-tips.html</guid><category><![CDATA[python]]></category><category><![CDATA[ tips]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Thu, 06 Oct 2016 00:00:00 GMT</pubDate></item></channel></rss>
