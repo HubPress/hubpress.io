@@ -131,3 +131,15 @@ from Package.class import(
         method2,
     )
 ----
+
+==== How to check if a file with extension .xx is in a folder
+
+[source, python]
+----
+from os import listdir
+from os.path import isfile, join
+
+lFilesList = [f for f in listdir(self.__fileName) if isfile(join(self.__fileName, f)) and (join(self.__fileName, f)).endswith(".sda")]
+if len(lFilesList) > 0:
+   print "There are files"
+----
