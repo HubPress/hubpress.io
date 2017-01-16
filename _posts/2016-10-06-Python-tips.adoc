@@ -27,6 +27,14 @@ print (l[-1]) # Get the last element of the list which will print "c"
 print (l[-2]) # Will print "b"
 ----
 
+====== Get all the odd numbers of a list
+[source,python]
+----
+>>> l = [0, 1, 2, 3, 4, 5]
+>>> l[1::2] # start the list at 1 and go +2 on the iterator
+[1, 3, 5]
+----
+
 ====== Remove duplicates in a list
 
 Using the builtin set() {Sets are unordered collections of distinct objects} we can remove all the duplicates and to go back in a list we can use the list() function.
