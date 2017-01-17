@@ -1,0 +1,37 @@
+= Project Airspace
+
+_My first hackathon_
+
+image::team.jpg[Sunset]
+
+video::pKrh6pd3IKg[youtube, height = 280, width = 500] 
+
+== Begin
+
+It all started on a boring Wednesday when we stumbled upon a hackathon by Bosch on Hackerearth. It's funny how boredom and ambition led to an amazing life experience.
+
+== Idea
+The first round was the _Idea Stage_, only the *top 30 ideas* would be shortlisted to work on their project for 36 hours. This was our first hackathon and we didn't sign up for the heck of it, we wanted to *win*. I had _Leap Motion_ which I never got around to use and from there we started brainstorming. We decided to create a Virtual Reality experience with the _Leap_ and _Google Cardboard_. But this was a hardware hackathon and we would definately not even be shortlisted. In our previous semester we built a robotic arm using an _Arduino_ and a couple of Servos. Our idea was a robotic arm that could mimic hand gestures in realtime. *Over 900 teams* applied and we got through, now we had a month to learn and design our prototype.
+
+== Design
+
+pass:[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet <a href="https://twitter.com/hashtag/Darwin?src=hash">#Darwin</a>: The gripping idea by <a href="https://twitter.com/hashtag/BoschHackathon?src=hash">#BoschHackathon</a> winners, Mr. Hatchet, might just be the next step towards evolution. <a href="https://twitter.com/hashtag/BSM2016?src=hash">#BSM2016</a> <a href="https://t.co/vCxR01ul7k">pic.twitter.com/vCxR01ul7k</a></p>&mdash; Bosch India (@boschindia) <a href="https://twitter.com/boschindia/status/797042650142519297">November 11, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>]
+
+== Epilogue
+
+We are now Student Ambassadors of Bosch and got the oppurtunity to meet the Team representing South Africa in the Robotics Olympiad. It was a fruitful experience interacting with these highschool robotic prodigies.  
+
+Hackathon Repository: https://github.com/Imran31/BoschHackathon
+
+
+
+
+
+
+
+
+
+
+
+
