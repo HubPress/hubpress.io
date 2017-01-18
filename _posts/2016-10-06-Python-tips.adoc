@@ -34,6 +34,15 @@ print (l[-2]) # Will print "b"
 >>> l[1::2] # start the list at 1 and go +2 on the iterator
 [1, 3, 5]
 ----
+====== Reverse a full list
+[source,python]
+----
+>>> l
+[0, 1, 2, 3, 4, 5]
+>>> l = l[::-1]
+>>> l
+[5, 4, 3, 2, 1, 0]
+----
 
 ====== Remove duplicates in a list
 
