@@ -1,0 +1,19 @@
+= Updating the blog version
+
+== Do you think I have forgotten you? 
+
+v ideo::EDi7cRFcnnY[youtube]
+
+Well, I've been busy. I even have replaced my laptop. It seems silly but I wasn't satisfied neither with the screen nor the keyboard quality. I know I could still work with external ones, but I preferred to switch to a nice one.
+
+So I bought the infamous Dell XPS 13. And I say infamous because it seems quite a few developers have one but only developers know about it. The acquisition was a bit tricky because I had troubles buying one in Germany and I finally got one on eBay from the UK. Maybe because of the sterling pound crash after brexit, they had them really cheap, and even _worse_, they sent me the more expensive model instead of the developer edition I asked for. They even refuse to change it for the cheaper model. I wanted also the mate screen, but as a secondary laptop, only for using it after work. It's not a big problem.
+
+Now I'm using Windows 10, as it came installed with the laptop. The experience got a lot better from previous releases, but still has quite a few quirks. I'll write a post about that providing my very subjective experience. A quick advance: I'm not gonna become a windows developer in the near future.
+
+== Updating the blog version via Git
+
+As I am using Hubpress and it's 100% hosted in github, what I did for the update was a merge. You only have to take care of merging the *gh-pages* branch. The merge was clean and I even changed the theme for one of the new ones in the latest version, *"Casper"*. 
+
+It was also a grateful surprise that quite a few people contributed to the Hubpress project in the last months. The name of the project doesn't help, as it can be confused with other projects and there are many other alternatives for static blogging. Also, this new version could be improved. I.e: it freezes when updating the settings. But overall it seems the project continues getting more updates from the people that uses it. So, I will continue using it.
+
+And that's all for now.
