@@ -9,15 +9,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <style type="text/css">@import url(//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css);</style>
+        <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic" />
         <link rel="stylesheet" href="styles/main.css">
+        <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/codemirror.spell-checker/latest/spell-checker.min.css"> -->
 
-
-        <script src="scripts/vendor/modernizr.js"></script>
+        <script src="scripts/vendors/modernizr.js"></script>
+        <!-- build:js scripts/vendor/modernizr.js
+        <script src="bower_components/modernizr/modernizr.js"></script>-->
+        <!-- endbuild -->
 
     </head>
     <body>
@@ -26,8 +31,19 @@
         <![endif]-->
 
         <div id="hubpress"></div>
+<!--
+        <script src="scripts/vendors/lodash.min.js"></script>
+        <script src="scripts/vendors/base64.min.js"></script>
+        <script src="scripts/vendors/github.js"></script> -->
 
-        <script src="scripts/vendor.js?v=0.3.0"></script>
-        <script src="scripts/app.js?v=0.3.0"></script>
+        <!-- build:js scripts/vendor.js
+        <script src="bower_components/github/lib/base64.min.js"></script>-->
+        <!-- bower:js -->
+        <!-- Require underscore because github.js use it
+        <script src="bower_components/github/github.js"></script>-->
+
+        <!-- endbower -->
+        <!-- endbuild -->
+        <script src="scripts/app.js?version=0.6.0-1468625987857"></script>
     </body>
 </html>

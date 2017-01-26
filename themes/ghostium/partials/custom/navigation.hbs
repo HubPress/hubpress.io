@@ -1,0 +1,111 @@
+{{! Templates
+
+Link
+==============
+<li class="drawer-list-item">
+  <a href="#" title="Follow me on twitter!">
+    <i class="fa fa-twitter"></i> Follow me
+  </a>
+</li>
+
+Divider
+==============
+<li class="drawer-list-divider"></li>
+
+Title
+==============
+<li class="drawer-list-item drawer-list-title">
+  Follow me
+</li>
+
+ProTip:
+==============
+Ghostium uses Font Awesome you can find all icons available on the url below
+  http://fortawesome.facebook.io/Font-Awesome/cheatsheet/
+
+}}
+
+<li class="drawer-list-item">
+  <a href="{{@blog.url}}" data-pjax>
+    <i class="fa fa-home"></i>Home
+  </a>
+</li>
+<!-- <li class="drawer-list-item">
+  <a href="{{@blog.url}}" title="{{@blog.title}}" data-pjax>
+    <i class="fa fa-list-alt"></i>All posts
+  </a>
+</li> -->
+<li class="drawer-list-item">
+  <a href="{{@blog.url}}/rss/">
+    <i class="fa fa-rss"></i>Subscribe to Feed
+  </a>
+</li>
+<li class="drawer-list-divider"></li>
+<li class="drawer-list-item drawer-list-title">
+  Follow me
+</li>
+
+
+{{#if socialnetwork.twitter}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.twitter}}" title="Twitter" target="_blank">
+    <i class="fa fa-twitter"></i>Twitter
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.github}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.github}}" title="Github" target="_blank">
+    <i class="fa fa-github"></i>Github
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.facebook}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.facebook}}" title="Facebook" target="_blank">
+    <i class="fa fa-facebook"></i>Facebook
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.googleplus}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.googleplus}}" title="Google+" target="_blank">
+    <i class="fa fa-google-plus"></i>Google+
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.instagram}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.instagram}}" title="Instagram" target="_blank">
+    <i class="fa fa-instagram"></i>Instagram
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.pinterest}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.pinterest}}" title="Pinterest" target="_blank">
+    <i class="fa fa-pinterest"></i>Pinterest
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.flickr}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.flickr}}" title="Flickr" target="_blank">
+    <i class="fa fa-flickr"></i>Flickr
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.linkedin}}
+<li class="drawer-list-item">
+  <a href="{{socialnetwork.linkedin}}" title="LinkedIn" target="_blank">
+    <i class="fa fa-linkedin"></i>LinkedIn
+  </a>
+</li>
+{{/if}}
+{{#if socialnetwork.email}}
+<li class="drawer-list-item">
+  <a href="mailto:{{socialnetwork.email}}" title="Email" target="_blank">
+    <i class="fa fa-envelope-o"></i>Email
+  </a>
+</li>
+{{/if}}

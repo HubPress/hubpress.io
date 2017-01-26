@@ -1,0 +1,65 @@
+= Contributing
+// settings:
+:idprefix:
+:idseparator: -
+:source-language: javascript
+:language: {source-language}
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+// URIs:
+:uri-repo: https://github.com/hubpress/hubpress.io
+:uri-help-base: https://help.github.com/articles
+:uri-issues: {uri-repo}/issues
+:uri-fork-help: {uri-help-base}/fork-a-repo
+:uri-branch-help: {uri-fork-help}#create-branches
+:uri-pr-help: {uri-help-base}/using-pull-requests
+:uri-gist: https://gist.github.com
+
+== License Agreement
+
+By contributing changes to this repository, you agree to license your contributions under the <<LICENSE#,MIT license>>.
+This ensures your contributions have the same license as the project and that the community is free to use your contributions.
+You also assert that you are the original author of the work that you are contributing unless otherwise stated.
+
+== Submitting an Issue
+
+We use the {uri-issues}[issue tracker on GitHub] associated with this project to track bugs and features.
+
+Before submitting a bug report or feature request, check to make sure it hasn't already been submitted.
+
+When submitting a bug report, please include any details that may help reproduce the bug, including the AsciiDoc syntax you are using, or logs.
+
+== Submitting a Pull Request
+
+HubPress is moving away from developing in the https://github.com/HubPress/hubpress.io[hubpress.io] repository. 
+To ensure the hubpress.io repository remains clean for new adopters, development has shifted to https://github.com/HubPress/dev.hubpress.io[dev.hubpress.io].
+
+The process to commit a change to HubPress is changed to the following:
+
+. Create an issue on the https://github.com/HubPress/hubpress.io/issues[HubPress/hubpress.io] repository describing the change you propose.
+. Fork https://github.com/HubPress/dev.hubpress.io to make changes in the new development repository.
+. Switch to the `/development` branch.
+. Create a branch from `/development` in your forked repo. 
++
+NOTE: We suggest naming the branch using the format `issue-nnn` to make it easy to refer to the issue.
++
+. Open a Pull Request (PR), and summarise your changes, linking to the issue you created.
+
+Once we receive your PR, we'll review your changes and then either accept them or ask for further changes before final acceptance.
+
+The new repository is backed by Continuous Integration tasks provisioned through Travis-CI, which trigger automatically once a change to `/development` is detected.
+
+It's a more scalable way to manage HubPress moving forward.
+
+=== Writing and Executing Tests
+
+#TODO#
+
+=== Running HubPress in Development Mode
+
+#TODO#
+
+=== Themes Development
+
+You need to map the Ghost theme assets back into a mapping file, so HubPress knows what parts of a theme to load.
+
+#TODO#

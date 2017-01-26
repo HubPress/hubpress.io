@@ -1,0 +1,146 @@
+{{!------------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+--------------------------------}}
+{{#if socialnetwork}}
+<nav class="navigation right">
+  <ul class="social expanded">
+
+    {{#if socialnetwork.facebook}}
+    <!-- Twitter -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.facebook}}" title="Facebook account">
+        <i class='icon icon-social-facebook'></i>
+        <span class="label">Facebook</span>
+      </a>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.twitter}}
+    <!-- Twitter -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.twitter}}" title="Twitter account">
+        <i class='icon icon-social-twitter'></i>
+        <span class="label">Twitter</span>
+      </a>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.googleplus}}
+    <!-- Google Plus -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.googleplus}}" title="Google+ account">
+        <i class='icon icon-social-google-plus'></i>
+        <span class="label">Google-plus</span>
+      </a>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.github}}
+    <!-- Github -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.github}}" title="Github account">
+        <i class='icon icon-social-github'></i>
+        <span class="label">Github</span>
+      </a>
+    </li>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.instagram}}
+    <!-- Github -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.instagram}}" title="Instagram account">
+        <i class='icon icon-social-instagram'></i>
+        <span class="label">Instagram</span>
+      </a>
+    </li>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.pinterest}}
+    <!-- Github -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.pinterest}}" title="Pinterest account">
+        <i class='icon icon-social-pinterest'></i>
+        <span class="label">Pinterest</span>
+      </a>
+    </li>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.flickr}}
+    <!-- Github -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.flickr}}" title="Flickr account">
+        <i class='icon icon-social-flickr'></i>
+        <span class="label">Flickr</span>
+      </a>
+    </li>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.linkedin}}
+    <!-- LinkedIn -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="{{socialnetwork.linkedin}}" title="LinkedIn account">
+        <i class='icon icon-social-linkedin'></i>
+        <span class="label">LinkedIn</span>
+      </a>
+    </li>
+    {{/if}}
+
+    {{#if socialnetwork.email}}
+    <!-- Email -->
+    <li class="social item hvr-grow-rotate">
+      <a rel="me" href="mailto:{{socialnetwork.email}}" title="Email {{socialnetwork.email}}">
+        <i class='icon icon-mail'></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    {{/if}}
+
+  </ul>
+</nav>
+{{/if}}
