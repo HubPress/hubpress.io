@@ -1,1 +1,22 @@
-{"meta":{"username":"manelvf","repositoryName":"blog","branch":"gh-pages"},"site":{"title":"The Fallen Apples","description":"Manel Villar weblog, mostly stuff about programming and computers. Don't expect too much.","googleAnalytics":"UA-34164255-1","disqus":"manelvfgithubio","url":"https://manelvf.github.io/blog"},"socialnetwork":{"email":"manelvf@gmail.com","twitter":"galchwyn","linkedin":"manel.villar","github":"manelvf"},"theme":{"name":"Saga","url":"//manelvf.github.io/blog/themes/Saga"}}
+{
+  "meta": {
+    "username": "manelvf",
+    "repositoryName": "blog",
+    "branch": "gh-pages"
+  },
+  "site": {
+    "title": "The Fallen Apples",
+    "description": "Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.",
+    "googleAnalytics": "UA-34164255-1",
+    "disqus": "manelvfgithubio"
+  },
+  "socialnetwork": {
+    "email": "manelvf@gmail.com",
+    "twitter": "galchwyn",
+    "linkedin": "manel.villar",
+    "github": "manelvf"
+  },
+  "theme": {
+    "name": "saga"
+  }
+}
