@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Jan 2017 20:21:02 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Budapest JS 2016 - Part II - The Talks]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Overall it the technical deepness of the talks was very light, compared to other JS conferences I attended. The format of strict 30 minutes for every presentation can be a bit rigid, especially when some topics are very dense. But anyway the quality that we enjoyed was really high, with a good proportion of women speakers (unfortunately, not in the attendance).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_talks">The talks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This were the ones that were the most interesting ones for me:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Laurie Voss, from NPM, explained about the new possibilities of their ubiquous product. It&#8217;s still easy to make a mess with the dependencies with Node, but at least some people are trying to do something for fixing those problems.</p>
+</li>
+<li>
+<p>Denys Mishunov talked about perception of speed. That&#8217;s a really interesting topic, IMO. It&#8217;s not how fast you app is, it&#8217;s how the users perceive it.</p>
+</li>
+<li>
+<p>Stefan Baumgartner talked about HTTP/2, that it&#8217;s going to replace the current version of the protocol. After a lot of time packing everything, it seems that now we are going to need to unbundle all our website assets. Be careful: there are some edge cases where unbundling is not the best solution. As usual, there&#8217;s not a single universal solution for all the problems.</p>
+</li>
+<li>
+<p>Anand Vemuri talked about security. Especially about internal websites security. That they are internal doesn&#8217;t mean they have to be vulnerable and unfortunately this is something overlooked too often.</p>
+</li>
+<li>
+<p>Safia Abdalla talked about memory leaks in JS and the tools that we can use for debugging them. Check her slides in her <a href="http://safia.rocks">website</a>. It rocks :D</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There were also other interesting topics like bots, music and hardware controlled by JS. Take a look to the <a href="http://jsconfbp.com/">conference website</a> for the slides and other data about the topics.</p>
+</div>
+<div class="paragraph">
+<p>Two non-technical talks were especially impressive for me. I think both were important: one was about empathy in Open Source projects and other was about diversity in IT communities and companies. Both topics are really wide and they would need dedicated posts to address. People problems are usually harder to solve that technical problems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_organization">The organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apart from the classical wifi problems, that seem to be permanent condition of almost every tech confererence, and some troubles with the display adapters of the speakers, I think that the organization was good. The conference place was in the center of city, easily reachable and the food was excellent, in highly contrast with other conference caterings.</p>
+</div>
+<div class="paragraph">
+<p>Information was easily available and there were members of the staff easily reachable, too. No bad surprises in this part.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The conference offered a good value for the price. The experience was really nice and surely I&#8217;ll repeat next years. Also, the city has a lot offer and to discover, so in case you get bored with the technical stuff, there are alternatives.</p>
+</div>
+<div class="paragraph">
+<p>P.S: Next year it will switch dates from May to September, as the JSConf.eu will also switch to spring season. See you there!</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-II-The-Talks.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-II-The-Talks.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Tue, 17 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Budapest JS 2016 - Part I: the workshop about Haxe]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se.</p>
+</div>
+<div class="paragraph">
+<p>The title of the workshop I did was:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_developing_applications_using_the_haxe_language">Developing applications using the Haxe language</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I planned to go to a hardware related workshop, but I had to attend the one related to the <a href="http://haxe.org/">Haxe Language</a> in a company that really uses it for production. It was very interesting as it seems the true inheritor of <strong>Flash</strong>, and is somehow used in the adult content industry. Yes, you have read the last sentence correctly. They were also recruiting, btw.</p>
+</div>
+<div class="paragraph">
+<p>The Haxe language is very interesting for several reasons: it has survived for more than ten years in the industry (wow!), is able to target several platforms and it has evolved slowly but steadily in its lifetime. For people who doesn&#8217;t know the language, it is a strongly typed language with C syntax, much on the Java/Go way. It uses a classical object oriented scheme and has its own standard library, that is very complete. I would say it&#8217;s really a transpiler, before CoffeeScript started the trend in the JS world. It doesn&#8217;t have its own VM, so it&#8217;s not tied to any platform. It targets several platforms, from PHP to Javascript and Python, in different OS, and does it in a clean way. This approach makes you think a lot about languages being only gateways to their underlying platforms, something that we usually forget when we developers decide the tools we are going to use for a new project or problem.</p>
+</div>
+<div class="paragraph">
+<p>I knew the language from a few games that where ported to Android and web a few years ago, and back then I remember I was very surprised with the solidity of the products, in contrast with all the glitches and problems of first HTML5 games of those years. The small job market disregarded the language for many people that looked for a better chance of finding a job in the industry, but it seems that many freelancers took serious advantage of it.</p>
+</div>
+<div class="paragraph">
+<p>The guys doing the workshop/conference were really patient doing the explanations, as the attendance were mostly eskeptical. They had a lot of experience and they were interested in looking for a tool that solved the problem of long-time application maintenance. As they were not satisfied with Javascript, they tried the very promising Typescript language. And it seems the Microsoft language still has a lot of drawbacks when dealing with transpiling to real JS. They needed something better, so they tried Haxe and  fell in love inmediately with it as things were really smooth from the very first moment.</p>
+</div>
+<div class="paragraph">
+<p>A counterpoint to this approach is that Javascript itself has it&#8217;s own standard, ECMAScript, that is in very good health even after years of discussions and fights over corporate interests. So in these days, makes sense to use Javascript for everything and disregard other options. In any case, the Haxe compilation to Javascript is not very arcane, so it would be possible to reuse the compiled code is someone that uses the old platform decides to disregard it.</p>
+</div>
+<div class="paragraph">
+<p>Haxe has been there since 2004, and since them there have been a lot of trends. From the absolute kingdom of Flash for web games and presentations, to the rise of Javascript with Ajax, the fall of Java in web and the declining of PHP. As Haxe is an independent language, driven by its own independent foundation and not a big corporation, like Python, that makes people more confident on its future, as is less probable that their maintainers simply drop it. In this industry, even successful languages like Java, have to struggle with their corporate owners. It&#8217;s worth to mention that contributions are welcome.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_organization">Organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The organizers should improve the workshops assignation, as people should be able to choose them. A lot of people were interested in the hardware related stuff, it seems the hot stuff right now. The angular2 was also very popular, as a lot of people will need to migrate their apps to the new version. As the version 2 uses Typescript, the controversy has already arisen.</p>
+</div>
+<div class="paragraph">
+<p>Anyway, the workshops were included in the conference price, so it was a good deal. Kudos for the organizers, as not all the confs have this kind of bonus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_city">The city</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On a side related note, the city is really interesting, with lots of history and nigthlife. And many dark sides. Worths a visit without any doubt.</p>
+</div>
+<div class="paragraph">
+<p>See you for the second part, about the talks themselves.</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Tue, 17 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Migrating a dynamic webpage to static]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_motivation">Motivation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OK,so you have a beatiful dynamic webpage, maybe PHP, maybe RoR or even Python. It&#8217;s working well, the server is stable, everything runs fine. Why would you want to move to static? Well, there are plenty of reasons for doing that, but for me the main one is simple: maintenance. Dynamic websites require always maintenance, even minimal one. But with static ones, you can keep the contents online with almost zero manteinance and also a very minimal hosting cost. Once you convert it to static, you can replace it for a newer version of the software or let it only for archive purposes.</p>
+</div>
+<div class="paragraph">
+<p>But it&#8217;s very probable that if you have reached this post, you already have your reasons for moving into static, so let&#8217;s go on with the process.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tools">Tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One good tool, that I used for <a href="http://chuza.org">website</a>, is <strong>httrack</strong>. Seems to be the de-facto standard for this work, but be aware that there are many other ways of doing this, as using wget, i.e. The advantage of httrack is that takes care of converting all the links to relative urls. Also there are some caveats, as it needs some tuning:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It&#8217;s quicker to use it from a server or even better from the same server the machine is hosted than using it from local. Servers have in most cases better connections than other home connections ;D.</p>
+</li>
+<li>
+<p>Different versions have different behaviors, so check the results with different ones if you can. Some versions have also problems for dealing with https connections.</p>
+</li>
+<li>
+<p>It you want to use a different version than the one your linux distribution uses, you might need to compile the one you need. Not as difficult as it seems.</p>
+</li>
+<li>
+<p>There can be a lot of recursion in a dynamic web application links. Also there can be a lot of useless stuff. The only way of dealing with it was to do a fair amount of trial and error and add exclusion clausules (--exclude) for all those useless links. Sometimes, they are easy to spot, if they include something like "backend" in the url name, but sometimes can be a bit tricky. There can be plenty of them so feel free to propose a better process for removing them.</p>
+</li>
+<li>
+<p>It needs a generous amount of space for the temporary folder. You can get rid of it after the task is complete, anyway.</p>
+</li>
+<li>
+<p>The task can be slow, althought is very dependent of your website. So, open a tmux session in the server and let it work for a few hours, maybe days.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hosting_services">Hosting services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I haven&#8217;t found anything better than Amazon S3 or Google Storage for big sizes. For tiny ones, both Dropbox or Google Drive can be convenient, but I&#8217;m not sure about their reliability. For a few cents a month, it might be useful to use the safer approach of first ones. As a bonus, they let you setup replications and many other goodness. Let me know also if you find also, better reliable alternatives.</p>
+</div>
+<div class="paragraph">
+<p>A little drawback of these kind of hostings is that they cannot use the naked domain, so you have to use something like 'www' for them to be reachable and a service like wwwizer (there are many of them for free) for redirecting from the naked domain to your stored one. Also, be aware that your bucket name both in Amazon an Google Storage has to be the full name of the redirected domain, ie: www.mydomain.com.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seems a lot of work but is not. Also IMO these tasks are always interesting, because they are the basically what we developers do: transforming data from one source to other. And the final result can be grateful, as you keep your data and remove the burden of the maintenance.</p>
+</div>
+<div class="paragraph">
+<p>Have fun!!</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Thu, 05 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[JS1K "Attack of the Mutant Elements" demo post-mortem]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One year more, there was the <a href="https://js1k.com">JS1K</a>, the microcode competition for Javascript code of &#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS "scene", if that exists.</p>
+</div>
+<div class="paragraph">
+<p>After participating a few years, for me it&#8217;s one of the most rewarding competitions. I must admit I only use a few hours and the result is far from being something impressive. But it&#8217;s good exercise and overall, it has a lot of fun.</p>
+</div>
+<div class="paragraph">
+<p>This year I wanted something different. On past editions, I focused on creating a single graphic effect, but this time I wanted to do something more user-oriented. And I wanted to use simple DOM elements instead of the traditional &lt;canvas&gt; rendering. After all, traditional DOM objects should have the same rights as new HTML5 ones&#8230;&#8203; anyway, it&#8217;s simply another resource.</p>
+</div>
+<div class="paragraph">
+<p>And before starting&#8230;&#8203; yes, I cheated the rules: arrow notation is part of ES6, which was not allowed in the contest. But also the rules stated that the entry should run in two major browsers, and both Chrome and Firefox support that notation since long time ago (thanks to @manolopm for noticing about this).</p>
+</div>
+<div class="paragraph">
+<p>The original idea was to do a shooter, something like Galaga and many other classics. But as imitating something already well established is usually boring I opted for adding some circular paths to the "enemies". A nice way of practising rotations.</p>
+</div>
+<div class="paragraph">
+<p>So, let&#8217;s start.</p>
+</div>
+<div class="paragraph">
+<p>First a few minor initializations, nothing special.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var w = innerWidth;
+var h = innerHeight;
+var u = w/12;
+var diff;
+b.style.background = "#000";
+b.style.overflow = "hidden";</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then the "factory" of elements. The idea was to have a single method that could create all the DOM elements, both the main character and the enemies.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var createElement = (ship, x, y, color, v, move) =&gt; {
+  var el= d.createElement('div');
+  el.innerHTML=ship;
+  el.style.position="absolute";
+  el.style.left = parseInt(x)+"px";
+  el.style.bottom = parseInt(y)+"px";
+  el.style.color = color;
+  el.v = v;
+  el.rv = 0;
+  el.x = x;
+  el.y = y;
+  el.move = move;
+  el.spin = 1;
+  b.appendChild(el);
+  return el;
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next method applies movement to a DOM element.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var move = (el) =&gt; {
+  el.move(el);
+  el.style.left = parseInt(el.x)+"px";
+  el.style.bottom = parseInt(el.y)+"px";
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, we initalize the first two elements. First is the main character, the one we will be controlling, and second one is the score. They are in the first positions of the elements list, that will make easier to keep track of them without providing them with a specific name.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var Elements = [
+  createElement("M", w/2, h/2, "#FFF", 0, () =&gt; {}),
+  createElement("0", w-u, h-u, "#FF0", 0, () =&gt; {})
+];</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the rest of elements, having care of adding a method for rotating each one of them (last parameter in the <strong>createElement</strong> call). Notice the minified math methods and the <a href="https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/2drota.htm">2D rotation equation</a>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var ra = Math.random;
+var co = Math.cos;
+var si = Math.sin;
+for (var i=0; i &lt; 9; i++) {
+  Elements.push(createElement(
+    String.fromCharCode(65+ra()*25), ra() * w, ra() * h, "#F5"+i, 0,
+     (el) =&gt; {
+       var x = el.x - (w/2);
+       var y = el.y - (h/2);
+       var f = u * (diff/1000) * .01 * el.spin;
+       var px = (x * co(f)) - (y * si(f));
+       var py = (y * co(f)) + (x * si(f));
+       el.x = px + (w/2);
+       el.y = py + (h/2);
+     })
+  );
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is a bit tricky: for the "bullet" I chose the last element of the Elements list. A <em>collision detection</em> method is added to each bullet. Bullets dissapear when they are at a precalculated distance from their origin, the main character (first element). The score is also updated in this method (second element).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var shoot = () =&gt; {
+  if (Elements[Elements.length-1].innerHTML == "|") {
+    return;
+  }
+  Elements.push(createElement(
+    "|", w/2, h/2, "#05F", 2, (el) =&gt; {
+      el.y += el.v * u * (diff/1000);
+      var e, x2, y2;
+      for (var i = Elements.length-2; i; i--) {
+        e = Elements[i];
+        sq = ((e.x - el.x) * (e.x - el.x)) + ((e.y - el.y) * (e.y - el.y));
+        if (sq &lt; 300) {
+          Elements[i].innerHTML="";
+          Elements.splice(i, 1);
+          el.y=h+1;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Elements[1].innerHTML = parseInt(Elements[1].innerHTML) +100;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>          break;
+        }
+      }
+      if (el.y &gt; h) {
+         Elements.splice(Elements.length - 1, 1);
+      }
+    }
+  ));
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Classical listener for the user keypresses. Pretty sure these lines of code can be reduced, but they&#8217;re so classy. Only one action given: Shoot!</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>document.addEventListener('keydown', function(event) {
+    switch(event.keyCode) {
+      case 32:
+        shoot();
+        break;
+    }
+});</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For every loop iteration, the time difference with the previous frame is calculated in microseconds using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp">High Resolution Timer</a> provided by the latest browser APIs. It&#8217;s recommend to use this timer if we want to use the best precision we can get in the browser, instead of the traditional Date methods. It&#8217;s included from IE9 onwards, so no worries. We&#8217;ll use that value for calculating the movements in previous <strong>move</strong> methods, so the movement will be more accurate and the "animation" smoother.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var loop = () =&gt; {
+  time = performance.now();
+  diff = time - old_time;
+  old_time = time;
+  Elements.forEach((v) =&gt; {
+    move(v);
+  });</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  requestAnimationFrame(loop);
+};</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to make things a bit more <em>spicy</em>, a timer changes the spin (rotation direction) randomly every 3 seconds. Artificial Intelligence.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>setInterval(() =&gt; {
+  Elements.forEach((v) =&gt; {
+      v.spin = Math.round(Math.random())? 1: -1;
+  });
+}, 3000);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The last lines of code take care of executing the game loop.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>var old_time=performance.now();
+requestAnimationFrame(loop);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And this is everything I could add in 1024 bytes. I&#8217;m pretty sure that more stuff could be added and a lot of stuff could have been reduced, so suggestions are welcome.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The best part of the compo IMO, is being able to do something impressive in very little time. The bad part is that you have to forget about a lot of good practices, even some really basic like adding the "var" keyword to any new variable. That can also be refreshing, but it can lead to lose control of your code quickly, which is prone to confussion and ultimately frustration. No worries, it&#8217;s only a game. Just remember to use tools like Google Closure compiler and <a href="http://www.iteral.com/jscrush/">JSCrush</a> for keeping it short and you&#8217;ll be fine.</p>
+</div>
+<div class="paragraph">
+<p>JS1K can be "super-pro", but can be also a lot of fun if you don&#8217;t take it too seriously. I highly recommend to spend a few hours coding something for this compo if you are a developer and want to experiment or try new stuff without the constraints of your daily job. Also, TBH, I prefer to do this kind of open challenges in my free time than the more strict problem challenges like <a href="http://play.elevatorsaga.com/">Elevator Saga</a>. But, anyway, it&#8217;s a matter of taste.</p>
+</div>
+<div class="paragraph">
+<p>Have (minified) fun!</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sun, 27 Mar 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[PHP and trailing slashes on URLs]]></title><description><![CDATA[<div class="paragraph">
+<p>This is one those things that can make you lose a few minutes (hours? ;p) if you are not a bit careful. It happened to me recently in an old Apache installation, but it could happen also in a more modern installation using NGINX or any other webserver. Let&#8217;s start with the setup.</p>
+</div>
+<div class="paragraph">
+<p>In a common PHP deployment, there are different layers of server code for handling URLs <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Apache configuration file for the host.</p>
+</li>
+<li>
+<p>.htaccess.</p>
+</li>
+<li>
+<p>PHP code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And as we have different layers, there can be conflicts between them, and guess&#8230;&#8203; unexpected side effects.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s put an example:</p>
+</div>
+<div class="paragraph">
+<p>For the url <a href="http://example.com/list?user=manel" class="bare">http://example.com/list?user=manel</a> (don&#8217;t follow it, it&#8217;s an example)</p>
+</div>
+<div class="paragraph">
+<p>The <strong>list</strong> part of the url in this example is masking a <strong>list.php</strong> file (it could be another filename, it&#8217;s indifferent).</p>
+</div>
+<div class="paragraph">
+<p>I was checking the URL parameters using the usual <strong>$_GET</strong> and <strong>$_REQUEST</strong> PHP arrays and the result were <strong>empty arrays</strong>. So, what happened? The <strong>.htaccess rule removed those parameters</strong> when the URL was called without a trailing slash. Unfortunately, the php script was executed anyway when invoked without it.</p>
+</div>
+<div class="paragraph">
+<p>Calling <a href="http://example.com/list/?user=manel" class="bare">http://example.com/list/?user=manel</a> with the trailing slash after the 'list' text fixes the problem. Not a serious inconvenient but it&#8217;s something that can be a bit annoying sometimes.</p>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. There can be also some url handling on the client side, but I&#8217;m going to skip that for simplicity
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Fri, 25 Mar 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Script for doing backups on Amazon S3]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_why">Why?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everybody needs backups, and if you manage web servers, you <strong>really</strong> need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but S3 is one of the best, and it&#8217;s extremely cheap, a few cents per gigabyte by month. It also offers many possibilities for customization. And, as everybody is using it, you can find a lot of information on the net, but at the end you need to taylor it to your needs.</p>
+</div>
+<div class="paragraph">
+<p>In this post, I&#8217;m going to describe the method I use for doing backups of the important information in my servers. It could be a database dump, a configuration file or even some photographies, anything but code. Version control is for code.</p>
+</div>
+<div class="paragraph">
+<p>Requisites: before reading this you should be a bit familiarized with the way Amazon S3 works.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how">How</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_the_script">The Script</h3>
+<div class="paragraph">
+<p>I chose python because is what I&#8217;m most confortable with, but there are ports of the SDK library for many other programming languages, as usual. It seems that even the official Amazon CLI uses also python. You can even use http(s) requests, but they are a bit complex, as there is a lot . So it&#8217;s good to use a library.</p>
+</div>
+<div class="paragraph">
+<p>The library <a href="http://boto.cloudhackers.com/en/latest/">Boto</a> is by far the most complete in Python. It&#8217;s not official, but everybody uses it. There&#8217;s also a convenient <a href="https://github.com/smore-inc/tinys3">TinyS3</a>, but I chose the former one as it offers more possibilities that could be needed in the future.</p>
+</div>
+<div class="paragraph">
+<p>AWS credentials are stored as a default in a configuration file in the home folder. Current criteria is to use ~/.aws/credentials, but as always when there is a security concern, there are many approaches to keep them safe. But, as the access to your host should be</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aws_console_configuration">AWS console configuration</h3>
+<div class="paragraph">
+<p>Amazon gives you a lot of possibilities, but for backups I simply added one rule to the backups bucket in the "Lifecycle" settings: delete after 30 days. As I&#8217;m going to do a daily backup, 30 files should be enough.</p>
+</div>
+<div class="paragraph">
+<p>I also opted for <strong>Reduced Redundancy Storage</strong> aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance, instead of the usual 99,9999999% of retrieving it safely ;)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubles_in_our_way">Troubles in our way</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The same script was used in two different servers, and didn&#8217;t work in one of them. Can be quite frustrating when that happens, so you start thinking "what can be different from one server to the other?".</p>
+</div>
+<div class="paragraph">
+<p>In this case, the error code was not very helpful: <strong>104</strong> when doing a <strong>set_contents_by_filename</strong> call. The first "bad smell" was that it is a connection error code, but not in the connection method, but in the upload method, after performing the connection. Some googling around the error showed a collection of issues, mostly fixed and incorporated to the library code at some point. No real solutions. What could it be?</p>
+</div>
+<div class="paragraph">
+<p>After discarding everything else (server blocking https port, different library versions, wrong credentials or urls&#8230;&#8203;), I opted for printing the bucket location, only for checking it. And I found the surprise: It gently complained that there was a discrepancy between the server time and the AWS time, big enough to block the request. As simply as that, your server needs to have <strong>correct date and time</strong> in order to sync with S3.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>S3 is a safe and easy way of doing online backups. Don&#8217;t be intimidated as I was when approaching it. Use it wisely and you will have a very cheap backup for all those cat photos that you carefully were collecting all these years.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_postmortem">PostMortem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A few tips after deploying the script in some production servers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As an alternative to the GUID, it&#8217;s possible to use the day of the month or the year, or even a UNIX timestamp.</p>
+</li>
+<li>
+<p>For very basic tasks it&#8217;s also possible to use the S3 command line uploader, but as soon you want to perform some additional tasks, the script is very handy, at least for a Python developer ;D</p>
+</li>
+</ul>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sun, 24 Jan 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dependency dancing in Arch Linux]]></title><description><![CDATA[<div class="paragraph">
+<p>Arch Linux makes a good job for performing clean installations using AUR, which is a sort of package manager for <em>"unstable"</em> software. Unfortunately, when trying to install the beautiful editor LightTable in Arch Linux (yes, I&#8217;m using it now), I got a small disgusting gotcha:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Unable to install libudev.so.0 dependency</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It seems that it&#8217;s only a matter of linking the correct file, as libudev is perfectly installed on the system. There is anyway another AUR package for the infamous <strong>libudev</strong> that fixes the bug, which is a bit overkill for a simple broken link.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s also possible to install LightTable downloading the file, but if you want to keep it gracefully updated, using a package manager is always the best option.</p>
+</div>]]></description><link>https://manelvf.github.io/blog/2016/01/01/Dependency-dancing-in-Arch-Linux.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/01/01/Dependency-dancing-in-Arch-Linux.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Fri, 01 Jan 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Making an internet radio with a Banana Pi and cheaper components]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information.</p>
+</div>
+<div class="paragraph">
+<p>Yes, I&#8217;m a proud owner of Banana PI, which is the chinese version of the Raspberry Pi. I also own two Raspeberry Pis, models B and 2B, so no discrimination for having a different origin in this case. Bananas are based on Android hardware, with the AllWinner processors at this heart, A20 in the case of the Banana Pi.</p>
+</div>
+<div class="paragraph">
+<p>Despite the specifications are usually superior to the Raspberries, lack of community and open documentation makes the Bananas to have less use cases. Things are changing a bit as at <a href="http://www.lemaker.org">LeMaker</a> they are doing a lot of effort in changing that matter. It&#8217;s going to take long until they improve the size and awesomeness of the Raspi community, anyway.</p>
+</div>
+<div class="paragraph">
+<p>One of these efforts is the creation of a Linux distribution, an equivalent to the original Raspian, called <strong>Bananian</strong>. For these guide I use that distribution, but it&#8217;s possible to use any other . Notice that Bananian has superuser as default user (sudo), so for all the commands a superuser is assumed.</p>
+</div>
+<div class="paragraph">
+<p>The main reason I used the Banana instead one of my Raspies is that sound quality is not so bad compared to the latter ones. A way to overcome that is to use some kind of <a href="https://www.hifiberry.com/digiplus/">Digital to Analog Converter (DAC)</a>. But for a discrete radio quality, we can use the default analog output.</p>
+</div>
+<div class="paragraph">
+<p>After reading a bunch of blog posts, using a USB sound card is discouraged as there are lot of latency issues. But you are free to try :)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ingredients">Ingredients</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Banana Pi or Banana Pi Pro.</p>
+</li>
+<li>
+<p>Cheap PC speakers with analog audio entry. Better powered by USB. The cheaper the better (just kidding).</p>
+</li>
+<li>
+<p>SD Card. Usually &gt; 4 Gb.</p>
+</li>
+<li>
+<p>Wifi dongle. Smaller is better, but has to work with your Banana. Notice that most of the time the only way to tell if an usb wifi dongle will work with your Banana is to buy from a trusted shop or simply buy it yourself.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_steps">Steps</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setup the <a href="http://wiki.lemaker.org/BananaPro/Pi:WiFi_configuration">wifi</a>. You can use also an ethernet connection, but it&#8217;s less fun.</p>
+</li>
+<li>
+<p><a href="https://www.mopidy.com/">Mopidy</a> is a versatile frontend for the MDP (Music Player Daemon). For installing it: <a href="https://docs.mopidy.com/en/latest/installation/debian/" class="bare">https://docs.mopidy.com/en/latest/installation/debian/</a> The same guide allows to install it in almost any other major linux distro.</p>
+<div class="paragraph">
+<p>We need mopidy mostly for the provider plugins. The one I use more is TuneIn, but there are plugins for Spotify, SoundCloud&#8230;&#8203; It&#8217;s possible to save songs in the SD card or in a hard disk connected by SATA or USB.</p>
+</div>
+<div class="paragraph">
+<p>You can check that it&#8217;s correctly installed <code>mopidy</code> from command-line. Mopidy tries to start the MPD, so if it has already started, it will show an error. Not a problem.</p>
+</div>
+</li>
+<li>
+<p>We need to install a web frontend, as we want to access our radio from remote. I.e. from a mobile phone. The one I use is Mopidy-MusicBox-Webclient, but you can have a look to a lot of them in this <a href="http://mopidy.readthedocs.org/en/latest/ext/web/">list</a>.</p>
+</li>
+<li>
+<p>(Optional) As we need to test the sound, installing the alsa tools and execute the alsamixer utility can be interesting. Simply check that there are two sound cards: analog output and HDMI.</p>
+<div class="paragraph">
+<p><code>apt-get install alsa-tools</code></p>
+</div>
+<div class="paragraph">
+<p><code>alsamixer</code></p>
+</div>
+</li>
+<li>
+<p>As a default, HDMI sound output is enabled, so we have to toggle it for enabling the analog modifying the ALSA sound configuration file, <strong>/etc/asound.conf</strong> (<a href="http://forum.lemaker.org/thread-213-1-1-.html">source</a>).</p>
+<div class="listingblock">
+<div class="content">
+<pre>pcm.!default {
+    type hw
+    card 0
+    device 0
+}
+
+ctl.!default {
+    type hw
+    card 0
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we can test the sound:</p>
+</div>
+<div class="paragraph">
+<p><code>speaker-test -twav -c2</code></p>
+</div>
+<div class="paragraph">
+<p>And if the speakers are properly connected, you should hear a nice sound from them. No, it&#8217;s not Britney Spears.</p>
+</div>
+</li>
+<li>
+<p>We need to <a href="https://docs.mopidy.com/en/develop/debian/#running-as-a-system-service-by-default">run it as a service</a> in order to have it running when the Banana boots.</p>
+</li>
+<li>
+<p>Banana PI has a network alias called "bananapi". So you could use a reverse proxy like Nginx to easily access the web interface. Unfortunately, IE disables WebSockets when a webpage is accessed from a local alias network. That disables the frontend. A quickfix is to use the IP address. You can use a Nokia screen to show the IP addresss (I know, that&#8217;s for another tutorial) or simply access from another computer and get the IP. If you don&#8217;t mess too much with your network and don&#8217;t reboot too often, chances are that you are going to get the same IP a lot of times.</p>
+<div class="paragraph">
+<p>If you want to access the web interface from a different host (and usually that&#8217;s the use case) you need to make the web server to broadcast the signal to the other devices in same network. For that we modify hostname entry in the configuration file in <strong>/etc/mopidy/mopidy.conf</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[http]
+hostname = 0.0.0.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There&#8217;s another configuration stored in a local folder, but it&#8217;s not used when we run mopidy as a sevice (previous step).</p>
+</div>
+<div class="paragraph">
+<p>So you now can safely access your brandly new internet radio visiting the url: <strong>http://&lt;Banana Pi IP&gt;:6680</strong></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There quite a few small things for building a system like this. It&#8217;s not too complex, but sometimes requires some patience as the information is dispersed in different blog and forum posts.</p>
+</div>
+<div class="paragraph">
+<p>So, feel free to use this as a reference, but also try different stuff and new configurations. Enjoy the music!</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Wed, 11 Nov 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Space Quest]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I continue with my quest for safeguarding data that I started talking about in my previous post.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vid">VID</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes, simplifying things is not so easy as it seems, and implies some work. I disregarded for a while the idea of a home NAS to keep track of my VID (Very Important Data). There are services like Amazon S3 or even Dropbox and Google Drive that can take care of that better than me. Yes, maybe it&#8217;s not so important.</p>
+</div>
+<div class="paragraph">
+<p>The part I want to take care is my code. Mostly because it&#8217;s a lot of time invested in those personal projects, even the most trivial ones. I think that Github does a good job on that (also BitBucket, but second usually means nothing in today&#8217;s world). Also, I&#8217;m an Open Source enthusiast, aka code-exhibicionist, so I don&#8217;t mind people can watch my unpolished code. Some people argues that Open Source can be silly from a pure economical point-of-view. Of course, those complaints come always from outside open source world. I will try to explain my opinion about that matter in another post.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_photos">Photos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some people need a lot of space for their photos. It&#8217;s not my case right now but can be in the future. Facebook is not a safe alternative in a long run. I used 23hq.com for a few years, but they don&#8217;t have an active development for a while. Maybe it&#8217;s time to go back to Flickr or SmugSmug.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aftermath">Aftermath</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;ve had a personal portfolio for a few years, since 2010, hosted even in a VPS. It was useful for a while, but right now I don&#8217;t feel I need it anymore. Right now I think that my projects and collaborating with people in other projects are far more important that a simple web portfolio.</p>
+</div>
+<div class="paragraph">
+<p>So my final decision is to not renew the domain manelvf.com and use only Github Pages for hosting both my project webpages and my <a href="http://manelvf.github.io">personal portfolio</a>. The old domain manelvf.com will point for a while to manelvf.github.io but will not be renewed. In case Github discontinues the service, I will switch to another provider, but that&#8217;s very unlikely in the next years.</p>
+</div>
+<div class="paragraph">
+<p>For other projects, they will appear in my main profile page or in this blog, and they will have their own domain name in case they need it.</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2015/10/10/Space-Quest.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/10/Space-Quest.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sat, 10 Oct 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[First post... Let's start!]]></title><description><![CDATA[<div class="paragraph">
+<p>This is the first post of my new blog. There are a series of tasks I want to accomplish in this month of October 2015:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Setup a home NAS.</p>
+</li>
+<li>
+<p>Migrate all the content of the server where manelvf.com is hosted (Amazon AWS) to the NAS, Github pages or a different server (take care of the VPN info also).</p>
+</li>
+<li>
+<p>Setup a new server using that hosts different applications using Docker and maybe other tools.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hubpress is really cool as a blog system. The preview is a killer feature. Also, having a static blog with live editing included is clearly "best of both worlds". Let&#8217;s see how this works with more stuff.</p>
+</div>]]></description><link>https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Tue, 06 Oct 2015 00:00:00 GMT</pubDate></item></channel></rss>
