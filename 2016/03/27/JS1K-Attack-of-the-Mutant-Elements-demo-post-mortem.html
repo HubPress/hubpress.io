@@ -11,66 +11,47 @@
     <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/style.css?v=1.0.0" rel="stylesheet" type="text/css">
-    <link href="//manelvf.github.io/blog/themes/Saga/assets/css/animate.min.css?v=1.0.0" rel="stylesheet" type="text/css">
-    <link href="//manelvf.github.io/blog/themes/Saga/favicon.ico" rel="shortcut icon">
+    <link href="//manelvf.github.io/blog/themes/saga/assets/css/style.css?v=1485462062161" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/saga/assets/css/animate.min.css?v=1485462062161" rel="stylesheet" type="text/css">
+    <link href="https://manelvf.github.io/blog/favicon.ico" rel="shortcut icon">
     <link rel="canonical" href="https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html" />
+    <meta name="referrer" content="origin" />
     
     <meta property="og:site_name" content="The Fallen Apples" />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem" />
-    <meta property="og:description" content="One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for..." />
+    <meta property="og:description" content="One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for me it&amp;#8217;s one of the most rewarding competitions." />
     <meta property="og:url" content="https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html" />
-    <meta property="article:published_time" content="2016-03-26T23:00:00.000Z" />
-    <meta property="article:modified_time" content="2016-07-09T12:22:45.417Z" />
-    
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem" />
-    <meta name="twitter:description" content="One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for..." />
+    <meta name="twitter:description" content="One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for me it&amp;#8217;s one of the most rewarding competitions." />
     <meta name="twitter:url" content="https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html" />
     
     <script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "publisher": "The Fallen Apples",
-    "author": {
-        "@type": "Person",
-        "name": "Manel Villar",
-        "image": "https://avatars.githubusercontent.com/u/135327?v=3",
-        "url": "undefined/author/undefined",
-        "sameAs": "manelvf.github.io"
-    },
-    "headline": "JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem",
-    "url": "https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html",
-    "datePublished": "2016-03-26T23:00:00.000Z",
-    "dateModified": "2016-07-09T12:22:45.417Z",
-    "description": "One year more, there was the JS1K, the microcode competition for Javascript code of &amp;#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS &quot;scene&quot;, if that exists. After participating a few years, for..."
-}
+null
     </script>
 
-    <meta name="generator" content="Ghost ?" />
-    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss/" />
 </head>
 <body class="post-template">
     <header id="header" class="animated fadeIn">
     <div class="header-background">
     <section class="blog-content">
         <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
-        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Don&#x27;t expect too much.</span>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Please don&#x27;t expect too much.</span>
         <nav class="links fadeIn animated">
             <ul>
-                <!-- <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li> -->
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
         
             </ul>
         </nav>
     </section>
     <section class="header-content">
         <h1 class="post-title animated fadeInUp">JS1K &quot;Attack of the Mutant Elements&quot; demo post-mortem</h1>
-        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1459033200" datetime="2016-03-27T00:00" title="27 March 2016">2016-03-27 00:00:00<ago class="ago"></time></span>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1459033200" datetime="2016-03-27T00:00" title="27 March 2016">10 months ago</time></span>
             
-            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="">Manel Villar</a></span></span>
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://manelvf.github.io/blog/author/manelvf/">Manel Villar</a></span></span>
     </section>
     </div>
 </header>
@@ -336,9 +317,9 @@ requestAnimationFrame(loop);</pre>
           });
         });
 
-        hljs.initHighlightingOnLoad();      
+        hljs.initHighlightingOnLoad();
       </script>
-    <script src="//manelvf.github.io/blog/themes/Saga/assets/js/scripts.js?v=1.0.0"></script>
+    <script src="//manelvf.github.io/blog/themes/saga/assets/js/scripts.js?v=1485462062161"></script>
     
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
