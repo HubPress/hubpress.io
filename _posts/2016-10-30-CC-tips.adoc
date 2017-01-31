@@ -1,4 +1,4 @@
-= C++ tips
+= C/C++ tips
 :hp-tags: c++, tips
 
 ==== What's here ?
@@ -6,7 +6,7 @@
 Here you will find some tips n tricks around C++.
 
 
-==== Ternary in cpp
+==== Ternary
 
 [source,cpp]
 ----
@@ -15,3 +15,32 @@ bool test = true;
 (test) ? std::cout << "yes" : std::cout << "no"; // will print yes
 
 ----
+
+==== Get int* len on linux and windows
+
+[source,cpp]
+----
+#include <stdio.h>
+#include <malloc.h>
+
+#ifdef linux
+#define array_size(x) malloc_usable_size(x)
+#endif
+
+#ifdef _WIN32
+#define array_size(x) _msize(x)
+#endif
+
+int main(int argc, char**argv)
+{
+    int         len;
+    int         *array = malloc(sizeof(int)*10);
+
+    len = array_size(array);
+    len = len / 4; 				// because array_size return size_t
+
+    printf("len : %d\n", len);
+    return(0);
+}
+----
+
