@@ -1,5 +1,5 @@
 = Robcamstone
-:published_at: 2017-02-05 15:
+:published_at: 2017-02-05 15:00
 
 == Family holidays
 
