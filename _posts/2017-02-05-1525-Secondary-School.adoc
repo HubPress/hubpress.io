@@ -1,7 +1,7 @@
-= Robcamstone
+= Secondary School
 :published_at: 2017-02-05 15:25
 
-== Secondary School
+
 
 Catford Boys had classes Named "A" though to "H" with "H" being the class with the pupils they had written of from day one and so made no attempt to educate, which is why when I left school in 1977 at sixteen I could still not read or write.
 
@@ -28,7 +28,7 @@ A few years after I left the school I heard he final got the sack after he cut a
 
 == Sports Day
 
-mage::[https://upload.wikimedia.org/wikipedia/commons/1/14/Fencing_foil_valid_surfaces_2009.svg]
+e::[https://upload.wikimedia.org/wikipedia/commons/1/14/Fencing_foil_valid_surfaces_2009.svg]
 
 Fridays was sports day and every pupil had to do a sport of some sort.
 
