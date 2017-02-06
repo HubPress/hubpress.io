@@ -1,8 +1,6 @@
 = Secondary School
 :published_at: 2017-02-05 15:25
 
-
-
 Catford Boys had classes Named "A" though to "H" with "H" being the class with the pupils they had written of from day one and so made no attempt to educate, which is why when I left school in 1977 at sixteen I could still not read or write.
 
 I enjoyed technical drawing and art at school, but only when I was in the mood to do.
@@ -26,9 +24,8 @@ He was not the only teacher who was into abusing pupils the fencing master use t
 
 A few years after I left the school I heard he final got the sack after he cut a pupil, but he should have got more then just the sack he should have been changed with physical abuse of a minor.
 
-= Sports Day
-
-image::https://upload.wikimedia.org/wikipedia/commons/1/14/Fencing_foil_valid_surfaces_2009.svg[]
+=== Sports Day
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fencing_foil_valid_surfaces_2009.svg/263px-Fencing_foil_valid_surfaces_2009.svg.png[Target area for foil, 100, link="https://commons.wikimedia.org/wiki/File:Fencing_foil_valid_surfaces_2009.svg"]
 
 Fridays was sports day and every pupil had to do a sport of some sort.
 
