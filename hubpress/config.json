@@ -4,9 +4,14 @@
     "repositoryName": "Robcamstone.github.io",
     "branch": "master"
   },
-  "site": {},
-  "socialnetwork": {},
+  "site": {
+    "title": "The Randomness of Robcamstone"
+  },
+  "socialnetwork": {
+    "twitter": "@Robcamstone",
+    "facebook": "robert.stonebanks"
+  },
   "theme": {
-    "name": "uno-zen"
+    "name": "casper"
   }
 }
