@@ -1,6 +1,7 @@
 = TV in my life time
 
-. Opportunity knocks
+.Opportunity knocks
+* Freddie Davies
 * Bonnie Langford
 * Lena Zavaroni
 
