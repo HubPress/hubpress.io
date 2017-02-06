@@ -5,12 +5,4 @@
 * Lena Zavaroni
 
 = Bonnie Langford
-video::noRliAEeiQE[youtube
-
-
-
-
-
-
-
-
+video::noRliAEeiQE[youtube]
