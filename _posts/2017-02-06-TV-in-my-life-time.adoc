@@ -1,9 +1,15 @@
 = TV in my life time
 
 .Opportunity knocks
-* Freddie Davies
-* Bonnie Langford
-* Lena Zavaroni
+* <<Freddie Davies>>
+* <<Bonnie Langford>>
+* <<Lena Zavaroni>>
 
-= Bonnie Langford
+== Freddie Davies
+video::dYVYEFRe58s[youtube]
+
+== Bonnie Langford
 video::noRliAEeiQE[youtube]
+
+== Lena Zavaroni
+video::j9NSwN-adPM[youtube]
