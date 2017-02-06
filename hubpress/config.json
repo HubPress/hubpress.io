@@ -10,8 +10,9 @@
     "cover": "https://c1.staticflickr.com/9/8862/18327411741_b5d085589b_o_d.jpg"
   },
   "socialnetwork": {
-    "twitter": "@Robcamstone",
-    "facebook": "robert.stonebanks"
+    "twitter": "https://twitter.com/Robcamstone",
+    "facebook": "https://www.facebook.com/robert.stonebanks",
+    "flickr": "https://www.flickr.com/photos/robcamstone/"
   },
   "theme": {
     "name": "ghostium"
