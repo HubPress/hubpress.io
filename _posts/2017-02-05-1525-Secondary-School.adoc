@@ -28,7 +28,7 @@ A few years after I left the school I heard he final got the sack after he cut a
 
 = Sports Day
 
-image::[https://upload.wikimedia.org/wikipedia/commons/1/14/Fencing_foil_valid_surfaces_2009.svg]
+image::https://upload.wikimedia.org/wikipedia/commons/1/14/Fencing_foil_valid_surfaces_2009.svg[]
 
 Fridays was sports day and every pupil had to do a sport of some sort.
 
