@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Randomness of Robcamstone]]></title><description><![CDATA[The Randomness of Robcamstone]]></description><link>https://Robcamstone.github.io</link><image><url>https://c1.staticflickr.com/9/8862/18327411741_b5d085589b_o_d.jpg</url><title>The Randomness of Robcamstone</title><link>https://Robcamstone.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Tue, 07 Feb 2017 12:26:06 GMT</lastBuildDate><atom:link href="https://Robcamstone.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[TV in my life time]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Randomness of Robcamstone]]></title><description><![CDATA[The Randomness of Robcamstone]]></description><link>https://Robcamstone.github.io</link><image><url>https://c1.staticflickr.com/9/8862/18327411741_b5d085589b_o_d.jpg</url><title>The Randomness of Robcamstone</title><link>https://Robcamstone.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Tue, 07 Feb 2017 12:37:39 GMT</lastBuildDate><atom:link href="https://Robcamstone.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[TV in my life time]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="ulist">
 <div class="title">Opportunity knocks</div>
@@ -91,10 +91,11 @@ The music teacher had this trick of if he got call away from the classroom he wo
 </div>
 <div class="sect2">
 <h3 id="_sports_day">Sports Day</h3>
-<div class="imageblock" style="float: right">
+<div id="img" class="imageblock">
 <div class="content">
-<a class="image" href="https://commons.wikimedia.org/wiki/File:Fencing_foil_valid_surfaces_2009.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fencing_foil_valid_surfaces_2009.svg/263px-Fencing_foil_valid_surfaces_2009.svg.png" alt="Target area for foil" width="150"></a>
+<a class="image" href="https://commons.wikimedia.org/wiki/File:Fencing_foil_valid_surfaces_2009.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Fencing_foil_valid_surfaces_2009.svg/263px-Fencing_foil_valid_surfaces_2009.svg.png" alt="Target area for foil" width="100"></a>
 </div>
+<div class="title">Figure 1. Target area for foil</div>
 </div>
 <div class="paragraph">
 <p>Fridays was sports day and every pupil had to do a sport of some sort.</p>
@@ -151,4 +152,4 @@ The music teacher had this trick of if he got call away from the classroom he wo
 <p>During the late 60s and the 70s must Saturday&#8217;s were spent at Saturday Morning Pictures at the ABC Cinema in Catford.</p>
 </div>
 </div>
-</div>]]></description><link>https://Robcamstone.github.io/2017/02/05/1500-Under-5-Years-Old.html</link><guid isPermaLink="true">https://Robcamstone.github.io/2017/02/05/1500-Under-5-Years-Old.html</guid><dc:creator><![CDATA[Robert Campbell Stonebanks]]></dc:creator><pubDate>Sun, 05 Feb 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://Robcamstone.github.io/2017/02/05/1500-Under-5-Years-Old.html</link><guid isPermaLink="true">https://Robcamstone.github.io/2017/02/05/1500-Under-5-Years-Old.html</guid><dc:creator><![CDATA[Robert Campbell Stonebanks]]></dc:creator><pubDate>Sun, 05 Feb 2017 15:00:00 GMT</pubDate></item></channel></rss>
