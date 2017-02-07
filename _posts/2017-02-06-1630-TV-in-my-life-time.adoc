@@ -6,11 +6,11 @@
 * <<Bonnie Langford>>
 * <<Lena Zavaroni>>
 
-== Freddie Davies
+=== Freddie Davies
 video::dYVYEFRe58s[youtube]
 
-== Bonnie Langford
+=== Bonnie Langford
 video::noRliAEeiQE[youtube]
 
-== Lena Zavaroni
+=== Lena Zavaroni
 video::j9NSwN-adPM[youtube]
