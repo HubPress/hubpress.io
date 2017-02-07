@@ -7,10 +7,10 @@
 * <<Lena Zavaroni>>
 
 === Freddie Davies
-video::dYVYEFRe58s[youtube, 640, 360]
+video::dYVYEFRe58s[youtube]
 
 === Bonnie Langford
-video::noRliAEeiQE[youtube, 640, 360]
+video::noRliAEeiQE[youtube]
 
 === Lena Zavaroni
-video::j9NSwN-adPM[youtube, 640, 360]
+video::j9NSwN-adPM[youtube]
