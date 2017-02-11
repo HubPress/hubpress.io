@@ -10,7 +10,10 @@
     "logo": "https://secure.gravatar.com/avatar/62b1891102bece1cd530b0f5f630225e",
     "postsPerPage": "5"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "webmaster@zahr.de",
+    "twitter": "tho99"
+  },
   "theme": {
     "name": "roon"
   }
