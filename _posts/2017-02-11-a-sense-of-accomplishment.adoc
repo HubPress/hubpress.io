@@ -2,4 +2,4 @@
 
 :hp-tags: meta, on the road
 
-I've now managed to get hubpress.io up and running. Now to work out how to do this from a Tablett.
+I've now managed to get http://hubpress.io up and running. Now to work out how to do this from a Tablett.
