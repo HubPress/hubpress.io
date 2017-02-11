@@ -6,28 +6,29 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>... bring us to your leader</title>
+    <title>a sense of accomplishment</title>
     <meta name="description" content="" />
     <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="//thomaszahr.github.io/themes/saga/assets/css/style.css?v=1486832841209" rel="stylesheet" type="text/css">
-    <link href="//thomaszahr.github.io/themes/saga/assets/css/animate.min.css?v=1486832841209" rel="stylesheet" type="text/css">
+    <link href="//thomaszahr.github.io/themes/saga/assets/css/style.css?v=1486832841237" rel="stylesheet" type="text/css">
+    <link href="//thomaszahr.github.io/themes/saga/assets/css/animate.min.css?v=1486832841237" rel="stylesheet" type="text/css">
     <link href="https://thomaszahr.github.io/favicon.ico" rel="shortcut icon">
-    <link rel="canonical" href="https://thomaszahr.github.io/2017/02/11/bring-us-to-your-leader.html" />
+    <link rel="canonical" href="https://thomaszahr.github.io/2017-02-11-a-sense-of-accomplishment.txt" />
     <meta name="referrer" content="origin" />
     
     <meta property="og:site_name" content="crumblingbiscuit" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="... bring us to your leader" />
-    <meta property="og:description" content="Here we go again &amp;#8230;&amp;#8203; more later" />
-    <meta property="og:url" content="https://thomaszahr.github.io/2017/02/11/bring-us-to-your-leader.html" />
+    <meta property="og:title" content="a sense of accomplishment" />
+    <meta property="og:description" content="I&amp;#8217;ve now managed to get hubpress.io up and running. Now to work out how to do this from a Tablett." />
+    <meta property="og:url" content="https://thomaszahr.github.io/2017-02-11-a-sense-of-accomplishment.txt" />
     <meta property="article:tag" content="meta" />
+    <meta property="article:tag" content=" on the road" />
     
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="... bring us to your leader" />
-    <meta name="twitter:description" content="Here we go again &amp;#8230;&amp;#8203; more later" />
-    <meta name="twitter:url" content="https://thomaszahr.github.io/2017/02/11/bring-us-to-your-leader.html" />
+    <meta name="twitter:title" content="a sense of accomplishment" />
+    <meta name="twitter:description" content="I&amp;#8217;ve now managed to get hubpress.io up and running. Now to work out how to do this from a Tablett." />
+    <meta name="twitter:url" content="https://thomaszahr.github.io/2017-02-11-a-sense-of-accomplishment.txt" />
     
     <script type="application/ld+json">
 null
@@ -36,7 +37,7 @@ null
     <meta name="generator" content="HubPress" />
     <link rel="alternate" type="application/rss+xml" title="crumblingbiscuit" href="https://thomaszahr.github.io/rss/" />
 </head>
-<body class="post-template tag-meta">
+<body class="post-template tag-meta tag-on-the-road">
     <header id="header" class="animated fadeIn">
     <div class="header-background">
     <section class="blog-content">
@@ -50,18 +51,18 @@ null
         </nav>
     </section>
     <section class="header-content">
-        <h1 class="post-title animated fadeInUp">... bring us to your leader</h1>
+        <h1 class="post-title animated fadeInUp">a sense of accomplishment</h1>
         <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1486767600" datetime="2017-02-11T00:00" title="11 February 2017">18 hours ago</time></span>
-            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://thomaszahr.github.io/tag/meta/">meta</a></span>
+            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://thomaszahr.github.io/tag/meta/">meta</a>, <a href="https://thomaszahr.github.io/tag/on-the-road/"> on the road</a></span>
             <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://thomaszahr.github.io/author/thomaszahr/">thomaszahr</a></span></span>
     </section>
     </div>
 </header>
 <main id="main" class="content">
-    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-meta">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-meta tag-on-the-road">
         <section class="post-content">
             <div class="paragraph">
-<p>Here we go again &#8230;&#8203; more later</p>
+<p>I&#8217;ve now managed to get hubpress.io up and running. Now to work out how to do this from a Tablett.</p>
 </div>
         </section>
 
@@ -91,7 +92,7 @@ null
 
         hljs.initHighlightingOnLoad();
       </script>
-    <script src="//thomaszahr.github.io/themes/saga/assets/js/scripts.js?v=1486832841209"></script>
+    <script src="//thomaszahr.github.io/themes/saga/assets/js/scripts.js?v=1486832841237"></script>
     
 </body>
 </html>
