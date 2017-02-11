@@ -4,7 +4,12 @@
     "repositoryName": "thomaszahr.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "crumblingbiscuit",
+    "description": "... crumblingbiscuit common place book"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
