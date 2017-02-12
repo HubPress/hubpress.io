@@ -3,3 +3,5 @@
 :hp-tags: gadgets
 
 Whatever tech god smiled on me while setting up hubpress, was much too busy to lent some support during the setup of our new dvb-t2 receiver. That decided that using the EPG once should be a lifetime achievement.
+
+**Upate 2017-02-12:** Found out why ... the manual described it wrong.
