@@ -5,8 +5,6 @@
 
 == Recipe 1:
 
-image::https://goo.gl/photos/3VdDdQFrRb9b5xLv9[fresh bread]
-
 * 1000 g flour (wheat or spelt)
 * 60% - 65% water (60% with spelt)
 * 2% salt
