@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[crumblingbiscuit]]></title><description><![CDATA[... crumblingbiscuit's common place book]]></description><link>https://thomaszahr.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 14 Feb 2017 11:31:30 GMT</lastBuildDate><atom:link href="https://thomaszahr.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[... with every success a damper]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[crumblingbiscuit]]></title><description><![CDATA[... crumblingbiscuit's common place book]]></description><link>https://thomaszahr.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 14 Feb 2017 11:33:39 GMT</lastBuildDate><atom:link href="https://thomaszahr.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[... baking bread]]></title><description><![CDATA[<div class="paragraph">
+<p><strong>Recipe 1:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1000 g flour (wheat or spelt)</p>
+</li>
+<li>
+<p>60% - 65% water (60% with spelt)</p>
+</li>
+<li>
+<p>2% salt</p>
+</li>
+<li>
+<p>yeast</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Knead, proof over night, pre-heat oven (incl. baking stone) and a cast iron pot with lid (Dutch oven) to 265 C or the maximum temperature of you oven.</p>
+</div>
+<div class="paragraph">
+<p>Form the loaf and proof (on a sheet of baking parchment) until well risen.</p>
+</div>
+<div class="paragraph">
+<p>Move loaf with the parchment into the pre-heated pot, return to the oven, turn down the oven to 250 C and bake for 1 hour.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://github.com/thomaszahr/thomaszahr.github.io/images/IMG_20161229_180600.jpg" alt="fresh bread">
+</div>
+</div>]]></description><link>https://thomaszahr.github.io/2017/02/12/baking-bread.html</link><guid isPermaLink="true">https://thomaszahr.github.io/2017/02/12/baking-bread.html</guid><category><![CDATA[bread]]></category><pubDate>Sun, 12 Feb 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[... with every success a damper]]></title><description><![CDATA[<div class="paragraph">
 <p>Whatever tech god smiled on me while setting up hubpress, was much too busy to lent some support during the setup of our new dvb-t2 receiver. That decided that using the EPG once should be a lifetime achievement.</p>
 </div>
 <div class="paragraph">
