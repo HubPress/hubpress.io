@@ -1,7 +1,8 @@
 = ... baking bread
 
 :hp-tags: bread
-:hp-image: https://goo.gl/photos/3VdDdQFrRb9b5xLv9[fresh bread]
+
+image::https://goo.gl/photos/3VdDdQFrRb9b5xLv9[fresh bread]
 
 == Recipe 1:
 
