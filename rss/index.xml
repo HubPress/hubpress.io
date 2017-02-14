@@ -1,4 +1,159 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[crumblingbiscuit]]></title><description><![CDATA[... crumblingbiscuit's common place book]]></description><link>https://thomaszahr.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 14 Feb 2017 15:00:41 GMT</lastBuildDate><atom:link href="https://thomaszahr.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[... baking bread]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[crumblingbiscuit]]></title><description><![CDATA[... crumblingbiscuit's common place book]]></description><link>https://thomaszahr.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 14 Feb 2017 16:12:01 GMT</lastBuildDate><atom:link href="https://thomaszahr.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[... why I bake bread]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_background">background</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>About 10 years ago, or so, my daughter needed to avoid certain foods for 6 months. One of the foods was wheat. To make it easier to do, I started to bake spelt bread trying to aproximate toast.</p>
+</div>
+<div class="paragraph">
+<p>This worked well.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The daughter liked her father baking break for her, and it tasted good</p>
+</li>
+<li>
+<p>I discovered that I liked baking bread</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A reasonably fast result for your labour</p>
+</li>
+<li>
+<p>Not a huge investment in time</p>
+</li>
+<li>
+<p>A limited number of variables to tweak, a nearly unlimited amount of outcomes</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Then, the six months were over.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://lh3.googleusercontent.com/mU61owaXNKYQxJTuEMfloijeHeViqvTwSOYgl5MYTqczMn2in-QIqYVjiX3FoQKgse0HqdmUjEnffZktxVa8givjkJ6l2aJ_lyQ4eyhei0uwhfzJHQNjbIq9cDyjtrHnEAgWfVdo1N_DTzLKLWCmiafJhHM-CNql86LxghJiF1B0m9Kq4yVA1omsYOVR_0SvvqH13idifKSq-T0r7wWNbnbo3pTGYfgDgPAtz6YmKhJhn0oBvdm-8XCIRA9ELil-0oUITcTn-ZgiLr-_x3OHBe1I__5n7HNmkq68URVnnOJMGx0lyo6v9r8m_7GDkWs4j3F1Y7XBMP8_syf_JoT2HrCBDteXG18ns52kJRBVpfGudd1vN0FNB-DwCXGb8A8SPPqVyOSUe2QYqPGpXSTLlMXpaTdTZ9ikoeU0khddNkXURSSR80uOTIgITlS05vqOAbdf6lWI3YkUBGo3x74QKyKdg5drzGvcQ_zwnVXGcDgeZnXknHI8V_6QE3tSXps7gKUzviML8clOfmSZYGA6_maQa16J6HQ1N5V8_PmbMAy6V8O4E-hjORw8eJojuABPUJh6J4-fsZATpFWJXAnt1oddVJS-GuOzuoWdQwjhV6jWYfj_CRHuSQ=w1367-h1021-no" alt="spelt bread">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ever_onwards">ever onwards</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There I was, with a severe baking habit, needing a new outlet.</p>
+</div>
+<div class="paragraph">
+<p>I started reading about baking and the beginnings of a "philosophy" developed.</p>
+</div>
+<div class="paragraph">
+<p>I wanted to bake a bread that any family <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup> within the last 1000 years could have baked.</p>
+</div>
+<div class="paragraph">
+<p>To me that meant:
+* Sourdough as a starter
+* Spelt and rye <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup>
+* hand kneading
+* large loafs (ca. 3kg)</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take them in turns.</p>
+</div>
+<div class="sect2">
+<h3 id="_sourdough">sourdough</h3>
+<div class="paragraph">
+<p>Sourdough speaks to my nerdy, geeky side, but in a good way. Making sourdough is easy. Basically you mix flour and water. Starting from there, there is a lot of ways to add complexity, leading up to arduino or raspberry pi controlled climate chambers for the dough.</p>
+</div>
+<div class="paragraph">
+<p>But, as I was going into the direction of home baked bread, as it could have been done a 1000 years ago, an arduino was out of the question. I needed something more robust. <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnote_3" title="View footnote.">3</a>]</sup> So my sourdough starter lived in the fridge over the week, was "woken" with feedings friday night, saturday morning and saturday evening.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flour">flour</h3>
+<div class="paragraph">
+<p>Clearly 1000 years ago they would have had no white flour as today, but something shifted much more into the direction of wholemeal flour. I mixed spelt type 1050 and rye type 1150 flour for a good mix of authenticity and modern taste.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hand_kneading">hand kneading</h3>
+<div class="paragraph">
+<p>Of course</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_large_loafs">large loafs</h3>
+<div class="paragraph">
+<p>A large loaf does not need that much more work, but keeps much better. In my experience, if stored outside the fridge, easily one to two weeks.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_original_process">original process</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>wake up sourdough starter friday evening with 3 feedings</p>
+</li>
+<li>
+<p>mix flour with part of the water on saturday morning (sponge)</p>
+</li>
+<li>
+<p>mix sponge with sourdough starter, salt and the balance of water</p>
+</li>
+<li>
+<p>after an hour knead for 15 to 20 minutes</p>
+</li>
+<li>
+<p>after proofing form the loaf</p>
+</li>
+<li>
+<p>wait until loaf has proofed and put into oven</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://lh3.googleusercontent.com/YyqSmeTdwEW_ZC0tF2EnGyMvR2khkLWTbwN-tyFyXgVzUaOV4zQ8Qyg-p5KobO-5OObdNdGfANIgv7xqWQC87-D5ft1fh72bz4vZ4CwjQnSh1B3_IHkQ67XZzt4DPCFYry5Ovv4TrZNfi5VhcRNULLy9AWnV-hVFmMmDggsrggh7kvscHROpHASdM0p8QQ6UQ2O6gaS-AOij08fVsVjshNMr7DgJM3zb5hCj5AjZABeW7zPN037t6UBfmf1yw-KlyTFqK4Yn53FOm7hcKXge_xGDsJ-0gpEGoPaAeT91sMj4ddrxfppp3Rhkz2qFs4Hlk1OwH7L2_mggeGqEl1IvlZlYLxQ8EFq6n5_jaGQ-bQ9I3zGIcWYBU4WkXf0u5vWM4N9gDdYBBrcv8XTsAUz7jSTuq11Fg-Cd76Go-V6uJqfrwGRraf3uLxaGkFfTXXud0ci89vGyvWWokCuo824TQQ7gCm31gBUpcCKwS5_P0NgCPszlMYONBgL7KPsFaks_KAyyjZfcYS5QOo__IkVIDrxnSqNyepkj4S4K6n6eRZ9Ledv7ehfla4jCRXC-0yft6KXzptj5CRRBI-hrFVp4YhGwIXyXSRa3gcj11HexTToKJqU0ql3phg=w1020-h1021-no" alt="spelt-rye sourdough bread">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_hapened_in_the_oven">what hapened in the oven?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fairly early in my baking career I found the several articles and books extolling the uses of a dutch oven <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnote_4" title="View footnote.">4</a>]</sup> in baking bread. So, I use a dutch oven, on a baking stone, in an oven pre-heated to the max.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_who_ate_all_that_bread">who ate all that bread?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once novelty wore off, mixed with different "phases" of the kids development through puberty, I went from a weekly to a bi-weekly bake. After about 2 years I had to stop the regular baking and so also the baking with sourdough.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. in the Rhineland
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. wheat came later
+</div>
+<div class="footnote" id="_footnote_3">
+<a href="#_footnoteref_3">3</a>. My job requires me leaving home on a monday morning, returning on a friday afternoon
+</div>
+<div class="footnote" id="_footnote_4">
+<a href="#_footnoteref_4">4</a>. a name which strikes me, as a Rhinelander, as fairly funny
+</div>
+</div>]]></description><link>https://thomaszahr.github.io/2017/02/14/why-I-bake-bread.html</link><guid isPermaLink="true">https://thomaszahr.github.io/2017/02/14/why-I-bake-bread.html</guid><category><![CDATA[bread]]></category><pubDate>Tue, 14 Feb 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[... baking bread]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_recipe_1">Recipe 1:</h2>
 <div class="sectionbody">
 <div class="ulist">
