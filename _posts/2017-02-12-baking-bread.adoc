@@ -15,4 +15,4 @@ Form the loaf and proof (on a sheet of baking parchment) until well risen.
 
 Move loaf with the parchment into the pre-heated pot, return to the oven, turn down the oven to 250 C and bake for 1 hour.
 
-image::http://github.com/thomaszahr/thomaszahr.github.io/images/IMG_20161229_180600.jpg[fresh bread]
+image::IMG_20161229_180600.jpg[fresh bread]
