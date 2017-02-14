@@ -8,6 +8,7 @@
     "title": "crumblingbiscuit",
     "description": "... crumblingbiscuit's common place book",
     "logo": "https://secure.gravatar.com/avatar/62b1891102bece1cd530b0f5f630225e",
+    "cover": "https://lh3.googleusercontent.com/2tor-0-MsbWL48EuQdtcfpLLvxDaoF-JJfHtSVcdG2JTwaIUPxVdmoOEkZ8CL1HWosYdSfK_rUzmXHSfEQDOeRXCGupqs4s-U25VHuxajvPTP828QF6SvQGa8uOtHFTEfASc91qoH52kCqOosECpUgZBM-RNfgbMhOzsIWg9f-xEBiJ9B9xsUoGpFRSUc6uL8RTlu5zEOx21OmDFcm6wxOq--PFdN1k_9CSKq8i8uPVSmnzph0BK8TUN32nQSfhm8MStVJ7AyNeJSrMfpXISisByfDfNNv5usRajrU_dZvQqIXo6NVzTFGhVefnDQo-sRnnySfJE5RdRg0Hl-qu2EIz_8nKKUazdJuQ5p5ClM2KlGo5nDBl0AklThiupi9mrs4culYsWILRZ_rCaPHgIecjUabNcc3bOhc6RxX5zAUVU3YTdXwqTXE6Hhg_Dol1POm2OU2vy7m2CZI0K5cZLXF_VNk04OAjMrdmk2mhay3b1_b2nqlLZxnvLKbHLvh4qfHp0qSXQLkg91k8hGV0LiVNoWNrg5V81sa9MWm6Mw0BE7C37c8h0NVSpgLxtxmCpMaZHpenXD5mCAMsU598NeUhipq2rb6vB8vnp6WYLkWnxyKg9hdkHdw=s1021-no",
     "postsPerPage": "",
     "disqus": "thomaszahr-github-io"
   },
@@ -17,6 +18,6 @@
     "flickr": "https://www.flickr.com/photos/crumblingbiscuit/"
   },
   "theme": {
-    "name": "ichi"
+    "name": "uno"
   }
 }
