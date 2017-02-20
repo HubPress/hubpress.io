@@ -1,0 +1,21 @@
+= Sala de Chat Privado3
+:hp-tags: Chat,
+
+== Entra en esta sala si quieres chatear en privado. 
+
+---
+
+//Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
+
+//image::https://livechatbot.net/images/pic01.png[]
+//image::http://github.com/txemis/txemis.github.io/images/pic01.png[]
+//image::http://github.com/txemis/txemis.github.io/images/livechat.jpg[]
+//image::https://github.com/txemis/txemis.github.io/blob/master/images/livechat.png[]..
+
+//image::livechat.jpg[]
+
+
+++++
+<script> window.intergramId = "149197271" </script>
+<script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
+++++
