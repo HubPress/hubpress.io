@@ -1,4 +1,4 @@
-= Sala de Chat Privado3
+= Sala de Chat Privado
 :hp-tags: Chat,
 
 == Entra en esta sala si quieres chatear en privado. 
