@@ -1,0 +1,116 @@
+:toc: macro
+:toclevels: 4
+:sectnums:
+
+= HubPress
+
+toc::[]
+
+HubPress는 GitHub Pages와 http://asciidoctor.org/docs/user-manual/[AsciiDoc] 를 이용해 블로그를 만들 수 있는 무료 오픈 소스 도구입니다.
+
+https://gratipay.com/hubpress/[HubPress] on Gratipay image:https://avatars1.githubusercontent.com/u/1744073?v=3&s=24[].
+
+== HubPress란?
+image::http://hubpress.io/img/editor.png[]
+
+HubPress는 블로그를 쉽게 관리할 수 있도록 도와주는 웹 애플리케이션입니다. HubPress는 다음과 같은 기능들을 제공합니다:
+
+* 블로그 포스트 작성을 위한 WYSIWYG 에디터.
+* 콘텐츠를 원하는 형태로 표현하기 위한  http://asciidoctor.org/docs/user-manual/[AsciiDoc markup].
+* 블로그 콘텐츠를 커스터마이징할 수 있는 관리자 콘솔.
+* 블로그 댓글 기능을 지원하는 Disqus 플랫폼.
+* 방문자 활동을 추적할 수 있는 구글 분석기.
+* 즉시 사용가능한 각종 테마.
+
+블로그 호스팅은 GitHub Pages에 의해 제공됩니다.
+
+만약 이 문서에서 잘못 기재된 사항을 발견했다면 issue를 생성하여 우리에게 알려주길 바랍니다. HubPress를 향상시키기 위한 당신의 노력에 항상 감사드립니다. Pull Requests는 *언제나* 환영합니다.
+
+성공적인 HubPress 기여자가 되기 위한 추가 정보는 link:CONTRIBUTING.adoc[Contributors Guide]에서 확인하세요.
+
+== 브라우저 호환성
+
+HubPress는 Chrome Desktop, Firefox Desktop, 안드로이드용 Chrome과 호환됩니다.
+
+== 시작하기
+
+=== 저장소 Fork
+
+당신의 GitHub 계정 안에 이 저장소(repository)에 대한 복사본을 만들려면 Fork 아이콘 image:http://hubpress.io/img/fork-icon.png[Fork,80]을 클릭하세요.
+
+=== github.io 도메인 사용
+
+만약 당신이 GitHub Pages 도메인을 사용한 적이 없다면, 이 방법을 이용해 HubPress 를 빠르게 설치할 수 있을 것입니다. 이 방법을 통해, HubPress를 배포하기 위해 필요한 몇가지 절차만 마치면 HubPress를 이용한 블로그 서비스를 바로 시작할 수 있습니다.
+
+IMPORTANT: 만약 현재 다른 프로젝트를 위해 `username.github.io` GitHub Pages 도메인을 사용 중이거나 커스텀 도메인 네임을 사용하길 원한다면 다음 단계를 참조하길 바랍니다.
+
+. 당신의 저장소 이름을 `<username>.github.io` 로 변경합니다.
+
+. `hubpress/config.json` 파일의 값들을 설정합니다.
++
+image:http://hubpress.io/img/edit-config.png[Edit config]
++
+아래의 파라미터들은 필수 항목입니다 :
++
+* `username`, 당신의 GitHub 사용자 이름,
+* `repositoryName`, fork한 저장소의 새로운 이름, 즉 `<username>.github.io`.
+. 변경사항을 Commit 한 뒤, 브라우저에 아래의 GitHub Pages 도메인을 입력하세요 :  `https://<username>.github.io/`.
+. HubPress를 제대로 설정하였다면 아래의 화면이 나타날 것입니다.
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+=== 커스텀 도메인 또는 이미 사용하고 있는 GitHub Page 도메인 사용
+
+만약 블로그에 커스텀 도메인을 사용하고 싶거나, 다른 프로젝트에서 GitHub Pages 도메인을 이미 사용하고 있는 경우에는 추가적인 설정이 필요합니다.
+
+. 저장소(repository) 설정에서 default branch 를 `gh-pages`로 설정합니다. :
++
+image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+. 당신의 저장소 브랜치를 `gh-pages`로 변경합니다.
++
+image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
++
+. `hubpress/config.json` 파일을 설정합니다.
++
+image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
++
+아래의 파라미터들은 필수 항목입니다 :
++
+* `username`, 당신의 GitHub 사용자 이름,
+* `repositoryName`, fork한 저장소의 이름. 예시) `hubpress.io`.
+. 변경사항을 Commit 한 뒤, 브라우저에 아래의 GitHub Pages 도메인을 입력하세요:
+`https://<username>.github.io/<repositoryName>/`.
+. HubPress를 제대로 설정하였다면 아래의 화면이 나타날 것입니다.
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+당신은 이제 HubPress를 성공적으로 설정하였으며, 소셜 네트워크 정보, 각종 테마 등을 적용하여 블로그를 커스터마이징함으로써 당신 고유의 블로그를 만들 수 있습니다.
+
+HubPress 블로그 관리에 관한 추가 정보는 link:Administration.adoc[Administration Guide]를 참조하세요.
+
+설정을 마쳤으니 당신의 블로그에 첫번째 포스팅을 할 수 있습니다. link:Writers_Guide.adoc[Writer's Guide]를 참조하여  to write 첫번째 블로그 포스트를 성공적으로 작성해보세요.
+
+== HubPress 팀
+
+코드 작성 http://github.com/anthonny[Anthonny Quérouil] (Twitter - http://twitter.com/anthonny_q[@anthonny_q]).
+
+영문 문서 http://github.com/jaredmorgs[Jared Morgan]  (Twitter - http://twitter.com/jaredmorgs[@jaredmorgs]).
+
+일본어 문서 번역:
+
+* https://github.com/takkyuuplayer[takkyuuplayer],
+* https://github.com/hinaloe[hinaloe].
+
+한글 문서 번역
+
+* https://github.com/dakeshi[sangjoon moon].
+
+== 기 부
+
+https://gratipay.com/hubpress/[Gratipay]를 통해 HubPress에 도움을 줄 수 있습니다!
+
+image::https://cloud.githubusercontent.com/assets/2006548/12901016/7b09da22-ceb9-11e5-93f7-16ab135b2e2e.png[]
+이것은 우리에게 도움을 줄 수 있는 유일한 방법은 아니지만 매우 환영하는 방법입니다.
+기부는 플랫폼에 대한 당신의 고마움을 표현할 수 있는 좋은 방법입니다. 이러한 기부는 우리를 하루 일과와 가족과 함께 있는 시간을 쪼개 HubPress를 더 멋진 블로깅 플랫폼으로 만들기 위해 헌신할 수 있게 합니다.
+
+image::https://cloud.githubusercontent.com/assets/2006548/12901085/cc5ee908-ceb9-11e5-9d8b-c526f081f1e9.png[]

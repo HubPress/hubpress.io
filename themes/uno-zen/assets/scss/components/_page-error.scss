@@ -1,0 +1,43 @@
+body[data-page="error"] {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 25px;
+  text-align: center;
+  @include background-filter;
+
+  > article {
+    @include center-absolute;
+  }
+}
+
+.mayday {
+  width: 500px;
+  margin: 150px auto 20px;
+
+  > h2 {
+    font-size: 24px;
+    line-height: 35px;
+    color: $gray-lightest;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+  }
+}
+
+.astro-wrap {
+  position: relative;
+  width: $astronaut-size;
+  height: $astronaut-size * 1.6;
+  margin: auto;
+}
+
+.astronaut {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $astronaut-size;
+  height: $astronaut-size * 1.6;
+  transform: translate(0, 50px);
+  animation: move 10s infinite;
+  background: url('/assets/img/astronaut.png') center / cover no-repeat;
+}

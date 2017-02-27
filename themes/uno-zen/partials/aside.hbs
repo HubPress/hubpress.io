@@ -1,0 +1,24 @@
+<aside class="cover" style="background: url({{@blog.cover}}) center/cover no-repeat fixed">
+  <div class="cover container">
+    <div class="profile">
+      {{#if @blog.logo}}
+      <a id="avatar-link" title="link to homepage for {{@blog.title}}" href="{{@blog.url}}/#open">
+        <img src="{{@blog.logo}}" alt="{{@blog.title}} avatar" class="profile avatar rounded hvr-buzz-out" />
+        <h1 id="profile-title">{{@blog.title}}</h1>
+        <h3 id="profile-resume"></h3>
+      </a>
+      {{/if}}
+
+      <hr class="divider long" />
+      <p>{{@blog.description}}</p>
+      <hr class="divider short" />
+      <div class="navigation">
+        <div class="profile contact">
+          {{navigation}}
+          {{> social}}
+          <!-- {{> search }} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,166 @@
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript&plugins=line-highlight+show-language */
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code,
+pre {
+  font-family: $code-font;
+  font-size: 90%;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-wrap: normal;
+  word-break: normal;
+  tab-size: 2;
+  hyphens: none;
+  color: black;
+  text-shadow: 0 1px white;
+  direction: ltr;
+}
+
+pre::selection,
+code::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+@media print {
+  code,
+  pre {
+    text-shadow: none;
+  }
+
+}
+
+/* Code blocks */
+pre {
+  padding: 1em;
+  margin: 2.5rem 0;
+  overflow: auto;
+}
+
+:not(pre) > code,
+pre {
+  border: 1px solid rgba(0, 0, 0, .15);
+  background: #fbfaf8;
+}
+
+/* Inline code */
+:not(pre) > code {
+  // slack style
+  padding: 1px 3px;
+  font-family: $code-font;
+  font-size: 72%;
+  line-height: 72%;
+  white-space: normal;
+  color: #c25;
+  border: 1px solid #e1e1e8;
+  border-radius: .3em;
+  background-color: #f7f7f9;
+  text-shadow: 0 1px #fff;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #969896;
+}
+
+.token.punctuation {
+  color: #333;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #0086b3;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #183691;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a71d5d;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #a71d5d;
+}
+
+.token.function {
+  color: #0086b3;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+
+div.prism-show-language {
+  position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label[data-language] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0 .5em;
+  font-size: .9em;
+  transform: none;
+  color: black;
+  border-radius: 0 0 0 5px;
+  background-color: #cfcfcf;
+  box-shadow: none;
+  text-shadow: none;
+}

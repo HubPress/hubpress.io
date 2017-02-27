@@ -1,0 +1,39 @@
+{{!< default}}
+
+{{#post}}
+
+  <article class="{{post_class}}">
+    <header>
+      <div class="post meta">
+        <time datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>
+        <span class="post tags">{{tags prefix="in " separator=" "}}</span>
+
+        {{!> post-author}}
+
+        <span class="post reading-time"> ~ <span></span> read.</span>
+      </div>
+      <a alt="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}{{encode ' »'}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}">
+        {{#if image}}<img id="post-image" src={{image}} alt="{{{title}}}">{{/if}}
+        <h1 class="icon-reverse icon-social-twitter-post" id="post-title">{{{title}}}</h1>
+      </a>
+    </header>
+
+    <div id="post-content" class="{{post_class}}">
+      {{content}}
+    </div>
+
+    <div class="post related">
+      {{#prev_post}}
+        <a rel="prev" id="prev-btn" class="btn small square" href="{{url}}">← {{title}}</a>
+      {{/prev_post}}
+
+      {{#next_post}}
+        <a rel="next" id="next-btn" class="btn small square" href="{{url}}">{{title}} →</a>
+      {{/next_post}}
+    </div>
+
+    {{> comments}}
+
+  </article>
+
+{{/post}}
