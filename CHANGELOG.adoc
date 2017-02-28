@@ -1,3 +1,11 @@
+## 0.7.0
+
+* technical release, move from react/redux to vue/vuex
+* remove material design and use semanticUI now
+* feat(posts): add filter
+* feat(post): add a popup to display basic asciidoc syntax
+* feat(team): add a team page
+
 ## 0.6.0
 
 * feat(rss): add the generation of the RSS feed
