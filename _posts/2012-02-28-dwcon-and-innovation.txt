@@ -1,0 +1,31 @@
+= repost: DWCon and innovation
+
+:hp-tags: reblogged, innovation
+
+... reblogged from my defunct crumblingbiscuit.calepin.co
+
+Date: 2012-09-05 20:00 
+Title: DWCon and innovation 
+Category: sustainability 
+Tags: innovation
+
+Recently the 7ath Discworld Convention was held in Birmingham. And very lovely it was too.
+
+Lot's and lot's of Discwold fans, many great programme items, from the guest of honour interview to the hedgehog party, from workshops on knots to a discworld masquerade.
+
+What has link:http://www.dwcon.org[that] got to do with innovation?
+
+Well, nothing, but, ...
+
+In the week or so after the Con, looking at the posts on the mailing list, the remarks on Twitter under #dwcon, and the number of views my photos on Flickr garnered made me realise that the convention was actually two conventions.
+
+* The convention as published in the official programme
+* The convention that actually happened in the heads of the con-goers
+
+There is of course a relation between the two cons, but it is not a very explicit one, it is possible to read the programme and have no idea about the real convention, and it is equally possible to take part in the convention without being in any way clear about the structure of the written programme.
+
+And all that contrasted in my mind with the expecation on the product development process of quite a few of the engineers and others in the product development projects I'm involved with. And what they expect is a process that describes in detail who needs to do what when and how. Detailing exact roles and responsibilities, detailing precise steps and methods.
+
+Quite a difference. In design. In expectation. In execution. In outcomes.
+
+So, DWCon shows a way towards sustainable innovation processes. Or something.
