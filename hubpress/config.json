@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"jabbytechnologies","repositoryName":"blog","branch":"gh-pages","cname":"blog.jabby-techs.fr"},"site":{"title":"Jabby Tech's","description":"You will never code alone !","cover":"/images/cover-1920x1080.jpg","postsPerPage":"5","googleAnalytics":"UA-24824748-2","disqus":"jabbytechs","url":"http://blog.jabby-techs.fr"},"socialnetwork":{"twitter":"https://twitter.com/darkjabberwock","github":"https://github.com/jabby"},"theme":{"name":"ichi","url":"//blog.jabby-techs.fr/themes/ichi"}}

@@ -1,0 +1,133 @@
+= Configurer son accès SVN à un hébergement OVH pro : partie 1
+:hp-tags: OVH,svn,mutualisé pro
+:published_at: 2011-09-30
+
+Il y a de cela un an environ, j’ai commencé à vouloir utiliser mon hébergement mutualisé OVH pro pour stocker mon dépôt SVN. Je n’avais alors qu’un petit dépôt local sur mon poste et j’ai faillit le perdre à cause d’une mauvaise manipulation.
+
+Armé de ma non-connaissance sur les possibilités de mon hébergement, je me suis mis en route pour configurer un dépôt SVN accessible via SSH dans Eclipse, ou Tortoise. Ayant pas mal galéré, je publie maintenant cet article et les quelques suivants pour montrer les différentes étapes nécessaires à la configuration.
+
+== Pré-requis
+
+Je vais supposer que vous aller à terme travailler sous le même environnement que moi. La partie serveur est normalement commune à tous les OS mais je n’ai testé la configuration que sous Windows 7 x64. Il semble que ceci fonctionne également sous Windows XP 32 bits. Je n’ai pas fait le test mais un ami a réussi à se connecter à mon SVN en suivant la même procédure pour un poste sous Windows XP 32 bits.
+
+Pour la configuration complète du côté serveur, nous allons avoir besoin de quelques outils :
+
+* avoir un hébergement OVH mutualisé PRO ou supérieur
+* puttygen
+* un accès SSH sur le serveur par exemple via putty
+
+== Création de clés publiques et privés pour la connexion SSH
+
+Afin d’éviter les demandes d’authentification SSH pour le SVN nous allons utiliser un mécanisme de clés publiques/privés.
+
+Dans cette partie, je ne parlerais pas de la création des clés sous Linux. Je n’utilise pas dans le cadre de mon travail ce type d’OS (sauf en tant que serveur).
+
+Donc sous Windows 7 (et ancienne version également) nous allons utiliser le logiciel puttygen. Il est en anglais mais très simple d’utilisation. Vous pouvez le télécharger à cette adresse : http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html[télécharger puttygen]
+
+Pour ceux qui utilise habituellement WinSCP pour se connecter en SFTP ou FTP, sachez qu’il est également présent suite à l’intallation. Par défaut, il se trouve dans le répertoire $WINSCP_HOME/PuTTY où $WINSCP_HOME correspond au repertoire d’installation de WinSCP.
+Un des avantages de puttygen est qu’il ne nécessite pas d’installation.
+
+Lancer l’utilitaire puttygen. Vous devrier obtenir une interface similaire à celle-ci :
+
+image::/images/2011/09/puttygen-1.png[align="center"]
+
+Sur l’interface, sélectionner le type de clé SSH-2 DSA puis cliquer sur Generate. Pensez à bouger la souris pour accélerer un peu la génération des clés. Une fois les clés générés vous devrier obtenir à peut près ceci :
+
+image::/images/2011/09/puttygen-2.png[align="center"]
+
+Sauvegardez les deux clés générés via les options suivantes :
+
+* Save public key : sauvegarde de la clé publique
+* Save private key : sauvegarde de la clé privé
+
+Les clés sont générées, on passe à la suite.
+
+== Création d’un dépôt SVN sur le serveur
+
+Ici, je fais une petite parenthèse sur la création d’un dépôt car d’une part, j’en ai eu besoin et d’autre part, pour la mise en place de notre clé ssh sur le serveur, nous aurons besoin de spécifier le chemin vers le dépôt SVN auquel on souhaite accéder.
+
+Dans mon cas, je prendrais un exemple simple pour la création d’un premier dépôt. En effet, une fois connecté sur votre serveur mutualisé en SSH créer l’arborescence suivante : 
+
+[source,linenums]
+----
+svn
+ -- repository
+ -- scripts
+----
+
+Vous pouvez bien entendu adapter directement cette arborescence à vos besoins. Dans mon cas, je créé un répertoire scripts pour stocker certains scripts utile pour l’administration de mes dépôts SVN.
+
+Pour créer cette arborescence, utiliser les commandes suivantes : 
+
+[source,linenums]
+----
+mkdir -p svn/repository
+mkdir -p svn/scripts
+----
+
+Une fois cela fait utilisez la commande suivante pour créer votre premier dépôt. Dans mon cas, je le nommerais « projets ».
+
+
+[source,linenums]
+----
+svnadmin create svn/repository/projets
+----
+
+Votre premier dépôt est maintenant créé. Vous pouvez vérifier l’arborescence du dépôt avec la commande suivante : 
+
+[source,linenums]
+----
+ls -la svn/repository/projets/
+----
+
+Vous devez obtenir ceci : 
+
+[source,linenums]
+----
+drwxr-xr-x+ 7 $NAME users   9 2010-11-12 09:36 .
+drwxr-xr-x+ 4 $NAME users   4 2010-11-12 09:36 ..
+drwxr-xr-x+ 2 $NAME users   5 2010-11-12 09:36 conf
+drwxr-xr-x+ 2 $NAME users   2 2010-11-12 09:36 dav
+drwxr-sr-x+ 5 $NAME users  10 2010-11-12 09:36 db
+-r--r--r--+ 1 $NAME users   2 2010-11-12 09:36 format
+drwxr-xr-x+ 2 $NAME users  11 2010-11-12 09:36 hooks
+drwxr-xr-x+ 2 $NAME users   4 2010-11-12 09:36 locks
+-rw-r--r--+ 1 $NAME users 229 2010-11-12 09:36 README.txt
+----
+
+où *$NAME* correspond au nom d’utilisateur SSH.
+
+== Ajout de la clé publique sur le serveur mutualisé
+
+Repassons maintenant à la partie SSH en ajoutant maintenant notre clé sur notre serveur. Une fois cela fait, nous en aurons fini avec la partie serveur. On va donc créer l’arborescence suivante pour stocker notre clé à la racine du home de l’utilisateur.
+
+[source,linenums]
+----
+.ssh
+ -- authorized_keys2
+----
+
+Pour créer cette arborescence et entrer directement en mode édition, utiliser les commandes suivantes : 
+
+[source,linenums]
+----
+mkdir .ssh
+chmod 700 .ssh
+vi .ssh/authorized_keys2
+----
+
+Dans l’éditeur vi, vous devez ajouter une ligne dont le format est le suivant : 
+
+[source,linenums]
+----
+command="/usr/bin/svnserve --root=$REPOSITORY_PATH --tunnel --tunnel-user=$USER_NAME",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty ssh-dss $SSH_KEY $SSH_KEY_DATE
+----
+
+où les valeurs doivent être :
+
+* *$REPOSITORY_PATH* : le chemin complet vers le dépôt c’est à dire quelque chose ressemblant à /home.XXX/loginSFTP/svn/repository
+* *$USER_NAME* : le nom de l’utilisateur dans le dépôt SVN. Cela servira pour la configuration dans SVN mais également pour savoir qui a fait quelle modification
+* *$SSH_KEY* : la clé publique SSH générée précédemment sur une seule ligne. Elle se situe dans le fichier key-tuto-svn.pub entre la ligne de commentaire et la dernière ligne du fichier
+* *$SSH_KEY_DAT* : le tag en bas de la clé publique par exemple dsa-key-20110918
+
+Voilà pour la partie configuration du côté serveur. On verra dans un prochain article comment utiliser directement notre clé pour se connecter via Tortoise puis via Eclipse et le plugin Subclipse.

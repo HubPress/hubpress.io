@@ -1,0 +1,46 @@
+= Pourquoi je suis passé de Wordpress à HubPress
+:published_at: 2015-04-13
+:hp-tags: HubPress, Asciidoctor
+:hp-image: /images/2015/04/hubpress-login.png
+
+
+== WordPress, pourquoi et comment
+
+En 2011, j’ai décidé de me créer un blog. A l'époque, je n’ai pas spécialement cherché de plateforme spécifique. De nombreuses personnes utilisaient WordPress et j’avais donc pris un hébergement mutualisé chez OVH pour y installer une instance de ce CMS.
+
+Depuis, la situation a changé. Je me suis rendu compte que je n'écrivais pas si souvent que cela et que la solution WordPress ne me convenait pas totalement. En fait, je suis du genre à ne pas utiliser le mode WYSIWYG fourni. Je le trouve pas mal, mais le html produit n’est pas aussi propre que celui que je voulais. Donc je gérais cette partie à la main. Ceci pose un problème de relecture. Il n’est quand même pas des plus simples de relire du texte encapsulé dans des balises html.
+
+En plus de ce premier constat sur l’outil, celui-ci impose d'être mis à jour régulièrement pour éviter une attaque. Franchement vu le peu de fois où je me connecte sur l’interface d’administration par an, c’est presque un miracle que le blog n’ai jamais été piraté.
+
+Troisième argument contre mon WordPress, je l’ai hébergé sur un serveur que je loue. Sérieusement ça n’a pas été la meilleure idée que j’ai eue. Je me suis servi de l’hébergement pour d’autres choses, mais le peu d’utilisation n’a pas spécialement mérité cet investissement financier.
+
+== A la recherche d'une solution
+
+Parallèlement, j’avais beaucoup entendu parler des gh-pages. Un moyen facile d’héberger des pages html pour son site. Rapidement beaucoup d’informaticiens ont commencé à regarder de ce côté-là pour gérer leur blog et de nombreux systèmes ont vu le jour pour générer les pages html.
+
+J’ai commencé à regarder un peu ce qui se faisait en fin d’année dernière. Il y a du choix. Trop presque, vous pouvez d’ailleurs passer sur ce https://staticsitegenerators.net/[site] pour vous rendre compte du choix disponible pour un utilisateur. 
+
+Je recherchais un générateur de html à partir de fichier texte en Markdown ou Asciidoctor qui soit simple d'utilisation. J'ai testé par exemple jbake. C'était pas mal, mais comme bon nombre de ces outils, il faut une chaîne de build pour générer les pages. Et ça, ce n'est clairement pas pratique. Comment modifier ou corriger un article à partir d'un pc ne possédant pas les outils nécessaires ? WordPress le permettait vu qu'un simple navigateur était nécessaire.
+
+Alors que je cherchais une solution, j'ai discuté avec http://www.anthonnyquerouil.fr/[Anthonny Quérouil] de ce problème. La chance m'avait souri. En fait, Anthonny avait un petit side-project utilisant asciidoctor. Un truc qui lui semblait pas mal et qui répondait à un besoin, celui de publier sur gh-pages facilement. Dans le mile, ça répondait sur le papier exactement mon besoin.
+
+== HubPress le tester, c'est l'adopter
+
+J'ai donc attendu un bon mois pour que le projet sorte en technical preview. Pas simple de patienter jusque-là. L'envie d'une autre solution me tiraillait, mais finalement j'ai bien fait d'attendre. La sortie fut juste énorme, la solution est plutôt simple d'utilisation mais pas que. En fait, HubPress possèdent des avantages indéniables : 
+
+* se configure très facilement
+* utilise http://asciidoctor.org[asciidoctor] : si vous ne connaissez pas, testez-le. C'est moins lourd que markdown qui est déjà plus léger que du docbook. Pour écrire de la documentation c'est génial
+* propose une ihm agréable et sans fioritures pour la rédaction d'un article
+* permet de visualiser en direct le rendu asciidoctor
+* fourni plusieurs thèmes sympa et permet d'utiliser les thèmes de ghost
+* intègre google analytics
+* intège le système de commentaire disqus
+* pas besoin de plugins pour la coloration syntaxique
+
+image::/images/2015/04/hubpress-edit-page.png[align="center"]
+
+Autant dire que je suis plutôt content de cette solution. Tout n'est pas encore présent. Il manque par exemple la génération des flux RSS. Mais l'outil est quand même bien pratique. Il n'y a qu'à regarder l'engouement autour de l'outil pour comprendre que ce petit side-project a bien plus d'impact que l'on aurait pu le croire au tout début. 
+
+Je vous invite d'ailleurs à regarder le site https://staticsitegenerators.net/. HubPress est à la 15ème position en termes d'étoiles sur Github. Le tout en 3 mois. Autant dire qu'il y a pas mal de supporters.
+
+En espérant que cet article vous incitera à tester ce projet très intéressant. Et s'il vous manque quelque chose, n'hésitez pas à la demander. C'est par ici que ça se passe : https://github.com/HubPress/hubpress.io/issues

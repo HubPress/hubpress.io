@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Nantes JUG 2013-11-04 : Amélioration de la qualité du code par restriction du langage</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2013/11/08/Nantes-JUG-2013-11-04-Amelioration-de-la-qualite-du-code-par-restriction-du-langage.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Nantes JUG 2013-11-04 : Amélioration de la qualité du code par restriction du langage" />
+    <meta property="og:description" content="Comme tous les mois j’ai assisté au JUG Nantes. Cet événement est pour moi un bon moyen de voir de nouvelles choses mais également d’échanger sur les outils, les techniques et les différentes bonnes pratiques avec des développeurs..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2013/11/08/Nantes-JUG-2013-11-04-Amelioration-de-la-qualite-du-code-par-restriction-du-langage.html" />
+    <meta property="article:published_time" content="2013-11-07T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.951Z" />
+    <meta property="article:tag" content="Nantes JUG" />
+    <meta property="article:tag" content="java" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nantes JUG 2013-11-04 : Amélioration de la qualité du code par restriction du langage" />
+    <meta name="twitter:description" content="Comme tous les mois j’ai assisté au JUG Nantes. Cet événement est pour moi un bon moyen de voir de nouvelles choses mais également d’échanger sur les outils, les techniques et les différentes bonnes pratiques avec des développeurs..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2013/11/08/Nantes-JUG-2013-11-04-Amelioration-de-la-qualite-du-code-par-restriction-du-langage.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Nantes JUG 2013-11-04 : Amélioration de la qualité du code par restriction du langage",
+    "url": "http://blog.jabby-techs.fr/2013/11/08/Nantes-JUG-2013-11-04-Amelioration-de-la-qualite-du-code-par-restriction-du-langage.html",
+    "datePublished": "2013-11-07T23:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.951Z",
+    "keywords": "Nantes JUG, java",
+    "description": "Comme tous les mois j’ai assisté au JUG Nantes. Cet événement est pour moi un bon moyen de voir de nouvelles choses mais également d’échanger sur les outils, les techniques et les différentes bonnes pratiques avec des développeurs..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-Nantes-JUG tag-java">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-Nantes-JUG tag-java">
+
+
+            <h1 class="post-title">Nantes JUG 2013-11-04 : Amélioration de la qualité du code par restriction du langage</h1>
+
+            <span class="post-meta label"><time datetime="2013-11-08">08 Nov 2013</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Comme tous les mois j’ai assisté au JUG Nantes. Cet événement est pour moi un bon moyen de voir de nouvelles choses mais également d’échanger sur les outils, les techniques et les différentes bonnes pratiques avec des développeurs plus confirmés que moi. Cette session présentait un talk intitulé « Du SQL au NoSQL en moins d’une heure » ainsi qu’un quickie dont j’ai honteusement pompé le nom pour cet article. C’est sur ce dernier que va porter mon petit billet.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qu_est_ce_que_la_qualit_de_code">Qu’est ce que la qualité de code ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://www.hugowood.net/">Hugo Wood</a> a tout d’abord rappelé ce qu’était la qualité de code pour lui. Ce n’est pas parce que l’on a 100% de couverture de code, pleins de TU, plein de TI ainsi que des tests UI automatisés que la qualité est au rendez-vous. Il faut avant tout que le code soit <strong>maintenable</strong>. Sans cela pas de qualité. Ceci passe principalement par de la modularité et donc de la testabilité (notamment via la pratique du TDD).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_apporter_des_restrictions_pour_tre_plus_maintenable">Apporter des restrictions pour être plus maintenable</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Après ce rapide constat auquel j’adhère totalement, Hugo présente plusieurs restrictions de code sur Java pour aider à améliorer la qualité du code.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ne pas utiliser <strong>null</strong> : ce n’est pas orienté objet, ce n’est pas type-safe</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Solution proposée :</strong> renvoyer toujours un objet (exemple chaîne vide au lieu de null pour les String).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Eviter d’utiliser les méthodes privées</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Lorsque l’on créé des méthodes privées pour découper le métier d’une méthode publique obèse, les tests ne sont pas découpés car il n’y a pas de nouveaux points d’entré pour tester.</p>
+</li>
+<li>
+<p><strong>Solution proposée :</strong> Préférer un découpage en méthodes de type public/protected/default voir en plusieurs objets pour découper les tests.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>L’héritage peut être un piège</p>
+<div class="ulist">
+<ul>
+<li>
+<p>si on teste une classe fille, on teste partiellement la mère en même temps via les super()</p>
+</li>
+<li>
+<p>Couplage fort et rupture de l’encapsulation (accès aux membres protected ou default)</p>
+</li>
+<li>
+<p><strong>Solution proposée :</strong> utiliser uniquement les interfaces pour le polymorphisme et utiliser la composition pour la réutilisation du code</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Static dispatch ou l’enfer 2.0</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Potentiellement difficile à tester et à maintenir</p>
+</li>
+<li>
+<p>Détruit le polymorphisme</p>
+</li>
+<li>
+<p><strong>Solution proposée :</strong> Ne pas utiliser 😀</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bilan_de_la_pr_sentation">Bilan de la présentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Avant tout Hugo rappelle que les restrictions sont très intéressantes mais qu’il ne faut pas non plus être un intégriste en ne faisant que ça. Il faut savoir peser le pour et le contre dans l’utilisation ou non de toutes les possibilité du langage. Par contre, l’application au cas par cas des restrictions peut dérouter les débutants. Dans ce cas, l’application systématique des restrictions de langage permet de cadrer les débutants afin de garder un certain niveau de qualité de code.</p>
+</div>
+<div class="paragraph">
+<p>Si le sujet vous intéresse, vous pouvez retrouver les slides de la présentation à cette adresse : Lien vers les <a href="http://fr.slideshare.net/mercury_wood/amliorer-la-qualit-du-code-par-restriction-du-langage">slides de la présentation</a>.</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/Nantes-JUG">Nantes JUG</a>, <a href="http://blog.jabby-techs.fr/tag/java">java</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2013/11/08/Nantes-JUG-2013-11-04-Amelioration-de-la-qualite-du-code-par-restriction-du-langage.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Nantes%20JUG%202013-11-04%20%3A%20Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20du%20code%20par%20restriction%20du%20langage&amp;url=http://blog.jabby-techs.fr/2013/11/08/Nantes-JUG-2013-11-04-Amelioration-de-la-qualite-du-code-par-restriction-du-langage.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2013/11/08/Nantes-JUG-2013-11-04-Amelioration-de-la-qualite-du-code-par-restriction-du-langage.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

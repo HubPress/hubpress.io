@@ -1,0 +1,17 @@
+= Mockito, le mock facile
+:hp-tags: java,mockito,tdd
+:published_at: 2013-11-12
+
+
+Il y a quelques temps j’écrivais un truc sur le link:/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html[mock partiel d’une classe avec Mockito]. Force est de constater que je connaissais mal cette bibliothèque. En effet, en échangeant avec un ami, il m’a montré que Mockito possédait déjà un mécanisme prévu pour mocker partiellement un objet réel. Il s’agit de la méthode Mockito.spy().
+
+image::/images/2013/11/mockito.jpg[align="center"]
+
+J’avais donc décidé de vous parler plus en détail de Mockito, mais il a déjà écrit pas mal de choses sur les tests, le TDD et la bibliothèque Mockito. Donc plutôt que de reprendre ce qu’il dit, je préfère vous indiquer la bonne adresse en question.
+
+* http://tddev.wordpress.com/2013/10/16/mockito-introduction/[Mockito : Qu’est-ce que c’est ? Comment mocker une classe ?]
+* http://tddev.wordpress.com/2013/10/06/mockito-definir-les-comportements/[Mockito : Comment définir des comportements ?]
+* http://tddev.wordpress.com/2013/10/19/mockito-aide-memoire/[Mockito : Aide-mémoire]
+* http://tddev.wordpress.com/2013/10/16/mockito-exemple-dutilisation-de-mockito-dans-un-test-unitaire/[Mockito : Exemple d’utilisation dans un test unitaire]
+
+J’espère que vous ferez bonne lecture de ces articles et même du blog http://tddev.wordpress.com/[Tests De Dev’s] en général.

@@ -1,0 +1,189 @@
+= Mockito : on peut aussi mocker partiellement
+:hp-tags: java,mockito,tdd
+:published_at: 2013-05-05
+
+Il y a un peu plus d’un an, j’ai découvert réellement la mise en place de tests unitaires dans une application Java. Oui j’ai mis le temps mais bon je vais pas épiloguer sur ça. Donc je me suis mis à rédiger mes tests unitaires avec différents frameworks selon les projets. Depuis mon arrivée sur Nantes, j’utilise https://github.com/mockito/mockito[Mockito] pour gérer les mock. Plutôt simple à utiliser je viens d’être confronté à une problématique nouvelle pour moi. Mocker partiellement un objet.
+
+== Qu’est ce qu’un mock et à quoi ça sert ?
+
+Avant de parler de la résolution de mon problème, je vais quand même rappeler le but d’un mock. En fait, un mock permet d’émuler le fonctionnement d’un objet pour savoir de façon certaine comment il va se comporter. Jusqu’à présent, je m’en suis servi pour spécifier les retours que j’attendais de mes DAO dans mes services.
+
+Comme un exemple est parfois plus parlant, voilà mon utilisation habituelle. On va prendre un service utilisant un DAO pour compter un nombre d’élément en base de données et qui renvoi vrai si on a assez d’élément. Voici le code du service.
+
+[source,java,linenums]
+----
+package fr.jabbytechs.tutorial.mockito;
+ 
+public class ExampleService {
+ 
+    private static final Integer MINIMUM_NUMBER_OF_ELEMENT = 50;
+ 
+    private ExampleDAO exampleDAO;
+ 
+    public Boolean verifyIfEnougthNumberOfElement() {
+        Integer numberOfElement = exampleDAO.countElements();
+ 
+        if (numberOfElement >= MINIMUM_NUMBER_OF_ELEMENT) {
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
+ 
+    /**
+     * Use for mock.
+     *
+     * @param exampleDAO the exampleDAO to set
+     */
+    public void setExampleDAO(ExampleDAO exampleDAO) {
+        this.exampleDAO = exampleDAO;
+    }
+}
+----
+
+Si je veux tester tous les cas possibles de ma méthode verifyIfEnougthNumberOfElement, j’ai besoin de pouvoir indiquer la valeur de retour la méthode du DAO utilisé. Pour cela, j’utilise Mockito. La classe de test est alors la suivante en combinant junit et Mockito.
+
+[source,java,linenums]
+----
+package fr.jabbytechs.tutorial.mockito;
+ 
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+ 
+public class ExampleServiceTest {
+ 
+    private static final Integer NOT_ENOUGHT = 25;
+    private static final Integer JUST_ENOUGHT = 50;
+    private static final Integer ENOUGHT = 100;
+ 
+    private ExampleService exampleService;
+ 
+    private ExampleDAO exampleDAOMock;
+ 
+    @Before
+    public void setUp() throws Exception {
+        exampleService = new ExampleService();
+        exampleDAOMock = Mockito.mock(ExampleDAO.class);
+        exampleService.setExampleDAO(exampleDAOMock);
+    }
+ 
+    @After
+    public void tearDown() throws Exception {
+        exampleDAOMock = null;
+        exampleService = null;
+    }
+ 
+    @Test
+    public void testVerifyIfEnougthNumberOfElementButNotEnougth() throws Exception {
+        Mockito.when(exampleDAOMock.countElements()).thenReturn(NOT_ENOUGHT);
+        Assert.assertFalse(exampleService.verifyIfEnougthNumberOfElement());
+    }
+ 
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndJustEnougth() throws Exception {
+        Mockito.when(exampleDAOMock.countElements()).thenReturn(JUST_ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+ 
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndEnougth() throws Exception {
+        Mockito.when(exampleDAOMock.countElements()).thenReturn(ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+}
+----
+
+Dans le code de la classe de test, je créé un mock à la ligne 22 et je le mets dans le service. Ensuite aux lignes 34, 40 et 46, j’indique quelle valeur de retour je souhaites renvoyer. Ceci me permet de vérifier de façon certaine et unitaire ma méthode de service.
+
+== Et pour le mock partiel ?
+
+IMPORTANT: *Avant de lire la suite qui n’est pas spécialement la meilleure pratique, je vous invite à voir https://jabby.github.io/2013/11/12/Mockito-le-mock-facile.html[cet article] et les articles auxquels il fait référence*.
+
+Oui c’est vrai, je me suis un peu laissé emporté par la problématique initiale de l’article. Le but est de dire comment on mock partiellement un objet avec Mockito. Pour la petite histoire j’en ai eu besoin pour tester un service générant des nombres pseudo-aléatoires et faisant des tests dessus. Par définition, un nombre pseudo aléatoire est difficilement prédictible et donc dans ce service il me fallait mettre en place un mock partiel pour pouvoir tester certaines méthodes tout en m’assurant des valeurs de retour de la méthode générant les nombres pseudo-aléatoires. Donc modifions un peu notre classe de service. Plus de DAO mais directement 2 méthodes dans le service.
+
+[source,java,linenums]
+----
+package fr.jabbytechs.tutorial.mockito;
+ 
+import java.util.Random;
+ 
+public class ExampleService {
+ 
+    private static final Integer MINIMUM_NUMBER_OF_ELEMENT = 50;
+ 
+    public Boolean verifyIfEnougthNumberOfElement() {
+        Integer numberOfElement = generateNumberOfElement();
+ 
+        if (numberOfElement >= MINIMUM_NUMBER_OF_ELEMENT) {
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
+ 
+    public Integer generateNumberOfElement() {
+        Random random = new Random();
+        return random.nextInt();
+    }
+}
+----
+
+Pour pouvoir tester de façon certaine ce service, il est nécessaire de mocker la méthode generateNumberOfElement() mais pas verifyIfEnougthNumberOfElement(). En effet, si on mock les 2 méthodes, ça ne sert à rien de tester. Voici la classe de test modifiée pour tester ceci de façon correcte.
+
+[source,java,linenums]
+----
+package fr.jabbytechs.tutorial.mockito;
+ 
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+ 
+public class ExampleServiceTest {
+ 
+    private static final Integer NOT_ENOUGHT = 25;
+    private static final Integer JUST_ENOUGHT = 50;
+    private static final Integer ENOUGHT = 100;
+ 
+    private ExampleService exampleService;
+ 
+    @Before
+    public void setUp() throws Exception {
+        exampleService = Mockito.mock(ExampleService.class);
+        Mockito.when(exampleService.verifyIfEnougthNumberOfElement()).thenCallRealMethod();
+    }
+ 
+    @After
+    public void tearDown() throws Exception {
+        exampleService = null;
+    }
+ 
+    @Test
+    public void testVerifyIfEnougthNumberOfElementButNotEnougth() throws Exception {
+        Mockito.when(exampleService.generateNumberOfElement()).thenReturn(NOT_ENOUGHT);
+        Assert.assertFalse(exampleService.verifyIfEnougthNumberOfElement());
+    }
+ 
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndJustEnougth() throws Exception {
+        Mockito.when(exampleService.generateNumberOfElement()).thenReturn(JUST_ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+ 
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndEnougth() throws Exception {
+        Mockito.when(exampleService.generateNumberOfElement()).thenReturn(ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+}
+----
+
+Ligne 19, je créé un mock sur mon service. Par défaut, toute les valeurs de retour de toutes les méthodes sont les valeurs par défaut (0 pour un Integer, false pour un Boolean et ainsi de suite). Ensuite, ligne 20, j’indique à Mockito que pour la méthode que je veux tester, on va l’appeler réellement et non pas la mocker. Enfin lignes 30, 36 et 42, je mock ma méthode de génération aléatoire de nombres et j’indique les valeurs retour attendues comme je le fais habituellement.
+
+Voilà, c’est fait, j’ai créé un mock partiel d’un objet pour tester le comportement d’un méthode sans être perturbé par les autres méthodes de mon service.
+
+== Conclusion… pour en faire une
+
+Via Mockito, il est aussi simple de mocker un attribut pour gérer les retours des méthodes appelés que de mocker partiellement un objet pour être sûr d’isoler le comportement d’une méthode. Ceci nous permet de valider de façon certaine le fonctionnement unitaire de notre méthode. Une chose à ne pas oublier lorsque l’on pense que ça va être compliqué de tester un comportement parce qu’un résultat n’est pas prédictible.

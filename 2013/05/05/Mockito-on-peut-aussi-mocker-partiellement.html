@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Mockito : on peut aussi mocker partiellement</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Mockito : on peut aussi mocker partiellement" />
+    <meta property="og:description" content="Il y a un peu plus d’un an, j’ai découvert réellement la mise en place de tests unitaires dans une application Java. Oui j’ai mis le temps mais bon je vais pas épiloguer sur ça. Donc je..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html" />
+    <meta property="article:published_time" content="2013-05-04T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.955Z" />
+    <meta property="article:tag" content="java" />
+    <meta property="article:tag" content="mockito" />
+    <meta property="article:tag" content="tdd" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mockito : on peut aussi mocker partiellement" />
+    <meta name="twitter:description" content="Il y a un peu plus d’un an, j’ai découvert réellement la mise en place de tests unitaires dans une application Java. Oui j’ai mis le temps mais bon je vais pas épiloguer sur ça. Donc je..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Mockito : on peut aussi mocker partiellement",
+    "url": "http://blog.jabby-techs.fr/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html",
+    "datePublished": "2013-05-04T22:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.955Z",
+    "keywords": "java, mockito, tdd",
+    "description": "Il y a un peu plus d’un an, j’ai découvert réellement la mise en place de tests unitaires dans une application Java. Oui j’ai mis le temps mais bon je vais pas épiloguer sur ça. Donc je..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-java tag-mockito tag-tdd">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-java tag-mockito tag-tdd">
+
+
+            <h1 class="post-title">Mockito : on peut aussi mocker partiellement</h1>
+
+            <span class="post-meta label"><time datetime="2013-05-05">05 May 2013</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il y a un peu plus d’un an, j’ai découvert réellement la mise en place de tests unitaires dans une application Java. Oui j’ai mis le temps mais bon je vais pas épiloguer sur ça. Donc je me suis mis à rédiger mes tests unitaires avec différents frameworks selon les projets. Depuis mon arrivée sur Nantes, j’utilise <a href="https://github.com/mockito/mockito">Mockito</a> pour gérer les mock. Plutôt simple à utiliser je viens d’être confronté à une problématique nouvelle pour moi. Mocker partiellement un objet.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qu_est_ce_qu_un_mock_et_quoi_a_sert">Qu’est ce qu’un mock et à quoi ça sert ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Avant de parler de la résolution de mon problème, je vais quand même rappeler le but d’un mock. En fait, un mock permet d’émuler le fonctionnement d’un objet pour savoir de façon certaine comment il va se comporter. Jusqu’à présent, je m’en suis servi pour spécifier les retours que j’attendais de mes DAO dans mes services.</p>
+</div>
+<div class="paragraph">
+<p>Comme un exemple est parfois plus parlant, voilà mon utilisation habituelle. On va prendre un service utilisant un DAO pour compter un nombre d’élément en base de données et qui renvoi vrai si on a assez d’élément. Voici le code du service.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">package fr.jabbytechs.tutorial.mockito;
+
+public class ExampleService {
+
+    private static final Integer MINIMUM_NUMBER_OF_ELEMENT = 50;
+
+    private ExampleDAO exampleDAO;
+
+    public Boolean verifyIfEnougthNumberOfElement() {
+        Integer numberOfElement = exampleDAO.countElements();
+
+        if (numberOfElement &gt;= MINIMUM_NUMBER_OF_ELEMENT) {
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
+
+    /**
+     * Use for mock.
+     *
+     * @param exampleDAO the exampleDAO to set
+     */
+    public void setExampleDAO(ExampleDAO exampleDAO) {
+        this.exampleDAO = exampleDAO;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Si je veux tester tous les cas possibles de ma méthode verifyIfEnougthNumberOfElement, j’ai besoin de pouvoir indiquer la valeur de retour la méthode du DAO utilisé. Pour cela, j’utilise Mockito. La classe de test est alors la suivante en combinant junit et Mockito.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">package fr.jabbytechs.tutorial.mockito;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+
+public class ExampleServiceTest {
+
+    private static final Integer NOT_ENOUGHT = 25;
+    private static final Integer JUST_ENOUGHT = 50;
+    private static final Integer ENOUGHT = 100;
+
+    private ExampleService exampleService;
+
+    private ExampleDAO exampleDAOMock;
+
+    @Before
+    public void setUp() throws Exception {
+        exampleService = new ExampleService();
+        exampleDAOMock = Mockito.mock(ExampleDAO.class);
+        exampleService.setExampleDAO(exampleDAOMock);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        exampleDAOMock = null;
+        exampleService = null;
+    }
+
+    @Test
+    public void testVerifyIfEnougthNumberOfElementButNotEnougth() throws Exception {
+        Mockito.when(exampleDAOMock.countElements()).thenReturn(NOT_ENOUGHT);
+        Assert.assertFalse(exampleService.verifyIfEnougthNumberOfElement());
+    }
+
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndJustEnougth() throws Exception {
+        Mockito.when(exampleDAOMock.countElements()).thenReturn(JUST_ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndEnougth() throws Exception {
+        Mockito.when(exampleDAOMock.countElements()).thenReturn(ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dans le code de la classe de test, je créé un mock à la ligne 22 et je le mets dans le service. Ensuite aux lignes 34, 40 et 46, j’indique quelle valeur de retour je souhaites renvoyer. Ceci me permet de vérifier de façon certaine et unitaire ma méthode de service.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_et_pour_le_mock_partiel">Et pour le mock partiel ?</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<strong>Avant de lire la suite qui n’est pas spécialement la meilleure pratique, je vous invite à voir <a href="https://jabby.github.io/2013/11/12/Mockito-le-mock-facile.html">cet article</a> et les articles auxquels il fait référence</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Oui c’est vrai, je me suis un peu laissé emporté par la problématique initiale de l’article. Le but est de dire comment on mock partiellement un objet avec Mockito. Pour la petite histoire j’en ai eu besoin pour tester un service générant des nombres pseudo-aléatoires et faisant des tests dessus. Par définition, un nombre pseudo aléatoire est difficilement prédictible et donc dans ce service il me fallait mettre en place un mock partiel pour pouvoir tester certaines méthodes tout en m’assurant des valeurs de retour de la méthode générant les nombres pseudo-aléatoires. Donc modifions un peu notre classe de service. Plus de DAO mais directement 2 méthodes dans le service.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">package fr.jabbytechs.tutorial.mockito;
+
+import java.util.Random;
+
+public class ExampleService {
+
+    private static final Integer MINIMUM_NUMBER_OF_ELEMENT = 50;
+
+    public Boolean verifyIfEnougthNumberOfElement() {
+        Integer numberOfElement = generateNumberOfElement();
+
+        if (numberOfElement &gt;= MINIMUM_NUMBER_OF_ELEMENT) {
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
+
+    public Integer generateNumberOfElement() {
+        Random random = new Random();
+        return random.nextInt();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pour pouvoir tester de façon certaine ce service, il est nécessaire de mocker la méthode generateNumberOfElement() mais pas verifyIfEnougthNumberOfElement(). En effet, si on mock les 2 méthodes, ça ne sert à rien de tester. Voici la classe de test modifiée pour tester ceci de façon correcte.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">package fr.jabbytechs.tutorial.mockito;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+
+public class ExampleServiceTest {
+
+    private static final Integer NOT_ENOUGHT = 25;
+    private static final Integer JUST_ENOUGHT = 50;
+    private static final Integer ENOUGHT = 100;
+
+    private ExampleService exampleService;
+
+    @Before
+    public void setUp() throws Exception {
+        exampleService = Mockito.mock(ExampleService.class);
+        Mockito.when(exampleService.verifyIfEnougthNumberOfElement()).thenCallRealMethod();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        exampleService = null;
+    }
+
+    @Test
+    public void testVerifyIfEnougthNumberOfElementButNotEnougth() throws Exception {
+        Mockito.when(exampleService.generateNumberOfElement()).thenReturn(NOT_ENOUGHT);
+        Assert.assertFalse(exampleService.verifyIfEnougthNumberOfElement());
+    }
+
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndJustEnougth() throws Exception {
+        Mockito.when(exampleService.generateNumberOfElement()).thenReturn(JUST_ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+
+    @Test
+    public void testVerifyIfEnougthNumberOfElementAndEnougth() throws Exception {
+        Mockito.when(exampleService.generateNumberOfElement()).thenReturn(ENOUGHT);
+        Assert.assertTrue(exampleService.verifyIfEnougthNumberOfElement());
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ligne 19, je créé un mock sur mon service. Par défaut, toute les valeurs de retour de toutes les méthodes sont les valeurs par défaut (0 pour un Integer, false pour un Boolean et ainsi de suite). Ensuite, ligne 20, j’indique à Mockito que pour la méthode que je veux tester, on va l’appeler réellement et non pas la mocker. Enfin lignes 30, 36 et 42, je mock ma méthode de génération aléatoire de nombres et j’indique les valeurs retour attendues comme je le fais habituellement.</p>
+</div>
+<div class="paragraph">
+<p>Voilà, c’est fait, j’ai créé un mock partiel d’un objet pour tester le comportement d’un méthode sans être perturbé par les autres méthodes de mon service.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion_pour_en_faire_une">Conclusion… pour en faire une</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Via Mockito, il est aussi simple de mocker un attribut pour gérer les retours des méthodes appelés que de mocker partiellement un objet pour être sûr d’isoler le comportement d’une méthode. Ceci nous permet de valider de façon certaine le fonctionnement unitaire de notre méthode. Une chose à ne pas oublier lorsque l’on pense que ça va être compliqué de tester un comportement parce qu’un résultat n’est pas prédictible.</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/java">java</a>, <a href="http://blog.jabby-techs.fr/tag/mockito">mockito</a>, <a href="http://blog.jabby-techs.fr/tag/tdd">tdd</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Mockito%20%3A%20on%20peut%20aussi%20mocker%20partiellement&amp;url=http://blog.jabby-techs.fr/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2013/05/05/Mockito-on-peut-aussi-mocker-partiellement.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

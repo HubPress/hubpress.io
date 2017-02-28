@@ -1,0 +1,41 @@
+= Eclipse Tips 005 : Accélérer votre debug avec le step filtering
+:published_at: 2014-03-07
+:hp-tags: eclipse,tips,java,debug
+
+Le debug sous Eclipse est à mon sens pas trop mal foutu. Par contre, certains points dans la configuration de base ne sont pas spécialement pratiques. Je pense notamment au moment où l’on utilise le « Step into » (F5) et que l’on se retrouve dans les méandres de la JVM/Spring/autre mécanisme d’aop ou d’injection… Je suppose que comme moi c’est plutôt le debug de votre programme qui vous intéresse que celui de la JVM ni de ces bibliothèque qui servent à lier vos bouts de code en un tout utile.
+
+En fait, prenons un exemple avec le code naif et inutile suivant.
+
+
+
+[source,java,linenums]
+----
+@Test
+public void test() {
+    StringBuilder builder = new StringBuilder();
+    builder.append(false);
+    builder.append("");
+    builder.append(1);
+    maMethode(builder.append(builder));
+}
+ 
+private void maMethode(StringBuilder builder) {
+    System.out.println(builder);
+}
+----
+
+Si l’on commence à jouer avec le F5 à chaque ligne ou bien uniquement à la ligne 7, vous entrez par défaut dans l’implémentation de StringBuilder. Je ne dis pas que ce n’est pas intéressant, mais ça ralenti notre debug et donc notre correction du problème que l’on essaye de comprendre. Il existe pourtant une petite configuration très pratique pour éviter ce désagrément.
+
+Accédez à « Window > Preferences > Java > Debug > Step Filtering ». Comme vous pouvez le remarquer, plusieurs options sont proposées.
+
+image::/images/2014/03/step-filtering.png[align="center"]
+
+Premièrement, activez l’option puis cochez les différents package dans lesquels vous ne souhaitez pas rentrer lors de l’utilisation du F5. Vous pouvez également en ajouter au besoin.
+
+Ensuite, si cela vous intéresse, cochez les deux options sur les getters/setters en dessous de la liste des packages. Ainsi lors de l’appel à un simple getter/setter (comme la majorité des getters des applications courantes) vous ne rentrerez plus dedans.
+
+Voilà, votre configuration de debug est améliorée. Dans l’exemple précédent, avec le configuration indiquée dans la capture d’écran, le fait d’appuyer sur F5 tout le long de la méthode de test ne vous fera pas rentrer dans le code de StringBuilder. De plus, si vous aviez utilisé un POJO, vous ne seriez pas non plus rentré dans un de vos getters/setters simple.
+
+*Oui mais si je veux rentrer dans un de mes getters/setters ? Et si je veux rentrer dans une méthode d’un package que je filtre ?*
+
+Il suffit en fait de mettre un point d’arrêt. Vous pourrez alors vérifier vos données d’entrée ou être informée d’un appel à cette méthode filtrée. Par contre, si vous essayez alors d’avancer en debug dans la méthode, Eclipse vous en refera sortir directement. Il faudra donc au cas par cas désactiver votre filtrage.

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Eclipse Mars - épisode 1 - Vue hiérarchique des projets</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Eclipse Mars - épisode 1 - Vue hiérarchique des projets" />
+    <meta property="og:description" content="Comme tous les ans, je teste en avance la prochaine version d&amp;#8217;Eclipse. Cette année, elle s&amp;#8217;appelera Mars et sera à mon avis un cru plutôt intéressant. J&amp;#8217;ai donc décidé de vous présenter quelques une..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html" />
+    <meta property="article:published_time" content="2015-05-18T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-05-18T22:46:05.950Z" />
+    <meta property="article:tag" content="eclipse" />
+    <meta property="article:tag" content="mars" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Eclipse Mars - épisode 1 - Vue hiérarchique des projets" />
+    <meta name="twitter:description" content="Comme tous les ans, je teste en avance la prochaine version d&amp;#8217;Eclipse. Cette année, elle s&amp;#8217;appelera Mars et sera à mon avis un cru plutôt intéressant. J&amp;#8217;ai donc décidé de vous présenter quelques une..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Eclipse Mars - épisode 1 - Vue hiérarchique des projets",
+    "url": "http://blog.jabby-techs.fr/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html",
+    "datePublished": "2015-05-18T22:00:00.000Z",
+    "dateModified": "2015-05-18T22:46:05.950Z",
+    "keywords": "eclipse,  mars",
+    "description": "Comme tous les ans, je teste en avance la prochaine version d&amp;#8217;Eclipse. Cette année, elle s&amp;#8217;appelera Mars et sera à mon avis un cru plutôt intéressant. J&amp;#8217;ai donc décidé de vous présenter quelques une..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-eclipse tag-mars">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-eclipse tag-mars">
+
+
+            <h1 class="post-title">Eclipse Mars - épisode 1 - Vue hiérarchique des projets</h1>
+
+            <span class="post-meta label"><time datetime="2015-05-19">19 May 2015</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Comme tous les ans, je teste en avance la prochaine version d&#8217;Eclipse. Cette année, elle s&#8217;appelera Mars et sera à mon avis un cru plutôt intéressant. J&#8217;ai donc décidé de vous présenter quelques une des  nouveautés de cette version pour vous préparer à la sortie qui aura lieu fin juin 2015.</p>
+</div>
+<div class="paragraph">
+<p>Dans ces nouveautés, vous retrouverez des améliorations directement visible pour nous utilisateur, mais également quelques nouveautés dans la gestion en lui même du produit Eclipse IDE.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_se_passe_l_affichage_des_projets_jusqu_luna">Comment se passe l&#8217;affichage des projets jusqu'à Luna</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si vous utilisez maven sur vos projets, vous avez peut être des modules maven. Généralement le dossier d&#8217;un module est directement présent dans le dossier de son parent. On a donc une arborescence sur le disque équivalent à l&#8217;exemple suivant :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> - my-project (dossier)
+ --- my-project-api (dossier)
+ --- my-project-core (dossier)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sous Eclipse, l&#8217;affichage est différent. En effet, les différentes vues, notamment la vue Project Explorer gère uniquement des projets ou des working set dans leur arbre. Il n&#8217;y a pas de représentations dans l&#8217;arbre de sous-projet. On retrouve donc l&#8217;arborescence suivante</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> - my-project (projet Eclipse)
+ --- my-project-api (simple dossier)
+ --- my-project-core (simple dossier)
+ - my-project-api (projet Eclipse)
+ - my-project-core (projet Eclipse)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pour un projet plus complexe tel que webtools.jsdt (outils de développement JS d&#8217;Eclipse), on arrive à ça :</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2015/05/eclipse-flat-presentation-project.png" alt="eclipse flat presentation project.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Il est possible de supprimer de l&#8217;affichage les simples dossiers. Ceci permet de ne plus avoir de doublons dans l&#8217;arbre. Pour moi, ceci n'était qu&#8217;un palliatif mais pas une solution optimale. A priori je n'étais pas le seul à penser cela.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_affichage_hi_rarchique_des_projets">Affichage hiérarchique des projets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://twitter.com/mickaelistria">Mickael Istria</a> de Red Hat a développé une nouvelle fonctionnalité pour le Project Explorer. Celle-ci permet de changer l&#8217;affichage de l&#8217;arbre pour ne plus avoir de doublon dans l&#8217;arbre mais également de placer les projets de façon à respecter le stockage sur disque.</p>
+</div>
+<div class="paragraph">
+<p>On récupère donc la représentation suivante :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> - my-project (projet Eclipse)
+ --- my-project-api (projet Eclipse)
+ --- my-project-core (projet Eclipse)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ou pour le webtools.jsdt, l&#8217;organisation suivante :</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2015/05/eclipse-hierarchical-presentation-project.png" alt="eclipse hierarchical presentation project.png">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_activer_l_option">Comment activer l&#8217;option ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pour activer l&#8217;option, c&#8217;est simple, il suffit d&#8217;accéder aux options de la vue Project Explorer. Là je vous sens fébrile. Il parle de quoi ?</p>
+</div>
+<div class="paragraph">
+<p>En fait sur plusieurs vues d&#8217;Eclipse, il existe un menu intégré accessible par le triangle inversé (cf image ci-après). C&#8217;est ce que j&#8217;appelle les options de la vue.</p>
+</div>
+<div class="paragraph">
+<p>Donc dans les options, vous changez "Projects Presentation &gt; Flat" par "Projects Presentation &gt; Hierarchical"</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2015/05/eclipse-change-presentation-project.png" alt="eclipse change presentation project.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Si vous êtes comme moi, vous allez adorer cette nouvelle présentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_est_ce_que_le_param_trage_est_cross_workspace">Est-ce que le paramétrage est cross-workspace ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sachant que certains mécanismes sont mis en place dans Eclipse Mars pour gérer les préférences entre workspaces (je ferais un article dessus prochainement), on peut se demander si le paramétrage de la vue sera pris en compte dans tous les workspaces.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai fait le test et malheureusement ce n&#8217;est pas le cas. Je pense que cela est dû au fait que les paramétrages des perspectives ne sont pas encore sauvegardés indépendamment du modèle du workspace. Si vous voulez plus d&#8217;information sur cette partie là, je vous invite à lire le ticket suivant <a href="http://eclip.se/378811" class="bare">http://eclip.se/378811</a></p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/eclipse">eclipse</a>, <a href="http://blog.jabby-techs.fr/tag/mars"> mars</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Eclipse%20Mars%20-%20%C3%A9pisode%201%20-%20Vue%20hi%C3%A9rarchique%20des%20projets&amp;url=http://blog.jabby-techs.fr/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

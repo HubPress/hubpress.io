@@ -1,0 +1,34 @@
+= Eclipse Mars - épisode 2 - Filtrer la popup Open Resources
+:hp-tags: eclipse, mars
+
+Après un link:/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html[premier article] sur la nouvelle mouture d'Eclipse, je vais vous présenter une autre fonctionnalité intéressante de l'IDE. 
+
+Si vous êtes utilisateur régulier de l'IDE, vous devez souvent utiliser le raccourci Ctrl + Shift + R. Celui-ci permet de rapidement rechercher un fichier par son nom dans vos projets.
+
+Le problème avec cette vue c'est que si l'on a des projets et des sous-projets, on se retrouve avec plusieurs versions du même fichier listées dans la fenêtre de recherche. 
+
+Sur l'exemple suivant, on voit bien deux fois le fichier TestFile.properties.
+
+image::/images/2015/05/open-resource-not-filtered.png[align="center"]
+
+Le pire dans tout ça, c'est que l'ouverture de certaines références de fichier ne permettent pas d'avoir le contexte dans lequel on veut travailler. 
+
+Pour prendre un exemple simple, si le projet parent n'est pas un projet Java et que le projet fils en est un, l'ouverture d'une des deux références ne permettra pas d'avoir l'autocomplétion. Ce qui n'est vraiment pas pratique. 
+
+Heureusement link:https://twitter.com/mickaelistria[Mickael Istria] (oui encore lui 😄) a pris en compte link:460749[mes remarques] sur ce point et a ajouté une fonctionnalité super pratique.
+
+== Activer le filtre des resources
+
+Pour activer cette fonctionnalité, il suffit d'accéder aux options de la fenêtre "Open Resources". Une fois ouverte, il suffit d'activer l'option "Filter duplicated Resources".
+
+image::/images/2015/05/open-resource-select-option.png[align="center"]
+
+Après l'activation, vous ne devriez plus avoir de doublons dans les fichiers proposés. 
+
+image::/images/2015/05/open-resource-filtered.png[align="center"]
+
+Si c'est toujours le cas, c'est peut être que vous utilisez des projets maven sans M2E et sans activer une option permettant de masquer les dossiers fils. Dans ce cas, je vous invite à regarder les commentaires du ticket que j'ai créé sur le bugtracker eclipse. http://eclip.se/468692
+
+== Est ce que l'option est cross-workspace ?
+
+Malheureusement c'est comme pour la vue hiérarchique présentée dans mon link:/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html[billet précédent]. Les données ne sont pas automatiquement reportées d'un workspace à l'autre.

@@ -1,0 +1,25 @@
+= Eclipse Tips 004 – Echapper les caractères lorsque l’on colle dans un String
+:published_at: 2014-03-06
+:hp-tags: eclipse,tips,java
+
+Si vous aussi vous faîtes parti des rares personnes à link:http://www.commitstrip.com/fr/2014/02/24/coder-on-the-verge-of-extinction/[écrire vos RegExp à la main], cette petite astuce risque de vous intéresser.
+
+En effet, vous êtes serein, vous prévoyez votre RegExp dans un éditeur de texte, voir quelqu’un l’a écrite pour vous dans des spécifications. Et là, vous collez cette expression dans une chaîne de caractères en Java. et vous vous rendez à l’évidence. Il vous faut tout échapper. Normal me direz vous.
+
+Mais imaginez une RegExp complexe, longue que vous commencez à échapper à la main (je ne cautionne pas) et là votre voisin vous interpelle pour vous poser une question. Ce moment, où vous ne voulez pas répondre à part « Je code »… Mais c’est le drame, vous perdez le fil de votre échappement et vous vous retrouvez à ne plus savoir si ce « \\ » doit être échappé ou non… Ne vous inquiétez pas, j’ai une solution.
+
+Accédez aux préférences « Window > Preferences », et recherchez « Escape » vous aurez alors la possibilité de cocher l’option « Escape text when pasting into a string literal » de l’éditeur Java. 
+
+image::/images/2014/03/escape-when-pasting.png[align="center"]
+
+Ainsi lors de vos prochains collages (non, pas comme à la maternelle) dans une chaîne de caractère, la chaîne sera automatiquement échappée. Le code ci-dessous présente une chaîne non échappé automatiquement et son équivalent une fois l’option activée.
+
+[source,java,linenums]
+----
+public static final String EMAIL_PATTERN_PASTE_WITHOUT_AUTO_ESCAPE = "^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"; // Cette ligne ne compile pas
+public static final String EMAIL_PATTERN_PASTE_WITH_AUTO_ESCAPE = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+----
+
+Vous pouvez également faire la même chose dans l’éditeur JavaScript. Par contre, je n’ai pas pris le temps d’essayer pour vous.
+
+*Attention : si la chaîne est déjà échappée, elle le sera doublement… Pensez-y avant de copier/coller vos RegExp (ou autre texte que vous collez). Dans ce cas, coller la chaîne hors des doubles quotes et ajoutez les autour après coup.*

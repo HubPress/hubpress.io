@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Eclipse : améliorer l’aide à la saisie</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Eclipse : améliorer l’aide à la saisie" />
+    <meta property="og:description" content="Pour rester informer sur Eclipse, j’ai tendance à suivre d’autres blogueurs. Parmi ceux-ci l’un retient souvent mon attention et me permet d’apprendre des choses souvent indispensables par la suite sur mon IDE préféré. Il s’agit..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html" />
+    <meta property="article:published_time" content="2013-06-02T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.954Z" />
+    <meta property="article:tag" content="eclipse" />
+    <meta property="article:tag" content="auto-complétion" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Eclipse : améliorer l’aide à la saisie" />
+    <meta name="twitter:description" content="Pour rester informer sur Eclipse, j’ai tendance à suivre d’autres blogueurs. Parmi ceux-ci l’un retient souvent mon attention et me permet d’apprendre des choses souvent indispensables par la suite sur mon IDE préféré. Il s’agit..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Eclipse : améliorer l’aide à la saisie",
+    "url": "http://blog.jabby-techs.fr/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html",
+    "datePublished": "2013-06-02T22:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.954Z",
+    "keywords": "eclipse, auto-complétion",
+    "description": "Pour rester informer sur Eclipse, j’ai tendance à suivre d’autres blogueurs. Parmi ceux-ci l’un retient souvent mon attention et me permet d’apprendre des choses souvent indispensables par la suite sur mon IDE préféré. Il s’agit..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-eclipse tag-auto-completion">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-eclipse tag-auto-completion">
+
+
+            <h1 class="post-title">Eclipse : améliorer l’aide à la saisie</h1>
+
+            <span class="post-meta label"><time datetime="2013-06-03">03 Jun 2013</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pour rester informer sur Eclipse, j’ai tendance à suivre d’autres blogueurs. Parmi ceux-ci l’un retient souvent mon attention et me permet d’apprendre des choses souvent indispensables par la suite sur mon IDE préféré. Il s’agit de <a href="http://www.vogella.com/people/larsvogel.html">Lars Vogel</a>. Via l’un de ses derniers articles, j’ai découvert que l’on pouvait améliorer le temps de réponse de l’auto-complétion (<a href="http://www.vogella.com/blog/2013/05/30/eclipse-papercut-13-reduce-delay-in-code-completion/">l’article en question</a>). J’ai fouillé un peu et voilà un très bref récapitulatif de ce que j’ai découvert.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_am_liorer_la_rapidit_de_l_auto_compl_tion">Améliorer la rapidité de l’auto-complétion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cette astuce vient de Lars Vogel et c’est ce qui m’a fait chercher les autres astuces par la suite. Par exemple si l’on tape le nom d’un objet suivi d’un « . », Eclipse va proposer automatiquement une liste de méthodes disponibles pour l’objet en question. Vous pouvez trouver comme moi que ce n’est pas assez rapide. Lars Vogel indique que ce paramétrage est modifiable dans les paramètres du workspace.</p>
+</div>
+<div class="paragraph">
+<p>Par défaut, la valeur est d’attente pour le déclenchement de l’auto-complétion est réglé à 200ms. J’ai testé plusieurs paramétrage et j’avoue être assez proche de celui proposé par Lars Vogel. En effet, une valeur de 0ms est un peut trop rapide à mon goût. Par contre 40ms est un bon compromis entre rapidité et non-affichage des propositions lorsque l’on continue à taper du texte.</p>
+</div>
+<div class="paragraph">
+<p>Pour modifier la valeur prédéfinie il faut aller dans : Window &gt; Preferences &gt; Java &gt; Editor &gt; Content Assist puis modifier la valeur du champ « Auto activation delay (ms) ». Une fois la modification effectuée, appliquer les changements. Vous pourrez voir une nette différence.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2013/06/autocomplete-delay.png" alt="Réglage de l’auto-complétion">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supprimer_le_menu_d_auto_compl_tion_swt">Supprimer le menu d’auto-complétion SWT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lorsque l’on fait des développement web et que l’on n’a pas besoin de SWT, il peut être assez casse-pied d’avoir des propositions pour SWT dans l’auto-complétion. Je m’explique. Si l’on veut l’auto-complétion, on fait ctrl + espace. Si l’on refait ça une seconde fois, on a un menu pour SWT. Enfin si on le fait une troisième fois on a les éventuels templates de code que l’on a défini. L’étape des propositions SWT nous pousse à matraquer sur ce pauvre raccourci clavier ctrl + espace. Il est pourtant possible de le désactiver.</p>
+</div>
+<div class="paragraph">
+<p>Pour cela il faut aller dans : Window &gt; Preferences &gt; Java &gt; Editor &gt; Content Assist &gt; Advanced puis décocher la case spécifique à SWT. Maintenant plusieurs appuie sur ctrl + espace vous évitera de passer par les propositions SWT (qui sont vides dans le cas d’un développement Web classique).</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2013/06/swt-proposals.png" alt="Proposition SWT dans Eclipse">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_d_sactiver_les_propositions_des_m_thodes_obsol_tes">Désactiver les propositions des méthodes obsolètes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lorsque l’on développe, il arrive que l’on soit parfois noyé par les propositions de l’auto-complétion pour certains objets. Ceci est particulièrement gênant lorsque la méthode en question est surchargée un nombre incalculable de fois et qu’elle possède des définitions obsolètes (@Deprecated). Il existe une méthode simple dans Eclipse pour empêcher l’IDE de nous proposer de telles méthodes.</p>
+</div>
+<div class="paragraph">
+<p>Toujours en allant dans : Window &gt; Preferences &gt; Java &gt; Editor &gt; Content Assist, il faut cocher la case « Hide deprecated references ». Voici la différence pour les instances de java.util.Date :</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2013/06/disabled-depracated-proposals-001.png" alt="Auto-complétion avant la modification du paramètre">
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2013/06/disabled-depracated-proposals-002.png" alt="Modification du paramètre permettant de cacher les méthodes obsolètes">
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2013/06/disabled-depracated-proposals-003.png" alt="Auto-complétion une fois le paramètre activé">
+</div>
+</div>
+<div class="paragraph">
+<p>Comme vous pouvez le remarquer, c’est tout de suite moins le bordel. En plus vous serez moins tenté d’utiliser ces méthodes qui parfois peuvent avoir des effets non désirés. Vous pouvez néanmoins les utiliser et le code compile toujours si elles sont utilisés dans une partie de l’application. Vous n’aurez simplement plus d’aide à la saisie de ces méthodes.</p>
+</div>
+<div class="paragraph">
+<p>Voilà fin du second billet sur mon IDE préféré.</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/eclipse">eclipse</a>, <a href="http://blog.jabby-techs.fr/tag/auto-completion">auto-complétion</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Eclipse%20%3A%20am%C3%A9liorer%20l%E2%80%99aide%20%C3%A0%20la%20saisie&amp;url=http://blog.jabby-techs.fr/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

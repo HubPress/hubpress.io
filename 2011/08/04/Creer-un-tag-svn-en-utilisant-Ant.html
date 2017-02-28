@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Créer un tag svn en utilisant Ant</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Créer un tag svn en utilisant Ant" />
+    <meta property="og:description" content="Comme beaucoup d’informaticiens, je n’aime pas spécialement effectuer des tâches répétitives. Si une tâche l’est, alors il vaut mieux la remplacer par un script automatique. Le gain est d’ailleurs double. On ne se lasse pas à..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html" />
+    <meta property="article:published_time" content="2011-08-03T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.967Z" />
+    <meta property="article:tag" content="ant" />
+    <meta property="article:tag" content="java" />
+    <meta property="article:tag" content="svn" />
+    <meta property="article:tag" content="svnant" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Créer un tag svn en utilisant Ant" />
+    <meta name="twitter:description" content="Comme beaucoup d’informaticiens, je n’aime pas spécialement effectuer des tâches répétitives. Si une tâche l’est, alors il vaut mieux la remplacer par un script automatique. Le gain est d’ailleurs double. On ne se lasse pas à..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Créer un tag svn en utilisant Ant",
+    "url": "http://blog.jabby-techs.fr/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html",
+    "datePublished": "2011-08-03T22:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.967Z",
+    "keywords": "ant, java, svn, svnant",
+    "description": "Comme beaucoup d’informaticiens, je n’aime pas spécialement effectuer des tâches répétitives. Si une tâche l’est, alors il vaut mieux la remplacer par un script automatique. Le gain est d’ailleurs double. On ne se lasse pas à..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-ant tag-java tag-svn tag-svnant">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-ant tag-java tag-svn tag-svnant">
+
+
+            <h1 class="post-title">Créer un tag svn en utilisant Ant</h1>
+
+            <span class="post-meta label"><time datetime="2011-08-04">04 Aug 2011</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Comme beaucoup d’informaticiens, je n’aime pas spécialement effectuer des tâches répétitives. Si une tâche l’est, alors il vaut mieux la remplacer par un script automatique. Le gain est d’ailleurs double. On ne se lasse pas à cause d’un processus un peu long ou ennuyeux, et surtout on évite les bourdes dues au facteur humain.</p>
+</div>
+<div class="paragraph">
+<p>Alors comme aujourd’hui, j’en avais plus qu’assez de faire toujours mes tags de livraison sur le SVN de la boîte de façon manuelle, je me suis créé un petit script Ant pour ça. L’article va donc présenter les différentes étapes pour mettre en place ce système.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_r_cup_rer_les_biblioth_ques_utiles">Récupérer les bibliothèques utiles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tout d’abord, commençons par récupérer les bibliothèques utiles. Ne connaissant pas spécialement les bibliothèques permettant de manipuler un dépôt svn via ant, j’ai décidé arbitrairement de prendre celle fournie par le projet Subclipse. Vous pouvez directement télécharger le contenu de la bibliothèque à l’adresse suivante. Accéder à svnant.</p>
+</div>
+<div class="paragraph">
+<p>Téléchargement direct des bibliothèques :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://subclipse.tigris.org/files/documents/906/49042/svnant-1.3.1.zip">svnant 1.3.1</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cr_er_un_script_de_tags">Créer un script de tags</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On va commencer sous Eclipse par créer un projet Java simple. Personnellement, je l’ai nommé <strong>fr.jabbytechs.ant.svnutilities</strong>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2011/08/creer-un-tag-svn-en-utilisant-ant-pic-1.png" alt="creer un tag svn en utilisant ant pic 1.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Une fois le projet créé vous obtenez normalement ceci :</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2011/08/creer-un-tag-svn-en-utilisant-ant-pic-2.png" alt="creer un tag svn en utilisant ant pic 2.png">
+</div>
+</div>
+<div class="paragraph">
+<p>On ajoute un répertoire lib pour nos futures bibliothèques, ainsi que deux fichiers. Le premier est un fichier xml et le second un .properties. On peut par exemple les nommer <strong>svn-utilities.xml</strong> et <strong>svn-utilities.properties</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Ajouter les bibliothèques suivantes dans le dossier lib de notre projet. Elles sont disponibles dans l’archive de svnant.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>jna.jar</p>
+</li>
+<li>
+<p>svnant.jar</p>
+</li>
+<li>
+<p>svnClientAdapter.jar</p>
+</li>
+<li>
+<p>svnjavahl.jar</p>
+</li>
+<li>
+<p>svnkit.jar</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Vous devriez obtenir quelque chose semblable à l’arborescence suivante. A noter que l’on a pas besoin de ganymed.jar pour la suite. D’ailleurs, je n’ai pas non plus vérifié à quoi il servait puisque cela fonctionne sans.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2011/08/creer-un-tag-svn-en-utilisant-ant-pic-3.png" alt="creer un tag svn en utilisant ant pic 3.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Commençons maintenant par ajouter les lignes suivantes à notre fichier xml. Ensuite rafraîchir le projet Java afin qu’Eclipse prennent en compte le fait que notre fichier est de type Ant. Ce sera plus pratique pour la suite.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;project name="fr.jabbytechs.ant.svnutilities" basedir="."&gt;
+    &lt;property file="svn-utilities.properties" /&gt;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On ajoute maintenant la configuration pour faire fonctionner svnant.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;project name="fr.jabbytechs.ant.svnutilities" basedir="."&gt;
+
+    &lt;property file="svn-utilities.properties" /&gt;
+
+    &lt;path id="path.svnant"&gt;
+        &lt;pathelement location="${basedir}/lib/svnant.jar" /&gt;
+        &lt;pathelement location="${basedir}/lib/svnClientAdapter.jar" /&gt;
+        &lt;pathelement location="${basedir}/lib/svnkit.jar" /&gt;
+        &lt;pathelement location="${basedir}/lib/svnjavahl.jar" /&gt;
+        &lt;pathelement location="${basedir}/lib/jne.jar" /&gt;
+    &lt;/path&gt;
+
+    &lt;typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="path.svnant" /&gt;
+
+    &lt;!-- ****************************************************************** --&gt;
+    &lt;!-- svn.settings : correspond aux différentes réglages pour les       --&gt;
+    &lt;!--         tâches svnant. Les données d'entrées se situes dans le     --&gt;
+    &lt;!--         fichiers svn-utilities.properties                    --&gt;
+    &lt;!-- ****************************************************************** --&gt;
+    &lt;svnSetting
+        javahl="${svnant.javahl}"
+        svnkit="${svnant.svnkit}"
+        username="${svn.username}"
+        password="${svn.password}"
+        failonerror="false"
+        id="svn.settings"
+        /&gt;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La première balise ajoutée est « path ». Elle permet d’enrichir le classpath d’exécution de ant. On y liste les bibliothèques que l’on a ajouté au projet java. La seconde balise que l’on ajoute, correspond à la recherche dans le classpath des implémentations des fonctions que nous utiliserons. Sans ça, svnant ne fonctionnera pas. Enfin la dernière correspond à la configuration de antsvn. J’y ai listé les différentes informations dont nous aurons besoin. Comme vous pouvez le remarquer, je n’ai pas mis directement les valeur mais des variables de la forme <strong>${XXX}</strong>. Nous y reviendrons.</p>
+</div>
+<div class="paragraph">
+<p>La configuration est maintenant terminé. On va pouvoir s’atteler à notre tâche Ant de création d’un tag. Vous allez voir c’est vraiment très simple.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- ****************************************************************** --&gt;
+&lt;!-- svntag: cree un TAG pour le projet                                 --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;target name="svn-tag" description="creation d'un tag d'un projet sur le svn"&gt;
+
+    &lt;property name="src.url" value="${svn.repository.url}/${project.name}/trunk/" /&gt;
+    &lt;property name="dest.url" value="${svn.repository.url}/${project.name}/tags/${tag.name}" /&gt;
+
+    &lt;echo message="${src.url}" /&gt;
+    &lt;echo message="${dest.url}" /&gt;
+    &lt;echo message="${svn.tag.message}" /&gt;
+
+    &lt;svn refid="svn.settings" &gt;
+        &lt;copy srcUrl="${src.url}" destUrl="${dest.url}" message="${svn.tag.message}" /&gt;
+    &lt;/svn&gt;
+
+&lt;/target&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pour ceux qui débute juste avec Ant, quelques petites explication s’imposent. La balise property permet de déclarer une nouvelle propriété. D’ailleurs un peu après j’utilise les deux créées en début de tâche. Ensuite, la balise echo permet d’afficher un message. Là, ça nous permettra d’afficher dans la console Eclipse les données que l’on a en entrée.
+Enfin, la dernière balise permet de faire le tag en lui même. Elle prend peu de paramètre. La configuration créée précédemment, le chemin de la source, le chemin de destination et le message du tag. Tout le reste du travail se fera automatiquement.</p>
+</div>
+<div class="paragraph">
+<p>Maintenant, revenons vers nos différentes variables <strong>${XXX}</strong> utilisées dans le script. Elles sont au nombre de 11.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>${basedir}</strong> : répertoire de départ par rapport auquel on construit les chemins relatifs nécessaire</p>
+</li>
+<li>
+<p><strong>${svnant.javahl}</strong> : permet de dire si nous utiliserons javahl pour lire/modifier le dépôt SVN</p>
+</li>
+<li>
+<p><strong>${svnant.svnkit}</strong> : permet de dire si nous utiliserons svnkit pour lire/modifier le dépôt SVN</p>
+</li>
+<li>
+<p><strong>${svn.username}</strong> : nom d’un utilisateur du dépôt. En l’occurence, il faut les droits de modification pour notre cas</p>
+</li>
+<li>
+<p><strong>${svn.password}</strong> : mot de passe de l’utilisateur</p>
+</li>
+<li>
+<p><strong>${svn.repository.url}</strong> : url vers le dépôt SVN</p>
+</li>
+<li>
+<p><strong>${project.name}</strong> : nom du projet sous le dépôt. Ceci permettra dans mon cas de réutiliser le script pour d’autres projets.</p>
+</li>
+<li>
+<p><strong>${tag.name}</strong> : nom du tag que l’on veut créer</p>
+</li>
+<li>
+<p><strong>${src.url}</strong> : url à partir de laquelle on va copier nos données pour créer le tag</p>
+</li>
+<li>
+<p><strong>${dest.url}</strong> : url dans laquelle on va copier les données</p>
+</li>
+<li>
+<p><strong>${svn.tag.message}</strong> : message qui sera mis sur le dépôt SVN au niveau du tag</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nous allons les déclarer et indiquer leur valeur dans le fichier svn-utilities.properties que nous avons créé au tout départ. Toutes ne seront pas listé dans le fichier. En effet, ${basedir} a déjà été déclaré à la seconde ligne du fichier Ant et pour ${src.url} et ${dest.url}, elles sont construite dans la tâche Ant.
+Voici le contenu du fichier.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">svn.repository.url=svn://localhost/MON_DEPOT
+project.name=monprojet
+tag.name=1.0
+svn.tag.message=Creation du tag ${tag.name} pour le projet ${project.name} a partir du trunk
+svnant.javahl=false
+svnant.svnkit=true
+svn.username=jabberwock
+svn.password=jabby</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Il ne vous reste plus qu’à paramétrer le script selon vos besoins et à le lancer via Eclipse. Clic droit sur le fichier Ant &gt; Run as… &gt; Ant build</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quelques_autres_scripts_de_manipulation_du_svn_utiles">Quelques autres scripts de manipulation du svn utiles</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cr_ation_d_une_branche">Création d’une branche</h3>
+<div class="paragraph">
+<p>Le système est similaire à la création d’un tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- ****************************************************************** --&gt;
+&lt;!-- svn-branch: creation d'une branche de travail pour le projet        --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;target name="svn-branch" description="Creation d'une nouvelle branche de travail pour un projet"&gt;
+
+    &lt;property name="src.url"  value="${svn.repository.url}/${project.name}/${branch.source}"/&gt;
+    &lt;property name="dest.url" value="${svn.repository.url}/${project.name}/branches/${svn.branch.name}"/&gt;
+
+    &lt;echo message="${svn.branch.message}"/&gt;
+    &lt;echo message="${src.url}"/&gt;
+    &lt;echo message="${dest.url}"/&gt;
+
+    &lt;svn refid="svn.settings"&gt;
+        &lt;copy srcUrl="${src.url}" destUrl="${dest.url}" message="${svn.branch.message}"/&gt;
+    &lt;/svn&gt;
+&lt;/target&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exporter_un_projet">Exporter un projet</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- ****************************************************************** --&gt;
+&lt;!-- svn-export: cree un export d'un projet                             --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;target name="svn-export" description="Permet d'exporter un projet"&gt;
+
+    &lt;property name="src.url"  value="${svn.repository.url}/${project.name}/tags/${tag.name}"/&gt;
+    &lt;property name="dest.url" value="${svn.export.dest.url}"/&gt;
+
+    &lt;echo message="${svn.export.message}"/&gt;
+
+    &lt;svn refid="svn.settings"&gt;
+        &lt;export srcUrl="${src.url}" destPath="${dest.url}/${project.name}"/&gt;
+    &lt;/svn&gt;
+&lt;/target&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_faire_un_checkout_d_un_projet">Faire un checkout d’un projet</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- ****************************************************************** --&gt;
+&lt;!-- svn-checkout-latest: daire le checkout d'un projet                    --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;target name="svn-checkout"&gt;
+    &lt;property name="src.url"  value="${svn.repository.url}/${project.name}/trunk"/&gt;
+    &lt;property name="dest.url" value="${svn.checkout.dest.url}"/&gt;
+
+    &lt;svn refid="svn.settings"&gt;
+        &lt;checkout url="${src.url}" revision="${svn.checkout.revision}" destPath="${dest.url}" /&gt;
+    &lt;/svn&gt;
+&lt;/target&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Voilà pour les quelques exemples d’utilisation de svnant pour manipuler son dépôt SVN. Bien entendu, ce n’est pas les seuls scripts qui peuvent être créé et je vous invite à consulter la documentation officielle de svnant pour améliorer/enrichir ces scripts.</p>
+</div>
+<div class="paragraph">
+<p>Vous trouverez sur le lien suivant un projet Eclipse pret à l’emploi. Il contient les Ant postés dans cet article. fr.jabbytechs.ant.svnutilities</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/ant">ant</a>, <a href="http://blog.jabby-techs.fr/tag/java">java</a>, <a href="http://blog.jabby-techs.fr/tag/svn">svn</a>, <a href="http://blog.jabby-techs.fr/tag/svnant">svnant</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Cr%C3%A9er%20un%20tag%20svn%20en%20utilisant%20Ant&amp;url=http://blog.jabby-techs.fr/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

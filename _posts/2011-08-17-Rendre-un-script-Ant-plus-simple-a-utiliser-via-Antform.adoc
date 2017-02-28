@@ -1,0 +1,281 @@
+= Rendre un script Ant plus simple à utiliser via Antform
+:hp-tags: ant,java,svn,svnant,antform
+:published_at: 2011-08-17
+
+
+
+Je vous présentais récemment un article sur la link:/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html[manipulation d’un dépôt SVN via antsvn]. Ce script est assez pratique mais manque tout de même d’une couche graphique permettant de le rendre plus simple et agréable. Un deuxième avantage à l’interface graphique est de permettre une confirmation avant d’effectuer la manipulation sur le dépôt SVN.
+
+J’ai également décidé d’adapter le script pour pouvoir l’utiliser sur mon dépôt SVN personnel. En effet, celui-ci est accessible via un tunnel ssh et le script initial ne fonctionne pas. J’ai d’ailleurs posté sur le http://www.developpez.net/forums/d1118102/java/edi-outils-java/build/ant/svnant-protocole-svnpssh/[forum développez.net] une demande d’aide à laquelle j’ai moi-même répondu. Vous pouvez y voir ma solution ou lire l’article en entier.
+
+== Récupération des bibliothèques pour l’utilisation de Antform
+
+On va utiliser deux bibliothèques pour atteindre notre premier objectif. La première, antform, nous permettra de créer des formulaires de saisie. La seconde, ant-contrib, nous permettra de faciliter nos tests en ajoutant notamment les instructions if else…
+Les bibliothèques sont disponibles aux adresses suivantes :
+
+* Antform : http://antforms.sourceforge.net/
+* ant-contrib : http://ant-contrib.sourceforge.net/
+
+Une fois ces deux jar téléchargés, on les ajoute au dossier lib du projet. Je suppose ici que vous vous basez sur le précédent article et les sources fournies à la fin. Ensuite, on va ajouter dans notre fichier ant la déclaration des deux bibliothèques.
+
+[source,xml,linenums]
+----
+<!-- ****************************************************************** -->
+<!-- Definition du path pour antform                                    -->
+<!-- ****************************************************************** -->
+<path id="runtime.cp">
+    <pathelement location="bin/" />
+    <fileset dir="lib" includes="antform.jar" />
+</path>
+<taskdef name="antform" classname="com.sardak.antform.AntForm" classpathref="runtime.cp" />
+<taskdef name="antmenu" classname="com.sardak.antform.AntMenu" classpathref="runtime.cp" />
+ 
+<!-- ****************************************************************** -->
+<!-- Definition du path pour antcontrib                                    -->
+<!-- ****************************************************************** -->
+<path id="path.antcontrib">
+    <pathelement location="${basedir}/lib/ant-contrib-1.0b3.jar"/>
+</path>
+<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="path.antcontrib" />
+----
+
+== Création d’une fenêtre de dialogue
+=== Déclaration de svn-tag-ask
+
+Commençons par créer une nouvelle tâche à notre fichier ant. Celle-ci sera nommée *svn-tag-ask*. Elle n’aura pas de description particulière puisque ce sera une tâche dite « privée ».
+
+[source,xml,linenums]
+----
+<!-- ****************************************************************** -->
+<!-- svn-tag-ask : remplissage des infos pour la création                 -->
+<!--             d'un TAG pour le projet                                 -->
+<!-- ****************************************************************** -->
+<target id="svn-tag-ask" name="svn-tag-ask">
+     
+    <!-- Initialisation des variables -->
+    <property name="svn.project.url" value="${svn.repository.url}/${project.name}" />
+    <property name="svn.tag.name" value="${svn.tag.name.base}" />
+     
+    <!-- Permet de lister les branches existantes sur le projet -->
+    <svn refid="svn.settings">
+        <list delimiter="," listdirs="true" onlynames="true" property="svn.branches.list" url="${svn.project.url}/branches"/>
+    </svn>
+     
+    <!-- Création de l'interface graphique -->
+    <antform save="svn-tag.properties" title="Création d'un tag">
+ 
+        <label>Essai.</label>
+ 
+        <controlbar>
+            <button type="cancel" label="${antform.no}" />
+            <button type="ok" label="${antform.yes}" />
+        </controlbar>
+    </antform>
+</target>
+----
+
+Pour le moment, si vous lancez svn-tag-ask, vous devriez obtenir une fenêtre simple avec un message et deux boutons. Il se peut que les messages pour les boutons soient vides. Dans ce cas, il suffira de déclarer les deux variables antform.yes et antform.no dans le fichier *svn-utilities.properties* et de leur mettre une valeur. Pour expliquer un peu ce que fait la tâche, elle liste sur le svn les différentes branches qui ont été créées puis elle affiche un message via la balise antform. Pour cette balise, notez que l’on sauvegardera les données saisies dans un fichier svn-tag.properties que l’on utilisera ensuite dans la tâche svn-tag.
+
+=== Ajout des champs de saisie à l’interface
+
+Maintenant que notre fenêtre est fonctionnelle, nous allons nous concentrer sur les champs de saisie à remplir pour notre script de tag. Dans la version précédente du script nous avions besoin des données suivantes. Elles étaient listées dans le fichier de properties.
+
+* une url source à laquelle on trouvait le trunk à taguer
+* une url de destination dans laquelle on voulait stocker le tag
+* un message pour la création du tag
+* un login pour le svn
+* un mot de passe pour le svn
+
+Nous allons donc ajouter ces différents éléments tout en en ajoutant d’autres afin d’enrichir les possibilités. En effet, on pourrait très bien vouloir créer un tag à partir d’une branche de correction au lieu du trunk. Notre interface graphique nous permettra de faire ce choix.
+
+[source,xml,linenums]
+----
+<!-- ****************************************************************** -->
+<!-- svn-tag-ask : remplissage des infos pour la création                 -->
+<!--             d'un TAG pour le projet                                 -->
+<!-- ****************************************************************** -->
+<target id="svn-tag-ask" name="svn-tag-ask">
+     
+    <!-- Initialisation des variables -->
+    <property name="svn.project.url" value="${svn.repository.url}/${project.name}" />
+    <property name="svn.tag.name" value="${svn.tag.name.base}" />
+     
+    <!-- Permet de lister les branches existantes sur le projet -->
+    <svn refid="svn.settings">
+        <list delimiter="," listdirs="true" onlynames="true" property="svn.branches.list" url="${svn.project.url}/branches"/>
+    </svn>
+     
+    <!-- Création de l'interface graphique -->
+    <antform save="svn-tag.properties" title="Création d'un tag">
+ 
+        <label>Vous devez remplir les differentes donnees demandées. Le nom de la branche source n'est pas obligatoire. Si vous souhaitez créer un tag à partir du trunk, n'oubliez pas de le préciser grâce au radiobutton.</label>
+ 
+        <textproperty label="Chemin du projet :" property="svn.project.url" required="true" />
+        <listproperty label="Nom de la branche :" property="svn.tag.branch.name" values="                              ,${svn.branches.list}"  />
+        <textproperty label="Nom du tag :" property="svn.tag.name" required="true" />
+ 
+        <textproperty label="Login :" property="svn.username" required="true" />
+        <textproperty label="Mot de passe :" property="svn.password" required="true" />
+ 
+        <multilinetextproperty label="Commentaire du tag" property="svn.tag.message" required="true" />
+ 
+        <radioselectionproperty label="Créer a partir du trunk ?" property="svn.tag.trunk" values="${antform.no}, ${antform.yes}" />
+ 
+        <controlbar>
+            <button type="cancel" label="${antform.no}" />
+            <button type="ok" label="${antform.yes}" />
+        </controlbar>
+    </antform>
+</target>
+----
+
+On se retrouve donc avec les champs suivants :
+
+* L’url du projet dans le dépôt : toutes les url seront construite à partir de celle-là. Elle peut être pré-remplie
+* La liste des branches existantes : elle peut être vide. Il faudra cliquer sur les flèches pour choisir le nom de la branche
+* Le nom du tag : il peut être pré-rempli et est obligatoire
+* Le login de l’utilisateur : il est obligatoire.
+* Le mot de passe de l’utilisateur : il est obligatoire.
+* Le commentaire : ce champ peut contenir plusieurs lignes. Il est obligatoire
+* Un radio button indiquant si l’on veut créer le tag à partir du trunk
+
+Voici la fenêtre que vous devriez obtenir :
+
+
+
+image::/images/2011/08/rendre-un-script-ant-plus-simple-a-utiliser-via-antform-pic1.png[Fenêtre antform pour la tâche svn-tag-ask,align="center"]
+
+== Modification de svn-tag
+
+Maintenant que nous avons une tâche dédiée à la création de notre interface utilisateur, nous allons modifier la tâche svn-tag. Tout d’abord nous devront obligatoirement appeler la méthode svn-tag-ask lors du lancement de svn-tag. Ensuite, il faudra prendre en compte plusieurs cas de figures pour créer le tag. Les différents cas de figure sont les suivants :
+
+* le fichier de properties créé par svn-tag-ask n’existe pas
+* l’option « à partir du trunk » est à oui
+* l’option « à partir du trunk » est à non et le nom de la branche est vide
+* l’option « à partir du trunk » est à non et le nom de la branche est renseigné
+
+Pour pouvoir appeler ant-tag-ask à partir de ant-tag, nous allons simplement utiliser l’attribut depends de la balise target. La déclaration de la target svn-tag devient :
+	
+[source,xml,linenums]
+----
+<target name="svn-tag" depends="svn-tag-ask" description="creation d'un tag d'un projet sur le svn">
+----
+
+Ensuite, pour tester les différents cas, nous utiliserons la bibliothèque ant-contrib. Voici avec ant-contrib les différents tests que nous devrons effectuer.
+
+[source,xml,linenums]
+----
+<if>
+    <available file="svn-tag.properties" />
+    <then>
+        <!-- Code a executer si l'on a un fichier -->
+ 
+    </then>
+    <else>
+        <!-- Affichage d'un message à l'utilisateur pour le prévenir -->
+        <antform title="Erreur pour la création d'un tag">
+            <label rows="1" columns="20">
+                Le fichier de propriétés pour le tag n'a pas été créé correctement. Le tag n'a pas été effectué.
+            </label>
+            <controlbar>
+                <button type="cancel" label="fermer" />
+            </controlbar>
+        </antform>
+    </else>
+</if>
+----
+
+Construction de l’url selon les cas suivant :
+
+* l’option « à partir du trunk » est à oui
+* l’option « à partir du trunk » est à non et le nom de la branche est renseigné
+
+[source,xml,linenums]
+----
+<if>
+    <equals arg1="${svn.tag.trunk}" arg2="${antform.yes}" trim="true" />
+    <then>
+        <!-- Creation de l'url source pour le trunk -->
+        <var name="src.url" value="${svn.project.url}/trunk" />
+    </then>
+    <else>
+        <if>
+            <not>
+                <equals arg1="${svn.tag.branch.name}" arg2="" trim="true" />
+            </not>
+            <then>
+                <!-- Creation de l'url source pour la branche si le nom de branche est non vide et que l'on n'a pas demandé le trunk -->
+                <var name="src.url" value="${svn.project.url}/branches/${svn.tag.branch.name}" />
+            </then>
+        </if>
+    </else>
+</if>
+----
+
+Test de l’url de la source. Si elle est vide, cela correspond au cas suivant :
+
+* l’option « à partir du trunk » est à non et le nom de la branche est vide
+
+[source,xml,linenums]
+----
+<if>
+    <not>
+        <equals arg1="${src.url}" arg2="" trim="true" />
+    </not>
+    <then>
+        <!-- Creation du tag -->
+         
+    </then>
+    <else>
+        <!-- Affichage d'un message : on passe ici uniquement si la branche n'est pas spécifiée et qu'elle est sencé être la source. -->
+        <antform title="Erreur pour la création d'un tag">
+            <label rows="1" columns="20">Le chemin de la branche source est vide.</label>
+            <controlbar>
+                <button type="cancel" label="fermer" />
+            </controlbar>
+        </antform>
+    </else>
+</if>
+----
+Avec les différents tests précédents, il ne reste plus qu’à les mettre dans le bon ordre ou à les inclure les uns dans les autres pour arriver au script final. Je ne vais pas directement mettre la target ant-tag ici. Elle est disponible dans le fichier zip téléchargeable à la fin de l’article. Par contre, un point important ici est de réévaluer le svnSetting. En effet, il est global à tout le fichier Ant. Or, si les données saisies dans l’interface graphique ne sont pas similaire à celles pré-remplies dans le fichier de propriétés, alors la connexion pourrait ne pas fonctionner. Il faut donc penser à rajouter ceci juste avant l’appel à la tâche svn.
+
+[source,xml,linenums]
+----
+<svnSetting
+    javahl="${svnant.javahl}"
+    svnkit="${svnant.svnkit}"
+    username="${svn.username}"
+    password="${svn.password}"
+    failonerror="false"
+    id="svn.settings"
+    />
+----
+
+== Prise en compte du protocole svn+ssh
+
+Lors de mes différents tests chez moi, j’ai rencontré quelques problèmes pour dialoguer avec mon dépôt SVN. Celui-ci est en fait accessible via le protocole svn+ssh. Quelques recherches m’ont permis rapidement de trouver qu’il manquait une bibliothèque pour prendre en compte ce protocole. Je l’ai donc ajouté au projet afin de l’utiliser.
+
+* trilead-ssh2-build213-svnkit-1.3-patch.jar : non maintenue actuellement, ce jar permet la connexion via un tunnel ssh. https://maven.atlassian.com/content/repositories/atlassian-3rdparty/com/trilead/trilead-ssh2/build213-svnkit-1.3-patch/[Télécharger le jar]
+
+L’ajout se fait directement en enrichissant le path de svnant.
+
+[source,xml,linenums]
+----
+<path id="path.svnant">
+    <pathelement location="${basedir}/lib/svnant.jar" />
+    <pathelement location="${basedir}/lib/svnClientAdapter.jar" />
+    <pathelement location="${basedir}/lib/svnkit.jar" />
+    <pathelement location="${basedir}/lib/svnjavahl.jar" />
+    <pathelement location="${basedir}/lib/ganymed.jar" />
+    <pathelement location="${basedir}/lib/trilead-ssh2-build213-svnkit-1.3-patch.jar" />
+</path>
+<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="path.svnant" />
+----
+
+Puis pour utiliser le script, il faudra également penser à inverser les booléens javahl et svnkit de svnSetting afin de préciser que l’on veut utiliser javahl. Enfin, il faudra qu’une version de javahl en adéquation avec l’IDE (32 ou 64bits) soit installée est configurée pour utiliser un tunnel ssh via échange de clé privée/publique.
+
+== Conclusion
+
+Ce petit article montre une amélioration du script initial que j’avais créé. Ce n’est pas forcément la meilleure mais elle répond à mes attentes. Il existe encore de nombreuses améliorations possible ne serait-ce que pour les script de checkout et d’export de projet. Je ne le ferais pas pour le moment car je n’en ai pas l’utilité. Je vous invite donc à consulter la documentation officielle des différentes bibliothèques utilisées afin d’améliorer le script selon vos propres besoins.
+
+Vous trouverez sur le lien suivant un projet Eclipse presque pret à l’emploi. Il faudra pour la partie svn+ssh installer et configurer javahl. Le projet fr.jabbytechs.ant.svnutilities en version 1.0. Télécharger fr.jabbytechs.ant.svnutilities-1.0.zip

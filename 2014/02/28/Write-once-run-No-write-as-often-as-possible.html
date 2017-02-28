@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Write once, run… No, write as often as possible</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2014/02/28/Write-once-run-No-write-as-often-as-possible.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Write once, run… No, write as often as possible" />
+    <meta property="og:description" content="Après quelques années d’écriture sur ce blog, je me rends compte que je n’écris pas autant que je le souhaiterais. En fait, cela provient surtout du fait que j’ai des idées d’articles qui sont longs à..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2014/02/28/Write-once-run-No-write-as-often-as-possible.html" />
+    <meta property="article:published_time" content="2014-02-27T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.941Z" />
+    <meta property="article:tag" content="divers" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Write once, run… No, write as often as possible" />
+    <meta name="twitter:description" content="Après quelques années d’écriture sur ce blog, je me rends compte que je n’écris pas autant que je le souhaiterais. En fait, cela provient surtout du fait que j’ai des idées d’articles qui sont longs à..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2014/02/28/Write-once-run-No-write-as-often-as-possible.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Write once, run… No, write as often as possible",
+    "url": "http://blog.jabby-techs.fr/2014/02/28/Write-once-run-No-write-as-often-as-possible.html",
+    "datePublished": "2014-02-27T23:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.941Z",
+    "keywords": "divers",
+    "description": "Après quelques années d’écriture sur ce blog, je me rends compte que je n’écris pas autant que je le souhaiterais. En fait, cela provient surtout du fait que j’ai des idées d’articles qui sont longs à..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-divers">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-divers">
+
+
+            <h1 class="post-title">Write once, run… No, write as often as possible</h1>
+
+            <span class="post-meta label"><time datetime="2014-02-28">28 Feb 2014</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Après quelques années d’écriture sur ce blog, je me rends compte que je n’écris pas autant que je le souhaiterais. En fait, cela provient surtout du fait que j’ai des idées d’articles qui sont longs à écrire <em>(fausse excuse du mec qui est pas trop motivé).</em></p>
+</div>
+<div class="paragraph">
+<p>Il faut en effet tester et valider ce que j’écris donc plus il y a de contenu dans un article et plus long est sa rédaction. J’ai d’ailleurs deux brouillons en cours qui à mon avis ne seront jamais terminés. L’intérêt que j’ai pour les terminer est moindre en ce moment et la charge de travail à fournir encore assez conséquente <em>(qui a dit qu’il n’y avait que les titres ?)</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_que_faire">Que faire ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>De ce fait, je me suis dit que j’allais appliquer une méthode similaire à celle de <a href="http://blog.javabien.net/2014/02/15/trois-fruits-et-legumes-par-jour-et-un-article-de-blog/">David Gageot</a>. Pour faire un résumé, David s’est décidé à écrire tous les jours ouvrés <em>(donc pas le week-end bande de geek)</em> un article sur son blog.</p>
+</div>
+<div class="paragraph">
+<p>Avouez que l’idée est séduisante. Je ne sais pas si j’arriverais à être aussi régulier que lui, mais je vais tenter cette aventure. Je pense d’ailleurs que la régularité est la clé du succès <em>(non commercial, je ne gagne rien à écrire sauf flatter mon ego)</em>. Dans le cas contraire, cela ressemblera trop à ce qui m’arrive actuellement. Peu ou pas de nouveaux article ce qui donne moins d’un article tous les deux mois.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qu_est_ce_que_je_vais_aborder">Qu’est ce que je vais aborder ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Alors là c’est une grande question. Je pense que dans un premier temps, je vais continuer <a href="/2013/02/22/Eclipse-cet-IDE-que-je-ne-connais-pas-vraiment.html">ma série sur l’IDE Eclipse</a>. Au lieu d’essayer d’expliquer quelque chose en détail, je ne mettrais que des petites astuces pour mieux développer et se simplifier la vie.</p>
+</div>
+<div class="paragraph">
+<p>Pour la suite, je verrais bien ce qui me tente. Peut être AngularJS vu que c’est pas mal du tout et que je commence à bidouiller avec. Ou bien quelques petites choses en pur JEE voir un poil de Ruby. Comme dirait l’autre « Wait &amp; See »</p>
+</div>
+<div class="paragraph">
+<p>Sur ces mots, je vous dis donc à lundi prochain pour un nouvel article.</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/divers">divers</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2014/02/28/Write-once-run-No-write-as-often-as-possible.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Write%20once%2C%20run%E2%80%A6%20No%2C%20write%20as%20often%20as%20possible&amp;url=http://blog.jabby-techs.fr/2014/02/28/Write-once-run-No-write-as-often-as-possible.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2014/02/28/Write-once-run-No-write-as-often-as-possible.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

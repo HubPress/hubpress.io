@@ -1,0 +1,20 @@
+= Eclipse Tips 003 – Les favoris accélèrent le développement
+:published_at: 2014-03-05
+:hp-tags: eclipse,tips
+
+Lorsque l’on commence à mieux connaître Eclipse, on se rend compte que la gestion de l’auto-complétion peut être très poussée et qu’elle vous permet d’optimiser votre rapidité de développement. L’un de ses paramètres m’est d’ailleurs utile quotidiennement notamment dans le cas des tests unitaires. Il s’agit des favoris. Là tout de suite, je vous sens fébrile. Vous voulez savoir ce que c’est ?
+
+Les favoris sont en fait les classes que vous préférez utiliser. Une fois que vous les avez indiquées, vous pouvez directement utiliser les méthodes de ces classes dans l’auto-complétion. Comme je le disais, je m’en sers principalement dans les tests car comme beaucoup, j’utilise énormément les méthodes de la classe Assert de JUnit, mais également celles de Mockito ou Matchers de la bibliothèque Mockito.
+
+Pour les configurer, vous devez aller dans « Window > Preferences » puis tapez directement « Favorites » dans la barre de recherche. Ensuite, il vous reste plus qu’à indiquer vos classes préférées en utilisant le bouton « New Type ». Insérer le nom complet de la classe (c’est à dire avec son package) et cliquez sur « Ok ».
+
+image::/images/2014/03/favorites.png[align="center"]
+
+Voilà c’est fait, vous aurez l’auto-complétion sur les méthodes de ces classes.
+
+
+image::/images/2014/03/favorites-autocomplete.png[align="center"]
+
+*C’est pas mal mais Sonar gueule avec mes imports statiques, peut-on faire mieux ?*
+
+La réponse est bien évidemment oui, sinon, je n’aurais pas posé cette question juste au-dessus. En fait, en configurant les « Save Actions », vous pouvez automatiquement préfixer les appels statiques de méthodes avec la classe correspondante. Mais on verra ça un autre jour, peut-être demain.

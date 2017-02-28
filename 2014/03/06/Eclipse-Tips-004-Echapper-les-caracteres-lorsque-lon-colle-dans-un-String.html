@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Eclipse Tips 004 – Echapper les caractères lorsque l’on colle dans un String</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2014/03/06/Eclipse-Tips-004-Echapper-les-caracteres-lorsque-lon-colle-dans-un-String.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Eclipse Tips 004 – Echapper les caractères lorsque l’on colle dans un String" />
+    <meta property="og:description" content="Si vous aussi vous faîtes parti des rares personnes à écrire vos RegExp à la main, cette petite astuce risque de vous intéresser. En effet, vous êtes serein, vous prévoyez votre RegExp dans un éditeur de texte, voir quelqu’un..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2014/03/06/Eclipse-Tips-004-Echapper-les-caracteres-lorsque-lon-colle-dans-un-String.html" />
+    <meta property="article:published_time" content="2014-03-05T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.933Z" />
+    <meta property="article:tag" content="eclipse" />
+    <meta property="article:tag" content="tips" />
+    <meta property="article:tag" content="java" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Eclipse Tips 004 – Echapper les caractères lorsque l’on colle dans un String" />
+    <meta name="twitter:description" content="Si vous aussi vous faîtes parti des rares personnes à écrire vos RegExp à la main, cette petite astuce risque de vous intéresser. En effet, vous êtes serein, vous prévoyez votre RegExp dans un éditeur de texte, voir quelqu’un..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2014/03/06/Eclipse-Tips-004-Echapper-les-caracteres-lorsque-lon-colle-dans-un-String.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Eclipse Tips 004 – Echapper les caractères lorsque l’on colle dans un String",
+    "url": "http://blog.jabby-techs.fr/2014/03/06/Eclipse-Tips-004-Echapper-les-caracteres-lorsque-lon-colle-dans-un-String.html",
+    "datePublished": "2014-03-05T23:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.933Z",
+    "keywords": "eclipse, tips, java",
+    "description": "Si vous aussi vous faîtes parti des rares personnes à écrire vos RegExp à la main, cette petite astuce risque de vous intéresser. En effet, vous êtes serein, vous prévoyez votre RegExp dans un éditeur de texte, voir quelqu’un..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-eclipse tag-tips tag-java">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-eclipse tag-tips tag-java">
+
+
+            <h1 class="post-title">Eclipse Tips 004 – Echapper les caractères lorsque l’on colle dans un String</h1>
+
+            <span class="post-meta label"><time datetime="2014-03-06">06 Mar 2014</time></span>
+
+            <section class="post-content">
+                <div class="paragraph">
+<p>Si vous aussi vous faîtes parti des rares personnes à <a href="http://www.commitstrip.com/fr/2014/02/24/coder-on-the-verge-of-extinction/">écrire vos RegExp à la main</a>, cette petite astuce risque de vous intéresser.</p>
+</div>
+<div class="paragraph">
+<p>En effet, vous êtes serein, vous prévoyez votre RegExp dans un éditeur de texte, voir quelqu’un l’a écrite pour vous dans des spécifications. Et là, vous collez cette expression dans une chaîne de caractères en Java. et vous vous rendez à l’évidence. Il vous faut tout échapper. Normal me direz vous.</p>
+</div>
+<div class="paragraph">
+<p>Mais imaginez une RegExp complexe, longue que vous commencez à échapper à la main (je ne cautionne pas) et là votre voisin vous interpelle pour vous poser une question. Ce moment, où vous ne voulez pas répondre à part « Je code »… Mais c’est le drame, vous perdez le fil de votre échappement et vous vous retrouvez à ne plus savoir si ce « \\ » doit être échappé ou non… Ne vous inquiétez pas, j’ai une solution.</p>
+</div>
+<div class="paragraph">
+<p>Accédez aux préférences « Window &gt; Preferences », et recherchez « Escape » vous aurez alors la possibilité de cocher l’option « Escape text when pasting into a string literal » de l’éditeur Java.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2014/03/escape-when-pasting.png" alt="escape when pasting.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Ainsi lors de vos prochains collages (non, pas comme à la maternelle) dans une chaîne de caractère, la chaîne sera automatiquement échappée. Le code ci-dessous présente une chaîne non échappé automatiquement et son équivalent une fois l’option activée.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public static final String EMAIL_PATTERN_PASTE_WITHOUT_AUTO_ESCAPE = "^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"; // Cette ligne ne compile pas
+public static final String EMAIL_PATTERN_PASTE_WITH_AUTO_ESCAPE = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vous pouvez également faire la même chose dans l’éditeur JavaScript. Par contre, je n’ai pas pris le temps d’essayer pour vous.</p>
+</div>
+<div class="paragraph">
+<p><strong>Attention : si la chaîne est déjà échappée, elle le sera doublement… Pensez-y avant de copier/coller vos RegExp (ou autre texte que vous collez). Dans ce cas, coller la chaîne hors des doubles quotes et ajoutez les autour après coup.</strong></p>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/eclipse">eclipse</a>, <a href="http://blog.jabby-techs.fr/tag/tips">tips</a>, <a href="http://blog.jabby-techs.fr/tag/java">java</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2014/03/06/Eclipse-Tips-004-Echapper-les-caracteres-lorsque-lon-colle-dans-un-String.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Eclipse%20Tips%20004%20%E2%80%93%20Echapper%20les%20caract%C3%A8res%20lorsque%20l%E2%80%99on%20colle%20dans%20un%20String&amp;url=http://blog.jabby-techs.fr/2014/03/06/Eclipse-Tips-004-Echapper-les-caracteres-lorsque-lon-colle-dans-un-String.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2014/03/06/Eclipse-Tips-004-Echapper-les-caracteres-lorsque-lon-colle-dans-un-String.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

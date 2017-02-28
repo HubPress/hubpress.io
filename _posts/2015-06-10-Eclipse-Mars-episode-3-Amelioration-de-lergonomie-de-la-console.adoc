@@ -1,0 +1,34 @@
+= Eclipse Mars - épisode 3 - Amélioration de l'ergonomie de la console
+:hp-tags: eclipse, mars
+
+A part au niveau des éditeurs de code, un développeur passe un peu de temps dans la console pour voir comment son programme se comporte. Que ce soit pour simplement vérifier le fonctionnement général de l'application ou bien pour vérifier qu'il n'y a pas d'exceptions générées lors de l'utilisation de l'application.
+
+Eclipse Mars (qui sort en juin) comporte donc quelques améliorations pour nous développeurs. Je les trouve plutôt sympathiques donc autant vous en faire profiter.
+
+== Verrouillage automatique du défilement
+
+Un truc assez embêtant lorsque les logs de l'application sont verbeux, c'est que l'on n'a généralement pas le temps de lire les logs que d'autres sont de nouveaux écrits dans la console. Ce qui empêche le développeur que je suis de finir de lire ce que j'avais commencé. 
+
+Généralement, l'utilisateur va donc remonter avec dans les logs avec la barre de défilement. Malheureusement cela ne résout pas le problème puisqu'à chaque nouvelle ligne de log, la console réaffiche les lignes nouvellement écrites.
+
+Pour désactiver ce fonctionnement et permettre la lecture des logs, il existe un bouton permettant de bloquer le défilement. Il n'est pas activé par défaut (à mon avis heureusement) mais peut être utile de temps à autres.
+
+image::/images/2015/06/console-scroll-lock-option.png[align="center"]
+
+Une amélioration appréciable au niveau de la console est d'activer l'option de verrouillage dès lors que l'on utilise la molette de la souris pour remonter dans l'historique des logs. Ce n'est pas grand chose, mais c'est réellement appréciable. Pour réactiver le défilement automatique il faut alors soit cliquer sur le bouton correspondant soit de redescendre via la molette.
+
+== Retour à la ligne pour les longues lignes de log
+
+Un autre point intéressant sur la console est le fait de pouvoir maintenant avoir un retour à la ligne automatique pour son contenu. Cela permet donc de lire le contenu de la console sans devoir se déplacer avec la barre de défilement horizontale. 
+
+image::/images/2015/06/console-without-word-wrap.png[align="center"]
+
+L'option n'est pas activée par défaut, ce qui se comprend pour éviter de perturber les utilisateurs. Elle peut être facilement activée avec le bouton correspondant. 
+
+image::/images/2015/06/console-word-wrap-option.png[align="center"]
+
+A noter que lors de l'activation / désactivation, il y a un petit délai avant de voir le nouveau mode d'affichage. Je n'ai pas regardé le code, mais je suppose que c'est pour permettre de recalculer le caractère où l'on doit découper pour l'affichage.
+
+image::/images/2015/06/console-word-wrap.png[align="center"]
+
+J'espère que ces petites améliorations vous plairont autant qu'à moi.

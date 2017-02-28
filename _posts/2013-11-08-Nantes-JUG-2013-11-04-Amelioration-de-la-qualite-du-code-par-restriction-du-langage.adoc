@@ -1,0 +1,34 @@
+= Nantes JUG 2013-11-04 : Amélioration de la qualité du code par restriction du langage
+:hp-tags: Nantes JUG,java
+:published_at: 2013-11-08
+
+Comme tous les mois j’ai assisté au JUG Nantes. Cet événement est pour moi un bon moyen de voir de nouvelles choses mais également d’échanger sur les outils, les techniques et les différentes bonnes pratiques avec des développeurs plus confirmés que moi. Cette session présentait un talk intitulé « Du SQL au NoSQL en moins d’une heure » ainsi qu’un quickie dont j’ai honteusement pompé le nom pour cet article. C’est sur ce dernier que va porter mon petit billet.
+
+
+== Qu’est ce que la qualité de code ?
+
+http://www.hugowood.net/[Hugo Wood] a tout d’abord rappelé ce qu’était la qualité de code pour lui. Ce n’est pas parce que l’on a 100% de couverture de code, pleins de TU, plein de TI ainsi que des tests UI automatisés que la qualité est au rendez-vous. Il faut avant tout que le code soit *maintenable*. Sans cela pas de qualité. Ceci passe principalement par de la modularité et donc de la testabilité (notamment via la pratique du TDD).	
+
+== Apporter des restrictions pour être plus maintenable
+
+Après ce rapide constat auquel j’adhère totalement, Hugo présente plusieurs restrictions de code sur Java pour aider à améliorer la qualité du code.
+
+* Ne pas utiliser *null* : ce n’est pas orienté objet, ce n’est pas type-safe
+** *Solution proposée :* renvoyer toujours un objet (exemple chaîne vide au lieu de null pour les String).
+* Eviter d’utiliser les méthodes privées 
+** Lorsque l’on créé des méthodes privées pour découper le métier d’une méthode publique obèse, les tests ne sont pas découpés car il n’y a pas de nouveaux points d’entré pour tester.
+** *Solution proposée :* Préférer un découpage en méthodes de type public/protected/default voir en plusieurs objets pour découper les tests.
+* L’héritage peut être un piège 
+** si on teste une classe fille, on teste partiellement la mère en même temps via les super()
+** Couplage fort et rupture de l’encapsulation (accès aux membres protected ou default)
+** *Solution proposée :* utiliser uniquement les interfaces pour le polymorphisme et utiliser la composition pour la réutilisation du code
+* Static dispatch ou l’enfer 2.0 
+** Potentiellement difficile à tester et à maintenir
+** Détruit le polymorphisme
+** *Solution proposée :* Ne pas utiliser 😀
+
+== Bilan de la présentation
+
+Avant tout Hugo rappelle que les restrictions sont très intéressantes mais qu’il ne faut pas non plus être un intégriste en ne faisant que ça. Il faut savoir peser le pour et le contre dans l’utilisation ou non de toutes les possibilité du langage. Par contre, l’application au cas par cas des restrictions peut dérouter les débutants. Dans ce cas, l’application systématique des restrictions de langage permet de cadrer les débutants afin de garder un certain niveau de qualité de code.
+
+Si le sujet vous intéresse, vous pouvez retrouver les slides de la présentation à cette adresse : Lien vers les http://fr.slideshare.net/mercury_wood/amliorer-la-qualit-du-code-par-restriction-du-langage[slides de la présentation].

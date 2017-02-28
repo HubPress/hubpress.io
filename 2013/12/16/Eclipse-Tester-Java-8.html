@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Eclipse : Tester Java 8</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2013/12/16/Eclipse-Tester-Java-8.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Eclipse : Tester Java 8" />
+    <meta property="og:description" content="Suite à la soirée du Nantes JUG le 4 décembre 2013, j’ai voulu tester un peu Java 8. Comme j’ai l’habitude d’utiliser Eclipse, j’ai voulu voir où en était la prise en compte des modifications..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2013/12/16/Eclipse-Tester-Java-8.html" />
+    <meta property="article:published_time" content="2013-12-15T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.945Z" />
+    <meta property="article:tag" content="eclipse" />
+    <meta property="article:tag" content="java" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Eclipse : Tester Java 8" />
+    <meta name="twitter:description" content="Suite à la soirée du Nantes JUG le 4 décembre 2013, j’ai voulu tester un peu Java 8. Comme j’ai l’habitude d’utiliser Eclipse, j’ai voulu voir où en était la prise en compte des modifications..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2013/12/16/Eclipse-Tester-Java-8.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Eclipse : Tester Java 8",
+    "url": "http://blog.jabby-techs.fr/2013/12/16/Eclipse-Tester-Java-8.html",
+    "datePublished": "2013-12-15T23:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.945Z",
+    "keywords": "eclipse, java",
+    "description": "Suite à la soirée du Nantes JUG le 4 décembre 2013, j’ai voulu tester un peu Java 8. Comme j’ai l’habitude d’utiliser Eclipse, j’ai voulu voir où en était la prise en compte des modifications..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-eclipse tag-java">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-eclipse tag-java">
+
+
+            <h1 class="post-title">Eclipse : Tester Java 8</h1>
+
+            <span class="post-meta label"><time datetime="2013-12-16">16 Dec 2013</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Suite à la soirée du <a href="http://nantesjug.org/#/events/2013_12_04">Nantes JUG le 4 décembre 2013</a>, j’ai voulu tester un peu Java 8. Comme j’ai l’habitude d’utiliser Eclipse, j’ai voulu voir où en était la prise en compte des modifications du langage au sein de l’IDE. Tout n’est pas encore au point mais, je suis plutôt content de l’avancement. Voici comment installer un environnement fonctionnel.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installer_le_jdk_8">Installer le JDK 8</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Comme la version de Java 8 n’est pas encore sortie officiellement, il est nécessaire d’aller sur le site <a href="https://jdk8.java.net/download.html" class="bare">https://jdk8.java.net/download.html</a> pour obtenir une installation selon votre système d’exploitation. Je vais pour ma part expliquer la marche à suivre pour Windows 7 (ou 8 car ça fonctionne sur les deux). A priori, il ne doit pas y avoir de grosses différences pour les autres plateformes.</p>
+</div>
+<div class="paragraph">
+<p>Donc sur le site <a href="https://jdk8.java.net/download.html" class="bare">https://jdk8.java.net/download.html</a>, acceptez la licence d’utilisation (Accept License Agreement) puis téléchargez le jdk correspondant à votre système d’exploitation. Une fois le téléchargement effectué, lancez l’installation de Java 8.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_r_cup_ration_d_un_eclipse_luna_m3">Récupération d’un Eclipse Luna M3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>J’aime bien faire plein de tests, alors je me suis pris également une version d’Eclipse Luna M3 (future version d’Eclipse) pour tester Java 8. Je n’ai pas tester avec une version Kepler de l’IDE. Pour cela, accédez à la page de téléchargement d’Eclipse et recherchez la partie « Developer Builds » ou cliquez directement sur ce lien <a href="http://www.eclipse.org/downloads/index-developer.php" class="bare">http://www.eclipse.org/downloads/index-developer.php</a> pour les plus flemmards d’entre vous.</p>
+</div>
+<div class="paragraph">
+<p>Sélectionnez le packaging que vous préférez et téléchargez le. J’ai pris personnellement la version « Eclipse IDE for Java EE Developers Eclipse IDE for Java EE Developers ». Une fois le téléchargement terminé, dézippez l’archive dans le répertoire de votre choix.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation_des_plugins_pour_le_support_de_java_8">Installation des plugins pour le support de Java 8</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il existe deux solutions pour cette partie. La première est de construire vos plugins, la seconde d’utiliser un dépôt de Spring Source pour installer les plugins. Mon petit côté « j’ai envie de jouer vite fait et pas de me prendre la tête » m’a fait opter pour la seconde solution.</p>
+</div>
+<div class="paragraph">
+<p>Pour la seconde solution, il suffit tout simplement de suivre les instructions suivantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lancez votre Eclipse fraîchement dézippé</p>
+</li>
+<li>
+<p>Accédez au menu « Help &gt; Install New Software… »</p>
+</li>
+<li>
+<p>Indiquez l’url suivante dans le champ « Work With » : <a href="http://build.eclipse.org/eclipse/builds/4P/siteDir/updates/4.3-P-builds" class="bare">http://build.eclipse.org/eclipse/builds/4P/siteDir/updates/4.3-P-builds</a></p>
+</li>
+<li>
+<p>Appuyez sur la touche « Entrée » pour rafraîchir la liste des plugins disponibles</p>
+</li>
+<li>
+<p>Sélectionnez la catégorie « Eclipse Java 8 Support (BETA) »</p>
+</li>
+<li>
+<p>Validez les boutons « Next » jusqu’à la licence</p>
+</li>
+<li>
+<p>Acceptez la licence</p>
+</li>
+<li>
+<p>Cliquez sur « Finish »</p>
+</li>
+<li>
+<p>Pendant l’installation, acceptez l’alerte de sécurité</p>
+</li>
+<li>
+<p>Redémarrez Eclipse</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Vous pouvez maintenant relancer Eclipse. En toute logique (en tout cas sous Windows), Eclipse devrait détecter directement la version Java 8 (en l’occurrence la présence du JRE 8 dans JAVA_HOME). Maintenant votre IDE est configuré pour fonctionner avec Java 8. Il vous suffira d’indiquer l’environnement d’exécution JavaSE-1.8.</p>
+</div>
+<div class="paragraph">
+<p>Cerise sur le gâteau, m2e est compatible. Il suffit de préciser au maven-compiler-plugin la version souhaité du JRE. Voici un pom d’exemple :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;fr.jabbytechs.tb&lt;/groupId&gt;
+    &lt;artifactId&gt;java-8-lambda&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+
+    &lt;properties&gt;
+        &lt;source-encoding&gt;UTF-8&lt;/source-encoding&gt;
+        &lt;jdk-version&gt;1.8&lt;/jdk-version&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;pluginManagement&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;3.1&lt;/version&gt;
+                    &lt;configuration&gt;
+                        &lt;source&gt;${jdk-version}&lt;/source&gt;
+                        &lt;target&gt;${jdk-version}&lt;/target&gt;
+                        &lt;showDeprecation&gt;true&lt;/showDeprecation&gt;
+                        &lt;encoding&gt;${source-encoding}&lt;/encoding&gt;
+                    &lt;/configuration&gt;
+                &lt;/plugin&gt;
+
+                &lt;plugin&gt;
+                    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                    &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;2.6&lt;/version&gt;
+                    &lt;configuration&gt;
+                        &lt;encoding&gt;${source-encoding}&lt;/encoding&gt;
+                    &lt;/configuration&gt;
+                &lt;/plugin&gt;
+            &lt;/plugins&gt;
+        &lt;/pluginManagement&gt;
+    &lt;/build&gt;
+&lt;/project&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quelques_informations_suppl_mentaires">Quelques informations supplémentaires</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si vous souhaitez en savoir plus sur la compatibilité actuelle entre Eclipse et Java 8, je vous invite à visiter cette page <a href="http://wiki.eclipse.org/JDT_Core/Java8" class="bare">http://wiki.eclipse.org/JDT_Core/Java8</a>.</p>
+</div>
+<div class="paragraph">
+<p>Si vous voulez connaître les nouveautés Java 8, vous pouvez voir la liste complète à cette adresse <a href="http://openjdk.java.net/projects/jdk8/features" class="bare">http://openjdk.java.net/projects/jdk8/features</a>.</p>
+</div>
+<div class="paragraph">
+<p>J’espère que ce petit article aidera les curieux à tester Java 8, car c’est clairement prometteur tant sur les lambdas et la nouvelle API stream que d’autres parties plus pointues tel que la suppression du Permanent Generation (ou permgen).</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/eclipse">eclipse</a>, <a href="http://blog.jabby-techs.fr/tag/java">java</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2013/12/16/Eclipse-Tester-Java-8.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Eclipse%20%3A%20Tester%20Java%208&amp;url=http://blog.jabby-techs.fr/2013/12/16/Eclipse-Tester-Java-8.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2013/12/16/Eclipse-Tester-Java-8.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

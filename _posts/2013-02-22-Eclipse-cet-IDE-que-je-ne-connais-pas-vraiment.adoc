@@ -1,0 +1,24 @@
+= Eclipse : cet IDE que je ne connais pas vraiment
+:hp-tags: eclipse,IDE
+:published_at: 2013-02-22
+
+
+
+Cette semaine après finalement 4 bonnes années à utiliser Eclipse, je me suis rendu compte que je ne connaissais pas vraiment mon IDE. En effet, je suis un utilisateur plutôt lambda qui sait ouvrir l’éditeur et coder des trucs dedans. J’ai bien entendu un tas d’habitudes notamment quelques raccourcis clavier par-ci par-là, mais je ne connais pas en profondeur mon environnement de travail.
+
+== Constats sur ce manque de connaissances
+
+Cette méconnaissance m’a amené à me poser plusieurs questions assez simple. Est ce grave ? Quels sont les impacts ? Y-a-t-il des avantages significatifs à connaître Eclipse sur le bout des doigts ? Est ce que ça va sauver un chat ? Après une rapide réflexion je me suis dit que d’une part, le fait de ne pas maîtriser mon IDE me faisais perdre du temps. Si l’on connais bien son IDE, on peut faire certaines actions plus vite, voir éviter de faire certaines choses car Eclipse peut le faire pour moi. La perspective de gagner du temps et d’avoir moins à en faire m’intéresse. Je resterais moins longtemps au travail donc j’aurais plus de temps pour les loisirs (enfin ça, c’est la théorie). D’autre part, peut être que ça sauvera un petit chat en dégageant du temps pour le nourrir (par contre le portefeuille en prendra un coup !).
+
+De cette réflexion, je me suis demandé où trouver des informations récentes qui m’époustouflerait. La réponse est simple pour moi. Une bonne partie des informations se trouve dans Eclipse, il n’y a qu’à lire les aides fournies et la documentation. Comme dirait les anglais (ou les informaticiens), *RTFM !!!*. Bien entendu, l’autre source d’information est Internet lui-même via de bon moteur de recherche.
+
+Ceci m’incite donc à faire quelques petits efforts et à apprendre à utiliser Eclipse. Je vais donc écrire quelques articles à ce sujet. Je ferais peut être plusieurs catégories de « Tips » mais je ne sais pas encore. L’avenir nous le dira.
+
+== Apprendre à utiliser Eclipse
+
+Voici la liste des articles actuellement disponibles. Elle sera bien entendu enrichie en fonction des articles que je publierais.
+
+* link:/2013/02/23/Eclipse-Les-raccourcis-claviers-utiles.html[Les raccourcis claviers utiles]
+* link:/2013/06/03/Eclipse-ameliorer-laide-a-la-saisie.html[Améliorer l’aide à la saisie]
+* link:/2013/12/07/Eclipse-comment-creer-et-utiliser-des-templates-de-code.html[Comment créer et utiliser des templates de code]
+

@@ -1,0 +1,21 @@
+= Eclipse Tips 006 – activer l’autocomplétion sur tout
+:published_at: 2014-03-07
+:hp-tags: eclipse,tips,java,auto-complétion
+
+
+J’ai découvert il y a trois jours cette petite astuce à propos de l’auto-complétion. Je devrais d’ailleurs plutôt remercier link:http://blog.vogella.com/author/vogella/[Lars Vogel] pour cette découverte.
+
+Comme vous le savez, par défaut, l’auto-complétion se lance soit lorsque l’on utilise le raccourci clavier « Ctrl + Espace » soit après un petit temps d’activation lorsque l’on tape un point. Il est possible, et c’est là le sujet du jour, d’activer l’auto-complétion sur d’autres éléments que le point. Ainsi dès que l’on commence à taper quelque chose, l’auto-complétion s’active.
+
+Pour activer cette option, accédez au préférences suivantes : « Window > Preferences > Java > Editor > Content Assist ». Une fois les préférences affichées, , il vous suffit dans l’encadré « Auto activation » de changer le masque de l’option « Auto activation triggers for Java » et de mettre le masque suivant :
+
+[source,linenums]
+----
+._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+----
+
+image::/images/2014/03/auto-activation-triggers-for-java.png[align="center"]
+
+Voilà c’est fait, plus besoin en Java d’appuyer frénétiquement sur « Ctrl + Espace » pour avoir l’auto-complétion sur une méthode pour laquelle vous avez déjà commencé à taper le nom. Eclipse proposera directement les choix possibles. A vous de voir si vous activez ce nouveau masque. En effet, au premier abord, cela peut perturber légèrement vos habitudes.
+
+Il est possible d’activer la même option pour l’éditeur JavaScript. Je n’ai pour le moment pas encore activé celle-ci vu le peu de JavaScript que je fais ces derniers jours.

@@ -1,0 +1,134 @@
+= Eclipse : comment créer et utiliser des templates de code
+:hp-tags: eclipse,templates
+:published_at: 2013-12-07
+
+
+Toujours dans le but d’améliorer ma connaissance sur Eclipse, je cherche et gratte un peu sous le capot des options. Dernièrement c’est grâce à la sortie d’Eclipse Kepler que j’ai re-découvert certaines fonctionnalités intéressantes dont les templates. J’en parlais d’ailleurs de façon succincte dans link:/2013/07/04/Eclipse-Kepler-est-arrive.html[cet article]. Le but de l’article n’est pas de vous donner tous les meilleurs templates du monde mais simplement de vous expliquer comment en créer pour vous faciliter la vie.
+
+== Un template de code ça ressemble à quoi ?
+
+La réponse est simple, ça dépend. Oui bon c’était facile. En fait, ça dépend simplement à quel type de code ou texte le template fait référence. Si l’on prend Eclipse Kepler en version JEE Developer, on trouve de nombreuses possibilités de templates. Chacune correspondant à une utilisation spécifique. Par exemple, on retrouve des templates pour les commentaires SVN, des templates pour le SQL, mais également pour le Java, le JavaScript, et les JSP.
+
+Dans Eclipse, un template correspond donc à un gabarit (en même temps c’est la traduction littérale) identifié par une chaîne de caractères. Ce gabarit contient du code formaté et modifiable facilement. Ceci permet d’une part d’avoir une certaine homogénéité dans ce que l’on écrit mais également de ne pas ressaisir à chaque fois les même lignes. En effet, le template s’active avec l’aide à la saisie avec simplement quelques caractères.
+
+Exemple d’un template pour l’écriture d’un test JUnit (identifieur : test) :
+
+[source,java,linenums]
+----
+${:import(org.junit.Test, org.junit.Assert)}
+ 
+@${testType:newType(org.junit.Test)}
+public void ${testName}() {
+    Assert.fail("Not yet implemented");${cursor}
+}
+----
+
+
+Exemple d’un template pour la création d’un nouveau fichier JSP au format xhtml (identifieur : New JSP File (xhtml)):
+
+[source,html,linenums]
+----
+<?xml version="1.0" encoding="${encoding}" ?>
+<%@ page language="java" contentType="text/html; charset=${encoding}" pageEncoding="${encoding}"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=${encoding}" />
+        <title>Insert title here</title>
+    </head>
+    <body>
+        ${cursor}
+    </body>
+</html>
+----
+
+== Comment créer un template
+
+Une fois Eclipse lancé, vous pouvez facilement créer un template en suivant la procédure suivante. Dans *Window > Preferences > Champs de saisie pour filtrer, taper « template »*. Là vous allez trouver votre bonheur. Je ne vous ai pas menti, il y a plein d’endroit où créer des templates. Je vais me concentrer sur la partie Java. Mais comme je suis sympa, en fin d’article je vous donnerai certains que j’ai créés et que j’utilise pour mes projets.
+
+image::/images/2013/08/filtrer-preferences-templates.png[align="center"]
+
+Pour créer ou modifier un template Java, il suffit donc d’aller dans *Window > Preferences > Java > Editor > Templates*. Là vous pouvez soit éditer un template existant en le sélectionnant puis en cliquant sur Edit, soit cliquer sur New. Dans les deux cas, vous pouvez donc écrire le template qui vous intéresse dans l’éditeur.
+
+image::/images/2013/08/template-java.png[align="center"]
+
+Une fois l’éditeur ouvert, vous pouvez remarquer que celui-ci est constitué d’une zone de saisie de nom, d’un context, d’une description et d’un pattern. Le nom correspond à l’identifiant du template et c’est lui que l’on utilisera pour insérer un template dans notre code. Le context permet de filtrer les templates selon les besoins et le pattern correspond au contenu que l’on veut insérer. La description est facultative.
+
+image::/images/2013/08/creer-template-java.png[align="center"]
+
+Dans la partie pattern, plusieurs variables sont disponibles pour rendre les templates dynamique et plus interactif lors de leur utilisation. Le bouton Insert Variable… permet de les ajouter. Si vous voulez plus d’information sur chacune des variables, je vous invite à visiter http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Fconcepts%2Fconcept-template-variables.htm[la page Eclipse] les listant toutes.
+
+Premier essai, on va créer un template permettant d’écrire une méthode main « Hello World ». Voilà la liste des caractéristiques que nous allons indiquer :
+
+
+* *Name :* helloworld
+* *Context :* Java type members. En effet, pas besoin de créer un main dans une méthode
+* *Description :* Main Hello World
+* *Pattern :*
+
+[source,java,linenums]
+----
+public static void main(String[] args) {
+    System.out.println("Hello World !");
+    ${cursor}
+}
+----
+
+Voilà c’est fait, un premier template de créé. Comme vous pouvez le voir, ça n’a pas été compliqué surtout qu’ici, la seule variable utilisée est ${cursor}. On va donc passer la vitesse supérieure et se tester un peu plus de variables.
+
+Donc deuxième essai, on va créer un template plus utile et utilisant quelques variables. Par exemple, créer un logger sur le modèle slf4j.
+
+
+* *Name :* logger
+* *Context :* Java type members. En effet, pas besoin de créer un logger dans une méthode
+* *Description :* Logger for SLF4J
+* *Pattern :*
+
+[source,java,linenums]
+----
+${:import(org.slf4j.Logger, org.slf4j.LoggerFactory)}
+ 
+private static final Logger LOGGER = Logger.getLogger(${enclosing_type}.class)
+----
+
+Tout d’abord sur la première ligne on gère les imports des classes que l’on va utiliser. Ceci évite de devoir fixer les imports par la suite. Ensuite sur la deuxième ligne on utilise la variable ${enclosing_type}. Celle-ci permet de récupérer directement le nom de la classe dans laquelle on travaille. De ce fait, on peut indiquer le .class correspondant pour la création du logger. Dans ce cas, ceci permet avec les templates de créer des logger rapidement sans risque de ne pas mettre la bonne classe. Vous savez, genre avec un bon vieux copié/merdé.
+
+== Comment utiliser les templates Eclipse
+
+Bon voilà, on a rapidement vu comment créer des templates, il faut peut être maintenant savoir comment les utiliser. Sinon, ce que l’on a fait sert à rien. En fait, vous allez voir c’est tout simple. Tellement simple que vous en utilisez peut être déjà. Par exemple « sysout » pour afficher directement « System.out.println(); ».
+
+Donc on va ouvrir un créer une classe et ouvrir l’éditeur Java pour tester les templates. Au niveau des membres de la classe, il suffit de commencer à taper le nom du template puis sur ctrl + espace pour lancer l’autocomplétion. Normalement si tout se passe bien, une petite fenêtre d’autocomplétion apparaît et le template est présent. Cela devrait ressembler à ça :
+
+image::/images/2013/11/utilisation-template-1.png[align="center"]
+
+Comme toute autocomplétion l’appuie sur la touche « entrée » permet de valider le choix et engendre la mise en place du logger comme sur l’image suivante.
+
+image::/images/2013/11/utilisation-template-2.png[align="center"]
+
+== Exporter / Importer des templates
+
+Je suppose que comme moi, lorsque vous créerez vos propres templates, vous serez intéressé par les partager avec vos collègues, vos amis développeurs ou tout autre personnes susceptibles d’être intéressées.
+
+Je ne sais pas si vous avez fait attention, mais la fenêtre listant tous les templates permet également de les exporter et de les importer. Pour l’export, il faut sélectionner au préalables les templates que vous souhaitez exporter et de sauvegarder le fichier généré.
+
+Pour l’import c’est tout aussi simple. Il faut cliquer sur le bouton « import » puis sélectionner le fichier xml à importer. *Attention tout de même à ne pas importer plusieurs fois les même templates*. En effet, Eclipse permet d’avoir plusieurs templates pour un même mot clé (par exemple pour le mot « for »). De ce fait, rien n’empêche l’ajout d’un template existant. Ceci aura pour conséquence d’enrichir de façon inutile la liste des templates.
+
+Pour récupérer les templates que j'utilises, je vous invite à accéder à ce dépôt Github : https://github.com/jabby/eclipse-configuration. Pour les utiliser, vous devez utiliser l’un des noms de template suivant :
+
+
+* Partie logger :
+** logger
+** trace
+** debug
+** info
+** warn
+** error
+* Partie collections :
+** list
+** map
+** queue
+** set
+** sortedmap
+** sortedset
+
+Si vous avez des idées de templates autres, je suis preneur. Je mettrais tout ça sur le github correspondant.

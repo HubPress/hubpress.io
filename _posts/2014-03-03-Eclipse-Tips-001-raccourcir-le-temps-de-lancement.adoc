@@ -1,0 +1,19 @@
+= Eclipse Tips 001 – raccourcir le temps de lancement
+:published_at: 2014-03-03
+:hp-tags: eclipse,tips
+
+Voilà, je commence la mission rédaction d’un petit article tous les jours. Aujourd’hui on va parler de la durée de lancement d’Eclipse IDE. Vous savez ce truc qui met parfois 20, 30 secondes voir plus à se lancer. On va voir comment optimiser un peu tout ça tranquillement et simplement.
+
+Le temps de lancement n’arrive pas souvent dans une journée de travail, mais je fais parti des utilisateurs qui n’aiment pas attendre. J’ai donc cherché à optimiser un peu le temps de démarrage de mon IDE. Cette volonté s’est accrue lorsque j’ai travaillé sur des machines peu puissante ou dans des petites VM contenant toute la configuration d’un projet _(qui a dit hérésie ?)_.
+
+== La question est comment faire ?
+
+Une fois Eclipse ouvert il vous suffit d’accéder aux préférences de votre IDE « Window > Preferences ». Dans le champ de recherche, tapez « Startup ». Vous pouvez voir que la liste n’est plus très longue.
+
+image::/images/2014/03/startup-and-shutdown.png[align="center"]
+
+Sélectionnez « Startup and Shutdown ». Comme vous pouvez le remarquez, certains plugins d’Eclipse sont listés dans la section des plugins activés au démarrage. Il vous suffit de décocher ceux que vous ne souhaitez pas activer lors du lancement. Rassurez-vous, si vous faites appel à ces plugins lors de l’utilisation de votre IDE, ils se lanceront automatiquement. Je pense notamment au Marketplace qui ne sert pas tous les jours.
+
+D’ailleurs, je désactive généralement tous les plugins listés dans la capture précédente. Pensez également de temps à temps à regarder cette liste. En effet, lorsque vous ajoutez des plugins, elle est parfois enrichie. Il peut donc être opportun de désactiver certains plugins ajoutés.
+
+Voilà c’était l’astuce du jour. Bonne journée et à demain.

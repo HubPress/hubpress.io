@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Configurer son accès SVN à un hébergement OVH pro : partie 2</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2012/01/06/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-2.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Configurer son accès SVN à un hébergement OVH pro : partie 2" />
+    <meta property="og:description" content="Mise à jour : Le chemin pour accéder à SVN via SSH a changé. Une note a été ajouté pour bien mettre en avant cette modification de configuration. Il y a quelques jours, heu non semaines…, enfin plutôt mois en fait,..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2012/01/06/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-2.html" />
+    <meta property="article:published_time" content="2012-01-05T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.962Z" />
+    <meta property="article:tag" content="OVH" />
+    <meta property="article:tag" content="svn" />
+    <meta property="article:tag" content="pageant" />
+    <meta property="article:tag" content="tortoise" />
+    <meta property="article:tag" content="mutualisé pro" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Configurer son accès SVN à un hébergement OVH pro : partie 2" />
+    <meta name="twitter:description" content="Mise à jour : Le chemin pour accéder à SVN via SSH a changé. Une note a été ajouté pour bien mettre en avant cette modification de configuration. Il y a quelques jours, heu non semaines…, enfin plutôt mois en fait,..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2012/01/06/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-2.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Configurer son accès SVN à un hébergement OVH pro : partie 2",
+    "url": "http://blog.jabby-techs.fr/2012/01/06/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-2.html",
+    "datePublished": "2012-01-05T23:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.962Z",
+    "keywords": "OVH, svn, pageant, tortoise, mutualisé pro",
+    "description": "Mise à jour : Le chemin pour accéder à SVN via SSH a changé. Une note a été ajouté pour bien mettre en avant cette modification de configuration. Il y a quelques jours, heu non semaines…, enfin plutôt mois en fait,..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-OVH tag-svn tag-pageant tag-tortoise tag-mutualise-pro">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-OVH tag-svn tag-pageant tag-tortoise tag-mutualise-pro">
+
+
+            <h1 class="post-title">Configurer son accès SVN à un hébergement OVH pro : partie 2</h1>
+
+            <span class="post-meta label"><time datetime="2012-01-06">06 Jan 2012</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<strong>Mise à jour :</strong> Le chemin pour accéder à SVN via SSH a changé. Une note a été ajouté pour bien mettre en avant cette modification de configuration.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Il y a quelques jours, heu non semaines…, enfin plutôt mois en fait, j’ai écrit <a href="/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html">un article sur la configuration d’un accès à un dépôt SVN situé sur un hébergement OVH pro</a>. Ca se passait par là. Je reviens aujourd’hui pour expliquer succinctement comment l’utiliser sur son poste en Windows 7 via <a href="http://tortoisesvn.tigris.org/">Tortoise SVN</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation_de_tortoise_svn">Installation de Tortoise SVN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pour ma part, je vais utiliser la version anglaise 64 bits de Tortoise. En fait, il suffit de télécharger l’installateur principal puis de l’exécuter. Un assistant d’installation vous permettra de l’installer facilement. Au cas où vous souhaiteriez la version française, je vous mets également un lien direct vers la dernière version courante du pack de langue. Il suffit de le télécharger puis de lancer le programme après avoir installé la version standard.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://downloads.sourceforge.net/tortoisesvn/TortoiseSVN-1.7.0.22068-x64-svn-1.7.0.msi?download">Installateur de Tortoise SVN x64</a></p>
+</li>
+<li>
+<p><a href="http://downloads.sourceforge.net/tortoisesvn/LanguagePack_1.7.0.22068-x64-fr.msi?download">Pack de la langue française x64</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Si vous souhaitez une autre version vous pouvez récupérer celle qu’il vous faut <a href="http://tortoisesvn.net/downloads.html">ici même</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utilisation_de_pageant">Utilisation de pageant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Une fois Tortoise SVN installé on va configurer un petit agent SSH. Celui-ci nous permettra d’utiliser l’authentification par clé ssh. Cet agent est pageant. Il permet en fait de mettre « en cache » des clés SSH sur un OS Windows.</p>
+</div>
+<div class="paragraph">
+<p>Vous pouvez le télécharger en <a href="http://the.earth.li/~sgtatham/putty/latest/x86/pageant.exe">cliquant ici</a>. Une fois téléchargé, notez son chemin d’accès dans un coin.</p>
+</div>
+<div class="paragraph">
+<p>Si vous lancez l’exécutable vous verrez dans la barre des tâches un <a href="http://fr.wikipedia.org/wiki/Daemon_%28informatique%29">daemon</a>. Via un clic droit dessus vous aurez alors la possibilité de charger une clé SSH. Ceci est pratique mais lors d’une utilisation régulière, on se rend compte que charger manuelle la clé est une tâche récurrente. Nous allons donc directement charger une clé au démarrage de pageant.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2012/01/daemon-pageant.png" alt="daemon pageant.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Pour ajouter automatiquement notre clé lors du lancement de pageant, nous allons créer un raccourci vers l’exécutable sur le bureau (l’emplacement final du raccourci est peu important). Une fois le raccourci créé, nous allons l’éditer. Clic droit sur le raccourci, puis Propriétés.</p>
+</div>
+<div class="paragraph">
+<p>Dans l’onglet raccourci, nous allons modifier la valeur du champ texte « Cible : ». Dans mon cas la valeur de départ est la suivante : <strong>"C:\Program Files (x86)\WinSCP\PuTTY\pageant.exe"</strong>. On rajoute à la suite de cette chaîne de caractère une nouvelle chaîne indiquant l’emplacement de la clé à charger par défaut. Dans mon cas ce sera : <strong>"D:\informatique\projets\Jabby Tech’s\ssh-svn-key\key-tuto-svn.ppk"</strong>. La chaîne complète du champ cible devient donc :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>"C:\Program Files (x86)\WinSCP\PuTTY\pageant.exe" "D:\informatique\projets\Jabby Tech’s\ssh-svn-key\key-tuto-svn.ppk"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Il est important de mettre les doubles quotes autour du chemin vers la clé privé SSH. En effet, dans le cas où le chemin contiendrait des espaces, Windows n’interprétera pas la fin du chemin et donc vous n’obtiendrez pas le chargement automatique de la clé lors du lancement de pageant. Cliquer sur OK pour valider les modifications. Vous pouvez dès à présent fermer pageant et le relancer via le raccourci. La clé SSH sera automatiquement chargée.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utilisation_de_tortoise_pour_acc_der_un_svn_travers_un_tunnel_ssh">Utilisation de Tortoise pour accéder à un SVN à travers un tunnel SSH</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pour vérifier si votre connexion fonctionne. Cliquer droit sur un dossier. Comme vous pouvez le constater, le menu contextuel a été enrichie de plusieurs options relatives à tortoiseSVN. Choisissez l’option tortoiseSVN puis Repo-browser (pour la version anglaise)</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2012/01/tortoise-menu-repobrowser.png" alt="tortoise menu repobrowser.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Une nouvelle fenêtre s’ouvre. Elle permet de spécifier où se trouve un dépot auquel vous souhaiter accéder. Il est possible d’utiliser différents protocole pour l’accès. Dans le cas d’un dépôt configuré sous OVH mutualisé, nous utiliserons le protocole svn+ssh.</p>
+</div>
+<div class="paragraph">
+<p>L’adresse doit être de la forme suivant : <strong>svn+ssh://$USER@$URL/$REPOSITORY/</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>$USER</strong> : votre identifiant de connexion en ssh sur l’hébergement OVH mutualisé</p>
+</li>
+<li>
+<p><strong>$URL</strong> : url de connexion pour votre compte ssh <em class="line-through">(correspond également à votre domaine principal)</em></p>
+</li>
+<li>
+<p><strong>$REPOSITORY</strong> : le nom du dépôt auquel vous souhaitez vous connecter. Dans notre cas ce sera celui créé dans le tutoriel précédent (projets)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Attention l’url n’est plus celle du nom de domaine. Une mise à jour de la part d’OVH a été effectuée.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Par exemple pour le cas de Jabby Tech’s et le cluster 001 (cf. le lien OVH pour savoir sur quel cluster vous êtes), on pourrait avoir l’url suivante svn+ssh://jabberwock@ssh.cluster001.ovh.net/projets/</p>
+</div>
+<div class="paragraph">
+<p><em class="line-through">Par exemple, dans le cas de Jabby Tech’s, on pourrait avoir l’url suivante svn+ssh://jabberwock@jabby-techs.fr/projets/</em></p>
+</div>
+<div class="paragraph">
+<p>Notez l’url et faites « OK ». Deux fenêtre s’ouvre directement (enfin si tout fonctionne bien). La première correspond au navigateur. La second qui se trouve par dessus la première vous demande si vous faites confiance à l’hôte et si vous souhaitez donc ajouter l’empreinte du serveur svn dans les empreintes connues par votre ordinateur. Ce message apparaît car on utilise le protocole svn+ssh. Accepter le serveur (si vous êtes sûr du serveur bien entendu). Si tout se passe normalement, vous devriez obtenir un écran similaire à celui-ci (moins les numéros que j’ai rajoutés)</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2012/01/depot-distant.png" alt="depot distant.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Voilà, la configuration est officiellement opérationnelel. Bien joué et amusez-vous bien !</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/OVH">OVH</a>, <a href="http://blog.jabby-techs.fr/tag/svn">svn</a>, <a href="http://blog.jabby-techs.fr/tag/pageant">pageant</a>, <a href="http://blog.jabby-techs.fr/tag/tortoise">tortoise</a>, <a href="http://blog.jabby-techs.fr/tag/mutualise-pro">mutualisé pro</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2012/01/06/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-2.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Configurer%20son%20acc%C3%A8s%20SVN%20%C3%A0%20un%20h%C3%A9bergement%20OVH%20pro%20%3A%20partie%202&amp;url=http://blog.jabby-techs.fr/2012/01/06/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-2.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2012/01/06/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-2.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

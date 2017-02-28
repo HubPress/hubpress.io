@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Eclipse Mars - épisode 2 - Filtrer la popup Open Resources</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2015/05/28/Eclipse-Mars-episode-2-Filtrer-la-popup-Open-Resources.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Eclipse Mars - épisode 2 - Filtrer la popup Open Resources" />
+    <meta property="og:description" content="Après un premier article sur la nouvelle mouture d&amp;#8217;Eclipse, je vais vous présenter une autre fonctionnalité intéressante de l&amp;#8217;IDE. Si vous êtes utilisateur régulier de l&amp;#8217;IDE, vous devez souvent utiliser le raccourci Ctrl + Shift..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2015/05/28/Eclipse-Mars-episode-2-Filtrer-la-popup-Open-Resources.html" />
+    <meta property="article:published_time" content="2015-05-27T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-06-01T18:40:35.434Z" />
+    <meta property="article:tag" content="eclipse" />
+    <meta property="article:tag" content="mars" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Eclipse Mars - épisode 2 - Filtrer la popup Open Resources" />
+    <meta name="twitter:description" content="Après un premier article sur la nouvelle mouture d&amp;#8217;Eclipse, je vais vous présenter une autre fonctionnalité intéressante de l&amp;#8217;IDE. Si vous êtes utilisateur régulier de l&amp;#8217;IDE, vous devez souvent utiliser le raccourci Ctrl + Shift..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2015/05/28/Eclipse-Mars-episode-2-Filtrer-la-popup-Open-Resources.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Eclipse Mars - épisode 2 - Filtrer la popup Open Resources",
+    "url": "http://blog.jabby-techs.fr/2015/05/28/Eclipse-Mars-episode-2-Filtrer-la-popup-Open-Resources.html",
+    "datePublished": "2015-05-27T22:00:00.000Z",
+    "dateModified": "2015-06-01T18:40:35.434Z",
+    "keywords": "eclipse,  mars",
+    "description": "Après un premier article sur la nouvelle mouture d&amp;#8217;Eclipse, je vais vous présenter une autre fonctionnalité intéressante de l&amp;#8217;IDE. Si vous êtes utilisateur régulier de l&amp;#8217;IDE, vous devez souvent utiliser le raccourci Ctrl + Shift..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-eclipse tag-mars">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-eclipse tag-mars">
+
+
+            <h1 class="post-title">Eclipse Mars - épisode 2 - Filtrer la popup Open Resources</h1>
+
+            <span class="post-meta label"><time datetime="2015-05-28">28 May 2015</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Après un <a href="/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html">premier article</a> sur la nouvelle mouture d&#8217;Eclipse, je vais vous présenter une autre fonctionnalité intéressante de l&#8217;IDE.</p>
+</div>
+<div class="paragraph">
+<p>Si vous êtes utilisateur régulier de l&#8217;IDE, vous devez souvent utiliser le raccourci Ctrl + Shift + R. Celui-ci permet de rapidement rechercher un fichier par son nom dans vos projets.</p>
+</div>
+<div class="paragraph">
+<p>Le problème avec cette vue c&#8217;est que si l&#8217;on a des projets et des sous-projets, on se retrouve avec plusieurs versions du même fichier listées dans la fenêtre de recherche.</p>
+</div>
+<div class="paragraph">
+<p>Sur l&#8217;exemple suivant, on voit bien deux fois le fichier TestFile.properties.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2015/05/open-resource-not-filtered.png" alt="open resource not filtered.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Le pire dans tout ça, c&#8217;est que l&#8217;ouverture de certaines références de fichier ne permettent pas d&#8217;avoir le contexte dans lequel on veut travailler.</p>
+</div>
+<div class="paragraph">
+<p>Pour prendre un exemple simple, si le projet parent n&#8217;est pas un projet Java et que le projet fils en est un, l&#8217;ouverture d&#8217;une des deux références ne permettra pas d&#8217;avoir l&#8217;autocomplétion. Ce qui n&#8217;est vraiment pas pratique.</p>
+</div>
+<div class="paragraph">
+<p>Heureusement <a href="https://twitter.com/mickaelistria">Mickael Istria</a> (oui encore lui 😄) a pris en compte <a href="460749">mes remarques</a> sur ce point et a ajouté une fonctionnalité super pratique.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_activer_le_filtre_des_resources">Activer le filtre des resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pour activer cette fonctionnalité, il suffit d&#8217;accéder aux options de la fenêtre "Open Resources". Une fois ouverte, il suffit d&#8217;activer l&#8217;option "Filter duplicated Resources".</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2015/05/open-resource-select-option.png" alt="open resource select option.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Après l&#8217;activation, vous ne devriez plus avoir de doublons dans les fichiers proposés.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2015/05/open-resource-filtered.png" alt="open resource filtered.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Si c&#8217;est toujours le cas, c&#8217;est peut être que vous utilisez des projets maven sans M2E et sans activer une option permettant de masquer les dossiers fils. Dans ce cas, je vous invite à regarder les commentaires du ticket que j&#8217;ai créé sur le bugtracker eclipse. <a href="http://eclip.se/468692" class="bare">http://eclip.se/468692</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_est_ce_que_l_option_est_cross_workspace">Est ce que l&#8217;option est cross-workspace ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Malheureusement c&#8217;est comme pour la vue hiérarchique présentée dans mon <a href="/2015/05/19/Eclipse-Mars-episode-1-Vue-hierarchique-des-projets.html">billet précédent</a>. Les données ne sont pas automatiquement reportées d&#8217;un workspace à l&#8217;autre.</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/eclipse">eclipse</a>, <a href="http://blog.jabby-techs.fr/tag/mars"> mars</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2015/05/28/Eclipse-Mars-episode-2-Filtrer-la-popup-Open-Resources.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Eclipse%20Mars%20-%20%C3%A9pisode%202%20-%20Filtrer%20la%20popup%20Open%20Resources&amp;url=http://blog.jabby-techs.fr/2015/05/28/Eclipse-Mars-episode-2-Filtrer-la-popup-Open-Resources.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2015/05/28/Eclipse-Mars-episode-2-Filtrer-la-popup-Open-Resources.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

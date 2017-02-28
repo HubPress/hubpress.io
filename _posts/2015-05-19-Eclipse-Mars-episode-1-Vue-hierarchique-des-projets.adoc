@@ -1,0 +1,71 @@
+= Eclipse Mars - épisode 1 - Vue hiérarchique des projets
+:hp-tags: eclipse, mars
+
+Comme tous les ans, je teste en avance la prochaine version d'Eclipse. Cette année, elle s'appelera Mars et sera à mon avis un cru plutôt intéressant. J'ai donc décidé de vous présenter quelques une des  nouveautés de cette version pour vous préparer à la sortie qui aura lieu fin juin 2015.
+
+Dans ces nouveautés, vous retrouverez des améliorations directement visible pour nous utilisateur, mais également quelques nouveautés dans la gestion en lui même du produit Eclipse IDE.
+
+
+== Comment se passe l'affichage des projets jusqu'à Luna
+
+Si vous utilisez maven sur vos projets, vous avez peut être des modules maven. Généralement le dossier d'un module est directement présent dans le dossier de son parent. On a donc une arborescence sur le disque équivalent à l'exemple suivant :
+
+[source]
+----
+ - my-project (dossier)
+ --- my-project-api (dossier)
+ --- my-project-core (dossier)
+----
+ 
+Sous Eclipse, l'affichage est différent. En effet, les différentes vues, notamment la vue Project Explorer gère uniquement des projets ou des working set dans leur arbre. Il n'y a pas de représentations dans l'arbre de sous-projet. On retrouve donc l'arborescence suivante
+
+[source]
+----
+ - my-project (projet Eclipse)
+ --- my-project-api (simple dossier)
+ --- my-project-core (simple dossier)
+ - my-project-api (projet Eclipse)
+ - my-project-core (projet Eclipse)
+----
+
+Pour un projet plus complexe tel que webtools.jsdt (outils de développement JS d'Eclipse), on arrive à ça : 
+
+image::/images/2015/05/eclipse-flat-presentation-project.png[align="center"]
+
+Il est possible de supprimer de l'affichage les simples dossiers. Ceci permet de ne plus avoir de doublons dans l'arbre. Pour moi, ceci n'était qu'un palliatif mais pas une solution optimale. A priori je n'étais pas le seul à penser cela.
+
+== Affichage hiérarchique des projets
+
+link:https://twitter.com/mickaelistria[Mickael Istria] de Red Hat a développé une nouvelle fonctionnalité pour le Project Explorer. Celle-ci permet de changer l'affichage de l'arbre pour ne plus avoir de doublon dans l'arbre mais également de placer les projets de façon à respecter le stockage sur disque.
+
+On récupère donc la représentation suivante :
+
+[source]
+----
+ - my-project (projet Eclipse)
+ --- my-project-api (projet Eclipse)
+ --- my-project-core (projet Eclipse)
+----
+ 
+Ou pour le webtools.jsdt, l'organisation suivante : 
+ 
+image::/images/2015/05/eclipse-hierarchical-presentation-project.png[align="center"]
+
+== Comment activer l'option ?
+
+Pour activer l'option, c'est simple, il suffit d'accéder aux options de la vue Project Explorer. Là je vous sens fébrile. Il parle de quoi ?
+
+En fait sur plusieurs vues d'Eclipse, il existe un menu intégré accessible par le triangle inversé (cf image ci-après). C'est ce que j'appelle les options de la vue.
+
+Donc dans les options, vous changez "Projects Presentation > Flat" par "Projects Presentation > Hierarchical"
+
+image::/images/2015/05/eclipse-change-presentation-project.png[align="center"]
+
+Si vous êtes comme moi, vous allez adorer cette nouvelle présentation.
+
+
+== Est-ce que le paramétrage est cross-workspace ?
+
+Sachant que certains mécanismes sont mis en place dans Eclipse Mars pour gérer les préférences entre workspaces (je ferais un article dessus prochainement), on peut se demander si le paramétrage de la vue sera pris en compte dans tous les workspaces.
+
+J'ai fait le test et malheureusement ce n'est pas le cas. Je pense que cela est dû au fait que les paramétrages des perspectives ne sont pas encore sauvegardés indépendamment du modèle du workspace. Si vous voulez plus d'information sur cette partie là, je vous invite à lire le ticket suivant http://eclip.se/378811

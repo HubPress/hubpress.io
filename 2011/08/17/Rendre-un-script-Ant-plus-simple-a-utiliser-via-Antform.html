@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Rendre un script Ant plus simple à utiliser via Antform</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2011/08/17/Rendre-un-script-Ant-plus-simple-a-utiliser-via-Antform.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Rendre un script Ant plus simple à utiliser via Antform" />
+    <meta property="og:description" content="Je vous présentais récemment un article sur la manipulation d’un dépôt SVN via antsvn. Ce script est assez pratique mais manque tout de même d’une couche graphique permettant de le rendre plus simple et agréable. Un deuxième avantage..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2011/08/17/Rendre-un-script-Ant-plus-simple-a-utiliser-via-Antform.html" />
+    <meta property="article:published_time" content="2011-08-16T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.965Z" />
+    <meta property="article:tag" content="ant" />
+    <meta property="article:tag" content="java" />
+    <meta property="article:tag" content="svn" />
+    <meta property="article:tag" content="svnant" />
+    <meta property="article:tag" content="antform" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Rendre un script Ant plus simple à utiliser via Antform" />
+    <meta name="twitter:description" content="Je vous présentais récemment un article sur la manipulation d’un dépôt SVN via antsvn. Ce script est assez pratique mais manque tout de même d’une couche graphique permettant de le rendre plus simple et agréable. Un deuxième avantage..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2011/08/17/Rendre-un-script-Ant-plus-simple-a-utiliser-via-Antform.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Rendre un script Ant plus simple à utiliser via Antform",
+    "url": "http://blog.jabby-techs.fr/2011/08/17/Rendre-un-script-Ant-plus-simple-a-utiliser-via-Antform.html",
+    "datePublished": "2011-08-16T22:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.965Z",
+    "keywords": "ant, java, svn, svnant, antform",
+    "description": "Je vous présentais récemment un article sur la manipulation d’un dépôt SVN via antsvn. Ce script est assez pratique mais manque tout de même d’une couche graphique permettant de le rendre plus simple et agréable. Un deuxième avantage..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-ant tag-java tag-svn tag-svnant tag-antform">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-ant tag-java tag-svn tag-svnant tag-antform">
+
+
+            <h1 class="post-title">Rendre un script Ant plus simple à utiliser via Antform</h1>
+
+            <span class="post-meta label"><time datetime="2011-08-17">17 Aug 2011</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Je vous présentais récemment un article sur la <a href="/2011/08/04/Creer-un-tag-svn-en-utilisant-Ant.html">manipulation d’un dépôt SVN via antsvn</a>. Ce script est assez pratique mais manque tout de même d’une couche graphique permettant de le rendre plus simple et agréable. Un deuxième avantage à l’interface graphique est de permettre une confirmation avant d’effectuer la manipulation sur le dépôt SVN.</p>
+</div>
+<div class="paragraph">
+<p>J’ai également décidé d’adapter le script pour pouvoir l’utiliser sur mon dépôt SVN personnel. En effet, celui-ci est accessible via un tunnel ssh et le script initial ne fonctionne pas. J’ai d’ailleurs posté sur le <a href="http://www.developpez.net/forums/d1118102/java/edi-outils-java/build/ant/svnant-protocole-svnpssh/">forum développez.net</a> une demande d’aide à laquelle j’ai moi-même répondu. Vous pouvez y voir ma solution ou lire l’article en entier.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_r_cup_ration_des_biblioth_ques_pour_l_utilisation_de_antform">Récupération des bibliothèques pour l’utilisation de Antform</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On va utiliser deux bibliothèques pour atteindre notre premier objectif. La première, antform, nous permettra de créer des formulaires de saisie. La seconde, ant-contrib, nous permettra de faciliter nos tests en ajoutant notamment les instructions if else…
+Les bibliothèques sont disponibles aux adresses suivantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Antform : <a href="http://antforms.sourceforge.net/" class="bare">http://antforms.sourceforge.net/</a></p>
+</li>
+<li>
+<p>ant-contrib : <a href="http://ant-contrib.sourceforge.net/" class="bare">http://ant-contrib.sourceforge.net/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Une fois ces deux jar téléchargés, on les ajoute au dossier lib du projet. Je suppose ici que vous vous basez sur le précédent article et les sources fournies à la fin. Ensuite, on va ajouter dans notre fichier ant la déclaration des deux bibliothèques.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- ****************************************************************** --&gt;
+&lt;!-- Definition du path pour antform                                    --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;path id="runtime.cp"&gt;
+    &lt;pathelement location="bin/" /&gt;
+    &lt;fileset dir="lib" includes="antform.jar" /&gt;
+&lt;/path&gt;
+&lt;taskdef name="antform" classname="com.sardak.antform.AntForm" classpathref="runtime.cp" /&gt;
+&lt;taskdef name="antmenu" classname="com.sardak.antform.AntMenu" classpathref="runtime.cp" /&gt;
+
+&lt;!-- ****************************************************************** --&gt;
+&lt;!-- Definition du path pour antcontrib                                    --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;path id="path.antcontrib"&gt;
+    &lt;pathelement location="${basedir}/lib/ant-contrib-1.0b3.jar"/&gt;
+&lt;/path&gt;
+&lt;taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="path.antcontrib" /&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cr_ation_d_une_fen_tre_de_dialogue">Création d’une fenêtre de dialogue</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_d_claration_de_svn_tag_ask">Déclaration de svn-tag-ask</h3>
+<div class="paragraph">
+<p>Commençons par créer une nouvelle tâche à notre fichier ant. Celle-ci sera nommée <strong>svn-tag-ask</strong>. Elle n’aura pas de description particulière puisque ce sera une tâche dite « privée ».</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- ****************************************************************** --&gt;
+&lt;!-- svn-tag-ask : remplissage des infos pour la création                 --&gt;
+&lt;!--             d'un TAG pour le projet                                 --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;target id="svn-tag-ask" name="svn-tag-ask"&gt;
+
+    &lt;!-- Initialisation des variables --&gt;
+    &lt;property name="svn.project.url" value="${svn.repository.url}/${project.name}" /&gt;
+    &lt;property name="svn.tag.name" value="${svn.tag.name.base}" /&gt;
+
+    &lt;!-- Permet de lister les branches existantes sur le projet --&gt;
+    &lt;svn refid="svn.settings"&gt;
+        &lt;list delimiter="," listdirs="true" onlynames="true" property="svn.branches.list" url="${svn.project.url}/branches"/&gt;
+    &lt;/svn&gt;
+
+    &lt;!-- Création de l'interface graphique --&gt;
+    &lt;antform save="svn-tag.properties" title="Création d'un tag"&gt;
+
+        &lt;label&gt;Essai.&lt;/label&gt;
+
+        &lt;controlbar&gt;
+            &lt;button type="cancel" label="${antform.no}" /&gt;
+            &lt;button type="ok" label="${antform.yes}" /&gt;
+        &lt;/controlbar&gt;
+    &lt;/antform&gt;
+&lt;/target&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pour le moment, si vous lancez svn-tag-ask, vous devriez obtenir une fenêtre simple avec un message et deux boutons. Il se peut que les messages pour les boutons soient vides. Dans ce cas, il suffira de déclarer les deux variables antform.yes et antform.no dans le fichier <strong>svn-utilities.properties</strong> et de leur mettre une valeur. Pour expliquer un peu ce que fait la tâche, elle liste sur le svn les différentes branches qui ont été créées puis elle affiche un message via la balise antform. Pour cette balise, notez que l’on sauvegardera les données saisies dans un fichier svn-tag.properties que l’on utilisera ensuite dans la tâche svn-tag.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ajout_des_champs_de_saisie_l_interface">Ajout des champs de saisie à l’interface</h3>
+<div class="paragraph">
+<p>Maintenant que notre fenêtre est fonctionnelle, nous allons nous concentrer sur les champs de saisie à remplir pour notre script de tag. Dans la version précédente du script nous avions besoin des données suivantes. Elles étaient listées dans le fichier de properties.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>une url source à laquelle on trouvait le trunk à taguer</p>
+</li>
+<li>
+<p>une url de destination dans laquelle on voulait stocker le tag</p>
+</li>
+<li>
+<p>un message pour la création du tag</p>
+</li>
+<li>
+<p>un login pour le svn</p>
+</li>
+<li>
+<p>un mot de passe pour le svn</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nous allons donc ajouter ces différents éléments tout en en ajoutant d’autres afin d’enrichir les possibilités. En effet, on pourrait très bien vouloir créer un tag à partir d’une branche de correction au lieu du trunk. Notre interface graphique nous permettra de faire ce choix.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- ****************************************************************** --&gt;
+&lt;!-- svn-tag-ask : remplissage des infos pour la création                 --&gt;
+&lt;!--             d'un TAG pour le projet                                 --&gt;
+&lt;!-- ****************************************************************** --&gt;
+&lt;target id="svn-tag-ask" name="svn-tag-ask"&gt;
+
+    &lt;!-- Initialisation des variables --&gt;
+    &lt;property name="svn.project.url" value="${svn.repository.url}/${project.name}" /&gt;
+    &lt;property name="svn.tag.name" value="${svn.tag.name.base}" /&gt;
+
+    &lt;!-- Permet de lister les branches existantes sur le projet --&gt;
+    &lt;svn refid="svn.settings"&gt;
+        &lt;list delimiter="," listdirs="true" onlynames="true" property="svn.branches.list" url="${svn.project.url}/branches"/&gt;
+    &lt;/svn&gt;
+
+    &lt;!-- Création de l'interface graphique --&gt;
+    &lt;antform save="svn-tag.properties" title="Création d'un tag"&gt;
+
+        &lt;label&gt;Vous devez remplir les differentes donnees demandées. Le nom de la branche source n'est pas obligatoire. Si vous souhaitez créer un tag à partir du trunk, n'oubliez pas de le préciser grâce au radiobutton.&lt;/label&gt;
+
+        &lt;textproperty label="Chemin du projet :" property="svn.project.url" required="true" /&gt;
+        &lt;listproperty label="Nom de la branche :" property="svn.tag.branch.name" values="                              ,${svn.branches.list}"  /&gt;
+        &lt;textproperty label="Nom du tag :" property="svn.tag.name" required="true" /&gt;
+
+        &lt;textproperty label="Login :" property="svn.username" required="true" /&gt;
+        &lt;textproperty label="Mot de passe :" property="svn.password" required="true" /&gt;
+
+        &lt;multilinetextproperty label="Commentaire du tag" property="svn.tag.message" required="true" /&gt;
+
+        &lt;radioselectionproperty label="Créer a partir du trunk ?" property="svn.tag.trunk" values="${antform.no}, ${antform.yes}" /&gt;
+
+        &lt;controlbar&gt;
+            &lt;button type="cancel" label="${antform.no}" /&gt;
+            &lt;button type="ok" label="${antform.yes}" /&gt;
+        &lt;/controlbar&gt;
+    &lt;/antform&gt;
+&lt;/target&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On se retrouve donc avec les champs suivants :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L’url du projet dans le dépôt : toutes les url seront construite à partir de celle-là. Elle peut être pré-remplie</p>
+</li>
+<li>
+<p>La liste des branches existantes : elle peut être vide. Il faudra cliquer sur les flèches pour choisir le nom de la branche</p>
+</li>
+<li>
+<p>Le nom du tag : il peut être pré-rempli et est obligatoire</p>
+</li>
+<li>
+<p>Le login de l’utilisateur : il est obligatoire.</p>
+</li>
+<li>
+<p>Le mot de passe de l’utilisateur : il est obligatoire.</p>
+</li>
+<li>
+<p>Le commentaire : ce champ peut contenir plusieurs lignes. Il est obligatoire</p>
+</li>
+<li>
+<p>Un radio button indiquant si l’on veut créer le tag à partir du trunk</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Voici la fenêtre que vous devriez obtenir :</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2011/08/rendre-un-script-ant-plus-simple-a-utiliser-via-antform-pic1.png" alt="Fenêtre antform pour la tâche svn-tag-ask">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modification_de_svn_tag">Modification de svn-tag</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Maintenant que nous avons une tâche dédiée à la création de notre interface utilisateur, nous allons modifier la tâche svn-tag. Tout d’abord nous devront obligatoirement appeler la méthode svn-tag-ask lors du lancement de svn-tag. Ensuite, il faudra prendre en compte plusieurs cas de figures pour créer le tag. Les différents cas de figure sont les suivants :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>le fichier de properties créé par svn-tag-ask n’existe pas</p>
+</li>
+<li>
+<p>l’option « à partir du trunk » est à oui</p>
+</li>
+<li>
+<p>l’option « à partir du trunk » est à non et le nom de la branche est vide</p>
+</li>
+<li>
+<p>l’option « à partir du trunk » est à non et le nom de la branche est renseigné</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Pour pouvoir appeler ant-tag-ask à partir de ant-tag, nous allons simplement utiliser l’attribut depends de la balise target. La déclaration de la target svn-tag devient :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;target name="svn-tag" depends="svn-tag-ask" description="creation d'un tag d'un projet sur le svn"&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ensuite, pour tester les différents cas, nous utiliserons la bibliothèque ant-contrib. Voici avec ant-contrib les différents tests que nous devrons effectuer.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;if&gt;
+    &lt;available file="svn-tag.properties" /&gt;
+    &lt;then&gt;
+        &lt;!-- Code a executer si l'on a un fichier --&gt;
+
+    &lt;/then&gt;
+    &lt;else&gt;
+        &lt;!-- Affichage d'un message à l'utilisateur pour le prévenir --&gt;
+        &lt;antform title="Erreur pour la création d'un tag"&gt;
+            &lt;label rows="1" columns="20"&gt;
+                Le fichier de propriétés pour le tag n'a pas été créé correctement. Le tag n'a pas été effectué.
+            &lt;/label&gt;
+            &lt;controlbar&gt;
+                &lt;button type="cancel" label="fermer" /&gt;
+            &lt;/controlbar&gt;
+        &lt;/antform&gt;
+    &lt;/else&gt;
+&lt;/if&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Construction de l’url selon les cas suivant :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>l’option « à partir du trunk » est à oui</p>
+</li>
+<li>
+<p>l’option « à partir du trunk » est à non et le nom de la branche est renseigné</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;if&gt;
+    &lt;equals arg1="${svn.tag.trunk}" arg2="${antform.yes}" trim="true" /&gt;
+    &lt;then&gt;
+        &lt;!-- Creation de l'url source pour le trunk --&gt;
+        &lt;var name="src.url" value="${svn.project.url}/trunk" /&gt;
+    &lt;/then&gt;
+    &lt;else&gt;
+        &lt;if&gt;
+            &lt;not&gt;
+                &lt;equals arg1="${svn.tag.branch.name}" arg2="" trim="true" /&gt;
+            &lt;/not&gt;
+            &lt;then&gt;
+                &lt;!-- Creation de l'url source pour la branche si le nom de branche est non vide et que l'on n'a pas demandé le trunk --&gt;
+                &lt;var name="src.url" value="${svn.project.url}/branches/${svn.tag.branch.name}" /&gt;
+            &lt;/then&gt;
+        &lt;/if&gt;
+    &lt;/else&gt;
+&lt;/if&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Test de l’url de la source. Si elle est vide, cela correspond au cas suivant :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>l’option « à partir du trunk » est à non et le nom de la branche est vide</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;if&gt;
+    &lt;not&gt;
+        &lt;equals arg1="${src.url}" arg2="" trim="true" /&gt;
+    &lt;/not&gt;
+    &lt;then&gt;
+        &lt;!-- Creation du tag --&gt;
+
+    &lt;/then&gt;
+    &lt;else&gt;
+        &lt;!-- Affichage d'un message : on passe ici uniquement si la branche n'est pas spécifiée et qu'elle est sencé être la source. --&gt;
+        &lt;antform title="Erreur pour la création d'un tag"&gt;
+            &lt;label rows="1" columns="20"&gt;Le chemin de la branche source est vide.&lt;/label&gt;
+            &lt;controlbar&gt;
+                &lt;button type="cancel" label="fermer" /&gt;
+            &lt;/controlbar&gt;
+        &lt;/antform&gt;
+    &lt;/else&gt;
+&lt;/if&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Avec les différents tests précédents, il ne reste plus qu’à les mettre dans le bon ordre ou à les inclure les uns dans les autres pour arriver au script final. Je ne vais pas directement mettre la target ant-tag ici. Elle est disponible dans le fichier zip téléchargeable à la fin de l’article. Par contre, un point important ici est de réévaluer le svnSetting. En effet, il est global à tout le fichier Ant. Or, si les données saisies dans l’interface graphique ne sont pas similaire à celles pré-remplies dans le fichier de propriétés, alors la connexion pourrait ne pas fonctionner. Il faut donc penser à rajouter ceci juste avant l’appel à la tâche svn.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;svnSetting
+    javahl="${svnant.javahl}"
+    svnkit="${svnant.svnkit}"
+    username="${svn.username}"
+    password="${svn.password}"
+    failonerror="false"
+    id="svn.settings"
+    /&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prise_en_compte_du_protocole_svn_ssh">Prise en compte du protocole svn+ssh</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lors de mes différents tests chez moi, j’ai rencontré quelques problèmes pour dialoguer avec mon dépôt SVN. Celui-ci est en fait accessible via le protocole svn+ssh. Quelques recherches m’ont permis rapidement de trouver qu’il manquait une bibliothèque pour prendre en compte ce protocole. Je l’ai donc ajouté au projet afin de l’utiliser.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>trilead-ssh2-build213-svnkit-1.3-patch.jar : non maintenue actuellement, ce jar permet la connexion via un tunnel ssh. <a href="https://maven.atlassian.com/content/repositories/atlassian-3rdparty/com/trilead/trilead-ssh2/build213-svnkit-1.3-patch/">Télécharger le jar</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>L’ajout se fait directement en enrichissant le path de svnant.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;path id="path.svnant"&gt;
+    &lt;pathelement location="${basedir}/lib/svnant.jar" /&gt;
+    &lt;pathelement location="${basedir}/lib/svnClientAdapter.jar" /&gt;
+    &lt;pathelement location="${basedir}/lib/svnkit.jar" /&gt;
+    &lt;pathelement location="${basedir}/lib/svnjavahl.jar" /&gt;
+    &lt;pathelement location="${basedir}/lib/ganymed.jar" /&gt;
+    &lt;pathelement location="${basedir}/lib/trilead-ssh2-build213-svnkit-1.3-patch.jar" /&gt;
+&lt;/path&gt;
+&lt;typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="path.svnant" /&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Puis pour utiliser le script, il faudra également penser à inverser les booléens javahl et svnkit de svnSetting afin de préciser que l’on veut utiliser javahl. Enfin, il faudra qu’une version de javahl en adéquation avec l’IDE (32 ou 64bits) soit installée est configurée pour utiliser un tunnel ssh via échange de clé privée/publique.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ce petit article montre une amélioration du script initial que j’avais créé. Ce n’est pas forcément la meilleure mais elle répond à mes attentes. Il existe encore de nombreuses améliorations possible ne serait-ce que pour les script de checkout et d’export de projet. Je ne le ferais pas pour le moment car je n’en ai pas l’utilité. Je vous invite donc à consulter la documentation officielle des différentes bibliothèques utilisées afin d’améliorer le script selon vos propres besoins.</p>
+</div>
+<div class="paragraph">
+<p>Vous trouverez sur le lien suivant un projet Eclipse presque pret à l’emploi. Il faudra pour la partie svn+ssh installer et configurer javahl. Le projet fr.jabbytechs.ant.svnutilities en version 1.0. Télécharger fr.jabbytechs.ant.svnutilities-1.0.zip</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/ant">ant</a>, <a href="http://blog.jabby-techs.fr/tag/java">java</a>, <a href="http://blog.jabby-techs.fr/tag/svn">svn</a>, <a href="http://blog.jabby-techs.fr/tag/svnant">svnant</a>, <a href="http://blog.jabby-techs.fr/tag/antform">antform</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2011/08/17/Rendre-un-script-Ant-plus-simple-a-utiliser-via-Antform.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Rendre%20un%20script%20Ant%20plus%20simple%20%C3%A0%20utiliser%20via%20Antform&amp;url=http://blog.jabby-techs.fr/2011/08/17/Rendre-un-script-Ant-plus-simple-a-utiliser-via-Antform.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2011/08/17/Rendre-un-script-Ant-plus-simple-a-utiliser-via-Antform.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

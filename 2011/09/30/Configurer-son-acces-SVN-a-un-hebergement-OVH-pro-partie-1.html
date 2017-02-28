@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Configurer son accès SVN à un hébergement OVH pro : partie 1</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//blog.jabby-techs.fr/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//blog.jabby-techs.fr/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.jabby-techs.fr/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html" />
+    
+    <meta property="og:site_name" content="Jabby Tech&#x27;s" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Configurer son accès SVN à un hébergement OVH pro : partie 1" />
+    <meta property="og:description" content="Il y a de cela un an environ, j’ai commencé à vouloir utiliser mon hébergement mutualisé OVH pro pour stocker mon dépôt SVN. Je n’avais alors qu’un petit dépôt local sur mon poste et j’ai faillit..." />
+    <meta property="og:url" content="http://blog.jabby-techs.fr/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html" />
+    <meta property="article:published_time" content="2011-09-29T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-02T18:17:57.963Z" />
+    <meta property="article:tag" content="OVH" />
+    <meta property="article:tag" content="svn" />
+    <meta property="article:tag" content="mutualisé pro" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Configurer son accès SVN à un hébergement OVH pro : partie 1" />
+    <meta name="twitter:description" content="Il y a de cela un an environ, j’ai commencé à vouloir utiliser mon hébergement mutualisé OVH pro pour stocker mon dépôt SVN. Je n’avais alors qu’un petit dépôt local sur mon poste et j’ai faillit..." />
+    <meta name="twitter:url" content="http://blog.jabby-techs.fr/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jabby Tech&#x27;s",
+    "author": {
+        "@type": "Person",
+        "name": "jabby",
+        "image": "https://avatars.githubusercontent.com/u/1883932?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.jabby-techs.fr/"
+    },
+    "headline": "Configurer son accès SVN à un hébergement OVH pro : partie 1",
+    "url": "http://blog.jabby-techs.fr/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html",
+    "datePublished": "2011-09-29T22:00:00.000Z",
+    "dateModified": "2015-04-02T18:17:57.963Z",
+    "keywords": "OVH, svn, mutualisé pro",
+    "description": "Il y a de cela un an environ, j’ai commencé à vouloir utiliser mon hébergement mutualisé OVH pro pour stocker mon dépôt SVN. Je n’avais alors qu’un petit dépôt local sur mon poste et j’ai faillit..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Jabby Tech&#x27;s" href="http://blog.jabby-techs.fr/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-OVH tag-svn tag-mutualise-pro">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar style="background: none">
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.jabby-techs.fr">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area bgimage" style="background-image: url(/images/cover-1920x1080.jpg)">
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.jabby-techs.fr"></a></li>
+                <li><a class="fi-torso" href="http://blog.jabby-techs.fr/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.jabby-techs.fr/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">Jabby Tech&#x27;s</h1>
+            <hr>
+            <p class="blog-description">You will never code alone !</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/jabby" class="fi-social-github"></a>
+                  <a href="https://twitter.com/darkjabberwock" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-OVH tag-svn tag-mutualise-pro">
+
+
+            <h1 class="post-title">Configurer son accès SVN à un hébergement OVH pro : partie 1</h1>
+
+            <span class="post-meta label"><time datetime="2011-09-30">30 Sep 2011</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il y a de cela un an environ, j’ai commencé à vouloir utiliser mon hébergement mutualisé OVH pro pour stocker mon dépôt SVN. Je n’avais alors qu’un petit dépôt local sur mon poste et j’ai faillit le perdre à cause d’une mauvaise manipulation.</p>
+</div>
+<div class="paragraph">
+<p>Armé de ma non-connaissance sur les possibilités de mon hébergement, je me suis mis en route pour configurer un dépôt SVN accessible via SSH dans Eclipse, ou Tortoise. Ayant pas mal galéré, je publie maintenant cet article et les quelques suivants pour montrer les différentes étapes nécessaires à la configuration.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pr_requis">Pré-requis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Je vais supposer que vous aller à terme travailler sous le même environnement que moi. La partie serveur est normalement commune à tous les OS mais je n’ai testé la configuration que sous Windows 7 x64. Il semble que ceci fonctionne également sous Windows XP 32 bits. Je n’ai pas fait le test mais un ami a réussi à se connecter à mon SVN en suivant la même procédure pour un poste sous Windows XP 32 bits.</p>
+</div>
+<div class="paragraph">
+<p>Pour la configuration complète du côté serveur, nous allons avoir besoin de quelques outils :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>avoir un hébergement OVH mutualisé PRO ou supérieur</p>
+</li>
+<li>
+<p>puttygen</p>
+</li>
+<li>
+<p>un accès SSH sur le serveur par exemple via putty</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cr_ation_de_cl_s_publiques_et_priv_s_pour_la_connexion_ssh">Création de clés publiques et privés pour la connexion SSH</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Afin d’éviter les demandes d’authentification SSH pour le SVN nous allons utiliser un mécanisme de clés publiques/privés.</p>
+</div>
+<div class="paragraph">
+<p>Dans cette partie, je ne parlerais pas de la création des clés sous Linux. Je n’utilise pas dans le cadre de mon travail ce type d’OS (sauf en tant que serveur).</p>
+</div>
+<div class="paragraph">
+<p>Donc sous Windows 7 (et ancienne version également) nous allons utiliser le logiciel puttygen. Il est en anglais mais très simple d’utilisation. Vous pouvez le télécharger à cette adresse : <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">télécharger puttygen</a></p>
+</div>
+<div class="paragraph">
+<p>Pour ceux qui utilise habituellement WinSCP pour se connecter en SFTP ou FTP, sachez qu’il est également présent suite à l’intallation. Par défaut, il se trouve dans le répertoire $WINSCP_HOME/PuTTY où $WINSCP_HOME correspond au repertoire d’installation de WinSCP.
+Un des avantages de puttygen est qu’il ne nécessite pas d’installation.</p>
+</div>
+<div class="paragraph">
+<p>Lancer l’utilitaire puttygen. Vous devrier obtenir une interface similaire à celle-ci :</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2011/09/puttygen-1.png" alt="puttygen 1.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Sur l’interface, sélectionner le type de clé SSH-2 DSA puis cliquer sur Generate. Pensez à bouger la souris pour accélerer un peu la génération des clés. Une fois les clés générés vous devrier obtenir à peut près ceci :</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="/images/2011/09/puttygen-2.png" alt="puttygen 2.png">
+</div>
+</div>
+<div class="paragraph">
+<p>Sauvegardez les deux clés générés via les options suivantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Save public key : sauvegarde de la clé publique</p>
+</li>
+<li>
+<p>Save private key : sauvegarde de la clé privé</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les clés sont générées, on passe à la suite.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cr_ation_d_un_d_p_t_svn_sur_le_serveur">Création d’un dépôt SVN sur le serveur</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ici, je fais une petite parenthèse sur la création d’un dépôt car d’une part, j’en ai eu besoin et d’autre part, pour la mise en place de notre clé ssh sur le serveur, nous aurons besoin de spécifier le chemin vers le dépôt SVN auquel on souhaite accéder.</p>
+</div>
+<div class="paragraph">
+<p>Dans mon cas, je prendrais un exemple simple pour la création d’un premier dépôt. En effet, une fois connecté sur votre serveur mutualisé en SSH créer l’arborescence suivante :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">svn
+ -- repository
+ -- scripts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vous pouvez bien entendu adapter directement cette arborescence à vos besoins. Dans mon cas, je créé un répertoire scripts pour stocker certains scripts utile pour l’administration de mes dépôts SVN.</p>
+</div>
+<div class="paragraph">
+<p>Pour créer cette arborescence, utiliser les commandes suivantes :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">mkdir -p svn/repository
+mkdir -p svn/scripts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Une fois cela fait utilisez la commande suivante pour créer votre premier dépôt. Dans mon cas, je le nommerais « projets ».</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">svnadmin create svn/repository/projets</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Votre premier dépôt est maintenant créé. Vous pouvez vérifier l’arborescence du dépôt avec la commande suivante :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">ls -la svn/repository/projets/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vous devez obtenir ceci :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">drwxr-xr-x+ 7 $NAME users   9 2010-11-12 09:36 .
+drwxr-xr-x+ 4 $NAME users   4 2010-11-12 09:36 ..
+drwxr-xr-x+ 2 $NAME users   5 2010-11-12 09:36 conf
+drwxr-xr-x+ 2 $NAME users   2 2010-11-12 09:36 dav
+drwxr-sr-x+ 5 $NAME users  10 2010-11-12 09:36 db
+-r--r--r--+ 1 $NAME users   2 2010-11-12 09:36 format
+drwxr-xr-x+ 2 $NAME users  11 2010-11-12 09:36 hooks
+drwxr-xr-x+ 2 $NAME users   4 2010-11-12 09:36 locks
+-rw-r--r--+ 1 $NAME users 229 2010-11-12 09:36 README.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>où <strong>$NAME</strong> correspond au nom d’utilisateur SSH.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ajout_de_la_cl_publique_sur_le_serveur_mutualis">Ajout de la clé publique sur le serveur mutualisé</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Repassons maintenant à la partie SSH en ajoutant maintenant notre clé sur notre serveur. Une fois cela fait, nous en aurons fini avec la partie serveur. On va donc créer l’arborescence suivante pour stocker notre clé à la racine du home de l’utilisateur.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">.ssh
+ -- authorized_keys2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pour créer cette arborescence et entrer directement en mode édition, utiliser les commandes suivantes :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">mkdir .ssh
+chmod 700 .ssh
+vi .ssh/authorized_keys2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dans l’éditeur vi, vous devez ajouter une ligne dont le format est le suivant :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-linenums" data-lang="linenums">command="/usr/bin/svnserve --root=$REPOSITORY_PATH --tunnel --tunnel-user=$USER_NAME",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty ssh-dss $SSH_KEY $SSH_KEY_DATE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>où les valeurs doivent être :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>$REPOSITORY_PATH</strong> : le chemin complet vers le dépôt c’est à dire quelque chose ressemblant à /home.XXX/loginSFTP/svn/repository</p>
+</li>
+<li>
+<p><strong>$USER_NAME</strong> : le nom de l’utilisateur dans le dépôt SVN. Cela servira pour la configuration dans SVN mais également pour savoir qui a fait quelle modification</p>
+</li>
+<li>
+<p><strong>$SSH_KEY</strong> : la clé publique SSH générée précédemment sur une seule ligne. Elle se situe dans le fichier key-tuto-svn.pub entre la ligne de commentaire et la dernière ligne du fichier</p>
+</li>
+<li>
+<p><strong>$SSH_KEY_DAT</strong> : le tag en bas de la clé publique par exemple dsa-key-20110918</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Voilà pour la partie configuration du côté serveur. On verra dans un prochain article comment utiliser directement notre clé pour se connecter via Tortoise puis via Eclipse et le plugin Subclipse.</p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.jabby-techs.fr/tag/OVH">OVH</a>, <a href="http://blog.jabby-techs.fr/tag/svn">svn</a>, <a href="http://blog.jabby-techs.fr/tag/mutualise-pro">mutualisé pro</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.jabby-techs.fr/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Configurer%20son%20acc%C3%A8s%20SVN%20%C3%A0%20un%20h%C3%A9bergement%20OVH%20pro%20%3A%20partie%201&amp;url=http://blog.jabby-techs.fr/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.jabby-techs.fr/2011/09/30/Configurer-son-acces-SVN-a-un-hebergement-OVH-pro-partie-1.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>jabby</h4>
+                        <img src="https://avatars.githubusercontent.com/u/1883932?v=3">
+                        <span>Nantes, France</span>
+                        <a href="http://www.jabby-techs.fr/">http://www.jabby-techs.fr/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'jabbytechs'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//blog.jabby-techs.fr/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-24824748-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

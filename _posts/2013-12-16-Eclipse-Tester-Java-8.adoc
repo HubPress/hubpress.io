@@ -1,0 +1,89 @@
+= Eclipse : Tester Java 8
+:hp-tags: eclipse,java
+:published_at: 2013-12-16
+
+Suite à la soirée du http://nantesjug.org/#/events/2013_12_04[Nantes JUG le 4 décembre 2013], j’ai voulu tester un peu Java 8. Comme j’ai l’habitude d’utiliser Eclipse, j’ai voulu voir où en était la prise en compte des modifications du langage au sein de l’IDE. Tout n’est pas encore au point mais, je suis plutôt content de l’avancement. Voici comment installer un environnement fonctionnel.
+
+== Installer le JDK 8
+
+Comme la version de Java 8 n’est pas encore sortie officiellement, il est nécessaire d’aller sur le site https://jdk8.java.net/download.html pour obtenir une installation selon votre système d’exploitation. Je vais pour ma part expliquer la marche à suivre pour Windows 7 (ou 8 car ça fonctionne sur les deux). A priori, il ne doit pas y avoir de grosses différences pour les autres plateformes.
+
+Donc sur le site https://jdk8.java.net/download.html, acceptez la licence d’utilisation (Accept License Agreement) puis téléchargez le jdk correspondant à votre système d’exploitation. Une fois le téléchargement effectué, lancez l’installation de Java 8.
+
+== Récupération d’un Eclipse Luna M3
+
+J’aime bien faire plein de tests, alors je me suis pris également une version d’Eclipse Luna M3 (future version d’Eclipse) pour tester Java 8. Je n’ai pas tester avec une version Kepler de l’IDE. Pour cela, accédez à la page de téléchargement d’Eclipse et recherchez la partie « Developer Builds » ou cliquez directement sur ce lien http://www.eclipse.org/downloads/index-developer.php pour les plus flemmards d’entre vous.
+
+Sélectionnez le packaging que vous préférez et téléchargez le. J’ai pris personnellement la version « Eclipse IDE for Java EE Developers Eclipse IDE for Java EE Developers ». Une fois le téléchargement terminé, dézippez l’archive dans le répertoire de votre choix.
+
+== Installation des plugins pour le support de Java 8
+
+Il existe deux solutions pour cette partie. La première est de construire vos plugins, la seconde d’utiliser un dépôt de Spring Source pour installer les plugins. Mon petit côté « j’ai envie de jouer vite fait et pas de me prendre la tête » m’a fait opter pour la seconde solution.
+
+Pour la seconde solution, il suffit tout simplement de suivre les instructions suivantes :
+
+* Lancez votre Eclipse fraîchement dézippé
+* Accédez au menu « Help > Install New Software… »
+* Indiquez l’url suivante dans le champ « Work With » : http://build.eclipse.org/eclipse/builds/4P/siteDir/updates/4.3-P-builds
+* Appuyez sur la touche « Entrée » pour rafraîchir la liste des plugins disponibles
+* Sélectionnez la catégorie « Eclipse Java 8 Support (BETA) »
+* Validez les boutons « Next » jusqu’à la licence
+* Acceptez la licence
+* Cliquez sur « Finish »
+* Pendant l’installation, acceptez l’alerte de sécurité
+* Redémarrez Eclipse
+
+Vous pouvez maintenant relancer Eclipse. En toute logique (en tout cas sous Windows), Eclipse devrait détecter directement la version Java 8 (en l’occurrence la présence du JRE 8 dans JAVA_HOME). Maintenant votre IDE est configuré pour fonctionner avec Java 8. Il vous suffira d’indiquer l’environnement d’exécution JavaSE-1.8.
+
+Cerise sur le gâteau, m2e est compatible. Il suffit de préciser au maven-compiler-plugin la version souhaité du JRE. Voici un pom d’exemple :
+
+[source,xml,linenums]
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.jabbytechs.tb</groupId>
+    <artifactId>java-8-lambda</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+ 
+    <properties>
+        <source-encoding>UTF-8</source-encoding>
+        <jdk-version>1.8</jdk-version>
+    </properties>
+ 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>${jdk-version}</source>
+                        <target>${jdk-version}</target>
+                        <showDeprecation>true</showDeprecation>
+                        <encoding>${source-encoding}</encoding>
+                    </configuration>
+                </plugin>
+ 
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <encoding>${source-encoding}</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
+----
+
+== Quelques informations supplémentaires
+
+Si vous souhaitez en savoir plus sur la compatibilité actuelle entre Eclipse et Java 8, je vous invite à visiter cette page http://wiki.eclipse.org/JDT_Core/Java8.
+
+Si vous voulez connaître les nouveautés Java 8, vous pouvez voir la liste complète à cette adresse http://openjdk.java.net/projects/jdk8/features.
+
+J’espère que ce petit article aidera les curieux à tester Java 8, car c’est clairement prometteur tant sur les lambdas et la nouvelle API stream que d’autres parties plus pointues tel que la suppression du Permanent Generation (ou permgen).
