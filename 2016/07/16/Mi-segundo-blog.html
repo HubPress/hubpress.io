@@ -25,14 +25,14 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//txemis.github.io/themes/uno/assets/css/uno.css?v=1487612737875" />
+    <link rel="stylesheet" type="text/css" href="//txemis.github.io/themes/uno/assets/css/uno.css?v=1488475932143" />
 
     <link rel="canonical" href="https://txemis.github.io/2016/07/16/Mi-segundo-blog.html" />
     <meta name="referrer" content="origin" />
     
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Mi segundo blog" />
-    <meta property="og:description" content="Esto es el seguimiento de algo." />
+    <meta property="og:description" content="Esto es el seguimiento de algo. javascript: https://github.com/wols/time/ https://wols.github.io/time/ Passthrough block works fine - I use it for include Javascript tracker code:    // code here            /*jslint         browser : true, continue : true,     devel  : true, indent  : 2,    maxerr   : 50,     newcap : true, nomen   : true, plusplu" />
     <meta property="og:url" content="https://txemis.github.io/2016/07/16/Mi-segundo-blog.html" />
     <meta property="article:tag" content="HubPress" />
     <meta property="article:tag" content=" Blog" />
@@ -40,7 +40,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Mi segundo blog" />
-    <meta name="twitter:description" content="Esto es el seguimiento de algo." />
+    <meta name="twitter:description" content="Esto es el seguimiento de algo. javascript: https://github.com/wols/time/ https://wols.github.io/time/ Passthrough block works fine - I use it for include Javascript tracker code:    // code here            /*jslint         browser : true, continue : true,     devel  : true, indent  : 2,    maxerr   : 50,     newcap : true, nomen   : true, plusplu" />
     <meta name="twitter:url" content="https://txemis.github.io/2016/07/16/Mi-segundo-blog.html" />
     
     <script type="application/ld+json">
@@ -123,6 +123,120 @@ null
       <div class="paragraph">
 <p>Esto es el seguimiento de algo.</p>
 </div>
+<hr>
+<div class="paragraph">
+<p>javascript:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/wols/time/" class="bare">https://github.com/wols/time/</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://wols.github.io/time/" class="bare">https://wols.github.io/time/</a></p>
+</div>
+<div class="paragraph">
+<p>Passthrough block works fine - I use it for include Javascript tracker code:</p>
+</div>
+<!-- Piwik -->
+<script type="text/javascript">
+   // code here
+</script>
+<noscript><p><!-- a image --></p></noscript>
+<!-- End Piwik Code -->
+<hr>
+  <script type="text/javascript" src=
+    "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+  </script>
+
+  <script type="text/javascript">
+  /*jslint         browser : true, continue : true,
+    devel  : true, indent  : 2,    maxerr   : 50,
+    newcap : true, nomen   : true, plusplus : true,
+    regexp : true, sloppy  : true, vars     : true,
+    white  : true
+  */
+  /*global jQuery */
+
+  // Module /spa/
+  // Provides chat slider capability
+  //
+  var spa = (function ( $ ) {
+    // Module scope variables
+    var
+      // Set constants
+      configMap = {
+        extended_height  : 434,
+        extended_title   : 'Click to retract',
+        retracted_height : 16,
+        retracted_title  : 'Click to extend',
+        template_html    : '<div class="spa-slider"><\/div>'
+      },
+
+      // Declare all other module scope variables
+      $chatSlider,
+      toggleSlider, onClickSlider, initModule;
+
+    // DOM method /toggleSlider/
+    // alternates slider height
+    //
+    toggleSlider = function () {
+      var
+        slider_height = $chatSlider.height();
+
+      // extend slider if fully retracted
+      if ( slider_height === configMap.retracted_height ) {
+        $chatSlider
+          .animate({ height : configMap.extended_height })
+          .attr( 'title', configMap.extended_title );
+        return true;
+      }
+
+      // retract slider if fully extended
+      else if ( slider_height === configMap.extended_height ) {
+        $chatSlider
+          .animate({ height : configMap.retracted_height })
+          .attr( 'title', configMap.retracted_title );
+        return true;
+      }
+      // do not take action if slider is in transition
+      return false;
+    };
+
+    // Event handler /onClickSlider/
+    // receives click event and calls toggleSlider
+    //
+    onClickSlider = function ( event ) {
+      toggleSlider();
+      return false;
+    };
+
+    // Public method /initModule/
+    // sets initial state and provides feature
+    //
+    initModule = function ( $container ) {
+
+      // render HTML
+      $container.html( configMap.template_html );
+      $chatSlider = $container.find( '.spa-slider' );
+
+      // initialize slider height and title
+      // bind the user click event to the event handler
+      $chatSlider
+        .attr( 'title', configMap.retracted_title )
+        .click( onClickSlider );
+
+      return true;
+    };
+
+    return { initModule : initModule };
+
+  }( jQuery ));
+
+  // Start spa once DOM is ready
+  //
+  jQuery(document).ready(
+    function () { spa.initModule( jQuery('#spa') ); }
+  );
+  </script>
     </section>
 
   </article>
@@ -167,7 +281,7 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//txemis.github.io/themes/uno/assets/js/main.js?v=1487612737875"></script>
+    <script type="text/javascript" src="//txemis.github.io/themes/uno/assets/js/main.js?v=1488475932143"></script>
     
 
 </body>
