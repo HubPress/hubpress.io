@@ -1,0 +1,12 @@
+= Getting Started
+:hp-tags: HubPress, Blogging, AsciiDoc
+
+I just installed http://hubpress.io/[HubPress] on my github pages site. It was dead simple. Click fork, edit two lines in a config, and go.
+
+Compared to other static site generators I've tried for GitHub, HubPress feels like real blogging software not like you are hacking together a blog from the backend. It still doesn't have the bloat of WordPress or the suck of Blogger but you don't have to be a hacker to use it. If blogging on Github is ever going to take off with normal users it will be a tool more like HubPress and less like Jekyll that makes it possible
+
+HubPress uses http://asciidoc.org/[AsciiDoc] rather than https://daringfireball.net/projects/markdown/[MarkDown] and I'm a little put out by that. I've grown to love Markdown and I'm really comfortable with the syntax. The syntax for AsciiDoc is much more complicated than Markdown so I have alot to learn but there are many similarities. The upside to this is that AsciiDoc is much more powerful. The differences between the two allow you to do things in AsciiDoc that you just can't do in MarkDown without resorting to standard HTML.
+
+I'm sure there are still some hard edges on HubPress but so far I'm happy with it.
+
+I guess now is a good time to end this first post. Thanks for reading it and check back later to see what I manage to do here.
