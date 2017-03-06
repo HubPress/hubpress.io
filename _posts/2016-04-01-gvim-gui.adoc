@@ -1,0 +1,72 @@
+= 「Vim」を「GVim」化してみた
+:hp-alt-title: gvim-gui
+:hp-tags: blog,vim
+:published_at: 2016-04-01
+
+いきなりですが、**私はGvimが嫌いです。**
+
+image::https://cloud.githubusercontent.com/assets/12780727/14198885/edd74c04-f819-11e5-91a9-afb4ba0d1b60.png[]
+
+画像を見ると分かる通りGVimでタブを使うと、Vimに調和しないクッソダサいGTK特有のタブが出てきます。しかし個人的にはこの浮いたデザインを受け入れることが出来ません。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14198883/edd08996-f819-11e5-9b42-cfc6e1b36e08.png[]
+
+しかもコンソール版(Mormal)のVimはタブのデザインも調和していて、素敵です(CV:香風智乃)
+
+正直に言って、GVim特有の機能といったら。。。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14198884/edd724e0-f819-11e5-879a-b4798483891a.png[]
+
+このPhotoShop風(？)のインターフェイスしか知りません。
+
+という訳で、今回はVimをGVimの様に使いやすくしたいと思います。
+
+(どうでも良いけど「vimtutor」や「gvimtutor」で起動するとVimrcやGVimrcの類を全て無視してくれるから撮影には便利ということが三枚目のスクショ撮影時に分かった。)
+
+== 前提条件
+
+今回は以下の条件で実行します。
+
+* ArchLinux[推奨]
+* Xfce4-Terminal[必須]
+* Numix-Circle[推奨]
+
+== 下準備
+
+まずはXfce関係の設定を変更します。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14202459/0abf25d0-f833-11e5-80d8-fda707497458.png[]
+
+Xfce4 Terminalで右クリックして、「設定」を選んでください。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14202460/0abf6c48-f833-11e5-8b1a-429cffbaeede.png[]
+
+次に「外観」タブを開いて画像のように設定してください。
+
+== ショートカットの作成
+
+適当なシェルスクリプトを作って、以下の様に記入して実行属性をつけてください。
+
+[source]
+#!/bin/sh
+/usr/bin/xfce4-terminal --command=vim --title=Vim --icon=vim &
+
+他のターミナルエミュレータでは確認していませんが、Xfce4 Terminalならこれでおｋです。
+
+== まとめ
+
+いかがだったでしょうか。これでGTK特有の調和しないUIとはおさらばですね。是非使ってみてください。
+
+(追記)
+
+書いた後、Tyruさんからlink:https://twitter.com/_tyru_/statuses/715872802864111617[TabLine]というものを教えていただきました。
+
+今度使ってみたいと思います。
+
+また、gvimrcを変更することによってCUIベースのタブが使えるそうです。ですが、特にGVimを使う意味は無いのでこれまで通りこの方法を使っていきたいと思います。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14225200/064d474e-f8f5-11e5-8858-9ef12553c682.png[]
+
+== P.S.
+
+今日はエイプリルフールですが影響を避けるためにわざわざ午後になってからこの記事を書いたんですよ。

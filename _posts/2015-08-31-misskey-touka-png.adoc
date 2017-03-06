@@ -1,0 +1,41 @@
+= Misskey.xyzでまどマギの透過pngを投稿したら・・・・・・
+:hp-alt-title: misskey-touka-png
+:hp-tags: blog,web,misskey
+:published_at: 2015-08-31
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011544/cea5e15c-f1e2-11e5-8b44-c9cdb5815081.jpg[]
+
+全てはこの画像から始まったようで。
+
+なんとなく透過pngをMisskey.xyzに投稿したらどうなるかと不思議に思ってたまたま画像コレクションに入っていたまどか達の画像を投稿してみた所想像していなかった現象が見つかったんで記録しておきたいなあと。
+
+まあ投稿したあとの画像がこちらです。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011542/cea4db54-f1e2-11e5-8b19-134445b9c378.jpg[]
+
+なんか驚きました。
+
+そもそも「たね」って何ですか！！！！！！！
+
+Misskey自体が透過pngに対応しているのかどうかは知りませんが、背景に謎の表示が出てきたんで話題になりました。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011540/cea4878a-f1e2-11e5-9085-ca2ae09b1c88.png[]
+
+そしてとある人によって一枚のとある画像が出てきました。
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011541/cea4d17c-f1e2-11e5-9546-be56c404811a.jpg[]
+
+ん・・・・・・？
+
+image::https://cloud.githubusercontent.com/assets/12780727/14011543/cea526ea-f1e2-11e5-8494-4c8bbdee4b19.jpg[]
+
+たね。はい、犯人こいつですね。
+
+まあ自分なりにどうしてか考えたのですが多分jpgに変換するときにトラブルが発生したんでしょう
+
+まあ世の中にはおもしろいこともありますね。(意味深)
+
+(2016/03/24追記)
+
+気が付いた人もいると思いますが、このイラストをカバー画像に採用しました。
+このサイトに合った感じなのでしばらく使っていきたいと思います。

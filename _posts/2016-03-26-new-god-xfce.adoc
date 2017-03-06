@@ -1,0 +1,138 @@
+= Xfceで神DEを構築してみた
+:hp-alt-title: new-god-xfce
+:hp-tags: blog,linux,software,desktop
+:published_at: 2016-03-26
+
+まあ今回は、散々紹介すると言っておいて今でも紹介していないXfce4のカスタマイズ術を紹介します。
+
+== 何故わざわざそこまで弄るの？
+
+* Xfce4-panelやXfDesktopの作りが個人的に合わない
+* デスクトップのアイコンを勝手に並び変えないで欲しい
+* Tint2のテーマ機能が好き
+* 直感的に操作ができる
+
+まあこんなことにメリットを感じない人は最初からやらない方が幸せだと思います。
+
+== 完成例
+
+image::https://cloud.githubusercontent.com/assets/12780727/14054657/3888aca8-f31e-11e5-8a58-b5a6e0f3f77a.png[]
+
+== 構築方法
+
+なお、元々の環境を破壊するのでそのことを理解した上で読み進んでください。
+
+==== 1, 前提パッケージのインストール
+
+以下の前提パッケージをインストールします。
+
+* Xfce4(ベース環境)
+* Tint2(下のパネル)
+* Rox-Filer(アイコン、壁紙管理)
+
+メジャーなLinux系統のOSなら以下のコマンドでインストール出来ます。
+
+[source]
+UbuntuやDebianの場合
+$ sudo apt-get install xubuntu-desktop rox tint2
+
+[source]
+Fedoraの場合
+$ sudo dnf install @xfce-desktop rox tint2
+
+[source]
+ArchLinuxの場合
+$ sudo pacman -S xfce4 rox tint2
+
+==== 2, Rox Filerの設定
+
+とりあえず新しいファイルを作ります。
+
+[source]
+$ sudo nano /usr/bin/rox-pin
+
+以下の文字列を書き込んでください(コピペで構いません)
+
+[source]
+#!/bin/sh
+rox -p=desktop &
+
+これは後で設定に使います。
+
+終わったら*/usr/bin/rox-pin*に実行権限を付けましょう。
+
+[source]
+$ sudo chmod +x /usr/bin/rox-pin
+
+==== 3, Xfceの設定
+
+以下の文字列を*/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml*に貼り付けてください。  
+(元々の文字列は削除)
+
+[source]
+<?xml version="1.0" encoding="UTF-8"?>
+<channel name="xfce4-session" version="1.0">
+  <property name="general" type="empty">
+    <property name="FailsafeSessionName" type="string" value="Failsafe"/>
+  </property>
+  <property name="sessions" type="empty">
+    <property name="Failsafe" type="empty">
+      <property name="IsFailsafe" type="bool" value="true"/>
+      <property name="Count" type="int" value="5"/>
+      <property name="Client0_Command" type="array">
+        <value type="string" value="xfwm4"/>
+      </property>
+      <property name="Client0_PerScreen" type="bool" value="false"/>
+      <property name="Client1_Command" type="array">
+        <value type="string" value="xfsettingsd"/>
+      </property>
+      <property name="Client1_PerScreen" type="bool" value="false"/>
+      <property name="Client2_Command" type="array">
+        <value type="string" value="tint2"/>
+      </property>
+      <property name="Client2_PerScreen" type="bool" value="false"/>
+      <property name="Client3_Command" type="array">
+        <value type="string" value="Thunar"/>
+        <value type="string" value="--daemon"/>
+      </property>
+      <property name="Client3_PerScreen" type="bool" value="false"/>
+      <property name="Client4_Command" type="array">
+        <value type="string" value="rox-pin"/>
+      </property>
+      <property name="Client4_PerScreen" type="bool" value="false"/>
+    </property>
+  </property>
+  <property name="splash" type="empty">
+    <property name="Engine" type="string" value=""/>
+  </property>
+</channel>
+
+これで基本的な設定は終りました。が、色々と物足りないと思うのでここからはカスタマイズ術を紹介します。
+
+== 色々なカスタマイズ
+
+==== 背景を設定
+. 何も無い所を右クリック
+. 「背景を設定」をクリック
+. 出てきたウィンドウで各種設定をする
+
+image::https://cloud.githubusercontent.com/assets/12780727/14054658/388aa332-f31e-11e5-8031-b4a8b26952d6.png[]
+
+==== アイコンを追加
+. *Alt+F3*でランチャーを起動
+. 置きたいアイコンのソフトウェア項目をデスクトップにD&D
+. *右クリック>アイテムを編集*で分かりやすい名前に修正
+
+image::https://cloud.githubusercontent.com/assets/12780727/14054659/388bf192-f31e-11e5-8e22-56d99e31bd1a.png[]
+
+==== パネルのデザインや位置等を変更
+
+基本的には設定ファイル(*~/.config/tint2/tint2rc*)から変更しますが、GUIツールを利用することも可能です。
+
+[source]
+$ tint2conf
+
+また、link:http://www.deviantart.com/browse/all/customization/?q=tint2[こ↑こ↓]等で既に調整済みのTint2rcをダウンロードすることも出来ますし、ArchLinuxならAURからパッケージ「link:https://aur.archlinux.org/packages/tint2-themes/[tint2-themes]」を導入することも出来るので、是非活用してみると良いでしょう。
+
+== まとめ
+このデスクトップ環境は操作に癖が強いので好みが別れるかもしれません。が、個人的にはかなりお勧めなので是非使ってみてください。

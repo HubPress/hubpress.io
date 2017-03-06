@@ -1,0 +1,40 @@
+= SQLiteにWordPressを入れてみた
+:hp-alt-title: wordpress-in-sqlite
+:hp-tags: blog,web,wordpress
+:published_at: 2016-03-25
+
+image::https://cloud.githubusercontent.com/assets/12780727/14040505/444a7b66-f2ab-11e5-8217-d2246371815b.png[]
+
+== 何故？
+なんとなく
+
+== 入れかたメモっておく
+注意:: */WorePress-Folder/*はWordPressをインストールしたフォルダとして考えてください。 
+
+では始めましょう!!!
+
+* link:https://ja.wordpress.org/[WordPress]とlink:https://wordpress.org/plugins/sqlite-integration/[SQLite Integration]をダウンロードし、適当なフォルダに展開
+* WordPress本体をサーバーにうp
+* */WordPress-Folder/wp-content/plugins/sqlite-integration/db.php*を*/WordPress-Folder/wp-content/*に移動する
+* */WordPress-Folder/wp-config-sample.php*の以下の部分をlink:https://api.wordpress.org/secret-key/1.1/salt/[こ↑こ↓]の内容に変更する
+
+[source, rust]
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
+
+* */WordPress-Folder/wp-config-sample.php*を*/WordPress-Folder/wp-config.php*にリネーム
+* */WordPress-Folder/wp-content*のパーミッションを777にする
+* *Your-Domain/WordPress-Folder*にアクセス
+* 指示に従う
+* */WordPress-Folder/wp-content*のパーミッションを755にする
+* おわり
+
+== 参考にしたサイト
+* link:http://wp-webzine.com/wp-plugin/390.html/3[WordPressをMySQLデータベース不要でインストールできるプラグイン「SQLite Integration」]
+* link:http://www.tsugihagi.net/entry/2014/10/06/115103[Wordpressを共有サーバでSQLiteを使って動かそうとして断念]

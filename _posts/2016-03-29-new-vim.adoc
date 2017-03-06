@@ -1,0 +1,118 @@
+= Vimrcの再構築をしたよ
+:hp-alt-title: new-vim
+:hp-tags: blog,vim
+:published_at: 2016-03-29
+
+image::https://cloud.githubusercontent.com/assets/12780727/14093872/2b5db256-f58c-11e5-95ca-4d15ebbcbf1c.png[]
+
+そういえばよくよく考えたらこれまでVimについてのブログ記事書いてなかったね。。。
+
+まあ今回の内容は属で言う「Vimrc晒し」です。参考になるかは知りませんが是非見ていってください。
+
+# コピペする際の注意点
+
+このvimrcとgvimrcは以下の環境を前提にして書かれています。
+
+* ArchLinuxでskk-jisyoをインストール(導入)してる。
+* make等の類が入っている。
+* AURでRictyフォントが入っている。
+* *~/.vim/vimstart*が存在する。(無ければ自分で作ってください。)
+
+# 入れたプラグイン
+
+Vimrc見れば分かると思うのですが。。。
+
+* Shougo/vimproc
+** Vimを越える処理能力を発生させるやつ
+** 但し今はVimShellしか使っていない
+* Shougo/vimshell.vim
+** 端末エミュレータ
+** わざわざシステムの端末を呼ぶのが面倒なので
+* Shougo/unite.vim
+** 何か便利なやつ
+** とりあえず入れておかないと慣れた操作が出来ない
+* scrooloose/nerdtree
+** 高性能なファイラー
+** Vimfilerは肌に合わなかった
+* itchyny/lightline.vim
+** ステータスラインの拡張
+** 9割近く見た目の為に入れてる
+* altercation/vim-colors-solarized
+** テーマ
+** 見やすいから好き
+* tyru/skk.vim
+** 日本語入力
+** 快適すぎて死にそう
+
+Shougoさん強い(確信)
+
+# 晒し
+
+* vimrc
+[source]
+" NeoBundle
+if has('vim_starting')
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+        \ 'windows' : 'make -f make_mingw32.mak',
+        \ 'cygwin' : 'make -f make_cygwin.mak',
+        \ 'mac' : 'make -f make_mac.mak',
+        \ 'unix' : 'make -f make_unix.mak',
+      \ },
+    \ }
+    NeoBundle 'Shougo/vimshell.vim'
+    NeoBundle 'Shougo/unite.vim'
+    NeoBundle 'scrooloose/nerdtree'
+    NeoBundle 'itchyny/lightline.vim'
+    NeoBundle 'altercation/vim-colors-solarized'
+    NeoBundle 'tyru/skk.vim'
+call neobundle#end()
+filetype plugin indent on
+NeoBundleFetch 'Shougo/neobundle.vim'
+" skk.vim
+let skk_jisyo = '~/.skk-jisyo'
+let skk_large_jisyo = '/usr/share/skk/SKK-JISYO.L'
+let skk_auto_save_jisyo = 1
+let skk_keep_state = 0
+let skk_egg_like_newline = 1
+let skk_show_annotation = 1
+let skk_use_face = 1
+" I don't like Tab indent
+set tabstop=4
+set autoindent
+set expandtab
+set shiftwidth=4
+" Number
+set number
+" StartPage
+silent :e ~/.vim/vimstart
+" Search
+set smartcase
+set hlsearch
+" Background
+syntax enable
+set background=dark
+colorscheme solarized
+" LightLine
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'solarized'
+      \ }
+" ClipBoard
+set clipboard=unnamed,autoselect
+" Mouse
+set mouse=a
+
+* gvimrc
+[source]
+set guifont=Ricty\ 15
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b
