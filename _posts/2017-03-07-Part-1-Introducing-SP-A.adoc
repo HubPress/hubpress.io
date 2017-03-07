@@ -4,7 +4,7 @@
 
 <html>
 <body>
-<iframe width="760" height="25" scrolling="no" frameborder="no" >
+<frame width="300" height="250" scrolling="no" frameborder="no" >
 
 <!doctype html>
 <html>
@@ -142,7 +142,7 @@
 </html>
 
 
-</iframe>
+</frame>
 </html>
 </body>
 
