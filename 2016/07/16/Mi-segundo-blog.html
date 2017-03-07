@@ -25,14 +25,14 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//txemis.github.io/themes/uno/assets/css/uno.css?v=1488476177586" />
+    <link rel="stylesheet" type="text/css" href="//txemis.github.io/themes/uno/assets/css/uno.css?v=1488899094648" />
 
     <link rel="canonical" href="https://txemis.github.io/2016/07/16/Mi-segundo-blog.html" />
     <meta name="referrer" content="origin" />
     
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Mi segundo blog" />
-    <meta property="og:description" content="Esto es el seguimiento de algo. javascript: https://github.com/wols/time/ https://wols.github.io/time/ Passthrough block works fine - I use it for include Javascript tracker code:    // code here Part 1. Introducing SPAs            /*jslint         browser : true, continue : true,     devel  : true, indent  : 2,    maxerr   : 50,     newcap : true" />
+    <meta property="og:description" content="Esto es el seguimiento de algo. javascript: https://github.com/wols/time/ https://wols.github.io/time/ Passthrough block works fine - I use it for include Javascript tracker code:    // code here Part 1. Introducing SPAs 	Mandar a kodi - Configuración 	 	 	   	 		 		Mandar a kodi - Configuración 		 		 		 			Conexión Establecida! 		 		 			Conexión" />
     <meta property="og:url" content="https://txemis.github.io/2016/07/16/Mi-segundo-blog.html" />
     <meta property="article:tag" content="HubPress" />
     <meta property="article:tag" content=" Blog" />
@@ -40,7 +40,7 @@
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Mi segundo blog" />
-    <meta name="twitter:description" content="Esto es el seguimiento de algo. javascript: https://github.com/wols/time/ https://wols.github.io/time/ Passthrough block works fine - I use it for include Javascript tracker code:    // code here Part 1. Introducing SPAs            /*jslint         browser : true, continue : true,     devel  : true, indent  : 2,    maxerr   : 50,     newcap : true" />
+    <meta name="twitter:description" content="Esto es el seguimiento de algo. javascript: https://github.com/wols/time/ https://wols.github.io/time/ Passthrough block works fine - I use it for include Javascript tracker code:    // code here Part 1. Introducing SPAs 	Mandar a kodi - Configuración 	 	 	   	 		 		Mandar a kodi - Configuración 		 		 		 			Conexión Establecida! 		 		 			Conexión" />
     <meta name="twitter:url" content="https://txemis.github.io/2016/07/16/Mi-segundo-blog.html" />
     
     <script type="application/ld+json">
@@ -150,100 +150,89 @@ null
 <div class="sect1">
 <h2 id="_part_1_introducing_spas">Part 1. Introducing SPAs</h2>
 <div class="sectionbody">
-  <script type="text/javascript" src=
-    "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-  </script>
+<!doctype html>
+<html>
+<head>
+	<title>Mandar a kodi - Configuración</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/enums.js"></script>
+	<script src="js/settings.js"></script>
 
-  <script type="text/javascript">
-  /*jslint         browser : true, continue : true,
-    devel  : true, indent  : 2,    maxerr   : 50,
-    newcap : true, nomen   : true, plusplus : true,
-    regexp : true, sloppy  : true, vars     : true,
-    white  : true
-  */
-  /*global jQuery */
+</head>
+<body>
+  	<div>
+		<div class="options_header">
+		Mandar a kodi - Configuración
+		</div>
 
-  // Module /spa/
-  // Provides chat slider capability
-  //
-  var spa = (function ( $ ) {
-    // Module scope variables
-    var
-      // Set constants
-      configMap = {
-        extended_height  : 434,
-        extended_title   : 'Click to retract',
-        retracted_height : 16,
-        retracted_title  : 'Click to extend',
-        template_html    : '<div class="spa-slider"><\/div>'
-      },
+		<div class="hr"></div>
 
-      // Declare all other module scope variables
-      $chatSlider,
-      toggleSlider, onClickSlider, initModule;
+		<div id="success_status">
+			Conexión Establecida!
+		</div>
 
-    // DOM method /toggleSlider/
-    // alternates slider height
-    //
-    toggleSlider = function () {
-      var
-        slider_height = $chatSlider.height();
+		<div id="fail_status">
+			Conexión Fallida!
+		</div>
 
-      // extend slider if fully retracted
-      if ( slider_height === configMap.retracted_height ) {
-        $chatSlider
-          .animate({ height : configMap.extended_height })
-          .attr( 'title', configMap.extended_title );
-        return true;
-      }
+		<div id="missing_data">
+			Completar datos de configuración!
+		</div>
 
-      // retract slider if fully extended
-      else if ( slider_height === configMap.extended_height ) {
-        $chatSlider
-          .animate({ height : configMap.retracted_height })
-          .attr( 'title', configMap.retracted_title );
-        return true;
-      }
-      // do not take action if slider is in transition
-      return false;
-    };
+		<div id="unauthorized_data">
+		  Desautorizado! Probablemente nombre o contraseña incorrecto.
+		</div>
 
-    // Event handler /onClickSlider/
-    // receives click event and calls toggleSlider
-    //
-    onClickSlider = function ( event ) {
-      toggleSlider();
-      return false;
-    };
+		<div id="conecting_data">
+			Conectando.. Por favor, espera..
+		</div>
 
-    // Public method /initModule/
-    // sets initial state and provides feature
-    //
-    initModule = function ( $container ) {
+		<div class="options_body">
 
-      // render HTML
-      $container.html( configMap.template_html );
-      $chatSlider = $container.find( '.spa-slider' );
+			<div class="options_item">
+				<div class="options_name">Dirección IP de kodi: </div>
+				<div class="options_data"><input type="text" placeholder="192.168.1.100" id="host" /></div>
+			</div>
 
-      // initialize slider height and title
-      // bind the user click event to the event handler
-      $chatSlider
-        .attr( 'title', configMap.retracted_title )
-        .click( onClickSlider );
+			<div class="clear"></div>
 
-      return true;
-    };
+			<div class="options_item">
+				<div class="options_name">Puerto HTTP : </div>
+				<div class="options_data"><input type="text" placeholder="8080" id="port" /></div>
+			</div>
 
-    return { initModule : initModule };
+			<div class="clear"></div>
 
-  }( jQuery ));
+<!--
+			<div class="options_item">
+				<div class="options_name">Nombre: (opcional)</div>
+				<div class="options_data"><input type="text" id="username" /></div>
+			</div>
 
-  // Start spa once DOM is ready
-  //
-  jQuery(document).ready(
-    function () { spa.initModule( jQuery('#spa') ); }
-  );
-  </script>
+			<div class="clear"></div>
+
+			<div class="options_item">
+				<div class="options_name">Contraseña: (opcional)</div>
+				<div class="options_data"><input type="password" id="pwd" /></div>
+			</div>
+
+			<div class="clear"></div>
+
+-->
+			<div class="options_item">
+				<div class="options_name"></div>
+				<div class="options_data">
+<!--                    <input type="checkbox" id="debugMode" /><label for="debugMode" title="Enables Console Log for Background Page">&nbsp;Debug Mode (for Nerds)</label><br><br>  -->
+					<input type="button" value="Guardar" id="connectButton" />
+					<input type="button" value="Borrar" id="clearButton" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
 <hr>
 </div>
 </div>
@@ -299,7 +288,7 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//txemis.github.io/themes/uno/assets/js/main.js?v=1488476177586"></script>
+    <script type="text/javascript" src="//txemis.github.io/themes/uno/assets/js/main.js?v=1488899094648"></script>
     
 
 </body>
