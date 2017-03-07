@@ -4,7 +4,7 @@
 
 <html>
 <body>
-<frame width="300" height="250" scrolling="no" frameborder="no" >
+<frame width="200" height="100" scrolling="no" frameborder="no" >
 
 <!doctype html>
 <html>
