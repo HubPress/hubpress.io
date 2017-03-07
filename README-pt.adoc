@@ -53,8 +53,8 @@ Se você deseja ter o seu blog em um domínio personalizado, ou se você já est
 
 . Nas configurações do repositório, defina a branch padrão para `gh-pages`:
 +
-image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
-. Mude o seu repositório para a branch *gh-pages*. 
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages,400]
+. Mude o seu repositório para a branch *gh-pages*.
 +
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
 +
