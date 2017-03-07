@@ -25,16 +25,18 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//txemis.github.io/themes/uno/assets/css/uno.css?v=1488899388687" />
+    <link rel="stylesheet" type="text/css" href="//txemis.github.io/themes/uno/assets/css/uno.css?v=1488899443279" />
 
     <link rel="canonical" href="https://txemis.github.io/2017/03/07/Mandar-a-kodi.html" />
     <meta name="referrer" content="origin" />
     
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Mandar a kodi" />
+    <meta property="og:description" content="Mandar a kodi - Configuración 	 	 	   	 		 		Mandar a kodi - Configuración 		 		 		 			Conexión Establecida! 		 		 			Conexión Fallida! 		 		 			Completar datos de configuración! 		 		 		  Desautorizado! Probablemente nombre o contraseña incorrecto. 		 		 			Conectando.. Por favor, espera.. 		 		 			 				Dirección IP de kodi:" />
     <meta property="og:url" content="https://txemis.github.io/2017/03/07/Mandar-a-kodi.html" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Mandar a kodi" />
+    <meta name="twitter:description" content="Mandar a kodi - Configuración 	 	 	   	 		 		Mandar a kodi - Configuración 		 		 		 			Conexión Establecida! 		 		 			Conexión Fallida! 		 		 			Completar datos de configuración! 		 		 		  Desautorizado! Probablemente nombre o contraseña incorrecto. 		 		 			Conectando.. Por favor, espera.. 		 		 			 				Dirección IP de kodi:" />
     <meta name="twitter:url" content="https://txemis.github.io/2017/03/07/Mandar-a-kodi.html" />
     
     <script type="application/ld+json">
@@ -114,7 +116,89 @@ null
     </header>
 
     <section class="post">
-      
+      <!doctype html>
+<html>
+<head>
+	<title>Mandar a kodi - Configuración</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/enums.js"></script>
+	<script src="js/settings.js"></script>
+
+</head>
+<body>
+  	<div>
+		<div class="options_header">
+		Mandar a kodi - Configuración
+		</div>
+
+		<div class="hr"></div>
+
+		<div id="success_status">
+			Conexión Establecida!
+		</div>
+
+		<div id="fail_status">
+			Conexión Fallida!
+		</div>
+
+		<div id="missing_data">
+			Completar datos de configuración!
+		</div>
+
+		<div id="unauthorized_data">
+		  Desautorizado! Probablemente nombre o contraseña incorrecto.
+		</div>
+
+		<div id="conecting_data">
+			Conectando.. Por favor, espera..
+		</div>
+
+		<div class="options_body">
+
+			<div class="options_item">
+				<div class="options_name">Dirección IP de kodi: </div>
+				<div class="options_data"><input type="text" placeholder="192.168.1.100" id="host" /></div>
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="options_item">
+				<div class="options_name">Puerto HTTP : </div>
+				<div class="options_data"><input type="text" placeholder="8080" id="port" /></div>
+			</div>
+
+			<div class="clear"></div>
+
+<!--
+			<div class="options_item">
+				<div class="options_name">Nombre: (opcional)</div>
+				<div class="options_data"><input type="text" id="username" /></div>
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="options_item">
+				<div class="options_name">Contraseña: (opcional)</div>
+				<div class="options_data"><input type="password" id="pwd" /></div>
+			</div>
+
+			<div class="clear"></div>
+
+-->
+			<div class="options_item">
+				<div class="options_name"></div>
+				<div class="options_data">
+<!--                    <input type="checkbox" id="debugMode" /><label for="debugMode" title="Enables Console Log for Background Page">&nbsp;Debug Mode (for Nerds)</label><br><br>  -->
+					<input type="button" value="Guardar" id="connectButton" />
+					<input type="button" value="Borrar" id="clearButton" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
     </section>
 
   </article>
@@ -159,7 +243,7 @@ null
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//txemis.github.io/themes/uno/assets/js/main.js?v=1488899388687"></script>
+    <script type="text/javascript" src="//txemis.github.io/themes/uno/assets/js/main.js?v=1488899443279"></script>
     
 
 </body>
