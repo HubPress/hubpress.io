@@ -2,6 +2,10 @@
 
 ++++
 
+<html>
+<body>
+<iframe width="760" height="25" scrolling="no" frameborder="no" >
+
 <!doctype html>
 <html>
 <head>
@@ -137,6 +141,10 @@
 </body>
 </html>
 
+
+</iframe>
+</html>
+</body>
 
 ++++
 
