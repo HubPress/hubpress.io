@@ -1,1 +1,93 @@
 = Mandar a kodi
+
+
+
+++++
+
+<!doctype html>
+<html>
+<head>
+	<title>Mandar a kodi - Configuración</title>		
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script src="js/enums.js"></script>
+	<script src="js/settings.js"></script>
+		
+</head>
+<body>
+  	<div>
+		<div class="options_header">
+		Mandar a kodi - Configuración	
+		</div>
+		
+		<div class="hr"></div>
+		
+		<div id="success_status">
+			Conexión Establecida!
+		</div>
+		
+		<div id="fail_status">
+			Conexión Fallida!
+		</div>
+		
+		<div id="missing_data">
+			Completar datos de configuración!
+		</div>
+		
+		<div id="unauthorized_data">
+		  Desautorizado! Probablemente nombre o contraseña incorrecto.
+		</div>
+		
+		<div id="conecting_data">
+			Conectando.. Por favor, espera..
+		</div>
+		
+		<div class="options_body">
+			
+			<div class="options_item">
+				<div class="options_name">Dirección IP de kodi: </div>
+				<div class="options_data"><input type="text" placeholder="192.168.1.100" id="host" /></div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="options_item">
+				<div class="options_name">Puerto HTTP : </div>
+				<div class="options_data"><input type="text" placeholder="8080" id="port" /></div>
+			</div>
+			
+			<div class="clear"></div>
+			
+<!--			
+			<div class="options_item">
+				<div class="options_name">Nombre: (opcional)</div>
+				<div class="options_data"><input type="text" id="username" /></div>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="options_item">
+				<div class="options_name">Contraseña: (opcional)</div>
+				<div class="options_data"><input type="password" id="pwd" /></div>
+			</div>		
+			
+			<div class="clear"></div>
+
+-->			
+			<div class="options_item">
+				<div class="options_name"></div>
+				<div class="options_data">
+<!--                    <input type="checkbox" id="debugMode" /><label for="debugMode" title="Enables Console Log for Background Page">&nbsp;Debug Mode (for Nerds)</label><br><br>  -->
+					<input type="button" value="Guardar" id="connectButton" />
+					<input type="button" value="Borrar" id="clearButton" />
+				</div>
+			</div>
+			
+		</div>		
+	</div>
+	
+</body>
+</html>
+
+
+
+++++
