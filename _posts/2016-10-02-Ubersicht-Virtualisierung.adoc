@@ -1,7 +1,7 @@
 = Übersicht Virtualisierung
 Andreas Breitbach <andreas.breitbach@gmail.com>
 :hp-tags: Virtualisierung, Grundlagen
-:published-at: 01-10-2016
+:published-at: 2016-10-01
 
 :toc:
 //:imagesdir: images/:
