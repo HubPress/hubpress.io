@@ -5,7 +5,7 @@
 = Writers' Guide
 
 This guide will help you write your first blog post using basic AsciiDoc syntax.
-It also describes blog paramters used to control aspects of post sort order, and category tags.
+It also describes blog parameters used to control aspects of post sort order, and category tags.
 Read this guide if you are new to writing AsciiDoc mark-up, or have not used HubPress to create a blog post before.
 
 NOTE: If you can write a text email, you can create great blog posts with AsciiDoc and HubPress.
