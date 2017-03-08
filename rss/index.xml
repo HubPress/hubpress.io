@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Oct 2016 16:46:19 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Funktionsdesign]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 08 Mar 2017 15:28:53 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Funktionsdesign]]></title><description><![CDATA[<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#__bersicht">Übersicht</a></li>
+<li><a href="#_umsetzung_eines_funktionsdesigns">Umsetzung eines Funktionsdesigns</a></li>
+<li><a href="#_die_verschiedenen_ebenen_eines_dokuments">Die verschiedenen Ebenen eines Dokuments</a></li>
+<li><a href="#_quellen">Quellen</a></li>
+</ul>
+</div>
+<div class="sect1">
 <h2 id="__bersicht">Übersicht</h2>
 <div class="sectionbody">
 <div class="paragraph">
