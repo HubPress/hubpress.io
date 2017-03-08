@@ -53,7 +53,7 @@ Si deseas tener tu blog en un dominio personalizado, o si ya estás usando tu do
 
 . En la configuración del Repositorio, establece la rama por defecto a `gh-pages`:
 +
-image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages,400]
 . cambia tu repositorio a la rama *gh-pages*
 +
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]

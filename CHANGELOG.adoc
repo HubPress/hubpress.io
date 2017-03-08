@@ -1,3 +1,17 @@
+## 0.7.1
+
+* fix(theme): Error with http request (and not https) for included stylesheet HubPress/hubpress.io#475
+* fix(post): Problem to show all content of a blog post HubPress/hubpress.io#483
+* fix(theme): ld+json is null HubPress/hubpress.io#488
+
+## 0.7.0
+
+* technical release, move from react/redux to vue/vuex
+* remove material design and use semanticUI now
+* feat(posts): add filter
+* feat(post): add a popup to display basic asciidoc syntax
+* feat(team): add a team page
+
 ## 0.6.0
 
 * feat(rss): add the generation of the RSS feed
