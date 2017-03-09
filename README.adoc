@@ -1,4 +1,6 @@
 = HubPress
+
+image:https://badges.gitter.im/HubPress/hubpress.io.svg[link="https://gitter.im/HubPress/hubpress.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"]
 :toc: macro
 :toclevels: 4
 :sectnums:
