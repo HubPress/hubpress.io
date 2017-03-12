@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mirth Connect - Cheat Sheet</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//ermisogluemre.github.io/themes/saga/assets/css/style.css?v=1471962493389" rel="stylesheet" type="text/css">
+    <link href="//ermisogluemre.github.io/themes/saga/assets/css/animate.min.css?v=1471962493389" rel="stylesheet" type="text/css">
+    <link href="https://ermisogluemre.github.io/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://ermisogluemre.github.io/2016/08/22/Mirth-Connect-Cheat-Sheet.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Emre &#x27;s MINI BLOG" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mirth Connect - Cheat Sheet" />
+    <meta property="og:description" content="Defining a java object : Create a java class Example java code from MIRTH&amp;#8217;s web site package com.example; public class JarTest {     public String returnSomething() {         return &quot;Hello, World!&quot;;     } } Create a jar file. Call java code from MIRTH var obj &#x3D; new Packages.com.example.JarTest(); logger.info(obj.returnSomething()); Reading" />
+    <meta property="og:url" content="https://ermisogluemre.github.io/2016/08/22/Mirth-Connect-Cheat-Sheet.html" />
+    <meta property="article:tag" content="Mirth Connect" />
+    <meta property="article:tag" content=" Cheat Sheet" />
+    <meta property="article:tag" content=" version before 3.0.0" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mirth Connect - Cheat Sheet" />
+    <meta name="twitter:description" content="Defining a java object : Create a java class Example java code from MIRTH&amp;#8217;s web site package com.example; public class JarTest {     public String returnSomething() {         return &quot;Hello, World!&quot;;     } } Create a jar file. Call java code from MIRTH var obj &#x3D; new Packages.com.example.JarTest(); logger.info(obj.returnSomething()); Reading" />
+    <meta name="twitter:url" content="https://ermisogluemre.github.io/2016/08/22/Mirth-Connect-Cheat-Sheet.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Emre &#x27;s MINI BLOG" href="https://ermisogluemre.github.io/rss/" />
+</head>
+<body class="post-template tag-Mirth-Connect tag-Cheat-Sheet tag-version-before-300">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://ermisogluemre.github.io">Emre &#x27;s MINI BLOG</a>
+        <span class="blog-description"></span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Mirth Connect - Cheat Sheet</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1471842000" datetime="2016-08-22T00:00" title="22 August 2016">a day ago</time></span>
+            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://ermisogluemre.github.io/tag/Mirth-Connect/">Mirth Connect</a>, <a href="https://ermisogluemre.github.io/tag/Cheat-Sheet/"> Cheat Sheet</a>, <a href="https://ermisogluemre.github.io/tag/version-before-300/"> version before 3.0.0</a></span>
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://ermisogluemre.github.io/author/ermisogluemre/">Emre Ermisoglu</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-Mirth-Connect tag-Cheat-Sheet tag-version-before-300">
+        <section class="post-content">
+            <div class="sect4">
+<h5 id="_defining_a_java_object">Defining a java object :</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a java class</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example java code from MIRTH&#8217;s web site</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>package com.example;
+
+public class JarTest {
+
+    public String returnSomething() {
+        return "Hello, World!";
+    }
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a jar file.</p>
+</li>
+<li>
+<p>Call java code from MIRTH</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>var obj = new Packages.com.example.JarTest();
+logger.info(obj.returnSomething());</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_reading_segments_in_hl7">Reading Segments in HL7</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>for each (seg in msg.children())
+{
+  	if(seg.name() == "OBX")
+    {
+       	var result_date = seg['OBX.14']['OBX.14.1'].toString();
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+        </section>
+
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Emre &#x27;s MINI BLOG</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//ermisogluemre.github.io/themes/saga/assets/js/scripts.js?v=1471962493389"></script>
+    
+</body>
+</html>

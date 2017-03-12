@@ -1,10 +1,16 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
+    "username": "ermisogluemre",
+    "repositoryName": "ermisogluemre.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Emre 's MINI BLOG"
+  },
+  "socialnetwork": {
+    "linkedin": "https://www.linkedin.com/in/emre-ermisoglu-a3556534"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "saga"
   }
 }
