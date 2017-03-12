@@ -25,7 +25,7 @@ ifeval::["{lang}" == "de"]
 :warning-caption: Warnung
 endif::[]
 
-*Als Berufsschüler durfte ich im Fach WZQKS (Aufbau und Betrieb eines Kommunikationsservers) einen einfachen Server mit Linux aufsetzen und entsprechend dokumentieren. Wir sollten ein OpenOffice-ODT-Dokument, ein PDF und eine HTML-Seite abliefern – ideales Anwendungsgebiet für Single Source Publishing mit Asciidoc. Um diese Möglichkeiten zu zeigen, stelle ich die Dokumente hier zur Verfügung.*
+*Als Berufsschüler durfte ich im Fach WZQKS (Aufbau und Betrieb eines Kommunikationsservers) einen einfachen Server als virtuelle Maschine mit Linux aufsetzen und entsprechend dokumentieren. Wir sollten ein OpenOffice-ODT-Dokument, ein PDF und eine HTML-Seite abliefern – ideales Anwendungsgebiet für Single Source Publishing mit Asciidoc. Um diese Möglichkeiten zu zeigen, stelle ich die Dokumente hier zur Verfügung.*
 
 == Erstellen der geforderten Dokumentationselemente
 Asciidoc lässt sich am einfachsten unter Linux verwenden. Alle angegebenen Befehle etc. sind auf der beschriebenen Virtuellen Maschine installiert.
@@ -40,7 +40,7 @@ Quelle der nachfolgenden Kommandos: http://www.methods.co.nz/asciidoc/faq.html#_
 
 asciidoc -a icons -a numbered -a disable-javascript Dokumentation-WZQKS.adoc
 
-Download der fertigen HTML-Datei: andreas-breitbach.github.io/images/Dokumentation-WZQKS.html[Test]
+Download der fertigen HTML-Datei: http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.html[HTML-Datei]
 
 
 === Erstellung der ODT-Datei
@@ -49,7 +49,7 @@ Dieses Kommando wird über LibreOffice ausgeführt.
 [source,bash]
 lowriter --invisible --convert-to odt Dokumentation-WZQKS.html
 
-Download der fertigen Datei: [ODT-Datei]
+Download der fertigen Datei: http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.odt[ODT-Datei]
 
 === Erstellung der PDF-Datei
 
@@ -57,7 +57,7 @@ Dieses Kommando wird über LibreOffice ausgeführt.
 [source,bash]
 lowriter --invisible --convert-to pdf Dokumentation-WZQKS.odt
 
-Download der fertigen Datei: [PDF-Datei]
+Download der fertigen Datei: http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.pdf[PDF-Datei]
 
 == Dokumentation zur Installation und Einrichtung der geforderten Dienste
 
@@ -102,7 +102,7 @@ und diese bleibt so, wie sie ist.
 
 == Grundinstallation der Virtuellen Maschine
 
-Die Installation wurde mit den Standard-Einstellungen des Instllationsimages *lubuntu-14.04.3-desktop-i386.iso* durchgeführt.
+Die Installation wurde mit den Standard-Einstellungen des Installationsimages *lubuntu-14.04.3-desktop-i386.iso* durchgeführt.
 
 Nutzername:   `andy`
 
@@ -123,7 +123,7 @@ Im folgenden werden Konfigurationen beschrieben, die speziell für den Einsatz i
 
 ==== Änderung des Hostnamens
 
-Das System soll nich tnur über IP-Adresse, sondern auch über einen Namen, hier "breitbach-server", ansprechbar sein. Dazu wurde in der Datei */etc/hosts* folgende Zeile hinzugefügt:
+Das System soll nicht nur über IP-Adresse, sondern auch über einen Namen, hier "breitbach-server", ansprechbar sein. Dazu wurde in der Datei */etc/hosts* folgende Zeile hinzugefügt:
 
 .Anlage eines Hostnamens in der Hosts-Datei
 [source,bash]
@@ -166,7 +166,7 @@ Passwort:     `geheim`
 Wine Is Not an Emulator
 ""
 
-Wine ist eine "Kompatibilitätsschicht" für Windows-Anwendungen, um diese unter Linux nutzen zu können. Über diese Schicht werden Programmaufrufe an die entsprechenden Linux-Bestandteile durchgereicht bzw. passend übersetzt. Ein Emulator würde hingegen die Befehle 1:1 wie im Originalprogramm vorgesehen ausführen, udn wäre damit quasi ein Windows-Nachbau. Mit https://www.reactos.org/[ReactOS] existiert ein solches Projekt, das aber noch nicht über den Alpha-Status hinausgekommen ist.
+Wine ist eine "Kompatibilitätsschicht" für Windows-Anwendungen, um diese unter Linux nutzen zu können. Über diese Schicht werden Programmaufrufe an die entsprechenden Linux-Bestandteile durchgereicht bzw. passend übersetzt. Ein Emulator würde hingegen die Befehle 1:1 wie im Originalprogramm vorgesehen ausführen, und wäre damit quasi ein Windows-Nachbau. Mit https://www.reactos.org/[ReactOS] existiert ein solches Projekt, das aber noch nicht über den Alpha-Status hinausgekommen ist.
 Demgegenüber lassen sich viele Windows-Anwendungen und Spiele seit langem unter Wine benutzen.
 
 ==== Installation von Wine
@@ -188,7 +188,6 @@ Für den Up- und Download von Dateien wurde ein FTP-Server installiert:
 [source,bash]
 $ sudo apt-get install vsftpd
 
-Nach der Installation wurde der Server mit
 
 Die Konfiguration befindet sich in der Datei */etc/vsftpd.conf*. Hier muss nur diese Einstellung geändert werden:
 
@@ -209,15 +208,16 @@ Für den Abruf von Webseiten wurde Apache installiert.
 [source,bash]
 $ sudo apt-get install apache2
 
-Der Server wird dann automatisch gestartet. Die abzurufenden Webseiten können unter bereit gestellt werden. Die "Einstiegsseite" *muss* _index.html_ heißen. In dieser Isntallation werden die Webseiten im Standard-Verzeichnis abgelegt.
+Der Server wird dann automatisch gestartet. Die abzurufenden Webseiten können im Standard-Verzeichnis bereit gestellt werden. Die "Einstiegsseite" *muss* _index.html_ heißen. In dieser Installation werden die Webseiten im Standard-Verzeichnis abgelegt.
 
 .Standard-Verzeichnis für Webinhalte in Apache
 [source,bash]
 $ /var/www/html
 
 === X2Go
+Mit X2Go lässt sich der Rechner als Terminalserver verwenden: Clients verbinden sich mit dem Gerät und führen Anwendungen "remote" mit ihren Daten aus. Die Anwendung selbst läuft dabei auf dem Server, nur das User-Interface wird zum Client übertragen. Auf diesem Weg müssen die benötigten Anwendungen nicht lokal installiert werden.
 
-http://www.ubuntugeek.com/xrdp-remote-desktop-protocol-rdp-server.html
+Anleitung zum Installieren von X2Go: http://www.ubuntugeek.com/xrdp-remote-desktop-protocol-rdp-server.html
 
 Für die Verwendung von X2Go musste zunächst ein "PPA" installiert werden. In diesen Personal Packages Archiv stellen die Entwickler Pakete bereit, die nicht in den offiziellen Ubuntu-Repositories zur Verfügung stehen. Mit diesem Kommando lassen sich die Paketquellen hinzufügen.
 
@@ -265,7 +265,7 @@ $ sudo chown nobody samba/
 
 
 === Installation von AsciiDoc
-
+Um diese Dokumentation abzuändern und neu zu erstellen, sind folgende Pakete zwingend nötig.
 .Einspielen der zusätzlich benötigten Pakete
 [source,bash]
 $ sudo apt-get asciidoc source-highlight
