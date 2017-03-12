@@ -546,7 +546,7 @@ body.manpage div.sectionbody {
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph"><p><strong>Als Berufsschüler durfte ich im Fach WZQKS (Aufbau und Betrieb eines Kommunikationsservers) einen einfachen Server mit Linux aufsetzen und entsprechend dokumentieren. Wir sollten ein OpenOffice-ODT-Dokument, ein PDF und eine HTML-Seite abliefern – ideales Anwendungsgebiet für Single Source Publishing mit Asciidoc. Um diese Möglichkeiten zu zeigen, stelle ich die Dokumente hier zur Verfügung.</strong></p></div>
+<div class="paragraph"><p><strong>Als Berufsschüler durfte ich im Fach WZQKS (Aufbau und Betrieb eines Kommunikationsservers) einen einfachen Server als virtuelle Maschine mit Linux aufsetzen und entsprechend dokumentieren. Wir sollten ein OpenOffice-ODT-Dokument, ein PDF und eine HTML-Seite abliefern – ideales Anwendungsgebiet für Single Source Publishing mit Asciidoc. Um diese Möglichkeiten zu zeigen, stelle ich die Dokumente hier zur Verfügung.</strong></p></div>
 </div>
 </div>
 <div class="sect1">
@@ -563,6 +563,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt>asciidoc -a icons -a numbered -a disable-javascript Dokumentation-WZQKS<span style="color: #990000">.</span>adoc</tt></pre></div></div>
+<div class="paragraph"><p>Download der fertigen HTML-Datei: <a href="http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.html">HTML-Datei</a></p></div>
 </div>
 <div class="sect2">
 <h3 id="_erstellung_der_odt_datei">1.2. Erstellung der ODT-Datei</h3>
@@ -573,7 +574,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt>lowriter --invisible --convert-to odt Dokumentation-WZQKS<span style="color: #990000">.</span>html</tt></pre></div></div>
-<div class="paragraph"><p>Download der fertigen Datei: [ODT-Datei]</p></div>
+<div class="paragraph"><p>Download der fertigen Datei: <a href="http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.odt">ODT-Datei</a></p></div>
 </div>
 <div class="sect2">
 <h3 id="_erstellung_der_pdf_datei">1.3. Erstellung der PDF-Datei</h3>
@@ -584,7 +585,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt>lowriter --invisible --convert-to pdf Dokumentation-WZQKS<span style="color: #990000">.</span>odt</tt></pre></div></div>
-<div class="paragraph"><p>Download der fertigen Datei: [PDF-Datei]</p></div>
+<div class="paragraph"><p>Download der fertigen Datei: <a href="http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.pdf">PDF-Datei</a></p></div>
 </div>
 </div>
 </div>
@@ -635,7 +636,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="sect1">
 <h2 id="_grundinstallation_der_virtuellen_maschine">3. Grundinstallation der Virtuellen Maschine</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Die Installation wurde mit den Standard-Einstellungen des Instllationsimages <strong>lubuntu-14.04.3-desktop-i386.iso</strong> durchgeführt.</p></div>
+<div class="paragraph"><p>Die Installation wurde mit den Standard-Einstellungen des Installationsimages <strong>lubuntu-14.04.3-desktop-i386.iso</strong> durchgeführt.</p></div>
 <div class="paragraph"><p>Nutzername:   <code>andy</code></p></div>
 <div class="paragraph"><p>Passwort:     <code>ailei3Ah</code></p></div>
 <div class="paragraph"><p>Das System wurde anschließend auf den aktuellen Release geupgraded:</p></div>
@@ -658,7 +659,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>Im folgenden werden Konfigurationen beschrieben, die speziell für den Einsatz im Fach WZQKS vorgenommen wurden</p></div>
 <div class="sect3">
 <h4 id="_änderung_des_hostnamens">3.1.1. Änderung des Hostnamens</h4>
-<div class="paragraph"><p>Das System soll nich tnur über IP-Adresse, sondern auch über einen Namen, hier "breitbach-server", ansprechbar sein. Dazu wurde in der Datei <strong>/etc/hosts</strong> folgende Zeile hinzugefügt:</p></div>
+<div class="paragraph"><p>Das System soll nicht nur über IP-Adresse, sondern auch über einen Namen, hier "breitbach-server", ansprechbar sein. Dazu wurde in der Datei <strong>/etc/hosts</strong> folgende Zeile hinzugefügt:</p></div>
 <div class="listingblock">
 <div class="title">Anlage eines Hostnamens in der Hosts-Datei</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.8
@@ -707,7 +708,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>""
 Wine Is Not an Emulator
 ""</p></div>
-<div class="paragraph"><p>Wine ist eine "Kompatibilitätsschicht" für Windows-Anwendungen, um diese unter Linux nutzen zu können. Über diese Schicht werden Programmaufrufe an die entsprechenden Linux-Bestandteile durchgereicht bzw. passend übersetzt. Ein Emulator würde hingegen die Befehle 1:1 wie im Originalprogramm vorgesehen ausführen, udn wäre damit quasi ein Windows-Nachbau. Mit <a href="https://www.reactos.org/">ReactOS</a> existiert ein solches Projekt, das aber noch nicht über den Alpha-Status hinausgekommen ist.
+<div class="paragraph"><p>Wine ist eine "Kompatibilitätsschicht" für Windows-Anwendungen, um diese unter Linux nutzen zu können. Über diese Schicht werden Programmaufrufe an die entsprechenden Linux-Bestandteile durchgereicht bzw. passend übersetzt. Ein Emulator würde hingegen die Befehle 1:1 wie im Originalprogramm vorgesehen ausführen, und wäre damit quasi ein Windows-Nachbau. Mit <a href="https://www.reactos.org/">ReactOS</a> existiert ein solches Projekt, das aber noch nicht über den Alpha-Status hinausgekommen ist.
 Demgegenüber lassen sich viele Windows-Anwendungen und Spiele seit langem unter Wine benutzen.</p></div>
 <div class="sect3">
 <h4 id="_installation_von_wine">3.2.1. Installation von Wine</h4>
@@ -733,7 +734,6 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt>$ sudo apt-get install vsftpd</tt></pre></div></div>
-<div class="paragraph"><p>Nach der Installation wurde der Server mit</p></div>
 <div class="paragraph"><p>Die Konfiguration befindet sich in der Datei <strong>/etc/vsftpd.conf</strong>. Hier muss nur diese Einstellung geändert werden:</p></div>
 <div class="listingblock">
 <div class="title">Änderung an der Konfigurationsdatei für vsftpd</div>
@@ -757,7 +757,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt>$ sudo apt-get install apache2</tt></pre></div></div>
-<div class="paragraph"><p>Der Server wird dann automatisch gestartet. Die abzurufenden Webseiten können unter bereit gestellt werden. Die "Einstiegsseite" <strong>muss</strong> <em>index.html</em> heißen. In dieser Isntallation werden die Webseiten im Standard-Verzeichnis abgelegt.</p></div>
+<div class="paragraph"><p>Der Server wird dann automatisch gestartet. Die abzurufenden Webseiten können im Standard-Verzeichnis bereit gestellt werden. Die "Einstiegsseite" <strong>muss</strong> <em>index.html</em> heißen. In dieser Installation werden die Webseiten im Standard-Verzeichnis abgelegt.</p></div>
 <div class="listingblock">
 <div class="title">Standard-Verzeichnis für Webinhalte in Apache</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.8
@@ -768,7 +768,8 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div class="sect2">
 <h3 id="_x2go">3.5. X2Go</h3>
-<div class="paragraph"><p><a href="http://www.ubuntugeek.com/xrdp-remote-desktop-protocol-rdp-server.html">http://www.ubuntugeek.com/xrdp-remote-desktop-protocol-rdp-server.html</a></p></div>
+<div class="paragraph"><p>Mit X2Go lässt sich der Rechner als Terminalserver verwenden: Clients verbinden sich mit dem Gerät und führen Anwendungen "remote" mit ihren Daten aus. Die Anwendung selbst läuft dabei auf dem Server, nur das User-Interface wird zum Client übertragen. Auf diesem Weg müssen die benötigten Anwendungen nicht lokal installiert werden.</p></div>
+<div class="paragraph"><p>Anleitung zum Installieren von X2Go: <a href="http://www.ubuntugeek.com/xrdp-remote-desktop-protocol-rdp-server.html">http://www.ubuntugeek.com/xrdp-remote-desktop-protocol-rdp-server.html</a></p></div>
 <div class="paragraph"><p>Für die Verwendung von X2Go musste zunächst ein "PPA" installiert werden. In diesen Personal Packages Archiv stellen die Entwickler Pakete bereit, die nicht in den offiziellen Ubuntu-Repositories zur Verfügung stehen. Mit diesem Kommando lassen sich die Paketquellen hinzufügen.</p></div>
 <div class="listingblock">
 <div class="title">Hinzufügen des X2Go-Repository und anschließende Installation von X2Go</div>
@@ -824,8 +825,9 @@ $ sudo chown nobody samba<span style="color: #990000">/</span></tt></pre></div><
 </div>
 <div class="sect2">
 <h3 id="_installation_von_asciidoc">3.7. Installation von AsciiDoc</h3>
+<div class="paragraph"><p>Um diese Dokumentation abzuändern und neu zu erstellen, sind folgende Pakete zwingend nötig.
+.Einspielen der zusätzlich benötigten Pakete</p></div>
 <div class="listingblock">
-<div class="title">Einspielen der zusätzlich benötigten Pakete</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.8
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -838,7 +840,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2017-03-12 15:36:29 CET
+ 2017-03-12 15:53:13 CET
 </div>
 </div>
 </body>
