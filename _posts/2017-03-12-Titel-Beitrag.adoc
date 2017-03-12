@@ -1,0 +1,82 @@
+= Titel Beitrag
+// Dateiname beim Speichern: YYYY-MM-DD-Titel.adoc
+Andreas Breitbach <andreas.breitbach@gmail.com>
+:published-at: YYYY-MM-DD
+:hp-tags: tag-1, tag-2
+
+:toc:
+
+// Lokalisierung
+:lang: de
+ifeval::["{lang}" == "de"]
+:appendix-caption: Anhang
+:caution-caption: Achtung
+:example-caption: Beispiel
+:figure-caption: Abbildung
+:important-caption: Wichtig
+:last-update-label: Zuletzt aktualisiert
+//:listing-caption: Listing
+:manname-title: BEZEICHNUNG
+:note-caption: Anmerkung
+//:preface-title: Vorwort
+:table-caption: Tabelle
+:untitled-label: Ohne Titel
+:version-label: Version
+:warning-caption: Warnung
+endif::[]
+
+
+// Abschnitt-Überschriften mit ==, keine weitere Unterteilung
+
+// Situations/Problembeschreibung in fett/Vorspann-Text
+
+*Dies soll erläutern, wie ein Vorspann aussieht. _Text in fett und kursiv._ Hier wird die Situation erklärt.*
+
+== Zwischenüberschrift 1/Problem
+
+//Normaler Fließtext, ohne Auszeichnung
+In Fließtext.
+
+
+// Gliederungsebenen
+== Implications
+* Einzelne Implications in Bullet points.
+  **  Unter-Implications entsprechend verpacken
+      *** 3. Unterpunkt
+
+== Need/Payoff
+* Ca. Stunden
+* Kenntnisse
+* Aufwand/wieviel Chaos ist das?
+* Material (Soft/Hardware etc.)
+
+// Quelltext-Beispiel mit Auszeichnung und Titel
+.Quelltext-Beispiel
+[source,bash,indent=0]
+----
+    def names
+      @name.split ' '
+    end
+----
+
+// Dateipfade, für Login-Daten-Kombination, etc.
+Dateipfade: `Pfad/zur/Datei`
+
+
+== Anleitung, um das Ziel zu erreichen
+1. Punkt
+2. Punkt
+3. usw.
+
+== Ergebnisse
+* Als Bullet points
+
+.Screenshots
+image::images/Blog-vorlage-9d61a.png[Alt-Titel]
+
+== Technischer Hintergrund
+Fließtext
+
+== Weitere Literatur und Links
+
+https://www.kernel.org/[Linux]
