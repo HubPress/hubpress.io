@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Simon's blog]]></title><description><![CDATA[Do one thing at a time, and do well.]]></description><link>https://SakuragiZHX.github.io</link><image><url>/images/cover-star.jpg</url><title>Simon&apos;s blog</title><link>https://SakuragiZHX.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Sun, 18 Dec 2016 14:22:34 GMT</lastBuildDate><atom:link href="https://SakuragiZHX.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[flex]]></title><description><![CDATA[<div class="paragraph">
+<p>flex是2009年w3c提出的一种网页布局(layout)方案。</p>
+</div>
+<div class="paragraph">
+<p>flex分为container和items。container即包在最外面的一层，有main axis(horizontal)和cross axis(vertical)两个轴。若要使一个block或inline元素成为container，需要将其display属性设为：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.container{
+  display: flex;
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>container有如下属性(第一个值为缺省值)：</p>
+</div>
+<div class="paragraph">
+<p>flex-direction: row|row-reverse|column|column-reverse  表示items排列方向与轴线。</p>
+</div>
+<div class="paragraph">
+<p>flex-wrap: nowrap|wrap|wrap-reverse   换行的设置。</p>
+</div>
+<div class="paragraph">
+<p>flex-flow: direction和wrap的简写。</p>
+</div>
+<div class="paragraph">
+<p>justify-content: flex-start|flex-end|center|start-between|start-around  items在main-axis上的对齐方式。</p>
+</div>
+<div class="paragraph">
+<p>align-items: stretch|flex-start|flex-end|center|base-line  items在cross-axis上的对齐方式。</p>
+</div>
+<div class="paragraph">
+<p>align-content: flex-start|flex-end|center|start-between|start-around|stretch 多行itmes在cross axis上的对齐方式，相当于cross axis上的justify-content。</p>
+</div>
+<div class="paragraph">
+<p>而每个item也有自己的属性：</p>
+</div>
+<div class="paragraph">
+<p>order: &lt;number&gt;  item显示的顺序</p>
+</div>
+<div class="paragraph">
+<p>flex-grow: &lt;number&gt; 当存在剩余空间时item所占剩余空间的比例，默认为0即存在剩余空间也不放大。</p>
+</div>
+<div class="paragraph">
+<p>flex-shrink: &lt;number&gt; 当空间不足时item缩小的比例，默认为1。</p>
+</div>
+<div class="paragraph">
+<p>flex-basis: auto|xx%|xx px 计算剩余空间之前item的大小，atuo表示item本来的大小，也可以是百分数或者单位为px、rem等的数值。</p>
+</div>
+<div class="paragraph">
+<p>flex：grow、shrink、basis的缩写。</p>
+</div>
+<div class="paragraph">
+<p>align-self: 类似于align-item，但只针对单个item，可选值同align-item。</p>
+</div>
+<div class="paragraph">
+<p>flex是一种灵活多用的布局方案，flex可以结合CSS3中的@media对不同尺寸的屏幕进行不同设置，更适用于web app的某个组件或者移动端布局。而Grid更适合于用在大屏布局。</p>
+</div>
+<div class="paragraph">
+<p>一个flex和@media搭配的例子：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .navigation {
+    flex-direction: column;
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>更多flex实例请参考<a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">A complete guide to flexbox</a></p>
+</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/18/flex.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/18/flex.html</guid><category><![CDATA[flex]]></category><category><![CDATA[ css3]]></category><category><![CDATA[ 布局]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Sun, 18 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[webpack.config.js配置]]></title><description><![CDATA[<div class="paragraph">
+<p>webpack是一款模块打包工具，它的功能有：通过对应的loader将es6、sass、css、json、图片等文件解析为js文件；将多个js文件打包成一个js文件;提供sourceMap、devServer等工具便于调试；可以添加个各种plugin来扩展功能。</p>
+</div>
+<div class="paragraph">
+<p>webpack的核心即它的配置文件webpack.config.js。下面是一个简单的例子：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var webpack = require("webpack");
+
+module.exports={
+	entry:__dirname+"/app/main.js",
+	output:{
+		path:__dirname + "/dist",
+		filename:"bundle.js"
+	},
+	module:{
+		loaders:[
+			{
+				test:/\.js/,
+				exclude:/node_modules/,
+				loader:"babel"
+			},
+			{
+				test:/\.json/,
+				loader:"json"
+			}
+		]
+	},
+	devServer:{
+		inline:true,
+		contentBase:"./dist"
+	},
+	plugins: [
+    	new webpack.BannerPlugin("Copyright Flying Unicorns inc.")
+  ]
+
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>entry即告诉webpack工程的入口，output即输出文件配置，__dirname是node中的一个全局变量，指向当前指向的脚本所在目录。</p>
+</div>
+<div class="paragraph">
+<p>devServer即本地服务器的配置。</p>
+</div>
+<div class="paragraph">
+<p><em>本文章主要为了方便本人记忆,关于webpack的入门可以参考zhangwang的文章:</em>
+<a href="http://www.jianshu.com/p/42e11515c10f" class="bare">http://www.jianshu.com/p/42e11515c10f</a></p>
+</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/08/webpackconfigjs.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/08/webpackconfigjs.html</guid><category><![CDATA[webpack]]></category><category><![CDATA[ tools]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Thu, 08 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Sass语法简介]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sass是对CSS的一种扩展。它有两种语法格式分别对应两种文件后缀：.scss,.sass。其中，后者采用ruby的严格缩进的形式，与我们平时写的CSS有很大差异，所以一般使用scss。下面介绍一下Sass的主要特性。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__">一、变量</h3>
+<div class="paragraph">
+<p>Sass引入了变量。形式：<code>$variable-name:value</code> ，一般只有在需要大量使用同一个值得时候才为其设置变量。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___2">二、风格</h3>
+<div class="paragraph">
+<p>Sass最终要编译成css文件，在这个过程中可以选择编译的风格：nested、expanded、compact、compressed。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___3">三、嵌套</h3>
+<div class="paragraph">
+<p>Sass对包含选择器，可以用嵌套的方式书写，如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>div{
+	ul{
+    	padding-left:50px;
+        background-color:green;
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>编译成CSS即：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>div ul{
+	padding-left:50px;
+    background-color:green;
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__import">四、import</h3>
+<div class="paragraph">
+<p>CSS中的import虽然方便，但是会产生额外的HTTP请求，违反了前端优化原则。而Sass中的import，相当于是文件的合并，即把两个CSS文件合并成一个。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__mixin">五、mixin</h3>
+<div class="paragraph">
+<p>mixin即Sass中的宏，在某些情况下可以大大简化书写，如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+div{@include border-radius(10px);}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___4">六、继承</h3>
+<div class="paragraph">
+<p>Sass中可以用extend chooser-name来继承相应属性，编译成CSS是分组选择器。如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.parent{
+	margin:0 10 20 10;
+    color:red;
+}
+.son{
+	@extend .parent
+    font-size:15px;
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>编译成CSS为：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.parent,.son{
+	margin:0 10 20 10;
+    color:red;
+}
+.son{
+	font-size:15px;
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___5">七、计算</h3>
+<div class="paragraph">
+<p>Sass提供了简单的运算符，如：+ - * / %等，可以帮助我们更精准的写样式，如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.container{
+	width:100%;
+}
+.article[role="main"]{
+	float:left;
+    width:600/960 *100%;
+}
+.column[role="col"]{
+	float:right;
+    width:300/960 *100%;
+}</pre>
+</div>
+</div>
+</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/08/Sass.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/08/Sass.html</guid><category><![CDATA[Sass]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Thu, 08 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[浅谈JavaScript中的闭包]]></title><description><![CDATA[<div class="sect2">
+<h3 id="__">一、闭包是什么？</h3>
+<div class="paragraph">
+<p>《JavaScript高级程序设计》上写道：“闭包是指有权访问另一个函数作用域中的变量的函数”，如果用下定义的观点看，这句话就是说“闭包是函数”，带着怀疑的心态又去网上找了找，发现什么说法都有，还是不能明白，暂且不管，还是看代码来得直接。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>function outter(){
+	var sky="blue";
+    function inner(){
+    	console.log(sky);
+    }
+
+    return inner;
+}
+var result=outter();
+result();	//"blue"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>这段代码就包含一个简单的闭包：outter函数的返回值是一个函数，即inner。inner在outter内部，理所当然能访问到局部变量sky，但当inner作为outter的返回值赋给outter外的全局变量时，神奇的事情发生了：在全局作用域中访问到了sky，这就是闭包。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___2">二、闭包的原理</h3>
+<div class="paragraph">
+<p>每个函数都有自己的执行环境，当一个函数被执行时，它的执行环境就会被推入环境栈，一旦执行完，栈将其环境弹出，活动对象(存储环境中定义的变量及函数)被销毁。</p>
+</div>
+<div class="paragraph">
+<p>对于上面的例子来说，outter执行完之后将值赋给了result，outter的执行环境从环境栈弹出，控制权交给全局环境，outter的活动对象理应被销毁。但此时inner已经存储在全局活动对象中了，同时inner需要访问sky，即outter的活动对象没有被销毁，直到result执行完毕，inner的活动对象被销毁后，outter的活动对象才会被销毁。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___3">三、闭包的作用</h3>
+<div class="paragraph">
+<p>说了这么多，闭包到底有什么用呢？我个人认为闭包最大的用处即防止对全局作用域的污染。
+试想如果我们把一些仅仅只用到一两次的变量都声明在全局作用域中，最后肯定是容易出错且不可维护的。而闭包最神奇的地方就是能在一个函数外访问函数中的局部变量，把这些变量用闭包的形式放在函数中便能避免污染。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___4">四、需要注意的</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>闭包将函数的活动对象维持在内存中，过度使用闭包会导致内存占用过多；</p>
+</li>
+<li>
+<p>闭包只能取得外部函数中任何变量的最后一个值，在使用循环且返回的函数中带有循环变量时会得到错误结果；</p>
+</li>
+<li>
+<p>当返回的函数为匿名函数时，注意匿名函数中的this指的是window对象。</p>
+</li>
+</ul>
+</div>
+</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/04/Java-Script.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/04/Java-Script.html</guid><category><![CDATA[JavaScript]]></category><category><![CDATA[ 闭包]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Sun, 04 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[简单易用的github博客搭建工具---HubPress]]></title><description><![CDATA[<div class="sect1">
+<h2 id="__hubpress">一、HubPress是什么?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HubPress是一款免费、开源的基于GitHub Page用来搭建博客的web app。</p>
+</div>
+<div class="paragraph">
+<p>HubPress支持 <a href="http://asciidoctor.org/" target="_blank">AsciiDoc</a>语言(类似MarkDown)，集成了Disqus(第三方网站评论工具，已经被墙o(╯□╰)o )以及Google Analytics(Google 提供的站点数据分析服务，国内也用不了&#8230;&#8203;&#8230;&#8203;)，并提供了多种主题供用户选择。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__hubpress_vs_jekyll">二、HubPress VS Jekyll</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>一提到基于GitHub Page搭建博客，大多数人首先想到的是Jekyll，那么相对Jekyll，HubPress有哪些特点呢？</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>HubPress操作简单，你只需要一个github账号就能搞定一切。</p>
+</li>
+<li>
+<p>HubPress功能相对Jekyll较弱。</p>
+</li>
+<li>
+<p>HubPress支持AsciiDoc语法，而Jekyll支持MarkDown。这一点显然是Jekyll占优，毕竟MarkDown的流行度不是前者能比的。</p>
+</li>
+<li>
+<p>HubPress只能运行在GitHub Page上，而Jekyll不受此限制。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>既然Jekyll各个方面都比HubPress好，我们为什么还要用HubPress呢？其实就是HubPress实在是太简单易用了，即使是一个从来没写过程序的人也能不花太多功夫搭好自己的博客，虽然这也是它的缺点，但不可否认也是HubPress最吸引人的地方。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__hubpress_2">三、HubPress建站流程</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>首先你需要有个github账号，登录到github首页搜索HubPress.io，然后fork;</p>
+</li>
+<li>
+<p>进入fork到自己github上的HubPress.io这个repository，选择settings，将repository name改为&lt;username&gt;.github.io；</p>
+</li>
+<li>
+<p>找到hubress/config.json文件，按文件中提示内容修改文件。</p>
+</li>
+<li>
+<p>登录到https://username.github.io/hubpress/ ,在setting中可以修改站点相关信息，使用集成的编辑器编写asciidoc文档，然后posts即可。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>详细信息还是参见HubPress项目主页的ReadMe，英文不好的同学可能要吃力一些，但总体上较为简单。本人菜鸟一枚，如有错误及遗漏之处，欢迎指出。</strong></p>
+</div>
+</div>
+</div>]]></description><link>https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html</link><guid isPermaLink="true">https://SakuragiZHX.github.io/2016/12/03/github-Hub-Press.html</guid><category><![CDATA[Tool]]></category><category><![CDATA[ Blog]]></category><dc:creator><![CDATA[Simon]]></dc:creator><pubDate>Sat, 03 Dec 2016 00:00:00 GMT</pubDate></item></channel></rss>

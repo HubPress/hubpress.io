@@ -1,0 +1,84 @@
+= Sass语法简介
+:hp-tags: Sass
+
+Sass是对CSS的一种扩展。它有两种语法格式分别对应两种文件后缀：.scss,.sass。其中，后者采用ruby的严格缩进的形式，与我们平时写的CSS有很大差异，所以一般使用scss。下面介绍一下Sass的主要特性。
+
+=== 一、变量
+Sass引入了变量。形式：`$variable-name:value` ，一般只有在需要大量使用同一个值得时候才为其设置变量。
+
+=== 二、风格
+Sass最终要编译成css文件，在这个过程中可以选择编译的风格：nested、expanded、compact、compressed。
+
+=== 三、嵌套
+Sass对包含选择器，可以用嵌套的方式书写，如：
+----
+div{
+	ul{
+    	padding-left:50px;
+        background-color:green;
+    }
+}
+----
+编译成CSS即：
+----
+div ul{
+	padding-left:50px;
+    background-color:green;
+}
+----
+
+=== 四、import
+CSS中的import虽然方便，但是会产生额外的HTTP请求，违反了前端优化原则。而Sass中的import，相当于是文件的合并，即把两个CSS文件合并成一个。
+
+=== 五、mixin
+mixin即Sass中的宏，在某些情况下可以大大简化书写，如：
+----
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+div{@include border-radius(10px);}
+----
+
+=== 六、继承
+
+Sass中可以用extend chooser-name来继承相应属性，编译成CSS是分组选择器。如：
+----
+.parent{
+	margin:0 10 20 10;
+    color:red;
+}
+.son{
+	@extend .parent
+    font-size:15px;
+}
+----
+编译成CSS为：
+----
+.parent,.son{
+	margin:0 10 20 10;
+    color:red;
+}
+.son{
+	font-size:15px;
+}
+----
+
+=== 七、计算
+Sass提供了简单的运算符，如：+ - * / %等，可以帮助我们更精准的写样式，如：
+----
+.container{
+	width:100%;
+}
+.article[role="main"]{
+	float:left;
+    width:600/960 *100%;
+}
+.column[role="col"]{
+	float:right;
+    width:300/960 *100%;
+}
+----

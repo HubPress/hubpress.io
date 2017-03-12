@@ -1,0 +1,68 @@
+= flex
+:hp-tags: flex, css3, 布局
+
+flex是2009年w3c提出的一种网页布局(layout)方案。
+
+flex分为container和items。container即包在最外面的一层，有main axis(horizontal)和cross axis(vertical)两个轴。若要使一个block或inline元素成为container，需要将其display属性设为：
+----
+.container{
+  display: flex;
+}
+----
+container有如下属性(第一个值为缺省值)：
+
+flex-direction: row|row-reverse|column|column-reverse  表示items排列方向与轴线。
+
+flex-wrap: nowrap|wrap|wrap-reverse   换行的设置。
+
+flex-flow: direction和wrap的简写。
+
+justify-content: flex-start|flex-end|center|start-between|start-around  items在main-axis上的对齐方式。
+
+align-items: stretch|flex-start|flex-end|center|base-line  items在cross-axis上的对齐方式。
+
+align-content: flex-start|flex-end|center|start-between|start-around|stretch 多行itmes在cross axis上的对齐方式，相当于cross axis上的justify-content。
+
+
+而每个item也有自己的属性：
+
+order: <number>  item显示的顺序
+
+flex-grow: <number> 当存在剩余空间时item所占剩余空间的比例，默认为0即存在剩余空间也不放大。
+
+flex-shrink: <number> 当空间不足时item缩小的比例，默认为1。
+
+flex-basis: auto|xx%|xx px 计算剩余空间之前item的大小，atuo表示item本来的大小，也可以是百分数或者单位为px、rem等的数值。
+
+flex：grow、shrink、basis的缩写。
+
+align-self: 类似于align-item，但只针对单个item，可选值同align-item。
+
+flex是一种灵活多用的布局方案，flex可以结合CSS3中的@media对不同尺寸的屏幕进行不同设置，更适用于web app的某个组件或者移动端布局。而Grid更适合于用在大屏布局。
+
+一个flex和@media搭配的例子：
+
+----
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .navigation {
+    flex-direction: column;
+  }
+}
+----
+
+更多flex实例请参考link:http://css-tricks.com/snippets/css/a-guide-to-flexbox/[A complete guide to flexbox]
+
+
+
