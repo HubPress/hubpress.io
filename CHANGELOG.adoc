@@ -1,3 +1,13 @@
+## 0.7.3
+
+* fix(init): fix a typo when initiliazing with a element in localStorage for hubpress:sync
+* feat(chat): add the sidecar chat linked with gitter.im/hubpress/hubpress.io
+
+## 0.7.2
+
+* fix(rss): rss was not reseted when no post
+* fix(theme): report themes omitted during the release 0.7.1 :(
+
 ## 0.7.1
 
 * fix(theme): Error with http request (and not https) for included stylesheet HubPress/hubpress.io#475
