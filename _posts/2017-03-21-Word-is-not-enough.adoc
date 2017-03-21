@@ -1,0 +1,41 @@
+= Word is not enough!
+// Dateiname beim Speichern: YYYY-MM-DD-Titel.adoc
+Andreas Breitbach <andreas.breitbach@gmail.com>
+:published-at: 2017-03-21
+:hp-tags: latex, tool
+
+:toc:
+
+// Lokalisierung
+:lang: de
+ifeval::["{lang}" == "de"]
+:appendix-caption: Anhang
+:caution-caption: Achtung
+:example-caption: Beispiel
+:figure-caption: Abbildung
+:important-caption: Wichtig
+:last-update-label: Zuletzt aktualisiert
+//:listing-caption: Listing
+:manname-title: BEZEICHNUNG
+:note-caption: Anmerkung
+//:preface-title: Vorwort
+:table-caption: Tabelle
+:untitled-label: Ohne Titel
+:version-label: Version
+:warning-caption: Warnung
+endif::[]
+
+.Der Aufreger. Im folgenden nennt Goldstein einige Word-Probleme – die mit LaTeX nicht bestehen
+[quote, Dan Goldstein, Technischer Autor für Medizinprodukte]
+""
+Stuff that why-can’t-MS-Word-do-already, dammit, dammit, dammit!:
+""
+
+Goldstein nennt insgesamt vier Dinge, die ihn bei Word nerven. Für einige davon ist das Textsatzsystem LaTeX eine einfache Lösung:
+
+1. „Passe das Inhaltsverzeichnis so an, dass der Inhalt auf eine Seite passt!“ Hier lässt sich unter Umständen mit LaTeX die Fläche der nutzbaren Seite vergrößern, ein Kommando wie `\enlargethispage{2cm}` reicht evtl. aus. Damit wird LaTeX angewiesen, für diese eine Seite 2 cm mehr vorzusehen, wie es eigentlich für nötig hält. Bei menschgemachten Problemen, wie einem eindeutig zu langem Inhaltsverzeichnis, kann aber kein Computer helfen.
+2. „Nutze standardisierte Bibliographie-Einträge“ Der GRUND, wieso ich als Politikwissenschaftler LaTeX verwendet habe. Egal, wie abgedreht die Zitiervorschriften sind, hiermit kriegt man sie unter Kontrolle. Kein Kontrollieren händisch eingefügter Literaturnachweise, keine Suche von Dubletten oder ähnlichem, einfach nur Ruhe beim Schreiben :-) Siehe https://www.ctan.org/pkg/biblatex?lang=de[BibLaTeX]
+3. „Prüfe Fremdsprachen/Varianten (Schweizerdeutsch) mit den entsprechenden Wörterbüchern.“ Egal ob LaTeX oder Word, in jedem Fall muss das System wissen, in welchen Sprachen geprüft werden soll. Dazu muss der Text entsprechend ausgezeichnet bzw. eingegeben werden. Ein Beispiel, wie dies in Word geht, ist https://support.office.com/en-us/article/Check-spelling-and-grammar-in-a-different-language-667ba67a-a202-42fd-8596-edc1fa320e00?ui=en-US&rs=en-US&ad=US&fromAR=1[hier]. In LaTeX hängt diese Funktion vom Editor ab. Was bei alldem jedoch nicht geht: Automatisch kann keine Anwendung erkennen, ob es sich beim verwendetem Text um zb. Amerikanisches Englisch oder Britisches Englisch handelt (Word vermutet hier eher, und liegt damit meiner Erfahrung nach zu oft falsch.)
+4. „Tabelle für maximale Lesbarkeit einstellen“ Von allen Problemfällen ist dieser am schwierigstem: Die maximale Lesbarkeit hängt zu vielen Faktoren ab, als das eine allgemeingültige Antwort möglich ist: Leser (Fehlsichtigkeiten, persönliche Präferenzen), Leseentfernung, Medium (Papier/Display, Auslösung), Lesesituation… Angesichts dessen ist die einzige sinnvolle Antwort https://de.wikipedia.org/wiki/Responsive_Webdesign[Responsive (Web)design]. Hierbei passt sich der Inhalt dem Endgerät an und kann weiter durch den Nutzer an Präferenzen angepasst werden (z.B. durch Zoomen, ausblenden unwichtiger Informationen etc.)
+
+Insgesamt gilt aber, wie der Titel schon andeutet, dass Word alleine für diese Probleme keine Lösung ist. Je nachdem verwende ich Asciidoc, Word, LaTeX oder Orgmode; als Editor Atom, Emacs, TexStudio…
