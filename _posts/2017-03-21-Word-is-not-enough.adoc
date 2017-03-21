@@ -31,7 +31,7 @@ endif::[]
 Stuff that why-can’t-MS-Word-do-already, dammit, dammit, dammit!:
 ""
 
-Goldstein nennt insgesamt vier Dinge, die ihn bei Word nerven. Für einige davon ist das Textsatzsystem LaTeX eine einfache Lösung:
+https://techwhirl.com/dammit-siri-just-fit-table-contents-one-page/[Goldstein nennt insgesamt vier Dinge], die ihn bei Word nerven. Für einige davon ist das Textsatzsystem LaTeX eine einfache Lösung:
 
 1. „Passe das Inhaltsverzeichnis so an, dass der Inhalt auf eine Seite passt!“ Hier lässt sich unter Umständen mit LaTeX die Fläche der nutzbaren Seite vergrößern, ein Kommando wie `\enlargethispage{2cm}` reicht evtl. aus. Damit wird LaTeX angewiesen, für diese eine Seite 2 cm mehr vorzusehen, wie es eigentlich für nötig hält. Bei menschgemachten Problemen, wie einem eindeutig zu langem Inhaltsverzeichnis, kann aber kein Computer helfen.
 2. „Nutze standardisierte Bibliographie-Einträge“ Der GRUND, wieso ich als Politikwissenschaftler LaTeX verwendet habe. Egal, wie abgedreht die Zitiervorschriften sind, hiermit kriegt man sie unter Kontrolle. Kein Kontrollieren händisch eingefügter Literaturnachweise, keine Suche von Dubletten oder ähnlichem, einfach nur Ruhe beim Schreiben :-) Siehe https://www.ctan.org/pkg/biblatex?lang=de[BibLaTeX]
