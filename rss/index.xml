@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 21 Mar 2017 16:25:42 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Word is not enough!]]></title><description><![CDATA[<div class="quoteblock">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc]]></description><link>https://andreas-breitbach.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 21 Mar 2017 16:31:42 GMT</lastBuildDate><atom:link href="https://andreas-breitbach.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Word is not enough!]]></title><description><![CDATA[<div class="quoteblock">
 <div class="title">Der Aufreger. Im folgenden nennt Goldstein einige Word-Probleme – die mit LaTeX nicht bestehen</div>
 <blockquote>
 <div class="paragraph">
@@ -11,7 +11,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Goldstein nennt insgesamt vier Dinge, die ihn bei Word nerven. Für einige davon ist das Textsatzsystem LaTeX eine einfache Lösung:</p>
+<p><a href="https://techwhirl.com/dammit-siri-just-fit-table-contents-one-page/">Goldstein nennt insgesamt vier Dinge</a>, die ihn bei Word nerven. Für einige davon ist das Textsatzsystem LaTeX eine einfache Lösung:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
