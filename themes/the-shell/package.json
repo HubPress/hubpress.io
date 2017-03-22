@@ -1,0 +1,36 @@
+{
+    "name": "the-shell",
+    "description" : "Simple theme for Ghost. Pure CSS. Web Safe fonts.",
+    "demo": "https://demo.ghost.io",
+    "version": "0.1.1",
+    "engines": {
+        "ghost": ">=0.4.0 <1.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Dmitry Lebedev",
+        "email": "mityalebedev@me.com",
+        "url": "https://dmitrylebedev.me"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mityalebedev/The-Shell.git"
+    },
+    "bugs": "https://github.com/mityalebedev/The-Shell/issues",
+    "contributors": "https://github.com/mityalebedev/The-Shell/graphs/contributors"
+}
