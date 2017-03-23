@@ -1,3 +1,10 @@
+## 0.8.0
+
+* feat(startup): add a panel to define the username, the repositoryName, the branch and the CNAME before login
+* fix(tag): fix the tag generation by removing useless space with a trim
+* fix(theme): add the highlightjs css and upgrade to the last version, fix all themes to have a correct rendering
+* feat(theme): add a new (black) theme The Shell
+
 ## 0.7.3
 
 * fix(init): fix a typo when initiliazing with a element in localStorage for hubpress:sync

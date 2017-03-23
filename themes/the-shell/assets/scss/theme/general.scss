@@ -1,0 +1,255 @@
+/* ==========================================================================
+   2. General - Setting up some base styles
+   ========================================================================== */
+
+html {
+    height: 100%;
+    max-height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    max-height: 100%;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2.0rem;
+    line-height: 1.6em;
+    color: $text;
+    background: $background
+}
+
+::selection {
+    color: $selection-text-and-header-background;
+    background: $selection-background-and-link-hover;
+    text-shadow: none;
+}
+
+%heading {
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin-top: 0;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        @extend %heading;
+        a {
+            color: $heading;
+        }
+    }
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 1.2em;
+    text-indent: -3px;
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 1.2em;
+    text-indent: -2px;
+}
+
+h3 {
+    font-size: 3.5rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 2.5rem;
+}
+
+h6 {
+    font-size: 2rem;
+}
+
+a {
+    color: $contessa;
+    transition: color ease 0.3s;
+    &:hover {
+        color: $selection-background-and-link-hover;
+    }
+}
+
+
+p, ul, ol {
+    margin: 1.6em 0;
+}
+
+ol ol, ul ul,
+ul ol, ol ul {
+    margin: 0.4em 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $border;
+    margin: 3.2em 0;
+    padding: 0;
+}
+
+blockquote {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0 1.6em -2.2em;
+    padding: 0 0 0 1.6em;
+    border-left: $comet 0.4em solid;
+    p {
+        margin: 0.8em 0;
+        font-style: italic;
+    }
+    small {
+        display: inline-block;
+        margin: 0.8em 0 0.8em 1.5em;;
+        font-size:0.9em;
+        color: $silver;
+        &:before { content: '\2014 \00A0'; }
+    }
+    cite {
+        font-weight:bold;
+        a { font-weight: normal; }
+    }
+
+}
+
+
+
+dl {
+    margin: 1.6em 0;
+    dt {
+        float: left;
+        width: 180px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: bold;
+        margin-bottom: 1em
+    }
+
+    dd {
+        margin-left: 200px;
+        margin-bottom: 1em
+    }
+
+}
+
+
+mark {
+    background-color: #ffc336;
+}
+
+code, tt {
+    padding: 1px 3px;
+    /*font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;*/
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.75em;
+    white-space: pre;
+    border: 1px solid $river-bed;
+    background: $comet;
+    border-radius: 2px;
+}
+
+pre {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    border: 1px solid $river-bed;
+    width: 100%;
+    padding: 10px;
+    /*font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;*/
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.8em;
+    white-space: pre;
+    overflow: auto;
+    background: $comet;
+    border-radius: 3px;
+}
+
+pre code, tt {
+    font-size: inherit;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+kbd {
+    display: inline-block;
+    margin-bottom: 0.4em;
+    padding: 1px 8px;
+    border: $silver 1px solid;
+    color: #666;
+    text-shadow: #fff 0 1px 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    background: #f4f4f4;
+    border-radius: 4px;
+    box-shadow: 
+        0 1px 0 rgba(0, 0, 0, 0.2), 
+        0 1px 0 0 #fff inset;
+}
+
+table {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.6em 0;
+    width:100%;
+    max-width: 100%;
+    background-color: transparent;
+}
+
+table th,
+table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid $river-bed;
+}
+
+table th { color: #000; }
+
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+table tbody + tbody { border-top: 2px solid #efefef; }
+
+table table table { background-color: #fff; }
+
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th {
+    background-color: $comet;
+}
+
+table.plain {
+    tbody > tr:nth-child(odd) > td,
+    tbody > tr:nth-child(odd) > th {
+        background: transparent;
+    }
+}
+
+
+button, input, select, textarea {
+    background: $comet;
+    border: 1px solid $river-bed;
+    color: $text;
+    outline-color: $contessa
+
+}

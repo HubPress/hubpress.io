@@ -500,15 +500,17 @@ article .text small {
     color: #909396
 }
 article .text pre {
-    padding: 14px 20px;
+    /* Comment for a better integration with hljs */
+    /*padding: 14px 20px;*/
     font-size: 16px;
     max-width: 100%;
     overflow-x: auto;
     line-height: 1.4em;
     font-family: "Courier New", "Courier", monospace;
     -webkit-font-smoothing: subpixel-antialiased;
-    border: 1px solid #ededee;
-    background-color: #f9f9fa;
+    /* Comment for a better integration with hljs */
+    /*border: 1px solid #ededee;*/
+    /*background-color: #f9f9fa;*/
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
@@ -517,9 +519,11 @@ article .text pre {
     word-wrap: normal
 }
 article .text pre code {
-    padding: 0;
+    width: 100%;
+    padding: 14px;
     border: none;
-    background-color: transparent
+    /* Comment for a better integration with hljs */
+    /*background-color: transparent*/
 }
 article .text code {
     display: -moz-inline-stack;
