@@ -8,8 +8,6 @@ toc::[]
 
 A free, open source tool you can use to build a blog using GitHub pages and AsciiDoc.
 
-https://flattr.com/submit/auto?user_id=anthonny_q&url=https://github.com/HubPress/hubpress.io&title=HubPress&language=&tags=github&category=software[image:http://api.flattr.com/button/flattr-badge-large.png[]]
-
 == What Is HubPress?
 image::http://hubpress.io/img/editor.png[]
 
