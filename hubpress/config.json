@@ -1,10 +1,21 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
+    "username": "imran31",
+    "repositoryName": "imran31.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Imran Manzoor",
+    "description": "3rd Year CS Undergrad",
+    "logo": "",
+    "cover": "./images/NYC_dark.jpg"
+  },
+  "socialnetwork": {
+    "email": "imran.manzoor31@gmail.com",
+    "linkedin": "https://in.linkedin.com/in/imran-manzoor-98263657",
+    "github": "https://github.com/Imran31"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
