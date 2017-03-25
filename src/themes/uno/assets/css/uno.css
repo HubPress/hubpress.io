@@ -1683,3 +1683,4 @@ input[type="tel"] {
   .btn, .navigation__item a {
     display: block;
     margin-bottom: .4em; } }
+.line-through { text-decoration: line-through; }
