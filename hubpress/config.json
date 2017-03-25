@@ -1,10 +1,39 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "andreas-breitbach",
+    "repositoryName": "andreas-breitbach.github.io",
+    "branch": "master",
+    "cname": ""
+  },
+  "site": {
+    "title": "",
+    "description": "Interessen: IT-Security, Virtualisierung // Technische Dokumentation (insb. Software) und andere für Technik begeistern // LaTeX, Asciidoc",
+    "logo": "andreas-breitbach.github.io/images/klein.JPG",
+    "disqus": "andreas-breitbach",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": ""
+  },
+  "socialnetwork": {
+    "email": "andreas.breitbach@gmail.com",
+    "twitter": "https://twitter.com/a_breitbach",
+    "github": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "ghostium"
+  },
+  "urls": {
+    "site": "https://andreas-breitbach.github.io",
+    "hubpress": "https://andreas-breitbach.github.io",
+    "theme": "//andreas-breitbach.github.io/themes/ghostium",
+    "images": "https://andreas-breitbach.github.io/images"
   }
 }

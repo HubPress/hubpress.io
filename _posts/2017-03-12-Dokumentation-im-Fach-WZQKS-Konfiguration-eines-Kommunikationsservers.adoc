@@ -1,0 +1,271 @@
+= Dokumentation im Fach WZQKS (Konfiguration eines Kommunikationsservers)
+Andreas Breitbach <andreas.breitbach@gmail.com>
+
+:published-at: 2017-03-12
+:hp-tags: systemdoku
+
+:toc:
+
+// Lokalisierung
+:lang: de
+ifeval::["{lang}" == "de"]
+:appendix-caption: Anhang
+:caution-caption: Achtung
+:example-caption: Beispiel
+:figure-caption: Abbildung
+:important-caption: Wichtig
+:last-update-label: Zuletzt aktualisiert
+//:listing-caption: Listing
+:manname-title: BEZEICHNUNG
+:note-caption: Anmerkung
+//:preface-title: Vorwort
+:table-caption: Tabelle
+:untitled-label: Ohne Titel
+:version-label: Version
+:warning-caption: Warnung
+endif::[]
+
+*Als Berufsschüler durfte ich im Fach WZQKS (Aufbau und Betrieb eines Kommunikationsservers) einen einfachen Server als virtuelle Maschine mit Linux aufsetzen und entsprechend dokumentieren. Wir sollten ein OpenOffice-ODT-Dokument, ein PDF und eine HTML-Seite abliefern – ideales Anwendungsgebiet für Single Source Publishing mit Asciidoc. Um diese Möglichkeiten zu zeigen, stelle ich die Dokumente hier zur Verfügung.*
+
+== Erstellen der geforderten Dokumentationselemente
+Asciidoc lässt sich am einfachsten unter Linux verwenden. Alle angegebenen Befehle etc. sind auf der beschriebenen Virtuellen Maschine installiert.
+
+Die Dokumente müssen anschließend händisch an die entsprechenden Orte kopiert werden.
+
+Quelle der nachfolgenden Kommandos: http://www.methods.co.nz/asciidoc/faq.html#_can_you_create_odf_and_pdf_files_using_libreoffice
+
+=== Erstellung der HTML-Datei
+
+[source,bash]
+
+asciidoc -a icons -a numbered -a disable-javascript Dokumentation-WZQKS.adoc
+
+Download der fertigen HTML-Datei: http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.html[HTML-Datei]
+
+
+=== Erstellung der ODT-Datei
+
+Dieses Kommando wird über LibreOffice ausgeführt.
+[source,bash]
+lowriter --invisible --convert-to odt Dokumentation-WZQKS.html
+
+Download der fertigen Datei: http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.odt[ODT-Datei]
+
+=== Erstellung der PDF-Datei
+
+Dieses Kommando wird über LibreOffice ausgeführt.
+[source,bash]
+lowriter --invisible --convert-to pdf Dokumentation-WZQKS.odt
+
+Download der fertigen Datei: http://andreas-breitbach.github.io/images/Dokumentation-WZQKS.pdf[PDF-Datei]
+
+== Dokumentation zur Installation und Einrichtung der geforderten Dienste
+
+Änderungen an Konfigurationsdateien werden in dieser Dokumentation als "Diff" dargestellt:
+
+Dazu wurde an die alte Datei *.backup* drangehangen, mit dem folgenden Kommando wurde der Diff erstellt:
+
+**
+
+.Die alte Datei
+[source,bash]
+--
+Dies ist die alte Datei...
+
+diese Zeile wird geändert...
+
+und diese bleibt so, wie sie ist.
+--
+
+.Die neue Datei
+[source,bash]
+--
+Dies ist die alte Datei...
+
+diese Zeile wurde geändert: "Software is like Sex: It's better when it's free!"
+
+Neue Zeile: 🐧 (Pinguin in Unicode)
+
+und diese bleibt so, wie sie ist.
+--
+
+.Beispiel-Änderung:
+[source,bash]
+--
+3c3,5
+< diese Zeile wird geändert...
+---
+> diese Zeile wurde geändert: "Software is like Sex: It's better when it's free!"
+>
+> Neue Zeile: 🐧 (Pinguin in Unicode)
+--
+
+== Grundinstallation der Virtuellen Maschine
+
+Die Installation wurde mit den Standard-Einstellungen des Installationsimages *lubuntu-14.04.3-desktop-i386.iso* durchgeführt.
+
+Nutzername:   `andy`
+
+Passwort:     `ailei3Ah`
+
+Das System wurde anschließend auf den aktuellen Release geupgraded:
+
+.Herunterladen neuer Paket-Indexdateien
+[source,bash]
+$ sudo apt-get update
+
+.Einspielen der neuen Pakete
+[source,bash]
+$ sudo apt-get dist-upgrade
+
+=== Sonderkonfigurationen
+Im folgenden werden Konfigurationen beschrieben, die speziell für den Einsatz im Fach WZQKS vorgenommen wurden
+
+==== Änderung des Hostnamens
+
+Das System soll nicht nur über IP-Adresse, sondern auch über einen Namen, hier "breitbach-server", ansprechbar sein. Dazu wurde in der Datei */etc/hosts* folgende Zeile hinzugefügt:
+
+.Anlage eines Hostnamens in der Hosts-Datei
+[source,bash]
+127.0.1.1 breitbach-server
+
+In der Datei */etc/hostname*
+
+wurde ebenso der neue Hostname hinterlegt:
+
+.Anlage eines Hostnamens in der Hostname-Datei
+[source,bash]
+breitbach-server
+
+Anschließend wurde der neue Hostname gesetzt:
+
+.Setzen des Hostnamens
+[source,bash]
+$ sudo hostname -F /etc/hostname
+
+Hiernach wurde die VM neu gebootet, damit die Änderunghen übernommen worden.
+
+==== Einrichtung Lehrer-Account
+
+.Anlage eines neuen Nutzers
+[source,bash]
+$ sudo adduser lehrer
+
+Anschließend muss das Passwort zweimal eingegeben werden, eine Rückmeldung über Sternchen o.ä. zu den Tastendrücken erfolgt nicht.
+
+===== Zugangsdaten des Lehrer-Accounts
+
+Nutzername:   `lehrer`
+
+Passwort:     `geheim`
+
+=== Wine
+
+[, ursprüngliches Backronym des Wine-Projekts]
+""
+Wine Is Not an Emulator
+""
+
+Wine ist eine "Kompatibilitätsschicht" für Windows-Anwendungen, um diese unter Linux nutzen zu können. Über diese Schicht werden Programmaufrufe an die entsprechenden Linux-Bestandteile durchgereicht bzw. passend übersetzt. Ein Emulator würde hingegen die Befehle 1:1 wie im Originalprogramm vorgesehen ausführen, und wäre damit quasi ein Windows-Nachbau. Mit https://www.reactos.org/[ReactOS] existiert ein solches Projekt, das aber noch nicht über den Alpha-Status hinausgekommen ist.
+Demgegenüber lassen sich viele Windows-Anwendungen und Spiele seit langem unter Wine benutzen.
+
+==== Installation von Wine
+Wine und die Hilfsanwendung Winetricks werden wie folgt installiert. Die Software ist dann direkt lauffähig.
+
+.Installation von Wine
+[source,bash]
+$ sudo apt-get install wine winetricks
+
+Die benötigten Anwendungen wurden mit FTP in das Nutzer-Verzeichnis "/home/lehrer/bin" übertragen.
+
+Von dort wurden die Daten symbolisch mit einem Icon auf dem Desktop verknüpft: STRG+Umsch und dann per Drag&Drop auf den Desktop gezogen. Über die "Dateieigenschaften" wurde der Name angepasst. Für Solitäre funktionierte diese Änderung. Beim Start gibt Notepad++ eine Fehlermeldung aus, die entsprechende Datei ist jedoch an der angegebenen Stelle vorhanden.
+
+=== FTP
+
+Für den Up- und Download von Dateien wurde ein FTP-Server installiert:
+
+.Installation des FTP-Servers "vsftpd"
+[source,bash]
+$ sudo apt-get install vsftpd
+
+
+Die Konfiguration befindet sich in der Datei */etc/vsftpd.conf*. Hier muss nur diese Einstellung geändert werden:
+
+.Änderung an der Konfigurationsdatei für vsftpd
+[source,bash]
+31c31
+< write_enable=YES
+---
+> #write_enable=YES
+
+Der Login ist dann mit der Adresse des Servers und den Nutzerdaten möglich.
+
+=== Apache
+
+Für den Abruf von Webseiten wurde Apache installiert.
+
+.Installation des Apache-Webservers
+[source,bash]
+$ sudo apt-get install apache2
+
+Der Server wird dann automatisch gestartet. Die abzurufenden Webseiten können im Standard-Verzeichnis bereit gestellt werden. Die "Einstiegsseite" *muss* _index.html_ heißen. In dieser Installation werden die Webseiten im Standard-Verzeichnis abgelegt.
+
+.Standard-Verzeichnis für Webinhalte in Apache
+[source,bash]
+$ /var/www/html
+
+=== X2Go
+Mit X2Go lässt sich der Rechner als Terminalserver verwenden: Clients verbinden sich mit dem Gerät und führen Anwendungen "remote" mit ihren Daten aus. Die Anwendung selbst läuft dabei auf dem Server, nur das User-Interface wird zum Client übertragen. Auf diesem Weg müssen die benötigten Anwendungen nicht lokal installiert werden.
+
+Anleitung zum Installieren von X2Go: http://www.ubuntugeek.com/xrdp-remote-desktop-protocol-rdp-server.html
+
+Für die Verwendung von X2Go musste zunächst ein "PPA" installiert werden. In diesen Personal Packages Archiv stellen die Entwickler Pakete bereit, die nicht in den offiziellen Ubuntu-Repositories zur Verfügung stehen. Mit diesem Kommando lassen sich die Paketquellen hinzufügen.
+
+.Hinzufügen des X2Go-Repository und anschließende Installation von X2Go
+[source,bash]
+$ sudo add-apt-repository ppa:x2go/stable
+$ sudo apt-get update
+$ sudo apt-get install x2goserver x2goserver-xsession
+$ sudo apt-get install x2golxdebindings
+
+Das Paket x2golxdebindings wird für die Verwendung von LXDE benötigt.
+
+=== Samba
+Mit Samba lassen sich Dateien, Drucker und weitere Ressourcen zur Verfügugn stellen. Anders als bei FTP wird hierzu kein eigener Client benötigt, der Zugriff geschieht über den Dateimanager bzw. Explorer.
+
+.Installation von Samba
+[source,bash]
+$ sudo apt-get install samba
+
+Folgende Änderungen wurden anschließend an der Konfiguration vorgenommen:
+
+.Änderungen an der Samba-Konfiguration
+[source,bash]
+254,263d253
+<
+<
+< [Freigabe]
+< 	comment = samba
+< 	path = /samba
+< 	guest ok = yes
+< 	public = yes
+< 	writeable = yes
+< 	browseable = yes
+<
+269a260
+>
+
+
+Damit auch jeder Nutzer auf die freigabe */samba* zugreifen kann, muss diese dem Nutzer "nobody" bzw. der Gruppe "nogroup" gehören.
+
+.Änderungen am Samba-Verzeichnis
+[source,bash]
+$ sudo chgrp nogroup samba/
+$ sudo chown nobody samba/
+
+
+=== Installation von AsciiDoc
+Um diese Dokumentation abzuändern und neu zu erstellen, sind folgende Pakete zwingend nötig.
+.Einspielen der zusätzlich benötigten Pakete
+[source,bash]
+$ sudo apt-get asciidoc source-highlight
