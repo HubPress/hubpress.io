@@ -1,0 +1,17 @@
+= Day Three : The Road to JavaEE 7 : Is it all about the cloud ?
+:published_at: 2011-10-08
+:hp-tags: JavaOne
+
+La session est un débat sur JavaEE 7 et le cloud. Le "panel" est composé de :
+
+* Adam Bien : consultant et java rockstar
+* Reza Rahman : fondateur de Resin
+* Emmanul Bernard : JBoss/RedHat, spec lead de BeanValidation entre autres
+* Linda DeMichiel : spec lead de JavaEE 7
+* Dave Blevins : fondateur de TomEE, qui vient d'être certifié JavaEE 6 Web Profile
+
+Le débat n'est pas trés engagé, tout le monde est d'accord pour dire qu'il ne faut pas se précipiter pour standardiser le déploiement d'application JavaEE dans le cloud. Le PaaS n'est pas encore assez mature et de toute manière, on peut déjà déployer une application JavaEE dand le cloud avec OpenShift de JBoss (en 1 min avec un git push selon Adam Bien, bluffant). Par contre, il manque toute de même la notion de multitenancy (normalement avec JPA 2.1).
+
+Seul petit point de divergence, la configuration des metadata pour le déploiement dans le cloud : XML or not ? Comme toujours, ça dépend du développeur....
+
+http://javaonemorething.files.wordpress.com/2011/10/javaee7.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/javaee7.jpg?w=300[image,title="javaee7"]]

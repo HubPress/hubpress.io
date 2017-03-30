@@ -1,0 +1,21 @@
+= Day Two : Strategy Keynote
+:published_at: 2011-10-06
+:hp-tags: JavaOne
+
+Comme lors de technical keynote, on commence par faire plaisir aux sponsors : c'est le tour de Juniper Network. Un discours sur l'importance du réseau dans le développement d'applications, blabla .... et java n'est pas citée dans le discours.
+
+Ensuite, Hasan Rizvi de Oracle vient présenter les résultats de Java en 2011, en annonçant au passage le JDK 7 pour MAC OS X en Developper Preview. Il fait venir sur la scène des représentants de IBM, Red Hat et (encore) Intel.
+
+Adam Messinger entre alors pour parler de la stratégie et la roadmap de Java :
+
+* JavaSE : plusieurs updates du JDK7 en 2012, JDK8 est prévu pour l'été 2013
+* JavaFX : devient OpenSource (!), et Oracle veut en faire la solution client java, en mettant en avant le slogan "Run Anywhere". Nous avons le droit à une démo où une application java tourne d'abord sur une tablette Android, puis une tablette Linux et enfin sur un ipad ! Toute la salle est pluôt étonnée, et Adam dit "Yes, Java run on iOS".
+* JavaME : la stratégie est de s'aligner sur les versions de SE, et de pousser vers la convergence pour le JDK 8 avec la notion de profile CDC
+* JavaEE: on commence par faire remarquer que JavaEE 6 est la version la plus rapidement implémentée et adaoptée. JavaEE 7 doit aider à faire passer Java dans l'univers du cloud (ndlr : mais on sait pas trop comment). JavaEE  7 se veut être le standard pour le PaaS. ESPN vient aussi apporter son témoignage sur l'utilisation de JavaEE avec Glasfish pour son site internet.
+
+Enfin, nous avons le droit à un "one more thing" : le projet Avatar.Oracle veut rapprocher Java de l'HTML5 au sein d'une même application hybride. Cela semble intéressant mais peut être un peu tard vu le développement actuel de l'HTML5.
+
+Pour plus de détails :
+
+http://blogs.oracle.com/java/entry/moving_java_forward_java_strategy
+http://javaonemorething.files.wordpress.com/2011/10/jdkroadmap.png[image:http://javaonemorething.files.wordpress.com/2011/10/jdkroadmap.png?w=300[image,title="jdkroadmap"]]

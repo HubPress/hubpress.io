@@ -1,0 +1,35 @@
+= Mon palmarès de JavaOne 2011
+:published_at: 2011-10-11
+:hp-tags: JavaOne
+
+Meilleurs speakers :
+
+1.  Adam Bien (@AdamBien)
+2.  Kohsuke Kawaguchi (@kohsukekawa, attention quelques tweets en japonais)
+3.  Dan Allen (@mojavelinux)
+
+Meilleures sessions :
+
+1.  Rethinking best practices with JavaEE 6 par Adam Bien
+2.  JBoss AS 7 : The Death of The Slow par Andrew Lee Rubinger
+3.  Continuous Integration with Jenkins par Kohsuke Kawaguchi
+
+Meilleurs frameworks :
+
+1.  Arquillian
+2.  Weld
+3.  OpenEJB
+
+Meilleurs serveurs d'application :
+
+1.  JBoss AS 7
+2.  Glassfish 3
+3.  TomEE 1
+
+Meilleur espoir :
+
+1.  Le projet Jigsaw pour le JDK 8
+
+Meilleur souvenir :
+
+http://javaonemorething.files.wordpress.com/2011/10/duke.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/duke.jpg?w=300[image,title="duke"]]

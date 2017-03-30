@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Day One : Continuous Integration with Jenkins</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//binout.github.io/javaonemorething/themes/Roon/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/Roon/assets/css/screen.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://binout.github.io/javaonemorething/2011/10/04/Day-One-Continuous-Integration-with-Jenkins.html" />
+    
+    <meta property="og:site_name" content="JavaOneMoreThing" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Day One : Continuous Integration with Jenkins" />
+    <meta property="og:description" content="Intervenant : Kohsuke Kawagachi (http://kohsuke.org/) La meilleure présentation de la journée ! Monsieur Jenkins (c&amp;#8217;est plus facile à dire) a montré par de nombreux chiffres à qui à profiter le fork avec Hudson et pas de surprises, c&amp;..." />
+    <meta property="og:url" content="https://binout.github.io/javaonemorething/2011/10/04/Day-One-Continuous-Integration-with-Jenkins.html" />
+    <meta property="article:published_time" content="2011-10-03T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-12-08T14:01:55.479Z" />
+    <meta property="article:tag" content="JavaOne" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Day One : Continuous Integration with Jenkins" />
+    <meta name="twitter:description" content="Intervenant : Kohsuke Kawagachi (http://kohsuke.org/) La meilleure présentation de la journée ! Monsieur Jenkins (c&amp;#8217;est plus facile à dire) a montré par de nombreux chiffres à qui à profiter le fork avec Hudson et pas de surprises, c&amp;..." />
+    <meta name="twitter:url" content="https://binout.github.io/javaonemorething/2011/10/04/Day-One-Continuous-Integration-with-Jenkins.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "JavaOneMoreThing",
+    "author": {
+        "@type": "Person",
+        "name": "Benoît Prioux",
+        "image": "https://avatars.githubusercontent.com/u/1451016?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://javaonemorething.wordpress.com"
+    },
+    "headline": "Day One : Continuous Integration with Jenkins",
+    "url": "https://binout.github.io/javaonemorething/2011/10/04/Day-One-Continuous-Integration-with-Jenkins.html",
+    "datePublished": "2011-10-03T22:00:00.000Z",
+    "dateModified": "2015-12-08T14:01:55.479Z",
+    "keywords": "JavaOne",
+    "description": "Intervenant : Kohsuke Kawagachi (http://kohsuke.org/) La meilleure présentation de la journée ! Monsieur Jenkins (c&amp;#8217;est plus facile à dire) a montré par de nombreux chiffres à qui à profiter le fork avec Hudson et pas de surprises, c&amp;..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="JavaOneMoreThing" href="https://binout.github.io/javaonemorething/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-JavaOne  noimage">
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://binout.github.io/javaonemorething" id="home_link">«</a>
+            <div class="meta"><time datetime="2011-10-04"><a href="/2011/10/04/Day-One-Continuous-Integration-with-Jenkins.html">October 04, 2011</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Day One : Continuous Integration with Jenkins</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="paragraph">
+<p>Intervenant : Kohsuke Kawagachi (<a href="http://kohsuke.org/" class="bare">http://kohsuke.org/</a>)</p>
+</div>
+<div class="paragraph">
+<p>La meilleure présentation de la journée ! Monsieur Jenkins (c&#8217;est plus facile à dire) a montré par de nombreux chiffres à qui à profiter le fork avec Hudson et pas de surprises, c&#8217;est Jenkins qu&#8217;il faut suivre : activté en commit, mailing list, tickets,&#8230;&#8203;.</p>
+</div>
+<div class="paragraph">
+<p>Il a aussi montré de façon ironique comment migrer depuis Hudson : tu éteinds hudson, tu démarres jenkins et c&#8217;est tout.</p>
+</div>
+<div class="paragraph">
+<p>Jenkins est sous la license "Software Public Interest" comme Debian, PostgresSQL.</p>
+</div>
+<div class="paragraph">
+<p>Après le subtil règlement de compte avec Hudson, monsieur Jenkins nous explique le "Pre-tested commits", en gros le code est commité sur le tronc uniquement si les tests sont ok.</p>
+</div>
+<div class="paragraph">
+<p>Première démo : Git + Gerrit ( outil de revue de code pour Git)</p>
+</div>
+<div class="paragraph">
+<p>Deuxième démo : sans Gerrit, Jenkins fait un merge et une post-build action pour publier dans le repo maître</p>
+</div>
+<div class="paragraph">
+<p>Troisième démo : l&#8217;utilisation de différentes branches, par exemple une branche par fonctionnalité.</p>
+</div>
+<div class="paragraph">
+<p>Et comme, il sait très bien que tout le monde n&#8217;est pas passé à git, il nous montre comment faire avec subversion svn, en utilisant le plugin svn merge. On peut alors travailler par branches pour chaque fonctionnalité et de façon manuelle ou automatique, merger la branche dans le tronc si les tests sont ok, c&#8217;est magique.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est vraiment une démonstration technique avec une facilité déconcertante.</p>
+</div>
+<div class="paragraph">
+<p>Et le slogan pour la fin : "<strong>Jenkins project is where the action is</strong>".</p>
+</div>
+<div class="paragraph">
+<p><a href="http://javaonemorething.files.wordpress.com/2011/10/jenkins.jpg"><span class="image"><img src="http://javaonemorething.files.wordpress.com/2011/10/jenkins.jpg?w=300" alt="image" title="jenkins"></span></a></p>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Day%20One%20%3A%20Continuous%20Integration%20with%20Jenkins&url=https://binout.github.io/javaonemorething/2011/10/04/Day-One-Continuous-Integration-with-Jenkins.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <!-- <a href="https://binout.github.io/javaonemorething/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a> -->
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/1451016?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/1451016?v=3" alt="Benoît Prioux">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n">Benoît Prioux</a></h4>
+                    Bordeaux<br>
+                    <a href="http://javaonemorething.wordpress.com" class="js-remove-domain-schema">http://javaonemorething.wordpress.com</a>
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://binout.github.io/javaonemorething/2011/10/04/Day-One-Continuous-Integration-with-Jenkins.html&amp;description=Day%20One%20%3A%20Continuous%20Integration%20with%20Jenkins-JavaOneMoreThing " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66076881-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

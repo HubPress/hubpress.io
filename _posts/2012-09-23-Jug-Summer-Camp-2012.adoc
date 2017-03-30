@@ -1,0 +1,22 @@
+= Jug Summer Camp 2012
+:published_at: 2012-09-23
+:hp-tags: JugSummerCamp
+
+Pour la deuxième année consécutive, j'ai pu assister à la 3ème édition du https://sites.google.com/site/jugsummercamp/[JUG Summer Camp] à La Rochelle, le vendredi 14 septembre.
+
+Et encore une fois, j'ai appris plein de choses ! Pour résumer cette journée, j'ai choisi de faire un "cloud" de logos et d'images :
+
+http://javaonemorething.files.wordpress.com/2012/09/jug-summer-camp-2012-001.png[image:http://javaonemorething.files.wordpress.com/2012/09/jug-summer-camp-2012-001.png[image,title="Jug Summer Camp 2012.001"]]
+
+Je vous laisse le loisir de "googler" les frameworks ou sujets que vous ne connaissez pas.
+
+Par ailleurs, je tiens à féliciter l'organisation pour l'introduction de quickies et surtout de très bonne qualité, en particulier :
+
+* https://sites.google.com/site/jugsummercamp/presentations#Pourquoi[Pourquoi et comment moi, développeur Java, j’ai appris JavaScript] par Christophe Jollivet  (les http://fr.slideshare.net/jollivetc/pourquoi-et-comment-jai-appris-javascript-14348576[slides])
+* https://sites.google.com/site/jugsummercamp/presentations#CRaSH[CRaSH, un shell extensible pour gérer la JVM et vos applications] par Arnaud Héritier (les http://fr.slideshare.net/aheritier/crash-jugsummercamp-2012-quickie[slides])
+* https://sites.google.com/site/jugsummercamp/presentations#h-ubu[h-ubu : CDI pour JavaScript] par Clément Escoffier (les http://fr.slideshare.net/clement.escoffier/hubu-cdi-in-javascript[slides])
+* https://sites.google.com/site/jugsummercamp/presentations#24[24 plugins chrono ] par Romain Maton (les http://fr.slideshare.net/rmat0n/24-plugins-chrono-jug-summer-camp-2012[slides])
+
+Encore merci à Serli et Google pour cette conférence qui permet de se re-motiver après les vacances :-)
+
+A l'année prochaine.

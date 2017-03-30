@@ -1,0 +1,20 @@
+= Day One : Project Jigsaw
+:published_at: 2011-10-05
+:hp-tags: JavaOne
+
+C'est une session de veille technologique sur ce que sera le JDK 8.
+
+Elle sera modulaire et possèdera deux modes:
+
+* legacy mode, le mode actuel avec un classpath
+* module mode, le classpath n'existe plus !
+
+De nouveaux outils seront ajoutés aux JDK : jpkg, jmod, jrepo, jsign. Le jar n'est plus utilisé, la jre ne se trouve plus dans son propre répertoire, tout devient modulaire : jdk.jdbc, jdk.jre, ...
+
+Pour déclarer un module, il faut déclarer une nouvelle classe (ModuleInfo) avec le nom, la version, et la version des dépendances. Le répertoire module path permet de spécifier l'endroit des modukes, par exemple src/foo/com/foo/Main,java.
+
+Le format des archives sera fait avec jmod ( jmod create, jmod install, jmod list).
+
+Pour l'instant, tout ceci est en béta, et on attend la suite avec l'ambiance.
+
+http://javaonemorething.files.wordpress.com/2011/10/jigsaw1.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/jigsaw1.jpg[image,title="jigsaw"]]

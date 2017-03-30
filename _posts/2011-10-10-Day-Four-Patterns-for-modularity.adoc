@@ -1,0 +1,5 @@
+= Day Four : Patterns for modularity
+:published_at: 2011-10-10
+:hp-tags: JavaOne
+
+Session très décevante.... Trois intervenants nous parlent de généralités sur les patterns à utiliser pour faire une application modulaire. Les concepts abordés ne sont pas nouveaux et je vous conseille plutôt de voir le compte rendu sur la session "Modularity in Enterprise", qui était bien plus intéressante avec un speaker de bien meilleure qualité !

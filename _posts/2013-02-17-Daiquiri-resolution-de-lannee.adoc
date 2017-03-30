@@ -1,0 +1,109 @@
+= Daiquiri : résolution de l'année
+:published_at: 2013-02-17
+
+Non ma résolution de l'année n'est pas de boire des cocktails daiquiri !
+
+Pour cette année 2013, je me suis donné comme résolution de commencer un projet personnel open source. Je ne veux pas avoir trop d'ambition pour ce projet, l'idée est de surtout expérimenter la mise en place une usine logicielle avec les outils "cloud" d'aujourd'hui : github, cloudbees.
+
+Pourquoi Daiquiri ? C'est le nom de la librairie utilitaire pour les tests unitaires, que je vous propose. Vous allez me dire mais il y en a déjà plein ! Oui c'est vrai mais avec cette librairie je veux proposer des solutions à des problèmes bien précis là où les autres s'arrêtent.
+
+J'ai donc commencé une première implémétation de Daiquiri, en solutionnant un premier problème :
+
+* comment moquer la factory de javax.naming.InitialContext pour vos tests unitaires ?
+
+Exemple :
+
+[source, java]
+----
+package org.daiquiri.examples;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+public class LicenseChecker {    
+	static final String MAX_LICENSE = "MAX_LICENSE";    
+    private int currentNbUsers = 0;    
+    
+    public LicenseChecker(int nbUsers) {       
+    	currentNbUsers = nbUsers;    
+    }    
+    
+    public boolean canAddUsers(int nbNewUsers) throws NamingException {
+    	Integer maxLicense = (Integer) new InitialContext().lookup(MAX_LICENSE);
+        return currentNbUsers + nbNewUsers <= maxLicense;   
+    }
+}
+----
+
+Les frameworks de mock classiques ne savent pas faire simplement, voici la Solution avec Daiquiri :
+
+[source, java]
+----
+package org.daiquiri.examples;
+
+import static org.daiquiri.Daiquiri.Naming.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import javax.naming.InitialContext;
+
+public class LicenseCheckerTest {    
+	LicenseChecker checker = new LicenseChecker(10);    
+    
+    @Test    
+    public void can_add_users_return_true() throws Exception{        
+    	InitialContext mockContext = mockInitialContext();        
+        mockContext.bind(LicenseChecker.MAX_LICENSE, new Integer(15));        
+        Assert.assertTrue(checker.canAddUsers(4));    
+    }    
+    
+    @Test    
+    public void can_add_users_return_false() throws Exception{        
+    	InitialContext mockContext = mockInitialContext();        
+        mockContext.bind(LicenseChecker.MAX_LICENSE, new Integer(15));        
+        Assert.assertFalse(checker.canAddUsers(6));    
+    }
+}
+----
+
+Vous pouvez trouver les sources sous mon repository github :
+
+https://github.com/binout/daiquiri
+
+Et un projet d'examples :
+
+https://github.com/binout/daiquiri-examples
+
+La site de Daiquiri toujours en utilisant github (branche gh-pages du projet) :
+
+http://binout.github.io/daiquiri/
+
+L'intégration continue est sous BuildHive, proposé gratuitement par Cloudbees et qui est permet en click de mettre son projet sous une version simplifiée de Jenkins adaptée pour github. (Kohsuke en avait parlé à la jenkins conférence en avril l'année dernière) :
+
+https://buildhive.cloudbees.com/job/binout/job/daiquiri/
+
+J'utilise un repository d'artefacts gratuit avec mon compte Cloudbees :
+
+* http://repository-binout.forge.cloudbees.com/snapshot/org/daiquiri/daiquiri/[Snapshots]
+* http://repository-binout.forge.cloudbees.com/release/org/daiquiri/daiquiri/[Release]
+
+Et voici les lignes à mettre dans votre pom.xml, pour la version actuelle daiquiri-0.2 :
+
+[source, xml]
+-----
+	<dependency>    
+    	<groupId>org.daiquiri</groupId>    
+        <artifactId>daiquiri</artifactId>    
+        <version>0.2</version>    
+        <scope>test</scope>
+    </dependency>
+    <repository>    
+    	<id>binout-cloudbees-release</id>    
+        <name>binout-cloudbees-release</name>    
+        <url>https://repository-binout.forge.cloudbees.com/release/</url>		</repository>
+-----
+
+Et bien sûr, tout est open source sous licence Apache.
+
+Si vous avez des idées pour les prochaines versions, n'hésitez pas à me contacter sur twitter @binout
+
+Bon cocktail !

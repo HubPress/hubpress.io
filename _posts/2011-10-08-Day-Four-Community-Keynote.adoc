@@ -1,0 +1,11 @@
+= Day Four : Community Keynote
+:published_at: 2011-10-08
+:hp-tags: JavaOne
+
+La dernière keynote commence par une présentation d'IBM sur sa vision du cloud. Le discours est plutôt intéressant avec une vision pour une fois pas trop abstraite sur le cloud. IBM veut faire passer le message qu'ils sont déjà prêts avec une démo powerpoint d'un déploiement d'une application JavaEE sur le cloud avec un outil dédié qui se charge de tout. Ça ressemble un peu à la démo GlassFish lors de la Strategy Keynote. En tout cas, c'était la meilleure keynote des sponsors.
+
+Ensuite, la keynote est consacrée à la communauté, et tout de suite le ton est plus sympathique et décontractée : un débat avec plusieurs représentants de la communauté (OpenJDK, JUG) sur des questions sondages où on peut répondre par SMS ou mail. Les résultats sont affichés en temps réel ! On notera la bonne prestation de Donald en tant qu'animateur et médiateur ainsi que de Bruno Souza du JUG du Brésil, monté sur le podium avec le drapeau national sur le dos, il était bien chaud ! Puis, le comique Java Posse vient demander à l'assemblée son ressenti sur les sessions, les orientations du langage,...
+
+Enfin, la keynote se termine par le Java Life, clip de rap déjanté sur la vie du développeur Java.
+
+http://javaonemorething.files.wordpress.com/2011/10/java-posse.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/java-posse.jpg?w=300[image,title="java-posse"]]

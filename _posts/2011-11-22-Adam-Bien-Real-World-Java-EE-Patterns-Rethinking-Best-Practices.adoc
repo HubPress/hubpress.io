@@ -1,0 +1,35 @@
+= Adam Bien : Real World Java EE Patterns Rethinking Best Practices
+:published_at: 2011-11-22
+:hp-tags: book
+
+Comme annoncé dans un http://javaonemorething.wordpress.com/2011/10/08/day-three-rethinking-best-practices-with-javaee-6/[article précédent], j'ai commencé la lecture d'un des livres de Adam Bien et ... en fait je l'ai dévoré très rapidement.
+
+Je souhaite donc faire une petite fiche de lecture mais je vous conseille fortement de le lire ! (à 20 euros sur http://www.amazon.de/Real-World-Patterns-Rethinking-Practices/dp/0557078326/ref=sr_1_1?ie=UTF8&qid=1321947749&sr=8-1[amazon.de], ne vous inquiètez pas c'est bien en anglais). Pour les nouveaux, je rappelle que http://adam-bien.com/[Adam Bien] est un consultant allemand , membre actif de la spec javaee et un très bon speaker que j'ai découvert à JavaOne. Son discours est simple : il faut repenser tous les bests practices de j2ee ! Les architectures d'aujourd'hui doivent devenir plus simple, plus lean, avoir donc moins de couches et moins de code, et ceci grâce aux nouveaux concepts apportés par JavaEE5 et encore plus par JavaEE6.
+
+Le livre que j'ai choisi c'est le premier de la série "Rethinking Best Practices", sorti en 2009 : **Real World Java EE Patterns Rethinking Best Practices.**
+
+Après un bref rappel sur l'histoire de j2ee et sur les nouveaux concepts apportés par JavaEE, la majeure partie du livre nous décrit différents patterns répondant à un problème pratique, classés par catégorie : couche métier, couche d'intégration et infrastructure. Certains sont des patterns connus repensés dans le contexte JavaEE, d'autres sont carrément d'anciens anti-patterns ! La lecture est vraiment agréable et au fil de l'eau, on trouve plein de petits astuces de développeurs :
+
+* un interceptor pour checker les paramètres d'une méthode, ce qui permet d'éviter du code redondant (DRY : Dont Repeat Yourself)
+* des annotations à la place de la javadoc, plus facile à manipuler pour la génération de documentation
+* des builders statiques en classe interne pour rendre le code plus fluide
+* utiliser Externalizable au lieu de Serializable pour des gains de performance
+* des singletons à la façon JavaEE pour faire du cache.
+* et bien d'autres ....
+
+Après avoir présenté ces patterns, Adam nous expose sa vision sur les architectures SOA en opposant les deux modèles :
+
+* le traditionnel Service Driven Design, mais en simplifiant la plomberie et les indirections inutiles
+* le nouveau Domain Driven Design, où l'entité est au coeur de la conception e n'est plus un pojo vide, très pratique pour les applications proche du besoin utilisateur,
+
+Ce qui est intéressant, c'est qu'il défend les deux modèles car selon lui, tout dépend des contraintes du projet. Tout de même, il dégage un modèle lean commun que doit suivre un composant métier : l'**ECB, Entity - Control - Boundary** :
+
+* Boundary : c'est la façade directement en contact avec l'interface utilisateur, elle est totalement orientée business
+* Control : c'est l'ensemble des services génériques qui sont réutilisables dans différents contextes (comme les CRUD)
+* Entity : ce sont les entités avec (DDD) ou sans intelligence métier (SDD)
+
+Au final, le conseil d'Adam tout au long du livre est de rester pragmatique, de ne pas complexifier l'architecture sans raison valable  (son célèbre "Explain it to an alien"). JavaEE , en totale rupture avec le modèle complexe de j2ee, est tout à fait adapté à cette philosophie.
+
+A suivre avec la lecture de son second livre : "Real World Java EE Night Hacks Dissecting the Business Tier", sorti en 2011, qui rentre plus en détails sur la base de JavaEE6 : CDI + EJB + JPA.
+
+http://javaonemorething.files.wordpress.com/2011/11/press-adam-bien.png[image:http://javaonemorething.files.wordpress.com/2011/11/press-adam-bien.png?w=300[image,title="press-adam-bien"]]

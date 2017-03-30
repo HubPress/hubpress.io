@@ -1,0 +1,31 @@
+= Day Three : Patterns & Best Practices for CDI
+:published_at: 2011-10-08
+:hp-tags: JavaOne
+
+Intervenants : Reza Rahman de Caucho/Resin et un autre gars
+
+La session est assez dense et après un brève rappel de CDI que je vous épargne, on nous énumère quelques bonnes pratiques pour l'utilisation de CDI.
+
+La configuration XML permet de surcharger les annotations et donc est pratique pour configurer CDI selon les environnements :
+
+* pour les tests unitaires, on peut activer les alternatives par exemple
+* pour les tests d'intégrations , on peut changer la datasource (oracle au lieu de h2), activer des interceptors pour le logging
+* pour la production, on désactive les alternatives, certains interceptors
+
+Chaque environnement a son propre fichier "beans.xml". Cependant, dans CDI 1.0, la configuration XML n'est pas encore standardisée (peut être dans CDI 1.1 comme le voudrait Reza), donc dans les exempes, on trouvait des imports de namespace de Resin.
+
+Pour les qualifiers, on peut utiliser une énumeration, ce qui permet d'éviter de définir pleins d'annotations. On utilise la même avec en paramètre une valeur d'enum.
+
+Il faut ajuster au mieux le scope des beans, cela permet de maximizer l'utilisation de la mémoire. On peut définir ses propres scopes, ou utiliser le @ConversationScoped, qui permet de le controller de façon programmatique.
+
+L'utilisation de stéréotype (regroupement d'annotations) permet de mieux définir les composants de son application.
+
+Les interceptors sont utilisés dand le cas de fonctionnalités transverses plutôt système et doivent être découplées du métier. A l'inverse, les décorators sont là pour compléter le métier.
+
+Il faut différencier l'injection de dépendances @Inject de l'injection de resources @Resource.
+
+Il est intéressant de définir ses propres extensions CDI (à ce moment, je n'avais compris comment faire cela...merci Dan Allen dans la session suivante).
+
+Voilà pleins de bons conseils pour CDI, ça donne envie de s'y mettre !
+
+http://javaonemorething.files.wordpress.com/2011/10/resin.gif[image:http://javaonemorething.files.wordpress.com/2011/10/resin.gif[image,title="resin"]]

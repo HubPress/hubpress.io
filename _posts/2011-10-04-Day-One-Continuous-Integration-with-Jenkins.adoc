@@ -1,0 +1,27 @@
+= Day One : Continuous Integration with Jenkins
+:published_at: 2011-10-04
+:hp-tags: JavaOne
+
+Intervenant : Kohsuke Kawagachi (http://kohsuke.org/)
+
+La meilleure présentation de la journée ! Monsieur Jenkins (c'est plus facile à dire) a montré par de nombreux chiffres à qui à profiter le fork avec Hudson et pas de surprises, c'est Jenkins qu'il faut suivre : activté en commit, mailing list, tickets,....
+
+Il a aussi montré de façon ironique comment migrer depuis Hudson : tu éteinds hudson, tu démarres jenkins et c'est tout.
+
+Jenkins est sous la license "Software Public Interest" comme Debian, PostgresSQL.
+
+Après le subtil règlement de compte avec Hudson, monsieur Jenkins nous explique le "Pre-tested commits", en gros le code est commité sur le tronc uniquement si les tests sont ok.
+
+Première démo : Git + Gerrit ( outil de revue de code pour Git)
+
+Deuxième démo : sans Gerrit, Jenkins fait un merge et une post-build action pour publier dans le repo maître
+
+Troisième démo : l'utilisation de différentes branches, par exemple une branche par fonctionnalité.
+
+Et comme, il sait très bien que tout le monde n'est pas passé à git, il nous montre comment faire avec subversion svn, en utilisant le plugin svn merge. On peut alors travailler par branches pour chaque fonctionnalité et de façon manuelle ou automatique, merger la branche dans le tronc si les tests sont ok, c'est magique.
+
+C'est vraiment une démonstration technique avec une facilité déconcertante.
+
+Et le slogan pour la fin : "**Jenkins project is where the action is**".
+
+http://javaonemorething.files.wordpress.com/2011/10/jenkins.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/jenkins.jpg?w=300[image,title="jenkins"]]

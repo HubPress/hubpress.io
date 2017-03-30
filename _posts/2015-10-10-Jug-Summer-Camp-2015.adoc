@@ -1,0 +1,40 @@
+= Jug Summer Camp 2015
+:hp-tags: java,conf
+
+== 6ème édition
+
+Le http://www.jugsummercamp.org/edition/6[Jug Summer Camp] est devenu une institution pour faire une bonne rentrée _technologique_.
+Comme toujours, l'organisation est au top, le programme est très sympa et le buffet toujours aussi bon :-)
+
+Voici le résumé de l'ambiance en vidéo :
+
+video::bZvfo-SDptc[youtube]
+
+NOTE: dédicace à Fabrice et Alexandre, deux collègues interviewés dans la vidéo
+
+== Mon Jug Summer Camp
+
+=== En tant que participant
+
+Présent pour la 5ème fois de suite, je retiendrai surtout le très bon http://www.jugsummercamp.org/edition/6/presentation/1119[talk de Mathieu Ancemin sur React]. J'avais entendu parler de React mais jamais vraiment pris le temps de regarder de plus près : en une heure, Mathieu nous fait une introduction des concepts et une mise en pratique progressive avec des démos sympas. Je vous conseille de regarder la vidéo :
+
+video::Rp_N5tXkWgY[youtube]
+
+=== En tant que speaker
+
+Pour la deuxième fois de suite, j'ai été retenu par le CFP du JugSummerCamp. Cette année, je présentai deux quickies :
+
+* http://www.jugsummercamp.org/edition/6/presentation/1124[Micro JavaEE]
+
+** Slides : http://binout.github.io/jugsummercamp-2015/micro-javaee.html
+** Source : https://github.com/binout/micro-javaee
+
+video::v48y7oMp4go[youtube]
+* http://www.jugsummercamp.org/edition/6/presentation/1126[Créer son blog en moins de 5 minues et publier en Asciidoc]
+** Slides : http://binout.github.io/jugsummercamp-2015/hubpress.html
+
+video::EkXuGKnahDw[youtube]
+
+Si vous avez des retours sur mes deux présentations, n'hésitez pas !
+
+A l'année prochaine !

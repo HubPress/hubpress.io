@@ -1,0 +1,10 @@
+= Le commencement
+:published_at: 2011-09-26
+
+Quelqu'un m'a dit : "Si tu n'as pas un blog à 30 ans, tu as raté ta vie". 30 ans approchant à grand pas, j'ai dit pourquoi pas. Après il fallait trouver un sujet qui puisse me lancer dans d'interminables posts lus par quelques personnes, qui en fait se sont trompées de site ...
+
+Dans 5 jours, c'est-à-dire samedi prochain, j'ai la chance et l'honneur d'aller à http://www.oracle.com/javaone/index.html[JavaOne] à San Francisco ! L'occasion pour moi d'apprendre tout plein de choses avec tout plein de passionnés sur le plus beau des langages de programmation JAVA (là je viens de perdre la moitié des lecteurs, et aussi les fans de C#).
+
+Ce blog sera l'occasion de voir si je prends et vous donne du plaisir (je regagne quelques lecteurs) en vous racontant mes aléas, humeurs, opinions et autres réflexions pendant cette semaine à San Francisco. See you soon !
+
+http://javaonemorething.files.wordpress.com/2011/09/javaone2011dukeilikethis.gif[image:http://javaonemorething.files.wordpress.com/2011/09/javaone2011dukeilikethis.gif[image,title="javaOne2011DukeILikeThis"]]

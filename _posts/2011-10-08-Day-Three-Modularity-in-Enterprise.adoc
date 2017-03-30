@@ -1,0 +1,18 @@
+= Day Three : Modularity in Enterprise
+:published_at: 2011-10-08
+:hp-tags: JavaOne
+
+Intervenant : Mike Keith de Oracle
+
+La session a pour but de nous montrer les grands principes d'une architecture modulaire (et de nous convaincre de l'utilité mais ça c'est facile ;-) ) :
+
+* Decoupled, Cohesive, Reusable, Complete
+* Extensible, Testable, Debuggable, Upgradable
+
+Pour le moment, OSGi est le seul système de modules viable en Java, et il est en plus dynamique (pluggable à chaud).
+
+Le projet Jigsaw sera une alternative mais dans un environnement statique, ce qui est suffisant pour la majorité des applications. Il est prévu pour JavaSE 8.
+
+En gros, il faut préparer son application à être modulaire, mais pour le moment pas de solution toute faite (à part OSGi...).
+
+http://javaonemorething.files.wordpress.com/2011/10/osgi.png[image:http://javaonemorething.files.wordpress.com/2011/10/osgi.png?w=300[image,title="osgi"]]http://javaonemorething.files.wordpress.com/2011/10/jigsaw1.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/jigsaw1.jpg[image,title="jigsaw"]]

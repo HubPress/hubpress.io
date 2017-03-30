@@ -1,0 +1,28 @@
+= Tuning JBoss 5.1.0 GA et EJB3
+:published_at: 2012-08-21
+:hp-tags: JBoss
+
+Il y a quelques temps, j'avais lancé une bouteille à la mer sur twitter :
+
+http://javaonemorething.files.wordpress.com/2012/08/tweet_bottle.png[image:http://javaonemorething.files.wordpress.com/2012/08/tweet_bottle.png?w=300[image,title="tweet_bottle"]]
+
+En effet, dans le cadre d'une migration EJB2 => EJB3 (et oui tout le monde n'est pas encore en JavaEE 6 ....) sur JBoss 5.1.0 GA, j'ai effectué quelques tests de performance  à iso-application (avec http://www.neotys.fr/product/overview-neoload.html[NeoLoad] ) et là ... BANG .... 20 à 30 % de plus en EJB3 !  Après quelques googles, il n'y a pas de benchs connus sous JBoss qui montre cet écart donc je creuse un peu en lisant une documentation de tuning de JBoss EAP par exemple.
+
+Dès lors, je découvre que par défaut JBoss sérialize/désérialize tous les appels EJB3 même pour des EJBs locaux, ce qui est principalement le cas dans notre application. Mais qu'une "option magique" a été ajouté suite à une feature request https://issues.jboss.org/browse/EJBTHREE-2110[EJBTHREE-2110] :
+
+------------------------------------------------
+org.jboss.ejb3.IsLocalInterceptor.passByRef=true
+------------------------------------------------
+
+Si on l'active, la sérialization/désérialization est évitée pour les appels locaux. Super, ça va résoudre tous mes problèmes et donc je refais mes tests et ... aucun changement sur les résultats. En fait en lisant de plus près la feature request, elle a été ajouté uniquement à JBoss EAP 5.1 (version avec support).
+
+Par contre, merci à Carlo de Wolf -->http://javaonemorething.files.wordpress.com/2012/08/carlo.png[image:http://javaonemorething.files.wordpress.com/2012/08/carlo.png[image,title="carlo"]] qui a publié le https://issues.jboss.org/secure/attachment/12335513/EJBTHREE-2110.patch[patch] à appliquer sur la version 1.3.3 de jboss-ejb3-core. Donc en reprenant les sources de jboss-ejb3-core et une petite bataille avec Maven car les repository JBoss sont un peu "deprecated" (Cf . https://community.jboss.org/en/build/blog/2011/06/01/blocking-repositoryjbossorgmaven2), j'obtiens un "jboss-ejb3-core.jar" qui peut être copié en lieu et place dans "common/lib" de JBoss.
+
+En conclusion,
+
+* en patchant "jboss-ejb3-core.jar" danns mon instance JBoss
+* en activant l'option "-D=org.jboss.ejb3.IsLocalInterceptor.passByRef=true"
+
+j'obtiens des résultats encore meilleurs en EJB3 qu'en EJB2 (5 à 10%), c'est bon la migration est OK et nous venons de faire un pas vers le présent !
+
+

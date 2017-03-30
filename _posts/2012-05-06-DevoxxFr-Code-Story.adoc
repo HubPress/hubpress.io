@@ -1,0 +1,37 @@
+= DevoxxFr : Code Story
+:published_at: 2012-05-06
+:hp-tags: DevoxxFr
+
+Le deuxième jour de Devoxx, c'est le vrai départ, ça se voit avec l'affluence par rapport au premier jour des universités. Et ça commence par un grand rassemblement de tous les participants devant une scène et trois écrans géants, ça rappelle vraiment JavaOne à San Francisco (il manque juste la musique à fond). Après des keynotes plutôt intéressantes, c'est le moment de choisir son agenda, le choix n'est pas facile ....
+
+Et bien pour commencer, je choisis : http://www.code-story.net/[Code Story] ! En effet, de ma lointaine province, j'ai un peu suivi l'initiative menée par David Gageot et Jean-Laurent de Morlhon : faire un concours pour recruter deux développeurs pour "live" coder pendant deux jours avec eux durant Devoxx. Après plusieurs tours de sélection, c'est Eric et Sébastien Lemerdy qui sont les heureux "gagnants" lors de la finale au http://www.code-story.net/2012/02/17/CodeStory-au-ParisJug.html[Paris JUG].
+
+http://javaonemorething.files.wordpress.com/2012/05/codestory.jpeg[image:http://javaonemorething.files.wordpress.com/2012/05/codestory.jpeg?w=300[image,title="codestory"]]
+
+Un peu intrigué, je décide donc d'assister au début du "live coding" : le but est de coder sur deux jours (9h-18h) une application web qui va raconter le projet en cours, en listant les commits depuis GitHub, les builds depuis Jenkins... en attribuant des badges pour le top commiteur, le commiteur le plus verbeux ...  Les règles imposées sont :
+
+* un binôme en front qui font du live coding en expliquant à l'audience leur choix, un autre binôme en back qui lui code sans interaction avec le public, histoire d'avancer un peu plus vite
+* travail en itération d'une heure avec 5 min d'introduction, 20 min pour un 1er binôme, 20 min suivante on change les binômes, puis 10 min de conclusion avec si possible une démo
+* travail en pur TDD (même pour le javascript!)
+* software factory : trello pour le kanban, github, jenkins et sonar (grâce à David)
+
+Et c'est parti :
+
+Jean-Laurent : "bon on veut une appication web avec une page html"
+
+David : "ok, bon on écrit un test qui vérifie que la page index.html doit s'afficher" -> le test est donc en erreur
+
+Jean-Laurent : "donc il nous faut maintenant un serveur pour faire marcher le test, WebSphere ? rires ..."
+
+Davie : "je propose d'utiliser http://docs.oracle.com/javase/6/docs/jre/api/net/httpserver/spec/com/sun/net/httpserver/package-summary.html[httpserver] de la JDK (ndlr : solution la plus simple pour faire marcher le test), et on utilise http://jersey.java.net/[Jersey] pour fournir les resources (jax-rs de JavaEE6)"
+
+Et ainsi de suite ..... c'est vraiment très intéressant de les voir coder et surtout réfléchir aux choix d'implémentations. En plus d'être divertissant (car il y a un jeu d'acteurs comique quand même), on apprend plein de petits trucs sur des frameworks, des outils : zombie.js, mocha, mustache, jersey, fest assert ...
+
+Je suis revenu plusieurs fois pendant les deux jours, et c'était la vraie vie d'un projet comme ce moment de solitude (environ 20 min) pour faire marche la css (test/css au lieu de text/css, la loose ...). Malheureusement, je n'ai pas vu la dernière session pour la conclusion finale mais en tout cas j'ai pu voir l'application déployée sur Heroku, http://empty-samurai-5740.herokuapp.com/index.html[cliquez ici] !
+
+http://javaonemorething.files.wordpress.com/2012/05/codestory-capture.png[image:http://javaonemorething.files.wordpress.com/2012/05/codestory-capture.png?w=300[image,title="codestory-capture"]]
+
+Si vous voulez voir les sources, elles sont dispo sous https://github.com/dgageot/CodeStoryDevoxx.
+
+En tout cas, *un grand BRAVO à ces 4 développeurs !*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

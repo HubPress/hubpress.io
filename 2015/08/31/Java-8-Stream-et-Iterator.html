@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Java 8 : Stream et Iterator</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//binout.github.io/javaonemorething/themes/Roon/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/Roon/assets/css/screen.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html" />
+    
+    <meta property="og:site_name" content="JavaOneMoreThing" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Java 8 : Stream et Iterator" />
+    <meta property="og:description" content="Les Streams pour les Collections La grande nouveauté de Java 8, c&amp;#8217;est bien sûr les lambdas et son application dans l&amp;#8217;API Collection avec les Streams. Exemple de Stream public List&amp;lt;Person&amp;gt; findPeopleOlderThan(List&amp;lt;..." />
+    <meta property="og:url" content="https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html" />
+    <meta property="article:published_time" content="2015-08-30T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-12-08T14:01:55.407Z" />
+    <meta property="article:tag" content="java" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Java 8 : Stream et Iterator" />
+    <meta name="twitter:description" content="Les Streams pour les Collections La grande nouveauté de Java 8, c&amp;#8217;est bien sûr les lambdas et son application dans l&amp;#8217;API Collection avec les Streams. Exemple de Stream public List&amp;lt;Person&amp;gt; findPeopleOlderThan(List&amp;lt;..." />
+    <meta name="twitter:url" content="https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "JavaOneMoreThing",
+    "author": {
+        "@type": "Person",
+        "name": "Benoît Prioux",
+        "image": "https://avatars.githubusercontent.com/u/1451016?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://javaonemorething.wordpress.com"
+    },
+    "headline": "Java 8 : Stream et Iterator",
+    "url": "https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html",
+    "datePublished": "2015-08-30T22:00:00.000Z",
+    "dateModified": "2015-12-08T14:01:55.407Z",
+    "keywords": "java",
+    "description": "Les Streams pour les Collections La grande nouveauté de Java 8, c&amp;#8217;est bien sûr les lambdas et son application dans l&amp;#8217;API Collection avec les Streams. Exemple de Stream public List&amp;lt;Person&amp;gt; findPeopleOlderThan(List&amp;lt;..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="JavaOneMoreThing" href="https://binout.github.io/javaonemorething/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-java  noimage">
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://binout.github.io/javaonemorething" id="home_link">«</a>
+            <div class="meta"><time datetime="2015-08-31"><a href="/2015/08/31/Java-8-Stream-et-Iterator.html">August 31, 2015</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Java 8 : Stream et Iterator</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="sect1">
+<h2 id="_les_streams_pour_les_collections">Les Streams pour les Collections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La grande nouveauté de Java 8, c&#8217;est bien sûr les lambdas et son application dans l&#8217;API Collection avec les <code>Streams</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemple de <code>Stream</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public List&lt;Person&gt; findPeopleOlderThan(List&lt;Person&gt; people, int age) {
+	return people.stream()
+    	.filter(p -&gt; p.age() &gt; age)
+    	.collect(Collectors.toList());
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_et_pour_les_iterators">Et pour les Iterators ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Et maintenant si dans mon code je suis obligé de manipuler un <code>Iterator</code>, comment je fais ?</p>
+</div>
+<div class="listingblock">
+<div class="title">Pas de <code>Stream</code> pour les iterators</div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public List&lt;Person&gt; findPeopleOlderThan(Iterator&lt;Person&gt; people, int age) {
+	return people
+    	.stream().filter(p -&gt; p.age() &gt; age)
+        .collect(Collectors.toList());
+// ne compile pas, pas de méthode stream() sur les iterators...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La solution c&#8217;est d&#8217;utiliser les classes <code>java.util.stream.StreamSupport</code> et <code>java.util.Spliterators</code></p>
+</div>
+<div class="listingblock">
+<div class="title">StreamSupport et Spliterators</div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public List&lt;Person&gt; findPeopleOlderThan(Iterator&lt;Person&gt; people, int age) {
+	return StreamSupport.stream(
+    	Spliterators.spliteratorUnknownSize(people,
+        		Spliterator.DISTINCT |
+                Spliterator.IMMUTABLE |
+                Spliterator.NONNULL), false);
+    	.filter(p -&gt; p.age() &gt; age)
+        .collect(Collectors.toList());
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Le deuxième argument de la méthode <code>spliteratorUnknownSize</code> permet d&#8217;indiquer les caractéristiques de l&#8217;itération : CONCURRENT, DISTINCT, IMMUTABLE, NONNULL, ORDERED, SIZED, SORTED et SUBSIZED (plus d&#8217;informations dans la <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html">javadoc</a>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cas_d_utilisation">Cas d&#8217;utilisation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://twitter.com/cyril_delmas">@cyril_delmas</a> m&#8217;a montré un cas d&#8217;utilisation intéressant. Vous connaissez l&#8217;api XML DOM inclus dans le JDK (<code>org.w3c.dom</code>). Vous savez l&#8217;API qui ne connait pas les génériques, ni les collections : par exemple la classe <code>org.w3c.dom.NodeList</code>.</p>
+</div>
+<div class="paragraph">
+<p>Elle permet de représenter une liste de noeuds XML. Quelle galère si on veut la parcourir, la filter &#8230;&#8203;.</p>
+</div>
+<div class="listingblock">
+<div class="title">So old school &#8230;&#8203;</div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">	NodeList list = ...
+    for (int i=0;i&lt;list.getLength();i++) {
+        Node node = list.item(i)
+        ...
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>L&#8217;idée est de créer un <code>NodeListIterator</code> :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class NodeListIterator implements Iterator&lt;Node&gt; {
+
+    private final NodeList nodeList;
+    private final int size;
+    private int index = 0;
+
+    public NodeListIterator(NodeList nodeList) {
+        this.nodeList = nodeList;
+        this.size = nodeList.getLength();
+    }
+
+    @Override
+    public boolean hasNext() {
+        return size &gt; index;
+    }
+
+    @Override
+    public Node next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException("No more item in the list");
+        }
+        Node node = nodeList.item(index);
+        index += 1;
+        return node;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On peut alors utiliser la méthode décrite précedemment pour obtenir un <code>Stream</code> depuis une <code>NodeList</code> :</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>NodeList</code> et <code>Stream</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">	NodeList list = ...
+    Stream stream = StreamSupport.stream(
+    	Spliterators.spliteratorUnknownSize(
+        	new NodeListIterator(list),
+            Spliterator.DISTINCT |
+            Spliterator.IMMUTABLE |
+            Spliterator.NONNULL), false);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Et voilà !</p>
+</div>
+</div>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Java%208%20%3A%20Stream%20et%20Iterator&url=https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <!-- <a href="https://binout.github.io/javaonemorething/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a> -->
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/1451016?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/1451016?v=3" alt="Benoît Prioux">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n">Benoît Prioux</a></h4>
+                    Bordeaux<br>
+                    <a href="http://javaonemorething.wordpress.com" class="js-remove-domain-schema">http://javaonemorething.wordpress.com</a>
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://binout.github.io/javaonemorething/2015/08/31/Java-8-Stream-et-Iterator.html&amp;description=Java%208%20%3A%20Stream%20et%20Iterator-JavaOneMoreThing " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66076881-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

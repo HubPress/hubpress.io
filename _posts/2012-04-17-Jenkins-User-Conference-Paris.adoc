@@ -1,0 +1,25 @@
+= Jenkins User Conference @Paris
+:published_at: 2012-04-17
+:hp-tags: Jenkins
+
+Aujourd'hui nous sommes réunis pour parler de notre outil de CI préféré Jenkins !
+
+http://javaonemorething.files.wordpress.com/2012/04/20120417-130711.jpg[image:http://javaonemorething.files.wordpress.com/2012/04/20120417-130711.jpg[20120417-130711.jpg]]
+
+Paris est la 2ème étape après San Francisco en octobre 2011. Koshuke (mr jenkins) et ses potes ont la bonne idée de placer cette conférence juste avant les grandes messes : javaone, devoxx,...
+
+La keynote d'ouverture est assurée par @koshukekawa en personne ! Comme à San Francisco, nous avons le droit à une petite session d'autocongratulation .... entrecoupé d'un petit moment d'émotion pour @NicolasBacot qui reçoit de koshuke les peluches AngryBirds gagnées en parrainant un autre collègue.
+
+http://javaonemorething.files.wordpress.com/2012/04/20120417-130812.jpg[image:http://javaonemorething.files.wordpress.com/2012/04/20120417-130812.jpg[20120417-130812.jpg]]
+
+Une petite démo nous montre les dernières évolutions de Jenkins principalement en terme de UI : boutons save/apply, barre de navigation, popup, .... Très sympa et simplifie la vie quotidienne des administrateurs Jenkins en épargnant quelques clics :-)
+
+On nous rappelle que maintenant on peut écrire des plugins en Ruby (au lieu de maven+java), et aussi utiliser gradle pour le build.
+
+Concernant l'avenir, koshuke nous fait une démo sur ses travaux en cours comme l'intégration à Github : login, création de jobs depuis le repo, build à partir de pull request, tout ça a l'air de déjà bien marché ! ...mais ce n'est pas encore public, juste en test sur buildhive.com.
+
+Au niveau UI, la prochaine étape c'est l'utilisation de TwitterBootstrap très à la mode en ce moment.
+
+Sinon, les autres points d'améliorations sont : le temps de démarrage et l'optimisation de la parallélisation des jobs sur les slaves.
+
+Applaudissements et c'est parti pour une journée full Jenkins !

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Day Four : CDI Today and Tomorrow</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//binout.github.io/javaonemorething/themes/Roon/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/Roon/assets/css/screen.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://binout.github.io/javaonemorething/2011/10/10/Day-Four-CDI-Today-and-Tomorrow.html" />
+    
+    <meta property="og:site_name" content="JavaOneMoreThing" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Day Four : CDI Today and Tomorrow" />
+    <meta property="og:description" content="La session est un débat sur CDI. Le panel est composé de représentants de chacune des implémentations : Peter Muir pour Weld de JBoss Dave Blevins pour OpenWebBeans de Apache TomEE Reza Rahman pour CanDI de Resin Première question : Qu&amp;#8217;..." />
+    <meta property="og:url" content="https://binout.github.io/javaonemorething/2011/10/10/Day-Four-CDI-Today-and-Tomorrow.html" />
+    <meta property="article:published_time" content="2011-10-09T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-12-08T14:01:55.455Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Day Four : CDI Today and Tomorrow" />
+    <meta name="twitter:description" content="La session est un débat sur CDI. Le panel est composé de représentants de chacune des implémentations : Peter Muir pour Weld de JBoss Dave Blevins pour OpenWebBeans de Apache TomEE Reza Rahman pour CanDI de Resin Première question : Qu&amp;#8217;..." />
+    <meta name="twitter:url" content="https://binout.github.io/javaonemorething/2011/10/10/Day-Four-CDI-Today-and-Tomorrow.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "JavaOneMoreThing",
+    "author": {
+        "@type": "Person",
+        "name": "Benoît Prioux",
+        "image": "https://avatars.githubusercontent.com/u/1451016?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://javaonemorething.wordpress.com"
+    },
+    "headline": "Day Four : CDI Today and Tomorrow",
+    "url": "https://binout.github.io/javaonemorething/2011/10/10/Day-Four-CDI-Today-and-Tomorrow.html",
+    "datePublished": "2011-10-09T22:00:00.000Z",
+    "dateModified": "2015-12-08T14:01:55.455Z",
+    "description": "La session est un débat sur CDI. Le panel est composé de représentants de chacune des implémentations : Peter Muir pour Weld de JBoss Dave Blevins pour OpenWebBeans de Apache TomEE Reza Rahman pour CanDI de Resin Première question : Qu&amp;#8217;..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="JavaOneMoreThing" href="https://binout.github.io/javaonemorething/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template  noimage">
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://binout.github.io/javaonemorething" id="home_link">«</a>
+            <div class="meta"><time datetime="2011-10-10"><a href="/2011/10/10/Day-Four-CDI-Today-and-Tomorrow.html">October 10, 2011</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Day Four : CDI Today and Tomorrow</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="paragraph">
+<p>La session est un débat sur CDI. Le panel est composé de représentants de chacune des implémentations :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Peter Muir pour Weld de JBoss</p>
+</li>
+<li>
+<p>Dave Blevins pour OpenWebBeans de Apache TomEE</p>
+</li>
+<li>
+<p>Reza Rahman pour CanDI de Resin</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Première question : Qu&#8217;apporte CDI à la platforme JavaEE ?</p>
+</div>
+<div class="paragraph">
+<p>En bref, CDI apporte l&#8217;injection de dépendances et la gestion des scopes. Les extensions permettent beaucoup de choses : on peut même réécrire complètement des framework comme Struts ou Tapestry. CDI permet de rendre les applications plus facilement testables comme avec Arquillian (encore une fois, c&#8217;est vraiment le framework star de JavaOne). CDI est complètement typé.</p>
+</div>
+<div class="paragraph">
+<p>Deuxième question : Des conseils pour les débutants ?</p>
+</div>
+<div class="paragraph">
+<p>Le debuging n&#8217;est pas forcement facile, mais les logs sont très utiles. Peter Muir affirme que les logs de Weld sont très explicites. Ils conseillent tous d&#8217;utiliser au maximum les possibilités de l&#8217;IDE (JBossTools pour Eclipse). Reza nous conseille d&#8217;aller voir son blog où il publie des articles avec des best practices (<a href="http://www.rahmannet.net/downloads/cdi_tour.pdf" class="bare">http://www.rahmannet.net/downloads/cdi_tour.pdf</a>).</p>
+</div>
+<div class="paragraph">
+<p>Troisième question : JavaEE, Seam, Spring, Guice, CDI, comment choisir ?</p>
+</div>
+<div class="paragraph">
+<p>Le panel ne veut pas forcément faire de choix, l&#8217;idée c&#8217;est qu&#8217;en fonction des besoins, chaque framework apporte des solutions : on peut toujours faire marcher Spring avec CDI. Concernant Guice, c&#8217;est qu&#8217;un sous-ensemble de CDI, qui s&#8217;en est largement inspiré. Mais CDI apporte un concept plus fort que juste l&#8217;injection de dépendance comme la gestion du cycle de vie des beans, des évènements et les extensions.</p>
+</div>
+<div class="paragraph">
+<p>Quatrième question : Est-ce que CDI doit être  intégré à JavaSE ?</p>
+</div>
+<div class="paragraph">
+<p>Pour le moment, toutes les implémentations possèdent un fonctionnement en JavaSE mais la spec ne le définit pas, peut être en CDI 1.1. En tout cas, il semble trop tôt pour pouvoir l&#8217;intégrer dans la platform SE et c&#8217;est pas sûr que ce soit le bon choix&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Cinquième question : JavaEE 7 theme is cloud, que va apporter CDI ?</p>
+</div>
+<div class="paragraph">
+<p>CDI 1.1 va sortir avec JavaEE 7, il n&#8217;a pas forcément de lien avec le cloud. Pour le moment, 80% de JavaEE est extensible avec CDI : les servlets et jax-rs par exemple ne sont pas concernés. Peut-être que les extensions peuvent répondre à des problématiques du cloud comme le multitenancy&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Conclusion : Très bon débat où on a pu remarqué que les trois implémentations sont d&#8217;accord sur les grands principes et sur l'évolution de CDI. CDI 1.0 est déjà très bien rempli et CDI 1.1 apportera quelques retouches mais pas forcément liées au cloud (tant mieux ;-) ).http://javaonemorething.files.wordpress.com/2011/10/weld.png[<span class="image"><img src="http://javaonemorething.files.wordpress.com/2011/10/weld.png" alt="image" title="weld"></span>]</p>
+</div>
+<div class="paragraph">
+<p><a href="http://javaonemorething.files.wordpress.com/2011/10/openwebbeans.png"><span class="image"><img src="http://javaonemorething.files.wordpress.com/2011/10/openwebbeans.png?w=300" alt="image" title="openwebbeans"></span></a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://javaonemorething.files.wordpress.com/2011/10/caucho.png"><span class="image"><img src="http://javaonemorething.files.wordpress.com/2011/10/caucho.png?w=300" alt="image" title="caucho"></span></a></p>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Day%20Four%20%3A%20CDI%20Today%20and%20Tomorrow&url=https://binout.github.io/javaonemorething/2011/10/10/Day-Four-CDI-Today-and-Tomorrow.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <!-- <a href="https://binout.github.io/javaonemorething/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a> -->
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/1451016?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/1451016?v=3" alt="Benoît Prioux">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n">Benoît Prioux</a></h4>
+                    Bordeaux<br>
+                    <a href="http://javaonemorething.wordpress.com" class="js-remove-domain-schema">http://javaonemorething.wordpress.com</a>
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://binout.github.io/javaonemorething/2011/10/10/Day-Four-CDI-Today-and-Tomorrow.html&amp;description=Day%20Four%20%3A%20CDI%20Today%20and%20Tomorrow-JavaOneMoreThing " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66076881-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

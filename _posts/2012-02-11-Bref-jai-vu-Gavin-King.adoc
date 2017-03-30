@@ -1,0 +1,48 @@
+= Bref, j'ai vu Gavin King
+:published_at: 2012-02-11
+:hp-tags: DevoxxFr
+
+Il  y a plus d'une semaine maintenant, le 2 février, j'ai vu *Gavin King* à ..... Niort, oui oui Niort dans le Poitou-Charentes.
+
+Pour ceux qui n'ont pas fait "wouah Gavin King, le papa d'Hibernate et CDI", je rappelle que c'est l'une des 10 personnalités à connaître dans le monde Java comme le décrit Nicolas Martignole  dans un article sur le http://www.touilleur-express.fr/2012/01/14/10-personnalites-du-monde-java-a-connaitre[Touilleur Express].
+
+Pour ceux qui ont fait "wouah à Niort, qu'est-ce que fait Gavin là-bas?", j'ai cru comprendre que Serli qui est le sponsor principal du Poitou-Charentes JUG (organisateur de l'évènement) est le principal contributeur du plug-in Eclipse pour le langage "Ceylon" (à confirmer).
+
+Et c'est de Ceylon que  Gavin est venu nous parler, son nouveau projet qu'il défend ... même jusqu'à Niort !
+
+http://javaonemorething.files.wordpress.com/2012/02/ceylon_icon.png[image:http://javaonemorething.files.wordpress.com/2012/02/ceylon_icon.png?w=150[image,title="ceylon_icon"]]
+
+http://www.ceylon-lang.org/
+
+La présentation est en deux parties :
+
+* pour découvrir le langage, rien de mieux que le HelloWord ici présenté dans Eclipse avec le plug-in associé, ceci permet de voir comment se présente la syntaxe. C'est *David Festal* qui fait la démo et permet de rapidement "entrer" dans l'univers de ce langage
+
+[source, java]
+----
+void hello() {
+	print("Hello, World!");
+}
+----
+
+* puis, Gavin prend la parole pour nous parler des intentions de ce langage, de ses fondements, de sa conception, de son évolution, ...
+
+Voici les principaux points que j'ai retenu :
+
+* Ceylon est un langage destiné aux grands projets avec de nombreux développeurs car l'avantage principal de Ceylon c'est son compilateur intelligent qui facilite la maintenance du code : plus de NPE, pas d'erreurs bizarres au runtime avec les generics, des messages d'erreur de compilation compréhensibles par les développeurs, ...
+* Ceylon se veut concis et clair (sans aller dans l'extrème des nouveaux langages dynamiques qui veulent tout faire en une ligne)
+* Ceylon propose un système de modules dans la même idée que le futur Java8
+* Ceylon implémente le pattern Visiteur en natif : par exemple un switch sur une liste de sous-types sera en erreur dès lors qu'un nouveau sous-type sera créé
+* Et comme dans tous les projets, tout est "type-safe" : par exemple, la déclaration d'un module est fait dans une classe avec complétion dans l'IDE !
+
+Après je n'ai pas forcément retenu tout les subtilités expliqués par Gavin mais le mieux, c'est de télécharge le langage et le plug-in Eclipse et s'amuser un peu.
+
+Concernant Gavin lui-même, comme d'habitude, c'est vraiment super excitant de voir en vrai de tels speakers. Dès sa prise de parole, tu es captivé (même si les slides sont pas forcément top). Dans son discours, il y a plein d'anecdotes de développeur Java, qui te parlent forcément (le célèbre "Ah ouais il a trop raison"). Tu réalises rapidement qu'il a déjà tout connu sur le langage Java et qu'il veut proposer une solution à toutes les limites de Java tout en conservant les grands principes.
+
+http://javaonemorething.files.wordpress.com/2012/02/gavin_and_me.jpeg[image:http://javaonemorething.files.wordpress.com/2012/02/gavin_and_me.jpeg?w=180[image,title="gavin_and_me"]]
+
+Bien sûr à la fin, je n'ai pas manqué l'occasion d'aller discuter un peu avec lui avec mon anglais rouillé. Il semble avoir compris quelques unes de mes questions, et puis je lui ai parlé un peu de JavaEE, JBoss, CDI ... mais tout ça semble derrière lui, j'ai l'impresssion qu'il est vraiment passé à autre chose et qu'il veut aller au bout de son projet avec Ceylon. Courage à lui, créer un langage est quand même le graal de tout développeur !
+
+Et pour garder un souvenir de ce moment, je lui ai fais signer un vieux livre Hibernate trainant dans la bibliothèque du bureau :-)
+
+http://javaonemorething.files.wordpress.com/2012/02/gavin_sign.jpg[image:http://javaonemorething.files.wordpress.com/2012/02/gavin_sign.jpg?w=300[image,title="gavin_sign"]]

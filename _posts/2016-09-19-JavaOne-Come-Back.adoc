@@ -1,0 +1,19 @@
+= JavaOne Come Back
+:hp-tags: JavaOne
+
+
+== Il y a 5 ans ...
+
+Mon employeur, Lectra, me proposait d'aller à JavaOne 2011 à San Francisco. Super expérience qui m'a permis d'initier ma passion pour les technologies Java et JavaEE. C'était l'occasion aussi de commencer ce blog (d'où le nom).
+
+Petit souvenir :
+https://binout.github.io/javaonemorething/2011/10/11/Mon-palmares-de-JavaOne-2011.html[Mon palmares JavaOne 2011]
+
+== JavaOne 2016
+
+Ma deuxième fois à JavaOne sera forcément différent, car depuis j'ai eu la chance d'aller à Devoxx France et Belgique. Les technologies ont évoluées, les buzz words ne sont pas les mêmes, les microservices n'existaient pas et j'ai aussi changé :-) 
+
+++++
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Ok let&#39;s go to <a href="https://twitter.com/JavaOneConf">@JavaOneConf</a> <a href="https://twitter.com/hashtag/lectra?src=hash">#lectra</a> <a href="https://t.co/VEo6jkXGzd">pic.twitter.com/VEo6jkXGzd</a></p>&mdash; Benoît Prioux (@binout) <a href="https://twitter.com/binout/status/777517387029549056">September 18, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+++++

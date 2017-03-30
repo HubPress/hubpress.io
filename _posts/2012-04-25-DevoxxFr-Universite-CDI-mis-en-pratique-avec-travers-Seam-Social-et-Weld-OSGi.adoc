@@ -1,0 +1,29 @@
+= DevoxxFr Université : CDI mis en pratique avec travers Seam Social et Weld OSGi
+:published_at: 2012-04-25
+:hp-tags: DevoxxFr
+
+Que serai une conférence sans un petit talk sur CDI ;-), je choisis donc de passer une bonne partie de l'après-midi avec Antoine Sabot-Durand et Mathieu Ancelin pour une mise en pratique de CDI dans Seam Social puis Weld OSGi.
+
+http://seamframework.org/Seam3/SocialModule[SeamSocial]
+
+C'est un module de Seam 3 constituant un socle générique pour construire des APIs d'accès aux réseaux sociaux Twitter, Facebook, LinkedIn... Ce projet est d'ailleurs inspiré de SpringSocial (ils ont même repris les connecteurs).
+
+Pour se connecter à un réseau social, il faut appréhender :
+
+* OAuth pour l'authentification (qui va sûrement devenir un standard)
+* JSON car toutes les APIs sont en REST
+
+Pour JSON, Seam Social utilise le framework Jackson, qui propose un concept intéressant de mixin : externaliser les annotations de mapping JSON dans une autre classe et faire un binding avec le POJO resté tout clean, intéressant !
+Le module reprend tous les concepts de CDI : couplage lâche, découverte dynamique de modules, ...
+https://github.com/mathieuancelin/weld-osgi[Weld-OSGi]
+
+Cette extension de JBoss Weld (qui sera d'ailleurs bientôt intégré à Weld-core) réunit le meilleur des deux mondes : dynamique, typesafe, annotations. Elle permet de cacher la complexité d'OSGi et de l'intégrer facilement à un code utilisant déjà CDI. Il suffit alors de déployer tout ça dans un serveur hybride comme JBoss 7. La démo est assez bluffante :
+
+video::zbgZp15Y-Eo[youtube]
+
+J'avais déjà assisté à la même présentation au JUG Summer Camp en septembre dernier et c'est toujours aussi intéressant mais j'ai encore du mal à imaginer l'utiliser en production ....
+Au final, cette université nous a permis de faire un petit rappel sur CDI et surtout de voir des cas pratiques de mise en application. Mon seul bémol, un petit manque de rythme à certain moment et pas vraiment de lien entre la partie SeamSocial et la partie Weld OSGi.
+
+http://speakerdeck.com/u/mathieuancelin/p/cdi-par-la-pratique[Lien 1 vers les slides]
+
+http://www.slideshare.net/antoinesd/cdi-mis-en-paratique-avec-seam-social-et-weld-osgi[Lien 2 vers les slides]

@@ -1,0 +1,119 @@
+= Java 8 : Stream et Iterator
+:hp-tags: java
+
+== Les Streams pour les Collections
+
+La grande nouveauté de Java 8, c'est bien sûr les lambdas et son application dans l'API Collection avec les `Streams`.
+
+.Exemple de `Stream`
+[source, java]
+----
+
+public List<Person> findPeopleOlderThan(List<Person> people, int age) {
+	return people.stream()
+    	.filter(p -> p.age() > age)
+    	.collect(Collectors.toList());
+
+}
+----
+
+
+== Et pour les Iterators ?
+
+Et maintenant si dans mon code je suis obligé de manipuler un `Iterator`, comment je fais ?
+
+.Pas de `Stream` pour les iterators
+[source, java]
+----
+
+public List<Person> findPeopleOlderThan(Iterator<Person> people, int age) {
+	return people
+    	.stream().filter(p -> p.age() > age)
+        .collect(Collectors.toList()); 
+// ne compile pas, pas de méthode stream() sur les iterators...
+}
+----
+
+La solution c'est d'utiliser les classes `java.util.stream.StreamSupport` et `java.util.Spliterators` 
+
+.StreamSupport et Spliterators
+[source, java]
+----
+
+public List<Person> findPeopleOlderThan(Iterator<Person> people, int age) {
+	return StreamSupport.stream(
+    	Spliterators.spliteratorUnknownSize(people, 
+        		Spliterator.DISTINCT | 
+                Spliterator.IMMUTABLE | 
+                Spliterator.NONNULL), false);
+    	.filter(p -> p.age() > age)
+        .collect(Collectors.toList());
+}
+---- 
+
+Le deuxième argument de la méthode `spliteratorUnknownSize` permet d'indiquer les caractéristiques de l'itération : CONCURRENT, DISTINCT, IMMUTABLE, NONNULL, ORDERED, SIZED, SORTED et SUBSIZED (plus d'informations dans la https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html[javadoc]).
+
+== Cas d'utilisation
+
+https://twitter.com/cyril_delmas[@cyril_delmas] m'a montré un cas d'utilisation intéressant. Vous connaissez l'api XML DOM inclus dans le JDK (`org.w3c.dom`). Vous savez l'API qui ne connait pas les génériques, ni les collections : par exemple la classe `org.w3c.dom.NodeList`. 
+
+Elle permet de représenter une liste de noeuds XML. Quelle galère si on veut la parcourir, la filter ....
+
+.So old school ...
+[source, java]
+----
+	NodeList list = ...
+    for (int i=0;i<list.getLength();i++) {
+        Node node = list.item(i)
+        ...
+    }
+----
+
+
+L'idée est de créer un `NodeListIterator` :
+
+[source, java]
+----
+public class NodeListIterator implements Iterator<Node> {
+
+    private final NodeList nodeList;
+    private final int size;
+    private int index = 0;
+
+    public NodeListIterator(NodeList nodeList) {
+        this.nodeList = nodeList;
+        this.size = nodeList.getLength();
+    }
+
+    @Override
+    public boolean hasNext() {
+        return size > index;
+    }
+
+    @Override
+    public Node next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException("No more item in the list");
+        }
+        Node node = nodeList.item(index);
+        index += 1;
+        return node;
+    }
+}
+----
+
+On peut alors utiliser la méthode décrite précedemment pour obtenir un `Stream` depuis une `NodeList` :
+
+.`NodeList` et `Stream`
+[source, java]
+----
+	NodeList list = ...
+    Stream stream = StreamSupport.stream(
+    	Spliterators.spliteratorUnknownSize(
+        	new NodeListIterator(list), 
+            Spliterator.DISTINCT | 
+            Spliterator.IMMUTABLE | 
+            Spliterator.NONNULL), false);
+----
+
+Et voilà !

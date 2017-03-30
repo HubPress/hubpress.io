@@ -1,0 +1,35 @@
+= Day Three : Rethinking best practices with JavaEE 6
+:published_at: 2011-10-08
+
+Intervenant : Adam Bien, java rock start et freelancer, @AdamBien, blog.adam-bien.com
+
+La révélation de la semaine ! Adam est tout d'abord un super orateur, la présentation était très bonne et pleine d'humour mais les idées toute aussi excellentes !
+
+Adam veut nous faire comprendre qu'il faut changer nos habitudes de développeurs des années 2000. Avec JavaEE 6, on peut grandement simplifier le code (selon lui, 80% du code). Voici ses conseils :
+
+* `Service service = new ServiceImpl()` : Pas besoin d'interfaces pour une seule implémentation, évite le binding inutile, l'indirection, et de toute manière on change jamais d'implémentation
+* Empty delegates, empty layers are evil : Eviter les couches inutiles, les facades vides
+* Stateless Architectures for Statefull Applications : Stateless n'est pas la seule possibilité pour une application
+* Everything is extensible but nothing varies : Ne pas compliquer le code en le rendant trop générique, il faut le faire quand le besoin est là. Il est aussi facile de définir une interface après coup.
+* Configuration over convention : si on utilise des conventions, cela fait moins de chose à écrire (comme Maven vs Ant)
+* 5 Mb server.... And 50 Mb wars : pourquoi faire plus compliqué qu'un serveur EE (je vous rassure on ne parle pas de WebLogic ou WebSphere)
+* Superfluous DAO : ce pattern n'a pu lieu d'être, JPA fait déjà l'encapsulation pour nous
+
+Pour lui, le cocktail idéal est : CDI + JPA + EJB + JAX-RS = The Productive Synergy.
+
+Concernant les tests, il conseille de ne pas utiliser d'embedded server, il faut tester directement dans le serveur (avec Arquillian ?). Il faut définir :
+
+* des tests unitaires rapides à exécuter pour le développeur et à chaque build de l'intégration continue et
+* des tests d'intégrations plus longs à exécuter périodiquement sur l'intégration continue
+
+Le plugin Maven "failsale" est apparemment très utile pour faire cela.
+
+Le taux de couverture du code n'est pax le but ultime, il faut préferer la couverture du code complexe. Sonar est très pratique pour identifier le code complexe, par exemple avec la fonctionnalité "clouds".
+
+Pour les tests de performance, il conseille de définir un projet maven dédié qui fait du stress test avec JMeter (prononcé "Jamita" dédicace pour Nico) et de stocker les résultats dans une base pour suivre l'évolution (graphiques avec JFreeChart).
+
+Bref, que de bonnes idées, de bonnes pratiques pour améliorer notre productivité, nos managers vont être contents !
+
+NB : je vous conseille de voir la vidéo sur Parleys ! Et je pense que je vais acheter son livre !
+
+http://javaonemorething.files.wordpress.com/2011/10/adambien.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/adambien.jpg[image,title="adambien"]]

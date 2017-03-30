@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"binout","repositoryName":"javaonemorething","branch":"gh-pages"},"site":{"title":"JavaOneMoreThing","description":"Un peu de Java et plus encore","cover":"","postsPerPage":"3","googleAnalytics":"UA-66076881-1","url":"https://binout.github.io/javaonemorething"},"socialnetwork":{"email":"benoit.prioux@gmail.com","twitter":"binout","linkedin":"","github":"binout"},"theme":{"name":"Roon","url":"//binout.github.io/javaonemorething/themes/Roon"}}

@@ -1,0 +1,29 @@
+= Day One : JavaDb features in JDK7
+:published_at: 2011-10-05
+:hp-tags: JavaOne
+
+Java DB est la version packagée par Oracle de Apache Derby. Elle est supporte totalement toutes les fonctionnalités SQL (ANSI/ISO SQL). Elle peut être embarquée ou en mode client /serveur.
+
+Depuis le JDK6, elle est fournie avec la distribution dans $JDK_ROOT/db.
+
+Pour le JDK7, elle bénéficie d'améliorations de performances :
+
+* réduction de l'utilisation du CPU
+* calcul automatique des statistiques des index
+* scalabilité
+* streaming des lobs
+
+De plus, JavaDB propose un mode in-memory :
+
+__________________________________
+jdbc:derby:memory:myDb;create=true
+__________________________________
+
+Il y a aussi des nouveautés:
+
+* replication asynchrone
+* offset/fetch next
+* amélioration de l'interrupt handling
+* générateurs de séquence
+
+http://javaonemorething.files.wordpress.com/2011/10/javadb.png[image:http://javaonemorething.files.wordpress.com/2011/10/javadb.png[image,title="javadb"]]

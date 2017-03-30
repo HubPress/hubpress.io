@@ -1,0 +1,30 @@
+= Day Two : JPA 2.1
+:published_at: 2011-10-08
+:hp-tags: JavaOne
+
+Intervenante : Linda DeMichiel, spec lead de JavaEE 7
+
+Linda vient nous présenter les améliorations prévues dans JPA 2.1, et la spec semblent bien avancée !
+
+Au niveau des requêtes :
+
+* outer joins avec les conditions "on"
+* downcasting : permettant de caster un objet dans une requêtes, pratique pour les clauses where sur des sous types
+* invocation de fonctions de base de donnée
+* bulk update et delete pour JPQL et Criteria API !
+* le support de l'invocation de procédures stockées avec @NamedStockedProcedureQuery (les dbas vont être contents)
+* mapping pour les résultats des requêtes natives avec @SQLResultSetMapping
+* la possibilité de définir des requêtes nommées dynamiquement
+
+Au niveau de l'API :
+
+* CDI injection dans les EntityListeners, par exemple on peut envoyer un mail dans une méthode @PostPersist
+* Persistence contextes désynchronizés
+
+Au niveau du mapping :
+
+* multitenancy pour le cloud : JPA utilise un tenant id pour faire l'isolation lorsque les tenants partagent la même base et le même schéma
+
+Une version early draft a été présentée au JCP et JPA 2.1 sera intégre à JavaEE 7 prévue pour Q3 2012 (date-driven release!).
+
+http://javaonemorething.files.wordpress.com/2011/10/jpa21.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/jpa21.jpg?w=300[image,title="jpa21"]]

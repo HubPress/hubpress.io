@@ -1,0 +1,33 @@
+= Day Three : Hacking JavaEE with CDI extensions
+:published_at: 2011-10-08
+:hp-tags: JavaOne
+
+Intervenant : Dan Allen @mojavelinux de JBoss/Red Hat, java rock star (il a le look) et déjà vu dans la session sur Arquillian
+
+Cette session a pour but de nous montrer la puissance des extensions de CDI qui permettent de modifier /hacker le comportement d'une application JavaEE !
+
+Les slides sont très surprenants mais Dan Allen est très agréables à écouter, très clair et plein d'assurance, d'autant plus qu'une grande partie est du live coding !
+
+Les extensions de CDI permettent :
+
+* d'enregistrer des beans supplémentaires
+* de satisfaire les points d'injection
+* d'introduire des scopes custom
+* d'augmenter ou remplacer des metadatas
+
+Comment ajouter une extension ?
+
+* implémenter Extension
+* coder l'extension avec l'API, Solder semble très utile "swiss arly knife"
+* utiliser le ServiceProvider pour l'activer
+
+Dan nous montre pleins d'exemples plus ou moins compliqués :
+
+* suppression d'une annotation au runtime et remplacement par une autre
+* génération de log à partir d'annotations sur une interface
+* génération de code au runtime : par exemple, l'appel de requête avec JPA, à voir dans cdi-extension-query
+* .....
+
+J'espère que la session sera sur Parleys, car il est difficile de restituer ce live coding mais c'était bluffant ! Dan nous explique que Seam 3 sera un ensemble d'extensions CDI et il espère un jour voir un CDI MarketPlace !
+
+http://javaonemorething.files.wordpress.com/2011/10/danallen.jpeg[image:http://javaonemorething.files.wordpress.com/2011/10/danallen.jpeg[image,title="danallen"]]

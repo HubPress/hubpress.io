@@ -1,0 +1,21 @@
+= Day Four : CDI in JavaSE
+:published_at: 2011-10-10
+:hp-tags: JavaOne
+
+Dernière session de JavaOne 2011 (snif) et toujours du CDI (oui je sais, j'aime ça!). Cette fois-ci, deux intervenants suisses nous présentent l'utilisation de CDI dans un environnement SE.
+
+En fait, il existe une version de Weld dédiée au développement SE, et même une version d'Arquillian pour les tests ! Les fonctionnalités spécifiques sont :
+
+* le scope thread : @ThreadScoped (besoin de définir le RunnableDecorator dans beans.xml)
+* le bootstrap :
+
+1.  utiliser la classe StartMain de WeldSE et attendre pour l'évènement "ContainerInitialized"
+2.  de manière programmatique avec la classe "WeldContainer"
+
+Ensuite, ils nous expliquent différents cas d'utilisation solutionnés avec CDI comme un CommandLine en attente d'une entrée utilisateur.
+
+On peut même utiliser JPA avec CDI dans une application SE, la démo est très complète.
+
+Petit bonus, ils nous parlent du "maven shade plugin" permettant de packager en un seul jar une application desktop (packaging avec tous les dépendances et définition de la main class, ça rappelle le onejar de l'époque).
+
+Pour un peu de code, Cf. un http://relation.to/13027.lace[post] de Gavin King.

@@ -1,0 +1,23 @@
+= Asciidoctor et moi, et vous ?
+:published_at: 2014-10-12
+:hp-tags: asciidoctor
+
+Depuis quelques mois, j'ai découvert un super projet **http://asciidoctor.org/[Asciidoctor]**. Et non ce n'est pas le tout dernier framework ... mais un projet qui vous aide à écrire de la documentation technique.
+
+Et c'est vraiment fun !
+
+Pour vous convaincre, j'ai eu l'opportunité de faire des présentations pour deux conférences : **http://www.jugsummercamp.org/[JugSummerCamp]** et **http://www.bdx.io/#!/home[Bdx.io]**.
+
+Vous trouverez les slides sur mon projet github dédié :
+
+* http://binout.github.io/asciidoctor-quickie/
+
+Et comme j'ai vraiment adhéré à Asciidoctor, j'ai commencé à coder une tâche Ant (et oui certains font encore du Ant) pour convertir vos documents en Asciidoc vers du html, docbook, ... dans le même esprit que le https://github.com/asciidoctor/asciidoctor-maven-plugin[plugin maven].
+
+Mon travail a été reconnu car __Dan Allen__, le leader du projet Asciidoctor, m'a proposé d'intégrer officiellement le projet.
+
+Vous trouverez donc sur le github de Asciidoctor, le projet *Asciidoctor-ant* :
+
+* https://github.com/asciidoctor/asciidoctor-ant
+
+La version 1.5.0 est disponible sur http://repo1.maven.org/maven2/org/asciidoctor/asciidoctor-ant/1.5.0/[Maven Central].

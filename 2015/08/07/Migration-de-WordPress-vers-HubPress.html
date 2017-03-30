@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Migration de WordPress vers HubPress</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//binout.github.io/javaonemorething/themes/Roon/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//binout.github.io/javaonemorething/themes/Roon/assets/css/screen.css?v=1.0.0" />
+
+    <link rel="canonical" href="https://binout.github.io/javaonemorething/2015/08/07/Migration-de-WordPress-vers-HubPress.html" />
+    
+    <meta property="og:site_name" content="JavaOneMoreThing" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Migration de WordPress vers HubPress" />
+    <meta property="og:description" content="Constat Il y 4 ans, je décidais de commencer un blog. Au début, j&amp;#8217;ai écrit pas mal d&amp;#8217;articles en particulier sur les conférences auxquelles j&amp;#8217;ai pu assistées, puis un peu moins souvent, puis encore..." />
+    <meta property="og:url" content="https://binout.github.io/javaonemorething/2015/08/07/Migration-de-WordPress-vers-HubPress.html" />
+    <meta property="article:published_time" content="2015-08-06T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-12-08T14:01:55.409Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Migration de WordPress vers HubPress" />
+    <meta name="twitter:description" content="Constat Il y 4 ans, je décidais de commencer un blog. Au début, j&amp;#8217;ai écrit pas mal d&amp;#8217;articles en particulier sur les conférences auxquelles j&amp;#8217;ai pu assistées, puis un peu moins souvent, puis encore..." />
+    <meta name="twitter:url" content="https://binout.github.io/javaonemorething/2015/08/07/Migration-de-WordPress-vers-HubPress.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "JavaOneMoreThing",
+    "author": {
+        "@type": "Person",
+        "name": "Benoît Prioux",
+        "image": "https://avatars.githubusercontent.com/u/1451016?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://javaonemorething.wordpress.com"
+    },
+    "headline": "Migration de WordPress vers HubPress",
+    "url": "https://binout.github.io/javaonemorething/2015/08/07/Migration-de-WordPress-vers-HubPress.html",
+    "datePublished": "2015-08-06T22:00:00.000Z",
+    "dateModified": "2015-12-08T14:01:55.409Z",
+    "description": "Constat Il y 4 ans, je décidais de commencer un blog. Au début, j&amp;#8217;ai écrit pas mal d&amp;#8217;articles en particulier sur les conférences auxquelles j&amp;#8217;ai pu assistées, puis un peu moins souvent, puis encore..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="JavaOneMoreThing" href="https://binout.github.io/javaonemorething/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template  noimage">
+
+    
+
+
+    <article role="main" class="">
+        <header>
+            <a href="https://binout.github.io/javaonemorething" id="home_link">«</a>
+            <div class="meta"><time datetime="2015-08-07"><a href="/2015/08/07/Migration-de-WordPress-vers-HubPress.html">August 07, 2015</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>Migration de WordPress vers HubPress</h1>
+        </header>
+
+        <div class="text" id="js-post-content">
+            <div class="sect1">
+<h2 id="_constat">Constat</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il y 4 ans, je décidais de commencer un blog. Au début, j&#8217;ai écrit pas mal d&#8217;articles en particulier sur les conférences auxquelles j&#8217;ai pu assistées, puis un peu moins souvent, puis encore moins souvent &#8230;&#8203; En 2014, j&#8217;ai écrit un seul article, et en 2015, c&#8217;est le premier !</p>
+</div>
+<div class="paragraph">
+<p>Écrire des articles, ça prend du temps&#8230;&#8203; Pourtant, les sujets ne manquent pas ! A l'époque, j&#8217;avais choisi (rapidement) <a href="http://wordpress.com">WordPress</a> pour créer mon site. Et en prenant un peu de recul, c&#8217;est pas forcément l&#8217;idéal pour écrire des articles techniques (ne parlons pas d'écrire du code source). Depuis, j&#8217;ai découvert le format Asciidoc pour écrire de façon plus efficace. Dans le cadre d&#8217;un blog, ça serait un moyen de gagner un peu de temps&#8230;&#8203; mais WordPress ne le supporte pas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hubpress">Hubpress</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En baignant dans l'écosystème Asciidoctor, j&#8217;ai découvert <a href="http://hubpress.io">Hubpress</a>, une application web se basant sur <strong>github</strong> pour l&#8217;hébergement et sur <strong>asciidoc</strong> pour le format des articles. Pour moi, c&#8217;est le couple parfait pour un blog technique. En plus, HubPress, c&#8217;est simple et efficace, tout ce que j&#8217;aime.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_migration">Migration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dès lors, j&#8217;ai décidé de migrer les articles de mon ancien blog : <a href="http://javaonemorething.wordpress.com" class="bare">http://javaonemorething.wordpress.com</a>. Les étapes ont été les suivantes :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exporter le contenu de WordPress au format XML depuis l&#8217;interface d&#8217;administration</p>
+</li>
+<li>
+<p>Extraire les articles au format HTML et les convertir en Asciidoc, grâce à une petite routine que j&#8217;ai dévéloppée <a href="http://github.com/binout/Wordpress-exit">Wordpress-Exit</a></p>
+</li>
+<li>
+<p>Créer mon site HubPress en forkant le repository (tout est bien expliqué dans la documentation du projet)</p>
+</li>
+<li>
+<p>Committer mes articles au format Asciidoc dans le répertoire ´_posts´</p>
+</li>
+<li>
+<p>Utiliser l&#8217;interface d&#8217;administration pour retoucher quelques articles et les publier.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Et voilà le résultat :</p>
+</div>
+<div class="paragraph">
+<p><a href="http://binout.github.io/javaonemorething">http://binout.github.io/javaonemorething</a></p>
+</div>
+<div class="paragraph">
+<p>Maintenant plus d&#8217;excuses pour écrire des articles plus souvent !</p>
+</div>
+</div>
+</div>
+        </div>
+
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=Migration%20de%20WordPress%20vers%20HubPress&url=https://binout.github.io/javaonemorething/2015/08/07/Migration-de-WordPress-vers-HubPress.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
+
+
+        <footer class="post-footer" role="contentinfo">
+
+            <div class="vcard">
+                <!-- <a href="https://binout.github.io/javaonemorething/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a> -->
+
+                <a href="" class="photo">
+                    <span style="background-image: url('https://avatars.githubusercontent.com/u/1451016?v=3');">
+                        <img src="https://avatars.githubusercontent.com/u/1451016?v=3" alt="Benoît Prioux">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="" class="url n">Benoît Prioux</a></h4>
+                    Bordeaux<br>
+                    <a href="http://javaonemorething.wordpress.com" class="js-remove-domain-schema">http://javaonemorething.wordpress.com</a>
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
+
+
+
+
+    </article>
+
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
+
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://binout.github.io/javaonemorething/2015/08/07/Migration-de-WordPress-vers-HubPress.html&amp;description=Migration%20de%20WordPress%20vers%20HubPress-JavaOneMoreThing " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
+
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66076881-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

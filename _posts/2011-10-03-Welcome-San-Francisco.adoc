@@ -1,0 +1,12 @@
+= Welcome San Francisco
+:published_at: 2011-10-03
+:hp-tags: JavaOne
+
+Après quelques heures de vol en passant par Amsterdam, nous voila arrivé à San Francisco. Je dis nous car je voyage avec Nicolas mon collègue et surtout ami. Il aura fallu la journée du samedi et un peu du dimanche pour récupérer du jet lag et être en pleine forme pour la semaine javaone.
+
+Dimanche  matin, nous sommes venus nous enregistrer à l'hotel Hilton, et nous avons reçu notre package : tee-shirt, sac à dos, bloc notes .... Le reste de la journée nous en avons profité pour faire une walk visite de San Francisco, en particulier le golden gate park, LA maison bleue et l'unique Castro Street Fair !
+
+Nous sommes prêts pour commencer les sessions dès lundi matin !
+
+http://javaonemorething.files.wordpress.com/2011/10/p1060002.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/p1060002.jpg?w=300[image,title="javaone-register"]]
+

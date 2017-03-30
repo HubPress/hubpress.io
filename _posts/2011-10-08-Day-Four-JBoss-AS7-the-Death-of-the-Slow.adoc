@@ -1,0 +1,37 @@
+= Day Four : JBoss AS7, the Death of the Slow
+:published_at: 2011-10-08
+:hp-tags: JavaOne
+
+Intervenant : Andrew Lee Rubinger, JBoss/Red Hat
+
+Andrew commence par nous expliquer que pour JBoss 7, ils ont cleané le repo ! Ils ont appris de leurs erreurs et sont repartis from scratch !
+
+Voici les 7 points qui caractérisent JBoss 7 :
+
+\1. Lightning fast : un serveur d'application a toujours eu la mauvaise réputation de mettre trop de temps pour démarrer : JBoss 5 19s, JBoss 6 12s. .....JBoss 7 démarre en 2s preuve à l'appui avec une démo où il s'amuse à relancer plusieurs fois le JBoss, lol.
+
+\2. Collision : JBoss 7 est basé sur un design modulaire avec des jboss modules, le classpath est mort !
+
+\3. Heavy lifting : JBoss 7 a une très petite empreinte mémoire avec un nouveau kernel : the Modulare Service Container.
+
+\4. Testing sucks, Building sucks, Starting sucks, Deploying sucks : pour augmenter la productivité du développeur, il y a de nouveaux outils : Forge, SkinkWrap, Arquillian. Démo à l'appui, green balls en quelques secondes pour tester des EJBs, les transactions, les servlets...
+
+\5. Configuration sucks : nouvel console d'administration, et toute la configuration dans un seul fichier
+
+\6. Management sucks : nouveau concept de domaine pour gérer un groupe de serveurs
+
+\7. Bad components sucks : JBoss 7 regroupe
+
+* RestEasy pour JAX-RS
+* SnowDrop comme adaptateur pour Spring
+* Iron Jacomar
+* HornetQ pour JMs
+* Weld pour CDI
+* Infinispan pour le cache et la data grid
+* Hibernate pour JPA
+
+JBoss 7.1 n'est pas encore full JavaEE 6. Il supporte aussi OSGi. Il n'a pas d'installeur, juste une archive à dézipper.
+
+Bref, Andrew nous a tous convaincu, d'où les applaudissements de l'audience.
+
+http://javaonemorething.files.wordpress.com/2011/10/jbossas7.png[image:http://javaonemorething.files.wordpress.com/2011/10/jbossas7.png?w=300[image,title="jbossas7"]]

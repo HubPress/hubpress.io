@@ -1,0 +1,21 @@
+= DevoxxFr Tools In Action
+:published_at: 2012-04-26
+:hp-tags: DevoxxFr
+
+Après les universités, plusieurs sessions de "Tools In Action" sont proposées. D'une durée de 30 min, elles permettent de découvrir rapidement un framework ou un outil.
+
+== Tester une application Web avec Selenium 2, Selenium Grid et TestNG
+
+Mathilde Lemee nous fait une démonstration d'utilisation de Selenium 2 pour automatiser du tests IHM web. Pas besoin de selenium IDE, la syntaxe est simple à écrire et on peut rapidement coder un test. Ensuite, elle conseille d'utiliser TestNG qui permet de paralléliser les tests d'IHM, qui sont souvent long surtout si on veut tester les différents navigateurs. Et si c'est encore trop long, on peut utiliser Selenium Grid qui permet de lancer les tests sur plusieurs machines virtuelles.
+
+== Chouchoutez votre code javascript
+
+Romain Linsolas nous présente les outils et framework pour tester le javascript (oui oui c'est possible) et comment intégrer ses tests dans une intégration continue (Jenkins + Sonar). Super présentation, très concrète et en plus il fait une retranscription de son talk dans son http://linsolas.free.fr/wordpress/index.php/2012/04/chouchoutez-votre-code-javascript/[blog] !
+
+http://www.slideshare.net/linsolas/devoxx-java-script1280720[Lien vers les slides]
+
+== Réaliser des tests de charge avec Gatling
+
+Cela fait plusieurs semaines que j'entends parler de ce framework qui monte, qui monte .... C'est l'occasion d'en savoir plus grâce à Stéphane Landelle et Romain Sertelon. Gatling est écrit en Scala et à une approche différente de ses concurrents comme JMeter. Son point fort c'est l'optimisation de la gestion des threads. Les scenarii sont écrits et variabilisé en Scala, ce qui fait un peu peur au début après une petit démo, ç a devrait aller. Il existe aussi un recoder pour enregistrer le code du scénario, mais il faut quand reprendre le code à la main après. Le lancement peut se faire en ligne de commande, et les résultats sont présentés dans un joli rapport HTML5 avec plein d'effets sympas.
+
+Bref, même si tout ça est encore jeune, Gatling est très prometteur, il faut juste  ne pas être repoussé par un peu de Scala ;-) Pour en savoir plus, un petit tour sur le https://github.com/excilys/gatling[github].

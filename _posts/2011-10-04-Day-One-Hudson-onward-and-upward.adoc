@@ -1,0 +1,15 @@
+= Day One : Hudson onward and upward
+:published_at: 2011-10-04
+:hp-tags: JavaOne
+
+Intervenant : des gens d'Oracle qui semblent parachutés sur le projet
+
+Forcément la comparaison est difficile pour Hudson, les deux sessions sont à la suite dans la même salle....
+
+Présentation très fade, démo qui marche tout juste, beaucoup de flou sur la stratégie,pas très rassurant sur l'avenir d'Hudson.
+
+La seule éclaircie, la présentation de la fonctionnalité "Cascading project", une héritage entre jobs. Cela permet d'hériter des propriétés du job parent, de les surcharger. Pas mal pour l'administration en masse de jobs.
+
+J'oubliais, on nous a donné des badges Hudson...
+
+http://javaonemorething.files.wordpress.com/2011/10/hudson.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/hudson.jpg[image,title="hudson"]]

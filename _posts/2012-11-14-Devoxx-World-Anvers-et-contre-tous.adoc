@@ -1,0 +1,26 @@
+= Devoxx World : Anvers et contre tous !
+:published_at: 2012-11-14
+:hp-tags: DevoxxBe
+
+Après JavaOne 2011, Devoxx France 2012, le grand chelem continue avec Devoxx World à Anvers en Belgique. Cette fois-ci, je remercie le Bordeaux JUG qui a redistribué sa place avec un tirage au sort parmi ses membres : et c'est moi l'heureux gagnant !
+
+Cependant tout n'est pas si rose, car le chemin vers Devoxx fut un vrai chemin de croix :
+
+* Mardi 13 novembre 15h30 : départ de la gare de Bordeaux pour Paris
+* 17h30 : le TGV s'arrête à Poitiers, un accident a eu lieu sur la voie au niveau de Tours
+* 18h30 : le train repart mais c'est loupé pour ma correspondance pour Anvers
+* 20h : arrivée à Paris Montparnasse, je fais deux guichets pour échanger mon billet pour Anvers, en fait je dois aller à la gare du Nord
+* 20h30 : j'arrive à échanger mon billet pour un départ le lendemain matin à 6h25, mais sans garantie de place assise
+* Mercredi 14 novembre 5h40 : après avoir passé la nuit chez ma gentille belle-soeur, je prends un taxi pour être au plus tôt à la gare
+* 6h15 : le train est annoncé avec 30 min de retard de retard à cause des grèves en Belgique
+* 6h30 : le train est annulée, Devoxx s'éloigne ...
+* 6h40 : le train est des-annulé, mais deux trains sont mergés en un seul, j'arrive à me caser dans une voiture pour Anvers à une place au hasard
+* 7h25 : le train démarre, l'espoir renaît !
+* 9h : à Bruxelles, le train s'arrête à nouveau... Toujours la grève, les keynotes vont commencer...
+* 10h : le train repart, les keynotes s'enchainent et je loupe le show et les annonces : la danse des robots, annonce de Devoxx UK ...
+* 11h : le train arrive enfin à Anvers ....mais j'oublie ma sacoche à la descente du train, je la récupère de justesse avant que le train ne reparte vers Amsterdam, ouf...
+* 11h40 : après avoir récupéré ma chambre, je prends le tram pour le Metropolis et Devoxx commence enfin pour moi mais les keynotes sont finies...snif...
+
+Bref, pour un premier Devoxx, c'est un bien beau bizutage ! Mais après cette première journée, ça valait le coup d'insister : le lieu est super sympa (complexe de cinéma), l'organisation est excellente, les confs de très bonne qualité : javaee7, jdk8, Arquillian ...
+
+http://javaonemorething.files.wordpress.com/2012/11/20121114-225928.jpg[image:http://javaonemorething.files.wordpress.com/2012/11/20121114-225928.jpg[20121114-225928.jpg]]

@@ -1,0 +1,13 @@
+= Comment tuer son Spring ? (Partie 1)
+:published_at: 2012-03-16
+
+Cet article est le premier d'une série décrivant le retour d'expérience sur l'utilisation de Spring et la migration progressive vers CDI.
+
+D'abord pourquoi tuer son [line-through]*Boss* Spring ? Spring est tout de même un framework que nous avons largement utilisé ses dernières années et qui marche quand même plutôt bien ! Mais depuis quelques années et JavaEE nouvelle génération, les choses ont changées, et le "Standard" a rattrapé son retard en particulier avec CDI. Voici mes arguments qui doivent vous convaincre :
+
+* Spring, c'est quand même beaucoup de fichiers XML et pour les gros projets, c'est souvent devenu difficilement maintenable (un peu moins vrai depuis Spring 3)
+* Spring, ça fait beaucoup de choses ..... et souvent on utilise uniquement spring-core pour l'injection de dépendances. Je reprends un conseil de Adam Bien : "Pourquoi utiliser un framework quand le standard répond au besoin ?"
+* Spring, c'est SpringSource racheté par VMWare.... il ne faut pas être parano mais un jour la license d'utilisation peut être modifiée (bon d'accord cet argument est moyen)
+* "L'avenir c'est CDI", dirait Antonio Goncalvès ;-). Je pense en particulier aux extensions portables de CDI, qui permettent d'étendre JavaEE et ceci de façon standard. En plus, il semble se dessiner une communauté pour développer ces extensions avec le projet en incubation http://wiki.apache.org/incubator/DeltaSpikeProposal[DeltaSpike], à surveiller de très près !
+
+Si vous êtes convaincus ou simplement curieux, vous pourrez lire bientôt les articles décrivant les étapes de cette migration.

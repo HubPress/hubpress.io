@@ -1,0 +1,27 @@
+= Migration de WordPress vers HubPress
+
+== Constat
+
+Il y 4 ans, je décidais de commencer un blog. Au début, j'ai écrit pas mal d'articles en particulier sur les conférences auxquelles j'ai pu assistées, puis un peu moins souvent, puis encore moins souvent ... En 2014, j'ai écrit un seul article, et en 2015, c'est le premier !
+
+Écrire des articles, ça prend du temps... Pourtant, les sujets ne manquent pas ! A l'époque, j'avais choisi (rapidement) http://wordpress.com[WordPress] pour créer mon site. Et en prenant un peu de recul, c'est pas forcément l'idéal pour écrire des articles techniques (ne parlons pas d'écrire du code source). Depuis, j'ai découvert le format Asciidoc pour écrire de façon plus efficace. Dans le cadre d'un blog, ça serait un moyen de gagner un peu de temps... mais WordPress ne le supporte pas.
+
+== Hubpress
+
+En baignant dans l'écosystème Asciidoctor, j'ai découvert http://hubpress.io[Hubpress], une application web se basant sur *github* pour l'hébergement et sur *asciidoc* pour le format des articles. Pour moi, c'est le couple parfait pour un blog technique. En plus, HubPress, c'est simple et efficace, tout ce que j'aime.
+
+== Migration
+
+Dès lors, j'ai décidé de migrer les articles de mon ancien blog : http://javaonemorething.wordpress.com. Les étapes ont été les suivantes :
+
+1. Exporter le contenu de WordPress au format XML depuis l'interface d'administration
+2. Extraire les articles au format HTML et les convertir en Asciidoc, grâce à une petite routine que j'ai dévéloppée http://github.com/binout/Wordpress-exit[Wordpress-Exit]
+3. Créer mon site HubPress en forkant le repository (tout est bien expliqué dans la documentation du projet)
+4. Committer mes articles au format Asciidoc dans le répertoire ´_posts´
+5. Utiliser l'interface d'administration pour retoucher quelques articles et les publier.
+
+Et voilà le résultat :
+
+http://binout.github.io/javaonemorething[http://binout.github.io/javaonemorething]
+
+Maintenant plus d'excuses pour écrire des articles plus souvent !

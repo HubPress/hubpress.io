@@ -1,0 +1,15 @@
+= Devoxx France 2012 is born !
+:published_at: 2011-11-16
+:hp-tags: DevoxxFr
+
+Voila JavaOne est déjà loin maintenant, mais la passion est toujours là et aujourd'hui j'ai trouvé un sujet pour continuer à blogger : Devoxx arrive en France !
+
+http://www.devoxx.com/display/DV11/Home[Devoxx] (anciennement JavaPolis), ça se passe en ce moment à Anvers, c'est la plus grande conférence européenne indépendante sur les techno Java. Et après un peu de teasing, Stephan Janssen (le papa de Devoxx) et 4 membres du ParisJUG (Nicolas Martignole, Antonio Goncalves, Zouheir Cadi, José Paumar) y ont annoncé ce matin la création de Devoxx France du 18 au 20 avril 2012 au coeur de Paris ! Plus d'infos : http://www.devoxx.com/display/FR12/Accueil
+
+Il va falloir que je commence à trouver les arguments pour convaincre mon chef que c'est "the place to be" (et peut-être aussi ma moitié ;-) ) et puis sinon basta je prends 3 RTT et je me paie l'inscription ! (450 euros pour 3 jours).
+
+En tout cas, je félicite tout particulièrement Antonio Goncalves, qui a su réveiller ma passion de développeur Java un certain 30 mai 2011 avec une formation JavaEE 6.
+
+http://javaonemorething.files.wordpress.com/2011/11/logo_devoxx_fr_ombre_web-300x154.jpg[image:http://javaonemorething.files.wordpress.com/2011/11/logo_devoxx_fr_ombre_web-300x154.jpg[image,title="logo_devoxx_fr_ombre_web-300x154"]]
+
+ 

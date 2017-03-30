@@ -1,0 +1,36 @@
+= DevoxxFr Université : Les 5 mercenaires du DevOps
+:published_at: 2012-04-25
+:hp-tags: DevoxxFr
+
+Nous sommes le mercredi 18 avril, et oui j'ai réussi à aller à Devoxx France. Dans un précédent billet, j'avais dit que j'aurai tout fait pour m'inscrire et bien il a suffit de demander à mon manager : je remercie donc Lectra pour cette nouvelle aventure après JavaOne, il y a quelques mois.
+
+Le premier jour de #DevoxxFr est consacré aux conférences de type université, c'est-à-dire d'une durée de 3 heures pour apprendre un nouveau framework, un nouveau concept, une nouvelle méthodologie....
+
+Le matin, j'ai choisi "Les 5 mercenaires du DevOps" par Henri Gomez, Arnaud Héritier, Pierre-Antoine Grégoire, Gildas Cuisinier et Dimitri Baeli. Le but de cette conférence est de nous expliquer le concept de "DevOps" (Development and Operations) très à la mode en ce moment. Pour cela, le fil rouge est l'histoire du projet sh4rewith.me, un site de partage de fichier.
+
+Au début, comme souvent, la méthode à "la rache" est utilisée : ça marche sur un poste de dev, les tests sont fait en production, rien n'est automatisé.
+
+Puis vient "la raison" où l'on essaie d'appliquer les bonnes pratiques comme l'intégration continue, la documentation, des livrables réguliers et définis. Pour se jauger sur ces bonnes pratiques, on peut faire le http://french.joelonsoftware.com/Articles/TheJoelTest.html[joël test], qui consiste en 12 questions sur le projet. Pour un score en-dessous de 10, il faut commencer à s'inquièter... Pour mon projet actuel, j'ai calculé un score de 11/12 :-) Cependant, il reste encore des soucis :
+
+* la mise en production reste un évènement rare
+* les barrières sont encore nombreuses entre le marketing, les développeurs, la validation et la production
+
+Pour arriver au stade de "la sérenité", il faut travailler en mode DevOps :
+
+* Cycle court entre demande et mise en production
+* Gestion de la dette technique
+* Monitoring outillé
+* Automatisation des étapes à risque
+* Gestion complète de la configuration (source, conf, os)
+
+L'exemple concret dans cette conférence, c'est la mise en production du site sh4rewith.me pendant la conférence, en un clic depuis jenkins !
+
+http://javaonemorething.files.wordpress.com/2012/04/20120425-203749.jpg[image:http://javaonemorething.files.wordpress.com/2012/04/20120425-203749.jpg[20120425-203749.jpg]]
+
+D'ailleurs, Jenkins est l'outil qui permet de rassembler tous les interlocuteurs d'un projet, tout en préférant des instances différentes selon les besoins : une instance pour les dev, une instance pour la validation, une instance pour les ops.
+
+Chacun des interlocuteurs fait un petit retour d'expérience sur la mise en place du DevOps dans leur projet, en particulier Arnaud Héritier chez eXo Platform.
+
+L'université est vraiment très intéressante, et permet de rendre un peu plus concret le mouvement DevOps.
+
+http://www.slideshare.net/dbaeli/devoxx-devops-university2012[Lien vers les slides]

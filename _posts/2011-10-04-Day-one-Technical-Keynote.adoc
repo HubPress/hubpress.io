@@ -1,0 +1,21 @@
+= Day one : Technical Keynote
+:published_at: 2011-10-04
+:hp-tags: JavaOne
+
+C'est le show à l'americaine ! Magnifique salle, deux écrans géants, une musique pop !
+
+La première partie est consacrée à Intel, le sponsor "diamond" (merci pour le café et la bière) : pas très intéressant, du blabla, des chiffres et le discours "Oracle and Intel are working together for better performance ! ". Ensuite, une annonce Oracle pour le lancement de "Oracle NoSQL" histoire d'être à la mode. Puis, enfin on parle de Java avec une très bonne présentation de Mark Reinhold :
+
+* java7 : Project Coin, InvokeDynamic, Thread Fork/Join
+* java8 : Project Lambda, Project Jigsaw
+
+Après, nous avons le droit à un des évènements de JavaOne : JavaFx 2.0. Bon speaker et démo assez bluffante finissant sur une application javafx avec une vidéo de capture de mouvement, duke est animé par quelqu'un, à voir.
+
+Linda DeMichiel, spec leader de JavaEE7, vient nous parler du cloud mais pas que. On voit bien que comme Antonio Goncalves nous l'avait dit au jug summer camp de La Rochelle, Oracle pousse pour mettre du cloud dans JavaEE. On a le droit à une démo avec Glassfish d'un déploiement automatique sur plusieurs vms, c'est pas mal.....Wait and see....
+
+Enfin, vient le tour de java mobile, mais pas le temps de rester, il faut quitter la keynote pour être à l'heure à la première session de mon "schedule"
+
+Liens :
+
+* https://twitter.com/javalobbyposts/status/121098201913757696[tweet]
+* http://javaonemorething.files.wordpress.com/2011/10/photo-03-10-11-08-16-54.jpg[image:http://javaonemorething.files.wordpress.com/2011/10/photo-03-10-11-08-16-54.jpg?w=300[image,title="Technical Keynote"]]

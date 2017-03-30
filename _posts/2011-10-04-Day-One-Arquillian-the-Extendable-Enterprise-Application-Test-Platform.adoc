@@ -1,0 +1,42 @@
+= Day One : Arquillian, the Extendable Enterprise Application Test Platform
+:published_at: 2011-10-04
+:hp-tags: JavaOne
+
+Intervenant : Aslak Knutsen et Dan Allen
+
+http://www.jboss.org/arquillian[Arquillian] est un framework de test orienté container qui simplifie l'écriture de tests pour une application javaEE. Il s'intègre parfaitement avec les frameworks de test comme Junit et TestNG ainsi qu'avec les serveurs d'application JBOSS ou Glassfish.
+
+Exemple de code :
+
+[source, java]
+----
+import static org.junit.Assert.assertEquals;
+import javax.ejb.EJB;
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.spec.JavaArchive;
+import org.junit.Test;
+import org.junit.runner.RunWith;@RunWith(Arquillian.class)
+
+public class GreetingManagerTest {   
+  @Deployment    
+  public static JavaArchive createDeployment() {
+          return ShrinkWrap.create(JavaArchive.class, "test.jar")         
+                .addClasses(GreetingManager.class, GreetingManagerBean.class); 
+   }
+   
+  @EJB    
+  private GreetingManager greetingManager;   
+
+  @Test   
+  public void shouldGreetUser() throws Exception {
+    String name = "Earthlings";      
+    assertEquals("Hello, " + name, greetingManager.greet(name));
+  }
+}
+----
+
+La particularité d'Arquillian est d'offrir de nombreux points d'extensions en utilisant l'interface _LoadableExtension_ avec le méchanisme de SPI.
+
+image:http://design.jboss.org/arquillian/logo/ui/images/success/arquillian_ui_success_256px.png[image,title="Arquillian"]
