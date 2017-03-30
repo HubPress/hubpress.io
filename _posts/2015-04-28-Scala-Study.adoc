@@ -1,0 +1,52 @@
+= Scala Study
+
+
+## 개요
+* * *
+scala 프로그래밍 언어 스터디
+
+## 목표
+* * * 
+- OOP의 틀을 깬다.
+- scala 프로그래밍 언어를 익힌다.
+- Multi-paradigm language 의 특성을 익힌다.
+- Functional programming paradigm 을 익힌다.
+
+## 교재
+* * * 
+쉽게 배워서 빨리 써먹는 스칼라 프로그래밍
+
+원제 : Scala for impatient
+
+http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788994774374
+
+image::http://bahamoth.github.io/images/scala.jpg[scala for impatient]
+
+
+## 진행방식
+* * *
+0~30분 :: 챕터 내용 공유
+30~60분 :: 연습문제 풀이 / 코드 리뷰
+
+## 진행 Term
+
+[cols="5" , options="header"]
+|===
+|No.
+|Subject
+|일정
+|담당자
+|참석자
+
+|1
+|Chap.1 기본기
+|2015/3/20
+|강병수
+|강병수
+
+|2
+|Chap.2 제어구조와 함수
+|2015/3/20
+|강병수
+|강병수
+

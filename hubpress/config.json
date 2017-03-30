@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"bahamoth","repositoryName":"bahamoth.github.io","branch":"master"},"site":{"title":"경기 서부 개발자 커뮤니티","description":"개발자들끼리 정보도 공유하고 스터디도 진행하고 싶지만, 대부분의 모임이 강남 지역에 편중되어 참석이 어려웠던 분들을 모십니다.","url":"https://bahamoth.github.io"},"socialnetwork":{},"theme":{"name":"ichi","url":"//bahamoth.github.io/themes/ichi"}}

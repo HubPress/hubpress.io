@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Scala Study</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//bahamoth.github.io/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="//bahamoth.github.io/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//bahamoth.github.io/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="//bahamoth.github.io/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//bahamoth.github.io/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//bahamoth.github.io/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//bahamoth.github.io/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//bahamoth.github.io/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="https://bahamoth.github.io/2015/04/28/Scala-Study.html" />
+    
+    <meta property="og:site_name" content="경기 서부 개발자 커뮤니티" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Scala Study" />
+    <meta property="og:description" content="개요 scala 프로그래밍 언어 스터디 목표 OOP의 틀을 깬다. scala 프로그래밍 언어를 익힌다. Multi-paradigm language 의 특성을 익힌다. Functional programming paradigm 을 익힌다. 교재 쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 원제 : Scala for impatient http://www.kyobobook.co.kr/product/..." />
+    <meta property="og:url" content="https://bahamoth.github.io/2015/04/28/Scala-Study.html" />
+    <meta property="article:published_time" content="2015-04-27T15:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-04-29T04:33:25.869Z" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Scala Study" />
+    <meta name="twitter:description" content="개요 scala 프로그래밍 언어 스터디 목표 OOP의 틀을 깬다. scala 프로그래밍 언어를 익힌다. Multi-paradigm language 의 특성을 익힌다. Functional programming paradigm 을 익힌다. 교재 쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 원제 : Scala for impatient http://www.kyobobook.co.kr/product/..." />
+    <meta name="twitter:url" content="https://bahamoth.github.io/2015/04/28/Scala-Study.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "경기 서부 개발자 커뮤니티",
+    "author": {
+        "@type": "Person",
+        "image": "https://avatars.githubusercontent.com/u/5276888?v=3",
+        "url": "undefined/author/undefined"
+    },
+    "headline": "Scala Study",
+    "url": "https://bahamoth.github.io/2015/04/28/Scala-Study.html",
+    "datePublished": "2015-04-27T15:00:00.000Z",
+    "dateModified": "2015-04-29T04:33:25.869Z",
+    "description": "개요 scala 프로그래밍 언어 스터디 목표 OOP의 틀을 깬다. scala 프로그래밍 언어를 익힌다. Multi-paradigm language 의 특성을 익힌다. Functional programming paradigm 을 익힌다. 교재 쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 원제 : Scala for impatient http://www.kyobobook.co.kr/product/..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="경기 서부 개발자 커뮤니티" href="https://bahamoth.github.io/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="https://bahamoth.github.io"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="https://bahamoth.github.io">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area" >
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="https://bahamoth.github.io"></a></li>
+                <li><a class="fi-torso" href="https://bahamoth.github.io/about"></a></li>
+                <li><a class="fi-mail" href="https://bahamoth.github.io/contact"></a></li>
+            </ul>
+            
+            <h1 class="blog-title">경기 서부 개발자 커뮤니티</h1>
+            <hr>
+            <p class="blog-description">개발자들끼리 정보도 공유하고 스터디도 진행하고 싶지만, 대부분의 모임이 강남 지역에 편중되어 참석이 어려웠던 분들을 모십니다.</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post">
+
+
+            <h1 class="post-title">Scala Study</h1>
+
+            <span class="post-meta label"><time datetime="2015-04-28">28 Apr 2015</time></span>
+
+            <section class="post-content">
+                <div class="sect1">
+<h2 id="__">개요</h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p>scala 프로그래밍 언어 스터디</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">목표</h2>
+<div class="sectionbody">
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p>OOP의 틀을 깬다.</p>
+</li>
+<li>
+<p>scala 프로그래밍 언어를 익힌다.</p>
+</li>
+<li>
+<p>Multi-paradigm language 의 특성을 익힌다.</p>
+</li>
+<li>
+<p>Functional programming paradigm 을 익힌다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___3">교재</h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p>쉽게 배워서 빨리 써먹는 스칼라 프로그래밍</p>
+</div>
+<div class="paragraph">
+<p>원제 : Scala for impatient</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788994774374" class="bare">http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&amp;ejkGb=KOR&amp;barcode=9788994774374</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://bahamoth.github.io/images/scala.jpg" alt="scala for impatient">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___4">진행방식</h2>
+<div class="sectionbody">
+<hr>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">0~30분 </dt>
+<dd>
+<p>챕터 내용 공유</p>
+</dd>
+<dt class="hdlist1">30~60분 </dt>
+<dd>
+<p>연습문제 풀이 / 코드 리뷰</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__term">진행 Term</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">No.</th>
+<th class="tableblock halign-left valign-top">Subject</th>
+<th class="tableblock halign-left valign-top">일정</th>
+<th class="tableblock halign-left valign-top">담당자</th>
+<th class="tableblock halign-left valign-top">참석자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chap.1 기본기</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2015/3/20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">강병수</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">강병수</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chap.2 제어구조와 함수</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2015/3/20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">강병수</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">강병수</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">No tag</aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bahamoth.github.io/2015/04/28/Scala-Study.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Scala%20Study&amp;url=https://bahamoth.github.io/2015/04/28/Scala-Study.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=https://bahamoth.github.io/2015/04/28/Scala-Study.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4></h4>
+                        <img src="https://avatars.githubusercontent.com/u/5276888?v=3">
+                        
+                        
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="//bahamoth.github.io/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//bahamoth.github.io/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+</body>
+</html>
