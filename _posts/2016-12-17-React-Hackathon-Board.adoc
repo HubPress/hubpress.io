@@ -1,0 +1,100 @@
+= React Hackathon Board
+
+Full open source web app to manage Hackathon events.
+
+:toc:
+
+
+== Features
+
+
+=== Sign up Local
+
+Users are able to sign up either with email and password.
+
+
+image:https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true[
+"Login Local",width=256,
+link="https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupLocal.png?raw=true"]
+
+
+Or using social platforms with OAuth/2
+
+#### Sign up Social
+
+image:https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true[
+"Login Local",width=128,
+link="https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonSignupSocial.png?raw=true"]
+
+
+
+=== Hackathon Setup
+
+Admins set up hackathons using simple forms.
+
+*Summary information* with title, start & end date along with short description.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonMainForm.png?raw=true[main form]
+
+
+*Details form* with some more information such as full description, rules and prizes for this event. Supports markdown with preview.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsForm.png?raw=true[details form]
+
+
+*Image upload* to display on the event.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonImageForm.png?raw=true[image upload social]
+
+=== Hackathon view
+
+The Event will then display as a card in the hackaton list.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonView.png?raw=true[hackathon card view]
+
+
+=== Hackathon details view
+
+Users can click on details to see full information of the event.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hackathonDetailsView.png?raw=true[hackathon details view]
+
+
+=== Hacks
+
+Users can create hacks, here is the  *Hack Form*
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/createHackView.png?raw=true[create hack view]
+
+=== Hacks view
+
+Hacks are displayed as cards on the hack list.
+Users can search through the displayed items.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/hacksView.png?raw=true[alt=Hacksview, width=216, height=269]
+
+=== Hacks Details
+
+Users can drill down to show full hack information, join and add comments.
+
+image::https://github.com/hirako2000/hirako2000.github.io/blob/master/images/HackDetailsView.png?raw=true[Hacks view]
+
+
+
+=== Other features
+
+- User profile editing, with avatar upload.
+- Participans listing.
+- Ability to nominate hacks.
+- Export hack list to CSV.
+- i18n (English - French).
+- Encryption of passwords.
+- Online code beautifier for:
+  * JavaScript/JSON
+  * HTML/CSS
+  * XML
+  * SQL
+
+
+
+

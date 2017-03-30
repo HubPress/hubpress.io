@@ -1,0 +1,5 @@
+# Good bye Wordress
+
+https://www.blogger.com[Blogger] feels like an old platform for blogging, I don't have the patience to maintain Wordpress, and I love https://en.wikipedia.org/wiki/Markdown[Markdown]... Oh wait it doesn't support it, OK nice to meet you http://asciidoctor.org/[AsciiDoc].
+
+Hello http://hubpress.io/[HubPress] let's be friends.
