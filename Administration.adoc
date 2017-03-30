@@ -8,7 +8,7 @@ This guide will help you get the most out of your HubPress blog. It will teach y
 
 If you don't care too much about customising your blog at this stage, and just want to start writing, review the helpful info in the link:Writers_Guide.adoc[Writer's Guide] to get you writing blog posts the right way.
 
-NOTE: You do not need any special systems administrtion knowledge to use HubPress. We've split out the Administration information so the README remains small in size.
+NOTE: You do not need any special systems administration knowledge to use HubPress. We've split out the Administration information so the README remains small in size.
 
 toc::[]
 
