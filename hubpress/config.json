@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"informatiq","repositoryName":"informatiq.github.io","branch":"master"},"site":{"title":"InformatiQ","description":"Nubi's path to Foo","url":"https://informatiq.github.io"},"socialnetwork":{"email":"rhanna@informatiq.org","twitter":"https://twitter.com/InformatiQ","linkedin":"    https://fr.linkedin.com/in/ramezhanna","github":"https://github.com/InformatiQ"},"theme":{"name":"ghostium","url":"//informatiq.github.io/themes/ghostium"}}
