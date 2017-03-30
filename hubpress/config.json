@@ -1,10 +1,16 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
+    "username": "celilileri",
+    "repositoryName": "celilileri.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Serhat Celil İLERİ",
+    "description": "Bir GitHUB Blogu",
+    "postsPerPage": "10"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
