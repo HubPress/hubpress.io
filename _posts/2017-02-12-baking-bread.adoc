@@ -1,0 +1,19 @@
+= ... baking bread
+
+:hp-tags: bread
+
+
+== Recipe 1:
+
+* 1000 g flour (wheat or spelt)
+* 60% - 65% water (60% with spelt)
+* 2% salt
+* yeast
+
+Knead, proof over night, pre-heat oven (incl. baking stone) and a cast iron pot with lid (Dutch oven) to 265 C or the maximum temperature of you oven.
+
+Form the loaf and proof (on a sheet of baking parchment) until well risen.
+
+Move loaf with the parchment into the pre-heated pot, return to the oven, turn down the oven to 250 C and bake for 1 hour.
+
+image::https://lh3.googleusercontent.com/vn3bs-PMEBTTnDjQdQl_rN655mNtUZtoabAGbNqiB_U3qqx1irQ02nLiz3Anbl4RXgHOTsgqcny_OYZTXQ5SRaG2KWTbuJxZSd0wuU5-hWP3CmcZ77t-Qkjmz9N4glnK69clapk=w716-h954-no[Fresh Loaf]

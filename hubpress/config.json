@@ -1,10 +1,39 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "thomaszahr",
+    "repositoryName": "thomaszahr.github.io",
+    "branch": "master",
+    "cname": ""
+  },
+  "site": {
+    "title": "crumblingbiscuit",
+    "description": "... crumblingbiscuit's common place book",
+    "logo": "https://secure.gravatar.com/avatar/62b1891102bece1cd530b0f5f630225e",
+    "cover": "https://lh3.googleusercontent.com/2tor-0-MsbWL48EuQdtcfpLLvxDaoF-JJfHtSVcdG2JTwaIUPxVdmoOEkZ8CL1HWosYdSfK_rUzmXHSfEQDOeRXCGupqs4s-U25VHuxajvPTP828QF6SvQGa8uOtHFTEfASc91qoH52kCqOosECpUgZBM-RNfgbMhOzsIWg9f-xEBiJ9B9xsUoGpFRSUc6uL8RTlu5zEOx21OmDFcm6wxOq--PFdN1k_9CSKq8i8uPVSmnzph0BK8TUN32nQSfhm8MStVJ7AyNeJSrMfpXISisByfDfNNv5usRajrU_dZvQqIXo6NVzTFGhVefnDQo-sRnnySfJE5RdRg0Hl-qu2EIz_8nKKUazdJuQ5p5ClM2KlGo5nDBl0AklThiupi9mrs4culYsWILRZ_rCaPHgIecjUabNcc3bOhc6RxX5zAUVU3YTdXwqTXE6Hhg_Dol1POm2OU2vy7m2CZI0K5cZLXF_VNk04OAjMrdmk2mhay3b1_b2nqlLZxnvLKbHLvh4qfHp0qSXQLkg91k8hGV0LiVNoWNrg5V81sa9MWm6Mw0BE7C37c8h0NVSpgLxtxmCpMaZHpenXD5mCAMsU598NeUhipq2rb6vB8vnp6WYLkWnxyKg9hdkHdw=s1021-no",
+    "postsPerPage": "7",
+    "disqus": "thomaszahr-github-io",
+    "delay": "",
+    "googleAnalytics": "UA-92769540-1"
+  },
+  "socialnetwork": {
+    "email": "webmaster@zahr.de",
+    "twitter": "https://twitter.com/tho99",
+    "flickr": "https://www.flickr.com/photos/crumblingbiscuit/",
+    "github": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "linkedin": "",
+    "stackoverflow": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://thomaszahr.github.io",
+    "hubpress": "https://thomaszahr.github.io",
+    "theme": "//thomaszahr.github.io/themes/casper",
+    "images": "https://thomaszahr.github.io/images"
   }
 }
