@@ -1,0 +1,100 @@
+# Install skype 4.3.0.37 on CentOS, RHEL & Fedora
+:hp-tags: skype, centos, rhel, fedora
+
+skype is most popular application which is used to make a call over the Internet as FREE of cost. Skype to Skype calls & message completely FREE and Skype to Landlines and mobile phones low calling rate compare with mobile phones. Skype Technologies S.A (Microsoft Corporation) announced the new release of Skype 4.3 for Linux on June 18th 2014. Read about Skype installation on Debain based systems & Install skype on Ubuntu via PPA. Skype initially developed by Skype Technologies S.A. and founder Dave Horstman. Microsoft Corporation acquired Skype Technologies S.A. On May 2011 and doing further development now.
+
+## Features in skype 4.3
+
+. Updated UI
+. Improved file transfer support when using multiple devices at once
+. PulseAudio 3.0 and 4.0 support
+. Skype to Skype calls
+. Calls to mobiles and landlines
+. Group calls
+. Forward calls
+. One to one and Group video calls
+. Instant messaging, Voice messages & SMS
+. Send files
+. Screen sharing
+. Group screen sharing
+. Lot of bug fixes with many new features and improvements. For complete change log
+. For More Features
+. skype official home page
+
+## Install/Enable Required Repositories
+
+Install/Enable the EPEL & NUX Dextop Repositories for CentOS, RHEL and Scientific Linux. Also install the 32-bit versions of qtwebkit from repositories.
+
+[source,bash]
+----
+# For CentOS, RHEL, SL & Fedora 21 & older Systems #
+# yum install qtwebkit.i686
+
+# For CentOS, RHEL, SL & Fedora 21 & older Systems #
+# dnf install qtwebkit.i686
+----
+
+## Install Required Packages as per CentOS advice
+
+The below list of packages should be installed on your system to run skype smoothly.
+
+[source,bash]
+----
+# Install the necessary 32-bit packages #
+# yum install alsa-lib.i686 libXv.i686 libXScrnSaver.i686 gtk2-engines.i686 PackageKit-gtk-module.i686 libcanberra.i686 libcanberra-gtk2.i686
+
+# Install the necessary 32-bit audio packages #
+# yum install pulseaudio-libs.i686 alsa-plugins-pulseaudio.i686<
+
+# Install the necessary 32-bit video package #
+# yum install libv4l.i686
+----
+
+##  Download the skype archive file
+
+Use the below command to download the skype 4.3 archive file.
+
+[source,bash]
+----
+# wget http://download.skype.com/linux/skype-4.3.0.37.tar.bz2
+# tar -jxvf skype-4.3.0.37.tar.bz2
+----
+
+## Create Launcher for skype
+
+ For accessing the installed software on your system globally, you need to create the launcher file to /usr/bin/skyp and give executable permission then add the below script in that file. Save + Exit.
+
+[source,bash]
+----
+# touch /usr/bin/skype
+# chmod 755 /usr/bin/skype
+
+# Add Launcher script #
+# nano /usr/bin/skype
+
+#!/bin/sh
+export SKYPE_HOME="/opt/skype-4.3.0.37"
+$SKYPE_HOME/skype --resources=$SKYPE_HOME $*
+----
+
+## Configuring skype
+
+You need to create the below list of Symbolic Links to make skype work properly.
+
+[source,bash]
+----
+# ln -s /opt/skype-4.3.0.37/icons/SkypeBlue_48x48.png /usr/share/icons/skype.png
+# ln -s /opt/skype-4.3.0.37/icons/SkypeBlue_48x48.png /usr/share/pixmaps/skype.png
+# ln -s /opt/skype-4.3.0.37/skype.desktop /usr/share/applications/skype.desktop
+# ln -s /opt/skype-4.3.0.37/sounds/ /usr/share/sounds/
+# ln -s /opt/skype-4.3.0.37/lang/ /usr/share/lang/
+----
+
+## Launch skype
+
+Use the below command to launch the skype from command line.
+
+[source,bash]
+----
+# skype
+----

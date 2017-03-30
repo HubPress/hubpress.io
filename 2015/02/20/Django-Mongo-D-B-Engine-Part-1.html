@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Django MongoDB Engine [Part 1] - George Theofilis</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Django MongoDB Engine [Part 1]">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Django MongoDB Engine [Part 1]">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//blog.george-theofilis.com/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="http://blog.george-theofilis.com/2015/02/20/Django-Mongo-D-B-Engine-Part-1.html" />
+    
+    <meta property="og:site_name" content="George Theofilis" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Django MongoDB Engine [Part 1]" />
+    <meta property="og:description" content="1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virt..." />
+    <meta property="og:url" content="http://blog.george-theofilis.com/2015/02/20/Django-Mongo-D-B-Engine-Part-1.html" />
+    <meta property="article:published_time" content="2015-02-19T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-02-07T19:38:36.643Z" />
+    <meta property="article:tag" content="python" />
+    <meta property="article:tag" content="mongo" />
+    <meta property="article:tag" content="django" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Django MongoDB Engine [Part 1]" />
+    <meta name="twitter:description" content="1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virt..." />
+    <meta name="twitter:url" content="http://blog.george-theofilis.com/2015/02/20/Django-Mongo-D-B-Engine-Part-1.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "George Theofilis",
+    "author": {
+        "@type": "Person",
+        "name": "Theofilis George-Nektarios",
+        "image": "https://avatars.githubusercontent.com/u/475517?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://theofilis.github.io/"
+    },
+    "headline": "Django MongoDB Engine [Part 1]",
+    "url": "http://blog.george-theofilis.com/2015/02/20/Django-Mongo-D-B-Engine-Part-1.html",
+    "datePublished": "2015-02-19T22:00:00.000Z",
+    "dateModified": "2016-02-07T19:38:36.643Z",
+    "keywords": "python, mongo, django",
+    "description": "1. Installation Django MongoDB Engine depends on Django-nonrel, a fork of Django that adds support for non-relational databases. djangotoolbox, a bunch of utilities for non-relational Django applications and backends. It’s highly recommended (although not required) to use a virt..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="George Theofilis" href="http://blog.george-theofilis.com/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template tag-python tag-mongo tag-django no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " style="background-image: url(https://rsk-project.com/wp-content/uploads/2015/10/Athens-City-Break.jpg)">
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="http://blog.george-theofilis.com" title="link to homepage for George Theofilis">George Theofilis</a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description"></p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="http://blog.george-theofilis.com/#blog" title="link to George Theofilis blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+                  <!-- Twitter -->
+                  <li class="navigation__item">
+                    <a href="https://www.facebook.com/theofilis.g" title="Facebook account">
+                      <i class='icon icon-social-facebook'></i>
+                      <span class="label">Facebook</span>
+                    </a>
+                  </li>
+              
+                  <!-- Twitter -->
+                  <li class="navigation__item">
+                    <a href="https://twitter.com/g_theofilis" title="Twitter account">
+                      <i class='icon icon-social-twitter'></i>
+                      <span class="label">Twitter</span>
+                    </a>
+                  </li>
+              
+                  <!-- Google Plus -->
+                  <li class="navigation__item">
+                    <a href="https://plus.google.com/u/0/+%CE%93%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%82%CE%9D%CE%B5%CE%BA%CF%84%CE%AC%CF%81%CE%B9%CE%BF%CF%82%CE%98%CE%B5%CE%BF%CF%86%CE%AF%CE%BB%CE%B7%CF%82" title="Google+ account">
+                      <i class='icon icon-social-google-plus'></i>
+                      <span class="label">Google-plus</span>
+                    </a>
+                  </li>
+              
+                  <!-- Github -->
+                  <li class="navigation__item">
+                    <a href="https://github.com/theofilis" title="Github account">
+                      <i class='icon icon-social-github'></i>
+                      <span class="label">Github</span>
+                    </a>
+                  </li>
+                  </li>
+              
+                  <!-- Github -->
+                  <li class="navigation__item">
+                    <a href="https://www.instagram.com/theofilis.g/" title="Instagram account">
+                      <i class='icon icon-social-instagram'></i>
+                      <span class="label">Instagram</span>
+                    </a>
+                  </li>
+                  </li>
+              
+              
+              
+                  <!-- LinkedIn -->
+                  <li class="navigation__item">
+                    <a href="https://gr.linkedin.com/in/gtheofilis/en" title="LinkedIn account">
+                      <i class='icon icon-social-linkedin'></i>
+                      <span class="label">LinkedIn</span>
+                    </a>
+                  </li>
+              
+                  <!-- Email -->
+                  <li class="navigation__item">
+                    <a href="mailto:theofilis.g@gmail.com" title="Email theofilis.g@gmail.com">
+                      <i class='icon icon-mail'></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="20 Feb 2015" class="post-meta__date date">20 Feb 2015</time> &#8226; <span class="post-meta__tags tags">on <a href="http://blog.george-theofilis.com/tag/python">python</a>, <a href="http://blog.george-theofilis.com/tag/mongo">mongo</a>, <a href="http://blog.george-theofilis.com/tag/django">django</a></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/475517?v=3" alt="profile image for Theofilis George-Nektarios" class="avatar post-meta__avatar" /> by Theofilis George-Nektarios</span>
+      </div>
+      <h1 class="post-title">Django MongoDB Engine [Part 1]</h1>
+    </header>
+
+    <section class="post tag-python tag-mongo tag-django">
+      <div class="sect1">
+<h2 id="_installation">1. Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Django MongoDB Engine depends on</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://django-nonrel.org/">Django-nonrel</a>, a fork of Django that adds support for non-relational databases.</p>
+</li>
+<li>
+<p><a href="https://github.com/django-nonrel/djangotoolbox">djangotoolbox</a>, a bunch of utilities for non-relational Django applications and backends.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It’s highly recommended (although not required) to use a <a href="http://www.virtualenv.org/">virtualenv</a> for your project to not mess up other Django setups.</p>
+</div>
+<div class="sect2">
+<h3 id="_virtualenv">1.1. virtualenv</h3>
+<div class="paragraph">
+<p><strong>virtualenv</strong> is a tool to create isolated Python environments.</p>
+</div>
+<div class="paragraph">
+<p>If not already installed, grab a copy from the Cheeseshop:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">pip install virtualenv</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To set up a virtual environment for your project, use</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">virtualenv myproject</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To join the environment, use (in Bash):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">source myproject/bin/activate</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_django_nonrel">1.2. Django-nonrel</h3>
+<div class="paragraph">
+<p>Django fork with support for NoSQL databases</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">pip install git+https://github.com/django-nonrel/django@nonrel-1.7</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_djangotoolbox">1.3. djangotoolbox</h3>
+<div class="paragraph">
+<p>Djangotoolbox provides a common API for running Django on non-relational/NoSQL databases.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">pip install git+https://github.com/django-nonrel/djangotoolbox</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The djangotoolbox.admin module provides admin overrides for making django.contrib.auth work correctly in the admin UI. Simply add 'djangotoolbox' to INSTALLED_APPS after django.contrib.admin.</p>
+</div>
+<div class="paragraph">
+<p>This will disable features that require JOINs. If you still need permission handling you should use the nonrel permission backend.</p>
+</div>
+<div class="sect3">
+<h4 id="_django_permission_backend_nonrel">1.3.1. django-permission-backend-nonrel</h4>
+<div class="paragraph">
+<p>A Django authentication backend that supports Django&#8217;s user and group permissions on Django-Nonrel.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Get the code from Github:</p>
+<div class="literalblock">
+<div class="content">
+<pre>git clone https://github.com/django-nonrel/django-permission-backend-nonrel.git</pre>
+</div>
+</div>
+</li>
+<li>
+<p>add <strong>permission_backend_nonrel.backends.NonrelPermissionBackend</strong> to your AUTHENTICATION_BACKENDS and <strong>permission_backend_nonrel</strong> to your INSTALLED_APPS</p>
+<div class="literalblock">
+<div class="content">
+<pre>settings.py:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>AUTHENTICATION_BACKENDS = (
+    ...
+    'permission_backend_nonrel.backends.NonrelPermissionBackend',
+)</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>INSTALLED_APPS = (
+    ...
+    'permission_backend_nonrel',
+)</pre>
+</div>
+</div>
+</li>
+<li>
+<p>It&#8217;s important to put 'permission_backend_nonrel after djangotoolbox, because permission_backend_nonrel.admin replaces djangotoolbox&#8217;s User admin site.</p>
+<div class="paragraph">
+<p>Permission and groups can be assigned and modified via Django&#8217;s admin interface:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://camo.githubusercontent.com/603ca1906c7fe866050b50b90337e9a8925a3301/687474703a2f2f666c6f6f6f6f66696c65732e61707073706f742e636f6d2f73657276652f66696c65732f61646d696e2e6a7065672f">Django-nonrel admin with user_permissions and groups</a></p>
+</div>
+<div class="paragraph">
+<p>Django-gaeauth admin interface with user_permissions and groups</p>
+</div>
+</li>
+<li>
+<p>Now you should be able to use all the standard Django permission methods and decorators, like user.has_perm('foo') and so on.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_django_mongodb_engine">1.4. Django MongoDB Engine</h3>
+<div class="paragraph">
+<p>You should use the latest Git
+revision.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">pip install git+https://github.com/django-nonrel/mongodb-engine</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration">2. Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Database setup is easy (see also the <a href="https://docs.djangoproject.com/en/dev/ref/settings/#databases">Django database setup docs</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">DATABASES = {
+   'default' : {
+      'ENGINE' : 'django_mongodb_engine',
+      'NAME' : 'my_database'
+   }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Django MongoDB Engine also takes into account the HOST, PORT, USER, PASSWORD and OPTIONS settings.</p>
+</div>
+<div class="paragraph">
+<p>Possible values of OPTIONS are described in the <a href="https://django-mongodb-engine.readthedocs.org/en/latest/reference/settings.html">settings reference</a>.</p>
+</div>
+</div>
+</div>
+    </section>
+
+  </article>
+
+  
+  <section class="post-comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'theofilisgithubio'; // required: replace example with your forum shortname
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2016. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//blog.george-theofilis.com/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51201203-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>

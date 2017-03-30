@@ -1,0 +1,112 @@
+# Installing Oracle JDK
+:hp-tags: java, ubuntu
+
+The Oracle JDK is the official JDK; however, it is no longer provided by Oracle as a default installation for Ubuntu. 
+
+You can still install it using apt-get. To install any version, first execute the following commands:
+
+[source,bash]
+----
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+----
+
+## Managing Java (optional)
+
+When there are multiple Java installations on your Droplet, the Java version to use as default can be chosen. To do this, execute the following command:
+
+[source,bash]
+----
+sudo update-alternatives --config java
+----
+
+It will usually return something like this if you have 2 installations (if you have more, it will of course return more):
+
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+
+[source,bash]
+----
+Selection    Path                                            Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      auto mode
+  1            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      manual mode
+  2            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      manual mode
+
+Press enter to keep the current choice[*], or type selection number:
+----
+
+
+You can now choose the number to use as default. This can also be done for the Java compiler (javac):
+
+[source,bash]
+----
+sudo update-alternatives --config javac
+----
+
+It is the same selection screen as the previous command and should be used in the same way. This command can be executed for all other commands which have different installations. In Java, this includes but is not limited to: keytool, javadoc and jarsigner.
+Setting the "JAVA_HOME" environment variable
+
+To set the JAVA_HOME environment variable, which is needed for some programs, first find out the path of your Java installation:
+
+[source,bash]
+----
+sudo update-alternatives --config java
+----
+
+It returns something like:
+
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+
+[source,bash]
+----
+Selection    Path                                            Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      auto mode
+  1            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      manual mode
+  2            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      manual mode
+
+Press enter to keep the current choice[*], or type selection number:
+----
+
+
+The path of the installation is for each:
+
+    /usr/lib/jvm/java-7-oracle
+
+    /usr/lib/jvm/java-6-openjdk-amd64
+
+    /usr/lib/jvm/java-7-oracle
+
+Copy the path from your preferred installation and then edit the file /etc/environment:
+
+[source,bash]
+----
+sudo nano /etc/environment
+----
+
+In this file, add the following line (replacing YOUR_PATH by the just copied path):
+
+[source,bash]
+----
+JAVA_HOME="YOUR_PATH"
+----
+
+That should be enough to set the environment variable. Now reload this file:
+
+[source,bash]
+----
+source /etc/environment
+----
+
+Test it by executing:
+
+[source,bash]
+----
+echo $JAVA_HOME
+----
+
+If it returns the just set path, the environment variable has been set successfully. If it doesn't, please make sure you followed all steps correctly.
