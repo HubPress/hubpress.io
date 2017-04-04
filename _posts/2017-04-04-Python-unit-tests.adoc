@@ -11,5 +11,7 @@ You know why because if you don't what are you doing here ?
 ----
 def f1(a, b):
 	return a + b
+   
+assert f1(1, 1) == 2  
 
 ----
