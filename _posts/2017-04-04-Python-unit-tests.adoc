@@ -115,3 +115,5 @@ Ran 2 tests in 0.001s
 FAILED (failures=1)
 
 ----
+:hide-uri-scheme:
+Url to the doc : https://docs.python.org/3/library/unittest.html#test-cases
