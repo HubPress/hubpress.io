@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1491298239787"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1491298239787"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1491298239787"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1491309756185"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1491309756185"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1491309756185"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1491298239787"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1491309756185"></script>
 
     <link rel="canonical" href="https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html" />
     <meta name="referrer" content="origin" />
@@ -78,14 +78,14 @@
     <meta property="og:site_name" content="Pipou&#x27;s world" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Python unit tests" />
-    <meta property="og:description" content="Why ? You know why because if you don&amp;#8217;t what are you doing here ? Using unittest library An easy example : import unittest def f1(a, b):     return a + b class TestF1(unittest.TestCase):     &#x27;&#x27;&#x27;     This class will test f1     &#x27;&#x27;&#x27;     def test_f1(self):         res &#x3D; f1(2, 4)         self." />
+    <meta property="og:description" content="Why ? You know why because if you don&amp;#8217;t what are you doing here ? Using unittest library A basic example : import unittest def f1(a, b):     return a + b class TestF1(unittest.TestCase):     &#x27;&#x27;&#x27;     This class will test f1     &#x27;&#x27;&#x27;     def test_f1(self):         res &#x3D; f1(2, 4)         self." />
     <meta property="og:url" content="https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html" />
     <meta property="article:tag" content="python" />
     <meta property="article:tag" content=" unit tests" />
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Python unit tests" />
-    <meta name="twitter:description" content="Why ? You know why because if you don&amp;#8217;t what are you doing here ? Using unittest library An easy example : import unittest def f1(a, b):     return a + b class TestF1(unittest.TestCase):     &#x27;&#x27;&#x27;     This class will test f1     &#x27;&#x27;&#x27;     def test_f1(self):         res &#x3D; f1(2, 4)         self." />
+    <meta name="twitter:description" content="Why ? You know why because if you don&amp;#8217;t what are you doing here ? Using unittest library A basic example : import unittest def f1(a, b):     return a + b class TestF1(unittest.TestCase):     &#x27;&#x27;&#x27;     This class will test f1     &#x27;&#x27;&#x27;     def test_f1(self):         res &#x3D; f1(2, 4)         self." />
     <meta name="twitter:url" content="https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html" />
     
     <script type="application/ld+json">
@@ -147,7 +147,7 @@ null
             <ul class="post-meta-list">
               <li class="post-meta-item">
                 <time datetime="2017-04-04" itemprop="datePublished">
-                  12 hours ago
+                  15 hours ago
                 </time>
               </li>
                 <li class="post-meta-item">
@@ -185,9 +185,8 @@ null
 </div>
 <div class="sect3">
 <h4 id="_using_unittest_library">Using unittest library</h4>
-<div class="paragraph">
-<p>An easy example :</p>
-</div>
+<div class="sect4">
+<h5 id="_a_basic_example">A basic example :</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">import unittest
@@ -217,9 +216,9 @@ if __name__ == '__main__':
 OK</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Now we will change the value of our test to see when it fails :</p>
 </div>
+<div class="sect4">
+<h5 id="_what_happens_if_the_test_fails">What happens if the test fails :</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">	# modify the value in the assertEqual
@@ -229,7 +228,7 @@ OK</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And the output is now :</p>
+<p>The output is now :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -246,6 +245,62 @@ Ran 1 test in 0.001s
 
 FAILED (failures=1)
 Process finished with exit code 0</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_setup_and_teardown">Using setUp and tearDown</h5>
+<div class="paragraph">
+<p>This is a stupid example because here setUp is sufficient but in more complex situation tearDown alows us to clean the thing after a test or to do whatever you want.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def f1(a, b):
+    return a + b
+
+
+class TestF1(unittest.TestCase):
+    '''
+    This class will test f1
+    '''
+
+    def setUp(self):
+        self.good_value = 6
+
+    def tearDown(self):
+        self.good_value = 6
+
+    def test_f1(self):
+        res = f1(2, 4)
+        self.assertEqual(res, self.good_value)
+
+    def test_f1_with_bad_value(self):
+        res = f1(2, 4)
+        self.good_value = 3
+        self.assertEqual(res, self.good_value)
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>======================================================================
+FAIL: test_f1_with_bad_value (tmp.TestF1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rhz\PycharmProjects\untitled\tmp.py", line 23, in test_f1_with_bad_value
+    self.assertEqual(res, self.good_value)
+AssertionError: 6 != 3
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)</pre>
+</div>
 </div>
 </div>
 </div>
@@ -312,7 +367,7 @@ Process finished with exit code 0</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1491298239787"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1491309756185"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
