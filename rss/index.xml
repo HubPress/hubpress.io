@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 04 Apr 2017 09:30:39 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 04 Apr 2017 12:42:36 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_why">Why ?</h4>
 <div class="paragraph">
 <p>You know why because if you don&#8217;t what are you doing here ?</p>
@@ -6,9 +6,8 @@
 </div>
 <div class="sect3">
 <h4 id="_using_unittest_library">Using unittest library</h4>
-<div class="paragraph">
-<p>An easy example :</p>
-</div>
+<div class="sect4">
+<h5 id="_a_basic_example">A basic example :</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">import unittest
@@ -38,9 +37,9 @@ if __name__ == '__main__':
 OK</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Now we will change the value of our test to see when it fails :</p>
 </div>
+<div class="sect4">
+<h5 id="_what_happens_if_the_test_fails">What happens if the test fails :</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">	# modify the value in the assertEqual
@@ -50,7 +49,7 @@ OK</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And the output is now :</p>
+<p>The output is now :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -67,6 +66,62 @@ Ran 1 test in 0.001s
 
 FAILED (failures=1)
 Process finished with exit code 0</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_setup_and_teardown">Using setUp and tearDown</h5>
+<div class="paragraph">
+<p>This is a stupid example because here setUp is sufficient but in more complex situation tearDown alows us to clean the thing after a test or to do whatever you want.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def f1(a, b):
+    return a + b
+
+
+class TestF1(unittest.TestCase):
+    '''
+    This class will test f1
+    '''
+
+    def setUp(self):
+        self.good_value = 6
+
+    def tearDown(self):
+        self.good_value = 6
+
+    def test_f1(self):
+        res = f1(2, 4)
+        self.assertEqual(res, self.good_value)
+
+    def test_f1_with_bad_value(self):
+        res = f1(2, 4)
+        self.good_value = 3
+        self.assertEqual(res, self.good_value)
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>======================================================================
+FAIL: test_f1_with_bad_value (tmp.TestF1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rhz\PycharmProjects\untitled\tmp.py", line 23, in test_f1_with_bad_value
+    self.assertEqual(res, self.good_value)
+AssertionError: 6 != 3
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)</pre>
+</div>
 </div>
 </div>
 </div>]]></description><link>https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html</guid><category><![CDATA[python]]></category><category><![CDATA[ unit tests]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Tue, 04 Apr 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[C/C++ tips]]></title><description><![CDATA[<div class="sect3">
