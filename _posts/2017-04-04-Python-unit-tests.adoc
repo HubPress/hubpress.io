@@ -31,5 +31,7 @@ if __name__ == '__main__':
 
 And this will result in :
 
+----
 *Ran 1 test in 0.001s* +
 *OK*
+----
