@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 04 Apr 2017 12:47:05 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 04 Apr 2017 12:50:41 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_why">Why ?</h4>
 <div class="paragraph">
 <p>You know why because if you don&#8217;t what are you doing here ?</p>
@@ -71,6 +71,19 @@ Process finished with exit code 0</pre>
 </div>
 <div class="sect4">
 <h5 id="_using_setup_and_teardown">Using setUp and tearDown</h5>
+<div class="paragraph">
+<p>The doc says :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>setUp(): method called to prepare the test fixture. This is called immediately before calling the test method</p>
+</li>
+<li>
+<p>tearDown(): method called immediately after the test method has been called and the result recorded. This is called even if the test method raised an exception</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>This is a stupid example because here setUp is sufficient but in more complex situation tearDown alows us to clean the thing after a test or to do whatever you want.</p>
 </div>
