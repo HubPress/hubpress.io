@@ -1,0 +1,15 @@
+= Python unit tests
+:hp-tags: python, unit tests
+
+==== Why ?
+
+You know why because if you don't what are you doing here ? 
+
+==== Basic example
+
+[source,python]
+----
+def f1(a, b):
+	return a + b
+
+----
