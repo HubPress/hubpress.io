@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1491310025855"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1491310025855"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1491310025855"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1491310241863"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1491310241863"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1491310241863"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1491310025855"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1491310241863"></script>
 
     <link rel="canonical" href="https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html" />
     <meta name="referrer" content="origin" />
@@ -251,6 +251,19 @@ Process finished with exit code 0</pre>
 <div class="sect4">
 <h5 id="_using_setup_and_teardown">Using setUp and tearDown</h5>
 <div class="paragraph">
+<p>The doc says :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>setUp(): method called to prepare the test fixture. This is called immediately before calling the test method</p>
+</li>
+<li>
+<p>tearDown(): method called immediately after the test method has been called and the result recorded. This is called even if the test method raised an exception</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>This is a stupid example because here setUp is sufficient but in more complex situation tearDown alows us to clean the thing after a test or to do whatever you want.</p>
 </div>
 <div class="listingblock">
@@ -370,7 +383,7 @@ FAILED (failures=1)</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1491310025855"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1491310241863"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
