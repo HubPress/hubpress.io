@@ -35,3 +35,31 @@ And this will result in :
 Ran 1 test in 0.001s
 OK
 ----
+
+Now we will change the value of our test to see when it fails : 
+
+[source, python]
+----
+	# modify the value in the assertEqual
+	def test_f1(self):
+        res = f1(2, 4)
+        self.assertEqual(res, 3)
+----
+
+And the output is now : 
+
+----
+======================================================================
+FAIL: test_f1 (tmp.TestF1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rhz\PycharmProjects\panda\tmp.py", line 16, in test_f1
+    self.assertEqual(res, 3)
+AssertionError: 6 != 3
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+Process finished with exit code 0
+----
