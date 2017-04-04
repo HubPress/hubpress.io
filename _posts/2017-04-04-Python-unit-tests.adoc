@@ -66,6 +66,12 @@ Process finished with exit code 0
 
 ===== Using setUp and tearDown
 
+The doc says : 
+
+- setUp(): method called to prepare the test fixture. This is called immediately before calling the test method
+
+-  tearDown(): method called immediately after the test method has been called and the result recorded. This is called even if the test method raised an exception
+
 This is a stupid example because here setUp is sufficient but in more complex situation tearDown alows us to clean the thing after a test or to do whatever you want.
 
 [source, python]
