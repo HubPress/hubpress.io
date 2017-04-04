@@ -5,13 +5,31 @@
 
 You know why because if you don't what are you doing here ? 
 
-==== Basic example
+==== Using unittest library
+
+An easy example : 
 
 [source,python]
 ----
-def f1(a, b):
-	return a + b
-   
-assert f1(1, 1) == 2  
+import unittest
 
+def f1(a, b):
+    return a + b
+
+class TestF1(unittest.TestCase):
+    '''
+    This class will test f1
+    '''
+
+    def test_f1(self):
+        res = f1(2, 4)
+        self.assertEqual(res, 6)
+
+if __name__ == '__main__':
+    unittest.main()
 ----
+
+And this will result in :
+
+*Ran 1 test in 0.001s* +
+*OK*
