@@ -1,10 +1,21 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
+    "username": "Robcamstone",
+    "repositoryName": "Robcamstone.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "The Randomness of Robcamstone",
+    "description": "The thoughts, feelings and memories of Robert Campbell Stonebanks",
+    "logo": "https://pbs.twimg.com/profile_images/480008640896573440/baXmNLHi.jpeg",
+    "cover": "https://c1.staticflickr.com/9/8862/18327411741_b5d085589b_o_d.jpg"
+  },
+  "socialnetwork": {
+    "twitter": "https://twitter.com/Robcamstone",
+    "facebook": "https://www.facebook.com/robert.stonebanks",
+    "flickr": "https://www.flickr.com/photos/robcamstone/"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "ghostium"
   }
 }

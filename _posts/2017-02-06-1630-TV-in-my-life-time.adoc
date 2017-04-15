@@ -1,0 +1,16 @@
+= TV in my life time
+:published_at: 2017-02-06 16:30
+
+.Opportunity knocks
+* <<Freddie Davies>>
+* <<Bonnie Langford>>
+* <<Lena Zavaroni>>
+
+=== Freddie Davies
+video::dYVYEFRe58s[youtube, width=640, height=360]
+
+=== Bonnie Langford
+video::noRliAEeiQE[youtube, width=640, height=360]
+
+=== Lena Zavaroni
+video::j9NSwN-adPM[youtube, width=640, height=360]
