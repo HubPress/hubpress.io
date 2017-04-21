@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Apr 2017 11:54:34 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Apr 2017 11:58:15 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_why">Why ?</h4>
 <div class="paragraph">
 <p>You know why because if you don&#8217;t what are you doing here ?</p>
@@ -142,6 +142,9 @@ FAILED (failures=1)</pre>
 </div>
 </div>]]></description><link>https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html</guid><category><![CDATA[python]]></category><category><![CDATA[ unit tests]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Tue, 04 Apr 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Python regex]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_sub">sub()</h4>
+<div class="paragraph">
+<p>Change a value by another :</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-python" data-lang="python">import re
@@ -152,6 +155,22 @@ test = "56test"
 print re.sub(r"([0-9]{2})([a-z]{4})", r"\g&lt;1&gt;pipou", test)
 
 #&gt;&gt;'56pipou'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same thing by compiling first :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>import re
+
+test = "56test"
+
+# this will replace the first group of the regex by pipou in test string
+regex = re.compile(r"([0-9]{2})([a-z]{4})")
+print regex.sub(r"\g&lt;1&gt;pipou", test)
+
+#&gt;&gt;'56pipou'</pre>
 </div>
 </div>
 </div>]]></description><link>https://remi-hernandez.github.io/2017/04/04/Python-regex.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2017/04/04/Python-regex.html</guid><category><![CDATA[python]]></category><category><![CDATA[ regex]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Tue, 04 Apr 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[C/C++ tips]]></title><description><![CDATA[<div class="sect3">
