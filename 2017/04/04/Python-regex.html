@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1492781831294"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1492781831294"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1492781831294"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1492781937971"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1492781937971"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1492781937971"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1492781831294"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1492781937971"></script>
 
     <link rel="canonical" href="https://remi-hernandez.github.io/2017/04/04/Python-regex.html" />
     <meta name="referrer" content="origin" />
@@ -226,51 +226,37 @@ TOP FL410 MOV E 10KT NC</p>
 </div>
 <div class="quoteblock">
 <blockquote>
-<div class="literalblock">
-<div class="content">
-<pre>import re</pre>
+<div class="paragraph">
+<p>import re</p>
 </div>
+<div class="paragraph">
+<p>file_list = ["6420.txt", "6421.txt" ,"6422.txt" ,"6423.txt" ,"6440.txt"
+    ,"6441.txt" ,"6442.txt" ,"6443.txt" ,"6444.txt" ,"6445.txt"
+    ,"6446.txt" ,"6447.txt" ,"6448.txt" ,"6449.txt" ,"6450.txt"
+    ,"6451.txt" ,"6452.txt" ,"6453.txt", "6454.txt"]</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>file_list = ["6420.txt", "6421.txt" ,"6422.txt" ,"6423.txt" ,"6440.txt"
-        ,"6441.txt" ,"6442.txt" ,"6443.txt" ,"6444.txt" ,"6445.txt"
-        ,"6446.txt" ,"6447.txt" ,"6448.txt" ,"6449.txt" ,"6450.txt"
-        ,"6451.txt" ,"6452.txt" ,"6453.txt", "6454.txt"]</pre>
+<div class="paragraph">
+<p>new_date = str(input("enter a new date&gt;"))
+regex = re.compile(r"((WC|WS|WV)[A-Z]{2}\d{2})\s+([A-Z]{4})\s+([0-9]{6})\s+(CC[AB])?")</p>
 </div>
+<div class="paragraph">
+<p>for sigmet in file_list:
+file_name = "./" + sigmet
+f = open(file_name, "r")
+content = f.read()</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>new_date = str(input("enter a new date&gt;"))
-regex = re.compile(r"((WC|WS|WV)[A-Z]{2}\d{2})\s+([A-Z]{4})\s+([0-9]{6})\s+(CC[AB])?")</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>for sigmet in file_list:
-    file_name = "./" + sigmet
-    f = open(file_name, "r")
-    content = f.read()</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>#print content
+<div class="paragraph">
+<p>#print content
 new_content = regex.sub(r"\1 \3 " + new_date + r"\n", content)
-#print new_content</pre>
+#print new_content</p>
 </div>
+<div class="paragraph">
+<p>f.close()</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>f.close()</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>f = open(file_name, "w")
+<div class="paragraph">
+<p>f = open(file_name, "w")
 f.write(new_content)
-f.close()</pre>
-</div>
+f.close()</p>
 </div>
 </blockquote>
 <div class="attribution">
@@ -341,7 +327,7 @@ f.close()</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1492781831294"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1492781937971"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
