@@ -1,0 +1,2 @@
+= Vim tips and shortcuts
+:hp-tags: vim, tips, shortcuts,
