@@ -3,7 +3,8 @@
 
 ==== sub()
 
-Change a value by another :
+Change a value by another with sub.
+We will rewrite the sentence in order to write the group1 followed by "pipou"
 
 [source,python]
 ----
