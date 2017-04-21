@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Apr 2017 13:37:11 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Apr 2017 13:38:57 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_why">Why ?</h4>
 <div class="paragraph">
 <p>You know why because if you don&#8217;t what are you doing here ?</p>
@@ -189,51 +189,37 @@ TOP FL410 MOV E 10KT NC</p>
 </div>
 <div class="quoteblock">
 <blockquote>
-<div class="literalblock">
-<div class="content">
-<pre>import re</pre>
+<div class="paragraph">
+<p>import re</p>
 </div>
+<div class="paragraph">
+<p>file_list = ["6420.txt", "6421.txt" ,"6422.txt" ,"6423.txt" ,"6440.txt"
+    ,"6441.txt" ,"6442.txt" ,"6443.txt" ,"6444.txt" ,"6445.txt"
+    ,"6446.txt" ,"6447.txt" ,"6448.txt" ,"6449.txt" ,"6450.txt"
+    ,"6451.txt" ,"6452.txt" ,"6453.txt", "6454.txt"]</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>file_list = ["6420.txt", "6421.txt" ,"6422.txt" ,"6423.txt" ,"6440.txt"
-        ,"6441.txt" ,"6442.txt" ,"6443.txt" ,"6444.txt" ,"6445.txt"
-        ,"6446.txt" ,"6447.txt" ,"6448.txt" ,"6449.txt" ,"6450.txt"
-        ,"6451.txt" ,"6452.txt" ,"6453.txt", "6454.txt"]</pre>
+<div class="paragraph">
+<p>new_date = str(input("enter a new date&gt;"))
+regex = re.compile(r"((WC|WS|WV)[A-Z]{2}\d{2})\s+([A-Z]{4})\s+([0-9]{6})\s+(CC[AB])?")</p>
 </div>
+<div class="paragraph">
+<p>for sigmet in file_list:
+file_name = "./" + sigmet
+f = open(file_name, "r")
+content = f.read()</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>new_date = str(input("enter a new date&gt;"))
-regex = re.compile(r"((WC|WS|WV)[A-Z]{2}\d{2})\s+([A-Z]{4})\s+([0-9]{6})\s+(CC[AB])?")</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>for sigmet in file_list:
-    file_name = "./" + sigmet
-    f = open(file_name, "r")
-    content = f.read()</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>#print content
+<div class="paragraph">
+<p>#print content
 new_content = regex.sub(r"\1 \3 " + new_date + r"\n", content)
-#print new_content</pre>
+#print new_content</p>
 </div>
+<div class="paragraph">
+<p>f.close()</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>f.close()</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>f = open(file_name, "w")
+<div class="paragraph">
+<p>f = open(file_name, "w")
 f.write(new_content)
-f.close()</pre>
-</div>
+f.close()</p>
 </div>
 </blockquote>
 <div class="attribution">
