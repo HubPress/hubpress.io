@@ -3,6 +3,7 @@
 
 ==== sub()
 
+Change a value by another :
 
 [source,python]
 ----
@@ -12,6 +13,20 @@ test = "56test"
 
 # this will replace the first group of the regex by pipou in test string 
 print re.sub(r"([0-9]{2})([a-z]{4})", r"\g<1>pipou", test)
+
+#>>'56pipou'
+----
+
+The same thing by compiling first : 
+
+----
+import re
+
+test = "56test"
+
+# this will replace the first group of the regex by pipou in test string 
+regex = re.compile(r"([0-9]{2})([a-z]{4})")
+print regex.sub(r"\g<1>pipou", test)
 
 #>>'56pipou'
 ----
