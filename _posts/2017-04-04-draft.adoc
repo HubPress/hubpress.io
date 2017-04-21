@@ -1,0 +1,4 @@
+= Python regex
+:hp-tags: python, regex
+
+==== sub()
