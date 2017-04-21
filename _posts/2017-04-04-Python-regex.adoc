@@ -49,29 +49,30 @@ TOP FL410 MOV E 10KT NC
 [source,python]
 ____
 
-    import re
-    
-    file_list = ["6420.txt", "6421.txt" ,"6422.txt" ,"6423.txt" ,"6440.txt"
-            ,"6441.txt" ,"6442.txt" ,"6443.txt" ,"6444.txt" ,"6445.txt"
-            ,"6446.txt" ,"6447.txt" ,"6448.txt" ,"6449.txt" ,"6450.txt"
-            ,"6451.txt" ,"6452.txt" ,"6453.txt", "6454.txt"]
+import re
 
-    new_date = str(input("enter a new date>"))
-    regex = re.compile(r"((WC|WS|WV)[A-Z]{2}\d{2})\s+([A-Z]{4})\s+([0-9]{6})\s+(CC[AB])?")
+file_list = ["6420.txt", "6421.txt" ,"6422.txt" ,"6423.txt" ,"6440.txt"
+    ,"6441.txt" ,"6442.txt" ,"6443.txt" ,"6444.txt" ,"6445.txt"
+    ,"6446.txt" ,"6447.txt" ,"6448.txt" ,"6449.txt" ,"6450.txt"
+    ,"6451.txt" ,"6452.txt" ,"6453.txt", "6454.txt"]
 
-    for sigmet in file_list:
-        file_name = "./" + sigmet
-        f = open(file_name, "r")
-        content = f.read()
+new_date = str(input("enter a new date>"))
+regex = re.compile(r"((WC|WS|WV)[A-Z]{2}\d{2})\s+([A-Z]{4})\s+([0-9]{6})\s+(CC[AB])?")
 
-        #print content
-        new_content = regex.sub(r"\1 \3 " + new_date + r"\n", content)
-        #print new_content
+for sigmet in file_list:
+file_name = "./" + sigmet
+f = open(file_name, "r")
+content = f.read()
 
-        f.close()
+#print content
+new_content = regex.sub(r"\1 \3 " + new_date + r"\n", content)
+#print new_content
 
-        f = open(file_name, "w")
-        f.write(new_content)
-        f.close()
+f.close()
+
+f = open(file_name, "w")
+f.write(new_content)
+f.close()
+
 
 ____
