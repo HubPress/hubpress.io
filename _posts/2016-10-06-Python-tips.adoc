@@ -160,3 +160,22 @@ lFilesList = [f for f in listdir(self.__fileName) if isfile(join(self.__fileName
 if len(lFilesList) > 0:
    print "There are files"
 ----
+
+==== Get items from a list a if not in b
+
+Use set(b) instead of b, why ? 
+List membership testing is O(n), Set membership testing is O(1)
+
+So if you test list membership in a loop the overall loop is O(n2).
+
+[source, python]
+----
+a = [1, 2, 3, 4 ,5]
+b = [4, 5, 6, 7]
+
+res = [x for x in a if x not in set(b)]
+
+# now res is : [1, 2, 3]
+----
+
+
