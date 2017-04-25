@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 24 Apr 2017 09:38:13 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 25 Apr 2017 12:12:20 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_why">Why ?</h4>
 <div class="paragraph">
 <p>You know why because if you don&#8217;t what are you doing here ?</p>
@@ -581,6 +581,26 @@ from os.path import isfile, join
 lFilesList = [f for f in listdir(self.__fileName) if isfile(join(self.__fileName, f)) and (join(self.__fileName, f)).endswith(".sda")]
 if len(lFilesList) &gt; 0:
    print "There are files"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_items_from_a_list_a_if_not_in_b">Get items from a list a if not in b</h4>
+<div class="paragraph">
+<p>Use set(b) instead of b, why ?
+List membership testing is O(n), Set membership testing is O(1)</p>
+</div>
+<div class="paragraph">
+<p>So if you test list membership in a loop the overall loop is O(n2).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">a = [1, 2, 3, 4 ,5]
+b = [4, 5, 6, 7]
+
+res = [x for x in a if x not in set(b)]
+
+# now res is : [1, 2, 3]</code></pre>
 </div>
 </div>
 </div>]]></description><link>https://remi-hernandez.github.io/2016/10/06/Python-tips.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/06/Python-tips.html</guid><category><![CDATA[python]]></category><category><![CDATA[ tips]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Thu, 06 Oct 2016 00:00:00 GMT</pubDate></item></channel></rss>
