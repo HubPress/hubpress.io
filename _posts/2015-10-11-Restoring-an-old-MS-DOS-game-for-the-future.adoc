@@ -4,8 +4,28 @@
 
 In 1997, I was learning programming and of course my interest was how to develop games. Internet was still not fully deployed in my town, but anyway I managed to buy some magazines that provided me the good old http://sourceforge.net/projects/c--/[Sphinx C-- compiler] and also some documentation on how draw pixels in a screen, mostly http://archive.gamedev.net/archive/reference/listed82.html?categoryid=130[Denthor's Asphyxia tutorials].
 
-Unfortunately, I lost the original source code, which is a pity. I would be so funny to see again my beautiful lines, eighteen years later. But I still have the binary.
+Unfortunately, I lost the original source code, which is a pity. I would be so funny to see again my beautiful lines of code, almost twenty years later. But luckily, I still have the binary.
 
-## The Palette
+The game was called **"Lume Infernal"** and is based in the classic "Spider" arcade game, where a spider was "filling" the screen with its web until a certain percentage of the screen was fulfilled. When covering the screen, an image was being revealed and it was completely shown after getting the goal, usually an 75 or 80%. Some "enemies" would try to stop the goal, moving across the 20 screens. After passing the last one, the game is finished.
 
-The first problem I found was that "for some reason" the color palette of the photos was missed.
+## Technical details
+
+The unveiling effect was done using a binary mask, like the collision detection algorithm. So, in every frame, the mask calculations were performed, and the game status was updated accordingly. A bit like ReactJS and Redux are trying to do these days. Just kidding.
+
+The graphic mode was 320x200 with a palette of 256 colors, also called mode 13h. That mode started to be a obselete a few years before, but it was really easy to code. The best thing is that a single screen fitted in one memory segment (64kb). Back then memory management was a mess in MS-DOS, as you usually needed to do a direct access for speed reasons, and the limit was 64 kbs. in a 640kb, a big number . That lead to an incredible number of problems, especially in games, where every kilobyte is (or was) needed, and you even had to fight with the operating system for it.
+
+The programming language used was http://barryk.org/goosee/cmm/[Sphinx C--], a sort of mix of C and assembler, developed by a Peter Cellik, a guy from British Columbia in Canada, and that was really easy to find and download these romantic days on the 56k modem internet era. There are still some webpages where you can find some information about it. It had even an IDE and some demo programs that were really useful to learn the basic effects. The language itself was coded in Turbo Pascal.
+
+## Now DOS Games can run in a browser
+
+It has been here for a while, but thanks to all the work done by the guys from https://github.com/kripken/emscripten[emscripten], it's possible to compile C/C++ to a Javascript target. That means that a lot of interesting software can be executed in the browser, like the https://github.com/dreamlayers/em-dosbox[DOSBox emulator]. And then other people put it even more simple making all that work together: https://js-dos.com/[js-dos]. You can see once more how the open-source community works: different efforts put together.
+
+Speed was not the problem, as emulation is always slower but today's computers are crazy fast compared with 90's standards. Neither was to find hosting place, as the result is fully static and Github is good enought in these cases.
+
+I had to replace the original images with new content, in order to make it suitable for all publics ;). There was a little problem with the palette of the new photos, but luckily The Gimp came to the rescue. It's possible to manipulate fairly well old images in the custom RAW format I originally used. Also I could rescue and reuse the original pallete I borrowed from a PCX image that was still included in the DOS game's zip package.
+
+## Final Result
+
+And you can see the result here: https://manelvf.github.io/lumeinfernal/[The Astonishing "Lume Infernal]. Still playable and still fun, it's possible to play it decently with the mouse. The first versions used the arrow keys
+
+Have fun!!
