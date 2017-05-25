@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Thu, 26 Jan 2017 20:57:12 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Updating the blog version]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Thu, 25 May 2017 16:43:24 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Updating the blog version]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_do_you_think_i_have_forgotten_you">Do you think I have forgotten you?</h2>
 <div class="sectionbody">
 <div class="videoblock">
@@ -691,7 +691,62 @@ hostname = 0.0.0.0</pre>
 <p>So, feel free to use this as a reference, but also try different stuff and new configurations. Enjoy the music!</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Wed, 11 Nov 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Space Quest]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Wed, 11 Nov 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Restoring an old MS-DOS game for the future]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_the_game">The Game</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In 1997, I was learning programming and of course my interest was how to develop games. Internet was still not fully deployed in my town, but anyway I managed to buy some magazines that provided me the good old <a href="http://sourceforge.net/projects/c--/">Sphinx C-- compiler</a> and also some documentation on how draw pixels in a screen, mostly <a href="http://archive.gamedev.net/archive/reference/listed82.html?categoryid=130">Denthor&#8217;s Asphyxia tutorials</a>.</p>
+</div>
+<div class="paragraph">
+<p>Unfortunately, I lost the original source code, which is a pity. I would be so funny to see again my beautiful lines of code, almost twenty years later. But luckily, I still have the binary.</p>
+</div>
+<div class="paragraph">
+<p>The game was called <strong>"Lume Infernal"</strong> and is based in the classic "Spider" arcade game, where a spider was "filling" the screen with its web until a certain percentage of the screen was fulfilled. When covering the screen, an image was being revealed and it was completely shown after getting the goal, usually an 75 or 80%. Some "enemies" would try to stop the goal, moving across the 20 screens. After passing the last one, the game is finished.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_technical_details">Technical details</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The unveiling effect was done using a binary mask, like the collision detection algorithm. So, in every frame, the mask calculations were performed, and the game status was updated accordingly. A bit like ReactJS and Redux are trying to do these days. Just kidding.</p>
+</div>
+<div class="paragraph">
+<p>The graphic mode was 320x200 with a palette of 256 colors, also called mode 13h. That mode started to be a obselete a few years before, but it was really easy to code. The best thing is that a single screen fitted in one memory segment (64kb). Back then memory management was a mess in MS-DOS, as you usually needed to do a direct access for speed reasons, and there was <a href="https://en.wikipedia.org/wiki/Memory_segmentation">a limit was 64 kbs per segment in a total of 640kb</a>, a big number that came from Bill Gates imagination (sic). That leaded to an incredible number of problems, especially in games, where every kilobyte was needed, and you even had to fight with the operating system for it. Thus a number of solutions appeared, each one of them with their pros and contras. Took a while for Windows, almost to the early 2000s, to be a consolidated gaming platform and to be able to offer a similar performance to the good old single process DOS and solve or at least hide for the developers the memory issues. Even now, memory access and management keeps being a <a href="https://lwn.net/Articles/250967/">tricky part</a> of the development process.</p>
+</div>
+<div class="paragraph">
+<p>The programming language used was <a href="http://barryk.org/goosee/cmm/">Sphinx C--</a>, a sort of mix of C and assembler, developed by a Peter Cellik, a guy from British Columbia in Canada, and that was really easy to find and download these romantic days on the 56k modem internet era. There are still some webpages where you can find some information about it. It had even an IDE and some demo programs that were really useful to learn the basic effects. The language itself was coded in Turbo Pascal.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_now_dos_games_can_run_in_a_browser">Now DOS Games can run in a browser</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It has been here for a while, but thanks to all the work done by the guys from <a href="https://github.com/kripken/emscripten">emscripten</a>, it&#8217;s possible to compile C/C++ to a Javascript target. That means that a lot of interesting software can be executed in the browser, like the <a href="https://github.com/dreamlayers/em-dosbox">DOSBox emulator</a>. And then other people put it even more simple making all that work together: <a href="https://js-dos.com/">js-dos</a>. You can see once more how the open-source community works: different efforts put together.</p>
+</div>
+<div class="paragraph">
+<p>Speed was not the problem, as emulation is always slower but today&#8217;s computers are crazy fast compared with 90&#8217;s standards. Neither was to find hosting place, as the result is fully static and Github is good enought in these cases.</p>
+</div>
+<div class="paragraph">
+<p>I had to replace the original images with new content, in order to make it suitable for all kind of public ;) . As I didn&#8217;t keep the original sources, there was a little problem having to adapt the new photos to the old palette. Luckily The Gimp came to the rescue. Using it, it&#8217;s possible to manipulate fairly well old images in the custom RAW format I originally used. Also I could rescue and reuse the original pallete I borrowed from a PCX image that was still included in the DOS game&#8217;s zip package.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the webpage that hosts the game was only customizing the example HTML file that comes as an example with <strong>js-dos</strong>. And that&#8217;s all. I didn&#8217;t use jQuery for small bits of Javascript that the page uses. Let&#8217;s keep that trend so we can retire the good old library and replace it with browser standards.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_result">Final Result</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>And you can see the result here: <a href="https://manelvf.github.io/lumeinfernal/">The Astonishing "Lume Infernal</a>. Still playable and still fun, it&#8217;s possible to play it decently with the mouse. The first versions used the arrow keys to move the main character, but players complained that mouse would be much more handy in this kind of game. Notice that the "enemies" increase their speed each four levels, to the point the last levels to be almost unplayable. Still a lot of fun remembering the 90&#8217;s games look and feel.</p>
+</div>
+<div class="paragraph">
+<p>Enjoy it and have fun!!</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2015/10/11/Restoring-an-old-MS-DOS-game-for-the-future.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/11/Restoring-an-old-MS-DOS-game-for-the-future.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sun, 11 Oct 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Space Quest]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>I continue with my quest for safeguarding data that I started talking about in my previous post.</p>
