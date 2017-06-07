@@ -5,6 +5,22 @@
     "branch": "gh-pages"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://qingyuqy.github.io/qingyuqy.io",
+    "hubpress": "https://qingyuqy.github.io/qingyuqy.io",
+    "theme": "//qingyuqy.github.io/qingyuqy.io/themes/casper",
+    "images": "https://qingyuqy.github.io/qingyuqy.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
