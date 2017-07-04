@@ -44,3 +44,13 @@ int main(int argc, char**argv)
 }
 ----
 
+==== Two ways to iterate
+
+[source,cpp]
+----
+for (std::vector<double>::iterator it = latWaypoints.begin(); it != latWaypoints.end(); ++it)
+    qDebug() << ">> latWay : " << *it;
+
+for (double lon: lonWaypoints)
+    qDebug() << ">> latWay : " << lon;
+----
