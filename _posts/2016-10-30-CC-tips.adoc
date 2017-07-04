@@ -48,6 +48,9 @@ int main(int argc, char**argv)
 
 [source,cpp]
 ----
+std::vector<double> latWayPoints;
+// fill vector
+
 for (std::vector<double>::iterator it = latWaypoints.begin(); it != latWaypoints.end(); ++it)
     qDebug() << ">> latWay : " << *it;
 
