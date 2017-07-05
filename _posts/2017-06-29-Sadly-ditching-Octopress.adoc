@@ -1,0 +1,11 @@
+= First Hubpress post
+
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2017-06-29
+:hp-tags: HubPress, Blog, Open_Source,
+:hp-alt-title: Sadly ditching Octopress
+
+Just playing around with the parameters here. 
+
+Real content coming soon :D

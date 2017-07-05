@@ -1,10 +1,49 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "halolee",
+    "repositoryName": "halolee.github.io",
+    "branch": "master",
+    "cname": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://halolee.github.io",
+    "hubpress": "https://halolee.github.io",
+    "theme": "//halolee.github.io/themes/casper",
+    "images": "https://halolee.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
+  },
+  "site": {
+    "title": "AI,  AR,  App",
+    "description": "Artificial Intelligence, Augmented Reality, App",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "",
+    "github": "https://github.com/halolee",
+    "twitter": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }

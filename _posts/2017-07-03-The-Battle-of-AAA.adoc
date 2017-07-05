@@ -1,0 +1,53 @@
+= The Battle of AAA
+
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+With year 2017 is half gone, the battle of AAA seems become clearer now.
+
+When it boils down to the essential, it seems the following thigns matters most:
+
+* AI
+* AR
+* Hardware
+
+Here are the current status of the active tech companies. The definition of active is a company will host annual developer conference.
+
+Apple:
+* CoreML
+* ARKit
+* HomePod
+
+Google:
+* Tensorflow
+* Tango
+* GoogleHome
+
+Facebook:
+* Bot
+* AR Studio
+* HUD
+
+Amazon:
+* 
+*
+*
+
+Microsoft
+
+* 
+*
+*
+
+IBM
+
+* 
+*
+*
+
+
+
+
