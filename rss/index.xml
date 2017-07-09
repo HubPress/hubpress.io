@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Thu, 25 May 2017 16:43:24 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Updating the blog version]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 09 Jul 2017 10:54:31 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Renewing CERTBOT certificates painlessly]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_what_is_certbot">What is "certbot"?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://certbot.eff.org/">Certbot</a>, previously known as <em>Let&#8217;s Encrypt</em>, is a community based effort for developing a service capable to provide secure certificates for everybody in the web. It&#8217;s both a combination of a software that it&#8217;s possible to install in a web server machine and a certificate provider service.</p>
+</div>
+<div class="sect2">
+<h3 id="_why_should_i_use_it">Why should I use it?</h3>
+<div class="paragraph">
+<p>Web is moving towards secure websites, that respect the privacy of the users and avoid forgeries. Let&#8217;s say it&#8217;s a response to the more complex and unsafe web that we have nowadays. Also, keep in mind that aggregators (like <em>G**gle</em>) are starting to punish websites that don&#8217;t use secure certificates.</p>
+</div>
+<div class="paragraph">
+<p>To use SSL certificates (actually TLS) used to be a problem as the documentation was hard to find and every certificate provider had its own. Not to mention you had to pay for them. That&#8217;s not true anymore, luckily.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gotchas">Gotchas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>But, as usual, not there&#8217;s no <em>perfect</em> system. There are a few minor gotchas, nothing really important, but&#8230;&#8203;</p>
+</div>
+<div class="sect2">
+<h3 id="_creation_and_renewal">Creation and renewal</h3>
+<div class="paragraph">
+<p>In order to create and renew a certificate, our server has to connect to the certbot web server service in a secure way, so it can check that we are the "owners" of the domain we want to secure  with a certificate. There are a few methods available for that. Shortly, these two are the ones I have used until now:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>webroot</strong>. In this case, a static file served in a folder will help to authenticate the domain in the remote certbot service. Unfortunately, it&#8217;s not possible to do so in all server configurations.</p>
+</li>
+<li>
+<p><strong>standalone</strong>. Using this method, a temporal webserver replaces. It&#8217;s possible. I use this method when dealing with apps served from containers, where the configuration for serving static files is not straight-forward.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/usr/bin/certbot renew --authenticator standalone --pre-hook "service nginx stop" --post-hook "service nginx start" &gt; certbot.log</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The hooks <strong>disable and reenable</strong> the nginx server during the renewal process, as the standalone server started by certbot needs to replace our app server. A <strong>cron job</strong> calls that line every single day in the middle of the night, so it shouldn&#8217;t be a problem as very few users should be using the service in the middle of the night. Also the outage is minimal in some cases if the certificate is too recent, there will no need for renewing it.</p>
+</div>
+<div class="paragraph">
+<p>Not a perfect solution, but works perfectly well for community websites and it&#8217;s not a serious deal even for more "professional" websites. There are other ways of dealing with this renewal without suspending the service, but they require more work, and I don&#8217;t think they are worth for <strong>small traffic</strong> websites.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rate_limit">Rate Limit</h3>
+<div class="paragraph">
+<p>One more problem I recently suffer is that <strong>certbot</strong> uses <a href="https://publicsuffix.org/list/public_suffix_list.dat">custom list of domain names</a> for assigning rate limits, currently no more 20 renewals per week per domain, which caused that renewing a couple .GAL (Galician domains) I manage, failed when tried to renew them for not being in that list. In those cases, every renewal of a domain in an unlisted TLD makes it count as it was a single domain, and triggers the Rate Limit exception, forbidding it to renew. Hopefully that will be fixed soon.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I didn&#8217;t pretend to do an exhaustive post about Certbot, only do a little introduction and document some issues I had when using it.</p>
+</div>
+<div class="paragraph">
+<p>You will not believe how much I love <strong>Certbot</strong>. Before that, used to be a big pain to deal with certificates on websites. Certbot not provides them for free (also as in beer), but also provides a very well documented toolchain and documentation on how to use it and the reasons behing its design decissions. So, don&#8217;t hesitate and use it! You will not regret.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bonus">Bonus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Wildcard certificates</strong> will be available soon. One more reason for migrating to certbot!</p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2017/07/09/Renewing-CERTBOT-certificates-painlessly.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2017/07/09/Renewing-CERTBOT-certificates-painlessly.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Sun, 09 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Updating the blog version]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_do_you_think_i_have_forgotten_you">Do you think I have forgotten you?</h2>
 <div class="sectionbody">
 <div class="videoblock">
