@@ -8,10 +8,31 @@ https://certbot.eff.org/[Certbot], previously known as _Let's Encrypt_, is a com
 
 Web is moving towards secure websites, that respect the privacy of the users and avoid forgeries. Let's say it's a response to the more complex and unsafe web that we have nowadays. Also, keep in mind that aggregators (like _G**gle_) are starting to punish websites that don't use secure certificates.
 
-To use SSL certificates used to be a problem as the documentation was hard to find and every certificate provider had its own. Not to mention you had to pay for them.
+To use SSL certificates (actually TLS) used to be a problem as the documentation was hard to find and every certificate provider had its own. Not to mention you had to pay for them. That's not true anymore, luckily.
 
 == Gotchas
 
+But, as usual, not there's no _perfect_ system. There are a few minor gotchas, nothing really important, but...
+
+=== Creation and renewal
+
+In order to create and renew a certificate, there are a few methods available. Shortly, these two are the ones I have used:
+
+----
+/usr/bin/certbot renew --authenticator standalone --pre-hook "service nginx stop" --post-hook "service nginx start" > certbot.log
+----
+
+
+=== Rate Limit
+
+One more problem I recently suffer is that *certbot* uses https://publicsuffix.org/list/public_suffix_list.dat[custom list of domain names] for assigning rate limits (currently no more 20 renewals per week), which caused that renewing a couple .GAL (Galician domains) I manage failed when tried to renew them for not being in the list. Hopefully that will be fixed soon. 
+
 == Conclusion
 
-You will not believe how much I love *Certbot*. Before that, used to be a big pain to deal with certificates on websites. Certbot not provides them for free (also as in beer), but also provides a very well documented toolchain and documentation on how to use it and the reasons behing its design decissions. 
+I didn't pretend to do an exhaustive post about Certbot, only do a little introduction and document some issues I had when using it. 
+
+You will not believe how much I love *Certbot*. Before that, used to be a big pain to deal with certificates on websites. Certbot not provides them for free (also as in beer), but also provides a very well documented toolchain and documentation on how to use it and the reasons behing its design decissions. So, don't hesitate and use it! You will not regret.
+
+== Bonus
+
+Wildcard certificates will be available soon. One more reason for migrating to certbot!
