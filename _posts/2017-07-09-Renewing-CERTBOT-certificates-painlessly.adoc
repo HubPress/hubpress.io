@@ -31,7 +31,7 @@ Not a perfect solution, but works perfectly well for community websites and it's
 
 === Rate Limit
 
-One more problem I recently suffer is that *certbot* uses https://publicsuffix.org/list/public_suffix_list.dat[custom list of domain names] for assigning rate limits, currently no more 20 renewals per week per domain, which caused that renewing a couple .GAL (Galician domains) I manage failed when tried to renew them, for not being in that list. In those cases, every renewal of a domain in an unlisted TLD makes it count as it was a single domain, and triggers the Rate Limit exception, forbidding it to renew. Hopefully that will be fixed soon.
+One more problem I recently suffer is that *certbot* uses https://publicsuffix.org/list/public_suffix_list.dat[custom list of domain names] for assigning rate limits, currently no more 20 renewals per week per domain, which caused that renewing a couple .GAL (Galician domains) I manage, failed when tried to renew them for not being in that list. In those cases, every renewal of a domain in an unlisted TLD makes it count as it was a single domain, and triggers the Rate Limit exception, forbidding it to renew. Hopefully that will be fixed soon.
 
 == Conclusion
 
