@@ -1,0 +1,17 @@
+= Renewing CERTBOT certificates painlessly
+
+== What is "certbot"?
+
+https://certbot.eff.org/[Certbot], previously known as _Let's Encrypt_, is a community based effort for developing a service capable to provide secure certificates for everybody in the web. It's both a combination of a software that it's possible to install in a web server machine and a certificate provider service.
+
+=== Why should I use it?
+
+Web is moving towards secure websites, that respect the privacy of the users and avoid forgeries. Let's say it's a response to the more complex and unsafe web that we have nowadays. Also, keep in mind that aggregators (like _G**gle_) are starting to punish websites that don't use secure certificates.
+
+To use SSL certificates used to be a problem as the documentation was hard to find and every certificate provider had its own. Not to mention you had to pay for them.
+
+== Gotchas
+
+== Conclusion
+
+You will not believe how much I love *Certbot*. Before that, used to be a big pain to deal with certificates on websites. Certbot not provides them for free (also as in beer), but also provides a very well documented toolchain and documentation on how to use it and the reasons behing its design decissions. 
