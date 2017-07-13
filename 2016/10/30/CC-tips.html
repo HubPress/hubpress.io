@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1499159199470"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1499159199470"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1499159199470"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1499932337903"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1499932337903"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1499932337903"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1499159199470"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1499932337903"></script>
 
     <link rel="canonical" href="https://remi-hernandez.github.io/2016/10/30/CC-tips.html" />
     <meta name="referrer" content="origin" />
@@ -238,6 +238,27 @@ for (double lon: lonWaypoints)
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_cpp_method_callable_from_qml">cpp method callable from qml</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">// .h
+Q_INVOKABLE void my_function();
+
+
+//.cpp
+void my_class::my_function()
+{
+  // do stuff
+}
+
+//.qml
+onMyEvent: {
+    item.my_function();
+}</code></pre>
+</div>
+</div>
+</div>
           </div>
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
@@ -301,7 +322,7 @@ for (double lon: lonWaypoints)
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1499159199470"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1499932337903"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
