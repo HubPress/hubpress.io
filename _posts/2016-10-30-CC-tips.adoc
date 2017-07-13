@@ -57,3 +57,23 @@ for (std::vector<double>::iterator it = latWaypoints.begin(); it != latWaypoints
 for (double lon: lonWaypoints)
     qDebug() << ">> latWay : " << lon;
 ----
+
+==== cpp method callable from qml
+[source,cpp]
+----
+
+// .h
+Q_INVOKABLE void my_function();
+
+
+//.cpp
+void my_class::my_function() 
+{
+  // do stuff
+}
+
+//.qml
+onMyEvent: {
+    item.my_function();
+}
+----
