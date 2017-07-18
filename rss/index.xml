@@ -1,47 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 18 Jul 2017 11:39:37 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Send a mail on gmail via python]]></title><description><![CDATA[<div class="paragraph">
-<p>Code to send a mail via gmail with an attachment</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-python" data-lang="python">import smtplib
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEText import MIMEText
-from email.MIMEBase import MIMEBase
-from email import encoders
-
-
-fromaddr = ""
-toaddr = ""
-PASSWORD = ""
-
-msg = MIMEMultipart()
-
-msg['From'] = fromaddr
-msg['To'] = toaddr
-msg['Subject'] = "python test"
-
-body = """Hey bro, that's a test ! \o/"""
-
-msg.attach(MIMEText(body, 'plain'))
-
-filename = "test.zip"
-attachment = open(r'D://test.zip', "rb")
-
-part = MIMEBase('application', 'octet-stream')
-part.set_payload((attachment).read())
-encoders.encode_base64(part)
-part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-
-msg.attach(part)
-
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login(fromaddr, PASSWORD)
-text = msg.as_string()
-server.sendmail(fromaddr, toaddr, text)
-server.quit()</code></pre>
-</div>
-</div>]]></description><link>https://remi-hernandez.github.io/2017/07/18/Send-a-mail-on-gmail-via-python.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2017/07/18/Send-a-mail-on-gmail-via-python.html</guid><category><![CDATA[python]]></category><category><![CDATA[ mail]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Tue, 18 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 18 Jul 2017 11:40:39 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
 <h4 id="_why">Why ?</h4>
 <div class="paragraph">
 <p>You know why because if you don&#8217;t what are you doing here ?</p>
