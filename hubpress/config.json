@@ -5,6 +5,22 @@
     "branch": "gh-pages"
   },
   "theme": {
-    "name": "Slate"
+    "name": "slate"
+  },
+  "urls": {
+    "site": "https://khoitsma.github.io/hubpress.io",
+    "hubpress": "https://khoitsma.github.io/hubpress.io",
+    "theme": "//khoitsma.github.io/hubpress.io/themes/slate",
+    "images": "https://khoitsma.github.io/hubpress.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
