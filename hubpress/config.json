@@ -1,10 +1,49 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
+    "username": "khoitsma",
+    "repositoryName": "hubpress.io",
+    "branch": "gh-pages",
+    "cname": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "slate"
+  },
+  "urls": {
+    "site": "https://khoitsma.github.io/hubpress.io",
+    "hubpress": "https://khoitsma.github.io/hubpress.io",
+    "theme": "//khoitsma.github.io/hubpress.io/themes/slate",
+    "images": "https://khoitsma.github.io/hubpress.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
+  },
+  "site": {
+    "title": "",
+    "description": "",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "",
+    "github": "",
+    "twitter": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
