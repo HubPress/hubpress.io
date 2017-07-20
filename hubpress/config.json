@@ -10,5 +10,21 @@
   },
   "theme": {
     "name": "casper"
+  },
+  "urls": {
+    "site": "https://gdfuentes.github.io",
+    "hubpress": "https://gdfuentes.github.io",
+    "theme": "//gdfuentes.github.io/themes/casper",
+    "images": "https://gdfuentes.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
