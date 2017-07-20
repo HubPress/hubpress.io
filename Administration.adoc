@@ -151,19 +151,19 @@ With the cross-compare fork feature of GitHub, you can easily update to the late
 .How To Update Your HubPress Instance to the Latest Version
 . Click the `Compare` button in your HubPress repository.
 +
-image::maintain_the_latest_hubpress_01.png[Click Compare button]
+image::https://raw.githubusercontent.com/HubPress/dev.hubpress.io/e57b221/docs/images/maintain_the_latest_hubpress_01.png[Click Compare button]
 +
 . Change the base fork to your repository, and set the branch according to your repository configuration (`master` or `gh-pages`).
 +
-image::maintain_the_latest_hubpress_02.png[Set the base fork]
+image::https://raw.githubusercontent.com/HubPress/dev.hubpress.io/e57b221/docs/images/maintain_the_latest_hubpress_02.png[Set the base fork]
 +
 . Select `Compare across forks`.
 +
-image::maintain_the_latest_hubpress_03.png[Click compare across forks]
+image::https://raw.githubusercontent.com/HubPress/dev.hubpress.io/e57b221/docs/images/maintain_the_latest_hubpress_03.png[Click compare across forks]
 +
 . Change the head fork to the `HubPress/hubpress.io` repository.
 +
-image::maintain_the_latest_hubpress_04.png[Set the head fork]
+image::https://raw.githubusercontent.com/HubPress/dev.hubpress.io/e57b221/docs/images/maintain_the_latest_hubpress_04.png[Set the head fork]
 +
 . Create the Pull Request.
 . Apply the Pull Request to your instance of HubPress.

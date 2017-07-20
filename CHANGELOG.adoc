@@ -1,3 +1,34 @@
+## 0.8.0
+
+* feat(startup): add a panel to define the username, the repositoryName, the branch and the CNAME before login
+* fix(tag): fix the tag generation by removing useless space with a trim
+* fix(theme): add the highlightjs css and upgrade to the last version, fix all themes to have a correct rendering
+* feat(theme): add a new (black) theme The Shell
+
+## 0.7.3
+
+* fix(init): fix a typo when initiliazing with a element in localStorage for hubpress:sync
+* feat(chat): add the sidecar chat linked with gitter.im/hubpress/hubpress.io
+
+## 0.7.2
+
+* fix(rss): rss was not reseted when no post
+* fix(theme): report themes omitted during the release 0.7.1 :(
+
+## 0.7.1
+
+* fix(theme): Error with http request (and not https) for included stylesheet HubPress/hubpress.io#475
+* fix(post): Problem to show all content of a blog post HubPress/hubpress.io#483
+* fix(theme): ld+json is null HubPress/hubpress.io#488
+
+## 0.7.0
+
+* technical release, move from react/redux to vue/vuex
+* remove material design and use semanticUI now
+* feat(posts): add filter
+* feat(post): add a popup to display basic asciidoc syntax
+* feat(team): add a team page
+
 ## 0.6.0
 
 * feat(rss): add the generation of the RSS feed

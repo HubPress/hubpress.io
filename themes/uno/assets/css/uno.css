@@ -1,4 +1,4 @@
-@import 'http://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab:300,400)';
+@import 'https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab:300,400)';
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -1027,9 +1027,9 @@ code {
 
 pre {
   margin-bottom: 1.3em;
-  padding: 1em 2.5%;
-  background: #e8f2fb;
-  border: 1px solid #c9e1f6;
+  /*padding: 1em 2.5%;*/
+  /*background: #e8f2fb;*/
+  /*border: 1px solid #c9e1f6;*/
   border-radius: 3px;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   font-size: .9em;

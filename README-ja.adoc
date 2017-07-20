@@ -57,7 +57,7 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 . リポジトリの設定からデフォルトのブランチを `gh-pages` に設定
 +
-image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages,400]
 . *gh-pages* ブランチに移動。
 +
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]

@@ -1,17 +1,15 @@
+= HubPress
 :toc: macro
 :toclevels: 4
 :sectnums:
-
-= HubPress
 
 toc::[]
 
 A free, open source tool you can use to build a blog using GitHub Pages and http://asciidoctor.org/docs/user-manual/[AsciiDoc].
 
-https://gratipay.com/hubpress/[HubPress] on Gratipay image:https://avatars1.githubusercontent.com/u/1744073?v=3&s=24[].
-
 == What Is HubPress?
-image::http://hubpress.io/img/editor.png[]
+
+image::https://cloud.githubusercontent.com/assets/2006548/23680524/d7cbf68e-038b-11e7-8465-5c70abd852e1.gif[]
 
 HubPress is a web application that makes it easy for you to maintain a blog. It provides the following features:
 
@@ -19,30 +17,38 @@ HubPress is a web application that makes it easy for you to maintain a blog. It 
 * Backed by the power of http://asciidoctor.org/docs/user-manual/[AsciiDoc markup] for tight control of content presentation to your requirements.
 * Administration console to customise many aspect of your blog's content.
 * Disqus integration for blog comments.
-* Google Analytics integration to track visitor activity. 
+* Google Analytics integration to track visitor activity.
 * A number of different themes shipped with the product, ready to use.
 
 Hosting for your blog is provided by GitHub Pages.
 
-If you see something wrong with the documentation, please raise an issue. Your help with improving every aspect of HubPress is greatly appreciated. Pull Requests are *always* welcome. 
+Your help with improving every aspect of HubPress is greatly appreciated.
+Pull Requests are *always* welcome.
+See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/develop/contribute_pr.html[How do I contribute a PR] on the HubPress Knowledgebase to learn more about contributing.
 
-See the link:CONTRIBUTING.adoc[Contributors Guide] for more information about being a successful HubPress contributor.
-
-== Browser Compatibility
+== Browser compatibility
 
 HubPress is compatible with Chrome Desktop, Firefox Desktop, and Chrome for Android.
 
-== Getting Started
+== Getting started
 
-=== Fork the Repository
+=== Fork the repository
 
 Click the Fork icon image:http://hubpress.io/img/fork-icon.png[Fork,80] to create a copy of this repository within your GitHub account.
 
-=== Use the github.io Domain
+=== Configure the correct branch
 
-If you have never used your GitHub Pages domain before, you can use this procedure to quickly set up HubPress. With this method, only a few steps are required to get HubPress deployed and ready for use.
+IMPORTANT: The GitHub branch you select is important, and choosing the incorrect one will cause issues with logging onto HubPress for the first time.
 
-IMPORTANT: If you are currently using your `username.github.io` GitHub Pages domain for another project, or if you want to use a custom domain name, skip to the next procedure for instructions.
+Read the next two sections *carefully* *_before_* choosing which branch and `config.json` file to edit.
+
+==== I am not using my GitHub Pages domain for any other project
+
+If you are not using your github.io Pages domain you can use it to quickly set up HubPress.
+
+With this method, only a few steps are required to get HubPress deployed and ready for use.
+
+IMPORTANT: If you are currently using your `[username].github.io` GitHub Pages domain for another project, or if you want to use a custom domain name, skip to the next procedure for instructions.
 
 . Rename your repository to `<username>.github.io`
 
@@ -52,20 +58,22 @@ image:http://hubpress.io/img/edit-config.png[Edit config]
 +
 The following parameters are mandatory:
 +
-* `username`, which is your GitHub user name,
-* `repositoryName`, which is the new name of the repository fork, `<username>.github.io`.
-. Commit the changes, and open the GitHub Pages domain:  `https://<username>.github.io/`.
+* `username`, which is your GitHub user name. For example `janesmith`.
+* `repositoryName`, which is the new name of the repository fork using the pattern `janesmith.github.io`.
+. Commit the changes, and open the GitHub Pages domain:  `https://janesmith.github.io/`.
 . The following screen indicates you have correctly configured HubPress
 +
 image:http://hubpress.io/img/home-install.png[Install complete,300]
 
-=== Use a Custom Domain or GitHub Page Domain Already In Use
+==== I am using my GitHub Pages domain already, or I want to use a custom domain
 
-If you want your blog to be available on a custom domain, or you are already using your GitHub Pages domain to host another project, some extra configuration is required.
+If you are already using your want your blog to be available on a custom domain, or you are _already using your GitHub Pages domain_ to host another project, some extra configuration is required.
+
+You need to set your blog up on a sub-domain of your GitHub Pages site.
 
 . In the repository settings, set the default branch to `gh-pages`:
 +
-image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages, 400]
 . Switch your repository to the `gh-pages` branch.
 +
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
@@ -76,37 +84,46 @@ image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
 +
 The following parameters are mandatory:
 +
-* `username`, which is your GitHub user name,
-* `repositoryName`, which is the repository fork. For example, `hubpress.io` if you did not rename it.
-. Commit the changes, and open the GitHub Pages domain:  `https://<username>.github.io/<repositoryName>/`.
+* `username`, which is your GitHub user name. For example `janesmith`.
+* `repositoryName`, which is the new name of the repository fork. For example, `janesmith.github.io`.
+. Commit the changes, and open the GitHub Pages domain:  `https://janesmith.github.io/<repositoryName>/`.
 . The following screen indicates you have correctly configured HubPress
 +
 image:http://hubpress.io/img/home-install.png[Install complete,300]
 
-Now you have successfully configured HubPress, you can customise it by adding social network information, experiment with different themes, and make your HubPress blog your own. 
+== Getting first-run help
 
-See the link:Administration.adoc[Administration Guide] for the next steps you need to take in setting up your HubPress blog.
+If you can't get past the login screen, re-read the instructions above.
+You most likely have configured the wrong branch and will need to fix this before you can begin using HubPress.
 
-Once you've completed the configuration aspects, you can write your first blog post. Follow the guidelines in the link:Writers_Guide.adoc[Writer's Guide] to write a sucessful first blog post.
+IMPORTANT: Misconfiguration is the most common issue for folks when trying to log onto HubPress for the first time.
 
-== HubPress Team
+If you have double-checked the setup procedure, you can move to the next step: support.
+
+First check https://hubpress.gitbooks.io/hubpress-knowledgebase/content/[HubPress Knowledgebase] and use the search function to see if your problem has already been documented as an article.
+
+If your issue is not covered by the Knowledgebase, join https://hubpressio.slack.com[HubPress Slack] and report the issue in #general.
+
+== How do I start blogging?
+
+Now you have successfully configured HubPress, you can customise it by adding social network information, experiment with different themes, and make your HubPress blog your own.
+
+
+You can find out how to use HubPress by reading the https://hubpress.gitbooks.io/hubpress-knowledgebase/content/[HubPress Knowledgebase], which is hosted by the team at https://gitbook.com[GitBook.com].
+
+== The HubPress team
 
 Code by http://github.com/anthonny[Anthonny Quérouil] (Twitter - http://twitter.com/anthonny_q[@anthonny_q]).
 
-English Docs by http://github.com/jaredmorgs[Jared Morgan]  (Twitter - http://twitter.com/jaredmorgs[@jaredmorgs]).
+English docs by http://github.com/jaredmorgs[Jared Morgan]  (Twitter - http://twitter.com/jaredmorgs[@jaredmorgs]).
 
 Translations (Japanese) by:
 
-* https://github.com/takkyuuplayer[takkyuuplayer], 
+* https://github.com/takkyuuplayer[takkyuuplayer],
 * https://github.com/hinaloe[hinaloe].
 
-== Donations
+== Supporting the project
 
-HubPress is now on https://gratipay.com/hubpress/[Gratipay]! 
+HubPress is powered by :beer:, :coffee: and :pizza:.
 
-image::https://cloud.githubusercontent.com/assets/2006548/12901016/7b09da22-ceb9-11e5-93f7-16ab135b2e2e.png[]
-
-It's not the only way you can help us, but it is certainly a welcome one. 
-Donations are a great way to show your appreciation for the platform: it inspires us to dedicate extra time away from our families and day jobs to make HubPress an awesome blogging platform for you.
-
-image::https://cloud.githubusercontent.com/assets/2006548/12901085/cc5ee908-ceb9-11e5-9d8b-c526f081f1e9.png[]
+Use the donation options in the HubPress Settings menu to say thanks: we really appreciate it.
