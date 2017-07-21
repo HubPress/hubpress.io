@@ -77,3 +77,10 @@ onMyEvent: {
     item.my_function();
 }
 ----
+
+==== cast
+
+dynamic_cast pour les classes héritées surtout, 
+static_cast pour les types de base,
+reinterpret_cast pour forcer un cast de n'importe quoi vers n'importe quoi
+et const_cast pour pouvoir passer des string en entrée à des vieilles fonctions C qui veulent des char*
