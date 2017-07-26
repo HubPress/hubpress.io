@@ -84,3 +84,53 @@ dynamic_cast pour les classes héritées surtout,
 static_cast pour les types de base,
 reinterpret_cast pour forcer un cast de n'importe quoi vers n'importe quoi
 et const_cast pour pouvoir passer des string en entrée à des vieilles fonctions C qui veulent des char*
+
+==== Concat arrays C style
+
+[source,cpp]
+----
+void CryptoStream::concatArrays(unsigned char * &src, int dstOffset, unsigned char * dst)
+{
+    int j = 0;
+    int i = 0;
+    int srcLen =  strlen(reinterpret_cast<char *>(src));
+    int dstLen =  strlen(reinterpret_cast<char *>(dst));
+    unsigned char * tmp = new unsigned char [srcLen + dstLen + 1];
+
+
+    for (i = 0; i < srcLen; ++i)
+    {
+       tmp[i] = src[i];
+    }
+
+    i = dstOffset;
+
+    while (j < dstLen && i < (srcLen + dstLen + 1))
+    {
+        tmp[i] = dst[j];
+        i++;
+        j++;
+    }
+
+    delete [] src;
+    src = tmp;
+}
+
+void test(unsigned char * buffer, unsigned char * append)
+{
+  std::cout << "buffer : " << buffer << std::endl;
+  concatArrays(buffer, 4, append);
+  std::cout << "buffer -> : " << buffer << std::endl;
+}
+
+int main()
+{
+  char * buffer = new char [5];
+  char * append = new char [10];
+ 
+  strcpy(buffer, "tato");
+  strcpy(append, "chipolata");
+
+  test(reinterpret_cast<unsigned char *>(buffer), reinterpret_cast<unsigned char *>(append));
+}
+----
