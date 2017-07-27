@@ -65,7 +65,7 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 . 저장소(repository) 설정에서 default branch 를 `gh-pages`로 설정합니다. :
 +
-image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages,400]
 . 당신의 저장소 브랜치를 `gh-pages`로 변경합니다.
 +
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]

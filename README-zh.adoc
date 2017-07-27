@@ -53,7 +53,7 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 . 在repository的settings选项中, 把默认branch设为 `gh-pages` :
 +
-image:http://hubpress.io/img/settings-gh-pages.png[Settings gh-pages,400]
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages,400]
 . 现在设定当前repository的branch为 *gh-pages*
 +
 image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
