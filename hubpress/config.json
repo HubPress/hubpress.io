@@ -20,5 +20,21 @@
   },
   "theme": {
     "name": "casper"
+  },
+  "urls": {
+    "site": "https://jbrizio.github.io",
+    "hubpress": "https://jbrizio.github.io",
+    "theme": "//jbrizio.github.io/themes/casper",
+    "images": "https://jbrizio.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
