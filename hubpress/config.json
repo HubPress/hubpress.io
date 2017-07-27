@@ -2,7 +2,8 @@
   "meta": {
     "username": "jbrizio",
     "repositoryName": "jbrizio.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "site": {
     "title": "Jonathan Brizio",
@@ -10,13 +11,21 @@
     "cover": "",
     "postsPerPage": "5",
     "googleAnalytics": "UA-81302818-1",
-    "disqus": "jonathanbrizio"
+    "disqus": "jonathanbrizio",
+    "logo": "",
+    "delay": "300"
   },
   "socialnetwork": {
     "email": "jonathanbrizio@gmail.com",
     "twitter": "https://twitter.com/jonathanbrizio",
     "linkedin": "https://ar.linkedin.com/in/jonathanbrizio",
-    "github": "https://github.com/jbrizio"
+    "github": "https://github.com/jbrizio",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "stackoverflow": ""
   },
   "theme": {
     "name": "casper"
