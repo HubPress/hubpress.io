@@ -4,11 +4,28 @@
 
 There are many cases it's advisable to create a point-of-access using a PI, with or without connection to an external network. The case for a access point with a connection to an external network (usually with internet access) is comparable to use a Pi as a router and I am not going to cover it here. I'll focus on a point-of-access that can be used as a web server or any other kind of network service provider (FTP, email, etc...).
 
-I used the following setup in latest Makers Faire, but I cannot advise you to use a wireless point-of-access in those kind of events. There are many sources of interference and the experience can be really bad, as our signal blocks other nearby signal, specially the always beloved organization wifi with internet access. I think this setup is more useful for small events and places without wireless internet connection. 
+I used the following setup in latest Makers Faire, but I cannot advise you to use a wireless point-of-access in those kind of events. There are many sources of interference and the experience can be really bad, as our signal blocks other nearby signal, specially the always beloved organization wifi with internet access. I think this setup is more useful for small events and places without wireless internet connection.
+
 
 == The PIs
 
 For my setup, I used a *Pi3*, as it's convenient thanks to the included embedded wifi. It's possible to use any other Pi with a wireless network adapter, as the resource usage is really small.
 
+== Setup your network
 
+First step, in order to make the network interface works in it's own network, we add these lines to the `/etc/network/interfaces` file. 
+
+ auto wlan0
+ allow-hotplug wlan0
+ iface wlan0 inet static
+   address 192.168.42.1
+   netmask 255.255.255.0
+   network 192.168.42.0
+   broadcast 192.168.1.255
+
+Notice that the address 192.168.42... is arbitrary. It could be any other as long as it doesn't conflict with any other existing network interface. I.e., if there's 
+
+== Conclusion
+
+There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one.
 
