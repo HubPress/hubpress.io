@@ -1,0 +1,7 @@
+= Raspberry Pi wireless access point - an approach
+
+== The need
+
+There are many cases it's advisable to create a point-of-access using a PI, with or without connection to an external network. The case for a access point with a connection to an external network (usually with internet access) is comparable to use a Pi as a router and I am not going to cover it here. I'll focus on a point-of-access that serves as an 
+
+== The PIs
