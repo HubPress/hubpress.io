@@ -2,6 +2,11 @@
 
 == The need
 
-There are many cases it's advisable to create a point-of-access using a PI, with or without connection to an external network. The case for a access point with a connection to an external network (usually with internet access) is comparable to use a Pi as a router and I am not going to cover it here. I'll focus on a point-of-access that serves as an 
+There are many cases it's advisable to create a point-of-access using a PI, with or without connection to an external network. The case for a access point with a connection to an external network (usually with internet access) is comparable to use a Pi as a router and I am not going to cover it here. I'll focus on a point-of-access that can be used as a web server or any other kind of network service provider (FTP, email, etc...).
+
+I used the following setup in latest Makers Faire, but I cannot advise you to use a wireless point-of-access in those kind of events. There are many sources of interference and the experience can be really bad, as our signal blocks other nearby signal, specially the always beloved organization wifi with internet access. I think this setup is more useful for small events and places without wireless internet connection. 
 
 == The PIs
+
+For my setup, I sued
+
