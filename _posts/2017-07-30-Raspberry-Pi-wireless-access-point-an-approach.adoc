@@ -13,7 +13,7 @@ For my setup, I used a *Pi3*, as it's convenient thanks to the included embedded
 
 == Dependencies
 
-For this tutorial, I'll use Raspbian, and two packages are needed for this:
+For this tutorial, I'll use *Raspbian*, and two packages are needed for this:
 
  sudo apt-get install dnsmasq udhcpd
  
@@ -37,11 +37,11 @@ First step, in order to make the network interface works in it's own network, we
    network 192.168.42.0
    broadcast 192.168.1.255
 
-Notice that the address 192.168.42... is arbitrary. It could be any other as long as it doesn't conflict with any other existing network interface, i.e., 192.168.1.X
+Notice that the address 192.168.42... is arbitrary. It could be any other as long as it doesn't conflict with any other existing network interface, i.e., 192.168.1.XXX. Notice also that interface line should be configured as `static`, even  Debian docs suggest that `dhcp` should be used. In this setup, the `udhcp` daemon will take care of that assignation.
 
 === DNSmasq
 
-Adding these lines at the end of `/etc/dnsmasq/dnsmasq.conf` will send all the users to the 
+Adding these lines at the end of `/etc/dnsmasq/dnsmasq.conf` will connect any domain 
 
  interface=wlan0
  bind-dynamic
@@ -53,10 +53,34 @@ Adding these lines at the end of `/etc/dnsmasq/dnsmasq.conf` will send all the u
 
 === UDHCP
 
+In `etc/udhcpd/udhcpd.conf`, modify the default assignation ranges, and attach the wireless interface to the deamon:
+
+ # The start and end of the IP lease block
+
+ start		192.168.42.20	#default: 192.168.0.20
+ end		192.168.42.254	#default: 192.168.0.254
+
+ # The interface that udhcpd will use
+
+ interface wlan0
+
+=== Daemon startup
+
+It might happen that these daemons are authomatically started after installing the packages. Then you can check status using `systemctl`, i.e:
+
+ sudo systemctl status dnsmasq
+ 
+And start or stop them at will:
+
+ sudo systemctl start udhcpd
+
 == Server application
 
+Now, if everything goes smooth, all requests from the clients that connect to our access point newwork will point to our server. The easiest way to test it, it's to install an existing web server, like `nginx`, that serves a very simple default static HTML webpage. It's also possible to run a basic python server. For the Maker's Faire, I used a combination of both worlds: a python script that used a 
 
 == Conclusion
 
-There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one. Make use of this not as a full reference but as a starting point if you like.
+There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one. Make use of this not as a full reference but as a starting point if you like. And please don't doubt in reporting possible mistakes or omissions ;)
+
+*Bonus*: check the 
 
