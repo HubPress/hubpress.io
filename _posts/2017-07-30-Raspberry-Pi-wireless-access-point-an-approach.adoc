@@ -25,6 +25,8 @@ Now let's see how we can put all this stuff together.
 
 == Setup your network
 
+=== Interfaces
+
 First step, in order to make the network interface works in it's own network, we add these lines to the `/etc/network/interfaces` file. 
 
  auto wlan0
@@ -37,9 +39,24 @@ First step, in order to make the network interface works in it's own network, we
 
 Notice that the address 192.168.42... is arbitrary. It could be any other as long as it doesn't conflict with any other existing network interface, i.e., 192.168.1.X
 
+=== DNSmasq
+
+Adding these lines at the end of `/etc/dnsmasq/dnsmasq.conf` will send all the users to the 
+
+ interface=wlan0
+ bind-dynamic
+ dhcp-range=192.168.42.1,192.168.42.254,255.255.255.0,24h
+ dhcp-option=option:router,192.168.42.1
+ # no-hosts
+
+ address=/#/192.168.42.1
+
+=== UDHCP
+
+== Server application
 
 
 == Conclusion
 
-There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one.
+There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one. Make use of this not as a full reference but as a starting point if you like.
 
