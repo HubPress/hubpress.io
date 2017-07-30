@@ -8,5 +8,7 @@ I used the following setup in latest Makers Faire, but I cannot advise you to us
 
 == The PIs
 
-For my setup, I sued
+For my setup, I used a *Pi3*, as it's convenient thanks to the included embedded wifi. It's possible to use any other Pi with a wireless network adapter, as the resource usage is really small.
+
+
 
