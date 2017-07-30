@@ -76,11 +76,13 @@ And start or stop them at will:
 
 == Server application
 
-Now, if everything goes smooth, all requests from the clients that connect to our access point newwork will point to our server. The easiest way to test it, it's to install an existing web server, like `nginx`, that serves a very simple default static HTML webpage. It's also possible to run a basic python server. For the Maker's Faire, I used a combination of both worlds: a python script that used a 
+Now, if everything goes smooth, all requests from the clients that connect to our access point newwork will point to our server. The easiest way to test it, it's to install an existing web server, like `nginx`, that serves a very simple default static HTML webpage. It's also possible to run a basic python server. For the Maker's Faire, I used a combination of both worlds: a python script that was executed periodically using a cron task.
+
+The script check the temperature and humidity from a Pimoroni Hat sensors and wrote static files that were served using `nginx`. More complex setups, like a custom web server, are also possible, of course, but are out of the scope of this document. Maybe that will be material for more tutorials.
 
 == Conclusion
 
 There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one. Make use of this not as a full reference but as a starting point if you like. And please don't doubt in reporting possible mistakes or omissions ;)
 
-*Bonus*: check the 
+*Bonus*: you can check the repo with source files in https://github.com/manelvf/access_point
 
