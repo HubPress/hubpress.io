@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 09 Jul 2017 10:54:31 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Renewing CERTBOT certificates painlessly]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 30 Jul 2017 16:59:03 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Raspberry Pi wireless access point - an approach]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_the_need">The need</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many cases it&#8217;s advisable to create a point-of-access using a PI, with or without connection to an external network. The case for a access point with a connection to an external network (usually with internet access) is comparable to use a Pi as a router and I am not going to cover it here. I&#8217;ll focus on a point-of-access that can be used as a web server or any other kind of network service provider (FTP, email, etc&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>I used the following setup in latest Makers Faire, but I cannot advise you to use a wireless point-of-access in those kind of events. There are many sources of interference and the experience can be really bad, as our signal blocks other nearby signal, specially the always beloved organization wifi with internet access. I think this setup is more useful for small events and places without wireless internet connection.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_pis">The PIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For my setup, I used a <strong>Pi3</strong>, as it&#8217;s convenient thanks to the included embedded wifi. It&#8217;s possible to use any other Pi with a wireless network adapter, as the resource usage is really small.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dependencies">Dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this tutorial, I&#8217;ll use <strong>Raspbian</strong>, and two packages are needed for this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo apt-get install dnsmasq udhcpd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>dnsmasq</code> will manage DNS, so we can assign domains at random (yes, this could be used for phising for malicious people using fake internet hot-spots).</p>
+</div>
+<div class="paragraph">
+<p><code>udhcpd</code> will assign IP addresses to the clients that connect to our servers. There are tutorial that recommend other packages, but this worked well for me.</p>
+</div>
+<div class="paragraph">
+<p>Now let&#8217;s see how we can put all this stuff together.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup_your_network">Setup your network</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_interfaces">Interfaces</h3>
+<div class="paragraph">
+<p>First step, in order to make the network interface works in it&#8217;s own network, we add these lines to the <code>/etc/network/interfaces</code> file.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet static
+  address 192.168.42.1
+  netmask 255.255.255.0
+  network 192.168.42.0
+  broadcast 192.168.1.255</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that the address 192.168.42&#8230;&#8203; is arbitrary. It could be any other as long as it doesn&#8217;t conflict with any other existing network interface, i.e., 192.168.1.XXX. Notice also that interface line should be configured as <code>static</code>, even  Debian docs suggest that <code>dhcp</code> should be used. In this setup, the <code>udhcp</code> daemon will take care of that assignation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dnsmasq">DNSmasq</h3>
+<div class="paragraph">
+<p>Adding these lines at the end of <code>/etc/dnsmasq/dnsmasq.conf</code> will connect any domain</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>interface=wlan0
+bind-dynamic
+dhcp-range=192.168.42.1,192.168.42.254,255.255.255.0,24h
+dhcp-option=option:router,192.168.42.1
+# no-hosts</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>address=/#/192.168.42.1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_udhcp">UDHCP</h3>
+<div class="paragraph">
+<p>In <code>etc/udhcpd/udhcpd.conf</code>, modify the default assignation ranges, and attach the wireless interface to the deamon:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># The start and end of the IP lease block</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>start		192.168.42.20	#default: 192.168.0.20
+end		192.168.42.254	#default: 192.168.0.254</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># The interface that udhcpd will use</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>interface wlan0</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_daemon_startup">Daemon startup</h3>
+<div class="paragraph">
+<p>It might happen that these daemons are authomatically started after installing the packages. Then you can check status using <code>systemctl</code>, i.e:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo systemctl status dnsmasq</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And start or stop them at will:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo systemctl start udhcpd</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_server_application">Server application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now, if everything goes smooth, all requests from the clients that connect to our access point newwork will point to our server. The easiest way to test it, it&#8217;s to install an existing web server, like <code>nginx</code>, that serves a very simple default static HTML webpage. It&#8217;s also possible to run a basic python server. For the Maker&#8217;s Faire, I used a combination of both worlds: a python script that was executed periodically using a cron task.</p>
+</div>
+<div class="paragraph">
+<p>The script check the temperature and humidity from a Pimoroni Hat sensors and wrote static files that were served using <code>nginx</code>. More complex setups, like a custom web server, are also possible, of course, but are out of the scope of this document. Maybe that will be material for more tutorials.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one. Make use of this not as a full reference but as a starting point if you like. And please don&#8217;t doubt in reporting possible mistakes or omissions ;)</p>
+</div>
+<div class="paragraph">
+<p><strong>Bonus</strong>: you can check the repo with source files in <a href="https://github.com/manelvf/access_point" class="bare">https://github.com/manelvf/access_point</a></p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2017/07/30/Raspberry-Pi-wireless-access-point-an-approach.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2017/07/30/Raspberry-Pi-wireless-access-point-an-approach.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Sun, 30 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Renewing CERTBOT certificates painlessly]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_what_is_certbot">What is "certbot"?</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -106,7 +259,7 @@
 <p>And that&#8217;s all for now.</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2017/01/26/Updating-the-blog-version.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2017/01/26/Updating-the-blog-version.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Thu, 26 Jan 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Budapest JS 2016 - Part II - The Talks]]></title><description><![CDATA[<div class="sect1">
+</div>]]></description><link>https://manelvf.github.io/blog/2017/01/26/Updating-the-blog-version.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2017/01/26/Updating-the-blog-version.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Thu, 26 Jan 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Budapest JS 2016 - Part II - The Talks]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -168,7 +321,7 @@
 <p>P.S: Next year it will switch dates from May to September, as the JSConf.eu will also switch to spring season. See you there!</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-II-The-Talks.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-II-The-Talks.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Tue, 17 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Budapest JS 2016 - Part I: the workshop about Haxe]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-II-The-Talks.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-II-The-Talks.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Tue, 17 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Budapest JS 2016 - Part I: the workshop about Haxe]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>I attended for first time the JS conference celebrated in the capital city of Hungary. In this post I want to share a few notes from my experience there, first from the workshop, then from the talks per se.</p>
@@ -222,7 +375,7 @@
 <p>See you for the second part, about the talks themselves.</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Tue, 17 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Migrating a dynamic webpage to static]]></title><description><![CDATA[<div class="sect1">
+</div>]]></description><link>https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/17/Budapest-JS-2016-Part-I-the-workshop-about-Haxe.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Tue, 17 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Migrating a dynamic webpage to static]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_motivation">Motivation</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -284,7 +437,7 @@
 <p>Have fun!!</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Thu, 05 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[JS1K "Attack of the Mutant Elements" demo post-mortem]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/05/05/Migrating-a-dynamic-webpage-to-static.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Thu, 05 May 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[JS1K "Attack of the Mutant Elements" demo post-mortem]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>One year more, there was the <a href="https://js1k.com">JS1K</a>, the microcode competition for Javascript code of &#8656; 1024 bytes length. It started as joke and quickly became a classic for the JS "scene", if that exists.</p>
@@ -500,7 +653,7 @@ requestAnimationFrame(loop);</pre>
 <p>Have (minified) fun!</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sun, 27 Mar 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[PHP and trailing slashes on URLs]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/03/27/JS1K-Attack-of-the-Mutant-Elements-demo-post-mortem.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Sun, 27 Mar 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[PHP and trailing slashes on URLs]]></title><description><![CDATA[<div class="paragraph">
 <p>This is one those things that can make you lose a few minutes (hours? ;p) if you are not a bit careful. It happened to me recently in an old Apache installation, but it could happen also in a more modern installation using NGINX or any other webserver. Let&#8217;s start with the setup.</p>
 </div>
 <div class="paragraph">
@@ -542,7 +695,7 @@ requestAnimationFrame(loop);</pre>
 <div class="footnote" id="_footnote_1">
 <a href="#_footnoteref_1">1</a>. There can be also some url handling on the client side, but I&#8217;m going to skip that for simplicity
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Fri, 25 Mar 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Script for doing backups on Amazon S3]]></title><description><![CDATA[<div class="sect1">
+</div>]]></description><link>https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/03/25/PHP-and-trailing-slashes-on-URLs.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Fri, 25 Mar 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Script for doing backups on Amazon S3]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_why">Why?</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -621,7 +774,7 @@ requestAnimationFrame(loop);</pre>
 </ul>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sun, 24 Jan 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dependency dancing in Arch Linux]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/01/24/Script-for-doing-backups-on-Amazon-S3.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Sun, 24 Jan 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Dependency dancing in Arch Linux]]></title><description><![CDATA[<div class="paragraph">
 <p>Arch Linux makes a good job for performing clean installations using AUR, which is a sort of package manager for <em>"unstable"</em> software. Unfortunately, when trying to install the beautiful editor LightTable in Arch Linux (yes, I&#8217;m using it now), I got a small disgusting gotcha:</p>
 </div>
 <div class="literalblock">
@@ -634,7 +787,7 @@ requestAnimationFrame(loop);</pre>
 </div>
 <div class="paragraph">
 <p>It&#8217;s also possible to install LightTable downloading the file, but if you want to keep it gracefully updated, using a package manager is always the best option.</p>
-</div>]]></description><link>https://manelvf.github.io/blog/2016/01/01/Dependency-dancing-in-Arch-Linux.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/01/01/Dependency-dancing-in-Arch-Linux.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Fri, 01 Jan 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Making an internet radio with a Banana Pi and cheaper components]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://manelvf.github.io/blog/2016/01/01/Dependency-dancing-in-Arch-Linux.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2016/01/01/Dependency-dancing-in-Arch-Linux.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Fri, 01 Jan 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Making an internet radio with a Banana Pi and cheaper components]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information.</p>
@@ -767,7 +920,7 @@ hostname = 0.0.0.0</pre>
 <p>So, feel free to use this as a reference, but also try different stuff and new configurations. Enjoy the music!</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Wed, 11 Nov 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Restoring an old MS-DOS game for the future]]></title><description><![CDATA[<div class="sect1">
+</div>]]></description><link>https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Wed, 11 Nov 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Restoring an old MS-DOS game for the future]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_the_game">The Game</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -822,7 +975,7 @@ hostname = 0.0.0.0</pre>
 <p>Enjoy it and have fun!!</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2015/10/11/Restoring-an-old-MS-DOS-game-for-the-future.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/11/Restoring-an-old-MS-DOS-game-for-the-future.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sun, 11 Oct 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Space Quest]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://manelvf.github.io/blog/2015/10/11/Restoring-an-old-MS-DOS-game-for-the-future.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/11/Restoring-an-old-MS-DOS-game-for-the-future.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Sun, 11 Oct 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[Space Quest]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>I continue with my quest for safeguarding data that I started talking about in my previous post.</p>
@@ -861,7 +1014,7 @@ hostname = 0.0.0.0</pre>
 <p>For other projects, they will appear in my main profile page or in this blog, and they will have their own domain name in case they need it.</p>
 </div>
 </div>
-</div>]]></description><link>https://manelvf.github.io/blog/2015/10/10/Space-Quest.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/10/Space-Quest.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Sat, 10 Oct 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[First post... Let's start!]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://manelvf.github.io/blog/2015/10/10/Space-Quest.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/10/Space-Quest.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Sat, 10 Oct 2015 00:00:00 GMT</pubDate></item><item><title><![CDATA[First post... Let's start!]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the first post of my new blog. There are a series of tasks I want to accomplish in this month of October 2015:</p>
 </div>
 <div class="ulist">
@@ -879,4 +1032,4 @@ hostname = 0.0.0.0</pre>
 </div>
 <div class="paragraph">
 <p>Hubpress is really cool as a blog system. The preview is a killer feature. Also, having a static blog with live editing included is clearly "best of both worlds". Let&#8217;s see how this works with more stuff.</p>
-</div>]]></description><link>https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html</guid><dc:creator><![CDATA[Manel Villar]]></dc:creator><pubDate>Tue, 06 Oct 2015 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2015/10/06/First-post-Lets-start.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Tue, 06 Oct 2015 00:00:00 GMT</pubDate></item></channel></rss>
