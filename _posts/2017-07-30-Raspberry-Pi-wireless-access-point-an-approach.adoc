@@ -11,6 +11,18 @@ I used the following setup in latest Makers Faire, but I cannot advise you to us
 
 For my setup, I used a *Pi3*, as it's convenient thanks to the included embedded wifi. It's possible to use any other Pi with a wireless network adapter, as the resource usage is really small.
 
+== Dependencies
+
+For this tutorial, I'll use Raspbian, and two packages are needed for this:
+
+ sudo apt-get install dnsmasq udhcpd
+ 
+`dnsmasq` will manage DNS, so we can assign domains at random (yes, this could be used for phising for malicious people using fake internet hot-spots).
+
+`udhcpd` will assign IP addresses to the clients that connect to our servers. There are tutorial that recommend other packages, but this worked well for me.
+
+Now let's see how we can put all this stuff together.
+
 == Setup your network
 
 First step, in order to make the network interface works in it's own network, we add these lines to the `/etc/network/interfaces` file. 
@@ -23,7 +35,9 @@ First step, in order to make the network interface works in it's own network, we
    network 192.168.42.0
    broadcast 192.168.1.255
 
-Notice that the address 192.168.42... is arbitrary. It could be any other as long as it doesn't conflict with any other existing network interface. I.e., if there's 
+Notice that the address 192.168.42... is arbitrary. It could be any other as long as it doesn't conflict with any other existing network interface, i.e., 192.168.1.X
+
+
 
 == Conclusion
 
