@@ -9,10 +9,10 @@
     "name": "casper"
   },
   "urls": {
-    "site": "http://Codehaks",
+    "site": "https://codehaks.github.io",
     "hubpress": "https://codehaks.github.io",
-    "theme": "//Codehaks/themes/casper",
-    "images": "http://Codehaks/images"
+    "theme": "//codehaks.github.io/themes/casper",
+    "images": "https://codehaks.github.io/images"
   },
   "initialisationConfigComponent": {
     "name": "initialise-configuration",
@@ -28,7 +28,7 @@
     "title": "Codehaks",
     "description": "Daily adventures of a web developer",
     "logo": "logo01.jpg",
-    "cover": "header01.jpg",
+    "cover": "image::http://github.com/codehaks/codehaks.github.io/images/header01.jpg",
     "delay": "",
     "postsPerPage": "5",
     "googleAnalytics": "",
