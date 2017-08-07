@@ -3,16 +3,16 @@
     "username": "codehaks",
     "repositoryName": "codehaks.github.io",
     "branch": "master",
-    "cname": "Codehaks"
+    "cname": ""
   },
   "theme": {
     "name": "casper"
   },
   "urls": {
-    "site": "https://codehaks.github.io",
+    "site": "http://Codehaks",
     "hubpress": "https://codehaks.github.io",
-    "theme": "//codehaks.github.io/themes/casper",
-    "images": "https://codehaks.github.io/images"
+    "theme": "//Codehaks/themes/casper",
+    "images": "http://Codehaks/images"
   },
   "initialisationConfigComponent": {
     "name": "initialise-configuration",
