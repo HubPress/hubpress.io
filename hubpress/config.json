@@ -28,7 +28,7 @@
     "title": "Codehaks",
     "description": "Daily adventures of a web developer",
     "logo": "logo01.jpg",
-    "cover": "https://github.com/codehaks/codehaks.github.io/blob/master/images/header01.jpg",
+    "cover": "https://raw.githubusercontent.com/codehaks/codehaks.github.io/master/images/header01.jpg",
     "delay": "",
     "postsPerPage": "5",
     "googleAnalytics": "",
