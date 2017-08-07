@@ -2,7 +2,8 @@
   "meta": {
     "username": "codehaks",
     "repositoryName": "codehaks.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": "Codehaks"
   },
   "theme": {
     "name": "casper"
@@ -22,5 +23,27 @@
       null,
       null
     ]
+  },
+  "site": {
+    "title": "Codehaks",
+    "description": "Daily adventures of a web developer",
+    "logo": "logo01.jpg",
+    "cover": "header01.jpg",
+    "delay": "",
+    "postsPerPage": "5",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "ghods,hakim@hotmail.com",
+    "github": "codehaks.github.com",
+    "twitter": "codehaks",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
