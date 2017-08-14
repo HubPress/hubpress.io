@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "gh-pages"
-  },
-  "theme": {
-    "name": "Casper"
-  }
-}
+{"meta":{"username":"SwarnaKishore","repositoryName":"blog","branch":"gh-pages"},"site":{"title":"Healthy Eating","description":"Easy tips and recipes for a healthy diet and articles to raise awareness on proper nutrition.","logo":"https://www.graphicsprings.com/filestorage/stencils/4a60fe25e5142a51e25193d9d21c3e51.svg","cover":"http://cdn.morguefile.com/imageData/public/files/r/royalholiday/preview/fldr_2011_12_07/file3401323238001.jpg","url":"http://SwarnaKishore.github.io/blog"},"socialnetwork":{"github":"https://github.com/SwarnaKishore"},"theme":{"name":"Casper","url":"http://SwarnaKishore.github.io/blog/themes/Casper"}}
