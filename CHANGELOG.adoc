@@ -1,3 +1,9 @@
+## 0.8.1
+
+* fix(github): add a cached commit to avoid browser cache when getting the current commit of the branch - fix #496, #505, #515
+* fix(post): reset the number of elements to publish before each publish actions
+* fix(post): change the MathJax CDN and add the rendering of MathJax in the preview - fix #267
+
 ## 0.8.0
 
 * feat(startup): add a panel to define the username, the repositoryName, the branch and the CNAME before login
