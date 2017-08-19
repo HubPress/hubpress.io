@@ -1,3 +1,0 @@
-= Your Blog title
-  
-  I'm a web developer,Welcome to my blog.
