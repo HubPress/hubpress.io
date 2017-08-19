@@ -6,7 +6,7 @@ About 3 days ago the final version of ASP Core released. I installed the new bit
 So far I expericed no bugs. Everything works perfectly. No compatiblity issues like the preview version and no errors. Its fast and reliable.
 
 === .Net Stanard 2.0
-Its realy the best part of the new version. it feels so more matured than the last version. supporting a larg number of older libararies is really what many developers were looking for.
+Its realy the best part of the new version. it feels more matured than the last version. supporting a larg number of older libararies is really what many developers were looking for.
 
 === Configuarion and Logging as a service
 With IConfiguration And ILoggerFactory injected directly into Services
