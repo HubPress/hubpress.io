@@ -1,0 +1,11 @@
+= First 3 days with ASP Core 2.0
+
+About 3 days ago the final version of ASP Core released. I installed the new bits and have been playing with it for last 3 days and here is my experience so far. Fantastic.
+
+=== No bugs
+So far I expericed no bugs. Everything works perfectly. No compatiblity issues like the preview version and no errors. Its fast and reliable.
+
+=== .Net Stanard 2.0
+Its realy the best part of the new version. it feels so more matured than the last version. supporting a larg number of older libararies is really what many developers were looking for.
+
+=== 
