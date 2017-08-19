@@ -1,1 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 19 Aug 2017 11:04:16 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 19 Aug 2017 11:51:28 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First 3 days with ASP Core 2.0]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>About 3 days ago the final version of ASP Core released. I installed the new bits and have been playing with it for last 3 days and here is my experience so far. Fantastic.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_no_bugs">No bugs</h3>
+<div class="paragraph">
+<p>So far I expericed no bugs. Everything works perfectly. No compatiblity issues like the preview version and no errors. Its fast and reliable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__net_stanard_2_0">.Net Stanard 2.0</h3>
+<div class="paragraph">
+<p>Its realy the best part of the new version. it feels so more matured than the last version. supporting a larg number of older libararies is really what many developers were looking for.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuarion_and_logging_as_a_service">Configuarion and Logging as a service</h3>
+<div class="paragraph">
+<p>With IConfiguration And ILoggerFactory injected directly into Services
+its now accessible from every where in project without any additional code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_razor_pages">Razor pages</h3>
+<div class="paragraph">
+<p>I always needed this feature. In very projects there is some simple pages that dont have any code behind. And even they do, its almost nothing. now I dont have to create a Model, Controller and View just to show about page. and thats my favorite thing in ASP Core 2.0</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusion">Conclusion</h3>
+<div class="paragraph">
+<p>Until last week I was not even considering migrating to ASP Core. Because there were so many uncertainities around the project and there were not much to gain after all.
+But now I feel like I can not go back and use the old ASP MVC 5 any more ! yes, It&#8217;s that good.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</guid><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Sat, 19 Aug 2017 00:00:00 GMT</pubDate></item></channel></rss>
