@@ -2,9 +2,8 @@
   "meta": {
     "username": "mikedopp",
     "repositoryName": "mikedopp.github.io",
-    "branch": "master",
-    "cname": "mikedopp.com"
-  },
+    "branch": "master"
+      },
   "theme": {
     "name": "casper"
   },
