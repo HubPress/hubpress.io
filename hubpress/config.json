@@ -2,7 +2,8 @@
   "meta": {
     "username": "mikedopp",
     "repositoryName": "mikedopp.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": "mikedopp.com"
   },
   "theme": {
     "name": "casper"
@@ -22,5 +23,27 @@
       null,
       null
     ]
+  },
+  "site": {
+    "title": "",
+    "description": "",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "mikedopp@gmail.com",
+    "github": "https://github.com/mikedopp",
+    "twitter": "https://twitter.com/mikedopp",
+    "facebook": "https://www.facebook.com/mikedopp",
+    "googleplus": "https://plus.google.com/u/0/+mikedopp",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "https://www.linkedin.com/in/m1k3d0pp/",
+    "stackoverflow": "https://stackoverflow.com/users/7911/mikedopp"
   }
 }
