@@ -2,11 +2,30 @@
   "meta": {
     "username": "gdfuentes",
     "repositoryName": "gdfuentes.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
-  "site": {},
+  "site": {
+    "title": "",
+    "description": "",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
   "socialnetwork": {
-    "email": "gdfuentes@gmail.com"
+    "email": "gdfuentes@gmail.com",
+    "github": "",
+    "twitter": "@gdfuentes",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "www.linkedin.com/in/gustavofuentes",
+    "stackoverflow": "https://stackexchange.com/users/190576/gustavo-fuentes"
   },
   "theme": {
     "name": "casper"
