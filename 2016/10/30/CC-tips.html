@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1500627772689"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1500627772689"/>
-    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1500627772689"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1503677411897"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1503677411897"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1503677411897"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1500627772689"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1503677411897"></script>
 
     <link rel="canonical" href="https://remi-hernandez.github.io/2016/10/30/CC-tips.html" />
     <meta name="referrer" content="origin" />
@@ -148,7 +148,7 @@ null
             <ul class="post-meta-list">
               <li class="post-meta-item">
                 <time datetime="2016-10-30" itemprop="datePublished">
-                  9 months ago
+                  10 months ago
                 </time>
               </li>
                 <li class="post-meta-item">
@@ -167,7 +167,7 @@ null
           <aside class="post-side">
             <div class="post-author">
                 <a href="http://remi-hernandez.github.io" class="post-author-avatar">
-                  <img src="https://avatars3.githubusercontent.com/u/1169550?v&#x3D;3" alt="Remi Hernandez">
+                  <img src="https://avatars0.githubusercontent.com/u/1169550?v&#x3D;4" alt="Remi Hernandez">
                 </a>
               <div class="post-author-info">
                 <a href="http://remi-hernandez.github.io" class="post-author-name">
@@ -268,11 +268,62 @@ reinterpret_cast pour forcer un cast de n&#8217;importe quoi vers n&#8217;import
 et const_cast pour pouvoir passer des string en entrée à des vieilles fonctions C qui veulent des char*</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_concat_arrays_c_style">Concat arrays C style</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">void CryptoStream::concatArrays(unsigned char * &amp;src, int dstOffset, unsigned char * dst)
+{
+    int j = 0;
+    int i = 0;
+    int srcLen =  strlen(reinterpret_cast&lt;char *&gt;(src));
+    int dstLen =  strlen(reinterpret_cast&lt;char *&gt;(dst));
+    unsigned char * tmp = new unsigned char [srcLen + dstLen + 1];
+
+
+    for (i = 0; i &lt; srcLen; ++i)
+    {
+       tmp[i] = src[i];
+    }
+
+    i = dstOffset;
+
+    while (j &lt; dstLen &amp;&amp; i &lt; (srcLen + dstLen + 1))
+    {
+        tmp[i] = dst[j];
+        i++;
+        j++;
+    }
+
+    delete [] src;
+    src = tmp;
+}
+
+void test(unsigned char * buffer, unsigned char * append)
+{
+  std::cout &lt;&lt; "buffer : " &lt;&lt; buffer &lt;&lt; std::endl;
+  concatArrays(buffer, 4, append);
+  std::cout &lt;&lt; "buffer -&gt; : " &lt;&lt; buffer &lt;&lt; std::endl;
+}
+
+int main()
+{
+  char * buffer = new char [5];
+  char * append = new char [10];
+
+  strcpy(buffer, "tato");
+  strcpy(append, "chipolata");
+
+  test(reinterpret_cast&lt;unsigned char *&gt;(buffer), reinterpret_cast&lt;unsigned char *&gt;(append));
+}</code></pre>
+</div>
+</div>
+</div>
           </div>
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
                 <a href="http://remi-hernandez.github.io" class="post-author-avatar">
-                  <img itemprop="image" src="https://avatars3.githubusercontent.com/u/1169550?v&#x3D;3" alt="Remi Hernandez">
+                  <img itemprop="image" src="https://avatars0.githubusercontent.com/u/1169550?v&#x3D;4" alt="Remi Hernandez">
                 </a>
               <div class="post-author-info">
                 <h4 class="post-footer-heading">Written By</h4>
@@ -331,7 +382,7 @@ et const_cast pour pouvoir passer des string en entrée à des vieilles fonction
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1500627772689"></script>
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1503677411897"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
