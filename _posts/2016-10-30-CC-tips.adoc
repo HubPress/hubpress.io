@@ -89,7 +89,7 @@ et const_cast pour pouvoir passer des string en entrée à des vieilles fonction
 
 [source,cpp]
 ----
-void CryptoStream::concatArrays(unsigned char * &src, int dstOffset, unsigned char * dst)
+void concatArrays(unsigned char * &src, int dstOffset, unsigned char * dst)
 {
     int j = 0;
     int i = 0;
