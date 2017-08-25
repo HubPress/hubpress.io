@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 21 Jul 2017 09:02:52 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Send a mail on gmail via python]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 25 Aug 2017 16:10:11 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Send a mail on gmail via python]]></title><description><![CDATA[<div class="paragraph">
 <p>Code to send a mail via gmail with an attachment</p>
 </div>
 <div class="listingblock">
@@ -366,6 +366,57 @@ onMyEvent: {
 static_cast pour les types de base,
 reinterpret_cast pour forcer un cast de n&#8217;importe quoi vers n&#8217;importe quoi
 et const_cast pour pouvoir passer des string en entrée à des vieilles fonctions C qui veulent des char*</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_concat_arrays_c_style">Concat arrays C style</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">void CryptoStream::concatArrays(unsigned char * &amp;src, int dstOffset, unsigned char * dst)
+{
+    int j = 0;
+    int i = 0;
+    int srcLen =  strlen(reinterpret_cast&lt;char *&gt;(src));
+    int dstLen =  strlen(reinterpret_cast&lt;char *&gt;(dst));
+    unsigned char * tmp = new unsigned char [srcLen + dstLen + 1];
+
+
+    for (i = 0; i &lt; srcLen; ++i)
+    {
+       tmp[i] = src[i];
+    }
+
+    i = dstOffset;
+
+    while (j &lt; dstLen &amp;&amp; i &lt; (srcLen + dstLen + 1))
+    {
+        tmp[i] = dst[j];
+        i++;
+        j++;
+    }
+
+    delete [] src;
+    src = tmp;
+}
+
+void test(unsigned char * buffer, unsigned char * append)
+{
+  std::cout &lt;&lt; "buffer : " &lt;&lt; buffer &lt;&lt; std::endl;
+  concatArrays(buffer, 4, append);
+  std::cout &lt;&lt; "buffer -&gt; : " &lt;&lt; buffer &lt;&lt; std::endl;
+}
+
+int main()
+{
+  char * buffer = new char [5];
+  char * append = new char [10];
+
+  strcpy(buffer, "tato");
+  strcpy(append, "chipolata");
+
+  test(reinterpret_cast&lt;unsigned char *&gt;(buffer), reinterpret_cast&lt;unsigned char *&gt;(append));
+}</code></pre>
+</div>
 </div>
 </div>]]></description><link>https://remi-hernandez.github.io/2016/10/30/CC-tips.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/30/CC-tips.html</guid><category><![CDATA[c]]></category><category><![CDATA[ c++]]></category><category><![CDATA[ tips]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Sun, 30 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Google maps zoom theory and example with {C++/qt ; QWT}]]></title><description><![CDATA[<div class="sect4">
 <h5 id="_theory">Theory</h5>
