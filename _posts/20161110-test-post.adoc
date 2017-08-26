@@ -1,0 +1,5 @@
+= test post 
+:published_at: 2016/11/10
+:tags: test, demo
+
+this a demo blog 
