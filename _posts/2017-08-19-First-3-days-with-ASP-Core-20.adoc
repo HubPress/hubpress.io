@@ -1,5 +1,5 @@
 = First 3 days with ASP Core 2.0
-:hp-tags: ASP.NET,Core,MVC
+:hp-tags: ASP.NET,Core,MVC,
 
 About 3 days ago the final version of ASP Core 2.0 released. I installed the new bits and have been playing with it since. here is my experience so far. Fantastic.
 
