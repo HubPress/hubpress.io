@@ -13,7 +13,6 @@ The most important part that you have to change here is the *CreateDefaultBuilde
 ----
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-
 namespace BareMinCore
 {
     public class Program
@@ -24,11 +23,8 @@ namespace BareMinCore
                 .UseKestrel()
                 .UseStartup<Startup>()
                 .Build();
-
             builder.Run();
         }
-
-
     }
 }
 ----
@@ -40,7 +36,6 @@ This part is a little tricky. I found out that there is no need for *ConfigureSe
 ----
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-
 namespace BareMinCore
 {
     public class Startup
