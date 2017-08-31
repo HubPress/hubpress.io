@@ -30,7 +30,7 @@ namespace BareMinCore
 ----
 
 === Startup.cs
-This part is a little tricky. I found out that there is no need for *ConfigureServices* or consructor. But we need the *Configure* method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I got at the end : 
+This part is a little tricky. I found out that there is no need for *ConfigureServices* or consructor. But we need the *Configure* method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I end up with : 
 
 [source,c#]
 ----
