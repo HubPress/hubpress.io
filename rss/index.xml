@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 31 Aug 2017 13:04:01 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>In this post I&#8217;m exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!</p>
-</div>
-</div>
-</div>
-<div class="sect2">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 31 Aug 2017 13:09:51 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div class="sect2">
 <h3 id="_the_template">The template</h3>
 <div class="paragraph">
 <p>Of course to get the bare minimum in the first place you need to create a  project using "ASP.NET Core Empty" template.</p>
@@ -110,4 +103,4 @@ its now accessible from every where in project without any additional code.</p>
 <p>Until last week I was not even considering migrating to ASP Core. Because there were so many uncertainities around the project and there were not much to gain after all.
 But now I feel like I can not go back and use the old ASP MVC 5 any more ! yes, It&#8217;s that good.</p>
 </div>
-</div>]]></description><link>https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</guid><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Sat, 19 Aug 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[Core]]></category><category><![CDATA[MVC]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Sat, 19 Aug 2017 00:00:00 GMT</pubDate></item></channel></rss>
