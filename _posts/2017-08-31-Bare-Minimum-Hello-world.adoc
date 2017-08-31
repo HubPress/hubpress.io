@@ -1,5 +1,6 @@
 = Bare-Minimum Hello world!
-:hp-tag:ASP.NET,Core,Startup,Hosting
+:hp-tags: ASP.NET,Core,Startup,Hosting,
+
 In this post I'm exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!
 
 === The template
