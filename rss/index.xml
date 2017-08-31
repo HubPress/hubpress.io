@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 31 Aug 2017 05:59:28 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First 3 days with ASP Core 2.0]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 31 Aug 2017 13:04:01 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this post I&#8217;m exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_template">The template</h3>
+<div class="paragraph">
+<p>Of course to get the bare minimum in the first place you need to create a  project using "ASP.NET Core Empty" template.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_program_cs">Program.cs</h3>
+<div class="paragraph">
+<p>The most important part that you have to change here is the <strong>CreateDefaultBuilder</strong> Method. To do that I took a look at the source code (Thanks to open-source) and create the host myself.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+
+namespace BareMinCore
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+             var builder = new WebHostBuilder()
+                .UseKestrel()
+                .UseStartup&lt;Startup&gt;()
+                .Build();
+
+            builder.Run();
+        }
+
+
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_startup_cs">Startup.cs</h3>
+<div class="paragraph">
+<p>This part is a little tricky. I found out that there is no need for <strong>ConfigureServices</strong> or consructor. But we need the <strong>Configure</strong> method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I got at the end :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+
+namespace BareMinCore
+{
+    public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            app.Run(async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World!");
+            });
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusion">Conclusion</h3>
+<div class="paragraph">
+<p>It&#8217;s always good to find out what is there and what we actually need to run the system. It helps us to understand how the system is working and how we can improve it using less resources. You can download the result project at my github page.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/08/31/Bare-Minimum-Hello-world.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/08/31/Bare-Minimum-Hello-world.html</guid><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Thu, 31 Aug 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[First 3 days with ASP Core 2.0]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>About 3 days ago the final version of ASP Core 2.0 released. I installed the new bits and have been playing with it since. here is my experience so far. Fantastic.</p>
