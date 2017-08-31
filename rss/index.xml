@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 31 Aug 2017 16:54:51 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 31 Aug 2017 16:59:49 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this post I&#8217;m exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!</p>
@@ -40,7 +40,7 @@ namespace BareMinCore
 <div class="sect2">
 <h3 id="_startup_cs">Startup.cs</h3>
 <div class="paragraph">
-<p>This part is a little tricky. I found out that there is no need for <strong>ConfigureServices</strong> or consructor. But we need the <strong>Configure</strong> method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I got at the end :</p>
+<p>This part is a little tricky. I found out that there is no need for <strong>ConfigureServices</strong> or consructor. But we need the <strong>Configure</strong> method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I end up with :</p>
 </div>
 <div class="listingblock">
 <div class="content">
