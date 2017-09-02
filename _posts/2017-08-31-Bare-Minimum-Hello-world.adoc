@@ -3,11 +3,11 @@
 
 In this post I'm exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!
 
-=== The template
-Of course to get the bare minimum in the first place you need to create a  project using "ASP.NET Core Empty" template.
+==== The template
+،o get the bare minimum in the first place you need to create a  project using "ASP.NET Core Empty" template.
 
-=== Program.cs
-The most important part that you have to change here is the *CreateDefaultBuilder* Method. To do that I took a look at the source code (Thanks to open-source) and create the host myself.
+==== Program.cs
+The most important part that you have to change here is the *CreateDefaultBuilder* Method.There are so many parts that you don't need, Like settings a Logging. To do that I used at the source code (Thanks to open-source) and create the host myself.
 
 [source,c#]
 ----
@@ -29,8 +29,8 @@ namespace BareMinCore
 }
 ----
 
-=== Startup.cs
-This part is a little tricky. I found out that there is no need for *ConfigureServices* or consructor. But we need the *Configure* method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I end up with : 
+==== Startup.cs
+This part is a little tricky. I found out that there is no need for consructor or *ConfigureServices*. But we need the *Configure* method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I end up with : 
 
 [source,c#]
 ----
@@ -51,6 +51,6 @@ namespace BareMinCore
 }
 ----
 
-=== Conclusion
+==== Conclusion
 It's always good to find out what is there and what we actually need to run the system. It helps us to understand how the system is working and how we can improve it using less resources. You can download the result project at my github page.
 
