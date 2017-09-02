@@ -4,7 +4,7 @@
 In this post I'm exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!
 
 ==== The template
-،o get the bare minimum in the first place you need to create a  project using "ASP.NET Core Empty" template.
+To get the bare minimum in the first place you need to create a  project using "ASP.NET Core Empty" template.
 
 ==== Program.cs
 The most important part that you have to change here is the *CreateDefaultBuilder* Method.There are so many parts that you don't need, Like settings a Logging. To do that I used at the source code (Thanks to open-source) and create the host myself.
