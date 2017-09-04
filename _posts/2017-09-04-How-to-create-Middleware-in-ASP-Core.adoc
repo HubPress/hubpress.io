@@ -1,13 +1,13 @@
 # How to create Middleware in ASP Core ?
 :hp-tags: ASP.NET,Core,Middleware
 
-One of the best features of ASP.NET Core is its flexible pipeline. You can control what goes into your applications pipeline and add more to it using a *Middleware*.
+One of the best features of ASP.NET Core is it's flexible pipeline. You can control what goes into your application's pipeline and add more to it using a *Middleware*.
 
 #### SendFile Middleware
-This middleware is just a sample project to see how middlewares are created in ASP.NET Core. I tried it keep is simple as possible,after all this is my first middleware.
+This middleware is just a sample project to see how middlewares are created in ASP.NET Core. I tried to keep it is simple as possible,after all this is my first middleware.
 
 #### What it does?
-You set a file path at startup and SendFile Middleware sends it back to user in browser. 
+You set a file path at startup and SendFile Middleware sends the file back to user in browser. basically a FileResult directly as a response.
 
 [source,c#]
 public class Startup
