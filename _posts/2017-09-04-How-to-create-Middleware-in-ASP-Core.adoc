@@ -18,7 +18,7 @@ public class Startup
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseSendFile(@"C:\myfile.jpg");   // 
+            app.UseSendFile(@"C:\myfile.jpg");
         }
     }
 
@@ -91,7 +91,7 @@ public static class SendFileMiddlewareExtension
 #### conclusion
 Middlewares can solve many problems,Creating them is fairly easy and working with them is fun. But there are many things to watch for. Like when you change response it the pipeline the next middleware is not allowed to chat it again,there are some reasons for that. but thats the topic for an other post.
 
-you can  [download](https://github.com/codehaks/Codehaks.Middlewares.SendFile) this here.
+you can [download] (https://github.com/codehaks/Codehaks.Middlewares.SendFile) here.
 
 and also SendFile middleware is availbe at nuget : 
 **PM > Install-Package Codehaks.Middlewares.SendFile**
