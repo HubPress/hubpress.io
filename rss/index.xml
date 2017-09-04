@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 10:01:01 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 10:11:39 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>One of the best features of ASP.NET Core is its flexible pipeline. You can control what goes into your applications pipeline and add more to it using a <strong>Middleware</strong>.</p>
+<p>One of the best features of ASP.NET Core is it&#8217;s flexible pipeline. You can control what goes into your application&#8217;s pipeline and add more to it using a <strong>Middleware</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_sendfile_middleware">SendFile Middleware</h4>
 <div class="paragraph">
-<p>This middleware is just a sample project to see how middlewares are created in ASP.NET Core. I tried it keep is simple as possible,after all this is my first middleware.</p>
+<p>This middleware is just a sample project to see how middlewares are created in ASP.NET Core. I tried to keep it is simple as possible,after all this is my first middleware.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_what_it_does">What it does?</h4>
 <div class="paragraph">
-<p>You set a file path at startup and SendFile Middleware sends it back to user in browser.</p>
+<p>You set a file path at startup and SendFile Middleware sends the file back to user in browser. basically a FileResult directly as a response.</p>
 </div>
 <div class="listingblock">
 <div class="content">
