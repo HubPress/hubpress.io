@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 07:58:14 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 08:01:25 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>One of the best features of ASP.NET Core is its flexible pipeline. You can control what goes into your applications pipeline and add more to it using a <strong>Middleware</strong>.</p>
@@ -38,55 +38,44 @@ public class Startup
 </div>
 </div>
 <div class="sect3">
-<h4 id="_how_to_create_a_middleware">How to create a Middleware ?</h4>
+<h4 id="_sendfile_middleware_explained">SendFile middleware explained</h4>
 <div class="paragraph">
 <p>The basic parts of a middleware in ASP.NET Core is simple. You have to create a class like this :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-C#" data-lang="C#">---
-internal class SendFileMiddleware
+<pre class="highlight"><code class="language-C#" data-lang="C#">internal class SendFileMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly SendFileMiddlewareOptions _options;</code></pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>public SendFileMiddleware(RequestDelegate next, IOptions&lt;SendFileMiddlewareOptions&gt; options)
-{
-    _options = options.Value;
-    _next = next;
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>public Task Invoke(HttpContext context)
-{
-    if (!string.IsNullOrEmpty(_options.FilePath))
-    {
-        var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
-            new System.IO.FileInfo(_options.FilePath));
-        context.Response.SendFileAsync(file);
-    }</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>            return this._next(context);
+<div class="paragraph">
+<p>public SendFileMiddleware(RequestDelegate next,
+        IOptions&lt;SendFileMiddlewareOptions&gt; options)
+        {
+            _options = options.Value;
+            _next = next;
+        }
+public Task Invoke(HttpContext context)
+        {
+            if (!string.IsNullOrEmpty(_options.FilePath))
+            {
+                var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
+                    new System.IO.FileInfo(_options.FilePath));
+                context.Response.SendFileAsync(file);
+            }
+            return this._next(context);
         }
     }
----</pre>
-</div>
+    ---</p>
 </div>
 <div class="paragraph">
 <p>As you can see there is no inheritance involved. You just to provide a structure. the <strong>_next</strong> property is a request delegate that you use to pass the reponse to next middleware. and there is an <strong>options</strong> parameter. if you want to pass data to your middleware you need an <strong>IOptions</strong> interface. Next there is the <strong>Invoke</strong> method. it takes a HttpContext and creates the response then you pass the response to next middleware. you dont have to pass if your middleware is a short-circuit one.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-C#" data-lang="C#">---
-namespace Codehaks.Middlewares.SendFile
+<pre class="highlight"><code class="language-C#" data-lang="C#">namespace Codehaks.Middlewares.SendFile
 {
     public class SendFileMiddlewareOptions
     {
@@ -95,7 +84,6 @@ namespace Codehaks.Middlewares.SendFile
 }</code></pre>
 </div>
 </div>
-<hr>
 </div>
 <div class="sect3">
 <h4 id="_the_extention_method">The extention method</h4>
@@ -104,35 +92,26 @@ namespace Codehaks.Middlewares.SendFile
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-C#" data-lang="C#">---
- public static class SendFileMiddlewareExtension
+<pre class="highlight"><code class="language-C#" data-lang="C#"> public static class SendFileMiddlewareExtension
     {
         public static IApplicationBuilder UseSendFile(
             this IApplicationBuilder builder, SendFileMiddlewareOptions options)
         {
             return
             builder.UseMiddleware&lt;SendFileMiddleware&gt;(Options.Create(options));
-        }</code></pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>public static IApplicationBuilder UseSendFile(
-    this IApplicationBuilder builder, string filePath)
-{
-    var options = new SendFileMiddlewareOptions()
-    {
-        FilePath = filePath
-    };</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>            return
+        }
+        public static IApplicationBuilder UseSendFile(
+            this IApplicationBuilder builder, string filePath)
+        {
+            var options = new SendFileMiddlewareOptions()
+            {
+                FilePath = filePath
+            };
+
+            return
             builder.UseMiddleware&lt;SendFileMiddleware&gt;(Options.Create(options));
         }
-    }
----</pre>
+    }</code></pre>
 </div>
 </div>
 </div>
