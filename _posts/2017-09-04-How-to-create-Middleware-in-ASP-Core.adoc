@@ -90,7 +90,11 @@ public static class SendFileMiddlewareExtension
 #### conclusion
 Middlewares can solve many problems,Creating them is fairly easy and working with them is fun. But there are many things to watch for. Like when you change response it the pipeline the next middleware is not allowed to chat it again,there are some reasons for that. but thats the topic for an other post.
 
-you can [download](https://github.com/codehaks/Codehaks.Middlewares.SendFile) here.
+you can 
+link:view-source:https://github.com/codehaks/Codehaks.Middlewares.SendFile[download] here.
 
 and also SendFile middleware is availbe at nuget : 
+
+[so urce,C#]
+
 **PM > Install-Package Codehaks.Middlewares.SendFile**
