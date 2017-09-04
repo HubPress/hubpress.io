@@ -32,25 +32,24 @@ internal class SendFileMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly SendFileMiddlewareOptions _options;
-
-public SendFileMiddleware(RequestDelegate next,
+        public SendFileMiddleware(RequestDelegate next,
         IOptions<SendFileMiddlewareOptions> options)
         {
             _options = options.Value;
             _next = next;
         }
-public Task Invoke(HttpContext context)
+        public Task Invoke(HttpContext context)
         {
             if (!string.IsNullOrEmpty(_options.FilePath))
             {
-                var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
+            var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
                     new System.IO.FileInfo(_options.FilePath));
                 context.Response.SendFileAsync(file);
             }
             return this._next(context);
         }
     }
-
+    
 As you can see there is no inheritance involved. You just to provide a structure. the **_next** property is a request delegate that you use to pass the reponse to next middleware. and there is an **options** parameter. if you want to pass data to your middleware you need an **IOptions** interface. Next there is the **Invoke** method. it takes a HttpContext and creates the response then you pass the response to next middleware. you dont have to pass if your middleware is a short-circuit one.
 
 [source,C#]
