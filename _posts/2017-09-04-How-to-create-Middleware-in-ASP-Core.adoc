@@ -10,7 +10,6 @@ This middleware is just a sample project to see how middlewares are created in A
 You set a file path at startup and SendFile Middleware sends it back to user in browser. 
 
 [source,c#]
----
 public class Startup
     {
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -22,7 +21,6 @@ public class Startup
             app.UseSendFile(@"C:\myfile.jpg");   // 
         }
     }
----
 
 It can be any kind of file, and user receives it in browser.
 
@@ -52,12 +50,11 @@ public Task Invoke(HttpContext context)
             return this._next(context);
         }
     }
-    ---
 
 As you can see there is no inheritance involved. You just to provide a structure. the **_next** property is a request delegate that you use to pass the reponse to next middleware. and there is an **options** parameter. if you want to pass data to your middleware you need an **IOptions** interface. Next there is the **Invoke** method. it takes a HttpContext and creates the response then you pass the response to next middleware. you dont have to pass if your middleware is a short-circuit one.
 
 [source,C#]
-----
+
 namespace Codehaks.Middlewares.SendFile
 {
     public class SendFileMiddlewareOptions
@@ -65,14 +62,13 @@ namespace Codehaks.Middlewares.SendFile
         public string FilePath { get; set; }
     }
 }
-----
 
 #### The extention method
 The best way to present your middleware is to create an Extention method and give other developer the option to call it directly with IApplication parameter.
 
 [source,C#]
-----
- public static class SendFileMiddlewareExtension
+
+public static class SendFileMiddlewareExtension
     {
         public static IApplicationBuilder UseSendFile(
             this IApplicationBuilder builder, SendFileMiddlewareOptions options)
@@ -87,12 +83,10 @@ The best way to present your middleware is to create an Extention method and giv
             {
                 FilePath = filePath
             };
-
             return
             builder.UseMiddleware<SendFileMiddleware>(Options.Create(options));
         }
     }
-----
 
 #### conclusion
 Middlewares can solve many problems,Creating them is fairly easy and working with them is fun. But there are many things to watch for. Like when you change response it the pipeline the next middleware is not allowed to chat it again,there are some reasons for that. but thats the topic for an other post.
