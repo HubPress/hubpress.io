@@ -12,12 +12,8 @@ You set a file path at startup and SendFile Middleware sends the file back to us
 [source,c#]
 public class Startup
     {
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
             app.UseSendFile(@"C:\myfile.jpg");
         }
     }
