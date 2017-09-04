@@ -1,4 +1,154 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 02 Sep 2017 09:33:31 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 07:56:29 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the best features of ASP.NET Core is its flexible pipeline. You can control what goes into your applications pipeline and add more to it using a <strong>Middleware</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sendfile_middleware">SendFile Middleware</h4>
+<div class="paragraph">
+<p>This middleware is just a sample project to see how middlewares are created in ASP.NET Core. I tried it keep is simple as possible,after all this is my first middleware.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_it_does">What it does?</h4>
+<div class="paragraph">
+<p>You set a file path at startup and SendFile Middleware sends it back to user in browser.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">---
+public class Startup
+    {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseSendFile(@"C:\myfile.jpg");   //
+        }
+    }
+---</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It can be any kind of file, and user receives it in browser.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_create_a_middleware">How to create a Middleware ?</h4>
+<div class="paragraph">
+<p>The basic parts of a middleware in ASP.NET Core is simple. You have to create a class like this :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">---
+internal class SendFileMiddleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly SendFileMiddlewareOptions _options;</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>public SendFileMiddleware(RequestDelegate next, IOptions&lt;SendFileMiddlewareOptions&gt; options)
+{
+    _options = options.Value;
+    _next = next;
+}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>public Task Invoke(HttpContext context)
+{
+    if (!string.IsNullOrEmpty(_options.FilePath))
+    {
+        var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
+            new System.IO.FileInfo(_options.FilePath));
+        context.Response.SendFileAsync(file);
+    }</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>            return this._next(context);
+        }
+    }
+---</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see there is no inheritance involved. You just to provide a structure. the <strong>_next</strong> property is a request delegate that you use to pass the reponse to next middleware. and there is an <strong>options</strong> parameter. if you want to pass data to your middleware you need an <strong>IOptions</strong> interface. Next there is the <strong>Invoke</strong> method. it takes a HttpContext and creates the response then you pass the response to next middleware. you dont have to pass if your middleware is a short-circuit one.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">---
+namespace Codehaks.Middlewares.SendFile
+{
+    public class SendFileMiddlewareOptions
+    {
+        public string FilePath { get; set; }
+    }
+}</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_the_extention_method">The extention method</h4>
+<div class="paragraph">
+<p>The best way to present your middleware is to create an Extention method and give other developer the option to call it directly with IApplication parameter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">---
+ public static class SendFileMiddlewareExtension
+    {
+        public static IApplicationBuilder UseSendFile(
+            this IApplicationBuilder builder, SendFileMiddlewareOptions options)
+        {
+            return
+            builder.UseMiddleware&lt;SendFileMiddleware&gt;(Options.Create(options));
+        }</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>public static IApplicationBuilder UseSendFile(
+    this IApplicationBuilder builder, string filePath)
+{
+    var options = new SendFileMiddlewareOptions()
+    {
+        FilePath = filePath
+    };</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>            return
+            builder.UseMiddleware&lt;SendFileMiddleware&gt;(Options.Create(options));
+        }
+    }
+---</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">conclusion</h4>
+<div class="paragraph">
+<p>Middlewares can solve many problems,Creating them is fairly easy and working with them is fun. But there are many things to watch for. Like when you change response it the pipeline the next middleware is not allowed to chat it again,there are some reasons for that. but thats the topic for an other post.</p>
+</div>
+<div class="paragraph">
+<p>you can  [download](<a href="https://github.com/codehaks/Codehaks.Middlewares.SendFile" class="bare">https://github.com/codehaks/Codehaks.Middlewares.SendFile</a>) this here.</p>
+</div>
+<div class="paragraph">
+<p>and also SendFile middleware is availbe at nuget :
+<strong>PM &gt; Install-Package Codehaks.Middlewares.SendFile</strong></p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[Core]]></category><category><![CDATA[Middleware]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Mon, 04 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this post I&#8217;m exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!</p>
