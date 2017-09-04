@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="https://codehaks.github.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//codehaks.github.io/themes/casper/assets/css/screen.css?v=1504512281833" />
+    <link rel="stylesheet" type="text/css" href="//codehaks.github.io/themes/casper/assets/css/screen.css?v=1504518235202" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html" />
@@ -131,27 +131,25 @@
 <pre class="highlight"><code class="language-C#" data-lang="C#">internal class SendFileMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly SendFileMiddlewareOptions _options;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>public SendFileMiddleware(RequestDelegate next,
+        private readonly SendFileMiddlewareOptions _options;
+        public SendFileMiddleware(RequestDelegate next,
         IOptions&lt;SendFileMiddlewareOptions&gt; options)
         {
             _options = options.Value;
             _next = next;
         }
-public Task Invoke(HttpContext context)
+        public Task Invoke(HttpContext context)
         {
             if (!string.IsNullOrEmpty(_options.FilePath))
             {
-                var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
+            var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
                     new System.IO.FileInfo(_options.FilePath));
                 context.Response.SendFileAsync(file);
             }
             return this._next(context);
         }
-    }</p>
+    }</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>As you can see there is no inheritance involved. You just to provide a structure. the <strong>_next</strong> property is a request delegate that you use to pass the reponse to next middleware. and there is an <strong>options</strong> parameter. if you want to pass data to your middleware you need an <strong>IOptions</strong> interface. Next there is the <strong>Invoke</strong> method. it takes a HttpContext and creates the response then you pass the response to next middleware. you dont have to pass if your middleware is a short-circuit one.</p>
@@ -298,8 +296,8 @@ experience building websites of all complexity levels.</p>
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1504512281833"></script>
-    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/index.js?v=1504512281833"></script>
+    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1504518235202"></script>
+    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/index.js?v=1504518235202"></script>
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
