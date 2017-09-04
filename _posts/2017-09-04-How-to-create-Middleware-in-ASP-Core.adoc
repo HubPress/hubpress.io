@@ -95,6 +95,5 @@ link:view-source:https://github.com/codehaks/Codehaks.Middlewares.SendFile[downl
 
 and also SendFile middleware is availbe at nuget : 
 
-[so urce,C#]
-
+[source,C#]
 **PM > Install-Package Codehaks.Middlewares.SendFile**
