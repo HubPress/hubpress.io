@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 09:45:08 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 09:57:13 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>One of the best features of ASP.NET Core is its flexible pipeline. You can control what goes into your applications pipeline and add more to it using a <strong>Middleware</strong>.</p>
@@ -115,11 +115,14 @@
 <p>Middlewares can solve many problems,Creating them is fairly easy and working with them is fun. But there are many things to watch for. Like when you change response it the pipeline the next middleware is not allowed to chat it again,there are some reasons for that. but thats the topic for an other post.</p>
 </div>
 <div class="paragraph">
-<p>you can [download](<a href="https://github.com/codehaks/Codehaks.Middlewares.SendFile" class="bare">https://github.com/codehaks/Codehaks.Middlewares.SendFile</a>) here.</p>
+<p>you can
+<a href="view-source:https://github.com/codehaks/Codehaks.Middlewares.SendFile">download</a> here.</p>
 </div>
 <div class="paragraph">
-<p>and also SendFile middleware is availbe at nuget :
-<strong>PM &gt; Install-Package Codehaks.Middlewares.SendFile</strong></p>
+<p>and also SendFile middleware is availbe at nuget :</p>
+</div>
+<div class="paragraph">
+<p><strong>PM &gt; Install-Package Codehaks.Middlewares.SendFile</strong></p>
 </div>
 </div>]]></description><link>https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[Core]]></category><category><![CDATA[Middleware]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Mon, 04 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
