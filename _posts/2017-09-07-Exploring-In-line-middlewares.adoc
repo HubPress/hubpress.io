@@ -61,35 +61,35 @@ We can user app.Use to simulate app.Run method. Basically the app.Run is a simpl
 There are at least 4 different ways to show "Hello,world!" using in-line middlewares in ASP.NET Core. 
 
 You can 
-https://gist.github.com/codehaks/61d026c46c0293435cab375290c24980[Download the Gist, role="external", window="_blank"] here. 
+https://gist.github.com/codehaks/61d026c46c0293435cab375290c24980[Download the Gist] here. 
 
 [source,C#]
 public class Startup
     {
         public void Configure(IApplicationBuilder app)
         {
-            ////--- Default app.Run usage ----------------------------
-            // app.Run(async (context) =>
-            // {
-            //     await context.Response.WriteAsync("Hello World! 0");
-            // }); +
-            ////--- Default app.Use - short-cricuit--------------------
-            // app.Use(async (context, next) =>
-            // {
-            //     await context.Response.WriteAsync("Hello World! 1");
-            // });            
-            ////--- simulating app.Run with a handler -----------------
-            // RequestDelegate handler=async (context) =>
-            // {
-            //     await context.Response.WriteAsync("Hello World! 2");
-            // };
-            // app.Use(_ => handler);            
-            ////--- simulating app.Run with an anonymous function------
-            // app.Use(_ => async (context) =>
-            // {
-            //     await context.Response.WriteAsync("Hello World! 3");
-            // });
-            ////--- simulating app.Run with an anonymous function------
+            //--- Default app.Run usage ----------------------------
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World! 0");
+            });            
+            //--- Default app.Use - short-cricuit--------------------
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync("Hello World! 1");
+            });            
+            //--- simulating app.Run with a handler -----------------
+            RequestDelegate handler=async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World! 2");
+            };
+            app.Use(_ => handler);            
+            //--- simulating app.Run with an anonymous function------
+            app.Use(_ => async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World! 3");
+            });
+            //--- simulating app.Run with an anonymous function------
             app.Use( _ => async (context) =>
             {
                 await context.Response.WriteAsync("Hello World! 3");
