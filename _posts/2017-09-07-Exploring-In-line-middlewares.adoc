@@ -55,9 +55,47 @@ public delegate Task RequestDelegate(HttpContext context);
 
 A request delegate is a function that can process an HTTP request. This function returns a Task indicating the request proccessing has been completed. 
 
+==== Conclusion
+We can user app.Use to simulate app.Run method. Basically the app.Run is a simpler version of app.Use. Usually you use app.Run the the end of middleware pipeline because it is a short-circuit middleware and does not call next middleware. 
 
-// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
-// :hp-image: /covers/cover.png
-// :published_at: 2019-01-31
-// :hp-tags: HubPress, Blog, Open_Source,
-// :hp-alt-title: My English Title
+There are at least 4 different ways to show "Hello,world!" using in-line middlewares in ASP.NET Core. 
+
+You can download the Gist here. 
+
+[source,C#]
+public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            ////--- Default app.Run usage ----------------------------
+            // app.Run(async (context) =>
+            // {
+            //     await context.Response.WriteAsync("Hello World! 0");
+            // });            
+
+            ////--- Default app.Use - short-cricuit--------------------
+            // app.Use(async (context, next) =>
+            // {
+            //     await context.Response.WriteAsync("Hello World! 1");
+            // });            
+
+            ////--- simulating app.Run with a handler -----------------
+            // RequestDelegate handler=async (context) =>
+            // {
+            //     await context.Response.WriteAsync("Hello World! 2");
+            // };
+            // app.Use(_ => handler);            
+
+            ////--- simulating app.Run with an anonymous function------
+            // app.Use(_ => async (context) =>
+            // {
+            //     await context.Response.WriteAsync("Hello World! 3");
+            // });
+
+            ////--- simulating app.Run with an anonymous function------
+            app.Use( _ => async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World! 3");
+            });
+        }
+    }
