@@ -1,4 +1,143 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 04 Sep 2017 10:17:41 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Sep 2017 11:47:28 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In-line middlewares are a simple way to add functionality to ASP.NET Core pipeline without going through a ceremony. In this post I&#8217;m playing with app.Run and app.Use and see how these two work.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_simplest_middleware_possible">Simplest middleware possible</h4>
+<div class="paragraph">
+<p>The best way to understand how a middleware works is to remove the noise around it. so, this is the simples middleware you can build in ASP.NET Core 2.0 .</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">app.Run(async (context) =&gt;
+{
+	await context.Response.WriteAsync("Hello World! 0");
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By the way, that is exactly what you get when you create a new project in Visual studio,using the default template.</p>
+</div>
+<div class="paragraph">
+<p>As this was an exploration, I went a step further and find the actual method in source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public static void
+Run(this IApplicationBuilder app, RequestDelegate handler)
+        {
+            if (app == null)
+            {
+                throw new ArgumentNullException(nameof(app));
+            }
+            if (handler == null)
+            {
+                throw new ArgumentNullException(nameof(handler));
+            }
+            app.Use(_ =&gt; handler);
+        }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So, basically what run does is calling the app.Use method. but in this case, app.Run does not itroduce any <strong>next</strong> parameter, so no middleware after app.Run would run. This is a short-circuit middleware.</p>
+</div>
+<div class="paragraph">
+<p>Now, lets take a look at app.Use method under the hood :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public static IApplicationBuilder Use(this IApplicationBuilder app, Func&lt;HttpContext, Func&lt;Task&gt;, Task&gt; middleware)
+        {
+            return app.Use(next =&gt;
+            {
+                return context =&gt;
+                {
+                    Func&lt;Task&gt; simpleNext = () =&gt; next(context);
+                    return middleware(context, simpleNext);
+                };
+            });
+        }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is also an Extention method,and returning a <strong>RequestDelegate</strong> . so, what is a RequestDelegate !?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public delegate Task RequestDelegate(HttpContext context);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A request delegate is a function that can process an HTTP request. This function returns a Task indicating the request proccessing has been completed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>We can user app.Use to simulate app.Run method. Basically the app.Run is a simpler version of app.Use. Usually you use app.Run the the end of middleware pipeline because it is a short-circuit middleware and does not call next middleware.</p>
+</div>
+<div class="paragraph">
+<p>There are at least 4 different ways to show "Hello,world!" using in-line middlewares in ASP.NET Core.</p>
+</div>
+<div class="paragraph">
+<p>You can download the Gist here.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            ////--- Default app.Run usage ----------------------------
+            // app.Run(async (context) =&gt;
+            // {
+            //     await context.Response.WriteAsync("Hello World! 0");
+            // });</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>////--- Default app.Use - short-cricuit--------------------
+// app.Use(async (context, next) =&gt;
+// {
+//     await context.Response.WriteAsync("Hello World! 1");
+// });</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>////--- simulating app.Run with a handler -----------------
+// RequestDelegate handler=async (context) =&gt;
+// {
+//     await context.Response.WriteAsync("Hello World! 2");
+// };
+// app.Use(_ =&gt; handler);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>////--- simulating app.Run with an anonymous function------
+// app.Use(_ =&gt; async (context) =&gt;
+// {
+//     await context.Response.WriteAsync("Hello World! 3");
+// });</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>        ////--- simulating app.Run with an anonymous function------
+        app.Use( _ =&gt; async (context) =&gt;
+        {
+            await context.Response.WriteAsync("Hello World! 3");
+        });
+    }
+}</pre>
+</div>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/09/07/Exploring-In-line-middlewares.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/07/Exploring-In-line-middlewares.html</guid><category><![CDATA[ASP.NET Core]]></category><category><![CDATA[Middleware]]></category><category><![CDATA[Exploring]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Thu, 07 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>One of the best features of ASP.NET Core is it&#8217;s flexible pipeline. You can control what goes into your application&#8217;s pipeline and add more to it using a <strong>Middleware</strong>.</p>
