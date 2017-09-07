@@ -134,3 +134,28 @@ int main()
   test(reinterpret_cast<unsigned char *>(buffer), reinterpret_cast<unsigned char *>(append));
 }
 ----
+
+
+==== Pragma and warnings
+
+You can use pragma to lower the warnings level at build time or to disable some kinds of warnings.
+
+[source, cpp]
+----
+#pragma warning(push,0)
+// here include libs that you can't touch and you don't want build warnings from
+#include <fstream>
+#pragma warning(pop)
+
+// To disable the warnings "deprecated" for C functions like strcpy under windows 
+
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#endif
+
+strcpy(); 
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
+----
