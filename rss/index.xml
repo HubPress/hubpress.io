@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Sep 2017 11:56:56 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Sep 2017 12:03:51 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>In-line middlewares are a simple way to add functionality to ASP.NET Core pipeline without going through a ceremony. In this post I&#8217;m playing with app.Run and app.Use and see how these two work.</p>
@@ -8,7 +8,7 @@
 <div class="sect3">
 <h4 id="_simplest_middleware_possible">Simplest middleware possible</h4>
 <div class="paragraph">
-<p>The best way to understand how a middleware works is to remove the noise around it. so, this is the simples middleware you can build in ASP.NET Core 2.0 .</p>
+<p>The best way to understand how a middleware works is to remove the noise around it. so, this is the simplest middleware you can build in ASP.NET Core 2.0.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -22,7 +22,7 @@
 <p>By the way, that is exactly what you get when you create a new project in Visual studio,using the default template.</p>
 </div>
 <div class="paragraph">
-<p>As this was an exploration, I went a step further and find the actual method in source code.</p>
+<p>As this was an exploration, I went a step further and found the actual method in source code.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -42,7 +42,7 @@ Run(this IApplicationBuilder app, RequestDelegate handler)
 </div>
 </div>
 <div class="paragraph">
-<p>So, basically what run does is calling the app.Use method. but in this case, app.Run does not itroduce any <strong>next</strong> parameter, so no middleware after app.Run would run. This is a short-circuit middleware.</p>
+<p>So, basically what <strong>app.Run</strong> does is calling the <strong>app.Use</strong> method. but in this case, <strong>app.Run</strong> does not introduce any <strong>next</strong> parameter, so no middleware after <strong>app.Run</strong> would run. This is a short-circuit middleware.</p>
 </div>
 <div class="paragraph">
 <p>Now, lets take a look at app.Use method under the hood :</p>
@@ -71,13 +71,13 @@ Run(this IApplicationBuilder app, RequestDelegate handler)
 </div>
 </div>
 <div class="paragraph">
-<p>A request delegate is a function that can process an HTTP request. This function returns a Task indicating the request proccessing has been completed.</p>
+<p>A request delegate is a function that can process an HTTP request. This function returns a Task indicating completion of the request process.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_conclusion">Conclusion</h4>
 <div class="paragraph">
-<p>We can user app.Use to simulate app.Run method. Basically the app.Run is a simpler version of app.Use. Usually you use app.Run the the end of middleware pipeline because it is a short-circuit middleware and does not call next middleware.</p>
+<p>We can use <strong>app.Use</strong> to simulate <strong>app.Run</strong> method. Basically the <strong>app.Run</strong> is a simpler version of app.Use. Usually you use <strong>app.Run</strong> the the end of your pipeline because it is a short-circuit middleware and does not <strong>Invoke</strong> next middlewares.</p>
 </div>
 <div class="paragraph">
 <p>There are at least 4 different ways to show "Hello,world!" using in-line middlewares in ASP.NET Core.</p>
