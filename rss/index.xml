@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Sep 2017 11:53:06 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Sep 2017 11:56:56 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>In-line middlewares are a simple way to add functionality to ASP.NET Core pipeline without going through a ceremony. In this post I&#8217;m playing with app.Run and app.Use and see how these two work.</p>
@@ -84,7 +84,7 @@ Run(this IApplicationBuilder app, RequestDelegate handler)
 </div>
 <div class="paragraph">
 <p>You can
-<a href="https://gist.github.com/codehaks/61d026c46c0293435cab375290c24980">Download the Gist, role="external", window="_blank"</a> here.</p>
+<a href="https://gist.github.com/codehaks/61d026c46c0293435cab375290c24980">Download the Gist</a> here.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -92,28 +92,28 @@ Run(this IApplicationBuilder app, RequestDelegate handler)
     {
         public void Configure(IApplicationBuilder app)
         {
-            ////--- Default app.Run usage ----------------------------
-            // app.Run(async (context) =&gt;
-            // {
-            //     await context.Response.WriteAsync("Hello World! 0");
-            // }); +
-            ////--- Default app.Use - short-cricuit--------------------
-            // app.Use(async (context, next) =&gt;
-            // {
-            //     await context.Response.WriteAsync("Hello World! 1");
-            // });
-            ////--- simulating app.Run with a handler -----------------
-            // RequestDelegate handler=async (context) =&gt;
-            // {
-            //     await context.Response.WriteAsync("Hello World! 2");
-            // };
-            // app.Use(_ =&gt; handler);
-            ////--- simulating app.Run with an anonymous function------
-            // app.Use(_ =&gt; async (context) =&gt;
-            // {
-            //     await context.Response.WriteAsync("Hello World! 3");
-            // });
-            ////--- simulating app.Run with an anonymous function------
+            //--- Default app.Run usage ----------------------------
+            app.Run(async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 0");
+            });
+            //--- Default app.Use - short-cricuit--------------------
+            app.Use(async (context, next) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 1");
+            });
+            //--- simulating app.Run with a handler -----------------
+            RequestDelegate handler=async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 2");
+            };
+            app.Use(_ =&gt; handler);
+            //--- simulating app.Run with an anonymous function------
+            app.Use(_ =&gt; async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 3");
+            });
+            //--- simulating app.Run with an anonymous function------
             app.Use( _ =&gt; async (context) =&gt;
             {
                 await context.Response.WriteAsync("Hello World! 3");
