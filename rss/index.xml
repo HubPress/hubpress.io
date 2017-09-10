@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Sep 2017 12:03:51 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 10 Sep 2017 07:56:29 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>In-line middlewares are a simple way to add functionality to ASP.NET Core pipeline without going through a ceremony. In this post I&#8217;m playing with app.Run and app.Use and see how these two work.</p>
@@ -166,8 +166,7 @@ Run(this IApplicationBuilder app, RequestDelegate handler)
     {
         private readonly RequestDelegate _next;
         private readonly SendFileMiddlewareOptions _options;
-        public SendFileMiddleware(RequestDelegate next,
-        IOptions&lt;SendFileMiddlewareOptions&gt; options)
+        public SendFileMiddleware(RequestDelegate next, IOptions&lt;SendFileMiddlewareOptions&gt; options)
         {
             _options = options.Value;
             _next = next;
@@ -176,15 +175,21 @@ Run(this IApplicationBuilder app, RequestDelegate handler)
         {
             if (!string.IsNullOrEmpty(_options.FilePath))
             {
-            var file = new Microsoft.Extensions.
-            FileProviders.Physical.
-            PhysicalFileInfo(
+                var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
                     new System.IO.FileInfo(_options.FilePath));
-                context.Response.SendFileAsync(file);
-            }
-            return this._next(context);
+                context.Response.SendFileAsync(file);</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>            return Task.CompletedTask;
         }
-    }</code></pre>
+        else
+        {
+            return Task.CompletedTask;
+        }
+    }
+}</pre>
 </div>
 </div>
 <div class="paragraph">
