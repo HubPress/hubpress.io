@@ -37,10 +37,10 @@ internal class SendFileMiddleware
         {
             if (!string.IsNullOrEmpty(_options.FilePath))
             {
-                var file = new Microsoft.Extensions.FileProviders.Physical.PhysicalFileInfo(
+                var file = new Microsoft.Extensions.FileProviders
+                .Physical.PhysicalFileInfo(
                     new System.IO.FileInfo(_options.FilePath));
                 context.Response.SendFileAsync(file);
-
                 return Task.CompletedTask;
             }
             else
