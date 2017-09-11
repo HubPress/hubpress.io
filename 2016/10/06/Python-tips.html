@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Python tips</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Python tips">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Python tips">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1493122340770"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1493122340770"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1493122340770"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1493122340770"></script>
+
+    <link rel="canonical" href="https://remi-hernandez.github.io/2016/10/06/Python-tips.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Pipou&#x27;s world" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Python tips" />
+    <meta property="og:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around python. List tricks Print a list in one line &amp;gt;&amp;gt;&amp;gt; l &#x3D; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] &amp;gt;&amp;gt;&amp;gt; &quot;;&quot;.join(l) &#x27;a;b;c&#x27; &amp;gt;&amp;gt;&amp;gt; l &#x3D; [1, 2, 3] &amp;gt;&amp;gt;&amp;gt; &quot;&quot;.join(str(l)" />
+    <meta property="og:url" content="https://remi-hernandez.github.io/2016/10/06/Python-tips.html" />
+    <meta property="article:tag" content="python" />
+    <meta property="article:tag" content=" tips" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Python tips" />
+    <meta name="twitter:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around python. List tricks Print a list in one line &amp;gt;&amp;gt;&amp;gt; l &#x3D; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] &amp;gt;&amp;gt;&amp;gt; &quot;;&quot;.join(l) &#x27;a;b;c&#x27; &amp;gt;&amp;gt;&amp;gt; l &#x3D; [1, 2, 3] &amp;gt;&amp;gt;&amp;gt; &quot;&quot;.join(str(l)" />
+    <meta name="twitter:url" content="https://remi-hernandez.github.io/2016/10/06/Python-tips.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Pipou&#x27;s world" href="https://remi-hernandez.github.io/rss/" />
+  </head>
+  <body class="post-template tag-python tag-tips">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://remi-hernandez.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://remi-hernandez.github.io" title="Pipou&#x27;s world" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://remi-hernandez.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://twitter.com/remi_hernandez" title="Twitter" target="_blank">
+              <i class="fa fa-twitter"></i>Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-python tag-tips">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2016-10-06" itemprop="datePublished">
+                  7 months ago
+                </time>
+              </li>
+                <li class="post-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://remi-hernandez.github.io/tag/python/">python</a>, <a href="https://remi-hernandez.github.io/tag/tips/"> tips</a></span>
+                  </span>
+                </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://remi-hernandez.github.io/2016/10/06/Python-tips.html" itemprop="url" data-pjax title="Python tips">Python tips</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="http://remi-hernandez.github.io" class="post-author-avatar">
+                  <img src="https://avatars3.githubusercontent.com/u/1169550?v&#x3D;3" alt="Remi Hernandez">
+                </a>
+              <div class="post-author-info">
+                <a href="http://remi-hernandez.github.io" class="post-author-name">
+                  Remi Hernandez
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div class="sect3">
+<h4 id="_what_s_here">What&#8217;s here ?</h4>
+<div class="paragraph">
+<p>Here you will find some tips n tricks around python.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_list_tricks">List tricks</h4>
+<div class="sect5">
+<h6 id="_print_a_list_in_one_line">Print a list in one line</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = ["a", "b", "c"]
+&gt;&gt;&gt; ";".join(l)
+'a;b;c'
+
+&gt;&gt;&gt; l = [1, 2, 3]
+&gt;&gt;&gt; "".join(str(l))
+'[1, 2, 3]'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_get_the_last_elem_or_go_back_in_a_list">Get the last elem or go back in a list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">l = ["a", "b", "c"]
+print (l[-1]) # Get the last element of the list which will print "c"
+print (l[-2]) # Will print "b"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_get_all_the_odd_numbers_of_a_list">Get all the odd numbers of a list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = [0, 1, 2, 3, 4, 5]
+&gt;&gt;&gt; l[1::2] # start the list at 1 and go +2 on the iterator
+[1, 3, 5]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_reverse_a_full_list">Reverse a full list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l
+[0, 1, 2, 3, 4, 5]
+&gt;&gt;&gt; l = l[::-1]
+&gt;&gt;&gt; l
+[5, 4, 3, 2, 1, 0]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_remove_duplicates_in_a_list">Remove duplicates in a list</h6>
+<div class="paragraph">
+<p>Using the builtin set() {Sets are unordered collections of distinct objects} we can remove all the duplicates and to go back in a list we can use the list() function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l1 = [1, 2, 3, 1, 2, 3]
+&gt;&gt;&gt; l1 = set(l1)
+&gt;&gt;&gt; l1
+set([1, 2, 3])
+&gt;&gt;&gt; l1 = list(l1)
+&gt;&gt;&gt; l1
+[1, 2, 3]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_string_list_to_int_list_in_one_line">string list to int list in one line</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = ["1", "2", "3"]
+&gt;&gt;&gt; l = [int(x) for x in l]
+&gt;&gt;&gt; l
+[1, 2, 3]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_remove_empty_string_in_a_list">Remove empty string in a list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = ["a", "", "b"]
+&gt;&gt;&gt; l
+['a', '', 'b']
+&gt;&gt;&gt; l = [x for x in l if x]
+&gt;&gt;&gt; l
+['a', 'b']</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ternary_in_python">Ternary in python</h4>
+<div class="paragraph">
+<p>Added in 2.5 version of python :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">a = 1
+b = 2
+result = 0
+
+result = a if a &gt; b else b
+print (result) # will print 2 for b
+
+result = a if a &lt; b else b
+print (result) # will print 1 for a
+
+<i class="conum" data-value="1"></i><b>(1)</b>
+
+####
+
+def yes():
+	print "yes"
+
+def no():
+	print "no"
+
+yes() if True else no()
+yes() if False else no()
+
+<i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Will output :
+&gt;
+2
+1</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Will output :
+&gt;
+yes
+no</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_syntax">Syntax *</h4>
+<div class="paragraph">
+<p>The single star * unpacks the sequence/collection into positional arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def sum(a, b):
+    return a + b
+
+values = (1, 2)
+
+s = sum(*values) # will return the sum of 1 and 2</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_multilines_import">Multilines import</h4>
+<div class="paragraph">
+<p>A nice way to import</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">from Package.class import(
+        method1,
+        method2,
+    )</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_check_if_a_file_with_extension_xx_is_in_a_folder">How to check if a file with extension .xx is in a folder</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">from os import listdir
+from os.path import isfile, join
+
+lFilesList = [f for f in listdir(self.__fileName) if isfile(join(self.__fileName, f)) and (join(self.__fileName, f)).endswith(".sda")]
+if len(lFilesList) &gt; 0:
+   print "There are files"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_items_from_a_list_a_if_not_in_b">Get items from a list a if not in b</h4>
+<div class="paragraph">
+<p>Use set(b) instead of b, why ?
+List membership testing is O(n), Set membership testing is O(1)</p>
+</div>
+<div class="paragraph">
+<p>So if you test list membership in a loop the overall loop is O(n2).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">a = [1, 2, 3, 4 ,5]
+b = [4, 5, 6, 7]
+
+res = [x for x in a if x not in set(b)]
+
+# now res is : [1, 2, 3]</code></pre>
+</div>
+</div>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="http://remi-hernandez.github.io" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars3.githubusercontent.com/u/1169550?v&#x3D;3" alt="Remi Hernandez">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="http://remi-hernandez.github.io" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Remi Hernandez</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                  <p class="post-author-location">Toulouse</p>
+                  <p class="post-author-website">
+                    <a href="http://remi-hernandez.github.io" rel="nofollow">http://remi-hernandez.github.io</a>
+                  </p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">October 06, 2016</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Pipou&#x27;s world</span>. 2017. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1493122340770"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86173845-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+  </body>
+</html>

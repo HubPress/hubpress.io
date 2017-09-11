@@ -1,0 +1,141 @@
+= Vim tips and shortcuts
+:hp-tags: vim, tips, shortcuts,
+
+
+Vim
+
+http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/
+
+NerdTree : http://ngressier.developpez.com/articles/vim/vim-plugin-nerdtree/
+           nmap <silent> <C-D> :NERDTreeToggle<CR> "remap l'ouverture de nerdtree (ctrl-e devient ctrl-d) (si tu as spf13 commente la ligne map <C-e> <plug>Ne[...]
+soluce : map <F9> <plug>NERDTreeToggle<CR>
+
+https://dougblack.io/words/a-good-vimrc.html | config
+liens op : http://vimcasts.org/
+
+set paste   - passe en mode paste
+
+en mode insert (i)
+ctrl-w      - supprime le mot précédent le curseur
+ctrl-u      - supprime la ligne précédent le curseur
+
+mode commande (esc)
+
+i          - passe en mode insertion avant le curseur
+a          - passe en mode insertion après le curseur
+ctrl+d     - scroll vers le bas et déplace le curseur vers le bas de mi écran
+ctrl+u     - scroll vers le haut et déplace le curseur vers le haut de mi écran
+ctrl+e     - scroll vers le bas sans déplacer le curseur
+ctrl+y     - scroll vers le haut sans déplacer le curseur
+zz         - scroll pour mettre la ligne courante au millieu de l'écran 
+zt         - idem mais monte en haut de l'ecran
+zb         - idem mais descends en bas de l'ecran
+^          - se déplace au premier caractère de la ligne
+w          - se déplacer au début du mot suivant
+e          - se déplacer à la fin du mot suivant
+b          - se déplacer au début du mot précédent
+cw         - supprime du curseur jusqu'a la fin du mot et passe en mode insert
+{ ou }     - se déplacer de paragraphe en paragraphe
+%          - aller à l'occurence suivante du caractère (ex accolade fermante)
+*          - chercher le mot sur lequel est le curseur
+[I         - show lines with matching word under cursor
+mk         - mark current position
+'k         - move to mark k
+d'k        - delete from current position to mark k
+J          - Join la ligne suivante à la fin de la courante
+R          - passe en mode replace 
+V          - mode visual : sélectionne la ligne courante
+vap        - mode visual sur un paragraphe
+v2ap       - to select two paragraphs
+dap        - supprime un paragraphe
+{ ou }     - se déplace de paragraphe en paragraphe
+==         - reindente la ligne courante
+ctrl+w / fleche - change de split
+/pattern   - cherche le pattern
+n          - next pattern
+N          - previous pattern
+{{ ou }}   - remonte de { en {
+- ou +     - monte ou descends de ligne en se mettant au premier caractère de la ligne.
+ctrl+g     - cherche le pattern courant
+ctrl+n     - autocompletion (et ctrl+p pour aller en arrière)
+ctrl+x, ctrl+f - défini l'autocompletion sur les fichiers (path)
+      -> /lictrlx, ctrlf bababa / ctrlx, ctrlf etc
+
+zf         - crée un fold sur la sélection (selectionne les lignes en visual avant)
+zo         - open fold 
+zc         - close fold
+zO         - open all folds
+zC         - close all folds
+zr         - open fold recursivly
+
+Splits : 
+
+
+    Ctrl+W +/-: increase/decrease height
+    Ctrl+W >/<: increase/decrease width
+    Ctrl+W _: set height (ex. 50<C-w>_)
+    Ctrl+W |: set width (ex. 50<C-w>|)
+    Ctrl+W =: equalize width and height of all windows
+
+Mode visual:
+
+=       - indente correctement la selection
+
+
+commandes : 
+
+:%s/search_for_this/replace_with_this/c - confirm each change
+:e ou :edit monfichier.py - edit le fichier
+:find pattern             - trouve le fichier {pattern} and :edit dessus
+:find *spec               - en faisant tab, vas proposer tous les fichiers finissant par spec
+:set list                 - affiche les espaces avec des $
+:set nolist 
+:edit seul ou :edit!      - reload un fichier (ex : modifié ailleurs) et ! sans tenir compte des modifs (:vsp ou :sp pour avoir les 2 fichiers :3)
+:diffthis                 - passe en mode diff sur le fichier
+:diffoff 
+
+
+tabs : 
+:tabedit {file}   edit specified file in a new tab
+:tabfind {file}   open a new tab with filename given, searching the 'path' to find it
+:tabclose         close current tab
+:tabclose {i}     close i-th tab
+:tabonly          close all other tabs (show only the current tab)
+:tabs         list all tabs including their displayed windows
+:tabm 0       move current tab to first
+:tabm         move current tab to last
+:tabm {i}     move current tab to position i+1
+{i}gt         go to tab in position i
+
+Basique giseh : 
+
+$cat ~/.vimrc
+set nu
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set mouse=a
+set showcmd
+set wildmode=longest,list,full
+set wildmenu
+set foldmethod=manual
+colorscheme peachpuff
+colorscheme gruvbox
+nnoremap q a"<Esc> -> permet d'avoir la double quote
+nnoremap Q i"<Esc>
+set path+= **
+
+
+Next tab: gt
+Prior tab: gT
+Numbered tab: nngt
+
+Need to understand / learn :
+
+:b pattern -> lets you autocomplete an
+les tags (ctrl + x, ctrl + ] -> autocomplete with tags)
+would use ctags and then just use :tag to jump to the definition and :pop to come back
+
+ To stop indenting when pasting with the mouse, add this to your .vimrc:
+
+:set pastetoggle=<f5>
+
+then try hitting the F5 key while in insert mode (or just :set paste). 

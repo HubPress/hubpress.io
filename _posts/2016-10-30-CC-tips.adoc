@@ -1,0 +1,161 @@
+= C/C++ tips
+:hp-tags: c, c++, tips
+
+==== What's here ?
+
+Here you will find some tips n tricks around C++.
+
+
+==== Ternary
+
+[source,cpp]
+----
+bool test = true;
+
+(test) ? std::cout << "yes" : std::cout << "no"; // will print yes
+
+----
+
+==== Get int* len on linux and windows
+
+[source,cpp]
+----
+#include <stdio.h>
+#include <malloc.h>
+
+#ifdef linux
+#define array_size(x) malloc_usable_size(x)
+#endif
+
+#ifdef _WIN32
+#define array_size(x) _msize(x)
+#endif
+
+int main(int argc, char**argv)
+{
+    int         len;
+    int         *array = malloc(sizeof(int)*10);
+
+    len = array_size(array);
+    len = len / 4; 				// because array_size return size_t
+
+    printf("len : %d\n", len);
+    return(0);
+}
+----
+
+==== Two ways to iterate
+
+[source,cpp]
+----
+std::vector<double> latWayPoints;
+// fill vector
+
+for (std::vector<double>::iterator it = latWaypoints.begin(); it != latWaypoints.end(); ++it)
+    qDebug() << ">> latWay : " << *it;
+
+for (double lon: lonWaypoints)
+    qDebug() << ">> latWay : " << lon;
+----
+
+==== cpp method callable from qml
+[source,cpp]
+----
+
+// .h
+Q_INVOKABLE void my_function();
+
+
+//.cpp
+void my_class::my_function() 
+{
+  // do stuff
+}
+
+//.qml
+onMyEvent: {
+    item.my_function();
+}
+----
+
+==== cast
+
+dynamic_cast pour les classes héritées surtout, 
+static_cast pour les types de base,
+reinterpret_cast pour forcer un cast de n'importe quoi vers n'importe quoi
+et const_cast pour pouvoir passer des string en entrée à des vieilles fonctions C qui veulent des char*
+
+==== Concat arrays C style in C++
+
+[source,cpp]
+----
+void concatArrays(unsigned char * &src, int dstOffset, unsigned char * dst)
+{
+    int j = 0;
+    int i = 0;
+    int srcLen =  strlen(reinterpret_cast<char *>(src));
+    int dstLen =  strlen(reinterpret_cast<char *>(dst));
+    unsigned char * tmp = new unsigned char [srcLen + dstLen + 1];
+
+
+    for (i = 0; i < srcLen; ++i)
+    {
+       tmp[i] = src[i];
+    }
+
+    i = dstOffset;
+
+    while (j < dstLen && i < (srcLen + dstLen + 1))
+    {
+        tmp[i] = dst[j];
+        i++;
+        j++;
+    }
+
+    delete [] src;
+    src = tmp;
+}
+
+void test(unsigned char * buffer, unsigned char * append)
+{
+  std::cout << "buffer : " << buffer << std::endl;
+  concatArrays(buffer, 4, append);
+  std::cout << "buffer -> : " << buffer << std::endl;
+}
+
+int main()
+{
+  char * buffer = new char [5];
+  char * append = new char [10];
+ 
+  strcpy(buffer, "tato");
+  strcpy(append, "chipolata");
+
+  test(reinterpret_cast<unsigned char *>(buffer), reinterpret_cast<unsigned char *>(append));
+}
+----
+
+
+==== Pragma and warnings
+
+You can use pragma to lower the warnings level at build time or to disable some kinds of warnings.
+
+[source, cpp]
+----
+#pragma warning(push,0)
+// here include libs that you can't touch and you don't want build warnings from
+#include <fstream>
+#pragma warning(pop)
+
+// To disable the warnings "deprecated" for C functions like strcpy under windows 
+
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#endif
+
+strcpy(); 
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
+----

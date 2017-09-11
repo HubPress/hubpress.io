@@ -1,10 +1,22 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
+    "username": "remi-hernandez",
+    "repositoryName": "remi-hernandez.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Pipou's world",
+    "description": "__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.",
+    "logo": "http://image.flaticon.com/icons/svg/155/155213.svg",
+    "cover": "",
+    "postsPerPage": "5",
+    "googleAnalytics": "UA-86173845-1"
+  },
+  "socialnetwork": {
+    "email": "",
+    "twitter": "https://twitter.com/remi_hernandez"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "ghostium"
   }
 }

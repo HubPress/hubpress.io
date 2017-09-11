@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Pipou's world]]></title><description><![CDATA[__̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫̲͡ ̲̲̲͡͡π̲̲͡͡ ̲̲͡▫̲̲͡͡ ̲|̡̡̡ ̡ ̴̡ı̴̡̡ ̡͌l̡̡̡̡.]]></description><link>https://remi-hernandez.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Sep 2017 12:17:10 GMT</lastBuildDate><atom:link href="https://remi-hernandez.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Send a mail on gmail via python]]></title><description><![CDATA[<div class="paragraph">
+<p>Code to send a mail via gmail with an attachment</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEText import MIMEText
+from email.MIMEBase import MIMEBase
+from email import encoders
+
+
+fromaddr = ""
+toaddr = ""
+PASSWORD = ""
+
+msg = MIMEMultipart()
+
+msg['From'] = fromaddr
+msg['To'] = toaddr
+msg['Subject'] = "python test"
+
+body = """Hey bro, that's a test ! \o/"""
+
+msg.attach(MIMEText(body, 'plain'))
+
+filename = "test.zip"
+attachment = open(r'D://test.zip', "rb")
+
+part = MIMEBase('application', 'octet-stream')
+part.set_payload((attachment).read())
+encoders.encode_base64(part)
+part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+
+msg.attach(part)
+
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
+server.login(fromaddr, PASSWORD)
+text = msg.as_string()
+server.sendmail(fromaddr, toaddr, text)
+server.quit()</code></pre>
+</div>
+</div>]]></description><link>https://remi-hernandez.github.io/2017/07/18/Send-a-mail-on-gmail-via-python.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2017/07/18/Send-a-mail-on-gmail-via-python.html</guid><category><![CDATA[python]]></category><category><![CDATA[ mail]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Tue, 18 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Python unit tests]]></title><description><![CDATA[<div class="sect3">
+<h4 id="_why">Why ?</h4>
+<div class="paragraph">
+<p>You know why because if you don&#8217;t what are you doing here ?</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_unittest_library">Using unittest library</h4>
+<div class="sect4">
+<h5 id="_a_basic_example">A basic example :</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import unittest
+
+def f1(a, b):
+    return a + b
+
+class TestF1(unittest.TestCase):
+    '''
+    This class will test f1
+    '''
+
+    def test_f1(self):
+        res = f1(2, 4)
+        self.assertEqual(res, 6)
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And this will result in :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Ran 1 test in 0.001s
+OK</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_what_happens_if_the_test_fails">What happens if the test fails :</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">	# modify the value in the assertEqual
+	def test_f1(self):
+        res = f1(2, 4)
+        self.assertEqual(res, 3)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output is now :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>======================================================================
+FAIL: test_f1 (tmp.TestF1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rhz\PycharmProjects\panda\tmp.py", line 16, in test_f1
+    self.assertEqual(res, 3)
+AssertionError: 6 != 3
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+Process finished with exit code 0</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_setup_and_teardown">Using setUp and tearDown</h5>
+<div class="paragraph">
+<p>The doc says :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>setUp(): method called to prepare the test fixture. This is called immediately before calling the test method</p>
+</li>
+<li>
+<p>tearDown(): method called immediately after the test method has been called and the result recorded. This is called even if the test method raised an exception</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is a stupid example because here setUp is sufficient but in more complex situation tearDown alows us to clean the thing after a test or to do whatever you want.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def f1(a, b):
+    return a + b
+
+
+class TestF1(unittest.TestCase):
+    '''
+    This class will test f1
+    '''
+
+    def setUp(self):
+        self.good_value = 6
+
+    def tearDown(self):
+        self.good_value = 6
+
+    def test_f1(self):
+        res = f1(2, 4)
+        self.assertEqual(res, self.good_value)
+
+    def test_f1_with_bad_value(self):
+        res = f1(2, 4)
+        self.good_value = 3
+        self.assertEqual(res, self.good_value)
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>======================================================================
+FAIL: test_f1_with_bad_value (tmp.TestF1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rhz\PycharmProjects\untitled\tmp.py", line 23, in test_f1_with_bad_value
+    self.assertEqual(res, self.good_value)
+AssertionError: 6 != 3
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Url to the doc : <a href="https://docs.python.org/3/library/unittest.html#test-cases" class="bare">docs.python.org/3/library/unittest.html#test-cases</a></p>
+</div>
+</div>
+</div>]]></description><link>https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2017/04/04/Python-unit-tests.html</guid><category><![CDATA[python]]></category><category><![CDATA[ unit tests]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Tue, 04 Apr 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Python regex]]></title><description><![CDATA[<div class="sect3">
+<h4 id="_sub">sub()</h4>
+<div class="paragraph">
+<p>Change a value by another with sub.
+We will rewrite the sentence in order to write the group1 followed by "pipou"</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import re
+
+test = "56test"
+
+# this will write the first group of the regex followed by pipou in test string
+print re.sub(r"([0-9]{2})([a-z]{4})", r"\g&lt;1&gt;pipou", test)
+
+#&gt;&gt;'56pipou'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same thing by compiling first :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import re
+
+test = "56test"
+
+# this will replace the first group of the regex by pipou in test string
+regex = re.compile(r"([0-9]{2})([a-z]{4})")
+print regex.sub(r"\g&lt;1&gt;pipou", test)
+
+#&gt;&gt;'56pipou'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_change_stuff_in_a_file_with_regex">change stuff in a file with regex</h4>
+<div class="paragraph">
+<p>Example - changing the number 183200 of the first line to 201600 in multiples files containing multiple texts like this</p>
+</div>
+<div class="paragraph">
+<p>WSCI31 RCTP 183200
+RCAA SIGMET 2 VALID 190500/190900 RCTP-
+RCAA TAIPEI FIR EMBD TS FCST
+WI N2630 E11730 - N2800 E12400 - N2400 E12400 - N2500 E11730
+TOP FL410 MOV E 10KT NC</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="literalblock">
+<div class="content">
+<pre>import re</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>file_list = ["6420.txt", "6421.txt" ,"6422.txt" ,"6423.txt" ,"6440.txt"
+    ,"6441.txt" ,"6442.txt" ,"6443.txt" ,"6444.txt" ,"6445.txt"
+    ,"6446.txt" ,"6447.txt" ,"6448.txt" ,"6449.txt" ,"6450.txt"
+    ,"6451.txt" ,"6452.txt" ,"6453.txt", "6454.txt"]</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>new_date = str(input("enter a new date&gt;"))
+regex = re.compile(r"((WC|WS|WV)[A-Z]{2}\d{2})\s+([A-Z]{4})\s+([0-9]{6})\s+(CC[AB])?")</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>for sigmet in file_list:
+    file_name = "./" + sigmet</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>f = open(file_name, "r")
+content = f.read()
+# we will write the groups 1 and 3 follwed by the new date
+new_content = regex.sub(r"\1 \3 " + new_date + r"\n", content)
+f.close()</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>f = open(file_name, "w")
+f.write(new_content)
+f.close()</pre>
+</div>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; python
+</div>
+</div>
+</div>]]></description><link>https://remi-hernandez.github.io/2017/04/04/Python-regex.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2017/04/04/Python-regex.html</guid><category><![CDATA[python]]></category><category><![CDATA[ regex]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Tue, 04 Apr 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[C/C++ tips]]></title><description><![CDATA[<div class="sect3">
+<h4 id="_what_s_here">What&#8217;s here ?</h4>
+<div class="paragraph">
+<p>Here you will find some tips n tricks around C++.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ternary">Ternary</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">bool test = true;
+
+(test) ? std::cout &lt;&lt; "yes" : std::cout &lt;&lt; "no"; // will print yes</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_int_len_on_linux_and_windows">Get int* len on linux and windows</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+
+#ifdef linux
+#define array_size(x) malloc_usable_size(x)
+#endif
+
+#ifdef _WIN32
+#define array_size(x) _msize(x)
+#endif
+
+int main(int argc, char**argv)
+{
+    int         len;
+    int         *array = malloc(sizeof(int)*10);
+
+    len = array_size(array);
+    len = len / 4; 				// because array_size return size_t
+
+    printf("len : %d\n", len);
+    return(0);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_two_ways_to_iterate">Two ways to iterate</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">std::vector&lt;double&gt; latWayPoints;
+// fill vector
+
+for (std::vector&lt;double&gt;::iterator it = latWaypoints.begin(); it != latWaypoints.end(); ++it)
+    qDebug() &lt;&lt; "&gt;&gt; latWay : " &lt;&lt; *it;
+
+for (double lon: lonWaypoints)
+    qDebug() &lt;&lt; "&gt;&gt; latWay : " &lt;&lt; lon;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cpp_method_callable_from_qml">cpp method callable from qml</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">// .h
+Q_INVOKABLE void my_function();
+
+
+//.cpp
+void my_class::my_function()
+{
+  // do stuff
+}
+
+//.qml
+onMyEvent: {
+    item.my_function();
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cast">cast</h4>
+<div class="paragraph">
+<p>dynamic_cast pour les classes héritées surtout,
+static_cast pour les types de base,
+reinterpret_cast pour forcer un cast de n&#8217;importe quoi vers n&#8217;importe quoi
+et const_cast pour pouvoir passer des string en entrée à des vieilles fonctions C qui veulent des char*</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_concat_arrays_c_style_in_c">Concat arrays C style in C++</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">void concatArrays(unsigned char * &amp;src, int dstOffset, unsigned char * dst)
+{
+    int j = 0;
+    int i = 0;
+    int srcLen =  strlen(reinterpret_cast&lt;char *&gt;(src));
+    int dstLen =  strlen(reinterpret_cast&lt;char *&gt;(dst));
+    unsigned char * tmp = new unsigned char [srcLen + dstLen + 1];
+
+
+    for (i = 0; i &lt; srcLen; ++i)
+    {
+       tmp[i] = src[i];
+    }
+
+    i = dstOffset;
+
+    while (j &lt; dstLen &amp;&amp; i &lt; (srcLen + dstLen + 1))
+    {
+        tmp[i] = dst[j];
+        i++;
+        j++;
+    }
+
+    delete [] src;
+    src = tmp;
+}
+
+void test(unsigned char * buffer, unsigned char * append)
+{
+  std::cout &lt;&lt; "buffer : " &lt;&lt; buffer &lt;&lt; std::endl;
+  concatArrays(buffer, 4, append);
+  std::cout &lt;&lt; "buffer -&gt; : " &lt;&lt; buffer &lt;&lt; std::endl;
+}
+
+int main()
+{
+  char * buffer = new char [5];
+  char * append = new char [10];
+
+  strcpy(buffer, "tato");
+  strcpy(append, "chipolata");
+
+  test(reinterpret_cast&lt;unsigned char *&gt;(buffer), reinterpret_cast&lt;unsigned char *&gt;(append));
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pragma_and_warnings">Pragma and warnings</h4>
+<div class="paragraph">
+<p>You can use pragma to lower the warnings level at build time or to disable some kinds of warnings.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">#pragma warning(push,0)
+// here include libs that you can't touch and you don't want build warnings from
+#include &lt;fstream&gt;
+#pragma warning(pop)
+
+// To disable the warnings "deprecated" for C functions like strcpy under windows
+
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#endif
+
+strcpy();
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif</code></pre>
+</div>
+</div>
+</div>]]></description><link>https://remi-hernandez.github.io/2016/10/30/CC-tips.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/30/CC-tips.html</guid><category><![CDATA[c]]></category><category><![CDATA[ c++]]></category><category><![CDATA[ tips]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Sun, 30 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Google maps zoom theory and example with {C++/qt ; QWT}]]></title><description><![CDATA[<div class="sect4">
+<h5 id="_theory">Theory</h5>
+<div class="paragraph">
+<p>Recently I had to set up a zoom on a qwt plot, the goal was to get the same zoom as google maps when zooming on some coordinates.</p>
+</div>
+<div class="paragraph">
+<p>qwt plot example :</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://remi-hernandez.github.io/images/qwt_plot.png" alt="qwt plot" width="500" height="500"></span></p>
+</div>
+<div class="paragraph">
+<p>Open maps and test, put your cursor on a city and zoom, all the map will be zoomed but the city will always be under your cursor.</p>
+</div>
+<div class="paragraph">
+<p>The solution is easy, the main idea is to reset your scales with a factor (ex : 0.9 or 1.1) and to apply a part of the factor by using the position of the cursor in order to get the zoom or unzoom.</p>
+</div>
+<div class="paragraph">
+<p>We will assume that the x axis is the horizontal and y the vertical.
+So if we want to zoom on the point which is at (1, 2.5)  [(x, y)] we will :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>get the position of our cursor on the widget (x_cursor, y_cursor)</p>
+</li>
+<li>
+<p>define the percentage (x_percent, y_percent) which are the percentage of the x_cursor position and the x_cursor_max position (size max of the widget) and the same for y_percent with y_cursor and y_cursor_max.</p>
+</li>
+<li>
+<p>we will compute the new x scale with x_percent of the factor on a side and 100 - x_percent of the factor for the other side and do the same for the y scale with y_percent / the factor.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After processing all of this we will have the x axis scale [0.2, 4] and the y axis scale [0.4, 8.5].</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_with_c_qt_and_qwt_library">Code with c++/qt and qwt library :</h4>
+<div class="paragraph">
+<p>This code is based on the <strong>PlotMagnifier::rescale(double factor);</strong> function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">void My_PlotMagnifier::rescale_on_cursor(double factor,      // the rescale factor (0.9 or 1.1)
+                                         int x_cursor,       // the x, y position of the cursor
+                                         int y_cursor,
+                                         QSize parent_size)  // the max size of the widget
+{
+    QwtPlot* plt = plot();
+
+    // max size of the widget
+    float x_cursor_max = parent_size.width();
+    float y_cursor_max = parent_size.height();
+
+    // percentage position of the cursor in the widget
+    float x_percent = (x_cursor * 100) / x_cursor_max;
+    float y_percent = (y_cursor * 100) / y_cursor_max;
+
+    // will be the new lowerBound and upperBound of the scales
+    float delta_1 = 0;
+    float delta_2 = 0;
+
+    _plotScaleEngine-&gt;zoomed(true);
+    bool doReplot = false;
+    const bool autoReplot = plt-&gt;autoReplot();
+    plt-&gt;setAutoReplot( false );
+
+    for ( int axisId = 0; axisId &lt; QwtPlot::axisCnt; axisId++ )
+    {
+        const QwtScaleDiv &amp;scaleDiv = plt-&gt;axisScaleDiv( axisId );
+        if ( isAxisEnabled( axisId ) )
+        {
+            double center = scaleDiv.lowerBound() + scaleDiv.range() / 2;	// Here we set the center of the scale
+            const double width_2 = scaleDiv.range() / 2 * factor;			// the width wanted between lowerBound (or upper) and the center
+            float interval = (scaleDiv.range() / 2) - width_2;				// the interval between the old width and the wanted width
+
+            if (axisId == 0) 		// y - left
+            {
+                delta_1 = (center - width_2) + (((100 - y_percent) * interval) / 100) - interval;
+                delta_2 = (center + width_2) - ((y_percent * interval) / 100) + interval;
+            }
+            else if (axisId == 2) 	// x - bottom
+            {
+                delta_1 = (center - width_2) + (((x_percent * interval) / 100)) - interval;
+                delta_2 = (center + width_2) - (((100 - x_percent) * interval) / 100) + interval;
+            }
+            else
+            {
+                delta_1 = 0;
+                delta_2 = 0;
+            }
+            plt-&gt;setAxisScale(axisId, delta_1, delta_2);
+            doReplot = true;
+        }
+    }
+    plt-&gt;setAutoReplot( autoReplot );
+    if ( doReplot )
+        plt-&gt;replot();
+}
+
+void Gr_PlotMagnifier::widgetWheelEvent(QWheelEvent *WheelEvent)
+{
+    _plotScaleEngine-&gt;getPlot()-&gt;select();
+    QSize parent_size = this-&gt;parentWidget()-&gt;size();
+
+    if (WheelEvent-&gt;delta() &gt; 0) 	// unzoom
+        rescale_on_cursor(0.9, WheelEvent-&gt;x(), WheelEvent-&gt;y(), parent_size);
+    else 							// zoom
+        rescale_on_cursor(1.1, WheelEvent-&gt;x(), WheelEvent-&gt;y(), parent_size);
+}</code></pre>
+</div>
+</div>
+</div>]]></description><link>https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/23/Google-maps-zoom-theory-and-example-with-Cqt-QWT.html</guid><category><![CDATA[c++]]></category><category><![CDATA[ qwt plot]]></category><category><![CDATA[ qt]]></category><category><![CDATA[ zoom]]></category><category><![CDATA[ google maps]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Sun, 23 Oct 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Python tips]]></title><description><![CDATA[<div class="sect3">
+<h4 id="_what_s_here">What&#8217;s here ?</h4>
+<div class="paragraph">
+<p>Here you will find some tips n tricks around python.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_list_tricks">List tricks</h4>
+<div class="sect5">
+<h6 id="_print_a_list_in_one_line">Print a list in one line</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = ["a", "b", "c"]
+&gt;&gt;&gt; ";".join(l)
+'a;b;c'
+
+&gt;&gt;&gt; l = [1, 2, 3]
+&gt;&gt;&gt; "".join(str(l))
+'[1, 2, 3]'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_get_the_last_elem_or_go_back_in_a_list">Get the last elem or go back in a list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">l = ["a", "b", "c"]
+print (l[-1]) # Get the last element of the list which will print "c"
+print (l[-2]) # Will print "b"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_get_all_the_odd_numbers_of_a_list">Get all the odd numbers of a list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = [0, 1, 2, 3, 4, 5]
+&gt;&gt;&gt; l[1::2] # start the list at 1 and go +2 on the iterator
+[1, 3, 5]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_reverse_a_full_list">Reverse a full list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l
+[0, 1, 2, 3, 4, 5]
+&gt;&gt;&gt; l = l[::-1]
+&gt;&gt;&gt; l
+[5, 4, 3, 2, 1, 0]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_remove_duplicates_in_a_list">Remove duplicates in a list</h6>
+<div class="paragraph">
+<p>Using the builtin set() {Sets are unordered collections of distinct objects} we can remove all the duplicates and to go back in a list we can use the list() function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l1 = [1, 2, 3, 1, 2, 3]
+&gt;&gt;&gt; l1 = set(l1)
+&gt;&gt;&gt; l1
+set([1, 2, 3])
+&gt;&gt;&gt; l1 = list(l1)
+&gt;&gt;&gt; l1
+[1, 2, 3]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_string_list_to_int_list_in_one_line">string list to int list in one line</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = ["1", "2", "3"]
+&gt;&gt;&gt; l = [int(x) for x in l]
+&gt;&gt;&gt; l
+[1, 2, 3]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_remove_empty_string_in_a_list">Remove empty string in a list</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; l = ["a", "", "b"]
+&gt;&gt;&gt; l
+['a', '', 'b']
+&gt;&gt;&gt; l = [x for x in l if x]
+&gt;&gt;&gt; l
+['a', 'b']</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ternary_in_python">Ternary in python</h4>
+<div class="paragraph">
+<p>Added in 2.5 version of python :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">a = 1
+b = 2
+result = 0
+
+result = a if a &gt; b else b
+print (result) # will print 2 for b
+
+result = a if a &lt; b else b
+print (result) # will print 1 for a
+
+<i class="conum" data-value="1"></i><b>(1)</b>
+
+####
+
+def yes():
+	print "yes"
+
+def no():
+	print "no"
+
+yes() if True else no()
+yes() if False else no()
+
+<i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Will output :
+&gt;
+2
+1</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Will output :
+&gt;
+yes
+no</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_syntax">Syntax *</h4>
+<div class="paragraph">
+<p>The single star * unpacks the sequence/collection into positional arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def sum(a, b):
+    return a + b
+
+values = (1, 2)
+
+s = sum(*values) # will return the sum of 1 and 2</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_multilines_import">Multilines import</h4>
+<div class="paragraph">
+<p>A nice way to import</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">from Package.class import(
+        method1,
+        method2,
+    )</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_check_if_a_file_with_extension_xx_is_in_a_folder">How to check if a file with extension .xx is in a folder</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">from os import listdir
+from os.path import isfile, join
+
+lFilesList = [f for f in listdir(self.__fileName) if isfile(join(self.__fileName, f)) and (join(self.__fileName, f)).endswith(".sda")]
+if len(lFilesList) &gt; 0:
+   print "There are files"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_items_from_a_list_a_if_not_in_b">Get items from a list a if not in b</h4>
+<div class="paragraph">
+<p>Use set(b) instead of b, why ?
+List membership testing is O(n), Set membership testing is O(1)</p>
+</div>
+<div class="paragraph">
+<p>So if you test list membership in a loop the overall loop is O(n2).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">a = [1, 2, 3, 4 ,5]
+b = [4, 5, 6, 7]
+
+res = [x for x in a if x not in set(b)]
+
+# now res is : [1, 2, 3]</code></pre>
+</div>
+</div>
+</div>]]></description><link>https://remi-hernandez.github.io/2016/10/06/Python-tips.html</link><guid isPermaLink="true">https://remi-hernandez.github.io/2016/10/06/Python-tips.html</guid><category><![CDATA[python]]></category><category><![CDATA[ tips]]></category><dc:creator><![CDATA[Remi Hernandez]]></dc:creator><pubDate>Thu, 06 Oct 2016 00:00:00 GMT</pubDate></item></channel></rss>

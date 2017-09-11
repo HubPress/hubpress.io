@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>C/C++ tips</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="C/C++ tips">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="C/C++ tips">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/main.min.css?v=1504786630702"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/custom.css?v=1504786630702"/>
+    <link rel="stylesheet" href="//remi-hernandez.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1504786630702"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1504786630702"></script>
+
+    <link rel="canonical" href="https://remi-hernandez.github.io/2016/10/30/CC-tips.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Pipou&#x27;s world" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="C/C++ tips" />
+    <meta property="og:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around C++. Ternary bool test &#x3D; true; (test) ? std::cout &amp;lt;&amp;lt; &quot;yes&quot; : std::cout &amp;lt;&amp;lt; &quot;no&quot;; // will print yes Get int* len on linux and windows #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;malloc.h&amp;gt; #ifdef" />
+    <meta property="og:url" content="https://remi-hernandez.github.io/2016/10/30/CC-tips.html" />
+    <meta property="article:tag" content="c" />
+    <meta property="article:tag" content=" c++" />
+    <meta property="article:tag" content=" tips" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="C/C++ tips" />
+    <meta name="twitter:description" content="What&amp;#8217;s here ? Here you will find some tips n tricks around C++. Ternary bool test &#x3D; true; (test) ? std::cout &amp;lt;&amp;lt; &quot;yes&quot; : std::cout &amp;lt;&amp;lt; &quot;no&quot;; // will print yes Get int* len on linux and windows #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;malloc.h&amp;gt; #ifdef" />
+    <meta name="twitter:url" content="https://remi-hernandez.github.io/2016/10/30/CC-tips.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Pipou&#x27;s world" href="https://remi-hernandez.github.io/rss/" />
+  </head>
+  <body class="post-template tag-c tag-c tag-tips">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://remi-hernandez.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://remi-hernandez.github.io" title="Pipou&#x27;s world" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://remi-hernandez.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://twitter.com/remi_hernandez" title="Twitter" target="_blank">
+              <i class="fa fa-twitter"></i>Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-c tag-c tag-tips">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2016-10-30" itemprop="datePublished">
+                  10 months ago
+                </time>
+              </li>
+                <li class="post-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://remi-hernandez.github.io/tag/c/">c</a>, <a href="https://remi-hernandez.github.io/tag/c/"> c++</a>, <a href="https://remi-hernandez.github.io/tag/tips/"> tips</a></span>
+                  </span>
+                </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://remi-hernandez.github.io/2016/10/30/CC-tips.html" itemprop="url" data-pjax title="C/C++ tips">C/C++ tips</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="http://remi-hernandez.github.io" class="post-author-avatar">
+                  <img src="https://avatars0.githubusercontent.com/u/1169550?v&#x3D;4" alt="Remi Hernandez">
+                </a>
+              <div class="post-author-info">
+                <a href="http://remi-hernandez.github.io" class="post-author-name">
+                  Remi Hernandez
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div class="sect3">
+<h4 id="_what_s_here">What&#8217;s here ?</h4>
+<div class="paragraph">
+<p>Here you will find some tips n tricks around C++.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ternary">Ternary</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">bool test = true;
+
+(test) ? std::cout &lt;&lt; "yes" : std::cout &lt;&lt; "no"; // will print yes</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_get_int_len_on_linux_and_windows">Get int* len on linux and windows</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+
+#ifdef linux
+#define array_size(x) malloc_usable_size(x)
+#endif
+
+#ifdef _WIN32
+#define array_size(x) _msize(x)
+#endif
+
+int main(int argc, char**argv)
+{
+    int         len;
+    int         *array = malloc(sizeof(int)*10);
+
+    len = array_size(array);
+    len = len / 4; 				// because array_size return size_t
+
+    printf("len : %d\n", len);
+    return(0);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_two_ways_to_iterate">Two ways to iterate</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">std::vector&lt;double&gt; latWayPoints;
+// fill vector
+
+for (std::vector&lt;double&gt;::iterator it = latWaypoints.begin(); it != latWaypoints.end(); ++it)
+    qDebug() &lt;&lt; "&gt;&gt; latWay : " &lt;&lt; *it;
+
+for (double lon: lonWaypoints)
+    qDebug() &lt;&lt; "&gt;&gt; latWay : " &lt;&lt; lon;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cpp_method_callable_from_qml">cpp method callable from qml</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">// .h
+Q_INVOKABLE void my_function();
+
+
+//.cpp
+void my_class::my_function()
+{
+  // do stuff
+}
+
+//.qml
+onMyEvent: {
+    item.my_function();
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cast">cast</h4>
+<div class="paragraph">
+<p>dynamic_cast pour les classes héritées surtout,
+static_cast pour les types de base,
+reinterpret_cast pour forcer un cast de n&#8217;importe quoi vers n&#8217;importe quoi
+et const_cast pour pouvoir passer des string en entrée à des vieilles fonctions C qui veulent des char*</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_concat_arrays_c_style_in_c">Concat arrays C style in C++</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">void concatArrays(unsigned char * &amp;src, int dstOffset, unsigned char * dst)
+{
+    int j = 0;
+    int i = 0;
+    int srcLen =  strlen(reinterpret_cast&lt;char *&gt;(src));
+    int dstLen =  strlen(reinterpret_cast&lt;char *&gt;(dst));
+    unsigned char * tmp = new unsigned char [srcLen + dstLen + 1];
+
+
+    for (i = 0; i &lt; srcLen; ++i)
+    {
+       tmp[i] = src[i];
+    }
+
+    i = dstOffset;
+
+    while (j &lt; dstLen &amp;&amp; i &lt; (srcLen + dstLen + 1))
+    {
+        tmp[i] = dst[j];
+        i++;
+        j++;
+    }
+
+    delete [] src;
+    src = tmp;
+}
+
+void test(unsigned char * buffer, unsigned char * append)
+{
+  std::cout &lt;&lt; "buffer : " &lt;&lt; buffer &lt;&lt; std::endl;
+  concatArrays(buffer, 4, append);
+  std::cout &lt;&lt; "buffer -&gt; : " &lt;&lt; buffer &lt;&lt; std::endl;
+}
+
+int main()
+{
+  char * buffer = new char [5];
+  char * append = new char [10];
+
+  strcpy(buffer, "tato");
+  strcpy(append, "chipolata");
+
+  test(reinterpret_cast&lt;unsigned char *&gt;(buffer), reinterpret_cast&lt;unsigned char *&gt;(append));
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pragma_and_warnings">Pragma and warnings</h4>
+<div class="paragraph">
+<p>You can use pragma to lower the warnings level at build time or to disable some kinds of warnings.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-cpp" data-lang="cpp">#pragma warning(push,0)
+// here include libs that you can't touch and you don't want build warnings from
+#include &lt;fstream&gt;
+#pragma warning(pop)
+
+// To disable the warnings "deprecated" for C functions like strcpy under windows
+
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#endif
+
+strcpy();
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif</code></pre>
+</div>
+</div>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="http://remi-hernandez.github.io" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars0.githubusercontent.com/u/1169550?v&#x3D;4" alt="Remi Hernandez">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="http://remi-hernandez.github.io" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Remi Hernandez</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                  <p class="post-author-location">Toulouse</p>
+                  <p class="post-author-website">
+                    <a href="http://remi-hernandez.github.io" rel="nofollow">http://remi-hernandez.github.io</a>
+                  </p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">October 30, 2016</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Pipou&#x27;s world</span>. 2017. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//remi-hernandez.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1504786630702"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86173845-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+  </body>
+</html>
