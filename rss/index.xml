@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 12 Sep 2017 09:12:42 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[A Vue.js CRUD project with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 12 Sep 2017 09:18:51 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[A Vue.js CRUD project with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>I enjoy working with Vue.js. It&#8217;s just a good SPA framework, it has everything I like about a javaScript framework. Today I created a sample project with Vue.js and ASP.NET Core MVC 2.0 that has all CRUD operations. I want to share the code here.</p>
@@ -14,7 +14,7 @@
 <div class="sect3">
 <h4 id="_getting_started">Getting started</h4>
 <div class="paragraph">
-<p>The project has two main parts. a Back-end which I used ASP.NET Core MVC 2.0 and front end which I used Vue.js 2.x . I started with the empry template and added features as I needed. For database I used SQLite and EntityFramework.</p>
+<p>The project has two main parts. a <strong>Back-end</strong> which I used ASP.NET Core MVC 2.0 and <strong>Front-end</strong> which I used Vue.js 2.x . I started with the emptey template and added features as I needed. For database I used SQLite and EntityFramework core.</p>
 </div>
 <div class="paragraph">
 <p>Bug.cs goes like this :</p>
@@ -255,6 +255,12 @@
         });
     &lt;/script&gt;</code></pre>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>Vue.js is an easy framework to learn. It is light weight and simple to use. No need for NPM or WebPack . you just add the min.js file and go with it. Most of the time that is all you need.</p>
 </div>
 </div>
 </div>]]></description><link>https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html</guid><category><![CDATA[Vue.js]]></category><category><![CDATA[ASP.NET]]></category><category><![CDATA[ASP.NET Core]]></category><category><![CDATA[CRUD]]></category><category><![CDATA[MVC]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Tue, 12 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
