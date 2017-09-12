@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>A Vue.js CRUD project with ASP.NET Core</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://codehaks.github.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//codehaks.github.io/themes/casper/assets/css/screen.css?v=1505207562663" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Codehaks" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="A Vue.js CRUD project with ASP.NET Core" />
+    <meta property="og:description" content="I enjoy working with Vue.js. It&amp;#8217;s just a good SPA framework, it has everything I like about a javaScript framework. Today I created a sample project with Vue.js and ASP.NET Core MVC 2.0 that has all CRUD operations. I want to share the code" />
+    <meta property="og:url" content="https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html" />
+    <meta property="article:published_time" content="2017-09-12T00:00:00.000Z" />
+    <meta property="article:tag" content="Vue.js" />
+    <meta property="article:tag" content="ASP.NET" />
+    <meta property="article:tag" content="ASP.NET Core" />
+    <meta property="article:tag" content="CRUD" />
+    <meta property="article:tag" content="MVC" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="A Vue.js CRUD project with ASP.NET Core" />
+    <meta name="twitter:description" content="I enjoy working with Vue.js. It&amp;#8217;s just a good SPA framework, it has everything I like about a javaScript framework. Today I created a sample project with Vue.js and ASP.NET Core MVC 2.0 that has all CRUD operations. I want to share the code" />
+    <meta name="twitter:url" content="https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Codehaks",
+    "author": {
+        "@type": "Person",
+        "name": "Hakim",
+        "image": "https://avatars2.githubusercontent.com/u/6712828?v=4",
+        "url": "https://codehaks.github.io/author/codehaks/",
+        "sameAs": "http://codehaks.github.io",
+        "description": "I&#x27;m a passion driven, seasoned web developer with over 8 years of\r\nexperience building websites of all complexity levels."
+    },
+    "headline": "A Vue.js CRUD project with ASP.NET Core",
+    "url": "https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html",
+    "datePublished": "2017-09-12T00:00:00.000Z",
+    "keywords": "Vue.js, ASP.NET, ASP.NET Core, CRUD, MVC",
+    "description": "I enjoy working with Vue.js. It&amp;#8217;s just a good SPA framework, it has everything I like about a javaScript framework. Today I created a sample project with Vue.js and ASP.NET Core MVC 2.0 that has all CRUD operations. I want to share the code"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Codehaks" href="https://codehaks.github.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template tag-Vuejs tag-ASPNET tag-ASPNET-Core tag-CRUD tag-MVC nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="blog-logo" href="https://codehaks.github.io"><img src="https://github.com/codehaks/codehaks.github.io/raw/master/images/logo01.jpg" alt="Codehaks" /></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-Vuejs tag-ASPNET tag-ASPNET-Core tag-CRUD tag-MVC">
+
+        <header class="post-header">
+            <h1 class="post-title">A Vue.js CRUD project with ASP.NET Core</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-09-12">12 September 2017</time>  on <a href="https://codehaks.github.io/tag/Vuejs/">Vue.js</a>, <a href="https://codehaks.github.io/tag/ASPNET/">ASP.NET</a>, <a href="https://codehaks.github.io/tag/ASPNET-Core/">ASP.NET Core</a>, <a href="https://codehaks.github.io/tag/CRUD/">CRUD</a>, <a href="https://codehaks.github.io/tag/MVC/">MVC</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I enjoy working with Vue.js. It&#8217;s just a good SPA framework, it has everything I like about a javaScript framework. Today I created a sample project with Vue.js and ASP.NET Core MVC 2.0 that has all CRUD operations. I want to share the code here.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_project_bugvue">Project BugVue</h4>
+<div class="paragraph">
+<p>This is a simple app for tracking bugs. You can Create, Read, Update and Delete the in UI and it all happends in the same view thanks to Vue.js and jQuery AJAX function.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_getting_started">Getting started</h4>
+<div class="paragraph">
+<p>The project has two main parts. a Back-end which I used ASP.NET Core MVC 2.0 and front end which I used Vue.js 2.x . I started with the empry template and added features as I needed. For database I used SQLite and EntityFramework.</p>
+</div>
+<div class="paragraph">
+<p>Bug.cs goes like this :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Bug
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_database">Database</h3>
+<div class="paragraph">
+<p>Then we need a DbContext object to create the database using EntityFramework.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class BugDb : DbContext
+    {
+        public BugDb(DbContextOptions options) : base(options)
+        {
+        }
+        public DbSet&lt;Bug&gt; Bugs { get; set; }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is a DbContextOptions injected into to constructor which is used for sending options to DbContext object without changing the class itself. later we add a DbContext as a service in startup.cs file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext&lt;BugDb&gt;(options =&gt; options.UseSqlite("DataSource=bug.db"));
+            services.AddMvc();
+        }
+        public void Configure(IApplicationBuilder app)
+        {
+            app.UseStaticFiles();
+            app.UseMvc(routes =&gt;
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I use <strong>options</strong> to pass SQlite and its connection string here. Then I added MVC service and used the middleware to setup the default routing.</p>
+</div>
+<div class="sect3">
+<h4 id="_web_api">Web API</h4>
+<div class="paragraph">
+<p>Now I have to add a controller to manage ajax calls. This is just a simple web api.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">public class BugController:Controller
+    {
+        private readonly BugDb _db;
+        public BugController(BugDb db)
+        {
+            _db = db;
+        }
+        [HttpGet]
+        [Route("/bug")]
+        public IActionResult Get()
+        {
+            var model = _db.Bugs;
+            return Ok(model);
+        }
+        [Route("/bug")]
+        [HttpPost]
+        public IActionResult Post(Bug model)
+        {
+            _db.Bugs.Add(model);
+            _db.SaveChanges();
+            return Ok(model);
+        }
+        [Route("/bug")]
+        [HttpPut]
+        public IActionResult Put(Bug model)
+        {
+            var bug = _db.Bugs.Find(model.Id);
+            bug.Name = model.Name;
+            bug.Description = model.Description;
+            _db.SaveChanges();
+            return Ok(model);
+        }
+        [Route("/bug")]
+        [HttpDelete]
+        public IActionResult Delete(Bug model)
+        {
+            var bug = _db.Bugs.Find(model.Id);
+            _db.Bugs.Remove(bug);
+            _db.SaveChanges();
+            return Ok(model);
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see there is GET,POST,PUT,DELETE methods withe the same routing. There is no validation, I skipped that part due to simplicity.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_interface">User Interface</h4>
+<div class="paragraph">
+<p>The UI is just a simple Table with some buttons. I also used bootstrap modals for creating and editing forms.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;div id="app"&gt;
+    &lt;button class="btn btn-primary" v-on:click="showNewBugModal"&gt; Add new bug ... &lt;/button&gt;
+    &lt;table class="table"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;#&lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Description&lt;/th&gt;
+                &lt;th&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr v-for="(bug,index) in bugs"&gt;
+                &lt;td&gt;{{index+1}}&lt;/td&gt;
+                &lt;td&gt;{{bug.name}}&lt;/td&gt;
+                &lt;td&gt;{{bug.description}}&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;button class="btn btn-danger" v-on:click="removeBug(bug,index)"&gt;Remove&lt;/button&gt;
+                    &lt;button class="btn btn-default" v-on:click="showEditModal(bug,index)"&gt;Edit&lt;/button&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_client_side_with_vue_js">Client-Side with Vue.js</h4>
+<div class="paragraph">
+<p>Last but not least, there is a vue object which is used as a ViewModel to manage the UI and events. The two-way binding works simple and easy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">&lt;script&gt;
+        var app = new Vue({
+            el: "#app",
+            data: {
+                bugs: [],
+                name: "",
+                description: "",
+                bugId: null,
+                bugIndex: null
+            },
+            created: function () {
+                this.getBugs();
+            },
+            methods: {
+                showEditModal: function (bug, index) {
+                    this.bugId = bug.id;
+                    this.bugIndex = index;
+                    this.name = bug.name;
+                    this.description = bug.description;
+                    $("#editBugModal").modal("show");
+                },
+                editBug: function () {
+                    var vm = this;
+                    var newBug = {
+                        id: vm.bugId,
+                        name: vm.name,
+                        description:vm.description
+                    }
+                    $.ajax({ url: "/bug", data: newBug, method: "PUT" })
+                        .done(function () {
+                            vm.bugs[vm.bugIndex].name = vm.name;
+                            vm.bugs[vm.bugIndex].description = vm.description;
+                            toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        }).always(function () {
+                            vm.name = "";
+                            vm.description = "";
+                            $("#editBugModal").modal("hide");
+                        });
+                },
+                removeBug: function (bug,index) {
+                    var vm = this;
+                    $.ajax({ url: "/bug", data: bug, method: "DELETE" })
+                        .done(function (data) {
+                            vm.bugs.splice(index, 1);
+                            toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        });
+                },
+                showNewBugModal: function () {
+                    $("#addNewBugModal").modal("show");
+                },
+                addBugs: function () {
+                    var vm = this;
+                    var newBug = {
+                        name: vm.name,
+                        description: vm.description
+                    }
+                    $.ajax({ url: "/bug", data: newBug, method: "POST" })
+                        .done(function (data) {
+                            vm.bugs.splice(0, 0, newBug);
+                            toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        }).always(function () {
+                            vm.name = "";
+                            vm.description = "";
+                            $("#addNewBugModal").modal("hide");
+                        });
+                },
+                getBugs: function () {
+                    var vm = this;
+                    $.ajax({ url: "/bug", method: "GET" })
+                        .done(function (data) {
+                            vm.bugs = data;
+                            //toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        });
+                }
+            }
+        });
+    &lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://codehaks.github.io/author/codehaks/" style="background-image: url(https://avatars2.githubusercontent.com/u/6712828?v&#x3D;4)"><span class="hidden">Hakim's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://codehaks.github.io/author/codehaks/">Hakim</a></h4>
+
+                    <p>I&#x27;m a passion driven, seasoned web developer with over 8 years of
+experience building websites of all complexity levels.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Gorgan,Iran</span>
+                    <span class="author-link icon-link"><a href="http://codehaks.github.io">http://codehaks.github.io</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=A%20Vue.js%20CRUD%20project%20with%20ASP.NET%20Core&amp;url=https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'codehaks'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://codehaks.github.io">Codehaks</a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1505207562663"></script>
+    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/index.js?v=1505207562663"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105746611-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
