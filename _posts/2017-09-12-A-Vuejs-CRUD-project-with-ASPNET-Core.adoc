@@ -7,7 +7,7 @@ I enjoy working with Vue.js. It's just a good SPA framework, it has everything I
 This is a simple app for tracking bugs. You can Create, Read, Update and Delete the in UI and it all happends in the same view thanks to Vue.js and jQuery AJAX function.
 
 ==== Getting started
-The project has two main parts. a Back-end which I used ASP.NET Core MVC 2.0 and front end which I used Vue.js 2.x . I started with the empry template and added features as I needed. For database I used SQLite and EntityFramework.
+The project has two main parts. a **Back-end** which I used ASP.NET Core MVC 2.0 and **Front-end** which I used Vue.js 2.x . I started with the emptey template and added features as I needed. For database I used SQLite and EntityFramework core.
 
 Bug.cs goes like this : 
 [source,C#]
@@ -220,3 +220,6 @@ Last but not least, there is a vue object which is used as a ViewModel to manage
             }
         });
     </script>
+
+==== Conclusion
+Vue.js is an easy framework to learn. It is light weight and simple to use. No need for NPM or WebPack . you just add the min.js file and go with it. Most of the time that is all you need.
