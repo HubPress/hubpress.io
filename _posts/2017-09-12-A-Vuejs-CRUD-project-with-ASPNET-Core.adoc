@@ -1,0 +1,7 @@
+= A Vue.js CRUD project with ASP.NET Core
+:hp-tags: Vue.js, ASP.NET, ASP.NET Core, CRUD, MVC
+
+I enjoy working with Vue.js. It's just a good SPA framework, it has everything I like about a javaScript framework. Today I created a sample project with Vue.js and ASP.NET Core MVC 2.0 that has all CRUD operations. I want to share the code here.
+
+==== Getting started
+The project has two main parts. a Back-end which I used ASP.NET Core MVC 2.0 and front end which I used Vue.js 2.x . I started with the empry template and added features as I needed. 
