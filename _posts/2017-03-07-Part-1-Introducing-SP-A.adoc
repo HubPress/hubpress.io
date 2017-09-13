@@ -18,7 +18,7 @@ https://stackoverflow.com/questions/18327314/how-to-allow-http-content-within-an
 <iframe src="index.html?url=//txemis.github.io/about"></iframe>
 
 ++++
-<iframe src="index.html?url=//txemis.github.io/about"></iframe>
+<iframe src="//txemis.github.io/about/index.html"></iframe>
 ++++
 
 
