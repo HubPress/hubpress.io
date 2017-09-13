@@ -21,6 +21,15 @@ https://stackoverflow.com/questions/18327314/how-to-allow-http-content-within-an
 <iframe src="index.html?url=//txemis.github.io/about"></iframe>
 ++++
 
+
+
+++++
+<iframe  style="border: 0; width: 350px; height: 470px;" src="index.html?url=//txemis.github.io/about"></iframe>
+
+++++
+
+{empty}
+
 ++++
 <iframe style="border: 0; width: 350px; height: 470px;" src="//bandcamp.com/EmbeddedPlayer/album=2869458964/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://mocamborecords.bandcamp.com/album/showdown">SHOWDOWN by THE MIGHTY MOCAMBOS</a></iframe>
 ++++
