@@ -1,4 +1,4 @@
-= Part 1. Introducing SPAs
+= Part 0. Introducing SPAs
 
 == Mi spa:
 
