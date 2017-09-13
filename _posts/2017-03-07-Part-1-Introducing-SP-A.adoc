@@ -1,5 +1,25 @@
 = Part 1. Introducing SPAs
 
+== Mi spa:
+
+:hp-tags: test
+
+https://txemis.github.io/spa/spa.html[spa]
+
+{empty}
+
+++++
+<iframe style="border: 0; width: 350px; height: 470px;" src="//bandcamp.com/EmbeddedPlayer/album=2869458964/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://mocamborecords.bandcamp.com/album/showdown">SHOWDOWN by THE MIGHTY MOCAMBOS</a></iframe>
+++++
+
+{empty}
+
+
+++++
+<iframe style="border: 1; width: 350px; height: 470px </iframe>
+
+++++
+
 ++++
 
 <html>
