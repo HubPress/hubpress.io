@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 15 Sep 2017 09:34:44 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Error handling with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 15 Sep 2017 09:36:34 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Error handling with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Error handling is real and it&#8217;s serious. In ASP.NET Core it&#8217;s much more easier to handle errors. in this post I&#8217;m digging into error handling and trying to get some errors !</p>
@@ -52,6 +52,12 @@
 </div>
 <div class="paragraph">
 <p>As you see I used <strong>UseDeveloperExceptionPage</strong> and <strong>UseExceptionHandler</strong> in the same code flow, so user only gets redirected to error page and no error details would be visible to anyone.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_details">Error details</h4>
+<div class="paragraph">
+<p>To show detailed error page we can remove or comment out the <strong>UseExceptionHandler</strong> middleware.</p>
 </div>
 </div>]]></description><link>https://codehaks.github.io/2017/09/15/Error-handling-with-ASPNET-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/15/Error-handling-with-ASPNET-Core.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[ASP.NET Core]]></category><category><![CDATA[Error handling]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Fri, 15 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[A Vue.js CRUD project with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
