@@ -51,6 +51,9 @@ To show detailed error page we can remove or comment out the **UseExceptionHandl
 ==== Throwsing excpetion
 To test the excpetion handler I created an In-line middleware with **app.Use()** method.Now When users sends request to "/throw" url gets an error with detailed information. 
 
+
+To redirect user to error page we need to replace **UseDeveloperExceptionPage** with **UseExceptionHandler** . then we can see **/error** gets written into the response.
+
 ==== Conclusion
 There is much into error handling in ASP.NET Core. The real use of error handling is in MVC projects where there is a lot more code. 
 
