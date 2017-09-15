@@ -48,3 +48,8 @@ To show detailed error page we can remove or comment out the **UseExceptionHandl
 [source,C#]
 //app.UseExceptionHandler("/error");
 
+==== Conclusion
+There is much into error handling in ASP.NET Core. The real use of error handling is in MVC projects where there is a lot more code. 
+
+
+
