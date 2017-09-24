@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 30 Jul 2017 17:09:45 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Renewing CERTBOT certificates painlessly]]></title><description><![CDATA[<div class="sect1">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[The Fallen Apples]]></title><description><![CDATA[Manel Villar weblog, mostly stuff about programming and computers. Please don't expect too much.]]></description><link>https://manelvf.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 Sep 2017 11:48:41 GMT</lastBuildDate><atom:link href="https://manelvf.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Raspberry Pi wireless access point - an approach]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_the_need">The need</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many cases it&#8217;s advisable to create a point-of-access using a PI, with or without connection to an external network. The case for a access point with a connection to an external network (usually with internet access) is comparable to use a Pi as a router and I am not going to cover it here. I&#8217;ll focus on a point-of-access that can be used as a web server or any other kind of network service provider (FTP, email, etc&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>I used the following setup in latest Makers Faire, but I cannot advise you to use a wireless point-of-access in those kind of events. There are many sources of interference and the experience can be really bad, as our signal blocks other nearby signal, specially the always beloved organization wifi with internet access. I think this setup is more useful for small events and places without wireless internet connection.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_pis">The PIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For my setup, I used a <strong>Pi3</strong>, as it&#8217;s convenient thanks to the included embedded wifi. It&#8217;s possible to use any other Pi with a wireless network adapter, as the resource usage is really small.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dependencies">Dependencies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this tutorial, I&#8217;ll use <strong>Raspbian</strong>, and two packages are needed for this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo apt-get install dnsmasq udhcpd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>dnsmasq</code> will manage DNS, so we can assign domains at random (yes, this could be used for phising for malicious people using fake internet hot-spots).</p>
+</div>
+<div class="paragraph">
+<p><code>udhcpd</code> will assign IP addresses to the clients that connect to our servers. There are tutorial that recommend other packages, but this worked well for me.</p>
+</div>
+<div class="paragraph">
+<p>Now let&#8217;s see how we can put all this stuff together.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup_your_network">Setup your network</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_interfaces">Interfaces</h3>
+<div class="paragraph">
+<p>First step, in order to make the network interface works in it&#8217;s own network, we add these lines to the <code>/etc/network/interfaces</code> file.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet static
+  address 192.168.42.1
+  netmask 255.255.255.0
+  network 192.168.42.0
+  broadcast 192.168.1.255</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that the address 192.168.42&#8230;&#8203; is arbitrary. It could be any other as long as it doesn&#8217;t conflict with any other existing network interface, i.e., 192.168.1.XXX. Notice also that interface line should be configured as <code>static</code>, even  Debian docs suggest that <code>dhcp</code> should be used. In this setup, the <code>udhcp</code> daemon will take care of that assignation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dnsmasq">DNSmasq</h3>
+<div class="paragraph">
+<p>Adding these lines at the end of <code>/etc/dnsmasq/dnsmasq.conf</code> will connect any domain</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>interface=wlan0
+bind-dynamic
+dhcp-range=192.168.42.1,192.168.42.254,255.255.255.0,24h
+dhcp-option=option:router,192.168.42.1
+# no-hosts</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>address=/#/192.168.42.1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_udhcp">UDHCP</h3>
+<div class="paragraph">
+<p>In <code>etc/udhcpd/udhcpd.conf</code>, modify the default assignation ranges, and attach the wireless interface to the deamon:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># The start and end of the IP lease block</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>start		192.168.42.20	#default: 192.168.0.20
+end		192.168.42.254	#default: 192.168.0.254</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># The interface that udhcpd will use</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>interface wlan0</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_daemon_startup">Daemon startup</h3>
+<div class="paragraph">
+<p>It might happen that these daemons are authomatically started after installing the packages. Then you can check status using <code>systemctl</code>, i.e:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo systemctl status dnsmasq</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And start or stop them at will:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo systemctl start udhcpd</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_server_application">Server application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now, if everything goes smooth, all requests from the clients that connect to our access point newwork will point to our server. The easiest way to test it, it&#8217;s to install an existing web server, like <code>nginx</code>, that serves a very simple default static HTML webpage. It&#8217;s also possible to run a basic python server. For the Maker&#8217;s Faire, I used a combination of both worlds: a python script that was executed periodically using a cron task.</p>
+</div>
+<div class="paragraph">
+<p>The script check the temperature and humidity from a Pimoroni Hat sensors and wrote static files that were served using <code>nginx</code>. More complex setups, like a custom web server, are also possible, of course, but are out of the scope of this document. Maybe that will be material for more tutorials.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one. Make use of this not as a full reference but as a starting point if you like. And please don&#8217;t doubt in reporting possible mistakes or omissions ;)</p>
+</div>
+<div class="paragraph">
+<p><strong>Bonus</strong>: you can check the repo with source files in <a href="https://github.com/manelvf/access_point" class="bare">https://github.com/manelvf/access_point</a></p>
+</div>
+</div>
+</div>]]></description><link>https://manelvf.github.io/blog/2017/07/30/Raspberry-Pi-wireless-access-point-an-approach.html</link><guid isPermaLink="true">https://manelvf.github.io/blog/2017/07/30/Raspberry-Pi-wireless-access-point-an-approach.html</guid><dc:creator><![CDATA[Manel Vilar]]></dc:creator><pubDate>Sun, 30 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Renewing CERTBOT certificates painlessly]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_what_is_certbot">What is "certbot"?</h2>
 <div class="sectionbody">
 <div class="paragraph">
