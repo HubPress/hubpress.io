@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Making an internet radio with a Banana Pi and cheaper components</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//manelvf.github.io/blog/themes/saga/assets/css/style.css?v=1485462062185" rel="stylesheet" type="text/css">
+    <link href="//manelvf.github.io/blog/themes/saga/assets/css/animate.min.css?v=1485462062185" rel="stylesheet" type="text/css">
+    <link href="https://manelvf.github.io/blog/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="The Fallen Apples" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Making an internet radio with a Banana Pi and cheaper components" />
+    <meta property="og:description" content="This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information. Yes, I&amp;#8217;m a proud" />
+    <meta property="og:url" content="https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Making an internet radio with a Banana Pi and cheaper components" />
+    <meta name="twitter:description" content="This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information. Yes, I&amp;#8217;m a proud" />
+    <meta name="twitter:url" content="https://manelvf.github.io/blog/2015/11/11/Making-an-internet-radio-with-a-Banana-Pi-and-cheaper-components.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="The Fallen Apples" href="https://manelvf.github.io/blog/rss/" />
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://manelvf.github.io/blog">The Fallen Apples</a>
+        <span class="blog-description">Manel Villar weblog, mostly stuff about programming and computers. Please don&#x27;t expect too much.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Making an internet radio with a Banana Pi and cheaper components</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1447196400" datetime="2015-11-11T00:00" title="11 November 2015">a year ago</time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://manelvf.github.io/blog/author/manelvf/">Manel Villar</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information.</p>
+</div>
+<div class="paragraph">
+<p>Yes, I&#8217;m a proud owner of Banana PI, which is the chinese version of the Raspberry Pi. I also own two Raspeberry Pis, models B and 2B, so no discrimination for having a different origin in this case. Bananas are based on Android hardware, with the AllWinner processors at this heart, A20 in the case of the Banana Pi.</p>
+</div>
+<div class="paragraph">
+<p>Despite the specifications are usually superior to the Raspberries, lack of community and open documentation makes the Bananas to have less use cases. Things are changing a bit as at <a href="http://www.lemaker.org">LeMaker</a> they are doing a lot of effort in changing that matter. It&#8217;s going to take long until they improve the size and awesomeness of the Raspi community, anyway.</p>
+</div>
+<div class="paragraph">
+<p>One of these efforts is the creation of a Linux distribution, an equivalent to the original Raspian, called <strong>Bananian</strong>. For these guide I use that distribution, but it&#8217;s possible to use any other . Notice that Bananian has superuser as default user (sudo), so for all the commands a superuser is assumed.</p>
+</div>
+<div class="paragraph">
+<p>The main reason I used the Banana instead one of my Raspies is that sound quality is not so bad compared to the latter ones. A way to overcome that is to use some kind of <a href="https://www.hifiberry.com/digiplus/">Digital to Analog Converter (DAC)</a>. But for a discrete radio quality, we can use the default analog output.</p>
+</div>
+<div class="paragraph">
+<p>After reading a bunch of blog posts, using a USB sound card is discouraged as there are lot of latency issues. But you are free to try :)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ingredients">Ingredients</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Banana Pi or Banana Pi Pro.</p>
+</li>
+<li>
+<p>Cheap PC speakers with analog audio entry. Better powered by USB. The cheaper the better (just kidding).</p>
+</li>
+<li>
+<p>SD Card. Usually &gt; 4 Gb.</p>
+</li>
+<li>
+<p>Wifi dongle. Smaller is better, but has to work with your Banana. Notice that most of the time the only way to tell if an usb wifi dongle will work with your Banana is to buy from a trusted shop or simply buy it yourself.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_steps">Steps</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setup the <a href="http://wiki.lemaker.org/BananaPro/Pi:WiFi_configuration">wifi</a>. You can use also an ethernet connection, but it&#8217;s less fun.</p>
+</li>
+<li>
+<p><a href="https://www.mopidy.com/">Mopidy</a> is a versatile frontend for the MDP (Music Player Daemon). For installing it: <a href="https://docs.mopidy.com/en/latest/installation/debian/" class="bare">https://docs.mopidy.com/en/latest/installation/debian/</a> The same guide allows to install it in almost any other major linux distro.</p>
+<div class="paragraph">
+<p>We need mopidy mostly for the provider plugins. The one I use more is TuneIn, but there are plugins for Spotify, SoundCloud&#8230;&#8203; It&#8217;s possible to save songs in the SD card or in a hard disk connected by SATA or USB.</p>
+</div>
+<div class="paragraph">
+<p>You can check that it&#8217;s correctly installed <code>mopidy</code> from command-line. Mopidy tries to start the MPD, so if it has already started, it will show an error. Not a problem.</p>
+</div>
+</li>
+<li>
+<p>We need to install a web frontend, as we want to access our radio from remote. I.e. from a mobile phone. The one I use is Mopidy-MusicBox-Webclient, but you can have a look to a lot of them in this <a href="http://mopidy.readthedocs.org/en/latest/ext/web/">list</a>.</p>
+</li>
+<li>
+<p>(Optional) As we need to test the sound, installing the alsa tools and execute the alsamixer utility can be interesting. Simply check that there are two sound cards: analog output and HDMI.</p>
+<div class="paragraph">
+<p><code>apt-get install alsa-tools</code></p>
+</div>
+<div class="paragraph">
+<p><code>alsamixer</code></p>
+</div>
+</li>
+<li>
+<p>As a default, HDMI sound output is enabled, so we have to toggle it for enabling the analog modifying the ALSA sound configuration file, <strong>/etc/asound.conf</strong> (<a href="http://forum.lemaker.org/thread-213-1-1-.html">source</a>).</p>
+<div class="listingblock">
+<div class="content">
+<pre>pcm.!default {
+    type hw
+    card 0
+    device 0
+}
+
+ctl.!default {
+    type hw
+    card 0
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we can test the sound:</p>
+</div>
+<div class="paragraph">
+<p><code>speaker-test -twav -c2</code></p>
+</div>
+<div class="paragraph">
+<p>And if the speakers are properly connected, you should hear a nice sound from them. No, it&#8217;s not Britney Spears.</p>
+</div>
+</li>
+<li>
+<p>We need to <a href="https://docs.mopidy.com/en/develop/debian/#running-as-a-system-service-by-default">run it as a service</a> in order to have it running when the Banana boots.</p>
+</li>
+<li>
+<p>Banana PI has a network alias called "bananapi". So you could use a reverse proxy like Nginx to easily access the web interface. Unfortunately, IE disables WebSockets when a webpage is accessed from a local alias network. That disables the frontend. A quickfix is to use the IP address. You can use a Nokia screen to show the IP addresss (I know, that&#8217;s for another tutorial) or simply access from another computer and get the IP. If you don&#8217;t mess too much with your network and don&#8217;t reboot too often, chances are that you are going to get the same IP a lot of times.</p>
+<div class="paragraph">
+<p>If you want to access the web interface from a different host (and usually that&#8217;s the use case) you need to make the web server to broadcast the signal to the other devices in same network. For that we modify hostname entry in the configuration file in <strong>/etc/mopidy/mopidy.conf</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[http]
+hostname = 0.0.0.0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There&#8217;s another configuration stored in a local folder, but it&#8217;s not used when we run mopidy as a sevice (previous step).</p>
+</div>
+<div class="paragraph">
+<p>So you now can safely access your brandly new internet radio visiting the url: <strong>http://&lt;Banana Pi IP&gt;:6680</strong></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There quite a few small things for building a system like this. It&#8217;s not too complex, but sometimes requires some patience as the information is dispersed in different blog and forum posts.</p>
+</div>
+<div class="paragraph">
+<p>So, feel free to use this as a reference, but also try different stuff and new configurations. Enjoy the music!</p>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'manelvfgithubio'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">The Fallen Apples</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//manelvf.github.io/blog/themes/saga/assets/js/scripts.js?v=1485462062185"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34164255-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

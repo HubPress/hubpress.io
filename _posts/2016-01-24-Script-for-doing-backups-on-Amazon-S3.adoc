@@ -1,0 +1,45 @@
+= Script for doing backups on Amazon S3
+
+== Why?
+
+Everybody needs backups, and if you manage web servers, you *really* need them. Information is the new gold and it needs to be stored in a safe place. There are many places where you can do online backups, but S3 is one of the best, and it's extremely cheap, a few cents per gigabyte by month. It also offers many possibilities for customization. And, as everybody is using it, you can find a lot of information on the net, but at the end you need to taylor it to your needs. 
+
+In this post, I'm going to describe the method I use for doing backups of the important information in my servers. It could be a database dump, a configuration file or even some photographies, anything but code. Version control is for code.
+
+Requisites: before reading this you should be a bit familiarized with the way Amazon S3 works.
+
+== How
+
+=== The Script
+
+I chose python because is what I'm most confortable with, but there are ports of the SDK library for many other programming languages, as usual. It seems that even the official Amazon CLI uses also python. You can even use http(s) requests, but they are a bit complex, as there is a lot . So it's good to use a library.
+
+The library http://boto.cloudhackers.com/en/latest/[Boto] is by far the most complete in Python. It's not official, but everybody uses it. There's also a convenient https://github.com/smore-inc/tinys3[TinyS3], but I chose the former one as it offers more possibilities that could be needed in the future.
+
+AWS credentials are stored as a default in a configuration file in the home folder. Current criteria is to use ~/.aws/credentials, but as always when there is a security concern, there are many approaches to keep them safe. But, as the access to your host should be  
+
+=== AWS console configuration
+
+Amazon gives you a lot of possibilities, but for backups I simply added one rule to the backups bucket in the "Lifecycle" settings: delete after 30 days. As I'm going to do a daily backup, 30 files should be enough. 
+
+I also opted for *Reduced Redundancy Storage* aka RRS, as the data is not extremely important. Should not be a problem as there is a 99,99% chance, instead of the usual 99,9999999% of retrieving it safely ;)
+
+
+== Troubles in our way
+
+The same script was used in two different servers, and didn't work in one of them. Can be quite frustrating when that happens, so you start thinking "what can be different from one server to the other?". 
+
+In this case, the error code was not very helpful: *104* when doing a *set_contents_by_filename* call. The first "bad smell" was that it is a connection error code, but not in the connection method, but in the upload method, after performing the connection. Some googling around the error showed a collection of issues, mostly fixed and incorporated to the library code at some point. No real solutions. What could it be?
+
+After discarding everything else (server blocking https port, different library versions, wrong credentials or urls...), I opted for printing the bucket location, only for checking it. And I found the surprise: It gently complained that there was a discrepancy between the server time and the AWS time, big enough to block the request. As simply as that, your server needs to have *correct date and time* in order to sync with S3.
+
+== Conclusion
+
+S3 is a safe and easy way of doing online backups. Don't be intimidated as I was when approaching it. Use it wisely and you will have a very cheap backup for all those cat photos that you carefully were collecting all these years.
+
+== PostMortem
+
+A few tips after deploying the script in some production servers:
+
+* As an alternative to the GUID, it's possible to use the day of the month or the year, or even a UNIX timestamp.
+* For very basic tasks it's also possible to use the S3 command line uploader, but as soon you want to perform some additional tasks, the script is very handy, at least for a Python developer ;D

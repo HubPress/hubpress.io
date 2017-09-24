@@ -1,0 +1,81 @@
+= Making an internet radio with a Banana Pi and cheaper components 
+
+This guide pretends to list all the steps I used to create a radio able to play different internet radio stations. Most of the work here is borrowed from different sources, this guide is simply a step-by-step compilation with links to the original information.
+
+Yes, I'm a proud owner of Banana PI, which is the chinese version of the Raspberry Pi. I also own two Raspeberry Pis, models B and 2B, so no discrimination for having a different origin in this case. Bananas are based on Android hardware, with the AllWinner processors at this heart, A20 in the case of the Banana Pi.
+
+Despite the specifications are usually superior to the Raspberries, lack of community and open documentation makes the Bananas to have less use cases. Things are changing a bit as at http://www.lemaker.org[LeMaker] they are doing a lot of effort in changing that matter. It's going to take long until they improve the size and awesomeness of the Raspi community, anyway.
+
+One of these efforts is the creation of a Linux distribution, an equivalent to the original Raspian, called *Bananian*. For these guide I use that distribution, but it's possible to use any other . Notice that Bananian has superuser as default user (sudo), so for all the commands a superuser is assumed.
+
+The main reason I used the Banana instead one of my Raspies is that sound quality is not so bad compared to the latter ones. A way to overcome that is to use some kind of https://www.hifiberry.com/digiplus/[Digital to Analog Converter (DAC)]. But for a discrete radio quality, we can use the default analog output.
+
+After reading a bunch of blog posts, using a USB sound card is discouraged as there are lot of latency issues. But you are free to try :)
+
+== Ingredients
+
+- Banana Pi or Banana Pi Pro.
+- Cheap PC speakers with analog audio entry. Better powered by USB. The cheaper the better (just kidding).
+- SD Card. Usually > 4 Gb.
+- Wifi dongle. Smaller is better, but has to work with your Banana. Notice that most of the time the only way to tell if an usb wifi dongle will work with your Banana is to buy from a trusted shop or simply buy it yourself.
+
+== Steps
+
+1. Setup the http://wiki.lemaker.org/BananaPro/Pi:WiFi_configuration[wifi]. You can use also an ethernet connection, but it's less fun. 
+
+2. https://www.mopidy.com/[Mopidy] is a versatile frontend for the MDP (Music Player Daemon). For installing it: https://docs.mopidy.com/en/latest/installation/debian/ The same guide allows to install it in almost any other major linux distro.
++
+We need mopidy mostly for the provider plugins. The one I use more is TuneIn, but there are plugins for Spotify, SoundCloud... It's possible to save songs in the SD card or in a hard disk connected by SATA or USB. 
++
+You can check that it's correctly installed `mopidy` from command-line. Mopidy tries to start the MPD, so if it has already started, it will show an error. Not a problem.
+
+3. We need to install a web frontend, as we want to access our radio from remote. I.e. from a mobile phone. The one I use is Mopidy-MusicBox-Webclient, but you can have a look to a lot of them in this http://mopidy.readthedocs.org/en/latest/ext/web/[list].
+
+4. (Optional) As we need to test the sound, installing the alsa tools and execute the alsamixer utility can be interesting. Simply check that there are two sound cards: analog output and HDMI. 
++
+`apt-get install alsa-tools`
++
+`alsamixer`
+
+5. As a default, HDMI sound output is enabled, so we have to toggle it for enabling the analog modifying the ALSA sound configuration file, */etc/asound.conf* (http://forum.lemaker.org/thread-213-1-1-.html[source]).
++
+----
+pcm.!default {
+    type hw
+    card 0
+    device 0
+}
+
+ctl.!default {
+    type hw
+    card 0
+}
+----
++
+Then we can test the sound:
++
+`speaker-test -twav -c2`
++
+And if the speakers are properly connected, you should hear a nice sound from them. No, it's not Britney Spears.
+
+6. We need to https://docs.mopidy.com/en/develop/debian/#running-as-a-system-service-by-default[run it as a service] in order to have it running when the Banana boots.
+
+7. Banana PI has a network alias called "bananapi". So you could use a reverse proxy like Nginx to easily access the web interface. Unfortunately, IE disables WebSockets when a webpage is accessed from a local alias network. That disables the frontend. A quickfix is to use the IP address. You can use a Nokia screen to show the IP addresss (I know, that's for another tutorial) or simply access from another computer and get the IP. If you don't mess too much with your network and don't reboot too often, chances are that you are going to get the same IP a lot of times.
++
+If you want to access the web interface from a different host (and usually that's the use case) you need to make the web server to broadcast the signal to the other devices in same network. For that we modify hostname entry in the configuration file in */etc/mopidy/mopidy.conf*.
++
+----
+[http]
+hostname = 0.0.0.0
+----
++
+There's another configuration stored in a local folder, but it's not used when we run mopidy as a sevice (previous step).
++
+So you now can safely access your brandly new internet radio visiting the url: *\http://<Banana Pi IP>:6680*
+
+
+== Conclusion
+
+There quite a few small things for building a system like this. It's not too complex, but sometimes requires some patience as the information is dispersed in different blog and forum posts.
+
+So, feel free to use this as a reference, but also try different stuff and new configurations. Enjoy the music!

@@ -1,0 +1,22 @@
+= PHP and trailing slashes on URLs
+
+
+This is one those things that can make you lose a few minutes (hours? ;p) if you are not a bit careful. It happened to me recently in an old Apache installation, but it could happen also in a more modern installation using NGINX or any other webserver. Let's start with the setup.
+
+In a common PHP deployment, there are different layers of server code for handling URLs footnote:[There can be also some url handling on the client side, but I'm going to skip that for simplicity]: 
+
+* Apache configuration file for the host.
+* .htaccess.
+* PHP code.
+
+And as we have different layers, there can be conflicts between them, and guess... unexpected side effects.
+
+Let's put an example:
+
+For the url http://example.com/list?user=manel (don't follow it, it's an example)
+
+The *list* part of the url in this example is masking a *list.php* file (it could be another filename, it's indifferent). 
+
+I was checking the URL parameters using the usual *$_GET* and *$_REQUEST* PHP arrays and the result were *empty arrays*. So, what happened? The *.htaccess rule removed those parameters* when the URL was called without a trailing slash. Unfortunately, the php script was executed anyway when invoked without it.   
+
+Calling http://example.com/list/?user=manel with the trailing slash after the 'list' text fixes the problem. Not a serious inconvenient but it's something that can be a bit annoying sometimes.

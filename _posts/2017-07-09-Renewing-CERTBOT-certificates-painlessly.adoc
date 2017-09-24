@@ -1,0 +1,44 @@
+= Renewing CERTBOT certificates painlessly
+
+== What is "certbot"?
+
+https://certbot.eff.org/[Certbot], previously known as _Let's Encrypt_, is a community based effort for developing a service capable to provide secure certificates for everybody in the web. It's both a combination of a software that it's possible to install in a web server machine and a certificate provider service.
+
+=== Why should I use it?
+
+Web is moving towards secure websites, that respect the privacy of the users and avoid forgeries. Let's say it's a response to the more complex and unsafe web that we have nowadays. Also, keep in mind that aggregators (like _G**gle_) are starting to punish websites that don't use secure certificates.
+
+To use SSL certificates (actually TLS) used to be a problem as the documentation was hard to find and every certificate provider had its own. Not to mention you had to pay for them. That's not true anymore, luckily.
+
+== Gotchas
+
+But, as usual, not there's no _perfect_ system. There are a few minor gotchas, nothing really important, but...
+
+=== Creation and renewal
+
+In order to create and renew a certificate, our server has to connect to the certbot web server service in a secure way, so it can check that we are the "owners" of the domain we want to secure  with a certificate. There are a few methods available for that. Shortly, these two are the ones I have used until now:
+
+- *webroot*. In this case, a static file served in a folder will help to authenticate the domain in the remote certbot service. Unfortunately, it's not possible to do so in all server configurations.
+- *standalone*. Using this method, a temporal webserver replaces. It's possible. I use this method when dealing with apps served from containers, where the configuration for serving static files is not straight-forward.
+
+----
+/usr/bin/certbot renew --authenticator standalone --pre-hook "service nginx stop" --post-hook "service nginx start" > certbot.log
+----
+
+The hooks *disable and reenable* the nginx server during the renewal process, as the standalone server started by certbot needs to replace our app server. A *cron job* calls that line every single day in the middle of the night, so it shouldn't be a problem as very few users should be using the service in the middle of the night. Also the outage is minimal in some cases if the certificate is too recent, there will no need for renewing it. 
+
+Not a perfect solution, but works perfectly well for community websites and it's not a serious deal even for more "professional" websites. There are other ways of dealing with this renewal without suspending the service, but they require more work, and I don't think they are worth for *small traffic* websites. 
+
+=== Rate Limit
+
+One more problem I recently suffer is that *certbot* uses https://publicsuffix.org/list/public_suffix_list.dat[custom list of domain names] for assigning rate limits, currently no more 20 renewals per week per domain, which caused that renewing a couple .GAL (Galician domains) I manage, failed when tried to renew them for not being in that list. In those cases, every renewal of a domain in an unlisted TLD makes it count as it was a single domain, and triggers the Rate Limit exception, forbidding it to renew. Hopefully that will be fixed soon.
+
+== Conclusion
+
+I didn't pretend to do an exhaustive post about Certbot, only do a little introduction and document some issues I had when using it. 
+
+You will not believe how much I love *Certbot*. Before that, used to be a big pain to deal with certificates on websites. Certbot not provides them for free (also as in beer), but also provides a very well documented toolchain and documentation on how to use it and the reasons behing its design decissions. So, don't hesitate and use it! You will not regret.
+
+== Bonus
+
+*Wildcard certificates* will be available soon. One more reason for migrating to certbot!

@@ -1,0 +1,88 @@
+= Raspberry Pi wireless access point - an approach
+
+== The need
+
+There are many cases it's advisable to create a point-of-access using a PI, with or without connection to an external network. The case for a access point with a connection to an external network (usually with internet access) is comparable to use a Pi as a router and I am not going to cover it here. I'll focus on a point-of-access that can be used as a web server or any other kind of network service provider (FTP, email, etc...).
+
+I used the following setup in latest Makers Faire, but I cannot advise you to use a wireless point-of-access in those kind of events. There are many sources of interference and the experience can be really bad, as our signal blocks other nearby signal, specially the always beloved organization wifi with internet access. I think this setup is more useful for small events and places without wireless internet connection.
+
+
+== The PIs
+
+For my setup, I used a *Pi3*, as it's convenient thanks to the included embedded wifi. It's possible to use any other Pi with a wireless network adapter, as the resource usage is really small.
+
+== Dependencies
+
+For this tutorial, I'll use *Raspbian*, and two packages are needed for this:
+
+ sudo apt-get install dnsmasq udhcpd
+ 
+`dnsmasq` will manage DNS, so we can assign domains at random (yes, this could be used for phising for malicious people using fake internet hot-spots).
+
+`udhcpd` will assign IP addresses to the clients that connect to our servers. There are tutorial that recommend other packages, but this worked well for me.
+
+Now let's see how we can put all this stuff together.
+
+== Setup your network
+
+=== Interfaces
+
+First step, in order to make the network interface works in it's own network, we add these lines to the `/etc/network/interfaces` file. 
+
+ auto wlan0
+ allow-hotplug wlan0
+ iface wlan0 inet static
+   address 192.168.42.1
+   netmask 255.255.255.0
+   network 192.168.42.0
+   broadcast 192.168.1.255
+
+Notice that the address 192.168.42... is arbitrary. It could be any other as long as it doesn't conflict with any other existing network interface, i.e., 192.168.1.XXX. Notice also that interface line should be configured as `static`, even  Debian docs suggest that `dhcp` should be used. In this setup, the `udhcp` daemon will take care of that assignation.
+
+=== DNSmasq
+
+Adding these lines at the end of `/etc/dnsmasq/dnsmasq.conf` will connect any domain 
+
+ interface=wlan0
+ bind-dynamic
+ dhcp-range=192.168.42.1,192.168.42.254,255.255.255.0,24h
+ dhcp-option=option:router,192.168.42.1
+ # no-hosts
+
+ address=/#/192.168.42.1
+
+=== UDHCP
+
+In `etc/udhcpd/udhcpd.conf`, modify the default assignation ranges, and attach the wireless interface to the deamon:
+
+ # The start and end of the IP lease block
+
+ start		192.168.42.20	#default: 192.168.0.20
+ end		192.168.42.254	#default: 192.168.0.254
+
+ # The interface that udhcpd will use
+
+ interface wlan0
+
+=== Daemon startup
+
+It might happen that these daemons are authomatically started after installing the packages. Then you can check status using `systemctl`, i.e:
+
+ sudo systemctl status dnsmasq
+ 
+And start or stop them at will:
+
+ sudo systemctl start udhcpd
+
+== Server application
+
+Now, if everything goes smooth, all requests from the clients that connect to our access point newwork will point to our server. The easiest way to test it, it's to install an existing web server, like `nginx`, that serves a very simple default static HTML webpage. It's also possible to run a basic python server. For the Maker's Faire, I used a combination of both worlds: a python script that was executed periodically using a cron task.
+
+The script check the temperature and humidity from a Pimoroni Hat sensors and wrote static files that were served using `nginx`. More complex setups, like a custom web server, are also possible, of course, but are out of the scope of this document. Maybe that will be material for more tutorials.
+
+== Conclusion
+
+There are many tutorials for this kind of setup in the web, most of them need some tayloring, as probably this one. Make use of this not as a full reference but as a starting point if you like. And please don't doubt in reporting possible mistakes or omissions ;)
+
+*Bonus*: you can check the repo with source files in https://github.com/manelvf/access_point
+

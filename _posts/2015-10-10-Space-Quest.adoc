@@ -1,0 +1,21 @@
+# Space Quest
+
+I continue with my quest for safeguarding data that I started talking about in my previous post.
+
+## VID
+
+Sometimes, simplifying things is not so easy as it seems, and implies some work. I disregarded for a while the idea of a home NAS to keep track of my VID (Very Important Data). There are services like Amazon S3 or even Dropbox and Google Drive that can take care of that better than me. Yes, maybe it's not so important.
+
+The part I want to take care is my code. Mostly because it's a lot of time invested in those personal projects, even the most trivial ones. I think that Github does a good job on that (also BitBucket, but second usually means nothing in today's world). Also, I'm an Open Source enthusiast, aka code-exhibicionist, so I don't mind people can watch my unpolished code. Some people argues that Open Source can be silly from a pure economical point-of-view. Of course, those complaints come always from outside open source world. I will try to explain my opinion about that matter in another post.
+
+## Photos
+
+Some people need a lot of space for their photos. It's not my case right now but can be in the future. Facebook is not a safe alternative in a long run. I used 23hq.com for a few years, but they don't have an active development for a while. Maybe it's time to go back to Flickr or SmugSmug.
+
+## Aftermath
+
+I've had a personal portfolio for a few years, since 2010, hosted even in a VPS. It was useful for a while, but right now I don't feel I need it anymore. Right now I think that my projects and collaborating with people in other projects are far more important that a simple web portfolio.
+
+So my final decision is to not renew the domain manelvf.com and use only Github Pages for hosting both my project webpages and my http://manelvf.github.io[personal portfolio]. The old domain manelvf.com will point for a while to manelvf.github.io but will not be renewed. In case Github discontinues the service, I will switch to another provider, but that's very unlikely in the next years.
+
+For other projects, they will appear in my main profile page or in this blog, and they will have their own domain name in case they need it.

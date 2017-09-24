@@ -1,0 +1,152 @@
+= JS1K "Attack of the Mutant Elements" demo post-mortem
+
+One year more, there was the https://js1k.com[JS1K], the microcode competition for Javascript code of <= 1024 bytes length. It started as joke and quickly became a classic for the JS "scene", if that exists.
+
+After participating a few years, for me it's one of the most rewarding competitions. I must admit I only use a few hours and the result is far from being something impressive. But it's good exercise and overall, it has a lot of fun.
+
+This year I wanted something different. On past editions, I focused on creating a single graphic effect, but this time I wanted to do something more user-oriented. And I wanted to use simple DOM elements instead of the traditional <canvas> rendering. After all, traditional DOM objects should have the same rights as new HTML5 ones... anyway, it's simply another resource.
+
+And before starting... yes, I cheated the rules: arrow notation is part of ES6, which was not allowed in the contest. But also the rules stated that the entry should run in two major browsers, and both Chrome and Firefox support that notation since long time ago (thanks to @manolopm for noticing about this).
+
+The original idea was to do a shooter, something like Galaga and many other classics. But as imitating something already well established is usually boring I opted for adding some circular paths to the "enemies". A nice way of practising rotations.
+
+So, let's start.
+
+First a few minor initializations, nothing special.
+
+  var w = innerWidth;
+  var h = innerHeight;
+  var u = w/12;
+  var diff;
+  b.style.background = "#000";
+  b.style.overflow = "hidden";
+  
+Then the "factory" of elements. The idea was to have a single method that could create all the DOM elements, both the main character and the enemies. 
+
+  var createElement = (ship, x, y, color, v, move) => {
+    var el= d.createElement('div');
+    el.innerHTML=ship;
+    el.style.position="absolute";
+    el.style.left = parseInt(x)+"px";
+    el.style.bottom = parseInt(y)+"px";
+    el.style.color = color;
+    el.v = v;
+    el.rv = 0;
+    el.x = x;
+    el.y = y;
+    el.move = move;
+    el.spin = 1;
+    b.appendChild(el);
+    return el;
+  };
+  
+Next method applies movement to a DOM element.
+
+  var move = (el) => {
+    el.move(el);
+    el.style.left = parseInt(el.x)+"px";
+    el.style.bottom = parseInt(el.y)+"px";
+  };
+
+Now, we initalize the first two elements. First is the main character, the one we will be controlling, and second one is the score. They are in the first positions of the elements list, that will make easier to keep track of them without providing them with a specific name.
+
+  var Elements = [
+    createElement("M", w/2, h/2, "#FFF", 0, () => {}),
+    createElement("0", w-u, h-u, "#FF0", 0, () => {})
+  ];
+
+Now the rest of elements, having care of adding a method for rotating each one of them (last parameter in the *createElement* call). Notice the minified math methods and the https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/2drota.htm[2D rotation equation]:
+
+  var ra = Math.random;
+  var co = Math.cos;
+  var si = Math.sin;
+  for (var i=0; i < 9; i++) {
+    Elements.push(createElement(
+      String.fromCharCode(65+ra()*25), ra() * w, ra() * h, "#F5"+i, 0,
+       (el) => {
+         var x = el.x - (w/2);
+         var y = el.y - (h/2);
+         var f = u * (diff/1000) * .01 * el.spin;
+         var px = (x * co(f)) - (y * si(f));
+         var py = (y * co(f)) + (x * si(f));
+         el.x = px + (w/2);
+         el.y = py + (h/2);
+       })
+    );
+  }
+
+This is a bit tricky: for the "bullet" I chose the last element of the Elements list. A _collision detection_ method is added to each bullet. Bullets dissapear when they are at a precalculated distance from their origin, the main character (first element). The score is also updated in this method (second element).
+
+  var shoot = () => {
+    if (Elements[Elements.length-1].innerHTML == "|") {
+      return;
+    }
+    Elements.push(createElement(
+      "|", w/2, h/2, "#05F", 2, (el) => {
+        el.y += el.v * u * (diff/1000);
+        var e, x2, y2;
+        for (var i = Elements.length-2; i; i--) {
+          e = Elements[i];
+          sq = ((e.x - el.x) * (e.x - el.x)) + ((e.y - el.y) * (e.y - el.y));
+          if (sq < 300) {
+            Elements[i].innerHTML="";
+            Elements.splice(i, 1);
+            el.y=h+1;
+
+            Elements[1].innerHTML = parseInt(Elements[1].innerHTML) +100;
+
+            break;
+          }
+        }
+        if (el.y > h) {
+           Elements.splice(Elements.length - 1, 1);
+        }
+      }
+    ));
+  };
+
+Classical listener for the user keypresses. Pretty sure these lines of code can be reduced, but they're so classy. Only one action given: Shoot! 
+
+  document.addEventListener('keydown', function(event) {
+      switch(event.keyCode) {
+        case 32:
+          shoot();
+          break;
+      }
+  });
+
+For every loop iteration, the time difference with the previous frame is calculated in microseconds using the https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp[High Resolution Timer] provided by the latest browser APIs. It's recommend to use this timer if we want to use the best precision we can get in the browser, instead of the traditional Date methods. It's included from IE9 onwards, so no worries. We'll use that value for calculating the movements in previous *move* methods, so the movement will be more accurate and the "animation" smoother.
+
+  var loop = () => {
+    time = performance.now();
+    diff = time - old_time;
+    old_time = time;
+    Elements.forEach((v) => {
+      move(v);
+    });
+
+    requestAnimationFrame(loop);
+  };
+
+In order to make things a bit more _spicy_, a timer changes the spin (rotation direction) randomly every 3 seconds. Artificial Intelligence. 
+
+  setInterval(() => {
+    Elements.forEach((v) => {
+        v.spin = Math.round(Math.random())? 1: -1;
+    });
+  }, 3000);
+
+The last lines of code take care of executing the game loop.
+
+  var old_time=performance.now();
+  requestAnimationFrame(loop);
+
+And this is everything I could add in 1024 bytes. I'm pretty sure that more stuff could be added and a lot of stuff could have been reduced, so suggestions are welcome. 
+
+== Conclusion
+
+The best part of the compo IMO, is being able to do something impressive in very little time. The bad part is that you have to forget about a lot of good practices, even some really basic like adding the "var" keyword to any new variable. That can also be refreshing, but it can lead to lose control of your code quickly, which is prone to confussion and ultimately frustration. No worries, it's only a game. Just remember to use tools like Google Closure compiler and http://www.iteral.com/jscrush/[JSCrush] for keeping it short and you'll be fine. 
+
+JS1K can be "super-pro", but can be also a lot of fun if you don't take it too seriously. I highly recommend to spend a few hours coding something for this compo if you are a developer and want to experiment or try new stuff without the constraints of your daily job. Also, TBH, I prefer to do this kind of open challenges in my free time than the more strict problem challenges like http://play.elevatorsaga.com/[Elevator Saga]. But, anyway, it's a matter of taste.
+
+Have (minified) fun!

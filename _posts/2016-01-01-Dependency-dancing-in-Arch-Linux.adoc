@@ -1,0 +1,13 @@
+Dependency dancing in Arch Linux
+================================
+
+Arch Linux makes a good job for performing clean installations using AUR, which is a sort of package manager for _"unstable"_ software. Unfortunately, when trying to install the beautiful editor LightTable in Arch Linux (yes, I'm using it now), I got a small disgusting gotcha:
+
+
+  Unable to install libudev.so.0 dependency
+
+
+It seems that it's only a matter of linking the correct file, as libudev is perfectly installed on the system. There is anyway another AUR package for the infamous *libudev* that fixes the bug, which is a bit overkill for a simple broken link.
+
+It's also possible to install LightTable downloading the file, but if you want to keep it gracefully updated, using a package manager is always the best option.
+
