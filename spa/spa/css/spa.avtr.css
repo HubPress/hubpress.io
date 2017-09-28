@@ -1,0 +1,32 @@
+/*
+ * spa.avtr.css
+ * Avatar feature styles
+*/
+
+.spa-avtr-box {
+  position      : absolute;
+  width         : 62px;
+  padding       : 0 4px;
+  height        : 40px;
+  line-height   : 32px;
+  border        : 4px solid #aaa;
+  cursor        : pointer;
+  text-align    : left;
+  overflow      : hidden;
+  text-overflow : ellipsis;
+  border-radius : 4px;
+  text-align    : center;
+}
+  .spa-avtr-box.spa-x-is-user {
+    border-color : #44f;
+  }
+
+  .spa-avtr-box.spa-x-is-chatee {
+    border-color : #080;
+  }
+  .spa-avtr-box.spa-x-is-drag {
+    cursor           : move;
+    color            : #fff;
+    background-color : #000;
+    border-color     : #800;
+  }
