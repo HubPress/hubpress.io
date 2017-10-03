@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 15 Sep 2017 09:40:00 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Error handling with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 03 Oct 2017 10:56:39 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Configurations in ASP.NET Core 2.0]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>With new version of ASP.NET Core configuration system has changed a lot. First it is now injectable into the framework. then you can add custom options to the base Configuration class and access it anywhere needed.</p>
+</div>
+<div class="paragraph">
+<p>In this post I&#8217;m going to list all available configurations in ASP.NET Core 2.0 . and to do that I started by injecting configuration using a constructor.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Startup {
+	public IConfiguration Configuration { get; }
+    public Startup(IConfiguration config)
+        {
+            Configuration=config;
+        }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From now on we can use <strong>Configuration</strong> anywhere in the <strong>Startup</strong> class. My mission is to print all keys and values of Configuration object. I use <strong>Configure</strong> method in startup and create an In-line middleware.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public void Configure (IApplicationBuilder app) {
+            app.Run (async (context) =&gt; {
+                var keyList = Configuration.GetChildren();
+                var body = "";
+                foreach (var item in keyList)
+                {
+                   body += Environment.NewLine +
+                   item.Key + " : " + item.Value;
+                }
+              await context.Response.WriteAsync(body);
+            });
+        }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First I used <strong>GetChildren()</strong> method of Configuration object to find all the key/value pairs of configuration system and created a body of strings. then passed the body to the middleware. The result is a long list of all settings you have on a Windows OS.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclution">Conclution</h4>
+<div class="paragraph">
+<p>It&#8217;s really facinating to work with asp.net core configuration. there are so many features. my favorite is that you can create Class and add it to configuation system and with no extra code it is availbe in appsetting.json file.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/10/03/Configurations-in-ASPNET-Core-20.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/10/03/Configurations-in-ASPNET-Core-20.html</guid><category><![CDATA[ASP]]></category><category><![CDATA[Core]]></category><category><![CDATA[Configuration]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Tue, 03 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Error handling with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Error handling is real and it&#8217;s serious. In ASP.NET Core it&#8217;s much more easier to handle errors. in this post I&#8217;m digging into error handling and trying to get some errors !</p>
