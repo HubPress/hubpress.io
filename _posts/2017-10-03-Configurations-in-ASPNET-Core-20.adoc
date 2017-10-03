@@ -31,3 +31,6 @@ public void Configure (IApplicationBuilder app) {
         }
 
 First I used **GetChildren()** method of Configuration object to find all the key/value pairs of configuration system and created a body of strings. then passed the body to the middleware. The result is a long list of all settings you have on a Windows OS. 
+
+==== Conclution
+It's really facinating to work with asp.net core configuration. there are so many features. my favorite is that you can create Class and add it to configuation system and with no extra code it is availbe in appsetting.json file. 
