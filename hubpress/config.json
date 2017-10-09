@@ -5,6 +5,22 @@
     "branch": "gh-pages"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://kubevirt.github.io/blog",
+    "hubpress": "https://kubevirt.github.io/blog",
+    "theme": "//kubevirt.github.io/blog/themes/casper",
+    "images": "https://kubevirt.github.io/blog/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
