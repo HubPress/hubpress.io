@@ -2,7 +2,7 @@
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
 :published_at: 2017-09-29
-// :hp-tags: HubPress, Blog, Open_Source,
+:hp-tags: weekly
 // :hp-alt-title: My English Title
 
 This is the fourth weekly update from the KubeVirt team.
