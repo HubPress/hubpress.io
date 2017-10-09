@@ -6,12 +6,12 @@
     "cname": ""
   },
   "theme": {
-    "name": "saga"
+    "name": "uno"
   },
   "urls": {
     "site": "https://kubevirt.github.io/blog",
     "hubpress": "https://kubevirt.github.io/blog",
-    "theme": "//kubevirt.github.io/blog/themes/roon",
+    "theme": "//kubevirt.github.io/blog/themes/saga",
     "images": "https://kubevirt.github.io/blog/images"
   },
   "initialisationConfigComponent": {
