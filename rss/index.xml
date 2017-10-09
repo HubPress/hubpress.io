@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Mon, 09 Oct 2017 10:05:43 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 5]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Mon, 09 Oct 2017 10:07:01 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 5]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the fith weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -81,4 +81,92 @@
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html</guid><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 06 Oct 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html</guid><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 06 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 4]]></title><description><![CDATA[<div class="paragraph">
+<p>This is the fourth weekly update from the KubeVirt team.</p>
+</div>
+<div class="paragraph">
+<p>We are currently driven by</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Being easier to be used on Kubernetes and OpenShift</p>
+</li>
+<li>
+<p>Enabling people to contribute</p>
+</li>
+<li>
+<p>Node Isolator use-case (more informations soon)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This week you can find us at:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ohio Linux Fest (@stu-gott)
+"KubeVirt, Virtual Machine Management Using Kubernetes"
+<a href="https://ohiolinux.org/schedule/" class="bare">https://ohiolinux.org/schedule/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This week we achieved to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ReplicaSet for VirtualMachines (@rmohr)
+(<a href="https://github.com/kubevirt/kubevirt/pull/453" class="bare">https://github.com/kubevirt/kubevirt/pull/453</a>)</p>
+</li>
+<li>
+<p>Swagger documentation improvements (@rmohr, @lukas-bednar)
+(<a href="https://github.com/kubevirt/kubevirt/pull/475" class="bare">https://github.com/kubevirt/kubevirt/pull/475</a>)</p>
+</li>
+<li>
+<p>Hot-standby for our controller (@cynepco3hahue)
+(<a href="https://github.com/kubevirt/kubevirt/pull/461" class="bare">https://github.com/kubevirt/kubevirt/pull/461</a>)</p>
+</li>
+<li>
+<p>domxml/VM Spec mapping rules proposal (@rmohr, @michalskrivanek)
+(<a href="https://github.com/kubevirt/kubevirt/pull/466" class="bare">https://github.com/kubevirt/kubevirt/pull/466</a>)</p>
+</li>
+<li>
+<p>Launch flow improvement proposal (@davidvossel)
+(<a href="https://github.com/kubevirt/kubevirt/pull/469" class="bare">https://github.com/kubevirt/kubevirt/pull/469</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to this, we are also working on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Debug layer 3 network connectivity issues for VMs (@vladikr)
+(<a href="https://github.com/kubevirt/kubevirt/pull/450" class="bare">https://github.com/kubevirt/kubevirt/pull/450</a>)</p>
+</li>
+<li>
+<p>Review of the draft code for the api server aggregation (@stu-gott)
+(<a href="https://github.com/kubevirt/kubevirt/pull/355" class="bare">https://github.com/kubevirt/kubevirt/pull/355</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take a look at the pulse, to get an overview over all changes of this week:
+<a href="https://github.com/kubevirt/kubevirt/pulse" class="bare">https://github.com/kubevirt/kubevirt/pulse</a></p>
+</div>
+<div class="paragraph">
+<p>Finally you can view our open issues at
+<a href="https://github.com/kubevirt/kubevirt/issues" class="bare">https://github.com/kubevirt/kubevirt/issues</a></p>
+</div>
+<div class="paragraph">
+<p>And keep track of events at our calendar
+<a href="https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a>" class="bare">https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a></a></p>
+</div>
+<div class="paragraph">
+<p>If you need some help or want to chat you can find us on
+<a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
+</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html</guid><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 29 Sep 2017 00:00:00 GMT</pubDate></item></channel></rss>
