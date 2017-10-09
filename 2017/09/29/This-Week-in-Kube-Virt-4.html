@@ -12,18 +12,8 @@
 
     <link rel="shortcut icon" href="https://kubevirt.github.io/blog/favicon.ico">
 
-    <script type="text/javascript" src="//kubevirt.github.io/blog/themes/ichi/assets/js/vendor/fastclick.js?v=1507545564672"></script>
-    <script type="text/javascript" src="//kubevirt.github.io/blog/themes/ichi/assets/js/vendor/modernizr.js?v=1507545564672"></script>
-
-
-    <link rel="stylesheet" type="text/css" href="//kubevirt.github.io/blog/themes/ichi/assets/css/normalize.css?v=1507545564672" />
-    <link rel="stylesheet" type="text/css" href="//kubevirt.github.io/blog/themes/ichi/assets/css/foundation.min.css?v=1507545564672" />
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" type="text/css" href="//kubevirt.github.io/blog/themes/ichi/assets/css/outdatedBrowser.min.css?v=1507545564672">
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="//kubevirt.github.io/blog/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1507545564672" />
-    <link rel="stylesheet" type="text/css" href="//kubevirt.github.io/blog/themes/ichi/assets/css/styles.css?v=1507545564672" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Open+Sans:400italic,700italic,700,400">
+    <link rel="stylesheet" type="text/css" href="//kubevirt.github.io/blog/themes/roon/assets/css/screen.css?v=1507545659975" />
 
     <link rel="canonical" href="https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html" />
     <meta name="referrer" content="origin" />
@@ -67,86 +57,20 @@
     
         <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 </head>
-<body class="post-template tag-weekly">
+<body class="post-template tag-weekly  noimage">
 
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
-</div>
-
-<nav class="top-bar hide-for-large-up" data-topbar >
-  <ul class="title-area">
-    <li class="name">
-
-    </li>
-    <li class="home"><a class="fi-home" href="https://kubevirt.github.io/blog"></a></li>
-    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
-  </ul>
-
-<div class="overlay overlay-scale">
-    <button type="button" class="overlay-close">Close</button>
-    <nav>
-        <ul>
-            <li><a href="https://kubevirt.github.io/blog">Home</a></li>
-        </ul>
-    </nav>
-</div>
-
-</nav>
-
-<div class="row">
-
-<div class="small-16 medium-16 large-4 columns right head-area" >
-
-<header class="site-head">
-    <div class="vertical">
-        <div class="site-head-content inner">
-            <ul class="side-nav blog-menu show-for-large-up">
-                <li><a class="fi-home" href="https://kubevirt.github.io/blog"></a></li>
-                <li><a class="fi-torso" href="https://kubevirt.github.io/blog/about"></a></li>
-                <li><a class="fi-mail" href="https://kubevirt.github.io/blog/contact"></a></li>
-            </ul>
-            
-            <h1 class="blog-title">KubeVirt Blog</h1>
-            <hr>
-            <p class="blog-description">The KubeVirt project, working on the Kubernetes virtualization API.</p>
-            <div class="blog-network">
-<!--                 <a href="#" class="fi-social-pinterest"></a>
-                <a href="#" class="fi-social-linkedin"></a>
-                <a href="#" class="fi-social-behance"></a>
-                <a href="#" class="fi-social-deviant-art"></a>
-                <a href="#" class="fi-social-dribbble"></a>
-                <a href="#" class="fi-social-flickr"></a>
-                <a href="#" class="fi-social-github"></a>
-                <a href="#" class="fi-social-skype"></a>
-                <a href="#" class="fi-social-snapchat"></a>
-                <a href="#" class="fi-social-steam"></a>
-                <a href="#" class="fi-social-xbox"></a>
-                <a href="#" class="fi-social-reddit"></a> -->
-                  <a href="kubevirt" class="fi-social-github"></a>
-                  <a href="kubevirt" class="fi-social-twitter"></a>
-            </div>
-        </div>
-    </div>
-</header>
-
-</div>
-
-
-<div class="small-16 medium-16 large-12 columns main-column left">
     
 
-<main class="content" role="main">
 
-    <article class="post tag-weekly">
+    <article role="main" class="">
+        <header>
+            <a href="https://kubevirt.github.io/blog" id="home_link">«</a>
+            <div class="meta"><time datetime="2017-09-29"><a href="https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html">September 29, 2017</a></time> <span class="count" id="js-reading-time"></span></div>
+            <h1>This Week in KubeVirt 4</h1>
+        </header>
 
-
-            <h1 class="post-title">This Week in KubeVirt 4</h1>
-
-            <span class="post-meta label"><time datetime="2017-09-29">29 Sep 2017</time></span>
-
-            <section class="post-content">
-                <div class="paragraph">
+        <div class="text" id="js-post-content">
+            <div class="paragraph">
 <p>This is the fourth weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -235,56 +159,133 @@
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
 </div>
-                        <aside class="tags fi-pricetag-multiple">Posted on <a href="https://kubevirt.github.io/blog/tag/weekly/">weekly</a></aside>
-            </section>
-            <hr>
-            <footer class="post-footer">
+        </div>
 
-                <section class="share">
-                    <h4>Liked this post ? Share it.</h4>
-                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html"
-                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    </a>
-                    <a class="fi-social-twitter" href="https://twitter.com/share?text=This%20Week%20in%20KubeVirt%204&amp;url=https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html"
-                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    </a>
-                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html"
-                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    </a>
-                </section>
+        <menu>
+            <a href="" id="btn_share" class="btn" title="Share">
+                <span aria-hidden="true" data-icon="S"></span>
+                <strong>Share</strong>
+            </a>
+            <a href="http://twitter.com/share?text=This%20Week%20in%20KubeVirt%204&url=https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" id="btn_comment" class="btn" target="_blank">
+                <span aria-hidden="true" data-icon="C"></span> Comment on Twitter
+            </a>
+        </menu>
 
-                <section class="author">
-                    <header>
-                        <span>About the author</span>
-                    </header>
-                    <section>
-                        <h4>Fabian Deutsch</h4>
-                        <img src="https://avatars1.githubusercontent.com/u/83456?v&#x3D;4">
-                        <span>Germany</span>
-                        <a href="https://dummdida.tumblr.com">https://dummdida.tumblr.com</a>
-                    </section>
-                    <footer>
-                         <p></p>
-                    </footer>
-                </section>
 
-        <div class="clearfix"></div>
-                    <hr>
+        <footer class="post-footer" role="contentinfo">
 
-            </footer>
+            <div class="vcard">
+                <a href="https://kubevirt.github.io/blog/rss" id="btn_feed" class="btn" title="Feed" target="_blank">
+                    <span aria-hidden="true" data-icon=")"></span>
+                    <strong>Feed</strong>
+                </a>
 
-        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+                <a href="https://kubevirt.github.io/blog/author/fabiand/" class="photo">
+                    <span style="background-image: url('https://avatars1.githubusercontent.com/u/83456?v&#x3D;4');">
+                        <img src="https://avatars1.githubusercontent.com/u/83456?v&#x3D;4" alt="Fabian Deutsch">
+                    </span>
+                </a>
+
+                <div class="details">
+                    <h4><a href="https://kubevirt.github.io/blog/author/fabiand/" class="url n">Fabian Deutsch</a></h4>
+                    Germany<br>
+                    <a href="https://dummdida.tumblr.com" class="js-remove-domain-schema">https://dummdida.tumblr.com</a>
+                </div>
+            </div>
+
+            <div id="user_bio">
+                <div class="inner">
+                    
+                </div>
+            </div>
+
+        </footer>
 
 
 
 
     </article>
 
-</main>
+    <div id="share_modal">
+        <div class="wrap">
+            <div class="inner">
+                <header>
+                    Share
+                    <a href="" class="close" title="Close">&times;</a>
+                </header>
 
-</div>
+                <div class="roon-share-links">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-dnt="true">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-</div>
+                    <div id="fb-elems">
+                        <div id="fb-root"></div>
+                        <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=463438580397968";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                        <div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false" data-font="arial"></div>
+                    </div>
+
+                    <div id="pinit-btn">
+                        <a href="//pinterest.com/pin/create/button/?url=https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html&amp;description=This%20Week%20in%20KubeVirt%204-KubeVirt%20Blog " data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png"></a>
+                        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+            function get_text(el) {
+                ret = "";
+                var length = el.childNodes.length;
+                for(var i = 0; i < length; i++) {
+                    var node = el.childNodes[i];
+                    if(node.nodeType != 8) {
+                        ret += node.nodeType != 1 ? node.nodeValue : get_text(node);
+                    }
+                }
+                return ret;
+            }
+            function reading_time () {
+                var post_content = document.getElementById('js-post-content');
+                if (post_content) {
+                    var words = get_text(post_content),
+                        count = words.split(/\s+/).length,
+                        read_time = Math.ceil((count / 150)),
+                        read_time_node = document.createTextNode(read_time + ' min read');
+                    document.getElementById('js-reading-time').appendChild(read_time_node);
+                }
+            }
+
+        function no_schema_links () {
+            var links = document.querySelectorAll('.js-remove-domain-schema');
+            if (links) {
+                for (i = 0; i < links.length; ++i) {
+                    var link = links[i],
+                        text = link.innerHTML,
+                        no_schema = text.replace(/.*?:\/\//g, "");
+                    link.innerHTML = no_schema;
+                }
+            }
+        }
+
+        window.onload = function () {
+            no_schema_links();
+
+            reading_time();
+        }
+    </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
       <script type="text/javascript">
@@ -299,14 +300,32 @@
         hljs.initHighlightingOnLoad();
       </script>
 
-    <!--[if lte IE 8]>
-        <script type="text/javascript" src="//kubevirt.github.io/blog/themes/ichi/assets/js/outdatedBrowser.min.js?v=1507545564672"></script>
-    <![endif]-->
-    <script type="text/javascript" src="//kubevirt.github.io/blog/themes/ichi/assets/js/min/built.js?v=1507545564672"></script>
+        <script>
+            $(function(){
+                var share_modal = $("#share_modal"),
+                    update_social_links = true;
 
-    <script>
-      $(document).foundation();
-    </script>
+                $("#btn_share").click(function(){
+                    var that = $(this);
+                    share_modal.fadeIn(200);
+                    return false;
+                });
+
+                share_modal.click(function(e){
+                    if (e.target.className == "wrap" || e.target.id == "share_modal") {
+                        share_modal.fadeOut(200);
+                    }
+                    return false;
+                });
+
+                share_modal.find("div.inner > header > a.close").click(function(){
+                    share_modal.fadeOut(200);
+                    return false;
+                });
+            });
+        </script>
+
+
 
 </body>
 </html>
