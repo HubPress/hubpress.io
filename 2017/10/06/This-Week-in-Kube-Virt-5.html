@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>This Week in KubeVirt 5</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://kubevirt.github.io/blog/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//kubevirt.github.io/blog/themes/casper/assets/css/screen.css?v=1507543543608" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="This Week in KubeVirt 5" />
+    <meta property="og:description" content="This is the fith weekly update from the KubeVirt team. We are currently driven by Being easier to be used on Kubernetes and OpenShift Enabling people to contribute Node Isolator use-case (more informations soon) This week we achieved to: Improved sagger documentation (for SDK generation) (@lukas-bednar) (https://github.com/kubevirt/" />
+    <meta property="og:url" content="https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html" />
+    <meta property="article:published_time" content="2017-10-06T00:00:00.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="This Week in KubeVirt 5" />
+    <meta name="twitter:description" content="This is the fith weekly update from the KubeVirt team. We are currently driven by Being easier to be used on Kubernetes and OpenShift Enabling people to contribute Node Isolator use-case (more informations soon) This week we achieved to: Improved sagger documentation (for SDK generation) (@lukas-bednar) (https://github.com/kubevirt/" />
+    <meta name="twitter:url" content="https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "author": {
+        "@type": "Person",
+        "name": "Fabian Deutsch",
+        "image": "https://avatars1.githubusercontent.com/u/83456?v=4",
+        "url": "https://kubevirt.github.io/blog/author/fabiand/",
+        "sameAs": "https://dummdida.tumblr.com"
+    },
+    "headline": "This Week in KubeVirt 5",
+    "url": "https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html",
+    "datePublished": "2017-10-06T00:00:00.000Z",
+    "description": "This is the fith weekly update from the KubeVirt team. We are currently driven by Being easier to be used on Kubernetes and OpenShift Enabling people to contribute Node Isolator use-case (more informations soon) This week we achieved to: Improved sagger documentation (for SDK generation) (@lukas-bednar) (https://github.com/kubevirt/"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="" href="https://kubevirt.github.io/blog/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+<body class="post-template nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">This Week in KubeVirt 5</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-10-06">06 October 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="paragraph">
+<p>This is the fith weekly update from the KubeVirt team.</p>
+</div>
+<div class="paragraph">
+<p>We are currently driven by</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Being easier to be used on Kubernetes and OpenShift</p>
+</li>
+<li>
+<p>Enabling people to contribute</p>
+</li>
+<li>
+<p>Node Isolator use-case (more informations soon)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This week we achieved to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved sagger documentation (for SDK generation) (@lukas-bednar)
+(<a href="https://github.com/kubevirt/kubevirt/pull/476" class="bare">https://github.com/kubevirt/kubevirt/pull/476</a>)</p>
+</li>
+<li>
+<p>Kubernetes 1.8 fixes (@cynepco3hahue)
+(<a href="https://github.com/kubevirt/kubevirt/pull/479" class="bare">https://github.com/kubevirt/kubevirt/pull/479</a>
+ <a href="https://github.com/kubevirt/kubevirt/pull/484" class="bare">https://github.com/kubevirt/kubevirt/pull/484</a>)</p>
+</li>
+<li>
+<p>Ephemeral disk rewrite (@davidvossel)
+(<a href="https://github.com/kubevirt/kubevirt/pull/460" class="bare">https://github.com/kubevirt/kubevirt/pull/460</a>)</p>
+</li>
+<li>
+<p>Custom VM metrics proposal (@fromanirh )
+(<a href="https://github.com/kubevirt/kubevirt/pull/487" class="bare">https://github.com/kubevirt/kubevirt/pull/487</a>)</p>
+</li>
+<li>
+<p>[WIP] Add API server PKI tool (@jhernand)
+(<a href="https://github.com/kubevirt/kubevirt/pull/498" class="bare">https://github.com/kubevirt/kubevirt/pull/498</a>)</p>
+</li>
+<li>
+<p>KubeVirt provider for the cluster autoscaler (@rmohr)
+(<a href="https://github.com/rmohr/autoscaler/pull/1" class="bare">https://github.com/rmohr/autoscaler/pull/1</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to this, we are also working on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Finally some good progress with layer 3 network connectivity (@vladikr)
+(<a href="https://github.com/kubevirt/kubevirt/pull/450" class="bare">https://github.com/kubevirt/kubevirt/pull/450</a>
+ <a href="https://github.com/vladikr/kubevirt/tree/veth-bridge-tap" class="bare">https://github.com/vladikr/kubevirt/tree/veth-bridge-tap</a>
+ <a href="https://github.com/vladikr/kubevirt/tree/veth-macvtap" class="bare">https://github.com/vladikr/kubevirt/tree/veth-macvtap</a>)</p>
+</li>
+<li>
+<p>Continued work on api server aggregation (@stu-gott)
+(<a href="https://github.com/kubevirt/kubevirt/pull/355" class="bare">https://github.com/kubevirt/kubevirt/pull/355</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take a look at the pulse, to get an overview over all changes of this week:
+<a href="https://github.com/kubevirt/kubevirt/pulse" class="bare">https://github.com/kubevirt/kubevirt/pulse</a></p>
+</div>
+<div class="paragraph">
+<p>Finally you can view our open issues at
+<a href="https://github.com/kubevirt/kubevirt/issues" class="bare">https://github.com/kubevirt/kubevirt/issues</a></p>
+</div>
+<div class="paragraph">
+<p>And keep track of events at our calendar
+<a href="https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a>" class="bare">https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a></a></p>
+</div>
+<div class="paragraph">
+<p>If you need some help or want to chat you can find us on
+<a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://kubevirt.github.io/blog/author/fabiand/" style="background-image: url(https://avatars1.githubusercontent.com/u/83456?v&#x3D;4)"><span class="hidden">Fabian Deutsch's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://kubevirt.github.io/blog/author/fabiand/">Fabian Deutsch</a></h4>
+
+                    <p>Read <a href="https://kubevirt.github.io/blog/author/fabiand/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Germany</span>
+                    <span class="author-link icon-link"><a href="https://dummdida.tumblr.com">https://dummdida.tumblr.com</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=This%20Week%20in%20KubeVirt%205&amp;url=https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://kubevirt.github.io/blog"></a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script type="text/javascript" src="//kubevirt.github.io/blog/themes/casper/assets/js/jquery.fitvids.js?v=1507543543608"></script>
+    <script type="text/javascript" src="//kubevirt.github.io/blog/themes/casper/assets/js/index.js?v=1507543543608"></script>
+
+</body>
+</html>
