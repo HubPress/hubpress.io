@@ -6,12 +6,12 @@
     "cname": ""
   },
   "theme": {
-    "name": "ghostium"
+    "name": "ichi"
   },
   "urls": {
     "site": "https://kubevirt.github.io/blog",
     "hubpress": "https://kubevirt.github.io/blog",
-    "theme": "//kubevirt.github.io/blog/themes/casper",
+    "theme": "//kubevirt.github.io/blog/themes/ghostium",
     "images": "https://kubevirt.github.io/blog/images"
   },
   "initialisationConfigComponent": {
