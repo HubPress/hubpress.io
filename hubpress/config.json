@@ -6,12 +6,12 @@
     "cname": ""
   },
   "theme": {
-    "name": "uno"
+    "name": "casper"
   },
   "urls": {
     "site": "https://kubevirt.github.io/blog",
     "hubpress": "https://kubevirt.github.io/blog",
-    "theme": "//kubevirt.github.io/blog/themes/saga",
+    "theme": "//kubevirt.github.io/blog/themes/uno",
     "images": "https://kubevirt.github.io/blog/images"
   },
   "initialisationConfigComponent": {
