@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Mon, 09 Oct 2017 10:08:28 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 5]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Mon, 09 Oct 2017 10:09:13 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 5]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the fith weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -334,4 +334,72 @@
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/15/This-Week-in-Kube-Virt-2.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/15/This-Week-in-Kube-Virt-2.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 15 Sep 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/15/This-Week-in-Kube-Virt-2.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/15/This-Week-in-Kube-Virt-2.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 15 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt #1]]></title><description><![CDATA[<div class="paragraph">
+<p>This is the first weekly update from the KubeVirt team.</p>
+</div>
+<div class="paragraph">
+<p>We are currently driven by</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Being easier to consume on Kubernetes and OpenShift</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This week we achieved to</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>merge a design for cloud-init support
+(<a href="https://github.com/kubevirt/kubevirt/pull/372" class="bare">https://github.com/kubevirt/kubevirt/pull/372</a>)</p>
+</li>
+<li>
+<p>release KubeVirt v0.0.2
+(<a href="https://github.com/kubevirt/kubevirt/releases/tag/v0.0.2" class="bare">https://github.com/kubevirt/kubevirt/releases/tag/v0.0.2</a>)</p>
+</li>
+<li>
+<p>Minikube based demo (<a href="https://github.com/kubevirt/demo" class="bare">https://github.com/kubevirt/demo</a>)</p>
+</li>
+<li>
+<p>OpenShift Community presentation
+(<a href="https://www.youtube.com/watch?v=IfuL2rYhMKY" class="bare">https://www.youtube.com/watch?v=IfuL2rYhMKY</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to this, we are also working on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Support stock Kubernetes networking
+(<a href="https://github.com/kubevirt/kubevirt/issues/261" class="bare">https://github.com/kubevirt/kubevirt/issues/261</a>)</p>
+</li>
+<li>
+<p>Move to a custom API Server suitable for API Server aggregation
+(<a href="https://github.com/kubevirt/kubevirt/issues/205" class="bare">https://github.com/kubevirt/kubevirt/issues/205</a>)</p>
+</li>
+<li>
+<p>Writing a user facing getting started guide
+(<a href="https://github.com/kubevirt/kubevirt/issues/410" class="bare">https://github.com/kubevirt/kubevirt/issues/410</a>)</p>
+</li>
+<li>
+<p>Ansible playbooks for deployment on OpenShift</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take a look at the pulse, to get an overview over all changes of this week:
+<a href="https://github.com/kubevirt/kubevirt/pulse" class="bare">https://github.com/kubevirt/kubevirt/pulse</a></p>
+</div>
+<div class="paragraph">
+<p>Finally you can view our open issues at
+<a href="https://github.com/kubevirt/kubevirt/issues" class="bare">https://github.com/kubevirt/kubevirt/issues</a></p>
+</div>
+<div class="paragraph">
+<p>If you need some help or want to chat you can find us on
+<a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a>.</p>
+</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/08/This-Week-in-Kube-Virt-1.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/08/This-Week-in-Kube-Virt-1.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 08 Sep 2017 00:00:00 GMT</pubDate></item></channel></rss>
