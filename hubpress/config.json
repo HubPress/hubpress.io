@@ -10,8 +10,8 @@
   },
   "urls": {
     "site": "https://kubevirt.github.io/blog",
-    "hubpress": "https://kubevirt.github.io/blog",
-    "theme": "//kubevirt.github.io/blog/themes/uno",
+    "hubpress": "http://blog.kubevirt.io/blog",
+    "theme": "//kubevirt.github.io/blog/themes/casper",
     "images": "https://kubevirt.github.io/blog/images"
   },
   "initialisationConfigComponent": {
