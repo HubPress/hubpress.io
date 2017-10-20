@@ -1,0 +1,16 @@
+= Removing and Adding Classes on Javascript
+The classList JavaScript property ships with four methods that allow us to add, remove, toggle, and check for classes easily with plain JavaScript.
+
+Adding and removing classes has to be one of the most common tasks when it comes to JavaScript and DOM manipulation.
+
+###### Element.classList
+The classList property returns a token list of the class attribute of the element
+It comes with a few handy methods:
+
+* add - adds a class
+* remove - removes a class
+* toggle - toggles a class
+* contains - checks if a class exists
+
+###### Demo Example
+To understand better this, I create on Codepen a simple example to show you how this works: http://codepen.io/StrengthandFreedom/pen/ZOGVLg/

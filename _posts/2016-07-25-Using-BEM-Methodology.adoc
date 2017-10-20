@@ -1,0 +1,10 @@
+= Using BEM Methodology
+
+On my first post, I will share quickly with you a methodology totally recommend to implement in your projects.
+Maybe you hear before about that. It's was suggest to use for one of our members on my team. After of implement, I'm totally on agreeing that this methodology is very useful because allow to have a maintainable code and understand better the structure of our project.
+
+This methodology consists on to follow a few rules to maintain the consistency throughout the entire project.
+These approaches are the same for all technologies: HTML, CSS, JavaScript, docs, tests, etc.
+
+For a quick started, I suggest to take at look at the initial documentation to understand the key feature of this methodology:
+https://en.bem.info/methodology/key-concepts/

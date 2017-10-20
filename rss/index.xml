@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Brizio]]></title><description><![CDATA[Front-End Software Developer]]></description><link>https://jbrizio.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 27 Jul 2017 18:58:31 GMT</lastBuildDate><atom:link href="https://jbrizio.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Understanding Inheritance in JavaScript]]></title><description><![CDATA[<div class="paragraph">
+<p>It&#8217;s an important concept that you always should know when you&#8217;re working using an object-oriented programming. But when we&#8217;re using JavaScript, initially we need to knowing initially that this is language oriented to objects using prototyping instead of classes (often referred to as prototypal inheritance).</p>
+</div>
+<div class="paragraph">
+<p>The best way to understand this is looking at the following code example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>// Define the constructor Person
+function Person(name, age) {
+  this.name = name || "";
+  this.age = age;
+}
+
+// Define the constructor Student
+function Student(name, age, courses) {
+  this.base = Person;
+  this.base(name, age);
+  this.courses = courses || [];
+}
+
+// Here we apply the concept of Inheritance
+Student.prototype = new Person;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On the previous example, we can view the concept of inheritance applied to the Student object. By this way, the new object inherits all the properties of the first object called Person.</p>
+</div>]]></description><link>https://jbrizio.github.io/2017/07/27/Understanding-Inheritance-in-Java-Script.html</link><guid isPermaLink="true">https://jbrizio.github.io/2017/07/27/Understanding-Inheritance-in-Java-Script.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Thu, 27 Jul 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Automate tasks with Gulp]]></title><description><![CDATA[<div class="paragraph">
+<p>When you start to work or initialize a new project, a good choice is to use Gulp to automatize some common tasks.
+Using a task runner like gulp allows you to take repetitive tasks and automate them.
+On the next lines, I will bring 3 advantages of use Gulp in your project:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Easy to use: After of run some commands, you can have all the environment running.</p>
+</li>
+<li>
+<p>Powerful: You count with more of 2180 plugins available to use totally free.</p>
+</li>
+<li>
+<p>Easy to Learn: After of read the initial getting started guide, you are ready to run your firsts tasks.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>An example of these advantages, is the following shortcode that allows you to run a local server on your computer to test your project:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>var gulp = require('gulp'),
+    connect = require('gulp-connect');
+
+gulp.task('webserver', function() {
+  connect.server({
+    livereload: true,
+    port: 8000,
+  });
+});
+
+gulp.task('default', ['webserver']);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re more interesting in learning about this, I recommend taking at look at the official documentation here: <a href="https://github.com/gulpjs/gulp" class="bare">https://github.com/gulpjs/gulp</a></p>
+</div>]]></description><link>https://jbrizio.github.io/2016/11/08/Automate-tasks-with-Gulp.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/11/08/Automate-tasks-with-Gulp.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Tue, 08 Nov 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Pure CSS Image Loader]]></title><description><![CDATA[<div class="paragraph">
+<p>Hi, everyone! On this opportunity, I&#8217;m sharing with you a little trick with only CSS to show your images with a progressive blur until the image has been loaded entirely. You can view this effect implemented on Medium or Instagram.</p>
+</div>
+<div class="paragraph">
+<p>I recommend taking at look at the official documentation where you can find how the keyframes work: <a href="https://developer.mozilla.org/es/docs/Web/CSS/@keyframes" class="bare">https://developer.mozilla.org/es/docs/Web/CSS/@keyframes</a></p>
+</div>
+<div class="paragraph">
+<p>After of apply the rules on our CSS Stylesheets, the result is the following:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://gifyu.com/images/demo86c07.gif" alt="Demo Running">
+</div>
+</div>
+<div class="paragraph">
+<p>To understand better this, I create a repository on Github.
+Feel free to fork and improve: <a href="https://github.com/jbrizio/pure-css-image-loader" class="bare">https://github.com/jbrizio/pure-css-image-loader</a></p>
+</div>
+<div class="paragraph">
+<p>Ask in the comments if you have any questions.</p>
+</div>]]></description><link>https://jbrizio.github.io/2016/09/24/Pure-CSS-Image-Loader.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/09/24/Pure-CSS-Image-Loader.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Sat, 24 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Defining media queries between two widths]]></title><description><![CDATA[<div class="paragraph">
+<p>If you are development a responsive website, it&#8217;s probably that you need to define some media queries to show correctly your elements.
+When you like to define a media query in a range, you can use the following code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>/* No greater than 768px, no less than 400px */
+@media (max-width:768px) and (min-width:400px) {
+    .class {
+        font-size: 15px;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I hope that this be useful.</p>
+</div>]]></description><link>https://jbrizio.github.io/2016/09/21/Defining-media-queries-between-two-widths.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/09/21/Defining-media-queries-between-two-widths.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Wed, 21 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Simple jQuery character countdown in textarea]]></title><description><![CDATA[<div class="paragraph">
+<p>Looking to build a Twitter-like textarea character countdown to show your users how much space they have remaining? Good. See the below implementation using jQuery:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$(document).ready(function() {
+  var maxCharacters = 255;
+  document.getElementById('description').onkeyup = function() {
+    document.getElementById('characters-counter').innerHTML = (maxCharacters - this.value.length);
+  };
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Easy, right? You can view the full demo of this implementation working on: <a href="http://codepen.io/jonathanbrizio/pen/pbYZZy/" class="bare">http://codepen.io/jonathanbrizio/pen/pbYZZy/</a></p>
+</div>]]></description><link>https://jbrizio.github.io/2016/08/16/Simple-j-Query-character-countdown-in-textarea.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/08/16/Simple-j-Query-character-countdown-in-textarea.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Tue, 16 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Removing and Adding Classes on Javascript]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Adding and removing classes has to be one of the most common tasks when it comes to JavaScript and DOM manipulation.</p>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_element_classlist">Element.classList</h6>
+<div class="paragraph">
+<p>The classList property returns a token list of the class attribute of the element
+It comes with a few handy methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>add - adds a class</p>
+</li>
+<li>
+<p>remove - removes a class</p>
+</li>
+<li>
+<p>toggle - toggles a class</p>
+</li>
+<li>
+<p>contains - checks if a class exists</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_demo_example">Demo Example</h6>
+<div class="paragraph">
+<p>To understand better this, I create on Codepen a simple example to show you how this works: <a href="http://codepen.io/StrengthandFreedom/pen/ZOGVLg/" class="bare">http://codepen.io/StrengthandFreedom/pen/ZOGVLg/</a></p>
+</div>
+</div>]]></description><link>https://jbrizio.github.io/2016/08/09/Removing-and-Adding-Classes-on-Javascript.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/08/09/Removing-and-Adding-Classes-on-Javascript.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Tue, 09 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Why are all programming languages in English?]]></title><description><![CDATA[<div class="paragraph">
+<p>Out of 8500+ programming languages recorded, around 2400 of them were developed in the United States, 600 in the United Kingdom, 160 in Canada, and 75 in Australia. In other words, over a third of all programming languages were developed in a country that primarily speaks English. It&#8217;s the main cause that the English language is used in great part of the programming.</p>
+</div>
+<div class="paragraph">
+<p>Another thing, it&#8217;s English are the global language that we use to communicate to other people&#8217;s.</p>
+</div>
+<div class="paragraph">
+<p>Stats took from Wikipedia: <a href="https://en.wikipedia.org/wiki/Non-English-based_programming_languages" class="bare">https://en.wikipedia.org/wiki/Non-English-based_programming_languages</a></p>
+</div>]]></description><link>https://jbrizio.github.io/2016/08/04/Why-are-all-programming-languages-in-English.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/08/04/Why-are-all-programming-languages-in-English.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Thu, 04 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Using BEM Methodology]]></title><description><![CDATA[<div class="paragraph">
+<p>On my first post, I will share quickly with you a methodology totally recommend to implement in your projects.
+Maybe you hear before about that. It&#8217;s was suggest to use for one of our members on my team. After of implement, I&#8217;m totally on agreeing that this methodology is very useful because allow to have a maintainable code and understand better the structure of our project.</p>
+</div>
+<div class="paragraph">
+<p>This methodology consists on to follow a few rules to maintain the consistency throughout the entire project.
+These approaches are the same for all technologies: HTML, CSS, JavaScript, docs, tests, etc.</p>
+</div>
+<div class="paragraph">
+<p>For a quick started, I suggest to take at look at the initial documentation to understand the key feature of this methodology:
+<a href="https://en.bem.info/methodology/key-concepts/" class="bare">https://en.bem.info/methodology/key-concepts/</a></p>
+</div>]]></description><link>https://jbrizio.github.io/2016/07/25/Using-BEM-Methodology.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/07/25/Using-BEM-Methodology.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Mon, 25 Jul 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Get a fake REST API with zero coding]]></title><description><![CDATA[<div class="paragraph">
+<p>When you are working on the frontend, sometimes you need to manipulate dynamic data.
+A few months ago, I discover this great tool on Github <a href="https://github.com/typicode/json-server" class="bare">https://github.com/typicode/json-server</a> that allows simulating a fake REST API in your App in a few seconds.</p>
+</div>
+<div class="paragraph">
+<p>After of download the dependencies through npm in your project folder, you need to create a <code>db.json</code> file with the content to use.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The last step is run this command in your console:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ json-server --watch db.json</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now if you go to <a href="http://localhost:3000/posts/1" class="bare">http://localhost:3000/posts/1</a>, you&#8217;ll get:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">{ "id": 1, "title": "json-server", "author": "typicode" }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I hope that this should be a help for you in future projects!</p>
+</div>
+<div class="paragraph">
+<p>Happy coding!</p>
+</div>]]></description><link>https://jbrizio.github.io/2016/07/25/Get-a-fake-REST-API-with-zero-coding.html</link><guid isPermaLink="true">https://jbrizio.github.io/2016/07/25/Get-a-fake-REST-API-with-zero-coding.html</guid><dc:creator><![CDATA[Jonathan Brizio]]></dc:creator><pubDate>Mon, 25 Jul 2016 00:00:00 GMT</pubDate></item></channel></rss>

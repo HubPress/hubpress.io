@@ -1,0 +1,25 @@
+= Understanding Inheritance in JavaScript
+
+It's an important concept that you always should know when you're working using an object-oriented programming. But when we're using JavaScript, initially we need to knowing initially that this is language oriented to objects using prototyping instead of classes (often referred to as prototypal inheritance).
+
+The best way to understand this is looking at the following code example:
+
+```
+// Define the constructor Person
+function Person(name, age) {
+  this.name = name || "";
+  this.age = age;
+}
+
+// Define the constructor Student
+function Student(name, age, courses) {
+  this.base = Person;
+  this.base(name, age);
+  this.courses = courses || [];
+}
+
+// Here we apply the concept of Inheritance
+Student.prototype = new Person;
+```
+
+On the previous example, we can view the concept of inheritance applied to the Student object. By this way, the new object inherits all the properties of the first object called Person.

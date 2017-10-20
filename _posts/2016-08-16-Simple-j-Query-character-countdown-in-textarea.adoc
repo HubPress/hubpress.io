@@ -1,0 +1,14 @@
+= Simple jQuery character countdown in textarea
+
+Looking to build a Twitter-like textarea character countdown to show your users how much space they have remaining? Good. See the below implementation using jQuery:
+
+```
+$(document).ready(function() {
+  var maxCharacters = 255;
+  document.getElementById('description').onkeyup = function() {
+    document.getElementById('characters-counter').innerHTML = (maxCharacters - this.value.length);
+  };
+});
+```
+
+Easy, right? You can view the full demo of this implementation working on: http://codepen.io/jonathanbrizio/pen/pbYZZy/
