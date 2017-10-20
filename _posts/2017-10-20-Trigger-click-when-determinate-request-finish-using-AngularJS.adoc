@@ -1,0 +1,4 @@
+= Trigger click when determinate request finish using AngularJS
+
+One of the last projects where I collaborate, the requirement was trigger a click on the DOM when determinate requests used on the controller finish.
+After of try with a lot of possibilities, the final solution results on apply the $broadcast directive on each function and use a counter to validate the last cycle.
