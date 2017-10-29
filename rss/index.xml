@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 24 Oct 2017 07:44:02 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 7]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 29 Oct 2017 14:12:48 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 8]]></title><description><![CDATA[<div class="paragraph">
+<p>This is a weekly update from the KubeVirt team.</p>
+</div>
+<div class="paragraph">
+<p>We are currently driven by</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Being easier to be used on Kubernetes and OpenShift</p>
+</li>
+<li>
+<p>Enabling people to contribute</p>
+</li>
+<li>
+<p>Node Isolator use-case (more informations soon)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This week we achieved to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Present at KVM Forum, Prague (@rmohr, @fabiand)
+<a href="http://redhat.slides.com/fdeutsch/running-virtual-machines-on-kubernetes-with-libvirt-and-kvm-at-kvm-forum-2017#/" class="bare">http://redhat.slides.com/fdeutsch/running-virtual-machines-on-kubernetes-with-libvirt-and-kvm-at-kvm-forum-2017#/</a></p>
+</li>
+<li>
+<p>Proposal on how to construct the VM API (@rmohr, @michalskrivanek)
+<a href="https://github.com/kubevirt/kubevirt/pull/466" class="bare">https://github.com/kubevirt/kubevirt/pull/466</a></p>
+</li>
+<li>
+<p>Pod deletion improvements (@davidvossel)
+<a href="https://github.com/kubevirt/kubevirt/pull/531" class="bare">https://github.com/kubevirt/kubevirt/pull/531</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to this, we are also working on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Addition of more tests to pod networking (@vladikr)
+(<a href="https://github.com/kubevirt/kubevirt/pull/525" class="bare">https://github.com/kubevirt/kubevirt/pull/525</a>)</p>
+</li>
+<li>
+<p>Access to the node control network (@rmohr)
+(<a href="https://github.com/kubevirt/kubevirt/pull/499" class="bare">https://github.com/kubevirt/kubevirt/pull/499</a>)</p>
+</li>
+<li>
+<p>Custom VM metrics discussion (@fromanirh)
+(<a href="https://github.com/kubevirt/kubevirt/pull/487" class="bare">https://github.com/kubevirt/kubevirt/pull/487</a>)</p>
+</li>
+<li>
+<p>Simple persistence mechanism documentation (@mpolednik)
+(<a href="https://github.com/kubevirt/user-guide/pull/6" class="bare">https://github.com/kubevirt/user-guide/pull/6</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take a look at the pulse, to get an overview over all changes of this week:
+<a href="https://github.com/kubevirt/kubevirt/pulse" class="bare">https://github.com/kubevirt/kubevirt/pulse</a></p>
+</div>
+<div class="paragraph">
+<p>Finally you can view our open issues at
+<a href="https://github.com/kubevirt/kubevirt/issues" class="bare">https://github.com/kubevirt/kubevirt/issues</a></p>
+</div>
+<div class="paragraph">
+<p>And keep track of events at our calendar
+<a href="https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a>" class="bare">https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a></a></p>
+</div>
+<div class="paragraph">
+<p>If you need some help or want to chat you can find us on
+<a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
+</div>]]></description><link>https://kubevirt.github.io/blog/2017/10/28/This-Week-in-Kube-Virt-8.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/10/28/This-Week-in-Kube-Virt-8.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Sat, 28 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 7]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the seventh weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
