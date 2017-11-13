@@ -24,5 +24,27 @@
       null
     ],
     "_Ctor": {}
+  },
+  "site": {
+    "title": "SUN",
+    "description": "404.html",
+    "logo": "",
+    "cover": "",
+    "delay": "300",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "",
+    "github": "",
+    "twitter": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
