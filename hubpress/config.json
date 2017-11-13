@@ -24,27 +24,5 @@
       null
     ],
     "_Ctor": {}
-  },
-  "site": {
-    "title": "SUN",
-    "description": "start",
-    "logo": "http://ow9jw271t.bkt.clouddn.com/1.jpg",
-    "cover": "http://ow9jw271t.bkt.clouddn.com/1.jpg",
-    "delay": "",
-    "postsPerPage": "",
-    "googleAnalytics": "",
-    "disqus": ""
-  },
-  "socialnetwork": {
-    "email": "eyek@163.com",
-    "github": "https://github.com/responsebody",
-    "twitter": "",
-    "facebook": "",
-    "googleplus": "",
-    "instagram": "",
-    "pinterest": "",
-    "flickr": "",
-    "linkedin": "",
-    "stackoverflow": ""
   }
 }
