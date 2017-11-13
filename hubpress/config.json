@@ -2,11 +2,11 @@
   "meta": {
     "username": "responsebody",
     "repositoryName": "sss",
-    "branch": "gh-pages",
+    "branch": "master",
     "cname": "springmvc.io"
   },
   "theme": {
-    "name": "ghostium"
+    "name": "casper"
   },
   "urls": {
     "site": "http://springmvc.io",
