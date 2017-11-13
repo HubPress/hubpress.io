@@ -6,12 +6,12 @@
     "cname": "springmvc.io"
   },
   "theme": {
-    "name": "ghostium"
+    "name": "casper"
   },
   "urls": {
     "site": "http://springmvc.io",
     "hubpress": "http://springmvc.io",
-    "theme": "//springmvc.io/themes/ghostium",
+    "theme": "//springmvc.io/themes/casper",
     "images": "http://springmvc.io/images"
   },
   "initialisationConfigComponent": {
@@ -27,16 +27,16 @@
   },
   "site": {
     "title": "SUN",
-    "description": "start",
+    "description": "",
     "logo": "http://ow9jw271t.bkt.clouddn.com/1.jpg",
     "cover": "http://ow9jw271t.bkt.clouddn.com/1.jpg",
-    "delay": "300",
+    "delay": "3",
     "postsPerPage": "5",
     "googleAnalytics": "",
     "disqus": ""
   },
   "socialnetwork": {
-    "email": "",
+    "email": "eyek@163.com",
     "github": "",
     "twitter": "",
     "facebook": "",
