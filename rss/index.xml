@@ -1,1 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[SUN]]></title><description><![CDATA[start]]></description><link>http://springmvc.io</link><image><url>http://ow9jw271t.bkt.clouddn.com/1.jpg</url><title>SUN</title><link>http://springmvc.io</link></image><generator>RSS for Node</generator><lastBuildDate>Mon, 13 Nov 2017 07:26:23 GMT</lastBuildDate><atom:link href="http://springmvc.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[SUN]]></title><description><![CDATA[start]]></description><link>http://springmvc.io</link><image><url>http://ow9jw271t.bkt.clouddn.com/1.jpg</url><title>SUN</title><link>http://springmvc.io</link></image><generator>RSS for Node</generator><lastBuildDate>Mon, 13 Nov 2017 07:27:17 GMT</lastBuildDate><atom:link href="http://springmvc.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Update: sSG咕咕咕咕]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s time for a new release of HubPress, which bumps the version up to 0.5.1.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re looking for more information, all new features are highlighted in the docs with <code>0.5.1</code>.</p>
+</div>
+<div class="paragraph">
+<p>A <strong>"What&#8217;s New"</strong> video is also coming where we&#8217;ll show you quickly about the changes.
+Subscribe to our new <a href="https://www.youtube.com/channel/UCNsNq3EoNCHGAD_h7eXlGrA">YouTube Channel</a> for more updates.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+There are breaking changes in this release that affect themes.
+Make sure you read these Release Notes in their entirety before reporting any bugs.
+</td>
+</tr>
+</table>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_upgrade_your_instance">Upgrade your instance</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_upgrade_your_instance">Upgrade your instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First, make sure that you have saved all your blog posts.
+Every unsaved draft will be lost because we have changed the storage system in this version.</p>
+</div>
+</div>
+</div>]]></description><link>http://springmvc.io/2017/06/20/Update-sSG.html</link><guid isPermaLink="true">http://springmvc.io/2017/06/20/Update-sSG.html</guid><category><![CDATA[release]]></category><pubDate>Tue, 20 Jun 2017 00:00:00 GMT</pubDate></item></channel></rss>
