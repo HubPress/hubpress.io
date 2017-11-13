@@ -1,8 +1,8 @@
-= Update: What's New in Version 0.5.1
+= Update: sSG咕咕咕咕
 :hp-tags: release
 :toc: macro
 :release: 0.5.1
-:published_at: 2016-06-20
+:published_at: 2017-06-20
 
 It's time for a new release of HubPress, which bumps the version up to {release}.
 
