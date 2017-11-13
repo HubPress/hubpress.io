@@ -6,12 +6,12 @@
     "cname": "springmvc.io"
   },
   "theme": {
-    "name": "casper"
+    "name": "ghostium"
   },
   "urls": {
     "site": "http://springmvc.io",
     "hubpress": "http://springmvc.io",
-    "theme": "//springmvc.io/themes/casper",
+    "theme": "//springmvc.io/themes/ghostium",
     "images": "http://springmvc.io/images"
   },
   "initialisationConfigComponent": {
