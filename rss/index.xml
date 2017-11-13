@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>http://springmvc.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 13 Nov 2017 06:50:47 GMT</lastBuildDate><atom:link href="http://springmvc.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Update: What's New in Version 0.5.1]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[SUN]]></title><description><![CDATA[start]]></description><link>http://springmvc.io</link><image><url>http://ow9jw271t.bkt.clouddn.com/1.jpg</url><title>SUN</title><link>http://springmvc.io</link></image><generator>RSS for Node</generator><lastBuildDate>Mon, 13 Nov 2017 07:27:17 GMT</lastBuildDate><atom:link href="http://springmvc.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Update: sSG咕咕咕咕]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>It&#8217;s time for a new release of HubPress, which bumps the version up to 0.5.1.</p>
@@ -39,4 +39,4 @@ Make sure you read these Release Notes in their entirety before reporting any bu
 Every unsaved draft will be lost because we have changed the storage system in this version.</p>
 </div>
 </div>
-</div>]]></description><link>http://springmvc.io/2016/06/20/Update-Whats-New-in-Version-051.html</link><guid isPermaLink="true">http://springmvc.io/2016/06/20/Update-Whats-New-in-Version-051.html</guid><category><![CDATA[release]]></category><pubDate>Mon, 20 Jun 2016 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>http://springmvc.io/2017/06/20/Update-sSG.html</link><guid isPermaLink="true">http://springmvc.io/2017/06/20/Update-sSG.html</guid><category><![CDATA[release]]></category><pubDate>Tue, 20 Jun 2017 00:00:00 GMT</pubDate></item></channel></rss>
