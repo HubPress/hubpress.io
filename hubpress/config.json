@@ -1,10 +1,28 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "responsebody",
+    "repositoryName": "sss",
+    "branch": "master",
+    "cname": "springmvc.io"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "http://springmvc.io",
+    "hubpress": "http://springmvc.io",
+    "theme": "//springmvc.io/themes/casper",
+    "images": "http://springmvc.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ],
+    "_Ctor": {}
   }
 }
