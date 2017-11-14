@@ -1,10 +1,50 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "responsebody",
+    "repositoryName": "sss",
+    "branch": "master",
+    "cname": "springmvc.io"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "http://springmvc.io",
+    "hubpress": "http://springmvc.io",
+    "theme": "//springmvc.io/themes/casper",
+    "images": "http://springmvc.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ],
+    "_Ctor": {}
+  },
+  "site": {
+    "title": "SUN",
+    "description": "I don't need God to protect me from sleep",
+    "logo": "http://ow9jw271t.bkt.clouddn.com/1.jpg",
+    "cover": "http://p4.cdn.img9.top/ipfs/QmZCD7z3yGckaJHHzvjAENmm3vDxydVNkHCoz9k5j6gs51?4.jpg",
+    "delay": "",
+    "postsPerPage": "5",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "eyek@163.com",
+    "github": "",
+    "twitter": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
