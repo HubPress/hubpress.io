@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Fri, 10 Nov 2017 22:22:55 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 10 (base 10)]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 21 Nov 2017 20:11:07 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 11]]></title><description><![CDATA[<div class="paragraph">
+<p>This is a weekly update from the KubeVirt team.</p>
+</div>
+<div class="paragraph">
+<p>We are currently driven by</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Being easier to be used on Kubernetes and OpenShift</p>
+</li>
+<li>
+<p>Enabling people to contribute</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This week we achieved to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Generation of API documentation (@lukas-bednar)
+(<a href="https://github.com/kubevirt/kubevirt/pull/571" class="bare">https://github.com/kubevirt/kubevirt/pull/571</a>)
+(<a href="https://kubevirt-incubator.github.io/api-reference/content/index.html" class="bare">https://kubevirt-incubator.github.io/api-reference/content/index.html</a>)</p>
+</li>
+<li>
+<p>Move components to kube-system namespace (@cynepco3hahue)
+(<a href="https://github.com/kubevirt/kubevirt/pull/558" class="bare">https://github.com/kubevirt/kubevirt/pull/558</a>)</p>
+</li>
+<li>
+<p>Use glide again (@davidvossel)
+(<a href="https://github.com/kubevirt/kubevirt/pull/576" class="bare">https://github.com/kubevirt/kubevirt/pull/576</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to this, we are also working on:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GlusterFS support (@humblec)
+(<a href="https://github.com/kubevirt/kubevirt/pull/578" class="bare">https://github.com/kubevirt/kubevirt/pull/578</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take a look at the pulse, to get an overview over all changes of this week:
+<a href="https://github.com/kubevirt/kubevirt/pulse" class="bare">https://github.com/kubevirt/kubevirt/pulse</a></p>
+</div>
+<div class="paragraph">
+<p>Finally you can view our open issues at
+<a href="https://github.com/kubevirt/kubevirt/issues" class="bare">https://github.com/kubevirt/kubevirt/issues</a></p>
+</div>
+<div class="paragraph">
+<p>And keep track of events at our calendar
+<a href="https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a>" class="bare">https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a></a></p>
+</div>
+<div class="paragraph">
+<p>If you need some help or want to chat you can find us on
+<a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
+</div>]]></description><link>https://kubevirt.github.io/blog/2017/11/21/This-Week-in-Kube-Virt-11.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/11/21/This-Week-in-Kube-Virt-11.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Tue, 21 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 10 (base 10)]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
