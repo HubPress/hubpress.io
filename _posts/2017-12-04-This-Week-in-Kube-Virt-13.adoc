@@ -13,6 +13,7 @@ We are currently driven by
 - Enabling people to contribute
 
 This week you can meet us at:
+
 - KubeCon NA: Virtualizing Workloads Saloon
   (https://kccncna17.sched.com/event/43ebdf89846d7f4939810bbaeb5a3229)
 
