@@ -12,7 +12,11 @@ We are currently driven by
 - Being easier to be used on Kubernetes and OpenShift
 - Enabling people to contribute
 
-This week we was really slow, but we still achieved to:
+This week you can meet us at:
+- KubeCon NA: Virtualizing Workloads Saloon
+  (https://kccncna17.sched.com/event/43ebdf89846d7f4939810bbaeb5a3229)
+
+This week we still achieved to:
 
 - Owner References for VM ReplicaSet (@rmohr)
   (https://github.com/kubevirt/kubevirt/pull/596)
