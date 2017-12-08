@@ -3,7 +3,7 @@
     "username": "kubevirt",
     "repositoryName": "blog",
     "branch": "gh-pages",
-    "cname": ""
+    "cname": "blog.kubevirt.io"
   },
   "theme": {
     "name": "casper"
