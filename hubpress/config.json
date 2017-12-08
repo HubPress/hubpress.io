@@ -9,10 +9,10 @@
     "name": "casper"
   },
   "urls": {
-    "site": "https://kubevirt.github.io/blog",
-    "hubpress": "http://blog.kubevirt.io/blog",
-    "theme": "//kubevirt.github.io/blog/themes/casper",
-    "images": "https://kubevirt.github.io/blog/images"
+    "site": "https://blog.kubevirt.io",
+    "hubpress": "https://blog.kubevirt.io/",
+    "theme": "https//blog.kubevirt.io/themes/casper",
+    "images": "https://blog.kubevirt.io/images"
   },
   "initialisationConfigComponent": {
     "name": "initialise-configuration",
