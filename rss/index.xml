@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>https://kubevirt.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 05 Dec 2017 15:57:52 GMT</lastBuildDate><atom:link href="https://kubevirt.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 13]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 08 Dec 2017 19:44:51 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[KubeVirt v0.1.0]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This release follows v0.0.4 and consists of 115 changes, contributed by
+11 people, leading to 121 files changed, 5278 insertions(+), 1916 deletions(-).</p>
+</div>
+<div class="paragraph">
+<p>The source code and selected binaries are available for download at:
+<a href="https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0" class="bare">https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The primary release artifact of KubeVirt is the git tree. The release tag is
+signed and can be verified using [git-evtag][git-evtag].</p>
+</div>
+<div class="paragraph">
+<p>Pre-built containers are published on Docker Hub and can be viewed at:
+<a href="https://hub.docker.com/u/kubevirt/" class="bare">https://hub.docker.com/u/kubevirt/</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notable_changes">Notable changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Many API improvements for a proper OpenAPI reference</p>
+</li>
+<li>
+<p>Add watchdog support</p>
+</li>
+<li>
+<p>Drastically improve the deployment on non-vagrant setups</p>
+</li>
+<li>
+<p>Dropped nodeSelectors</p>
+</li>
+<li>
+<p>Separated inner component deployment from edge component deployment</p>
+</li>
+<li>
+<p>Created separate manifests for developer, test, and release deployments</p>
+</li>
+<li>
+<p>Moved komponents to kube-system namespace</p>
+</li>
+<li>
+<p>Improved and unified flag parsing</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributors">Contributors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>11 people contributed to this release:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>42	Roman Mohr &lt;rmohr@redhat.com&gt;
+20	David Vossel &lt;dvossel@redhat.com&gt;
+18	Lukas Bednar &lt;lbednar@redhat.com&gt;
+14	Martin Polednik &lt;mpolednik@redhat.com&gt;
+ 7	Fabian Deutsch &lt;fabiand@redhat.com&gt;
+ 6	Lukianov Artyom &lt;alukiano@redhat.com&gt;
+ 3	Vladik Romanovsky &lt;vromanso@redhat.com&gt;
+ 2	Petr Kotas &lt;petr.kotas@gmail.com&gt;
+ 1	Barak Korren &lt;bkorren@redhat.com&gt;
+ 1	Francois Deppierraz &lt;francois@ctrlaltdel.ch&gt;
+ 1	Saravanan KR &lt;skramaja@redhat.com&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_results">Test Results</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Ran 44 of 46 Specs in 851.185 seconds
+SUCCESS!&#8201;&#8212;&#8201;44 Passed | 0 Failed | 0 Pending | 2 Skipped PASS</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_resources">Additional Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mailing list: <a href="https://groups.google.com/forum/#!forum/kubevirt-dev" class="bare">https://groups.google.com/forum/#!forum/kubevirt-dev</a></p>
+</li>
+<li>
+<p>IRC: <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
+</li>
+<li>
+<p>An easy to use demo: <a href="https://github.com/kubevirt/demo" class="bare">https://github.com/kubevirt/demo</a></p>
+</li>
+<li>
+<p>[How to contribute][contributing]</p>
+</li>
+<li>
+<p>[License][license]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>[git-evtag]: <a href="https://github.com/cgwalters/git-evtag#using-git-evtag" class="bare">https://github.com/cgwalters/git-evtag#using-git-evtag</a>
+[contributing]: <a href="https://github.com/kubevirt/kubevirt/blob/master/CONTRIBUTING.md" class="bare">https://github.com/kubevirt/kubevirt/blob/master/CONTRIBUTING.md</a>
+[license]: <a href="https://github.com/kubevirt/kubevirt/blob/master/LICENSE" class="bare">https://github.com/kubevirt/kubevirt/blob/master/LICENSE</a></p>
+</div>
+</div>
+</div>]]></description><link>http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html</guid><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 08 Dec 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 13]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -74,7 +191,7 @@
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/12/04/This-Week-in-Kube-Virt-13.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/12/04/This-Week-in-Kube-Virt-13.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Mon, 04 Dec 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 12]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/12/04/This-Week-in-Kube-Virt-13.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/12/04/This-Week-in-Kube-Virt-13.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Mon, 04 Dec 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 12]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -131,7 +248,7 @@
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/11/25/This-Week-in-Kube-Virt-12.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/11/25/This-Week-in-Kube-Virt-12.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Sat, 25 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 11]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/11/25/This-Week-in-Kube-Virt-12.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/11/25/This-Week-in-Kube-Virt-12.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Sat, 25 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 11]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -193,7 +310,7 @@
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/11/21/This-Week-in-Kube-Virt-11.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/11/21/This-Week-in-Kube-Virt-11.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Tue, 21 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 10 (base 10)]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/11/21/This-Week-in-Kube-Virt-11.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/11/21/This-Week-in-Kube-Virt-11.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Tue, 21 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 10 (base 10)]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -290,7 +407,7 @@ Kubernetes with libvirt &amp; KVM by Fabian Deutsch &amp; Roman Mohr"
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/11/10/This-Week-in-Kube-Virt-10-base-10.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/11/10/This-Week-in-Kube-Virt-10-base-10.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 10 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[KubeVirt v0.0.4]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>http://blog.kubevirt.io/2017/11/10/This-Week-in-Kube-Virt-10-base-10.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/11/10/This-Week-in-Kube-Virt-10-base-10.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 10 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[KubeVirt v0.0.4]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>This release follows v0.0.3 and consists of 133 changes, contributed by
@@ -419,7 +536,7 @@ SUCCESS!&#8201;&#8212;&#8201;45 Passed | 0 Failed | 0 Pending | 2 Skipped PASS</
 [license]: <a href="https://github.com/kubevirt/kubevirt/blob/master/LICENSE" class="bare">https://github.com/kubevirt/kubevirt/blob/master/LICENSE</a></p>
 </div>
 </div>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/11/07/Kube-Virt-v004.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/11/07/Kube-Virt-v004.html</guid><category><![CDATA[release]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Tue, 07 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 9]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/11/07/Kube-Virt-v004.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/11/07/Kube-Virt-v004.html</guid><category><![CDATA[release]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Tue, 07 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 9]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -507,7 +624,7 @@ SUCCESS!&#8201;&#8212;&#8201;45 Passed | 0 Failed | 0 Pending | 2 Skipped PASS</
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/11/06/This-Week-in-Kube-Virt-9.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/11/06/This-Week-in-Kube-Virt-9.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Mon, 06 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 8]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/11/06/This-Week-in-Kube-Virt-9.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/11/06/This-Week-in-Kube-Virt-9.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Mon, 06 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 8]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -583,7 +700,7 @@ SUCCESS!&#8201;&#8212;&#8201;45 Passed | 0 Failed | 0 Pending | 2 Skipped PASS</
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/10/28/This-Week-in-Kube-Virt-8.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/10/28/This-Week-in-Kube-Virt-8.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Sat, 28 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 7]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/10/28/This-Week-in-Kube-Virt-8.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/10/28/This-Week-in-Kube-Virt-8.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Sat, 28 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 7]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the seventh weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -684,7 +801,7 @@ To be resolved: API server storage
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/10/24/This-Week-in-Kube-Virt-7.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/10/24/This-Week-in-Kube-Virt-7.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Tue, 24 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 6]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/10/24/This-Week-in-Kube-Virt-7.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/10/24/This-Week-in-Kube-Virt-7.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Tue, 24 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 6]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the sixth weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -767,7 +884,7 @@ To be resolved: API server storage
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/10/15/This-Week-in-Kube-Virt-6.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/10/15/This-Week-in-Kube-Virt-6.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Sun, 15 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 5]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/10/15/This-Week-in-Kube-Virt-6.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/10/15/This-Week-in-Kube-Virt-6.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Sun, 15 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 5]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the fith weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -850,7 +967,7 @@ To be resolved: API server storage
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/10/06/This-Week-in-Kube-Virt-5.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 06 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 4]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/10/06/This-Week-in-Kube-Virt-5.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/10/06/This-Week-in-Kube-Virt-5.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 06 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 4]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the fourth weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -938,7 +1055,7 @@ To be resolved: API server storage
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/29/This-Week-in-Kube-Virt-4.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 29 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 3]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/09/29/This-Week-in-Kube-Virt-4.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/09/29/This-Week-in-Kube-Virt-4.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 29 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 3]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the third weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -1022,7 +1139,7 @@ To be resolved: API server storage
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/22/This-Week-in-Kube-Virt-3.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/22/This-Week-in-Kube-Virt-3.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 22 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 2]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/09/22/This-Week-in-Kube-Virt-3.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/09/22/This-Week-in-Kube-Virt-3.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 22 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 2]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the second weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -1103,7 +1220,7 @@ To be resolved: API server storage
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/15/This-Week-in-Kube-Virt-2.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/15/This-Week-in-Kube-Virt-2.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 15 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt #1]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/09/15/This-Week-in-Kube-Virt-2.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/09/15/This-Week-in-Kube-Virt-2.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 15 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt #1]]></title><description><![CDATA[<div class="paragraph">
 <p>This is the first weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -1171,4 +1288,4 @@ To be resolved: API server storage
 <div class="paragraph">
 <p>If you need some help or want to chat you can find us on
 <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a>.</p>
-</div>]]></description><link>https://kubevirt.github.io/blog/2017/09/08/This-Week-in-Kube-Virt-1.html</link><guid isPermaLink="true">https://kubevirt.github.io/blog/2017/09/08/This-Week-in-Kube-Virt-1.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 08 Sep 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>http://blog.kubevirt.io/2017/09/08/This-Week-in-Kube-Virt-1.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/09/08/This-Week-in-Kube-Virt-1.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 08 Sep 2017 00:00:00 GMT</pubDate></item></channel></rss>
