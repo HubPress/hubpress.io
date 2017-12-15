@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 08 Dec 2017 19:44:51 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[KubeVirt v0.1.0]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 15 Dec 2017 09:39:19 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 15]]></title><description><![CDATA[<div class="paragraph">
+<p>This is a weekly update from the KubeVirt team.</p>
+</div>
+<div class="paragraph">
+<p>We are currently driven by</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Being easier to be used on Kubernetes and OpenShift</p>
+</li>
+<li>
+<p>Enabling people to contribute</p>
+</li>
+<li>
+<p>Streamlining and improving the Kubernetes experience</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This week we achieved to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VM Grace period and shutdown improvements (@davidvossel)
+(<a href="https://github.com/kubevirt/kubevirt/pull/526" class="bare">https://github.com/kubevirt/kubevirt/pull/526</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On another side we were also successful in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Initiating a Kubernetes WG Virtualization mainlinglist:
+<a href="https://groups.google.com/forum/#!forum/kubernetes-wg-virtualization" class="bare">https://groups.google.com/forum/#!forum/kubernetes-wg-virtualization</a></p>
+</li>
+<li>
+<p>Triggering a #virtualization slack channel in the Kubernetes org</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to this, we are also working on quite a few things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Serial console rework (@davidvossel)
+(<a href="https://github.com/kubevirt/kubevirt/pull/613" class="bare">https://github.com/kubevirt/kubevirt/pull/613</a>)</p>
+</li>
+<li>
+<p>VM API Redesign (@rmohr)
+(<a href="https://github.com/kubevirt/kubevirt/pull/606" class="bare">https://github.com/kubevirt/kubevirt/pull/606</a>)</p>
+</li>
+<li>
+<p>Add OpenShift support (@karimb)
+(<a href="https://github.com/kubevirt/kubevirt/pull/608" class="bare">https://github.com/kubevirt/kubevirt/pull/608</a>,
+ <a href="https://github.com/kubevirt-incubator/kubevirt-ansible/pull/29" class="bare">https://github.com/kubevirt-incubator/kubevirt-ansible/pull/29</a>)</p>
+</li>
+<li>
+<p>Ansible Broker support (@gbenhaim)
+(<a href="https://github.com/kubevirt-incubator/kubevirt-ansible/pull/30" class="bare">https://github.com/kubevirt-incubator/kubevirt-ansible/pull/30</a>)</p>
+</li>
+<li>
+<p>Improve development builds (@petrkotas)
+  (<a href="https://github.com/kubevirt/kubevirt/pull/609" class="bare">https://github.com/kubevirt/kubevirt/pull/609</a>)
+-
+Take a look at the pulse, to get an overview over all changes of this week:
+<a href="https://github.com/kubevirt/kubevirt/pulse" class="bare">https://github.com/kubevirt/kubevirt/pulse</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Finally you can view our open issues at
+<a href="https://github.com/kubevirt/kubevirt/issues" class="bare">https://github.com/kubevirt/kubevirt/issues</a></p>
+</div>
+<div class="paragraph">
+<p>And keep track of events at our calendar
+<a href="https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a>" class="bare">https://calendar.google.com/embed?src=<a href="mailto:18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com">18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com</a></a></p>
+</div>
+<div class="paragraph">
+<p>If you need some help or want to chat you can find us on
+<a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
+</div>]]></description><link>http://blog.kubevirt.io/2017/12/15/This-Week-in-Kube-Virt-15.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/12/15/This-Week-in-Kube-Virt-15.html</guid><category><![CDATA[weekly]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 15 Dec 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[KubeVirt v0.1.0]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>This release follows v0.0.4 and consists of 115 changes, contributed by
