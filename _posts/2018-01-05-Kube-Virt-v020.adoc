@@ -1,7 +1,7 @@
 = KubeVirt v0.2.0
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
-:published_at: 2017-12-08
+:published_at: 2018-01-05
 :hp-tags: release
 // :hp-alt-title: My English Title
 
