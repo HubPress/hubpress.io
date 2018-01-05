@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 15 Dec 2017 09:39:19 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 15]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 05 Jan 2018 15:34:14 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 15]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
@@ -201,7 +201,7 @@ SUCCESS!&#8201;&#8212;&#8201;44 Passed | 0 Failed | 0 Pending | 2 Skipped PASS</
 [license]: <a href="https://github.com/kubevirt/kubevirt/blob/master/LICENSE" class="bare">https://github.com/kubevirt/kubevirt/blob/master/LICENSE</a></p>
 </div>
 </div>
-</div>]]></description><link>http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html</guid><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 08 Dec 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 13]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html</guid><category><![CDATA[release]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 08 Dec 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[This Week in KubeVirt 13]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team.</p>
 </div>
 <div class="paragraph">
