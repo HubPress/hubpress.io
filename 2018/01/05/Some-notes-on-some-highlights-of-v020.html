@@ -12,7 +12,7 @@
 
     <link rel="shortcut icon" href="http://blog.kubevirt.io/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="//blog.kubevirt.io/themes/casper/assets/css/screen.css?v=1515168438031" />
+    <link rel="stylesheet" type="text/css" href="//blog.kubevirt.io/themes/casper/assets/css/screen.css?v=1515182761932" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     <link rel="canonical" href="http://blog.kubevirt.io/2018/01/05/Some-notes-on-some-highlights-of-v020.html" />
@@ -90,7 +90,9 @@
 </div>
 </div>
 </div>
-<h1 id="_virtualmachine_api_redesign" class="sect0">VirtualMachine API redesign</h1>
+<div class="sect1">
+<h2 id="_virtualmachine_api_redesign">VirtualMachine API redesign</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Previously the VirtualMachine API was pretty much aligned, or a 1:1 mapping, to libvirt&#8217;s domxml.
 With this change however, we took a step back and redesigned the API to be more Kubernet-ish than libvirt-ish.</p>
@@ -98,7 +100,11 @@ With this change however, we took a step back and redesigned the API to be more 
 <div class="paragraph">
 <p>Some changes, like the extraction of source volumes, will actually help us to implement other patterns - like VirtualMachinePresets.</p>
 </div>
-<h1 id="_removal_of_haproxy" class="sect0">Removal of HAProxy</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_removal_of_haproxy">Removal of HAProxy</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>This is another nice one. So far we were using a custom API server for performing object validation.
 But the use of this custom API server required that the client was accessing the custom API server, and not the main one. The multiplexing of redirecting certain requests to our and other requests to the main API server was done by HA proxy. Somewhat like a poor mans API server aggregation.</p>
@@ -106,7 +112,11 @@ But the use of this custom API server required that the client was accessing the
 <div class="paragraph">
 <p>However, now we are focusing on CRDs completely (we considered to go to API server aggregation, but dropped this approach), which involves doing the validation of the CRD based on a json scheme.</p>
 </div>
-<h1 id="_redesign_of_vnc_console_access" class="sect0">Redesign of VNC/Console access</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_redesign_of_vnc_console_access">Redesign of VNC/Console access</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The afore mentioned custom API server contained subresources to permit inbound access to the graphical and serial consoel of VMs.
 But this does not work with CRDs and thus we are now using a different approach to provide access to those.</p>
@@ -115,6 +125,8 @@ But this does not work with CRDs and thus we are now using a different approach 
 <p>The new implementation leverages the <code>kubectl exec</code> path in order to pipe the graphical and serial console from the VM to the client.
 This is pretty nice, as we are leveraging Kubernetes for doing the piping, we merely provide a <code>kubectl</code> plugin in order to ease the consumption of this.
 Side note is that the API of the <code>kubectl</code> plugin did actually not change.</p>
+</div>
+</div>
 </div>
         </section>
 
@@ -185,8 +197,8 @@ Side note is that the API of the <code>kubectl</code> plugin did actually not ch
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script type="text/javascript" src="//blog.kubevirt.io/themes/casper/assets/js/jquery.fitvids.js?v=1515168438031"></script>
-    <script type="text/javascript" src="//blog.kubevirt.io/themes/casper/assets/js/index.js?v=1515168438031"></script>
+    <script type="text/javascript" src="//blog.kubevirt.io/themes/casper/assets/js/jquery.fitvids.js?v=1515182761932"></script>
+    <script type="text/javascript" src="//blog.kubevirt.io/themes/casper/assets/js/index.js?v=1515182761932"></script>
 
 </body>
 </html>
