@@ -2,7 +2,7 @@
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
 :published_at: 2017-12-08
-// :hp-tags: HubPress, Blog, Open_Source,
+:hp-tags: release
 // :hp-alt-title: My English Title
 
 This release follows v0.0.4 and consists of 115 changes, contributed by
