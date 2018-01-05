@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 05 Jan 2018 16:06:57 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[KubeVirt v0.2.0]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 05 Jan 2018 16:07:18 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Some notes on some highlights of v0.2.0]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The very first release of the new year had a few notable highlights which were brewing over the last few weeks.</p>
+</div>
+</div>
+</div>
+<h1 id="_virtualmachine_api_redesign" class="sect0">VirtualMachine API redesign</h1>
+<div class="paragraph">
+<p>Previously the VirtualMachine API was pretty much aligned, or a 1:1 mapping, to libvirt&#8217;s domxml.
+With this change however, we took a step back and redesigned the API to be more Kubernet-ish than libvirt-ish.</p>
+</div>
+<div class="paragraph">
+<p>Some changes, like the extraction of source volumes, will actually help us to implement other patterns - like VirtualMachinePresets.</p>
+</div>
+<h1 id="_removal_of_haproxy" class="sect0">Removal of HAProxy</h1>
+<div class="paragraph">
+<p>This is another nice one. So far we were using a custom API server for performing object validation.
+But the use of this custom API server required that the client was accessing the custom API server, and not the main one. The multiplexing of redirecting certain requests to our and other requests to the main API server was done by HA proxy. Somewhat like a poor mans API server aggregation.</p>
+</div>
+<div class="paragraph">
+<p>However, now we are focusing on CRDs completely (we considered to go to API server aggregation, but dropped this approach), which involves doing the validation of the CRD based on a json scheme.</p>
+</div>
+<h1 id="_redesign_of_vnc_console_access" class="sect0">Redesign of VNC/Console access</h1>
+<div class="paragraph">
+<p>The afore mentioned custom API server contained subresources to permit inbound access to the graphical and serial consoel of VMs.
+But this does not work with CRDs and thus we are now using a different approach to provide access to those.</p>
+</div>
+<div class="paragraph">
+<p>The new implementation leverages the <code>kubectl exec</code> path in order to pipe the graphical and serial console from the VM to the client.
+This is pretty nice, as we are leveraging Kubernetes for doing the piping, we merely provide a <code>kubectl</code> plugin in order to ease the consumption of this.
+Side note is that the API of the <code>kubectl</code> plugin did actually not change.</p>
+</div>]]></description><link>http://blog.kubevirt.io/2018/01/05/Some-notes-on-some-highlights-of-v020.html</link><guid isPermaLink="true">http://blog.kubevirt.io/2018/01/05/Some-notes-on-some-highlights-of-v020.html</guid><category><![CDATA[release]]></category><dc:creator><![CDATA[Fabian Deutsch]]></dc:creator><pubDate>Fri, 05 Jan 2018 00:00:00 GMT</pubDate></item><item><title><![CDATA[KubeVirt v0.2.0]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>This release follows v0.1.0 and consists of 131 changes, contributed by
