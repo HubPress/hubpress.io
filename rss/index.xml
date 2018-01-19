@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 19 Jan 2018 15:59:32 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 16 (size-XL)]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[KubeVirt Blog]]></title><description><![CDATA[The KubeVirt project, working on the Kubernetes virtualization API.]]></description><link>http://blog.kubevirt.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 19 Jan 2018 16:03:01 GMT</lastBuildDate><atom:link href="http://blog.kubevirt.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[This Week in KubeVirt 16 (size-XL)]]></title><description><![CDATA[<div class="paragraph">
 <p>This is a weekly update from the KubeVirt team - including the holiday backlog update.</p>
 </div>
 <div class="paragraph">
@@ -109,7 +109,10 @@
 <p><a href="https://github.com/ManageIQ/manageiq-providers-kubevirt/" class="bare">https://github.com/ManageIQ/manageiq-providers-kubevirt/</a></p>
 </li>
 <li>
-<p><a href="https://www.youtube.com/watch?v=9Gf2Nv7h558" class="bare">https://www.youtube.com/watch?v=9Gf2Nv7h558</a></p>
+<p>Video: <a href="https://www.youtube.com/watch?v=9Gf2Nv7h558" class="bare">https://www.youtube.com/watch?v=9Gf2Nv7h558</a></p>
+</li>
+<li>
+<p>Screenshot:</p>
 </li>
 </ul>
 </div>
@@ -126,7 +129,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The Cockpit plugin makes some progress (@mlibra):</p>
+<p>The Cockpit plugin makes some progress (@mlibra)</p>
+</li>
+<li>
+<p><a href="https://github.com/cockpit-project/cockpit/wiki/Feature:-Kubernetes:-KubeVirt-support-enhancements" class="bare">https://github.com/cockpit-project/cockpit/wiki/Feature:-Kubernetes:-KubeVirt-support-enhancements</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cockpit-project/cockpit/pull/7830" class="bare">https://github.com/cockpit-project/cockpit/pull/7830</a></p>
+</li>
+<li>
+<p>Screenshot:</p>
 </li>
 </ul>
 </div>
