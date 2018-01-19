@@ -9,10 +9,12 @@ This is a weekly update from the KubeVirt team - including the holiday backlog u
 
 We are currently driven by
 
-- Being easier to be used on Kubernetes and OpenShift
+- Building a solid user-story around KubeVirt
+- Caring about end-to-end (backend, core, ui)
 - Rework out architecture
 - Getting dependencies into shape (storage)
 - Improve the user-experience for users (UI, deployment)
+- Being easier to be used on Kubernetes and OpenShift
 
 Within the last weeks we achieved to:
 
