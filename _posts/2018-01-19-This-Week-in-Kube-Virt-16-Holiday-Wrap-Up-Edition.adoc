@@ -5,8 +5,7 @@
 :hp-tags: weekly
 // :hp-alt-title: My English Title
 
-This is a weekly update from the KubeVirt team - including the holiday backlog
-update.
+This is a weekly update from the KubeVirt team - including the holiday backlog update.
 
 We are currently driven by
 
@@ -17,7 +16,11 @@ We are currently driven by
 
 Within the last weeks we achieved to:
 
-
+* Drop of HAProxy and redeisng of console access (@davidvossel) (https://github.com/kubevirt/kubevirt/pull/618)
+* Dockerized builds to make sure the build env matches the runtime env (@rmohr and others) (https://github.com/kubevirt/kubevirt/pull/647)
+* OwnerReference fixes (@alukiano) (https://github.com/kubevirt/kubevirt/pull/642)
+* OfflineVirtualMachineDesign documentation (@petrkotas) (https://github.com/kubevirt/kubevirt/pull/641)
+* Further RBAC improvements (@gbenhaim) (https://github.com/kubevirt/kubevirt/pull/640)
 
 * **User-Guide**
 ** The guide saw many updates also for planned stuff
@@ -26,6 +29,10 @@ Within the last weeks we achieved to:
 ** Hardware configuration (@rmohr) (https://github.com/kubevirt/user-guide/pull/14)
 ** Volumes and disks (@rmohr) (https://github.com/kubevirt/user-guide/pull/13)
 ** Cloud-Init (@davidvossel) (https://github.com/kubevirt/user-guide/pull/10)
+
+* **API Reference**
+** Now updated regularly (@lukas-bednar) (https://github.com/kubevirt/kubevirt/pull/643)
+   https://kubevirt-incubator.github.io/api-reference/content/index.html
 
 * **Demo**
 ** Got updated to v0.2.0 (@fabiand)
@@ -44,7 +51,17 @@ image:https://gist.githubusercontent.com/fabiand/417615d509badb8bff7d6f6a0d736df
 
 image::https://gist.githubusercontent.com/fabiand/417615d509badb8bff7d6f6a0d736df6/raw/16796e942793fbab48398c78c600ea7eabd7413a/02.png[]
 
+* **Ansible**
+** Move to stable kubevirt release manifests (@gbenhaim) (https://github.com/kubevirt-incubator/kubevirt-ansible/pull/37)
+** Many improvements to make it work seamlessly (@gbenhaim @lukas-bednar)
+
 In addition to this, we are also working on:
+
+- Decentralize the architecture (@davidvossel) (https://github.com/kubevirt/kubevirt/pull/663)
+- Implement VirtualMachinePresets (@stu-gott) (https://github.com/kubevirt/kubevirt/pull/652)
+- virtctl fixes (@davidvossel and @awels) (https://github.com/kubevirt/kubevirt/pull/648)
+- Move to q35 machine type (@mpolednik) (https://github.com/kubevirt/kubevirt/pull/650)
+- Allow deploying OpenShift in vagrant (@alukiano) (https://github.com/kubevirt/kubevirt/pull/631)
 
 - **User-Guide**:
   - Offline Virtual Machine docs (@petrkotas) (https://github.com/kubevirt/user-guide/pull/9)
