@@ -22,24 +22,28 @@ Within the last weeks we achieved to:
 - Improve the manifest situation (@rmohr)
   (https://github.com/kubevirt/kubevirt/pull/602)
 
-- **User-Guide**: The guide saw many updates also for planned stuff
-  - Update to reflect v0.2.0 changes (@rmohr) (https://github.com/kubevirt/user-guide/pull/12)
-  - NodeSelector and affinity (@rmohr) (https://github.com/kubevirt/user-guide/pull/15)
-  - Hardware configuration (@rmohr) (https://github.com/kubevirt/user-guide/pull/14)
-  - Volumes and disks (@rmohr) (https://github.com/kubevirt/user-guide/pull/13)
-  - Cloud-Init (@davidvossel) (https://github.com/kubevirt/user-guide/pull/10)
+- **User-Guide**
+  - The guide saw many updates also for planned stuff
+    - Update to reflect v0.2.0 changes (@rmohr) (https://github.com/kubevirt/user-guide/pull/12)
+    - NodeSelector and affinity (@rmohr) (https://github.com/kubevirt/user-guide/pull/15)
+    - Hardware configuration (@rmohr) (https://github.com/kubevirt/user-guide/pull/14)
+    - Volumes and disks (@rmohr) (https://github.com/kubevirt/user-guide/pull/13)
+    - Cloud-Init (@davidvossel) (https://github.com/kubevirt/user-guide/pull/10)
 
-- **Storage**: 
+- **Demo**
+  - Got updated to v0.2.0 (@fabiand)
+    - But an issue with virtctl was introduced
+    - https://github.com/kubevirt/demo
 
-- **Demo**: Got updated to v0.2.0 (@fabiand)
-  But an issue with virtctl was introduced
-  https://github.com/kubevirt/demo
-
-- **UI**: The WIP KubeVirt provider for ManageIQ was showcased
-  https://github.com/ManageIQ/manageiq-providers-kubevirt/
+- **UI**
+  - The WIP KubeVirt provider for ManageIQ was showcased (@masayag @pkliczewski)
+    - https://github.com/ManageIQ/manageiq-providers-kubevirt/
+    - https://www.youtube.com/watch?v=9Gf2Nv7h558
+    
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9Gf2Nv7h558" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-- **UI**: The Cockpit plugin makes some progress
+- **UI**
+  - The Cockpit plugin makes some progress (@mlibra)
 
 In addition to this, we are also working on:
 
