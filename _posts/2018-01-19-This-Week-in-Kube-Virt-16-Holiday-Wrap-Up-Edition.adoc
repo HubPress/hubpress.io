@@ -1,0 +1,60 @@
+= This Week in KubeVirt 16 (Holiday Wrap Up Edition)
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+:published_at: 2018-01-19
+:hp-tags: weekly
+// :hp-alt-title: My English Title
+
+This is a weekly update from the KubeVirt team - including the holiday backlog
+update.
+
+We are currently driven by
+
+- Being easier to be used on Kubernetes and OpenShift
+- Rework out architecture
+- Getting dependencies into shape (storage)
+- Improve the user-experience for users (UI, deployment)
+
+Within the last weeks we achieved to:
+
+- Release KubeVirt v0.2.0
+  (https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0)
+- Improve the manifest situation (@rmohr)
+  (https://github.com/kubevirt/kubevirt/pull/602)
+
+- **User-Guide**: The guide saw many updates also for planned stuff
+  - Update to reflect v0.2.0 changes (@rmohr) (https://github.com/kubevirt/user-guide/pull/12)
+  - NodeSelector and affinity (@rmohr) (https://github.com/kubevirt/user-guide/pull/15)
+  - Hardware configuration (@rmohr) (https://github.com/kubevirt/user-guide/pull/14)
+  - Volumes and disks (@rmohr) (https://github.com/kubevirt/user-guide/pull/13)
+  - Cloud-Init (@davidvossel) (https://github.com/kubevirt/user-guide/pull/10)
+
+- **Storage**: 
+
+- **Demo**: Got updated to v0.2.0 (@fabiand)
+  But an issue with virtctl was introduced
+  https://github.com/kubevirt/demo
+
+- **UI**: The WIP KubeVirt provider for ManageIQ was showcased
+  https://github.com/ManageIQ/manageiq-providers-kubevirt/
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9Gf2Nv7h558" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+- **UI**: The Cockpit plugin makes some progress
+
+In addition to this, we are also working on:
+
+- **User-Guide**:
+  - Offline Virtual Machine docs (@petrkotas) (https://github.com/kubevirt/user-guide/pull/9)
+  - Persistent Virtual Machines (@stu-gott) (https://github.com/kubevirt/user-guide/pull/11)
+
+Take a look at the pulse, to get an overview over all changes of this week:
+https://github.com/kubevirt/kubevirt/pulse
+
+Finally you can view our open issues at
+https://github.com/kubevirt/kubevirt/issues
+
+And keep track of events at our calendar
+https://calendar.google.com/embed?src=18pc0jur01k8f2cccvn5j04j1g@group.calendar.google.com
+
+If you need some help or want to chat you can find us on
+irc://irc.freenode.net/#kubevirt
