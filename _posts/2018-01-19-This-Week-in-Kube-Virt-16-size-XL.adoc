@@ -1,4 +1,4 @@
-= This Week in KubeVirt 16 (Holiday Wrap Up Edition)
+= This Week in KubeVirt 16 (size-XL)
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
 :published_at: 2018-01-19
