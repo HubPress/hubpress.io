@@ -1,10 +1,49 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "kubevirt",
+    "repositoryName": "blog",
+    "branch": "gh-pages",
+    "cname": "blog.kubevirt.io"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "http://blog.kubevirt.io",
+    "hubpress": "http://blog.kubevirt.io",
+    "theme": "//blog.kubevirt.io/themes/casper",
+    "images": "http://blog.kubevirt.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
+  },
+  "site": {
+    "title": "KubeVirt Blog",
+    "description": "The KubeVirt project, working on the Kubernetes virtualization API.",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "",
+    "github": "kubevirt",
+    "twitter": "kubevirt",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }

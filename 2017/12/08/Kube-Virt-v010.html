@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>KubeVirt v0.1.0</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://blog.kubevirt.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//blog.kubevirt.io/themes/casper/assets/css/screen.css?v=1515166454386" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="KubeVirt Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="KubeVirt v0.1.0" />
+    <meta property="og:description" content="This release follows v0.0.4 and consists of 115 changes, contributed by 11 people, leading to 121 files changed, 5278 insertions(+), 1916 deletions(-). The source code and selected binaries are available for download at: https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0. The primary release artifact" />
+    <meta property="og:url" content="http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html" />
+    <meta property="article:published_time" content="2017-12-08T00:00:00.000Z" />
+    <meta property="article:tag" content="release" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="KubeVirt v0.1.0" />
+    <meta name="twitter:description" content="This release follows v0.0.4 and consists of 115 changes, contributed by 11 people, leading to 121 files changed, 5278 insertions(+), 1916 deletions(-). The source code and selected binaries are available for download at: https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0. The primary release artifact" />
+    <meta name="twitter:url" content="http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "KubeVirt Blog",
+    "author": {
+        "@type": "Person",
+        "name": "Fabian Deutsch",
+        "image": "https://avatars1.githubusercontent.com/u/83456?v=4",
+        "url": "http://blog.kubevirt.io/author/fabiand/",
+        "sameAs": "https://dummdida.tumblr.com"
+    },
+    "headline": "KubeVirt v0.1.0",
+    "url": "http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html",
+    "datePublished": "2017-12-08T00:00:00.000Z",
+    "keywords": "release",
+    "description": "This release follows v0.0.4 and consists of 115 changes, contributed by 11 people, leading to 121 files changed, 5278 insertions(+), 1916 deletions(-). The source code and selected binaries are available for download at: https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0. The primary release artifact"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="KubeVirt Blog" href="http://blog.kubevirt.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+<body class="post-template tag-release nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-release">
+
+        <header class="post-header">
+            <h1 class="post-title">KubeVirt v0.1.0</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-12-08">08 December 2017</time>  on <a href="http://blog.kubevirt.io/tag/release/">release</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This release follows v0.0.4 and consists of 115 changes, contributed by
+11 people, leading to 121 files changed, 5278 insertions(+), 1916 deletions(-).</p>
+</div>
+<div class="paragraph">
+<p>The source code and selected binaries are available for download at:
+<a href="https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0" class="bare">https://github.com/kubevirt/kubevirt/releases/tag/v0.1.0</a>.</p>
+</div>
+<div class="paragraph">
+<p>The primary release artifact of KubeVirt is the git tree. The release tag is
+signed and can be verified using [git-evtag][git-evtag].</p>
+</div>
+<div class="paragraph">
+<p>Pre-built containers are published on Docker Hub and can be viewed at:
+<a href="https://hub.docker.com/u/kubevirt/" class="bare">https://hub.docker.com/u/kubevirt/</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notable_changes">Notable changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Many API improvements for a proper OpenAPI reference</p>
+</li>
+<li>
+<p>Add watchdog support</p>
+</li>
+<li>
+<p>Drastically improve the deployment on non-vagrant setups</p>
+</li>
+<li>
+<p>Dropped nodeSelectors</p>
+</li>
+<li>
+<p>Separated inner component deployment from edge component deployment</p>
+</li>
+<li>
+<p>Created separate manifests for developer, test, and release deployments</p>
+</li>
+<li>
+<p>Moved komponents to kube-system namespace</p>
+</li>
+<li>
+<p>Improved and unified flag parsing</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributors">Contributors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>11 people contributed to this release:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>42	Roman Mohr &lt;rmohr@redhat.com&gt;
+20	David Vossel &lt;dvossel@redhat.com&gt;
+18	Lukas Bednar &lt;lbednar@redhat.com&gt;
+14	Martin Polednik &lt;mpolednik@redhat.com&gt;
+ 7	Fabian Deutsch &lt;fabiand@redhat.com&gt;
+ 6	Lukianov Artyom &lt;alukiano@redhat.com&gt;
+ 3	Vladik Romanovsky &lt;vromanso@redhat.com&gt;
+ 2	Petr Kotas &lt;petr.kotas@gmail.com&gt;
+ 1	Barak Korren &lt;bkorren@redhat.com&gt;
+ 1	Francois Deppierraz &lt;francois@ctrlaltdel.ch&gt;
+ 1	Saravanan KR &lt;skramaja@redhat.com&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_results">Test Results</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Ran 44 of 46 Specs in 851.185 seconds
+SUCCESS!&#8201;&#8212;&#8201;44 Passed | 0 Failed | 0 Pending | 2 Skipped PASS</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_resources">Additional Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mailing list: <a href="https://groups.google.com/forum/#!forum/kubevirt-dev" class="bare">https://groups.google.com/forum/#!forum/kubevirt-dev</a></p>
+</li>
+<li>
+<p>IRC: <a href="irc://irc.freenode.net/#kubevirt" class="bare">irc://irc.freenode.net/#kubevirt</a></p>
+</li>
+<li>
+<p>An easy to use demo: <a href="https://github.com/kubevirt/demo" class="bare">https://github.com/kubevirt/demo</a></p>
+</li>
+<li>
+<p>[How to contribute][contributing]</p>
+</li>
+<li>
+<p>[License][license]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>[git-evtag]: <a href="https://github.com/cgwalters/git-evtag#using-git-evtag" class="bare">https://github.com/cgwalters/git-evtag#using-git-evtag</a>
+[contributing]: <a href="https://github.com/kubevirt/kubevirt/blob/master/CONTRIBUTING.md" class="bare">https://github.com/kubevirt/kubevirt/blob/master/CONTRIBUTING.md</a>
+[license]: <a href="https://github.com/kubevirt/kubevirt/blob/master/LICENSE" class="bare">https://github.com/kubevirt/kubevirt/blob/master/LICENSE</a></p>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="http://blog.kubevirt.io/author/fabiand/" style="background-image: url(https://avatars1.githubusercontent.com/u/83456?v&#x3D;4)"><span class="hidden">Fabian Deutsch's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="http://blog.kubevirt.io/author/fabiand/">Fabian Deutsch</a></h4>
+
+                    <p>Read <a href="http://blog.kubevirt.io/author/fabiand/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Germany</span>
+                    <span class="author-link icon-link"><a href="https://dummdida.tumblr.com">https://dummdida.tumblr.com</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=KubeVirt%20v0.1.0&amp;url=http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://blog.kubevirt.io/2017/12/08/Kube-Virt-v010.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://blog.kubevirt.io">KubeVirt Blog</a> &copy; 2018</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script type="text/javascript" src="//blog.kubevirt.io/themes/casper/assets/js/jquery.fitvids.js?v=1515166454386"></script>
+    <script type="text/javascript" src="//blog.kubevirt.io/themes/casper/assets/js/index.js?v=1515166454386"></script>
+
+</body>
+</html>

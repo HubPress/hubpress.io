@@ -1,0 +1,31 @@
+= Some notes on some highlights of v0.2.0
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+:published_at: 2018-01-05
+:hp-tags: release
+// :hp-alt-title: My English Title
+
+The very first KubeVirt release of KubeVirt in the new year (https://github.com/kubevirt/kubevirt/releases/v0.2.0) had a few notable highlights which were brewing over the last few weeks.
+
+## VirtualMachine API redesign
+
+Previously the VirtualMachine API was pretty much aligned, or a 1:1 mapping, to libvirt's domxml.
+With this change however, we took a step back and redesigned the API to be more Kubernet-ish than libvirt-ish.
+
+Some changes, like the extraction of source volumes, will actually help us to implement other patterns - like VirtualMachinePresets.
+
+## Removal of HAProxy
+
+This is another nice one. So far we were using a custom API server for performing object validation.
+But the use of this custom API server required that the client was accessing the custom API server, and not the main one. The multiplexing of redirecting certain requests to our and other requests to the main API server was done by HA proxy. Somewhat like a poor mans API server aggregation.
+
+However, now we are focusing on CRDs completely (we considered to go to API server aggregation, but dropped this approach), which involves doing the validation of the CRD based on a json scheme.
+
+## Redesign of VNC/Console access
+
+The afore mentioned custom API server contained subresources to permit inbound access to the graphical and serial consoel of VMs.
+But this does not work with CRDs and thus we are now using a different approach to provide access to those.
+
+The new implementation leverages the `kubectl exec` path in order to pipe the graphical and serial console from the VM to the client.
+This is pretty nice, as we are leveraging Kubernetes for doing the piping, we merely provide a `kubectl` plugin in order to ease the consumption of this.
+Side note is that the API of the `kubectl` plugin did actually not change.
