@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://nklyn.ca/work/</loc>
+    <lastmod>2017-07-02T08:15:25+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/blog/</loc>
+    <lastmod>2017-07-02T08:14:51+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/about/license/</loc>
+    <lastmod>2017-06-24T20:50:41+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/work/manis-hugo-theme/</loc>
+    <lastmod>2017-06-24T20:47:35+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/about/</loc>
+    <lastmod>2017-06-24T18:57:12+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/blog/goisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/blog/hugoisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/tags/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/tags/go/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/tags/golang/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/tags/hugo/</loc>
+    <lastmod>2017-06-24T20:47:35+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/</loc>
+    <lastmod>2017-06-24T20:50:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/tags/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/tags/templates/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nklyn.ca/tags/themes/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

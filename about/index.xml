@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Manis</title>
+    <link>http://nklyn.ca/about/</link>
+    <description>Recent content in About on Manis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017 Franklyn D&#39;souza</copyright>
+    <lastBuildDate>Sat, 24 Jun 2017 18:57:12 +0700</lastBuildDate>
+    
+	<atom:link href="http://nklyn.ca/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>License</title>
+      <link>http://nklyn.ca/about/license/</link>
+      <pubDate>Sat, 24 Jun 2017 20:50:41 +0700</pubDate>
+      
+      <guid>http://nklyn.ca/about/license/</guid>
+      <description>You can put your blog, code, or work license here.</description>
+    </item>
+    
+  </channel>
+</rss>

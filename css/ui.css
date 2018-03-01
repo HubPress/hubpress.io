@@ -1,0 +1,383 @@
+/*
+* Tulis CSS
+* fork of Skeleton V2.0.4 (www.getskeleton.com)
+* Copyright 2017, Yurizal Susanto
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 21/06/2017
+*/
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- #Container
+- #Base Styles
+- #Typography
+- #Links
+- #Lists
+- #Code
+- #Tables
+- #Blockquote
+- #Navigation
+- #Spacing
+- #Utilities
+- #Print
+- #Media Queries
+*/
+
+/* #Container
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+
+/* #Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6em;
+  line-height: 1.7;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  color: #444;
+}
+
+
+/* #Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  color: #222;
+  font-family: 'Raleway', sans-serif;
+}
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.25;
+  letter-spacing: -.1rem;
+}
+h2 {
+  font-size: 2.8rem;
+  line-height: 1.25;
+  letter-spacing: -.1rem;
+}
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem;
+}
+h4 {
+  font-size: 2.0rem;
+  line-height: 1.35;
+  letter-spacing: -.08rem;
+}
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -.05rem;
+}
+h6 {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* Larger than phablet */
+@media (min-width: 55rem) {
+  h1 { font-size: 3.6rem; }
+  h2 { font-size: 3.0rem; }
+  h3 { font-size: 2.8rem; }
+  h4 { font-size: 2.4rem; }
+  h5 { font-size: 2.0rem; }
+  h6 { font-size: 1.7rem; }
+}
+
+p { margin-top: 0; }
+
+#brand {
+  text-align: left;
+}
+#brand h1 {
+  margin-bottom: -.2rem;
+  font-weight: bold
+}
+#brand h5 {
+  color: #aaa;
+  margin-bottom: -.2rem;
+}
+
+
+/* #Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+/* #Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul { list-style: square inside; }
+ol { list-style: decimal inside; }
+ol, ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%;
+}
+li {
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+}
+
+ul.no-bullet {
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 40rem) {
+  ul.no-bullet {
+    list-style: none;
+    margin-left: 0;
+  }
+}
+.no-bullet li {
+  margin-left: 0;
+  font-size: 1.8rem;
+}
+.no-bullet span {
+  display: none;
+  font-size: 1.7rem;
+  color: #666;
+  font-family: monospace;
+}
+@media (min-width: 40rem) {
+  .no-bullet span {
+    margin-right: 1rem;
+    display: inline;
+  }
+}
+
+dd { margin-left: 2rem; }
+
+/* #Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #f1f1f1;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  font-family: 'Fira Mono', monospace;
+}
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+  background: #2b303b;
+  color: #c0c5ce;
+  font-family: 'Fira Mono', monospace;
+}
+
+/* #Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e1e1e1;
+}
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+/* #Blockquote
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+blockquote {
+  box-sizing: border-box;
+  margin: 1.75em 0 1.75em 0;
+  padding: 0 1em 0 1em;
+  border-left:0.4em solid;
+}
+
+@media (min-width: 55rem) {
+  blockquote {
+    margin: 1.75em -2em 1.75em -2em;
+    padding: 0 1.5em 0 1.5em;
+    border-right:0.4em solid;
+  }
+}
+
+blockquote p:last-of-type cite {
+  display: block;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+blockquote p:last-of-type cite:before { content: "― "; }
+
+blockquote cite a {
+  font-style: italic;
+  text-decoration: none;
+}
+
+/* #Navigation
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.bar a { color: #777; }
+.bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bar li {
+  display: inline;
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  margin-left: 0;
+}
+@media (min-width: 40rem) {
+  .bar li {
+    font-size: 2.2rem;
+  }
+}
+
+.next-post {
+  display: block;
+  text-align: right;
+}
+.prev-post {
+  display: block;
+  text-align: left;
+}
+
+.pagination {
+  font-size: 2rem;
+}
+
+/* #Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol {
+  margin-bottom: 2.5rem; }
+
+/* #Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-header {
+  margin-bottom: .5rem;
+}
+@media (min-width: 55rem) {
+  .u-header { padding-top: 1rem; }
+}
+@media (min-width: 75rem) {
+  .u-header { padding-top: 3rem; }
+}
+
+.u-footer {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+/* #Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #e1e1e1;
+}
+
+img {
+  width: 100%;
+}
+
+[class^="icon"] {
+  width: 1em;
+  height: 1em;
+  position: relative;
+}
+.icon-text {
+  top: .13em;
+}
+.icon-social {
+  width: 3rem;
+  height: 3rem;
+}
+
+
+/* #Print
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  pre > code {
+    white-space: pre-wrap;
+  }
+  
+  img {
+    display: block;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+/* #Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile */
+@media (min-width: 40rem) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 55rem) {}
+
+/* Larger than tablet */
+@media (min-width: 75rem) {}
+
+/* Larger than desktop */
+@media (min-width: 100rem) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 120rem) {}

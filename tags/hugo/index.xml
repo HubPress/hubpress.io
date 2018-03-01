@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Manis</title>
+    <link>http://nklyn.ca/tags/hugo/</link>
+    <description>Recent content in Hugo on Manis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017 Franklyn D&#39;souza</copyright>
+    <lastBuildDate>Sat, 24 Jun 2017 20:47:35 +0700</lastBuildDate>
+    
+	<atom:link href="http://nklyn.ca/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manis Hugo Theme</title>
+      <link>http://nklyn.ca/work/manis-hugo-theme/</link>
+      <pubDate>Sat, 24 Jun 2017 20:47:35 +0700</pubDate>
+      
+      <guid>http://nklyn.ca/work/manis-hugo-theme/</guid>
+      <description> It&amp;rsquo;s a minimalist and responsive theme for Hugo Static Site Generator. It&amp;rsquo;s name taken from Indonesian Language for Sweet.
+Features Like I said, it&amp;rsquo;s really minimal. Its doesn&amp;rsquo;t even have grid or anything nice like that.
+ Configurable color! Code Highlighting (HighlightJS). Responsive. Social Icon Links. No Grid no worry. Translatable.  </description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>http://nklyn.ca/blog/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://nklyn.ca/blog/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Work on Manis</title>
+    <link>http://nklyn.ca/work/</link>
+    <description>Recent content in Work on Manis</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017 Franklyn D&#39;souza</copyright>
+    <lastBuildDate>Sun, 02 Jul 2017 08:15:25 +0700</lastBuildDate>
+    
+	<atom:link href="http://nklyn.ca/work/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manis Hugo Theme</title>
+      <link>http://nklyn.ca/work/manis-hugo-theme/</link>
+      <pubDate>Sat, 24 Jun 2017 20:47:35 +0700</pubDate>
+      
+      <guid>http://nklyn.ca/work/manis-hugo-theme/</guid>
+      <description> It&amp;rsquo;s a minimalist and responsive theme for Hugo Static Site Generator. It&amp;rsquo;s name taken from Indonesian Language for Sweet.
+Features Like I said, it&amp;rsquo;s really minimal. Its doesn&amp;rsquo;t even have grid or anything nice like that.
+ Configurable color! Code Highlighting (HighlightJS). Responsive. Social Icon Links. No Grid no worry. Translatable.  </description>
+    </item>
+    
+  </channel>
+</rss>

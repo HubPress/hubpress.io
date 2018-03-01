@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.37" />
+		<title>Getting Started with Hugo - Manis</title>
+
+		<meta name="description" content="Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:">
+
+
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+		
+		
+
+		
+		<link rel="stylesheet" href="/css/ui.min.css"/>
+		
+		<style>
+	a { color: #ff8181; }
+	blockquote {
+		border-left-color: #ff8181;
+		border-right-color: #ff8181; }
+	.bar a:hover {
+		color: #ff8181;
+		text-decoration: none; }
+	.sep {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		margin-left:0;
+		width: 24rem;
+		border-top: 2px solid #ff8181; }
+</style>
+
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/work/">Work</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Getting Started with Hugo</h1>
+	<h5>
+		<time datetime="2014-04-02 00:00:00 &#43;0000 UTC">Apr 02, 2014</time>
+		<span class="no-print">
+			-
+				
+				<a href="/tags/go">go</a>
+				
+				<a href="/tags/golang">golang</a>
+				
+				<a href="/tags/hugo">hugo</a>
+				
+				<a href="/tags/development">development</a>
+				<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	
+
+<h2 id="step-1-install-hugo">Step 1. Install Hugo</h2>
+
+<p>Goto <a href="https://github.com/spf13/hugo/releases">hugo releases</a> and download the
+appropriate version for your os and architecture.</p>
+
+<p>Save it somewhere specific as we will be using it in the next step.</p>
+
+<p>More complete instructions are available at <a href="/overview/installing/">installing hugo</a></p>
+
+<h2 id="step-2-build-the-docs">Step 2. Build the Docs</h2>
+
+<p>Hugo has its own example site which happens to also be the documentation site
+you are reading right now.</p>
+
+<p>Follow the following steps:</p>
+
+<ol>
+<li>Clone the <a href="http://github.com/spf13/hugo">hugo repository</a></li>
+<li>Go into the repo</li>
+<li>Run hugo in server mode and build the docs</li>
+<li>Open your browser to <a href="http://localhost:1313">http://localhost:1313</a></li>
+</ol>
+
+<p>Corresponding pseudo commands:</p>
+
+<pre><code>git clone https://github.com/spf13/hugo
+cd hugo
+/path/to/where/you/installed/hugo server --source=./docs
+&gt; 29 pages created
+&gt; 0 tags index created
+&gt; in 27 ms
+&gt; Web Server is available at http://localhost:1313
+&gt; Press ctrl+c to stop
+</code></pre>
+
+<p>Once you&rsquo;ve gotten here, follow along the rest of this page on your local build.</p>
+
+<h2 id="step-3-change-the-docs-site">Step 3. Change the docs site</h2>
+
+<p>Stop the Hugo process by hitting ctrl+c.</p>
+
+<p>Now we are going to run hugo again, but this time with hugo in watch mode.</p>
+
+<pre><code>/path/to/hugo/from/step/1/hugo server --source=./docs --watch
+&gt; 29 pages created
+&gt; 0 tags index created
+&gt; in 27 ms
+&gt; Web Server is available at http://localhost:1313
+&gt; Watching for changes in /Users/spf13/Code/hugo/docs/content
+&gt; Press ctrl+c to stop
+</code></pre>
+
+<p>Open your <a href="http://vim.spf13.com">favorite editor</a> and change one of the source
+content pages. How about changing this very file to <em>fix the typo</em>. How about changing this very file to <em>fix the typo</em>.</p>
+
+<p>Content files are found in <code>docs/content/</code>. Unless otherwise specified, files
+are located at the same relative location as the url, in our case
+<code>docs/content/overview/quickstart.md</code>.</p>
+
+<p>Change and save this file.. Notice what happened in your terminal.</p>
+
+<pre><code>&gt; Change detected, rebuilding site
+
+&gt; 29 pages created
+&gt; 0 tags index created
+&gt; in 26 ms
+</code></pre>
+
+<p>Refresh the browser and observe that the typo is now fixed.</p>
+
+<p>Notice how quick that was. Try to refresh the site before it&rsquo;s finished building.. I double dare you.
+Having nearly instant feedback enables you to have your creativity flow without waiting for long builds.</p>
+
+<h2 id="step-4-have-fun">Step 4. Have fun</h2>
+
+<p>The best way to learn something is to play with it.</p>
+
+	<nav class="no-print">
+	
+	
+		<a class="next-post" href="http://nklyn.ca/blog/goisforlovers/">(Hu)go Template Primer<img class="icon-text" src="/img/next.svg"/>
+		</a>
+	
+	</nav>
+</article>
+
+	<div id="disqus_thread" class="no-print"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = '';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:mail@yurizal-san.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/yursan9/"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://twitter.com/yuri_boya"><img class="icon-social" src="/img/twitter.svg" alt="Twitter"/></a>
+
+<a href="http://nklyn.ca/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					&copy; 2017 Franklyn D'souza
+					
+					
+					| <a href="/about/license">License</a>
+					
+				</p>
+				
+				<a href="#">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+	</body>
+</html>
+
