@@ -1,69 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Manis</title>
+    <title>Tags on Frankly Speaking</title>
     <link>http://nklyn.ca/tags/</link>
-    <description>Recent content in Tags on Manis</description>
+    <description>Recent content in Tags on Frankly Speaking</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017 Franklyn D&#39;souza</copyright>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://nklyn.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Development</title>
-      <link>http://nklyn.ca/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://nklyn.ca/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>http://nklyn.ca/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://nklyn.ca/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>http://nklyn.ca/tags/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://nklyn.ca/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>http://nklyn.ca/tags/hugo/</link>
-      <pubDate>Sat, 24 Jun 2017 20:47:35 +0700</pubDate>
-      
-      <guid>http://nklyn.ca/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Templates</title>
-      <link>http://nklyn.ca/tags/templates/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://nklyn.ca/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Themes</title>
-      <link>http://nklyn.ca/tags/themes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://nklyn.ca/tags/themes/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.37" />
+		<title>Spying on keyboards : A toy model. - Frankly Speaking</title>
+
+		<meta name="description" content="With meltdown and spectre, side-channel attacks have been all the rage recently. One class of side channel attacks that seem espeically magical to me are acoustic side-channel attacks, this is where information about a system can be gleaned simply by recording the sounds that they emit.
+In this blog post i&rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing.">
+
+
+		
+
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+		
+		
+
+		
+		<link rel="stylesheet" href="/css/ui.min.css"/>
+		
+		<style>
+	a { color: #ff8181; }
+	blockquote {
+		border-left-color: #ff8181;
+		border-right-color: #ff8181; }
+	.bar a:hover {
+		color: #ff8181;
+		text-decoration: none; }
+	.sep {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		margin-left:0;
+		width: 24rem;
+		border-top: 2px solid #ff8181; }
+</style>
+
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about/">About</a></li><li><a href="/blog/">Blog</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Spying on keyboards : A toy model.</h1>
+	<h5>
+		<time datetime="2018-02-28 22:09:56 -0500 EST">Feb 28, 2018</time>
+		<span class="no-print">
+			<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	
+
+<p><link href="https://cdn.jsdelivr.net/npm/c3@0.4.21/c3.min.css" rel="stylesheet">
+<script async src="https://cdn.jsdelivr.net/npm/d3@3.5.7/d3.min.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/c3@0.4.21/c3.min.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script></p>
+
+
+<figure>
+    
+        <img src="/keyboardspy/spy_hero.png" width="400" height="510" />
+    
+    
+</figure>
+
+
+<p>With meltdown and spectre, <a href="https://en.wikipedia.org/wiki/Side-channel_attack">side-channel attacks</a> have been all the rage recently. One class of side channel attacks that seem espeically <a href="https://www.extremetech.com/extreme/173108-researchers-crack-the-worlds-toughest-encryption-by-listening-to-the-tiny-sounds-made-by-your-computers-cpu">magical</a> to me are acoustic side-channel attacks, this is where information about a system can be gleaned simply by recording the sounds that they emit.</p>
+
+<p>In this blog post i&rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing. While this is a toy model it turns out that reality doesn&rsquo;t stray too far from it!. To start us off lets define the problem we are dealing with.</p>
+
+<h2 id="setting-up-the-problem">Setting up the problem</h2>
+
+<p>To define the problem lets start by listing some assumptions about the acoustic characteristics of a keyboard. First let&rsquo;s assume that every key on a keyboard produces a sound wave of a particular frequency for example the key <code>Q</code> could produce sounds at 1KHz while the <code>W</code> key makes more of a high 2KHz. These frequencies aren&rsquo;t unique and infact we are going to assume that alot of our keys produce exactly the same frequency as other keys. So keys <code>Q</code> and <code>F</code> sound the same at 1KHz while <code>O</code> and <code>C</code> are both humming at 9KHz when pressed.</p>
+
+<p>[XKCD Diagram for noiseless frequency groups]</p>
+
+<p>These shared frequencies create frequency groups that our keys belong to, each key belonging to a particular frequency group produces the same frequency as other keys bleonging to the same group. In my toy model i&rsquo;ve grouped keys together by making the latter half of a <code>Q</code><code>W</code><code>E</code><code>R</code><code>T</code><code>Y</code> keyboard overlap with the top half, this gives us two keys per frequency group.</p>
+
+<p>The diagram above assumes that the frequencies are always perfectly produced and recorded. Unfortunately keyboards aren&rsquo;t perfect mechanical devices. The frequencies they produce when a key is pressed isn&rsquo;t always going to be the same, this is due to mechanical imperfections and other sources of environmental noise. This means that the first time we press <code>Q</code> we could hear a 1KHz wave and the next time it could be as high as 1.7KHz.</p>
+
+<p>We can model these mechanical imperfections by assuming that some noise is added to our measurements, this means that instead of getting a particular frequency we receive a distribution of frequencies. In my toy model i&rsquo;ve assumed that each key faces the same noise with a mean of 0 and a variance of 0.3. Heres what the distribution of frequencies looks like for each frequency group under these assumptions.</p>
+
+<div id="posteriors"></div>
+
+<script type="text/javascript">
+    function generate_posteriors() {
+        var num_groups = 13;
+        var keys = "qwertyuiopasdfghjklzxcvbnm";
+        var xValues = new Array(num_groups);
+        var posteriors = new Array(num_groups);
+        var legend = new Array(num_groups);
+        var cf = 1;
+
+        for(var i=0; i<num_groups; i++) {
+            xValues[i] = jStat.seq(cf - 2, cf + 2, 20);
+            posteriors[i] = jStat(xValues[i]).normal(cf, 0.3).pdf()[0];
+            cf += 1;
+        }
+
+        for(var i=0; i<keys.length; i++) {
+            index = i % num_groups;
+            if(legend[index]) {
+                legend[index] += ', ' + keys.charAt(i);
+            } else {
+                legend[index] = keys.charAt(i);
+            }
+        }
+
+        return [xValues, posteriors, legend]
+    }
+
+    var raw_data = generate_posteriors()
+    var posterior_data = {xs: {}, columns: [], type:'area-spline'}
+
+    for(var i=0; i<raw_data[1].length; i++) {
+        xValues = raw_data[0][i]
+        posterior = raw_data[1][i];
+        legend = raw_data[2][i];
+        xValues.unshift('x' + i)
+        posterior.unshift(legend);
+        posterior_data['xs'][legend] = xValues[0];
+        posterior_data['columns'].push(posterior);
+        posterior_data['columns'].push(xValues);
+    }
+
+
+    var posteriors = c3.generate({
+        interaction: {
+            enabled: false
+        },
+        axis: {
+            x: {
+                tick: {
+                    count: 20,
+                    format: function(x) {return x.toFixed(2)}
+                }
+            },
+            y: {
+                tick: {
+                    count: 3,
+                    format: function(x) {return x.toFixed(2)}
+                }
+            }
+        },
+        size: {
+            height: 100,
+        },
+        bindto: '#posteriors',
+        data: posterior_data,
+        point: {
+            show: false
+        }
+    });
+
+</script>
+
+	<nav class="no-print">
+	
+	
+	</nav>
+</article>
+
+	<div id="disqus_thread" class="no-print"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = '';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:fr@nklyn.ca"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/damnMeddlingKid/"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://twitter.com/franklynd"><img class="icon-social" src="/img/twitter.svg" alt="Twitter"/></a>
+
+<a href="http://nklyn.ca/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					&copy; 2017 Franklyn D'souza
+					
+					
+					| <a href="/about/license">License</a>
+					
+				</p>
+				
+				<a href="#">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+	</body>
+</html>
+

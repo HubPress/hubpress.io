@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Manis</title>
+    <title>Frankly Speaking</title>
     <link>http://nklyn.ca/</link>
-    <description>Recent content on Manis</description>
+    <description>Recent content on Frankly Speaking</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017 Franklyn D&#39;souza</copyright>
-    <lastBuildDate>Sat, 24 Jun 2017 20:50:41 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 28 Feb 2018 22:09:56 -0500</lastBuildDate>
     
 	<atom:link href="http://nklyn.ca/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spying on keyboards : A toy model.</title>
+      <link>http://nklyn.ca/blog/keyboardspy/</link>
+      <pubDate>Wed, 28 Feb 2018 22:09:56 -0500</pubDate>
+      
+      <guid>http://nklyn.ca/blog/keyboardspy/</guid>
+      <description>With meltdown and spectre, side-channel attacks have been all the rage recently. One class of side channel attacks that seem espeically magical to me are acoustic side-channel attacks, this is where information about a system can be gleaned simply by recording the sounds that they emit.
+In this blog post i&amp;rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing.</description>
+    </item>
     
     <item>
       <title>License</title>
@@ -18,41 +28,6 @@
       
       <guid>http://nklyn.ca/about/license/</guid>
       <description>You can put your blog, code, or work license here.</description>
-    </item>
-    
-    <item>
-      <title>Manis Hugo Theme</title>
-      <link>http://nklyn.ca/work/manis-hugo-theme/</link>
-      <pubDate>Sat, 24 Jun 2017 20:47:35 +0700</pubDate>
-      
-      <guid>http://nklyn.ca/work/manis-hugo-theme/</guid>
-      <description> It&amp;rsquo;s a minimalist and responsive theme for Hugo Static Site Generator. It&amp;rsquo;s name taken from Indonesian Language for Sweet.
-Features Like I said, it&amp;rsquo;s really minimal. Its doesn&amp;rsquo;t even have grid or anything nice like that.
- Configurable color! Code Highlighting (HighlightJS). Responsive. Social Icon Links. No Grid no worry. Translatable.  </description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>http://nklyn.ca/blog/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://nklyn.ca/blog/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>http://nklyn.ca/blog/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://nklyn.ca/blog/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
     </item>
     
   </channel>

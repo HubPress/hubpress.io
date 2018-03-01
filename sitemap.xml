@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://nklyn.ca/work/</loc>
-    <lastmod>2017-07-02T08:15:25+07:00</lastmod>
+    <loc>http://nklyn.ca/blog/keyboardspy/</loc>
+    <lastmod>2018-02-28T22:09:56-05:00</lastmod>
   </url>
   
   <url>
@@ -18,70 +18,18 @@
   </url>
   
   <url>
-    <loc>http://nklyn.ca/work/manis-hugo-theme/</loc>
-    <lastmod>2017-06-24T20:47:35+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://nklyn.ca/about/</loc>
     <lastmod>2017-06-24T18:57:12+07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nklyn.ca/blog/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nklyn.ca/blog/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nklyn.ca/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://nklyn.ca/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://nklyn.ca/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://nklyn.ca/tags/hugo/</loc>
-    <lastmod>2017-06-24T20:47:35+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://nklyn.ca/</loc>
-    <lastmod>2017-06-24T20:50:41+07:00</lastmod>
+    <lastmod>2018-02-28T22:09:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://nklyn.ca/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://nklyn.ca/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://nklyn.ca/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
