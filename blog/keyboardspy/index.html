@@ -55,6 +55,10 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
 </nav>
 
 	</div>
+	<link href="https://cdn.jsdelivr.net/npm/c3@0.4.21/c3.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/d3@3.5.7/d3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/c3@0.4.21/c3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
 </header>
 <main class="container">
 
@@ -71,11 +75,6 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
 <hr class="sep" />
 </header>
 	
-
-<p><link href="https://cdn.jsdelivr.net/npm/c3@0.4.21/c3.min.css" rel="stylesheet">
-<script async src="https://cdn.jsdelivr.net/npm/d3@3.5.7/d3.min.js"></script>
-<script async src="https://cdn.jsdelivr.net/npm/c3@0.4.21/c3.min.js"></script>
-<script async src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script></p>
 
 
 <figure>
@@ -100,7 +99,7 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
 
 <p>The diagram above assumes that the frequencies are always perfectly produced and recorded. Unfortunately keyboards aren&rsquo;t perfect mechanical devices. The frequencies they produce when a key is pressed isn&rsquo;t always going to be the same, this is due to mechanical imperfections and other sources of environmental noise. This means that the first time we press <code>Q</code> we could hear a 1KHz wave and the next time it could be as high as 1.7KHz.</p>
 
-<p>We can model these mechanical imperfections by assuming that some noise is added to our measurements, this means that instead of getting a particular frequency we receive a distribution of frequencies. In my toy model i&rsquo;ve assumed that each key faces the same noise with a mean of 0 and a variance of 0.3. Heres what the distribution of frequencies looks like for each frequency group under these assumptions.</p>
+<p>We can model these mechanical imperfections by assuming that some noise is added to our measurements, this means that instead of getting a particular frequency we receive a distribution of frequencies. In my toy model i&rsquo;ve assumed that each key faces the same (gaussian)noise with a mean of 0 and a variance of 0.3. Heres what the distribution of frequencies looks like for each frequency group under these assumptions.</p>
 
 <div id="posteriors"></div>
 
@@ -175,6 +174,8 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
     });
 
 </script>
+
+<p>Each gaussian in this figure represents the range of frequencies we can expect to receive for each pair of keys, in other words it is the conditional</p>
 
 	<nav class="no-print">
 	
