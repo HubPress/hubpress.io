@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="774px" height="533px" viewBox="0 0 774 533" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>figure</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="figure">
+            <g id="Ovaly" transform="translate(40.000000, 140.000000)">
+                <circle id="Oval-child" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">a</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy-4" transform="translate(355.000000, 140.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">a</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy-8" transform="translate(669.000000, 140.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">a</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy" transform="translate(40.000000, 263.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">b</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy-5" transform="translate(355.000000, 263.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">b</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy-9" transform="translate(669.000000, 263.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">b</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy-2" transform="translate(40.000000, 386.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">c</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy-6" transform="translate(355.000000, 386.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">c</tspan>
+                </text>
+            </g>
+            <g id="Oval-Copy-10" transform="translate(669.000000, 386.000000)">
+                <circle id="Oval" fill="#008BFD" opacity="0.732280344" cx="34" cy="34" r="34"></circle>
+                <text id="a" font-family="ArialMT, Arial" font-size="48" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="21" y="46">c</tspan>
+                </text>
+            </g>
+            <g id="level" transform="translate(61.000000, 54.000000)" fill="#FF7500" font-family="ArialMT, Arial" font-size="48" font-weight="normal" opacity="0.5">
+                <text id="1">
+                    <tspan x="0" y="43">1</tspan>
+                </text>
+            </g>
+            <g id="level-copy" transform="translate(375.000000, 54.000000)" fill="#FF7500" font-family="ArialMT, Arial" font-size="48" font-weight="normal" opacity="0.5">
+                <text id="1">
+                    <tspan x="0" y="43">2</tspan>
+                </text>
+            </g>
+            <g id="level-copy-2" transform="translate(689.000000, 54.000000)" fill="#FF7500" font-family="ArialMT, Arial" font-size="48" font-weight="normal" opacity="0.5">
+                <text id="1">
+                    <tspan x="0" y="43">3</tspan>
+                </text>
+            </g>
+            <g id="straight_edge" opacity="0.05" transform="translate(107.000000, 176.000000)" stroke="#000000" stroke-width="5">
+                <path d="M0.6380625,0.05859375 C65.0149375,0.05859375 147.478031,0.05859375 248.027344,0.05859375" id="Path-31"></path>
+            </g>
+            <g id="straight_edge-copy" transform="translate(107.000000, 295.000000)" stroke="#000000" stroke-width="5">
+                <path d="M0.6380625,0.05859375 C65.0149375,0.05859375 147.478031,0.05859375 248.027344,0.05859375" id="Path-30"></path>
+            </g>
+            <g id="straight_edge-copy-2" opacity="0.0516870471" transform="translate(107.000000, 418.000000)" stroke="#000000" stroke-width="5">
+                <path d="M0.6380625,0.05859375 C65.0149375,0.05859375 147.478031,0.05859375 248.027344,0.05859375" id="Path-29"></path>
+            </g>
+            <path d="M109,176 C143.011748,176 178.101911,195.666667 214.27049,235 C250.439068,274.333333 297.682238,294 356,294" id="Path-27" stroke="#000000" stroke-width="5"></path>
+            <path d="M109,176 C143.011748,176 178.101911,195.666667 214.27049,235 C250.439068,274.333333 297.682238,294 356,294" id="Path-26" stroke="#000000" stroke-width="5" opacity="0.0516870471" transform="translate(232.500000, 235.000000) scale(-1, 1) translate(-232.500000, -235.000000) "></path>
+            <path d="M109,298 C143.011748,298 178.101911,317.666667 214.27049,357 C250.439068,396.333333 297.682238,416 356,416" id="Path-25" stroke="#000000" stroke-width="5" transform="translate(232.500000, 357.000000) scale(-1, 1) translate(-232.500000, -357.000000) "></path>
+            <path d="M108,299 C142.011748,299 177.101911,318.666667 213.27049,358 C249.439068,397.333333 296.682238,417 355,417" id="Path-24" stroke="#000000" stroke-width="5" opacity="0.0516870471" transform="translate(231.500000, 358.000000) scale(-1, -1) translate(-231.500000, -358.000000) "></path>
+            <path d="M109,176 C179.754675,283.189779 233.002608,350.416927 268.7438,377.681444 C304.484992,404.945961 333.903725,417.660989 357,415.826528" id="Path-22" stroke="#000000" stroke-width="5" opacity="0.0516870471"></path>
+            <path d="M109,176 C179.754675,283.189779 233.002608,350.416927 268.7438,377.681444 C304.484992,404.945961 333.903725,417.660989 357,415.826528" id="Path-21" stroke="#000000" stroke-width="5" opacity="0.0516870471" transform="translate(233.000000, 296.000000) scale(1, -1) translate(-233.000000, -296.000000) "></path>
+            <g id="straight_edge-1" opacity="0.05" transform="translate(421.000000, 176.000000)" stroke="#000000" stroke-width="5">
+                <path d="M0.6380625,0.05859375 C65.0149375,0.05859375 147.478031,0.05859375 248.027344,0.05859375" id="Path-15"></path>
+            </g>
+            <g id="straight_edge-copy-5" opacity="0.05" transform="translate(421.000000, 295.000000)" stroke="#000000" stroke-width="5">
+                <path d="M0.6380625,0.05859375 C65.0149375,0.05859375 147.478031,0.05859375 248.027344,0.05859375" id="Path-14"></path>
+            </g>
+            <g id="straight_edge-copy-22" opacity="0.05" transform="translate(421.000000, 418.000000)" stroke="#000000" stroke-width="5">
+                <path d="M0.6380625,0.05859375 C65.0149375,0.05859375 147.478031,0.05859375 248.027344,0.05859375" id="Path-13"></path>
+            </g>
+            <path d="M423,176 C457.011748,176 492.101911,195.666667 528.27049,235 C564.439068,274.333333 611.682238,294 670,294" id="Path-12" stroke="#000000" stroke-width="5" opacity="0.05"></path>
+            <path d="M423,176 C457.011748,176 492.101911,195.666667 528.27049,235 C564.439068,274.333333 611.682238,294 670,294" id="Path-11" stroke="#000000" stroke-width="5" opacity="0.05" transform="translate(546.500000, 235.000000) scale(-1, 1) translate(-546.500000, -235.000000) "></path>
+            <path d="M423,298 C457.011748,298 492.101911,317.666667 528.27049,357 C564.439068,396.333333 611.682238,416 670,416" id="Path-10" stroke="#000000" stroke-width="5" opacity="0.05" transform="translate(546.500000, 357.000000) scale(-1, 1) translate(-546.500000, -357.000000) "></path>
+            <path d="M422,299 C456.011748,299 491.101911,318.666667 527.27049,358 C563.439068,397.333333 610.682238,417 669,417" id="Path-9" stroke="#000000" stroke-width="5" opacity="0.05" transform="translate(545.500000, 358.000000) scale(-1, -1) translate(-545.500000, -358.000000) "></path>
+            <path d="M423,176 C493.754675,283.189779 547.002608,350.416927 582.7438,377.681444 C618.484992,404.945961 647.903725,417.660989 671,415.826528" id="Path-7" stroke="#000000" stroke-width="5" opacity="0.05"></path>
+            <path d="M423,176 C493.754675,283.189779 547.002608,350.416927 582.7438,377.681444 C618.484992,404.945961 647.903725,417.660989 671,415.826528" id="Path-6" stroke="#000000" stroke-width="5" opacity="0.05" transform="translate(547.000000, 296.000000) scale(1, -1) translate(-547.000000, -296.000000) "></path>
+        </g>
+    </g>
+</svg>

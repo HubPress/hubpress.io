@@ -59,6 +59,15 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
 	<script src="https://cdn.jsdelivr.net/npm/d3@3.5.7/d3.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/c3@0.4.21/c3.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+	    tex2jax: {
+	      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	      processEscapes: true
+	    }
+	  });
+	</script>
+	<script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 </header>
 <main class="container">
 
@@ -93,15 +102,292 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
 
 <p>To define the problem lets start by listing some assumptions about the acoustic characteristics of a keyboard. First let&rsquo;s assume that every key on a keyboard produces a sound wave of a particular frequency for example the key <code>Q</code> could produce sounds at 1KHz while the <code>W</code> key makes more of a high 2KHz. These frequencies aren&rsquo;t unique and infact we are going to assume that alot of our keys produce exactly the same frequency as other keys. So keys <code>Q</code> and <code>F</code> sound the same at 1KHz while <code>O</code> and <code>C</code> are both humming at 9KHz when pressed.</p>
 
-<p>[XKCD Diagram for noiseless frequency groups]</p>
+<p>
+    <div id="groups"></div>
+</p>
 
-<p>These shared frequencies create frequency groups that our keys belong to, each key belonging to a particular frequency group produces the same frequency as other keys bleonging to the same group. In my toy model i&rsquo;ve grouped keys together by making the latter half of a <code>Q</code><code>W</code><code>E</code><code>R</code><code>T</code><code>Y</code> keyboard overlap with the top half, this gives us two keys per frequency group.</p>
+<p>These shared frequencies form groups, each key belonging to a particular frequency group produces the same frequency as other keys bleonging to the same group. In my toy model i&rsquo;ve grouped keys together by making the latter half of a <code>Q</code><code>W</code><code>E</code><code>R</code><code>T</code><code>Y</code> keyboard share frequencies with the top half, this gives us two keys per frequency group.</p>
 
 <p>The diagram above assumes that the frequencies are always perfectly produced and recorded. Unfortunately keyboards aren&rsquo;t perfect mechanical devices. The frequencies they produce when a key is pressed isn&rsquo;t always going to be the same, this is due to mechanical imperfections and other sources of environmental noise. This means that the first time we press <code>Q</code> we could hear a 1KHz wave and the next time it could be as high as 1.7KHz.</p>
 
 <p>We can model these mechanical imperfections by assuming that some noise is added to our measurements, this means that instead of getting a particular frequency we receive a distribution of frequencies. In my toy model i&rsquo;ve assumed that each key faces the same (gaussian)noise with a mean of 0 and a variance of 0.3. Heres what the distribution of frequencies looks like for each frequency group under these assumptions.</p>
 
-<div id="posteriors"></div>
+<p>
+    <div id="posteriors"></div>
+</p>
+
+<p>Each gaussian in this figure represents the range of frequencies we can expect to receive for each pair of keys, in other words it is the conditional distribution of frequencies given a key press i.e. $p(f|k)$. We can also see that the distribution of frequencies between adjacent groups overlaps slightly, this makes it possible for one key group to emit a frequency that belongs to the range of another keygroup albeit with less probability.</p>
+
+<p>The problem is starting to look quite daunting. Not only do we mistaken half of our keys for other keys due to the non unique frequencies emitted, but also due to the presence of systematic noises the frequencies of adjacent groups can be mistakened for each other.</p>
+
+<p>In the presence of all of these short comings given a sequence of frequencies $[f_1, f_2, f_3, &hellip; f_n]$ our task is to find a sequence of key presses $[k_1, k_2, k_3, &hellip; k_n]$</p>
+
+<p>
+    <center>
+        $[f_1, f_2, f_3, ... f_n] \longrightarrow \star magic \star \longrightarrow  [k_1, k_2, k_3, ... k_n]$
+    </center>
+</p>
+
+<h2 id="iterating-on-a-solution">Iterating on a solution</h2>
+
+<p>To solve this problem we need a model that relates frequencies to keys, a piece of this model is the conditional distribution $p(f|k)$ that we&rsquo;ve already seen. This distribution can help us understand how likely a sequence of key presses is given the frequencies we&rsquo;ve observed. To find the likelihood $L(k_1, k_2, k_3|f_1, f_2, f_3)$ of a sequence all we have to do is take the product of each individual probability.</p>
+
+<p>
+    <center>
+        $L(k_1, k_2, k_3|f_1, f_2, f_3) = p(f_1|k_1) \times p(f_2|k_2) \times p(f_3|k_3)$
+    </center>
+</p>
+
+<p>Finding a sequence of keys that maximizes this equation would give us the <a href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation">Maximum Likelihood Estimate</a>(MLE) for the problem. The code for this is pretty simple too, for each frequency in our observation we just need to loop over the 26 possible keys and pick the one with the highest $p(f|k)$ giving us a run time complexity of $O(N*26)$. This is fantastic from a computational perspective but as we can see in the table below the results are quite poor. These results represent the accuracy over 86 commonly used words.
+<p>
+<center></p>
+
+<table>
+<thead>
+<tr>
+<th>Actual</th>
+<th>MLE (accuracy: 11%)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>see</td>
+<td>nee</td>
+</tr>
+
+<tr>
+<td>year</td>
+<td>leaj</td>
+</tr>
+
+<tr>
+<td>out</td>
+<td>cuj</td>
+</tr>
+
+<tr>
+<td>even</td>
+<td>epen</td>
+</tr>
+</tbody>
+</table>
+
+<p></center>
+</p>
+Our MLE solution is missing some key information about typed sequences, it completely ignores language!.</p>
+
+<p>For one this model assumes that each key is just as likely to be typed as any other key, whereas in the english language we know that some keys are typed more often than others (we rarely begin words with <code>Q</code> or <code>Z</code> for instance), in mathematics we call this the prior distribution of keys $p(k)$.</p>
+
+<p>In most languages there is also a relationship between letters in a word for example in english consonants are followed by vowels or if we encounter the letter <code>Q</code> its almost certainly followed by the letter <code>U</code>.</p>
+
+<p>Therefore given a specific key or set of keys we also have a certain belief of what the next key might be. To model this relationship we can look at the probability of a key occurring given the key that ocurred before it $p(k_i|k_{i+1})$. The language model for a sequence  $[k_1, k_2, k_3]$ would then look like $p(k_1) \times p(k_2|k_1) \times p(k_3|k_2)$</p>
+
+<p>Incorporating the language model into our previous acoustic model is simply a matter multiplying the two together. Our new formulation then becomes :</p>
+
+<p>
+    <center>
+        $p(k_1, k_2, k_3|f_1, f_2, f_3) = p(f_1|k_1)p(k_1) \times p(f_2|k_2)p(k_2|k_1) \times p(f_3|k_3)p(k_3|k_2)$
+    </center>
+</p>
+
+<p>Finding the values of $k_i$ that would maximize this formula has now becomes trickier, because the keys now rely on each other due to the transiton probability $p(k_i|k_{i+1})$ we can no longer consider them independently and need to consider them as a sequence.</p>
+
+<p>One way to solve for the $k_i$ would be to iterate through all possible sequences and pick the sequence where the posterior is the highest. For a sequence of length 3 we can do this with the following pseudocode:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f1, f2, f3 <span style="color:#f92672">=</span> listen_to_typing()
+alphabet <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;abcdefghijklmnopqrstuvqxyz&#34;</span>
+max_cost <span style="color:#f92672">=</span> None
+max_sequence <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;</span>
+
+<span style="color:#66d9ef">for</span> k1 <span style="color:#f92672">in</span> alphabet:
+	<span style="color:#66d9ef">for</span> k2 <span style="color:#f92672">in</span> alphabet:
+		<span style="color:#66d9ef">for</span> k3 <span style="color:#f92672">in</span> alphabet:
+			cost <span style="color:#f92672">=</span> p(k1, k2, k3 <span style="color:#f92672">|</span> f1, f2, f3)s
+			<span style="color:#66d9ef">if</span> cost <span style="color:#f92672">&gt;</span> max_cost:
+				max_cost <span style="color:#f92672">=</span> cost
+				max_sequence <span style="color:#f92672">=</span> [k1, k2, k3]
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;I think you typed : &#34;</span>, max_sequence</code></pre></div>
+
+<p>This would give you the right answer, but a solution that iterates through every sequence of length $N$ will have to run $26^N$ times to find the best sequence.</p>
+
+<p>This is a number that starts to grow very big very quickly as we increase $N$, to put this in perspective a 4 letter word would require ~456976 computations and a 5 letter word would require ~11881376. Clearly this solution isn&rsquo;t going to cut it if we are going to decode paragraphs of text.</p>
+
+<h2 id="we-need-to-go-faster">We need to go faster!</h2>
+
+<p>We can definitely do better, lets start by visualizing what the algorithm above does by looking at a reduced set of letters:</p>
+
+
+<figure>
+    
+        <img src="/keyboardspy/graph.svg" width="300" height="300" />
+    
+    
+</figure>
+
+
+<p>Every sequence is a path through these nodes from left to right for example heres one of the possible sequences:</p>
+
+
+<figure>
+    
+        <img src="/keyboardspy/graph2.svg" width="300" height="300" />
+    
+    
+</figure>
+
+
+<p>We can notice something interesting when two or more paths share the same node like so:</p>
+
+
+<figure>
+    
+        <img src="/keyboardspy/graph3.svg" width="300" height="300" />
+    
+    
+</figure>
+
+
+<p>All the paths that exit the shared node are common to each of the three nodes and so the remaining computation that needs to be done will be exactly the same, however right now we are repeating it 26 times!.</p>
+
+<p>Since the computation is the same we can just do it once and save the result instead of having to recompute it. Caching shared solutions like this dramatically reduces the total number of computations we need to do and makes it feasible to estimate very long pieces of text.</p>
+
+<p>Anyways enough about spee, how does our new algorithm stack up against the MLE soltuion ?, lets have a look:
+<p>
+<center></p>
+
+<table>
+<thead>
+<tr>
+<th>Actual</th>
+<th>MLE (accuracy: 11%)</th>
+<th>MAP (accuracy: 55%)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>also</td>
+<td>alnc</td>
+<td>ayso</td>
+</tr>
+
+<tr>
+<td>on</td>
+<td>cn</td>
+<td>on</td>
+</tr>
+
+<tr>
+<td>here</td>
+<td>eeje</td>
+<td>here</td>
+</tr>
+
+<tr>
+<td>come</td>
+<td>ccde</td>
+<td>come</td>
+</tr>
+</tbody>
+</table>
+
+<p></center>
+</p>
+Its looking a heck of a lot better, i&rsquo;ve only shown a small sample of results here but the MAP algorithms is able to achieve a 55% accuracy over our dataset of 86 commonly used words. In general the MAP estimates look very close to the original text with just a few letters off causing spelling mistakes, for example <code>ayso</code> is only one character away from <code>also</code>.</p>
+
+<p>One way we could fix this would be to increase the number of characters we consider in our language model when deciding the transition probability $p(k_i|k_{i+1})$, if we look at more letters than just the last one then we will be able to filter out letter combinations like <code>yso</code> that are less likely to occur in the english language.</p>
+
+<p>For my own purposes I chose to implement this by giving paths a higher weight if they resolved to a word in the english dictionary. By incorporating this constraint into the model our final results are :
+<p>
+<center></p>
+
+<table>
+<thead>
+<tr>
+<th>Actual</th>
+<th>MLE (accuracy: 11.6%)</th>
+<th>MAP (accuracy: 56.9%)</th>
+<th>MAP (accuracy: 77.9%)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>all</td>
+<td>all</td>
+<td>all</td>
+<td>all</td>
+</tr>
+
+<tr>
+<td>just</td>
+<td>junk</td>
+<td>rint</td>
+<td>just</td>
+</tr>
+
+<tr>
+<td>go</td>
+<td>gc</td>
+<td>wo</td>
+<td>go</td>
+</tr>
+
+<tr>
+<td>its</td>
+<td>ikn</td>
+<td>its</td>
+<td>its</td>
+</tr>
+
+<tr>
+<td>also</td>
+<td>alnc</td>
+<td>ayso</td>
+<td>also</td>
+</tr>
+
+<tr>
+<td>day</td>
+<td>dal</td>
+<td>mal</td>
+<td>may</td>
+</tr>
+
+<tr>
+<td>to</td>
+<td>kc</td>
+<td>to</td>
+<td>to</td>
+</tr>
+
+<tr>
+<td>only</td>
+<td>cnll</td>
+<td>onll</td>
+<td>only</td>
+</tr>
+
+<tr>
+<td>then</td>
+<td>keen</td>
+<td>then</td>
+<td>then</td>
+</tr>
+
+<tr>
+<td>them</td>
+<td>keed</td>
+<td>thed</td>
+<td>them</td>
+</tr>
+</tbody>
+</table>
+
+<p></center>
+</p></p>
 
 <script type="text/javascript">
     function generate_posteriors() {
@@ -127,11 +413,39 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
             }
         }
 
-        return [xValues, posteriors, legend]
+        return [xValues, posteriors, legend];
     }
 
-    var raw_data = generate_posteriors()
-    var posterior_data = {xs: {}, columns: [], type:'area-spline'}
+    function generate_groups() {
+        var num_groups = 13;
+        var keys = "qwertyuiopasdfghjklzxcvbnm";
+        var xValues = new Array(num_groups);
+        var posteriors = new Array(num_groups);
+        var legend = new Array(num_groups);
+        var cf = 1;
+
+        for(var i=0; i<num_groups; i++) {
+            xValues[i] = [i];
+            posteriors[i] = [1];
+            cf += 1;
+        }
+
+        for(var i=0; i<keys.length; i++) {
+            index = i % num_groups;
+            if(legend[index]) {
+                legend[index] += ', ' + keys.charAt(i);
+            } else {
+                legend[index] = keys.charAt(i);
+            }
+        }
+
+        return [xValues, posteriors, legend];
+    }
+
+    var raw_data = generate_posteriors();
+    var raw_group_data = generate_groups();
+    var posterior_data = {xs: {}, columns: [], type:'area-spline'};
+    var group_data = {xs: {}, columns: [], type:'bar'};
 
     for(var i=0; i<raw_data[1].length; i++) {
         xValues = raw_data[0][i]
@@ -142,6 +456,17 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
         posterior_data['xs'][legend] = xValues[0];
         posterior_data['columns'].push(posterior);
         posterior_data['columns'].push(xValues);
+    }
+
+    for(var i=0; i<raw_group_data[1].length; i++) {
+        xValues = raw_group_data[0][i];
+        posterior = raw_group_data[1][i];
+        legend = raw_group_data[2][i];
+        xValues.unshift('x' + i);
+        posterior.unshift(legend);
+        group_data['xs'][legend] = xValues[0];
+        group_data['columns'].push(posterior);
+        group_data['columns'].push(xValues);
     }
 
 
@@ -173,9 +498,35 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
         }
     });
 
-</script>
+    var posteriors = c3.generate({
+        interaction: {
+            enabled: false
+        },
+        axis: {
+            x: {
+                tick: {
+                    count: 20,
+                    format: function(x) {return x.toFixed(2)}
+                }
+            },
+            y: {
+                tick: {
+                    count: 3,
+                    format: function(x) {return x.toFixed(2)}
+                }
+            }
+        },
+        size: {
+            height: 100,
+        },
+        bindto: '#groups',
+        data: group_data,
+        point: {
+            show: false
+        }
+    });
 
-<p>Each gaussian in this figure represents the range of frequencies we can expect to receive for each pair of keys, in other words it is the conditional</p>
+</script>
 
 	<nav class="no-print">
 	
