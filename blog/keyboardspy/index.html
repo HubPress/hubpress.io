@@ -6,8 +6,8 @@
 		<meta name="generator" content="Hugo 0.37" />
 		<title>Spying on keyboards : A toy model. - Frankly Speaking</title>
 
-		<meta name="description" content="With meltdown and spectre, side-channel attacks have been all the rage recently. One class of side channel attacks that seem espeically magical to me are acoustic side-channel attacks, this is where information about a system can be gleaned simply by recording the sounds that they emit.
-In this blog post i&rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing.">
+		<meta name="description" content="With meltdown and spectre, side-channel attacks have been all the rage recently. One class of side channel attacks that seem especially magical to me are acoustic side-channel attacks. This is where information about a system can be gleaned simply by recording the sounds that they emit.
+In this blog post I&rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing.">
 
 
 		
@@ -94,31 +94,31 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
 </figure>
 
 
-<p>With meltdown and spectre, <a href="https://en.wikipedia.org/wiki/Side-channel_attack">side-channel attacks</a> have been all the rage recently. One class of side channel attacks that seem espeically <a href="https://www.extremetech.com/extreme/173108-researchers-crack-the-worlds-toughest-encryption-by-listening-to-the-tiny-sounds-made-by-your-computers-cpu">magical</a> to me are acoustic side-channel attacks, this is where information about a system can be gleaned simply by recording the sounds that they emit.</p>
+<p>With meltdown and spectre, <a href="https://en.wikipedia.org/wiki/Side-channel_attack">side-channel attacks</a> have been all the rage recently. One class of side channel attacks that seem especially <a href="https://www.extremetech.com/extreme/173108-researchers-crack-the-worlds-toughest-encryption-by-listening-to-the-tiny-sounds-made-by-your-computers-cpu">magical</a> to me are acoustic side-channel attacks. This is where information about a system can be gleaned simply by recording the sounds that they emit.</p>
 
-<p>In this blog post i&rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing. While this is a toy model it turns out that reality doesn&rsquo;t stray too far from it!. To start us off lets define the problem we are dealing with.</p>
+<p>In this blog post I&rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing. While this is a toy model, it turns out that reality doesn&rsquo;t stray too far from it!. To start us off let&rsquo;s define the problem we are dealing with.</p>
 
 <h2 id="setting-up-the-problem">Setting up the problem</h2>
 
-<p>To define the problem lets start by listing some assumptions about the acoustic characteristics of a keyboard. First let&rsquo;s assume that every key on a keyboard produces a sound wave of a particular frequency for example the key <code>Q</code> could produce sounds at 1KHz while the <code>W</code> key makes more of a high 2KHz. These frequencies aren&rsquo;t unique and infact we are going to assume that alot of our keys produce exactly the same frequency as other keys. So keys <code>Q</code> and <code>F</code> sound the same at 1KHz while <code>O</code> and <code>C</code> are both humming at 9KHz when pressed.</p>
+<p>Let&rsquo;s start by listing some assumptions about the acoustic characteristics of a keyboard. First, assume that every key on a keyboard produces a sound wave of a particular frequency. For example, the key <code>Q</code> could produce sounds at 1kHz while the <code>W</code> key makes more of a high 2kHz. These frequencies aren&rsquo;t unique and infact we are going to assume that a lot of our keys produce exactly the same frequency as other keys. So keys <code>Q</code> and <code>F</code> sound the same at 1kHz while <code>O</code> and <code>C</code> are both humming at 9kHz when pressed.</p>
 
 <p>
     <div id="groups"></div>
 </p>
 
-<p>These shared frequencies form groups, each key belonging to a particular frequency group produces the same frequency as other keys bleonging to the same group. In my toy model i&rsquo;ve grouped keys together by making the latter half of a <code>Q</code><code>W</code><code>E</code><code>R</code><code>T</code><code>Y</code> keyboard share frequencies with the top half, this gives us two keys per frequency group.</p>
+<p>Let&rsquo;s put all the keys with the same frequency into a group. In my simulation i&rsquo;ve divided the $26$ keys on a <code>Q</code><code>W</code><code>E</code><code>R</code><code>T</code><code>Y</code> keyboard into $13$ groups so we have a 2 keys per group.</p>
 
-<p>The diagram above assumes that the frequencies are always perfectly produced and recorded. Unfortunately keyboards aren&rsquo;t perfect mechanical devices. The frequencies they produce when a key is pressed isn&rsquo;t always going to be the same, this is due to mechanical imperfections and other sources of environmental noise. This means that the first time we press <code>Q</code> we could hear a 1KHz wave and the next time it could be as high as 1.7KHz.</p>
+<p>The diagram above assumes the frequencies are always perfectly produced and recorded. Unfortunately keyboards aren&rsquo;t perfect mechanical devices. The frequencies they produce when a key is pressed isn&rsquo;t always going to be the same, this is due to mechanical imperfections and other sources of environmental noise. So the first time we press <code>Q</code> we could hear a 1kHz wave and the next time it could be as high as 1.7kHz.</p>
 
-<p>We can model these mechanical imperfections by assuming that some noise is added to our measurements, this means that instead of getting a particular frequency we receive a distribution of frequencies. In my toy model i&rsquo;ve assumed that each key faces the same (gaussian)noise with a mean of 0 and a variance of 0.3. Heres what the distribution of frequencies looks like for each frequency group under these assumptions.</p>
+<p>We can model these mechanical imperfections by assuming that some noise is added to our measurements, this means that instead of a single frequency our measurements come from a distribution of frequencies. In my simulation, I&rsquo;ve assumed that each key faces the same (gaussian) noise. Here&rsquo;s what the distribution of frequencies looks like for each frequency group for our keys.</p>
 
 <p>
     <div id="posteriors"></div>
 </p>
 
-<p>Each gaussian in this figure represents the range of frequencies we can expect to receive for each pair of keys, in other words it is the conditional distribution of frequencies given a key press i.e. $p(f|k)$. We can also see that the distribution of frequencies between adjacent groups overlaps slightly, this makes it possible for one key group to emit a frequency that belongs to the range of another keygroup albeit with less probability.</p>
+<p>Each gaussian in this figure represents the range of frequencies we can expect to receive for each pair of keys. In other words, it is the conditional distribution of frequencies given a key press i.e. $p(f|k)$. We can also see that the distribution of frequencies between adjacent groups overlaps slightly, this makes it possible for one key group to emit a frequency that belongs to the range of another keygroup albeit with less probability.</p>
 
-<p>The problem is starting to look quite daunting. Not only do we mistaken half of our keys for other keys due to the non unique frequencies emitted, but also due to the presence of systematic noises the frequencies of adjacent groups can be mistakened for each other.</p>
+<p>The problem is starting to look quite daunting. Not only could we mistake half of our keys for other keys due to the non unique frequencies emitted, but we could also get confused by frequencies from adjacent groups as they mix together slightly.</p>
 
 <p>In the presence of all of these short comings given a sequence of frequencies $[f_1, f_2, f_3, &hellip; f_n]$ our task is to find a sequence of key presses $[k_1, k_2, k_3, &hellip; k_n]$</p>
 
@@ -175,13 +175,15 @@ In this blog post i&rsquo;d like to explore how one could infer what is being ty
 
 <p></center>
 </p>
-Our MLE solution is missing some key information about typed sequences, it completely ignores language!.</p>
+Our MLE solution is missing some key information about typed sequences, <strong>it completely ignores <em>language</em>!</strong></p>
 
 <p>For one this model assumes that each key is just as likely to be typed as any other key, whereas in the english language we know that some keys are typed more often than others (we rarely begin words with <code>Q</code> or <code>Z</code> for instance), in mathematics we call this the prior distribution of keys $p(k)$.</p>
 
 <p>In most languages there is also a relationship between letters in a word for example in english consonants are followed by vowels or if we encounter the letter <code>Q</code> its almost certainly followed by the letter <code>U</code>.</p>
 
-<p>Therefore given a specific key or set of keys we also have a certain belief of what the next key might be. To model this relationship we can look at the probability of a key occurring given the key that ocurred before it $p(k_i|k_{i+1})$. The language model for a sequence  $[k_1, k_2, k_3]$ would then look like $p(k_1) \times p(k_2|k_1) \times p(k_3|k_2)$</p>
+<p>Therefore given a specific key or set of keys we also have a certain belief of what the next key might be. To model this relationship we can look at the probability of a key occurring given the key that occurred before it $p(k_i|k_{i+1})$. The language model for a sequence  $[k_1, k_2, k_3]$ would then look like $p(k_1) \times p(k_2|k_1) \times p(k_3|k_2)$</p>
+
+<p>This sounds amazing, but where exactly do we get these probabilities from ?. We would have to count letter frequencies and transitions from a vast library of the worlds literature. Thankfully Peter Norvig, along with resources from Google has done all the <a href="http://norvig.com/mayzner.html">hard work</a> for us.</p>
 
 <p>Incorporating the language model into our previous acoustic model is simply a matter multiplying the two together. Our new formulation then becomes :</p>
 
@@ -191,19 +193,19 @@ Our MLE solution is missing some key information about typed sequences, it compl
     </center>
 </p>
 
-<p>Finding the values of $k_i$ that would maximize this formula has now becomes trickier, because the keys now rely on each other due to the transiton probability $p(k_i|k_{i+1})$ we can no longer consider them independently and need to consider them as a sequence.</p>
+<p>Finding the values of $k_i$ that would maximize this formula has now becomes trickier, because the keys now rely on each other due to the transition probability $p(k_{i+1}|k_i)$ we can no longer consider them independently and need to consider them as a sequence.</p>
 
 <p>One way to solve for the $k_i$ would be to iterate through all possible sequences and pick the sequence where the posterior is the highest. For a sequence of length 3 we can do this with the following pseudocode:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f1, f2, f3 <span style="color:#f92672">=</span> listen_to_typing()
 alphabet <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;abcdefghijklmnopqrstuvqxyz&#34;</span>
-max_cost <span style="color:#f92672">=</span> None
+max_cost <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 max_sequence <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;</span>
 
 <span style="color:#66d9ef">for</span> k1 <span style="color:#f92672">in</span> alphabet:
 	<span style="color:#66d9ef">for</span> k2 <span style="color:#f92672">in</span> alphabet:
 		<span style="color:#66d9ef">for</span> k3 <span style="color:#f92672">in</span> alphabet:
-			cost <span style="color:#f92672">=</span> p(k1, k2, k3 <span style="color:#f92672">|</span> f1, f2, f3)s
+			cost <span style="color:#f92672">=</span> p(k1, k2, k3 <span style="color:#f92672">|</span> f1, f2, f3)
 			<span style="color:#66d9ef">if</span> cost <span style="color:#f92672">&gt;</span> max_cost:
 				max_cost <span style="color:#f92672">=</span> cost
 				max_sequence <span style="color:#f92672">=</span> [k1, k2, k3]
@@ -216,7 +218,7 @@ max_sequence <span style="color:#f92672">=</span> <span style="color:#e6db74"></
 
 <h2 id="we-need-to-go-faster">We need to go faster!</h2>
 
-<p>We can definitely do better, lets start by visualizing what the algorithm above does by looking at a reduced set of letters:</p>
+<p>We can definitely do better. Let&rsquo;s start by visualizing what the algorithm above does by looking at a reduced set of letters:</p>
 
 
 <figure>
@@ -249,11 +251,11 @@ max_sequence <span style="color:#f92672">=</span> <span style="color:#e6db74"></
 </figure>
 
 
-<p>All the paths that exit the shared node are common to each of the three nodes and so the remaining computation that needs to be done will be exactly the same, however right now we are repeating it 26 times!.</p>
+<p>All the paths that exit the shared node are common to each of the three starting nodes and so the remaining computation that needs to be done will be exactly the same, <strong>but right now we are repeating it 26 times!</strong></p>
 
-<p>Since the computation is the same we can just do it once and save the result instead of having to recompute it. Caching shared solutions like this dramatically reduces the total number of computations we need to do and makes it feasible to estimate very long pieces of text.</p>
+<p>Since the intermediate computations are the same, we can just do it once and save the result instead of having to recompute it. Caching shared solutions like this dramatically reduces the total number of computations we need to do and makes it possible to estimate very long pieces of text.</p>
 
-<p>Anyways enough about spee, how does our new algorithm stack up against the MLE soltuion ?, lets have a look:
+<p>Anyways enough about speed, how does our new algorithm stack up against the MLE solution ? Let&rsquo;s have a look:
 <p>
 <center></p>
 
@@ -295,11 +297,11 @@ max_sequence <span style="color:#f92672">=</span> <span style="color:#e6db74"></
 
 <p></center>
 </p>
-Its looking a heck of a lot better, i&rsquo;ve only shown a small sample of results here but the MAP algorithms is able to achieve a 55% accuracy over our dataset of 86 commonly used words. In general the MAP estimates look very close to the original text with just a few letters off causing spelling mistakes, for example <code>ayso</code> is only one character away from <code>also</code>.</p>
+It&rsquo;s looking a heck of a lot better. I&rsquo;ve only shown a small sample of results here but the MAP algorithm is able to achieve a 55% accuracy over our dataset of 86 commonly used words. In general the MAP estimates look very close to the original text with just a few letters off causing spelling mistakes, for example <code>ayso</code> is only one character away from <code>also</code>.</p>
 
-<p>One way we could fix this would be to increase the number of characters we consider in our language model when deciding the transition probability $p(k_i|k_{i+1})$, if we look at more letters than just the last one then we will be able to filter out letter combinations like <code>yso</code> that are less likely to occur in the english language.</p>
+<p>One way we could fix this would be to increase the number of characters we consider in our language model when deciding the transition probability. Currently our transition model $p(k_{i+1}|k_i)$ only considers the key that occurred before the current key. If this was increased to look at a window of previous keys $p(k_{i+1}|k_i, k_{i-1}, k_{i-2})$ we could filter out letter combinations like <code>yso</code> that are less likely to occur in the english language.</p>
 
-<p>For my own purposes I chose to implement this by giving paths a higher weight if they resolved to a word in the english dictionary. By incorporating this constraint into the model our final results are :
+<p>For my own purposes, I chose to implement this by giving paths a higher weight if they resolved to a word in the english dictionary. By incorporating this constraint into the model our final results are :
 <p>
 <center></p>
 
@@ -309,7 +311,7 @@ Its looking a heck of a lot better, i&rsquo;ve only shown a small sample of resu
 <th>Actual</th>
 <th>MLE (accuracy: 11.6%)</th>
 <th>MAP (accuracy: 56.9%)</th>
-<th>MAP (accuracy: 77.9%)</th>
+<th>MAP2 (accuracy: 77.9%)</th>
 </tr>
 </thead>
 

@@ -17,8 +17,8 @@
       <pubDate>Wed, 28 Feb 2018 22:09:56 -0500</pubDate>
       
       <guid>http://nklyn.ca/blog/keyboardspy/</guid>
-      <description>With meltdown and spectre, side-channel attacks have been all the rage recently. One class of side channel attacks that seem espeically magical to me are acoustic side-channel attacks, this is where information about a system can be gleaned simply by recording the sounds that they emit.
-In this blog post i&amp;rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing.</description>
+      <description>With meltdown and spectre, side-channel attacks have been all the rage recently. One class of side channel attacks that seem especially magical to me are acoustic side-channel attacks. This is where information about a system can be gleaned simply by recording the sounds that they emit.
+In this blog post I&amp;rsquo;d like to explore how one could infer what is being typed on a keyboard by recording the sounds that are created while typing.</description>
     </item>
     
     <item>
