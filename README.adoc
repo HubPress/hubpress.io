@@ -67,7 +67,7 @@ image:http://hubpress.io/img/home-install.png[Install complete,300]
 
 ==== I am using my GitHub Pages domain already, or I want to use a custom domain
 
-If you are already using your want your blog to be available on a custom domain, or you are _already using your GitHub Pages domain_ to host another project, some extra configuration is required.
+If you want your blog to be available on a custom domain, or you are _already using your GitHub Pages domain_ to host another project, some extra configuration is required.
 
 You need to set your blog up on a sub-domain of your GitHub Pages site.
 
