@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 03 Oct 2017 10:56:39 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Configurations in ASP.NET Core 2.0]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 30 Mar 2018 19:41:03 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Creating a ValidateModel ActionFilter]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everytime you need to store some data in database you have to validate it first. we usually need to create an if/else block and make sure ModelState is valid and send back some error messages if it&#8217;s not.</p>
+</div>
+<div class="paragraph">
+<p>ActionFilters are a great way to implement the DRY principle. Here we are going to create a simple ActionFilter to do the Model Validation before getting into the Action.</p>
+</div>
+<div class="paragraph">
+<p>The code goes like this :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class ValidateModelAttribute : Attribute, IActionFilter
+    {
+    public void OnActionExecuted(ActionExecutedContext context)
+        {
+            //throw new NotImplementedException();
+        }
+        public void OnActionExecuting(ActionExecutingContext context)
+        {
+            if (!context.ModelState.IsValid)
+            {
+                var ctrl = (Controller)context.Controller;
+                var view = new ViewResult
+                {
+                    ViewName = context.RouteData.Values["Action"].ToString(),
+                    ViewData = ctrl.ViewData
+                };
+                context.Result = view;
+            }
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We want to Validate model before running the Action so we have to implement <strong>OnActionExecuting</strong> method from IActionFilter interface. First we use <strong>ActionExecutingContext</strong> to find out if ModelState is valid or not.</p>
+</div>
+<div class="paragraph">
+<p>If model state is valid then we pass the data to action and everything goes as planned there, But if it&#8217;s not valid we have to redirect user back to original View containing the same ViewData.</p>
+</div>
+<div class="paragraph">
+<p>To do that I used <strong>context.Controller</strong> and cast it back to <strong>Controller</strong> then used <strong>Context</strong> to extract action name from route data. This way our filter works with any action in any controller. otherwise we hd to hard core the view name.</p>
+</div>
+<div class="paragraph">
+<p>At the end by setting up <strong>context.Result</strong> we are telling ASP Core MVC pipeline to skip the rest of the code and generte the view from here.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusion">Conclusion</h3>
+<div class="paragraph">
+<p>ActionFiter is a great way to remove repeatitive code and make it more elegant. it&#8217;s easier to maintain and less work to re-use. You should remember that ActionFilters run after ModelBinding procedures so if you need to stop pipeline from ModelBinding you need to use other filters.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2018/03/30/How-to-work-with-Action-Filters-in-ASP-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2018/03/30/How-to-work-with-Action-Filters-in-ASP-Core.html</guid><category><![CDATA[ASP Core]]></category><category><![CDATA[ActionFilter]]></category><category><![CDATA[ValidateModel]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Fri, 30 Mar 2018 00:00:00 GMT</pubDate></item><item><title><![CDATA[Configurations in ASP.NET Core 2.0]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>With new version of ASP.NET Core configuration system has changed a lot. First it is now injectable into the framework. then you can add custom options to the base Configuration class and access it anywhere needed.</p>
