@@ -1,0 +1,6 @@
+= Creating a ValidateModel ActionFilter
+	
+:hp-tags: ASP Core, ActionFilter, ValidateModel,
+:hp-alt-title: How to work with ActionFilters in ASP Core
+
+
