@@ -1,0 +1,21 @@
+= First 3 days with ASP Core 2.0
+:hp-tags: ASP.NET,Core,MVC,
+
+About 3 days ago the final version of ASP Core 2.0 released. I installed the new bits and have been playing with it since. here is my experience so far. Fantastic.
+
+==== No bugs
+So far I expericed no bugs. Everything works perfectly. No compatiblity issues like the preview version and no errors. Its fast and reliable.
+
+==== .Net Stanard 2.0
+Its realy the best part of the new version. it feels more matured than the last version. supporting a larg number of older libararies is really what many developers were looking for.
+
+==== Configuarion and Logging as a service
+With IConfiguration And ILoggerFactory injected directly into Services
+its now accessible from every where in project without any additional code. 
+
+==== Razor pages
+I always needed this feature. In very projects there is some simple pages that dont have any code behind. And even they do, its almost nothing. now I dont have to create a Model, Controller and View just to show about page. and thats my favorite thing in ASP Core 2.0
+
+==== Conclusion
+Until last week I was not even considering migrating to ASP Core. Because there were so many uncertainities around the project and there were not much to gain after all.
+But now I feel like I can not go back and use the old ASP MVC 5 any more ! yes, It's that good.

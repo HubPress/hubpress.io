@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>How to create Middleware in ASP Core ?</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://codehaks.github.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//codehaks.github.io/themes/casper/assets/css/screen.css?v=1505030318703" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Codehaks" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to create Middleware in ASP Core ?" />
+    <meta property="og:description" content="One of the best features of ASP.NET Core is it&amp;#8217;s flexible pipeline. You can control what goes into your application&amp;#8217;s pipeline and add more to it using a Middleware. SendFile Middleware This middleware is just a sample project to see how middlewares are created in" />
+    <meta property="og:url" content="https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html" />
+    <meta property="article:published_time" content="2017-09-04T00:00:00.000Z" />
+    <meta property="article:tag" content="ASP.NET" />
+    <meta property="article:tag" content="Core" />
+    <meta property="article:tag" content="Middleware" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="How to create Middleware in ASP Core ?" />
+    <meta name="twitter:description" content="One of the best features of ASP.NET Core is it&amp;#8217;s flexible pipeline. You can control what goes into your application&amp;#8217;s pipeline and add more to it using a Middleware. SendFile Middleware This middleware is just a sample project to see how middlewares are created in" />
+    <meta name="twitter:url" content="https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Codehaks",
+    "author": {
+        "@type": "Person",
+        "name": "Hakim",
+        "image": "https://avatars2.githubusercontent.com/u/6712828?v=4",
+        "url": "https://codehaks.github.io/author/codehaks/",
+        "sameAs": "http://codehaks.github.io",
+        "description": "I&#x27;m a passion driven, seasoned web developer with over 8 years of\r\nexperience building websites of all complexity levels."
+    },
+    "headline": "How to create Middleware in ASP Core ?",
+    "url": "https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html",
+    "datePublished": "2017-09-04T00:00:00.000Z",
+    "keywords": "ASP.NET, Core, Middleware",
+    "description": "One of the best features of ASP.NET Core is it&amp;#8217;s flexible pipeline. You can control what goes into your application&amp;#8217;s pipeline and add more to it using a Middleware. SendFile Middleware This middleware is just a sample project to see how middlewares are created in"
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Codehaks" href="https://codehaks.github.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template tag-ASPNET tag-Core tag-Middleware nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="blog-logo" href="https://codehaks.github.io"><img src="https://github.com/codehaks/codehaks.github.io/raw/master/images/logo01.jpg" alt="Codehaks" /></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-ASPNET tag-Core tag-Middleware">
+
+        <header class="post-header">
+            <h1 class="post-title">How to create Middleware in ASP Core ?</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-09-04">04 September 2017</time>  on <a href="https://codehaks.github.io/tag/ASPNET/">ASP.NET</a>, <a href="https://codehaks.github.io/tag/Core/">Core</a>, <a href="https://codehaks.github.io/tag/Middleware/">Middleware</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the best features of ASP.NET Core is it&#8217;s flexible pipeline. You can control what goes into your application&#8217;s pipeline and add more to it using a <strong>Middleware</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sendfile_middleware">SendFile Middleware</h4>
+<div class="paragraph">
+<p>This middleware is just a sample project to see how middlewares are created in ASP.NET Core. I tried to keep it is simple as possible,after all this is my first middleware.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_it_does">What it does?</h4>
+<div class="paragraph">
+<p>You set a file path at startup and SendFile Middleware sends the file back to user in browser. basically a FileResult directly as a response.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            app.UseSendFile(@"C:\myfile.jpg");
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It can be any kind of file, and user receives it in browser.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sendfile_middleware_explained">SendFile middleware explained</h4>
+<div class="paragraph">
+<p>The basic parts of a middleware in ASP.NET Core is simple. You have to create a class like this :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">internal class SendFileMiddleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly SendFileMiddlewareOptions _options;
+        public SendFileMiddleware(RequestDelegate next, IOptions&lt;SendFileMiddlewareOptions&gt; options)
+        {
+            _options = options.Value;
+            _next = next;
+        }
+        public Task Invoke(HttpContext context)
+        {
+            if (!string.IsNullOrEmpty(_options.FilePath))
+            {
+                var file = new Microsoft.Extensions.FileProviders
+                .Physical.PhysicalFileInfo(
+                    new System.IO.FileInfo(_options.FilePath));
+                context.Response.SendFileAsync(file);
+                return Task.CompletedTask;
+            }
+            else
+            {
+                return Task.CompletedTask;
+            }
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see there is no inheritance involved. You just have to provide a structure. the <strong>_next</strong> property is a request delegate that you use to pass the reponse to next middleware. There is an <strong>options</strong> parameter. if you want to pass data to your middleware you need an <strong>IOptions</strong> interface. Next there is the <strong>Invoke</strong> method. it takes a HttpContext and creates the response then you pass the response to next middleware. you dont have to pass if your middleware is a short-circuit one.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">namespace Codehaks.Middlewares.SendFile
+{
+    public class SendFileMiddlewareOptions
+    {
+        public string FilePath { get; set; }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_extention_method">The extention method</h4>
+<div class="paragraph">
+<p>The best way to present your middleware is to create an Extention method and give other developer the option to call it directly with IApplication parameter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public static class SendFileMiddlewareExtension
+    {
+        public static IApplicationBuilder UseSendFile(
+            this IApplicationBuilder builder,
+            SendFileMiddlewareOptions options)
+        {
+            return
+            builder.UseMiddleware&lt;SendFileMiddleware&gt;
+            (Options.Create(options));
+        }
+        public static IApplicationBuilder UseSendFile(
+            this IApplicationBuilder builder,
+            string filePath)
+        {
+            var options = new SendFileMiddlewareOptions()
+            {
+                FilePath = filePath
+            };
+            return
+            builder.UseMiddleware&lt;SendFileMiddleware&gt;
+            (Options.Create(options));
+        }
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>Middlewares can solve many problems,Creating them is fairly easy and working with them is fun. But there are many things to watch for. Like when you change response it the pipeline the next middleware is not allowed to chat it again,there are some reasons for that. but thats the topic for an other post.
+SendFile middleware is availbe as a nuget :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">PM &gt; Install-Package Codehaks.Middlewares.SendFile</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>you can
+<a href="view-source:https://github.com/codehaks/Codehaks.Middlewares.SendFile">download</a> source code here.</p>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://codehaks.github.io/author/codehaks/" style="background-image: url(https://avatars2.githubusercontent.com/u/6712828?v&#x3D;4)"><span class="hidden">Hakim's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://codehaks.github.io/author/codehaks/">Hakim</a></h4>
+
+                    <p>I&#x27;m a passion driven, seasoned web developer with over 8 years of
+experience building websites of all complexity levels.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Gorgan,Iran</span>
+                    <span class="author-link icon-link"><a href="http://codehaks.github.io">http://codehaks.github.io</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=How%20to%20create%20Middleware%20in%20ASP%20Core%20%3F&amp;url=https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'codehaks'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://codehaks.github.io">Codehaks</a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1505030318703"></script>
+    <script type="text/javascript" src="//codehaks.github.io/themes/casper/assets/js/index.js?v=1505030318703"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105746611-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
