@@ -3,4 +3,11 @@
 :hp-tags: ASP Core, ActionFilter, ValidateModel,
 :hp-alt-title: How to work with ActionFilters in ASP Core
 
+Everytime you need to store some data in database you have to validate it first. we usually need to create an if/else block and make sure ModelState is valid and send back some error messages if it's not.
+
+ActionFilters are a great way to implement the DRY principle. Here we are going to create a simple ActionFilter to do the Model Validation before getting into the Action. 
+
+The code goes like this :
+
+//source 
 
