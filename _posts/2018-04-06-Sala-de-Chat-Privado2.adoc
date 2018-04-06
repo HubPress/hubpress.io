@@ -19,12 +19,12 @@
 <script> 
     window.intergramId = "Your unique chat id";
     window.intergramCustomizations = {
-        titleClosed: 'Closed chat title',
-        titleOpen: 'Opened chat title',
-        introMessage: 'First message when the user opens the chat for the first time',
-        autoResponse: 'A message that is sent immediately after the user sends its first message',
-        autoNoResponse: 'A message that is sent one minute after the user sends its first message ' +
-                        'and no response was received',
+        titleClosed: 'Abre el Chat',
+        titleOpen: 'Chateando con jm',
+        introMessage: 'Qué me cuentas?',
+        autoResponse: 'Te responderé tan pronto esté en línea',
+        autoNoResponse: 'Parece que ahora no estoy en línea... ' +
+                        'te responderé cuando esté conectado',
         mainColor: "#E91E63", // Can be any css supported color 'red', 'rgb(255,87,34)', etc
         alwaysUseFloatingButton: false // Use the mobile floating button also on large screens
     };
