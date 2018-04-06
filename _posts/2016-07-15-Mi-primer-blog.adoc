@@ -1,0 +1,270 @@
+= Mi primer blog
+
+:hp-tags: HubPress, Blog, Open Source,
+
+
+== Texto
+----
+Esto es un comienzo de algo.
+----
+
+== Enlaces
+
+---
+Enlaces de interés:
+
+
+https://github.com/txemis/txemis.github.io/blob/master/Administration.adoc[Aministration Guide]
+
+https://github.com/txemis/txemis.github.io/blob/master/Writers_Guide.adoc[Writer’s Guide]
+
+http://asciidoctor.org/docs/user-manual/#what-is-asciidoctor[Asciidoctor]
+
+---
+
+== telegram rss/atom mi-chrome
+
+http://channel2rss.bitmachine.org/rss/mi-chrome
+
+
+---
+
+
+http://channel2rss.bitmachine.org/atom/mi-chrome
+
+
+---
+
+== Otros
+
+---
+
+https://livechatbot.net
+
+http://www.chatbro.com/en/tg/j_m_l/invitado/[ChatTelegram]
+
+https://github.com/idoco/intergram[Intergram]
+
+---
+descargar ficheros:
+
+link:{ctx_path}/assets/mydoc.pdf[get the PDF]
+
+---
+
+Temas: 
+
+casper
+
+ghostium
+
+ichi
+
+roon
+
+saga
+
+uno
+
+uno-zen
+---
+
+Unordered list:
+
+* apples 
+* oranges 
+** temple 
+** navel 
+* bananas
+
+---
+
+Ordered list:
+
+. first 
+. second 
+. third
+
+---
+
+Mas:
+
+
+*bold*
+
+Bold (unconstrained)	**b**old
+
+Italic (constrained)	_italic_
+
+Italic (unconstrained)	__i__talic
+
+Monospace (constrained)	`monospace`
+
+Monospace (unconstrained) ``m``onospace
+
+---
+....
+
+
+comment
+////
+Private notes that are not displayed in the output
+none
+
+example
+====
+Designates example content or defines an admonition block
+normal
+
+literal
+....
+....
+Output text to be displayed exactly as entered
+verbatim
+
+listing, source
+----
+Source code or keyboard input to be displayed as entered
+verbatim
+
+open
+--
+Anonymous block that can act as any other block (except pass or table)
+varies
+
+pass
+++++
+Raw text to be passed through unprocessed
+none
+
+quote, verse
+____
+A quotation or verse with optional attribution
+normal
+
+sidebar
+****
+Aside text rendered outside the flow of the document
+normal
+
+table
+|===
+Used to display tabular content or advanced layouts
+varies
+
+....
+---
+
+javascript:
+
+https://github.com/wols/time/[]
+
+https://wols.github.io/time/[]
+
+Passthrough block works fine - I use it for include Javascript tracker code:
+
+++++
+<!-- Piwik -->
+<script type="text/javascript">
+   // code here
+</script>
+<noscript><p><!-- a image --></p></noscript>
+<!-- End Piwik Code -->
+++++
+
+---
+
+www.chatbro.com
+
+////
+
+++++
+<!-- Chatbro -->
+<script type="text/javascript">
+   /* Chatbro Widget Embed Code Start */
+   function ChatbroLoader(chats, async) {
+       async = async || true;
+       var params = {
+          embedChatsParameters: chats instanceof Array ? chats : [chats],
+          needLoadCode: typeof Chatbro === 'undefined'
+       };
+       var xhr = new XMLHttpRequest();
+       xhr.onload = function () {
+          eval(xhr.responseText);
+       };
+       xhr.onerror = function () {
+          console.error('Chatbro loading error');
+       };
+       xhr.open('POST', '//www.chatbro.com/embed_chats/', async);
+       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+       xhr.send('parameters=' + encodeURIComponent(JSON.stringify(params)));
+   }
+       /* Chatbro Widget Embed Code End */
+       ChatbroLoader({
+          chatPath: 'tg/208397015/Ask your own question',
+          containerDivId: ''
+       });
+ </script>
+<!-- End Chatbro Code -->
+++++
+
+////
+
+---
+
+////
+
+++++ 
+<!-- Piwik --> 
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.wols.github.io/time"]]);    _paq.push(['trackPageView']);  _paq.push(['enableLinkTracking']);
+(function() {
+   var u="//wolsorg.pro-ssl.de/analytics/";
+   _paq.push(['setTrackerUrl', u+'piwik.php']); 
+   _paq.push(['setSiteId', 2]);
+   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+   g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+   })();
+</script>
+<noscript><p><img src="//wolsorg.pro-ssl.de/analytics/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --> 
+++++
+
+////
+
+---
+
+== Imágenes
+
+---
+image::https://tlgur.com/s/kitten.jpg[]
+---
+
+archivo svg:
+
+image::https://upload.wikimedia.org/wikipedia/commons/1/15/Svg.svg[]
+
+---
+
+== Audio
+
+++++
+<iframe style="border: 0; width: 350px; height: 470px;" src="//bandcamp.com/EmbeddedPlayer/album=2869458964/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://mocamborecords.bandcamp.com/album/showdown">SHOWDOWN by THE MIGHTY MOCAMBOS</a></iframe>
+++++
+
+
+---
+
+== Video
+
+
+video::KCylB780zSM[youtube]
+
+video::67480300[vimeo]
+
+---
+
+
+
+

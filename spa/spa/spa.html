@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+  spa.html
+  spa browser document
+-->
+
+<html>
+<head>
+  <!-- ie9+ rendering support for latest standards -->
+  <meta http-equiv="Content-Type" content="text/html; 
+    charset=ISO-8859-1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>SPA Chapters 5-6</title>
+
+  <!-- third-party stylesheets -->
+
+  <!-- our stylesheets -->
+  <link rel="stylesheet" href="css/spa.css"       type="text/css"/>
+  <link rel="stylesheet" href="css/spa.shell.css" type="text/css"/>
+  <link rel="stylesheet" href="css/spa.chat.css"  type="text/css"/>
+  <link rel="stylesheet" href="css/spa.avtr.css"  type="text/css"/>
+
+  <!-- third-party javascript -->
+  <script src="js/jq/taffydb-2.6.2.js"            ></script>
+  <script src="js/jq/jquery-1.9.1.js"             ></script>
+  <script src="js/jq/jquery.uriAnchor-1.1.3.js"   ></script>
+  <script src="js/jq/jquery.event.gevent-0.1.9.js"></script>
+  <script src="js/jq/jquery.event.ue-0.3.2.js"    ></script>
+
+  <!-- our javascript -->
+  <script src="js/spa.js"       ></script>
+  <script src="js/spa.util.js"  ></script>
+  <script src="js/spa.data.js"  ></script>
+  <script src="js/spa.fake.js"  ></script>
+  <script src="js/spa.model.js" ></script>
+  <script src="js/spa.util_b.js"></script>
+  <script src="js/spa.shell.js" ></script>
+  <script src="js/spa.chat.js"  ></script>
+  <script src="js/spa.avtr.js"  ></script>
+  <script>
+    $(function () { spa.initModule( $('#spa') ); });
+  </script>
+
+</head>
+<body>
+<div id="spa"></div>
+</body>
+</html>

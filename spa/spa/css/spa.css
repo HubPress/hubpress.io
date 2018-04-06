@@ -1,0 +1,82 @@
+/*
+ * spa.css
+ * Root namespace styles
+*/
+
+/** Begin reset */
+  * {
+    margin  : 0;
+    padding : 0;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing    : border-box;
+    box-sizing         : border-box;
+  }
+  h1,h2,h3,h4,h5,h6,p { margin-bottom : 6pt; }
+  ol,ul,dl { list-style-position : inside;}
+
+  * { 
+    -webkit-user-select : none;
+    -khtml-user-select  : none;
+    -moz-user-select    : -moz-none;
+    -o-user-select      : none;
+    -ms-user-select     : none;
+    user-select         : none;
+
+    -webkit-user-drag : none;
+    -moz-user-drag    : none;
+    user-drag         : none;
+
+    -webkit-tap-highlight-color : transparent;
+    -webkit-touch-callout       : none;
+  }
+
+  input, textarea, .spa-x-user-select {
+    -webkit-user-select : text;
+    -khtml-user-select  : text;
+    -moz-user-select    : text;
+    -o-user-select      : text;
+    -ms-user-select     : text;
+    user-select         : text;
+  }
+
+/** End reset */
+
+/** Begin standard selectors */
+  body {
+    font : 10pt 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
+    color            : #444;
+    background-color : #888;
+  }
+  a { text-decoration : none; }
+    a:link, a:visited { color : inherit; }
+    a:hover { text-decoration: underline; }
+
+  strong {
+    font-weight : 800;
+    color       : #000;
+  }
+/** End standard selectors */
+
+/** Begin spa namespace selectors */
+  #spa {
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    bottom     : 0;
+    right      : 0;
+    background : #fff;
+    min-height : 15em;
+    min-width  : 35em;
+    overflow   : hidden;
+  }
+/** End spa namespace selectors */
+
+/** Begin utility selectors */
+  .spa-x-select {}
+  .spa-x-clearfloat {
+    height     : 0      !important;
+    float      : none   !important;
+    visibility : hidden !important;
+    clear      : both   !important;
+  }
+/** End utility selectors */

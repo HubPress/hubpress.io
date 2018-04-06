@@ -1,0 +1,91 @@
+/*
+ * spa.shell.css
+ * Shell styles
+*/
+
+.spa-shell-head, .spa-shell-head-logo, .spa-shell-head-acct,
+.spa-shell-head-search, .spa-shell-main, .spa-shell-main-nav,
+.spa-shell-main-content, .spa-shell-foot,
+.spa-shell-modal {
+  position : absolute;
+}
+.spa-shell-head {
+  top    : 0;
+  left   : 0;
+  right  : 0;
+  height : 40px;
+}
+.spa-shell-head-logo {
+  top    : 4px;
+  left   : 8px;
+  height : 32px;
+  width  : 128px;
+}
+  .spa-shell-head-logo h1 {
+    font   : 800 22px/22px Arial, Helvetica, sans-serif;
+    margin : 0;
+  }
+  .spa-shell-head-logo p {
+    font   : 800 10px/10px Arial, Helvetica, sans-serif;
+    margin : 0;
+  }
+
+.spa-shell-head-acct {
+  top           : 4px;
+  right         : 0;
+  width         : 210px;
+  height        : 32px;
+  line-height   : 32px;
+  background    : #888;
+  color         : #fff;
+  text-align    : center;
+  cursor        : pointer;
+  overflow      : hidden;
+  text-overflow : ellipsis;
+}
+.spa-shell-main {
+  top    : 40px;
+  left   : 0;
+  bottom : 40px;
+  right  : 0;
+}
+.spa-shell-main-content,
+.spa-shell-main-nav {
+  top    : 0;
+  bottom : 0;
+}
+.spa-shell-main-nav {
+  width      : 400px;
+  background : #eee;
+  z-index    : 1;
+}
+  .spa-x-closed .spa-shell-main-nav {
+    width  : 0;
+  }
+
+.spa-shell-main-content {
+  left  : 400px;
+  right : 0;
+  background : #ddd;
+}
+  .spa-x-closed .spa-shell-main-content {
+    left : 0;
+  }
+.spa-shell-foot {
+  bottom : 0;
+  left   : 0;
+  right  : 0;
+  height : 40px;
+}
+.spa-shell-modal {
+  margin-top    : -200px;
+  margin-left   : -200px;
+  top           : 50%;
+  left          : 50%;
+  width         : 400px;
+  height        : 400px;
+  background    : #fff;
+  border-radius : 3px;
+  z-index       : 2;
+  display       : none;
+}

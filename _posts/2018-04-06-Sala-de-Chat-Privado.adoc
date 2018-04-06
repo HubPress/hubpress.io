@@ -1,0 +1,36 @@
+= Sala de Chat Privado
+:hp-tags: Chat,
+
+
+== Entra en esta sala si quieres chatear en privado. 
+
+
+
+
+
+//Para chatear lanza el chat buscando en la página la imagen flotante similar a esta:
+
+//image::https://livechatbot.net/images/pic01.png[]
+//image::http://github.com/txemis/txemis.github.io/images/pic01.png[]
+//image::http://github.com/txemis/txemis.github.io/images/livechat.jpg[]
+//image::https://github.com/txemis/txemis.github.io/blob/master/images/livechat.png[]..
+
+//image::livechat.jpg[]
+
+
+++++
+<script> 
+    window.intergramId = "149197271";
+    window.intergramCustomizations = {
+        titleClosed: 'Abre el Chat',
+        titleOpen: 'Chateando con jm',
+        introMessage: 'Qué me cuentas?',
+        autoResponse: 'Te responderé tan pronto esté en línea',
+        autoNoResponse: 'Parece que ahora no estoy en línea... ' +
+                        'te responderé cuando esté conectado',
+        mainColor: "#E91E63", // Can be any css supported color 'red', 'rgb(255,87,34)', etc
+        alwaysUseFloatingButton: false // Use the mobile floating button also on large screens
+    };
+</script>
+<script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
+++++

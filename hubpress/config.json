@@ -1,10 +1,17 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
+    "username": "txemis",
+    "repositoryName": "txemis.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Mas allá de la Pochanca",
+    "cover": "https://raw.githubusercontent.com/txemis/txemis.github.io/master/imagenes/galeria8.jpg",
+    "postsPerPage": "2",
+    "disqus": ""
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "uno-zen"
   }
 }
