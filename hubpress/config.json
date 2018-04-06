@@ -7,6 +7,7 @@
   "site": {
     "title": "Mas allá de la Pochanca",
     "cover": "https://raw.githubusercontent.com/txemis/txemis.github.io/master/imagenes/galeria8.jpg",
+    "postsPerPage": "2",
     "disqus": ""
   },
   "socialnetwork": {},
