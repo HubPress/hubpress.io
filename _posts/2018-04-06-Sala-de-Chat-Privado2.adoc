@@ -17,7 +17,7 @@
 
 ++++
 <script> 
-    window.intergramId = "Your unique chat id";
+    window.intergramId = "149197271";
     window.intergramCustomizations = {
         titleClosed: 'Abre el Chat',
         titleOpen: 'Chateando con jm',
