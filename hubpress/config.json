@@ -5,8 +5,9 @@
     "branch": "master"
   },
   "site": {
+    "title": "Mas allá de la Pochanca",
     "cover": "https://raw.githubusercontent.com/txemis/txemis.github.io/master/imagenes/galeria8.jpg",
-    "disqus": "#txemis_quitaesto"
+    "disqus": ""
   },
   "socialnetwork": {},
   "theme": {
