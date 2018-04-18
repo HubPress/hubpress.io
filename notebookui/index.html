@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Settings Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/ion.rangeSlider.css">
+  <link rel="stylesheet" href="css/ion.rangeSlider.skinModern.css">
+  <link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<span id="advanced-toggle" class="advanced-inactive">customize</span>
+<body>
+
+<div class="wrapper">
+  <section class="Details">
+    <header class="Details__header">
+      <h1 class="Details__title"><input type="text" value="master" defaultValue="master" class="sha-input Details__title"></h1>
+    </header>
+    <div class="advanced-container">
+    <nav class="Details__nav" role="navigation">
+      <ul class="Details__nav-list">
+        <li class="Details__nav-list__item Details__nav-list__item--active">Driver</li>
+        <li class="Details__nav-list__item">Spark</li>
+        <li class="Details__nav-list__item"></li>
+        <li class="Details__nav-list__item "></li>
+        <li class="Details__nav-list__item"></li>
+      </ul>
+    </nav>
+    <div class="Details__body">
+      <ul class="Details__options-list">
+        <li class="Details__options-list__item">
+          <div class="Media">
+            <div class="Media__side Media__side--left"><img class="Media__image" id="cpu-image" src="img/CPU.svg" alt=""/>
+            </div>
+            <div class="Media__body Media u-flex-center--v">
+              <div>
+                <h3>CPU</h3>
+                <p style="width:500px;">
+                  <div class="range-slider">
+                    <input type="text" class="cpu-slider" value=""/>
+                  </div>
+                </p>
+              </div>
+<!--               <div class="Media__side Media__side--right">
+                <input class="checkbox-input" id="DetailsOptionCheckbox1" type="checkbox"/>
+                <label class="checkbox ion-ios-checkmark-empty" for="DetailsOptionCheckbox1"></label>
+              </div> -->
+            </div>
+          </div>
+        </li>
+        <li class="Details__options-list__item">
+          <div class="Media">
+            <div class="Media__side Media__side--left"><img class="Media__image" id="ram-image" src="img/RAM.svg" alt=""/>
+            </div>
+            <div class="Media__body Media u-flex-center--v">
+              <div>
+                <h3>Memory</h3>
+                <p style="width:500px;">
+                  <div class="range-slider">
+                    <input type="text" class="memory-slider" value=""/>
+                  </div>
+                </p>
+              </div>
+<!--               <div class="Media__side Media__side--right">
+                <input class="checkbox-input" id="DetailsOptionCheckbox2" type="checkbox"/>
+                <label class="checkbox ion-ios-checkmark-empty" for="DetailsOptionCheckbox2"></label>
+              </div> -->
+            </div>
+          </div>
+        </li>
+        <li class="Details__options-list__item">
+          <div class="Media">
+            <div class="Media__side Media__side--left"><img class="Media__image" id="gpu-image" src="img/GPU.svg" alt=""/>
+            </div>
+            <div class="Media__body Media u-flex-center--v">
+              <div>
+                <h3>GPU</h3>
+                <p>Add a GPU to your notebook container.</p>
+              </div>
+              <div class="Media__side Media__side--right">
+                <input class="checkbox-input" id="DetailsOptionCheckbox3" checked="checked" type="checkbox"/>
+                <label class="checkbox ion-ios-checkmark-empty" for="DetailsOptionCheckbox3"></label>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <button class="Button Button--sync" id="sync">
+      <span class="ion-ios-play"></span>
+    </button>
+  </section>
+</div>
+<!-- <script  src="js/index.js"></script> -->
+<script  src="js/vendor/jquery-1.12.3.min.js"></script>
+<script  src="js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+<script type="text/javascript">
+  var cpu_slider = $(".cpu-slider");
+
+  cpu_slider.ionRangeSlider({
+      min: 1,
+      max: 8,
+      from: 1,
+      grid: true,
+      grid_snap: true,
+  });
+
+  var memory_slider = $(".memory-slider");
+
+  memory_slider.ionRangeSlider({
+      min: 1,
+      max: 100,
+      from: 10,
+      grid: true,
+      step: 5,
+      prettify: function (num) {
+        return num + " GB"
+      }
+  });
+
+  $("#advanced-toggle").click(function(){
+    $(this).toggleClass("advanced-active")
+    $(".advanced-container").slideToggle()
+  });
+
+  $(".sha-input").focus();
+
+  $(".sha-input").click(function(){
+    $(this).select();
+  });
+
+  $(".sha-input").blur(function() {
+      if(this.value == '') {
+          this.value = 'master';
+      }
+  });
+</script>
+</body>
+</html>
