@@ -18,7 +18,7 @@
 <div class="wrapper">
   <section class="Details">
     <header class="Details__header">
-      <h1 class="Details__title"><input type="text" value="master" defaultValue="master" class="sha-input Details__title"></h1>
+      <h1 class="Details__title"><input type="text" value="master" defaultValue="master" class="sha-input Details__title" onfocus="this.selectionStart = this.selectionEnd = this.value.length;"></h1>
     </header>
     <div class="advanced-container">
     <nav class="Details__nav" role="navigation">
@@ -113,7 +113,7 @@
   var memory_slider = $(".memory-slider");
 
   memory_slider.ionRangeSlider({
-      min: 1,
+      min: 0,
       max: 100,
       from: 10,
       grid: true,

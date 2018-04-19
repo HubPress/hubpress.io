@@ -43,24 +43,6 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-
-.advanced-hover {
-  display: inline-block;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-weight: bold;
-  font-size: 0.5em;
-  padding: 3px;
-  border-style: solid;
-  border-radius: 500px;
-  border-width: 1px;
-  border-color: #0674D7;
-  color: #0674D7;
-  cursor: pointer;
-  background: #f0f7fd;
-}
-
 .advanced-inactive {
   display: inline-block;
   position: absolute;
