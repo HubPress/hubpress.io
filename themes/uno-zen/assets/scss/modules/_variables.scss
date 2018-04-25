@@ -1,0 +1,70 @@
+/* COLORS */
+
+$gray-darkest          : #333;
+$gray-darker           : #666;
+$gray-dark             : #999;
+$gray                  : #ccc;
+$gray-light            : #ddd;
+$gray-lighter          : #eee;
+$gray-lightest         : #f8f8f8;
+
+$black                 : #000000;
+$white                 : #FFFFFF;
+$cyan                  : #006064;
+$red                   : #e74c3c;
+$purple                : #493252;
+$slate                 : #3d4260;
+$yellow                : #FFC107;
+
+$primary-color         : lighten($red, 5%);
+$secondary-color       : $yellow;
+
+$cover-secondary       : rgba(#5f2c82, .1);
+$cover-primary         : rgba(#49a09d, .2);
+
+$link-color            : $gray-darkest;
+$hover-color           : $primary-color;
+
+$divider-color         : rgba(255, 255, 255, .14);
+
+/* FONT */
+
+$unit                  : 1rem;
+
+$sans-font             : 'Raleway', sans-serif;
+$serif-font            : 'Roboto Slab', serif;
+$code-font             : Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+$quote-font            : "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+
+$font-weight-thin      : 100;
+$font-weight-normal    : 300;
+$font-weight-bold      : 700;
+
+$line-height           : 1.75rem;
+
+$margin-title          : $unit * 2.2;
+$margin-h1             : $margin-title * .9;
+$margin-h2             : $margin-title * .9;
+$margin-h3             : $margin-title * .9;
+$margin-h4             : $margin-title * .9;
+$margin-h5             : $margin-title * .9;
+$margin-h6             : $margin-title * .9;
+
+$font-title            : $unit * 2.2;
+$font-h1               : $font-title * .8;
+$font-h2               : $font-h1 * .8;
+$font-h3               : $font-h2 * .8;
+$font-h4               : $font-h3 * .8;
+$font-h5               : $font-h4 * .8;
+$font-h6               : $font-h5 * .8;
+
+/* ASIDE */
+
+$aside-animation-time  : 350ms;
+$aside-animation       : cubic-bezier(.645,.045,.355,1);
+$aside-width-collapsed : $unit * 22.5;
+
+/* OTHER */
+
+$border-radius         : 3px;
+$astronaut-size        : 20vh;

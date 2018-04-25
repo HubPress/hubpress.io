@@ -1,0 +1,21 @@
+{
+  "files": {
+    "default": "default.hbs",
+    "error": "default.hbs",
+    "index": "index.hbs",
+    "page": "page.hbs",
+    "post": "post.hbs",
+    "tag": "tag.hbs",
+    "footer": "partials/footer.hbs",
+    "custom/meta": "partials/custom/meta.hbs",
+    "custom/config": "partials/custom/config.hbs",
+    "custom/featured": "partials/custom/featured.hbs",
+    "loop": "partials/post/list.hbs",
+    "post/list": "partials/post/list.hbs",
+    "pagination": "partials/pagination.hbs",
+    "cover": "partials/cover.hbs",
+    "drawer": "partials/drawer.hbs",
+    "custom/navigation": "partials/custom/navigation.hbs"
+  },
+  "version":"1.0.0"
+}

@@ -1,0 +1,215 @@
+// ------------------------------
+// MEDIA QUERIES
+// ------------------------------
+
+@media only screen and (min-width:1824px) {
+  main {
+    padding: 2.5rem 11rem;
+  }
+
+  .content {
+    margin: 0 7rem;
+  }
+}
+
+// ------------------------------
+// < 1024px (Tablet)
+// ------------------------------
+
+@media all and (max-width:1024px) {
+  /* disabling element, too much information*/
+
+  .pace,
+  span.post.tags,
+  .post.reading-time,
+  .post.related {
+    display: none;
+  }
+
+  #search-container {
+    display: none !important;
+  }/* Enable element special for little devices */
+
+  #profile-resume {
+    display: inherit;
+  }/* off canvas */
+
+  #menu-button {
+    position: fixed;
+    top: .5rem;
+    left: 13.5rem;
+    z-index: 2;
+    display: block;
+    transition: all $aside-animation-time;
+
+    &.expanded {
+      left: .85rem;
+    }
+
+    > a {
+      > i {
+        color: $hover-color;
+      }
+    }
+  }
+
+  .cover {
+    width: 16rem;
+    transition: width $aside-animation-time $aside-animation,
+                transform $aside-animation-time $aside-animation,
+                border-right $aside-animation-time * 1.8 $aside-animation,
+                box-shadow $aside-animation-time * 1.8 $aside-animation;
+    transform: translate3d(-16rem, 0, 0);
+    border-right: 0;
+    box-shadow: none;
+
+    &.expanded {
+      width: 16rem;
+      transform: translate3d(0, 0, 0);
+      border-right: 1px solid $gray;
+      box-shadow: 11px -10px 1px -9px $gray-light;
+    }
+
+    &.animated {
+      transition: all $aside-animation-time;
+    }
+  }
+
+  .profile {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+
+    &.contact {
+      > nav {
+        padding: 0;
+      }
+    }
+
+    > a {
+      > img {
+        width: 8rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    > p {
+      display: none;
+    }
+
+    .divider {
+      display: none;
+    }
+  }
+
+  .navigation.left .links {
+    > li {
+      margin: 0;
+
+      > a {
+        padding: .85rem 1.25rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  #avatar-link {
+    display: inline-block;
+    margin-top: 4rem;
+  }
+
+  .navigation {
+    width: 100%;
+
+    &.right {
+      margin: 0;
+    }
+
+    &.left {
+      .links.item {
+        width: 100%;
+      }
+    }
+  }
+
+  main {
+    left: 0;
+    transition: all $aside-animation-time;
+    transform: translate3d(0, 0, 0);
+
+    &.expanded {
+      transform: translate3d(14rem, 0, 0);
+    }
+  }
+}
+
+// ------------------------------
+// < 480px (Mobile)
+// ------------------------------
+
+@media all and (max-width:480px) {
+  .post .tags,
+  .post .meta > time,
+  .pagination > span {
+    display: none;
+  }
+
+  main {
+    padding: 1rem 0;
+  }
+
+  .btn {
+    display: block;
+    margin-bottom: .4em;
+  }
+
+  .mayday {
+    width: auto;
+
+    > h2 {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
+  .astronaut {
+    background-size: 55%;
+  }
+
+  .astro-wrap {
+    margin: -5% auto;
+  }
+
+  .astro-wrap,
+  .astronaut {
+    height: 10rem;
+  }
+
+  #panic-button {
+    margin-bottom: 1rem;
+  }
+
+  .posts.newer,
+  .posts.older {
+    margin: 1rem 0;
+  }
+
+  #posts-list{
+    margin: 3rem 0;
+    text-align: center;
+    > li {
+      margin-bottom: 2rem;
+
+      > time {
+        display: block;
+        float: none;
+        letter-spacing: 1px;
+        padding: 0;
+      }
+    }
+  }
+
+  #post-title {
+    margin: 2.5rem 0;
+  }
+}

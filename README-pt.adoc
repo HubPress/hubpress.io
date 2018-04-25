@@ -1,0 +1,286 @@
+= HubPress
+
+:toc:
+
+== O que é o Hubpress?
+image::http://hubpress.io/img/editor.png[]
+
+HubPress é uma ferramenta de código aberto, que é usada para construir um blog, utilizando o GitHub Pages e o AsciiDoc.
+
+Criado e mantido por http://github.com/anthonny[Anthonny Quérouil] (twitter http://twitter.com/anthonny_q[@anthonny_q]).
+
+NOTA: Embora o Hubpress pareça ter todas as funcionalidades, atualmente ele está em Preview (ou Tech Preview). Como os erros são inevitáveis, se você encontrar algo que não está funcionando da maneira que acha que deveria, relate o erro para a equipe do projeto que irá analisá-lo o mais rápido possível.
+
+A documentação está evoluindo rapidamente conforme o projeto vem crescendo. Visite essa página regularmente para obter mais informações sobre como usar o HubPress. Se você encontrar um erro na documentação, por favor, notifique o erro. Sua ajuda para melhorar todos os aspectos do HubPress é extremamente apreciada e qualquer Pull Request é *sempre* bem vindo.
+
+== Compatibilidade com os Navegadores
+
+HubPress é compatível com a versão Chrome Desktop, Firefox Desktop e Chrome para Android.
+
+Chrome Beta para Android será compatível em breve, não é totalmente suportado por alguns erros no IndexedDB, sendo assim a visualização utiliza apenas o Chrome para Android.
+
+== Introdução
+
+=== Instalação
+
+==== Faça um fork do repositório
+Clique no ícone de Fork image:http://hubpress.io/img/fork-icon.png[Fork,80] para criar uma cópia deste repositório com a sua conta do GitHub.
+
+==== Use o domínio github.io
+
+Se você nunca utilizou o domínio GitHub Pages, siga estes passos para instalar rapidamente o HubPress. Neste método, apenas alguns passos são necessários para instalar o HubPress e deixá-lo pronto para o uso.
+
+IMPORTANTE: Se você está utilizando o seu domínio `usuario.github.io` GitHub Pages para outro projeto, ou se você deseja usar um domínio de nome personalizado, pule para o próximo procedimento para ter as próximas instruções.
+
+. Renomeie o seu repositório para `<usuario>.github.io`
+
+. Insira os valores no `hubpress/config.json`
++
+image:http://hubpress.io/img/edit-config.png[Edit config]
++
+Os próximos parâmetros são obrigatórios :
++
+* `username`, o seu nome de usuário no GitHub,
+* `repositoryName`, o novo nome do Fork do repositório, `<usuario>.github.io`.
+. Confirme as mudanças, e abra o domínio GitHub Pages: `http://<usuario>.github.io/`.
+. A seguinte tela indicará que você configurou corretamente o HubPress.
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+==== Usar um domínio personalizado ou um domínio GitHub Page que está sendo usado.
+
+Se você deseja ter o seu blog em um domínio personalizado, ou se você já está usando o domínio do GitHub Pages para hospedar outro projeto, uma configuração extra é necessária.
+
+. Nas configurações do repositório, defina a branch padrão para `gh-pages`:
++
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages,400]
+. Mude o seu repositório para a branch *gh-pages*.
++
+image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
++
+. Defina os valores necessários no `hubpress/config.json
++
+image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
++
+Os seguintes parâmetros são obrigatórios :
++
+* `username`, o seu nome de usuário no GitHub,
+* `repositoryName`, o novo nome do Fork do repositório, `<usuario>.github.io`.
+. Confirme as mudanças, e abra o domínio GitHub Pages: `http://<usuario>.github.io/`.
+. A seguinte tela indicará que você configurou corretamente o HubPress.
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+== Console de Administração
+
+O Console de Administração está disponível no */hubpress*
+
+* `http://<usuario>.github.io/hubpress/` para blogs publicados no GitHub, o
+* `http://<usuario>.github.io/<repositoryName>/hubpress/` para blogs publicados em outros domínios.
+
+=== Logando no Console de Administração
+
+image:http://hubpress.io/img/login.png[Install complete,300]
+
+Entre com as suas credenciais do GitHub para logar no HubPress Admin.
+
+Uma vez autenticado, um token será criado para futuras chamadas do HubPress a API do GitHub.
+
+Isso é sincronizado em todas as sessões do HubPress. Se você abrir o Console de Administração no seu PC e depois no seu Tablet, o token será aplicado em todos os dispositivos.
+
+=== Página de Configuração
+
+Você pode configurar as opções básicas do blog (como o CNAME e a paginação) e as contas de redes sociais que você deseja conectar ao seu blog.
+
+==== Meta
+
+Essa aba contém a informação básica configurada no arquivo `/hubpress/config.json`.
+
+Os seguintes campos são configuráveis:
+
+Git CNAME::
+Permite especificar um nome de domínio personalizado para o seu blog. Veja https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/[Setting Up A Custom Domain] para obter instruções sobre como configurar um CNAME para o seu blog.
+Live Preview Render Delay::
+Controla o tempo de espera do renderizador demora para atualizar, em milisegundos. Para aquelas que teclam muito rápido, a opção fica em torno de `2000` (dois segundos) o que irá resultar em uma experiência mais suave porque o live preview não será atualizado tão rapidamente. Alterando essa opção para abaixo de `2000` resultará em um live preview mais rápido, mas pode resultar em um delay do cursor enquanto é feita a digitação.
+
+==== Site
+
+===== Título e Descrição
+
+Os campos *Título* e *Descrição* permitem colocar um nome ao seu blog, e uma breve descrição para que os seus visitantes possam ter idéia do que esperar dos posts do blog.
+
+Os campos *Logo* e *Cover Image* podem ser usados da seguinte maneira:
+
+* Um link HTML para um serviço de hospedagem de imagens, por exemplo o Gravatar.
+* Um link de uma imagem commitada para o diretório /images do repositório do seu blog.
+
+NOTA: Veja na seção `/images/README.adoc` mais informações de como utilizar imagens no seu blog.
+
+===== Temas
+
+O campo *Tema* permite selecionar entre uma lista de temas armazenados no diretório `/themes`.
+
+===== Google Analytics
+
+O campo *Google Analytics* utiliza o ID criado pelo Google Analytics para identificar o seu blog, por exemplo: `UA-1234567-1`.
+
+===== Disqus Shortname
+
+O campos *Disqus shortname* utiliza a URL do seu Disqus/shortname que é criado quando você registra um novo site no Disqus. Só o shortname é necessário e não um link para o seu perfil pessoal.
+
+==== Redes Sociais
+
+Todos os campos deste grupo requerem as URLs completas do seu perfil público. A maneira que estes valores aparecem dependendem do tema selecionado.
+
+== Gestão de entrada
+
+Quando você entrar no HubPress pela primeira vez, a aba *Posts* estará vazia. A medida que você criar mais posts para o seu blog, a página irá crescer com a lista de posts a sua esquerda, a prévia do post a direita.
+
+=== Administrando Posts
+
+NOTA: Se você nunca utilizou o AsciiDoc para criar conteúdo, existe um http://asciidoctor.org/docs/asciidoc-writers-guide/[Guia do AsciiDoctor] que deve ser lido para melhor entendimento. O guia possui exemplos básicos e avançados que podem ser usados diretamente.
+
+O editor do HubPress mostra o código do AsciiDoc do lado esquerdo, e o live preview do lado direito.
+
+===== Título do Blog e Cabeçalhos
+
+O título do blog deve ser sempre o primeiro nível de entrada no post do AsciiDoc. Por exemplo, `= Título do blog` estabelece o nome do post como `Título do blog`.
+
+Se você deseja um cabeçalho de primeiro nível, você deve usar o `== Cabeçalho de primeiro nível`. Os próximos níveis de cabeçalho utilizam as respectivas sintaxes (`===`, `====`, ...).
+
+==== Parâmetros do HubPress
+
+O HubPress permite modificar as características de cada entrada do blog através de atributos.
+
+===== :hp-image: para Imagens de cover do post
+
+Se deseja inserir uma imagem cover ao post do blog, deve utilizar o atributo `hp-image`.
+
+. :hp-image: Exemplo:
+[source, asciidoc]
+----
+= Blog Title
+:hp-image: a-cover-image.jpg
+----
+
+NOTA: O diretório padrão `/images` é a raíz para todas as imagens, você só precisa declarar o nome da imagem. Por causa disso, você deve considerar criar um diretório `/covers` no seu repositório para guardar as imagens de cover juntas. Utilizando nomes consistentes ficará mais fácil de aplicá-las aos posts. Se você tem uma tema para o seu blog, permitirá que os leitores tenham uma idéia visual sobre o que se trata o post.
+
+Os temas que atualmente suportam imagens de cover no post são:
+
+* Saga
+
+==== :published_at: para alterar a data de publicação
+
+Por padrão, a data de publicação do post é a data em que ele foi criado. Você pode forçar a data de publicação adicionando o atributo `published_at`.
+
+. :published_at: Exemplo :
+[source, asciidoc]
+----
+= Blog Title
+:published_at: 2015-01-31
+----
+
+==== :hp-tags: Tags
+
+NOTA: Categorias não são suportadas.
+
+Adicione tags utilizando o atributo `hp-tags`.
+
+. :hp-tags: Exemplo:
+[source, asciidoc]
+----
+= Blog Title
+:hp-tags: HubPress, Blog, Open Source,
+----
+
+==== :hp-alt-title: para indicar um Título Alternativo
+
+Especifique um título alternativo através do atributo `hp-alt-title`.
+
+O título alternativo é utilizado no lugar do nome do arquivo HTML gerado pelo HubPress.
+
+. :hp-alt-title: Exemplo :
+[source, asciidoc]
+----
+= 大千世界
+:hp-alt-title: Meu Título Português
+----
+
+==== Adicionando Imagens
+
+===== Use o diretório `/images` no seu repositório
+
+
+Você pode usar o console do Git ou o app do Git para adicionar imagens ao seu post:
+
+. Commite a imagem no diretório `/images`.
+. No seu post, utilize a sintaxe básica do AsciiDoc:
++
+[source,AsciiDoc]
+----
+image::<filename>[]
+----
+. Veja http://asciidoctor.org/docs/asciidoc-writers-guide/ para ver mais exemplos sobre a sintaxe de imagens.
+
+Se você está integrando imagens publicadas em outro domínio -- como instagram, outros repositórios do GitHub, ou qualquer serviço de imagens -- simplesmente indique a URL completa no lugar do `<filename>`.
+
+.Inserindo imagens de outros domínios
+----
+image::http://<full path to image>[]
+----
+
+===== Utilizando os issues do GitHub para publicar imagens
+
+Você pode usar um issue único como um container de imagem para um post do blog, contendo vários issues carregando várias imagens como comentários. Como alternativa você pode usar vários issues para guardar imagens individuais.
+
+O que se funcionar melhor para você, e o seu estilo de organização.
+
+Assista este vídeo de cinco minutos que demonstra como utilizar o GitHub Issues e o serviço do Cloud Hosting sobre como incoporar alvos, e algumas dicas a mais sobre a sintaxe de imagem do AsciiDoc.
+
+video::KoaGU91qJv8[youtube]
+
+==== Inserindo vídeos
+
+O HubPress permite inserir vídeos através de uma sintaxe simples. Não é necessário indicar a URL completa, somente indicar o ID único do vídeo como o exemplo.
+
+```
+video::[id_unico_youtube][youtube | vimeo]
+```
+
+.Insertando vídeo de YouTube
+```
+video::KCylB780zSM[youtube]
+```
+
+.Insertando vídeo de Vimeo
+```
+video::67480300[vimeo]
+```
+
+== Atualizando o HubPress
+
+
+Como o HubPress está no GitHub, você pode atualizar as últimas novidades fazendo um pull do repositório master do HubPress.
+
+Para aprender a fazê-lo corretamente, pode ver o seguinte vídeo (há certas observações a fazer quando na primeira vez que for fazer um pull).
+
+video::KCylB780zSM[youtube]
+
+https://www.youtube.com/watch?v=KCylB780zSM[Atualizando o HubPress]
+
+== Solução de problemas
+
+Se algo não está funcionando como espera, alguns destas dicas podem te ajudar.
+
+=== Restabelecimento da Base de dados do Blog no Android.
+
+As vezes, a base de dados local do HubPress se dessincroniza com o blog. Isso pode acontecer por estar editando seu blog no seu PC, e logo depois, transferir ao seu Tablet.
+
+O HubPress trabalha com uma base de dados local específica no seu navegador, por isso, se você alterar o dispositivo -- e portanto, alterar o navegador -- se perde a sincronização entre os navegadores.
+
+Para retornar ao blog publicado do HubPress, é necessário apagar o cache do navegador e os seus dados no Ajustes > Aplicações. Depois disso, o HubPress irá reconstruir a base de dados local, e refletirá no estado do blog no GitHub.
+
+== Créditos
+
+Obrigado a https://github.com/jaredmorgs[Jared Morgan] por colocar em ordem o arquivo README encontrado aqui, e seguir sendo o "Documentador" do HubPress.
+Obrigado ao https://github.com/takkyuuplayer[takkyuuplayer], https://github.com/hinaloe[hinaloe] pela tradução do README para Japonês.

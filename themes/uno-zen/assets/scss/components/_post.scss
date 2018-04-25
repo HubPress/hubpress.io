@@ -1,0 +1,124 @@
+#posts-list {
+  padding: 0;
+  margin: 5rem 0;
+  list-style-type: none;
+
+  > li {
+    margin-left: 1rem;
+    margin-bottom: 1.25rem;
+
+    > time {
+      float: right;
+      text-transform: uppercase;
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    > a {
+      @extend %dotted-link;
+    }
+
+    > span > a {
+      bottom: 2px;
+    }
+  }
+}
+
+#post-content a {
+  @extend %dotted-link;
+}
+
+.post {
+  img {
+    max-width: 100%;
+  }
+  > p {
+    > img {
+      border-radius: $border-radius;
+        display: block;
+      margin: 1.5rem auto;
+      text-align: center;
+      width: auto;
+    }
+  }
+
+  pre {
+    width: 95%;
+  }
+
+  > header {
+    text-align: center;
+  }
+
+  &.description {
+    margin-bottom: 1rem;
+    font-size: .9em;
+    color: $gray-dark;
+  }
+
+  &.meta {
+    margin: .7em 0;
+    font-size: .85rem;
+    color: $gray;
+  }
+
+  &.tags {
+    > a {
+      &:first-child {
+        margin-left: .2rem;
+      }
+
+      &:last-child {
+        margin-right: .2rem;
+      }
+      padding: .15rem .25rem;
+      font-size: .55rem;
+      transition: all $aside-animation-time;
+      text-transform: uppercase;
+      color: $gray-lightest;
+      border-radius: .25rem;
+      background-color: rgba($primary-color, .45);
+
+      &:hover {
+        background-color: rgba($primary-color, 1);
+      }
+    }
+  }
+
+  &.author {
+    img {
+      display: inline-block;
+      height: 22px;
+      margin: 0 .5rem;
+      vertical-align: middle;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+
+  &.comments {
+    padding: 2rem 0 0 0;
+  }
+
+  &.related {
+    display: flex;
+    padding: 4rem 0 2rem 0;
+    justify-content: space-between;
+  }
+}
+
+#post-image {
+  max-width: 100%;
+  margin-top: 1rem;
+}
+
+#post-title {
+  font-size: $font-title;
+  margin: 3rem 0 2.5rem;
+  transition: all $aside-animation-time;
+
+  &:hover {
+    color: $hover-color;
+  }
+}

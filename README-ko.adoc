@@ -1,0 +1,121 @@
+= HubPress
+:toc: macro
+:toclevels: 4
+:sectnums:
+
+toc::[]
+
+HubPress는 GitHub Pages와 http://asciidoctor.org/docs/user-manual/[AsciiDoc] 을 이용해 블로그를 만들 수 있는 무료 오픈 소스 도구입니다.
+
+== HubPress란?
+image::https://cloud.githubusercontent.com/assets/2006548/23680524/d7cbf68e-038b-11e7-8465-5c70abd852e1.gif[]
+
+HubPress는 쉽게 블로그를 관리할 수 있게 도와주는 웹 애플리케이션입니다. HubPress는 다음과 같은 기능들을 제공합니다:
+
+* 블로그 포스트 작성을 위한 WYSIWYG 에디터.
+* http://asciidoctor.org/docs/user-manual/[AsciiDoc] 을 이용한 컨텐츠 구성.
+* 블로그 컨텐츠를 관리할 수 있는 관리자 콘솔.
+* 블로그 댓글 기능을 지원하는 Disqus 플랫폼.
+* 방문자 활동을 추적할 수 있는 구글 분석기.
+* 각종 테마.
+
+블로그 호스팅은 GitHub Pages 에 의해 제공됩니다.
+
+HubPress를 향상시키기 위한 당신의 노력에 항상 감사드립니다. 
+Pull Requests는 *언제나* 환영합니다.
+프로젝트에 공헌하기 위한 자세한 방법은 HubPress Knowledgebase 에서 제공하는 https://hubpress.gitbooks.io/hubpress-knowledgebase/content/develop/contribute_pr.html[How do I contribute a PR] 문서를 참조하시기 바랍니다.
+
+== 브라우저 호환성
+
+HubPress는 Chrome Desktop, Firefox Desktop, 안드로이드용 Chrome 과 호환됩니다.
+
+== 시작하기
+
+=== 저장소 Fork
+
+당신의 GitHub 계정에서 이 저장소(repository)에 대한 복사본을 만들려면 Fork 아이콘 image:http://hubpress.io/img/fork-icon.png[Fork,80]을 클릭하세요.
+
+=== 정확한 브랜치 설정
+
+주 의: GitHub 브랜치 설정은 중요합니다. 잘못된 브랜치 설정시 HubPress 에 처음 로그인할 때 문제가 발생할 수 있습니다.
+
+아래 2개 섹션을 *자세히* 읽은 다음, 브랜치를 선택 또는 `config.json` 파일을 편집하기 바랍니다.
+
+==== GitHub Pages 도메인을 다른 프로젝트에 사용하고 있지 않은 경우
+github.io Pages 도메인을 사용하지 않고 있는 상태라면 이 도메인을 이용해 HubPress 를 빠르게 설정할 수 있습니다. 
+
+HubPress를 배포하기 위해 필요한 몇가지 절차만 마치면 HubPress를 이용한 블로그 서비스를 바로 시작할 수 있습니다.
+
+IMPORTANT: 현재 다른 프로젝트를 위해 `[username].github.io` GitHub Pages 도메인을 사용 중이거나, 커스텀 도메인 네임을 사용하고 싶다면 다음 섹션으로 건너뛰세요.
+
+. 당신의 저장소 이름을 `<username>.github.io` 로 변경합니다.
+
+. `hubpress/config.json` 파일의 값들을 설정합니다.
++
+image:http://hubpress.io/img/edit-config.png[Edit config]
++
+아래의 파라미터들은 필수 항목입니다:
++
+* `username`, 당신의 GitHub 사용자 이름. 예를 들면, `janesmith`.
+* `repositoryName`, fork한 저장소의 이름. 예를 들면, `janesmith.github.io`.
+. 변경사항을 Commit 한 뒤, 브라우저에서 `https://janesmith.github.io/` GitHub Pages 도메인을 입력하세요.
+. HubPress를 제대로 설정하였다면 아래의 화면이 나타날 것입니다.
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+==== 커스텀 도메인을 사용하고 싶거나 또는 GitHub Pages 도메인을 사용 중인 경우
+
+만약 커스텀 도메인을 사용하고 싶거나, 다른 프로젝트에서 GitHub Pages 도메인을 사용하고 있는 경우라면 추가적인 설정이 필요한데, 그것은 GitHub Pages 사이트의 서브 도메인으로 블로그를 설정하는 것입니다.
+
+. 저장소(repository) 설정에서 default branch 를 `gh-pages`로 설정합니다. :
++
+image::https://cloud.githubusercontent.com/assets/8563047/13872457/28d53c9a-ed2e-11e5-9d13-65f5bf2cbbf9.png[Settings gh-pages, 400]
+. 저장소 브랜치를 `gh-pages`로 변경합니다.
++
+image:http://hubpress.io/img/switch-gh-pages.png[Install complete,300]
++
+. `hubpress/config.json` 파일의 값들을 설정합니다.
++
+image:http://hubpress.io/img/edit-config-gh-pages.png[Edit config]
++
+아래의 파라미터들은 필수 항목입니다 :
++
+* `username`, 당신의 GitHub 사용자 이름. 예를 들면, `janesmith`.
+* `repositoryName`, fork한 저장소의 이름. 예를 들면, `janesmith.github.io`.
+. 변경사항을 Commit 한 뒤, 브라우저에서 `https://janesmith.github.io/<repositoryName>/` GitHub Pages 도메인을 입력하세요.
+. HubPress를 제대로 설정하였다면 아래의 화면이 나타날 것입니다.
++
+image:http://hubpress.io/img/home-install.png[Install complete,300]
+
+== 문제 해결하기
+
+위의 설명을 따라 HubPress 를 설치/설정했는데도 로그인 화면이 나오지 않은 경우, 위의 설명들을 다시 한번 주의깊게 읽어보시길 바랍니다.
+
+이 문제는 주로 잘못된 브랜치 설정때문에 발생하기 때문에 HubPress 를 시작하기 전에 이 부분부터 확인해보시길 바랍니다.
+
+IMPORTANT: HubPress 에 처음 로그인 할 때 발생하는 대부분의 문제는 잘못된 설정때문에 발생합니다.
+
+설정 과정을 다시 한번 확인했음에도 불구하고, 여전히 문제를 해결하지 못했다면 우선 https://hubpress.gitbooks.io/hubpress-knowledgebase/content/[HubPress Knowledgebase] 를 참조하여 이와 유사한 문제가 있는지 검색해보세요.
+
+만약 Knowledgebase 에서도 해결책을 찾지 못했다면, https://hubpressio.slack.com[HubPress Slack] 에 접속하여 #general 채널에 관련된 이슈를 보고해주시기 바랍니다.
+
+== 블로그 시작하기
+당신은 이제 HubPress를 성공적으로 설정하였으며, 소셜 네트워크 정보, 각종 테마 등을 적용하여 자신만의 특색있는 블로그를 만들 수 있습니다.
+
+HubPress 사용법에 대한 추가 정보는 https://hubpress.gitbooks.io/hubpress-knowledgebase/content/[HubPress Knowledgebase] 에서 얻을 수 있습니다.
+
+== HubPress 팀
+
+코드 작성 http://github.com/anthonny[Anthonny Quérouil] (Twitter - http://twitter.com/anthonny_q[@anthonny_q]).
+
+영문 문서 http://github.com/jaredmorgs[Jared Morgan]  (Twitter - http://twitter.com/jaredmorgs[@jaredmorgs]).
+
+한글 문서 번역
+
+* https://github.com/dakeshi[sangjoon moon].
+
+== 프로젝트 후원하기 
+
+HubPress 는 :beer:, :coffee:, :pizza: 의 도움으로 운영됩니다.
+
+HubPress Settings 메뉴에 있는 donation 메뉴를 클릭해서 감사함을 전하세요: 여러분의 성원에 항상 감사드립니다.
