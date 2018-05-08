@@ -1,3 +1,14 @@
+## 0.9.0
+
+* feat(post): add a new preview with the target result with the template
+* feat(template): update casper to the last version
+* feat(settings): add navigation, a paypal and a opencollective entry
+* feat(page): add support of page
+* feat(blog): we can now specify a target directory for the pagination
+* fix(theme): fix the date in the theme ghostium
+* tech(pouchdb): remove pouchdb and use lokijs now
+* tech(nuxt): now hubpress use nuxt
+
 ## 0.8.1
 
 * fix(github): add a cached commit to avoid browser cache when getting the current commit of the branch - fix #496, #505, #515

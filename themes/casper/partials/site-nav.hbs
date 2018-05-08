@@ -1,0 +1,38 @@
+<nav class="site-nav">
+    <div class="site-nav-left">
+        {{!-- {{^is "home"}} --}}
+            {{#if @blog.logo}}
+                <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+            {{else}}
+                <a class="site-nav-logo" href="{{@blog.url}}">{{@blog.title}}</a>
+            {{/if}}
+        {{!-- {{/is}} --}}
+        {{#if @blog.navigation}}
+            {{navigation}}
+        {{/if}}
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            {{#if @blog.facebook}}
+                <a class="social-link social-link-fb" href="{{ @blog.facebook}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+            {{/if}}
+            {{#if @blog.twitter}}
+                <a class="social-link social-link-tw" href="{{ @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+            {{/if}}
+            {{#if @blog.github}}
+                <a class="social-link social-link-github" href="{{ @blog.github}}" target="_blank" rel="noopener">{{> "icons/github"}}</a>
+            {{/if}}
+            {{#if @blog.paypalme}}
+                <a class="social-link social-link-paypalme" href="{{ @blog.paypalme}}" target="_blank" rel="noopener">{{> "icons/paypalme"}}</a>
+            {{/if}}
+            {{#if @blog.opencollective}}
+                <a class="social-link social-link-opencollective" href="{{ @blog.opencollective}}" target="_blank" rel="noopener">{{> "icons/opencollective"}}</a>
+            {{/if}}
+        </div>
+        {{#if @labs.subscribers}}
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        {{else}}
+            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+        {{/if}}
+    </div>
+</nav>

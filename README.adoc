@@ -8,7 +8,6 @@ toc::[]
 A free, open source tool you can use to build a blog using GitHub Pages and http://asciidoctor.org/docs/user-manual/[AsciiDoc].
 
 == What Is HubPress?
-
 image::https://cloud.githubusercontent.com/assets/2006548/23680524/d7cbf68e-038b-11e7-8465-5c70abd852e1.gif[]
 
 HubPress is a web application that makes it easy for you to maintain a blog. It provides the following features:
