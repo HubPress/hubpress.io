@@ -19,24 +19,25 @@
     <meta name="twitter:title" content="{{meta_title}}">
     <meta name="twitter:description" content="{{meta_description}}">
 
+    <meta property="og:url" content="{{@blog.url}}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{meta_title}}">
     <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:site_name" content="{{@blog.title}}">
 
-    <!-- {{> custom/meta this}} -->
+    <meta itemprop="name" content="{{meta_title}}">
+    <meta itemprop="description" content="{{meta_description}}">
+
+    {{> custom/meta this}}
 
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
-    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset 'css/main.min.css'}}"/>
-    <link rel="stylesheet" href="{{asset 'css/custom.css'}}"/>
+    <link rel="stylesheet" href="{{asset 'css/main.min.css'}}">
     <link rel="stylesheet" href="{{asset 'css/asciidoctor-foundation.css'}}"/>
-
-
-
 
     <script type="text/javascript">
       {{> custom/config}}
@@ -78,6 +79,12 @@
       </div>
     </main>
 
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
     {{ghost_foot}}
 
     <script src="{{asset 'js/foot-scripts.min.js'}}"></script>
@@ -94,6 +101,5 @@
 
     </script>
     {{/if}}
-
   </body>
 </html>

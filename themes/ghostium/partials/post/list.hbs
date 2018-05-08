@@ -4,9 +4,6 @@
     <h2 itemprop="name" class="post-item-title">
       <a href="{{url}}" itemprop="url" data-pjax title="{{{title}}}">
         {{{title}}}
-        {{#if image}}
-            <br/><img class="post-cover-image" src="{{image}}" alt="" title="{{{title}}}"><br/>
-        {{/if}}
       </a>
     </h2>
   </header>
@@ -22,10 +19,10 @@
       </li>
       {{#if tags}}
         <li class="post-item-meta-item">
-          <span class="tags"><i class="fa fa-tags"></i>
-              <span>
-              {{tags prefix="" separator=", "}}</span>
-          </span>
+          {{#foreach tags}}
+            <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
+            {{~#if @last}} {{else}}, {{/if}}
+          {{/foreach}}
         </li>
       {{/if}}
       <li class="post-item-meta-item">
