@@ -5,6 +5,10 @@
 
 toc::[]
 
+image::https://opencollective.com/hubpressio/backers/badge.svg["Backers on Open Collective"] 
+
+image::https://opencollective.com/hubpressio/sponsors/badge.svg["Sponsors on Open Collective"]
+
 A free, open source tool you can use to build a blog using GitHub Pages and http://asciidoctor.org/docs/user-manual/[AsciiDoc].
 
 == What Is HubPress?
@@ -126,3 +130,21 @@ Translations (Japanese) by:
 HubPress is powered by :beer:, :coffee: and :pizza:.
 
 Use the donation options in the HubPress Settings menu to say thanks: we really appreciate it.
+
+==== Contributors
+
+This project exists thanks to all the people who contribute! 
+
+image::https://opencollective.com/hubpressio/contributors.svg?width=890&button=false
+
+==== Backers
+
+Thank you to all our backers!
+
+image::https://opencollective.com/hubpressio/backers.svg?width=890["Become a Backer", link="https://opencollective.com/hubpressio#backers"]
+
+==== Sponsors
+
+Support us by becoming a sponsor. Your logo will show up here with a link to your website. https://opencollective.com/hubpressio#sponsors[Become a Sponsor]
+
+image::https://opencollective.com/hubpressio/sponsor/0/avatar.svg["Sponsor", link="https://opencollective.com/hubpressio/sponsor/0/website"]
