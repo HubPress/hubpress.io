@@ -1,10 +1,49 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "gdfuentes",
+    "repositoryName": "gdfuentes.github.io",
+    "branch": "master",
+    "cname": ""
+  },
+  "site": {
+    "title": "",
+    "description": "",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "gdfuentes@gmail.com",
+    "github": "",
+    "twitter": "@gdfuentes",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "www.linkedin.com/in/gustavofuentes",
+    "stackoverflow": "https://stackexchange.com/users/190576/gustavo-fuentes"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://gdfuentes.github.io",
+    "hubpress": "https://gdfuentes.github.io",
+    "theme": "//gdfuentes.github.io/themes/casper",
+    "images": "https://gdfuentes.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
