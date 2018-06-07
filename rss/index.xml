@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Codehaks]]></title><description><![CDATA[Daily adventures of a web developer]]></description><link>https://codehaks.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 30 Mar 2018 19:41:03 GMT</lastBuildDate><atom:link href="https://codehaks.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Creating a ValidateModel ActionFilter]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everytime you need to store some data in database you have to validate it first. we usually need to create an if/else block and make sure ModelState is valid and send back some error messages if it&#8217;s not.</p>
+</div>
+<div class="paragraph">
+<p>ActionFilters are a great way to implement the DRY principle. Here we are going to create a simple ActionFilter to do the Model Validation before getting into the Action.</p>
+</div>
+<div class="paragraph">
+<p>The code goes like this :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class ValidateModelAttribute : Attribute, IActionFilter
+    {
+    public void OnActionExecuted(ActionExecutedContext context)
+        {
+            //throw new NotImplementedException();
+        }
+        public void OnActionExecuting(ActionExecutingContext context)
+        {
+            if (!context.ModelState.IsValid)
+            {
+                var ctrl = (Controller)context.Controller;
+                var view = new ViewResult
+                {
+                    ViewName = context.RouteData.Values["Action"].ToString(),
+                    ViewData = ctrl.ViewData
+                };
+                context.Result = view;
+            }
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We want to Validate model before running the Action so we have to implement <strong>OnActionExecuting</strong> method from IActionFilter interface. First we use <strong>ActionExecutingContext</strong> to find out if ModelState is valid or not.</p>
+</div>
+<div class="paragraph">
+<p>If model state is valid then we pass the data to action and everything goes as planned there, But if it&#8217;s not valid we have to redirect user back to original View containing the same ViewData.</p>
+</div>
+<div class="paragraph">
+<p>To do that I used <strong>context.Controller</strong> and cast it back to <strong>Controller</strong> then used <strong>Context</strong> to extract action name from route data. This way our filter works with any action in any controller. otherwise we hd to hard core the view name.</p>
+</div>
+<div class="paragraph">
+<p>At the end by setting up <strong>context.Result</strong> we are telling ASP Core MVC pipeline to skip the rest of the code and generte the view from here.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conclusion">Conclusion</h3>
+<div class="paragraph">
+<p>ActionFiter is a great way to remove repeatitive code and make it more elegant. it&#8217;s easier to maintain and less work to re-use. You should remember that ActionFilters run after ModelBinding procedures so if you need to stop pipeline from ModelBinding you need to use other filters.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2018/03/30/How-to-work-with-Action-Filters-in-ASP-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2018/03/30/How-to-work-with-Action-Filters-in-ASP-Core.html</guid><category><![CDATA[ASP Core]]></category><category><![CDATA[ActionFilter]]></category><category><![CDATA[ValidateModel]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Fri, 30 Mar 2018 00:00:00 GMT</pubDate></item><item><title><![CDATA[Configurations in ASP.NET Core 2.0]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>With new version of ASP.NET Core configuration system has changed a lot. First it is now injectable into the framework. then you can add custom options to the base Configuration class and access it anywhere needed.</p>
+</div>
+<div class="paragraph">
+<p>In this post I&#8217;m going to list all available configurations in ASP.NET Core 2.0 . and to do that I started by injecting configuration using a constructor.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Startup {
+	public IConfiguration Configuration { get; }
+    public Startup(IConfiguration config)
+        {
+            Configuration=config;
+        }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From now on we can use <strong>Configuration</strong> anywhere in the <strong>Startup</strong> class. My mission is to print all keys and values of Configuration object. I use <strong>Configure</strong> method in startup and create an In-line middleware.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public void Configure (IApplicationBuilder app) {
+            app.Run (async (context) =&gt; {
+                var keyList = Configuration.GetChildren();
+                var body = "";
+                foreach (var item in keyList)
+                {
+                   body += Environment.NewLine +
+                   item.Key + " : " + item.Value;
+                }
+              await context.Response.WriteAsync(body);
+            });
+        }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First I used <strong>GetChildren()</strong> method of Configuration object to find all the key/value pairs of configuration system and created a body of strings. then passed the body to the middleware. The result is a long list of all settings you have on a Windows OS.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclution">Conclution</h4>
+<div class="paragraph">
+<p>It&#8217;s really facinating to work with asp.net core configuration. there are so many features. my favorite is that you can create Class and add it to configuation system and with no extra code it is availbe in appsetting.json file.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/10/03/Configurations-in-ASPNET-Core-20.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/10/03/Configurations-in-ASPNET-Core-20.html</guid><category><![CDATA[ASP]]></category><category><![CDATA[Core]]></category><category><![CDATA[Configuration]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Tue, 03 Oct 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Error handling with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Error handling is real and it&#8217;s serious. In ASP.NET Core it&#8217;s much more easier to handle errors. in this post I&#8217;m digging into error handling and trying to get some errors !</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_middlewares">Middlewares</h4>
+<div class="paragraph">
+<p>Like many other features in ASP.NET Core, Error handling is done through middlewares, there is <strong>UseDeveloperExceptionPage()</strong> and <strong>UseExceptionHandler()</strong> to start with. The first one is used to show detailed error information for developers and the second is to redirect users to error page when something goes wrong. Usually you would not use them together, because they override each other. it&#8217;s a good practice to use a control flow based on Enviroment.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    else
+    {
+        app.UseExceptionHandler("/error");
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sample_project">Sample project</h4>
+<div class="paragraph">
+<p>First let&#8217;s create a sample project that simulates an Exception. Here is my startup.cs using the default web template.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Startup {
+        public void Configure (IApplicationBuilder app) {
+            app.UseDeveloperExceptionPage();
+            app.UseExceptionHandler("/error");
+            app.Use (async (context, next) =&gt; {
+                if (context.Request.Path == "/throw") {
+                    throw new Exception ("Something went wrong!");
+                }
+                await context.Response.WriteAsync
+                (Environment.NewLine + " No Error");
+                await next.Invoke();
+            });
+            app.Run (async (context) =&gt; {
+                await context.Response
+                .WriteAsync(Environment.NewLine + context.Request.Path);
+            });
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you see I used <strong>UseDeveloperExceptionPage</strong> and <strong>UseExceptionHandler</strong> in the same code flow, so user only gets redirected to error page and no error details would be visible to anyone.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_details">Error details</h4>
+<div class="paragraph">
+<p>To show detailed error page we can remove or comment out the <strong>UseExceptionHandler</strong> middleware.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_throwsing_excpetion">Throwsing excpetion</h4>
+<div class="paragraph">
+<p>To test the excpetion handler I created an In-line middleware with <strong>app.Use()</strong> method.Now When users sends request to "/throw" url gets an error with detailed information.</p>
+</div>
+<div class="paragraph">
+<p>To redirect user to error page we need to replace <strong>UseDeveloperExceptionPage</strong> with <strong>UseExceptionHandler</strong> . then we can see <strong>/error</strong> gets written into the response.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>There is much into error handling in ASP.NET Core. The real use of error handling is in MVC projects where there is a lot more code.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/09/15/Error-handling-with-ASPNET-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/15/Error-handling-with-ASPNET-Core.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[ASP.NET Core]]></category><category><![CDATA[Error handling]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Fri, 15 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[A Vue.js CRUD project with ASP.NET Core]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>I enjoy working with Vue.js. It&#8217;s just a good SPA framework, it has everything I like about a javaScript framework. Today I created a sample project with Vue.js and ASP.NET Core MVC 2.0 that has all CRUD operations. I want to share the code here.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_project_bugvue">Project BugVue</h4>
+<div class="paragraph">
+<p>This is a simple app for tracking bugs. You can Create, Read, Update and Delete the in UI and it all happends in the same view thanks to Vue.js and jQuery AJAX function.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_getting_started">Getting started</h4>
+<div class="paragraph">
+<p>The project has two main parts. a <strong>Back-end</strong> which I used ASP.NET Core MVC 2.0 and <strong>Front-end</strong> which I used Vue.js 2.x . I started with the emptey template and added features as I needed. For database I used SQLite and EntityFramework core.</p>
+</div>
+<div class="paragraph">
+<p>Bug.cs goes like this :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Bug
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_database">Database</h3>
+<div class="paragraph">
+<p>Then we need a DbContext object to create the database using EntityFramework.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class BugDb : DbContext
+    {
+        public BugDb(DbContextOptions options) : base(options)
+        {
+        }
+        public DbSet&lt;Bug&gt; Bugs { get; set; }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is a DbContextOptions injected into to constructor which is used for sending options to DbContext object without changing the class itself. later we add a DbContext as a service in startup.cs file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext&lt;BugDb&gt;(options =&gt; options.UseSqlite("DataSource=bug.db"));
+            services.AddMvc();
+        }
+        public void Configure(IApplicationBuilder app)
+        {
+            app.UseStaticFiles();
+            app.UseMvc(routes =&gt;
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I use <strong>options</strong> to pass SQlite and its connection string here. Then I added MVC service and used the middleware to setup the default routing.</p>
+</div>
+<div class="sect3">
+<h4 id="_web_api">Web API</h4>
+<div class="paragraph">
+<p>Now I have to add a controller to manage ajax calls. This is just a simple web api.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">public class BugController:Controller
+    {
+        private readonly BugDb _db;
+        public BugController(BugDb db)
+        {
+            _db = db;
+        }
+        [HttpGet]
+        [Route("/bug")]
+        public IActionResult Get()
+        {
+            var model = _db.Bugs;
+            return Ok(model);
+        }
+        [Route("/bug")]
+        [HttpPost]
+        public IActionResult Post(Bug model)
+        {
+            _db.Bugs.Add(model);
+            _db.SaveChanges();
+            return Ok(model);
+        }
+        [Route("/bug")]
+        [HttpPut]
+        public IActionResult Put(Bug model)
+        {
+            var bug = _db.Bugs.Find(model.Id);
+            bug.Name = model.Name;
+            bug.Description = model.Description;
+            _db.SaveChanges();
+            return Ok(model);
+        }
+        [Route("/bug")]
+        [HttpDelete]
+        public IActionResult Delete(Bug model)
+        {
+            var bug = _db.Bugs.Find(model.Id);
+            _db.Bugs.Remove(bug);
+            _db.SaveChanges();
+            return Ok(model);
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see there is GET,POST,PUT,DELETE methods withe the same routing. There is no validation, I skipped that part due to simplicity.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_interface">User Interface</h4>
+<div class="paragraph">
+<p>The UI is just a simple Table with some buttons. I also used bootstrap modals for creating and editing forms.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;div id="app"&gt;
+    &lt;button class="btn btn-primary" v-on:click="showNewBugModal"&gt; Add new bug ... &lt;/button&gt;
+    &lt;table class="table"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;#&lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Description&lt;/th&gt;
+                &lt;th&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr v-for="(bug,index) in bugs"&gt;
+                &lt;td&gt;{{index+1}}&lt;/td&gt;
+                &lt;td&gt;{{bug.name}}&lt;/td&gt;
+                &lt;td&gt;{{bug.description}}&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;button class="btn btn-danger" v-on:click="removeBug(bug,index)"&gt;Remove&lt;/button&gt;
+                    &lt;button class="btn btn-default" v-on:click="showEditModal(bug,index)"&gt;Edit&lt;/button&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_client_side_with_vue_js">Client-Side with Vue.js</h4>
+<div class="paragraph">
+<p>Last but not least, there is a vue object which is used as a ViewModel to manage the UI and events. The two-way binding works simple and easy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">&lt;script&gt;
+        var app = new Vue({
+            el: "#app",
+            data: {
+                bugs: [],
+                name: "",
+                description: "",
+                bugId: null,
+                bugIndex: null
+            },
+            created: function () {
+                this.getBugs();
+            },
+            methods: {
+                showEditModal: function (bug, index) {
+                    this.bugId = bug.id;
+                    this.bugIndex = index;
+                    this.name = bug.name;
+                    this.description = bug.description;
+                    $("#editBugModal").modal("show");
+                },
+                editBug: function () {
+                    var vm = this;
+                    var newBug = {
+                        id: vm.bugId,
+                        name: vm.name,
+                        description:vm.description
+                    }
+                    $.ajax({ url: "/bug", data: newBug, method: "PUT" })
+                        .done(function () {
+                            vm.bugs[vm.bugIndex].name = vm.name;
+                            vm.bugs[vm.bugIndex].description = vm.description;
+                            toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        }).always(function () {
+                            vm.name = "";
+                            vm.description = "";
+                            $("#editBugModal").modal("hide");
+                        });
+                },
+                removeBug: function (bug,index) {
+                    var vm = this;
+                    $.ajax({ url: "/bug", data: bug, method: "DELETE" })
+                        .done(function (data) {
+                            vm.bugs.splice(index, 1);
+                            toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        });
+                },
+                showNewBugModal: function () {
+                    $("#addNewBugModal").modal("show");
+                },
+                addBugs: function () {
+                    var vm = this;
+                    var newBug = {
+                        name: vm.name,
+                        description: vm.description
+                    }
+                    $.ajax({ url: "/bug", data: newBug, method: "POST" })
+                        .done(function (data) {
+                            vm.bugs.splice(0, 0, newBug);
+                            toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        }).always(function () {
+                            vm.name = "";
+                            vm.description = "";
+                            $("#addNewBugModal").modal("hide");
+                        });
+                },
+                getBugs: function () {
+                    var vm = this;
+                    $.ajax({ url: "/bug", method: "GET" })
+                        .done(function (data) {
+                            vm.bugs = data;
+                            //toastr.success("Success");
+                        }).fail(function () {
+                            toastr.error("Error");
+                        });
+                }
+            }
+        });
+    &lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>Vue.js is an easy framework to learn. It is light weight and simple to use. No need for NPM or WebPack . you just add the min.js file and go with it. Most of the time that is all you need.</p>
+</div>
+<div class="paragraph">
+<p>You can
+<a href="https://github.com/codehaks/BueVue">Download source code </a> here.</p>
+</div>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/12/A-Vuejs-CRUD-project-with-ASPNET-Core.html</guid><category><![CDATA[Vue.js]]></category><category><![CDATA[ASP.NET]]></category><category><![CDATA[ASP.NET Core]]></category><category><![CDATA[CRUD]]></category><category><![CDATA[MVC]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Tue, 12 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Exploring In-line middlewares]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In-line middlewares are a simple way to add functionality to ASP.NET Core pipeline without going through a ceremony. In this post I&#8217;m playing with app.Run and app.Use and see how these two work.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_simplest_middleware_possible">Simplest middleware possible</h4>
+<div class="paragraph">
+<p>The best way to understand how a middleware works is to remove the noise around it. so, this is the simplest middleware you can build in ASP.NET Core 2.0.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">app.Run(async (context) =&gt;
+{
+	await context.Response.WriteAsync("Hello World! 0");
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By the way, that is exactly what you get when you create a new project in Visual studio,using the default template.</p>
+</div>
+<div class="paragraph">
+<p>As this was an exploration, I went a step further and found the actual method in source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public static void
+Run(this IApplicationBuilder app, RequestDelegate handler)
+        {
+            if (app == null)
+            {
+                throw new ArgumentNullException(nameof(app));
+            }
+            if (handler == null)
+            {
+                throw new ArgumentNullException(nameof(handler));
+            }
+            app.Use(_ =&gt; handler);
+        }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So, basically what <strong>app.Run</strong> does is calling the <strong>app.Use</strong> method. but in this case, <strong>app.Run</strong> does not introduce any <strong>next</strong> parameter, so no middleware after <strong>app.Run</strong> would run. This is a short-circuit middleware.</p>
+</div>
+<div class="paragraph">
+<p>Now, lets take a look at app.Use method under the hood :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public static IApplicationBuilder Use(this IApplicationBuilder app, Func&lt;HttpContext, Func&lt;Task&gt;, Task&gt; middleware)
+        {
+            return app.Use(next =&gt;
+            {
+                return context =&gt;
+                {
+                    Func&lt;Task&gt; simpleNext = () =&gt; next(context);
+                    return middleware(context, simpleNext);
+                };
+            });
+        }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is also an Extention method,and returning a <strong>RequestDelegate</strong> . so, what is a RequestDelegate !?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public delegate Task RequestDelegate(HttpContext context);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A request delegate is a function that can process an HTTP request. This function returns a Task indicating completion of the request process.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>We can use <strong>app.Use</strong> to simulate <strong>app.Run</strong> method. Basically the <strong>app.Run</strong> is a simpler version of app.Use. Usually you use <strong>app.Run</strong> the the end of your pipeline because it is a short-circuit middleware and does not <strong>Invoke</strong> next middlewares.</p>
+</div>
+<div class="paragraph">
+<p>There are at least 4 different ways to show "Hello,world!" using in-line middlewares in ASP.NET Core.</p>
+</div>
+<div class="paragraph">
+<p>You can
+<a href="https://gist.github.com/codehaks/61d026c46c0293435cab375290c24980">Download the Gist</a> here.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            //--- Default app.Run usage ----------------------------
+            app.Run(async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 0");
+            });
+            //--- Default app.Use - short-cricuit--------------------
+            app.Use(async (context, next) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 1");
+            });
+            //--- simulating app.Run with a handler -----------------
+            RequestDelegate handler=async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 2");
+            };
+            app.Use(_ =&gt; handler);
+            //--- simulating app.Run with an anonymous function------
+            app.Use(_ =&gt; async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 3");
+            });
+            //--- simulating app.Run with an anonymous function------
+            app.Use( _ =&gt; async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World! 3");
+            });
+        }
+    }</code></pre>
+</div>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/09/07/Exploring-In-line-middlewares.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/07/Exploring-In-line-middlewares.html</guid><category><![CDATA[ASP.NET Core]]></category><category><![CDATA[Middleware]]></category><category><![CDATA[Exploring]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Thu, 07 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[How to create Middleware in ASP Core ?]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the best features of ASP.NET Core is it&#8217;s flexible pipeline. You can control what goes into your application&#8217;s pipeline and add more to it using a <strong>Middleware</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sendfile_middleware">SendFile Middleware</h4>
+<div class="paragraph">
+<p>This middleware is just a sample project to see how middlewares are created in ASP.NET Core. I tried to keep it is simple as possible,after all this is my first middleware.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_it_does">What it does?</h4>
+<div class="paragraph">
+<p>You set a file path at startup and SendFile Middleware sends the file back to user in browser. basically a FileResult directly as a response.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            app.UseSendFile(@"C:\myfile.jpg");
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It can be any kind of file, and user receives it in browser.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sendfile_middleware_explained">SendFile middleware explained</h4>
+<div class="paragraph">
+<p>The basic parts of a middleware in ASP.NET Core is simple. You have to create a class like this :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">internal class SendFileMiddleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly SendFileMiddlewareOptions _options;
+        public SendFileMiddleware(RequestDelegate next, IOptions&lt;SendFileMiddlewareOptions&gt; options)
+        {
+            _options = options.Value;
+            _next = next;
+        }
+        public Task Invoke(HttpContext context)
+        {
+            if (!string.IsNullOrEmpty(_options.FilePath))
+            {
+                var file = new Microsoft.Extensions.FileProviders
+                .Physical.PhysicalFileInfo(
+                    new System.IO.FileInfo(_options.FilePath));
+                context.Response.SendFileAsync(file);
+                return Task.CompletedTask;
+            }
+            else
+            {
+                return Task.CompletedTask;
+            }
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see there is no inheritance involved. You just have to provide a structure. the <strong>_next</strong> property is a request delegate that you use to pass the reponse to next middleware. There is an <strong>options</strong> parameter. if you want to pass data to your middleware you need an <strong>IOptions</strong> interface. Next there is the <strong>Invoke</strong> method. it takes a HttpContext and creates the response then you pass the response to next middleware. you dont have to pass if your middleware is a short-circuit one.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">namespace Codehaks.Middlewares.SendFile
+{
+    public class SendFileMiddlewareOptions
+    {
+        public string FilePath { get; set; }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_extention_method">The extention method</h4>
+<div class="paragraph">
+<p>The best way to present your middleware is to create an Extention method and give other developer the option to call it directly with IApplication parameter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">public static class SendFileMiddlewareExtension
+    {
+        public static IApplicationBuilder UseSendFile(
+            this IApplicationBuilder builder,
+            SendFileMiddlewareOptions options)
+        {
+            return
+            builder.UseMiddleware&lt;SendFileMiddleware&gt;
+            (Options.Create(options));
+        }
+        public static IApplicationBuilder UseSendFile(
+            this IApplicationBuilder builder,
+            string filePath)
+        {
+            var options = new SendFileMiddlewareOptions()
+            {
+                FilePath = filePath
+            };
+            return
+            builder.UseMiddleware&lt;SendFileMiddleware&gt;
+            (Options.Create(options));
+        }
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>Middlewares can solve many problems,Creating them is fairly easy and working with them is fun. But there are many things to watch for. Like when you change response it the pipeline the next middleware is not allowed to chat it again,there are some reasons for that. but thats the topic for an other post.
+SendFile middleware is availbe as a nuget :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C#" data-lang="C#">PM &gt; Install-Package Codehaks.Middlewares.SendFile</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>you can
+<a href="view-source:https://github.com/codehaks/Codehaks.Middlewares.SendFile">download</a> source code here.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/09/04/How-to-create-Middleware-in-ASP-Core.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[Core]]></category><category><![CDATA[Middleware]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Mon, 04 Sep 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Bare-Minimum Hello world!]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this post I&#8217;m exploring what is the bare minimum neccesary code to show "Hello Wolrd!" in an ASP.NET Core 2.0 Application. bear with me!</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_template">The template</h4>
+<div class="paragraph">
+<p>To get the bare minimum in the first place you need to create a  project using "ASP.NET Core Empty" template.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_program_cs">Program.cs</h4>
+<div class="paragraph">
+<p>The most important part that you have to change here is the <strong>CreateDefaultBuilder</strong> Method.There are so many parts that you don&#8217;t need, Like settings a Logging. To do that I used at the source code (Thanks to open-source) and create the host myself.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+namespace BareMinCore
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+             var builder = new WebHostBuilder()
+                .UseKestrel()
+                .UseStartup&lt;Startup&gt;()
+                .Build();
+            builder.Run();
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_startup_cs">Startup.cs</h4>
+<div class="paragraph">
+<p>This part is a little tricky. I found out that there is no need for consructor or <strong>ConfigureServices</strong>. But we need the <strong>Configure</strong> method always. Thats how ASP.NET Core 2.0 works anyway. so this is what I end up with :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c#" data-lang="c#">using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+namespace BareMinCore
+{
+    public class Startup
+    {
+        public void Configure(IApplicationBuilder app)
+        {
+            app.Run(async (context) =&gt;
+            {
+                await context.Response.WriteAsync("Hello World!");
+            });
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>It&#8217;s always good to find out what is there and what we actually need to run the system. It helps us to understand how the system is working and how we can improve it using less resources. You can download the result project at my github page.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/08/31/Bare-Minimum-Hello-world.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/08/31/Bare-Minimum-Hello-world.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[Core]]></category><category><![CDATA[Startup]]></category><category><![CDATA[Hosting]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Thu, 31 Aug 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[First 3 days with ASP Core 2.0]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>About 3 days ago the final version of ASP Core 2.0 released. I installed the new bits and have been playing with it since. here is my experience so far. Fantastic.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_bugs">No bugs</h4>
+<div class="paragraph">
+<p>So far I expericed no bugs. Everything works perfectly. No compatiblity issues like the preview version and no errors. Its fast and reliable.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__net_stanard_2_0">.Net Stanard 2.0</h4>
+<div class="paragraph">
+<p>Its realy the best part of the new version. it feels more matured than the last version. supporting a larg number of older libararies is really what many developers were looking for.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configuarion_and_logging_as_a_service">Configuarion and Logging as a service</h4>
+<div class="paragraph">
+<p>With IConfiguration And ILoggerFactory injected directly into Services
+its now accessible from every where in project without any additional code.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_razor_pages">Razor pages</h4>
+<div class="paragraph">
+<p>I always needed this feature. In very projects there is some simple pages that dont have any code behind. And even they do, its almost nothing. now I dont have to create a Model, Controller and View just to show about page. and thats my favorite thing in ASP Core 2.0</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conclusion">Conclusion</h4>
+<div class="paragraph">
+<p>Until last week I was not even considering migrating to ASP Core. Because there were so many uncertainities around the project and there were not much to gain after all.
+But now I feel like I can not go back and use the old ASP MVC 5 any more ! yes, It&#8217;s that good.</p>
+</div>
+</div>]]></description><link>https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</link><guid isPermaLink="true">https://codehaks.github.io/2017/08/19/First-3-days-with-ASP-Core-20.html</guid><category><![CDATA[ASP.NET]]></category><category><![CDATA[Core]]></category><category><![CDATA[MVC]]></category><dc:creator><![CDATA[Hakim]]></dc:creator><pubDate>Sat, 19 Aug 2017 00:00:00 GMT</pubDate></item></channel></rss>

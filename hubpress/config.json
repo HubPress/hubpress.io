@@ -1,10 +1,49 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "codehaks",
+    "repositoryName": "codehaks.github.io",
+    "branch": "master",
+    "cname": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://codehaks.github.io",
+    "hubpress": "https://codehaks.github.io",
+    "theme": "//codehaks.github.io/themes/casper",
+    "images": "https://codehaks.github.io/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
+  },
+  "site": {
+    "title": "Codehaks",
+    "description": "Daily adventures of a web developer",
+    "logo": "https://github.com/codehaks/codehaks.github.io/raw/master/images/logo01.jpg",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "5",
+    "googleAnalytics": "UA-105746611-1",
+    "disqus": "codehaks"
+  },
+  "socialnetwork": {
+    "email": "ghods.hakim@hotmail.com",
+    "github": "https://github.com/codehaks",
+    "twitter": "codehaks",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "codehaks",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
