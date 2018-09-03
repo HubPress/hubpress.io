@@ -2,16 +2,17 @@
   "meta": {
     "username": "wilson911013",
     "repositoryName": "cv",
-    "branch": "master"
+    "branch": "master",
+    "cname": "https://wilson911013.github.io/cv"
   },
   "theme": {
     "name": "casper"
   },
   "urls": {
-    "site": "https://wilson911013.github.io",
+    "site": "http://https://wilson911013.github.io/cv",
     "hubpress": "https://wilson911013.github.io",
-    "theme": "//wilson911013.github.io/themes/casper",
-    "images": "https://wilson911013.github.io/images"
+    "theme": "//https://wilson911013.github.io/cv/themes/casper",
+    "images": "http://https://wilson911013.github.io/cv/images"
   },
   "initialisationConfigComponent": {
     "name": "initialise-configuration",
