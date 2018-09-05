@@ -1,10 +1,32 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "wilson911013",
+    "repositoryName": "cv",
+    "branch": "master",
+    "cname": "https://wilson911013.github.io/cv"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "http://https://wilson911013.github.io/cv",
+    "hubpress": "https://wilson911013.github.io",
+    "theme": "//https://wilson911013.github.io/cv/themes/casper",
+    "images": "http://https://wilson911013.github.io/cv/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ],
+    "_compiled": true,
+    "beforeCreate": [
+      null
+    ],
+    "_Ctor": {}
   }
 }
