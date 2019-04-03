@@ -2,3 +2,8 @@
 :hp-image: https://cssauthor.com/wp-content/uploads/2017/07/Tiny-Hestia.jpg
 :published_at: 2019-04-03
  _Mere Donkey king_
+____
+Quoted text.
+
+Another paragraph in quote.
+____
