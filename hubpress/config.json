@@ -40,18 +40,23 @@
     "disqus": ""
   },
   "socialnetwork": {
-    "email": "",
+    "email": "Piyushsuthar100@gmail.com",
     "github": "",
-    "twitter": "",
+    "twitter": "Piyush Suthar",
     "facebook": "",
     "googleplus": "",
     "instagram": "",
     "pinterest": "",
     "flickr": "",
-    "linkedin": "",
+    "linkedin": "Piyush's Tech",
     "stackoverflow": "",
     "paypalme": "",
     "opencollective": ""
   },
-  "navigation": []
+  "navigation": [
+    {
+      "label": "Me Hoo Don",
+      "url": "https://mainhoondon.don/"
+    }
+  ]
 }
