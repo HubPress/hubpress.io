@@ -1,5 +1,4 @@
 = Lol Chor Ho Tum
-See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 :hp-image: https://cssauthor.com/wp-content/uploads/2017/07/Tiny-Hestia.jpg
 :published_at: 2019-04-03
-:content: Mere Donkey king
+ _Mere Donkey king_
