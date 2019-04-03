@@ -11,7 +11,7 @@
   "urls": {
     "site": "https://www.piyushsuthar.tk",
     "hubpress": "https://www.piyushsuthar.tk",
-    "theme": "//www.piyushsuthar.tk/themes/casper",
+    "theme": "https://www.piyushsuthar.tk/themes/casper",
     "images": "https://www.piyushsuthar.tk/images"
   },
   "initialisationConfigComponent": {
