@@ -9,10 +9,10 @@
     "name": "casper"
   },
   "urls": {
-    "site": "https://www.piyushsuthar.tk",
-    "hubpress": "https://www.piyushsuthar.tk",
-    "theme": "https://www.piyushsuthar.tk/themes/casper",
-    "images": "https://www.piyushsuthar.tk/images"
+    "site": "http://https://www.piyushsuthar.tk/",
+    "hubpress": "https://piyushsuthar.github.io",
+    "theme": "//https://www.piyushsuthar.tk//themes/casper",
+    "images": "http://https://www.piyushsuthar.tk//images"
   },
   "initialisationConfigComponent": {
     "name": "initialise-configuration",
